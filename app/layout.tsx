@@ -112,7 +112,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   /* ── Verification ── */
   verification: {
-    google: "your-google-site-verification-token",
+    google: "jFIGguaSizlS7DWwWkXSHOAFtkeuXPzG_Jm4Ynh-i_k",
   },
 };
 
