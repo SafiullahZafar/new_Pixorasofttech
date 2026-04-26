@@ -23,9 +23,9 @@ const inter = Inter({
 
 /* ─── Site Config ────────────────────────────────────────── */
 const siteUrl = "https://www.pixorasofttech.com";
-const siteTitle = "PIXORASOFTTECH — Premium Software, Web & Mobile Development";
+const siteTitle = "PixoraSoftTech | Web Design, App Development & Software Solutions";
 const siteDescription =
-  "PixoraSoftTech delivers premium web development, mobile app development, custom software solutions, UI/UX design, cybersecurity, and cloud services. Transform your vision into reality.";
+  "Transform your business with expert Web Design, App Development, and Software solutions. From coding to social media posting, we build your digital future. — PixoraSoftTech.";
 
 /* ─── Metadata ───────────────────────────────────────────── */
 export const metadata: Metadata = {
