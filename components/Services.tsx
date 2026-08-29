@@ -3,39 +3,46 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, Smartphone, Cpu, Palette, Cloud, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
+    slug: "website-development",
     icon: Code2,
     title: "Website Development",
     desc: "Fast, scalable, SEO-friendly websites built with modern frameworks and pixel-perfect precision.",
     tags: ["Responsive design", "Core Web Vitals", "CMS integration", "SEO ready"],
   },
   {
+    slug: "mobile-app-development",
     icon: Smartphone,
     title: "Mobile App Development",
     desc: "Native and cross-platform iOS & Android apps with smooth, delightful user experiences.",
     tags: ["iOS & Android", "React Native", "Offline-first", "App Store launch"],
   },
   {
+    slug: "custom-software-development",
     icon: Cpu,
     title: "Custom Software Development",
     desc: "Tailored business software, dashboards and internal tools engineered to fit your workflow.",
     tags: ["API integrations", "Admin dashboards", "Automation", "Cloud native"],
   },
   {
+    slug: "ui-ux-design",
     icon: Palette,
     title: "UI/UX Design",
     desc: "Research-driven interface design that turns visitors into loyal customers.",
     tags: ["User research", "Wireframes", "Prototyping", "Design systems"],
   },
   {
+    slug: "cloud-solutions",
     icon: Cloud,
     title: "Cloud Solutions",
     desc: "Secure, elastic cloud infrastructure on AWS, Azure and GCP with zero-downtime deploys.",
     tags: ["DevOps & CI/CD", "Auto-scaling", "Cost optimization", "Migration"],
   },
   {
+    slug: "cyber-security",
     icon: ShieldCheck,
     title: "Cyber Security",
     desc: "Proactive security audits, penetration testing and compliance for peace of mind.",
@@ -89,19 +96,19 @@ export default function Services() {
                 ))}
               </div>
 
-              <a href="#contact" className="inline-flex items-center gap-1.5 text-blue-600 text-sm font-semibold hover:gap-2.5 transition-all">
+              <Link href={`/services/${s.slug}`} className="inline-flex items-center gap-1.5 text-blue-600 text-sm font-semibold hover:gap-2.5 transition-all">
                 Learn More <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center mt-12">
-          <a href="#contact"
+          <Link href="/services"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 bg-white text-slate-700 font-semibold text-sm hover:border-blue-200 hover:text-blue-600 transition-all">
             View all 15 services <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
