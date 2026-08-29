@@ -189,7 +189,7 @@ export default function RootLayout({
       >
         {children}
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? ""} />
+      <GoogleAnalytics gaId="G-FM3VL59ZM1" />
     </html>
   );
 }
