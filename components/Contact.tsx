@@ -5,171 +5,131 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 
 export default function Contact() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle"|"loading"|"success"|"error">("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("loading");
-    
-    const formData = new FormData(e.currentTarget);
-    
+    const fd = new FormData(e.currentTarget);
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-      
-      const result = await response.json();
-      if (result.success) {
-        setStatus("success");
-        setTimeout(() => setStatus("idle"), 5000); // Reset after 5s
-      } else {
-        setStatus("error");
-      }
-    } catch (error) {
-      setStatus("error");
-    }
+      const r = await fetch("https://api.web3forms.com/submit", { method:"POST", body:fd });
+      const j = await r.json();
+      if (j.success) { setStatus("success"); setTimeout(() => setStatus("idle"), 5000); }
+      else setStatus("error");
+    } catch { setStatus("error"); }
   }
 
   return (
-    <section id="contact" className="py-32 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8">
-              Let&apos;s Build Something <span className="text-primary">Extraordinary</span>
-            </h2>
-            <p className="text-white/50 text-lg mb-12 leading-relaxed">
-              Have a project in mind? Reach out to us and let&apos;s discuss how we can help you achieve your digital goals.
+    <section id="contact" className="bg-slate-50 py-20">
+      <div className="max-w-7xl mx-auto px-5">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <motion.p initial={{ opacity:0,y:8 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-2">
+            Get In Touch
+          </motion.p>
+          <motion.h2 initial={{ opacity:0,y:14 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.05 }} className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-3">
+            Start Your <span className="text-blue-600">Project Today</span>
+          </motion.h2>
+          <motion.p initial={{ opacity:0,y:14 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.1 }} className="text-slate-500 text-base max-w-lg mx-auto">
+            Tell us about your project and we&apos;ll get back to you within 24 hours.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* Left info */}
+          <motion.div initial={{ opacity:0,x:-20 }} whileInView={{ opacity:1,x:0 }} viewport={{ once:true }} transition={{ duration:0.55,ease:"easeOut" }}>
+            <h3 className="text-slate-900 font-bold text-xl mb-2">Let&apos;s work together</h3>
+            <p className="text-slate-500 text-sm leading-relaxed mb-9">
+              Whether you have a fully-fleshed idea or just a spark of inspiration, we&apos;re here to help you build it.
             </p>
 
-            <div className="space-y-8">
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  <Mail className="w-6 h-6" />
+            <div className="space-y-5 mb-9">
+              {[
+                { icon:Mail,   label:"Email",    value:"pixorasofttech@gmail.com", color:"text-blue-600",   bg:"bg-blue-50"   },
+                { icon:Phone,  label:"Phone",    value:"+92 309 4307701",          color:"text-violet-600", bg:"bg-violet-50" },
+                { icon:MapPin, label:"Location", value:"Remote / Global",           color:"text-emerald-600",bg:"bg-emerald-50"},
+              ].map((item,i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <div className={`w-11 h-11 rounded-xl ${item.bg} flex items-center justify-center shrink-0`}>
+                    <item.icon className={`w-5 h-5 ${item.color}`} />
+                  </div>
+                  <div>
+                    <p className="text-slate-400 text-xs font-semibold uppercase tracking-wide">{item.label}</p>
+                    <p className="text-slate-800 text-sm font-medium mt-0.5">{item.value}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-white/40 text-sm uppercase tracking-widest font-bold">Email Us</p>
-                  <p className="text-xl font-medium">pixorasofttech@gmail.com</p>
-                </div>
-              </div>
+              ))}
+            </div>
 
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-white/40 text-sm uppercase tracking-widest font-bold">Call Us</p>
-                  <p className="text-xl font-medium">+92 3094307701</p>
-                </div>
+            {/* Mini testimonial */}
+            <div className="p-5 rounded-2xl bg-white border border-slate-200 card-shadow">
+              <div className="flex gap-1 mb-3">
+                {[...Array(5)].map((_,i) => (
+                  <svg key={i} className="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                ))}
               </div>
-
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-white/40 text-sm uppercase tracking-widest font-bold">Location</p>
-                  <p className="text-xl font-medium">Remote / Global</p>
-                </div>
-              </div>
+              <p className="text-slate-600 text-sm italic leading-relaxed">
+                &ldquo;Pixorasofttech turned our rough idea into a production app in record time. Highly recommend.&rdquo;
+              </p>
+              <p className="text-slate-400 text-xs mt-3">— James T., Founder</p>
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="glass-card p-10 rounded-[2.5rem] relative min-h-[500px] flex flex-col justify-center"
-          >
-            <AnimatePresence mode="wait">
-              {status === "success" ? (
-                <motion.div
-                  key="success"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  className="text-center py-20"
-                >
-                  <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="w-10 h-10" />
-                  </div>
-                  <h3 className="text-3xl font-bold mb-4">Message Sent!</h3>
-                  <p className="text-white/60">Thank you for reaching out. We will get back to you shortly.</p>
-                </motion.div>
-              ) : (
-                <motion.form 
-                  key="form"
-                  onSubmit={handleSubmit}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="space-y-6"
-                >
-                  <input type="hidden" name="access_key" value="c419eb68-9071-4baa-ba64-5482713e1c52" />
-                  <input type="hidden" name="from_name" value="PIXORASOFTTECH Contact Form" />
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white/70 ml-1">Name</label>
-                      <input 
-                        type="text" 
-                        name="name"
-                        required
-                        placeholder="John Doe"
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-primary outline-none transition-all"
-                      />
+          {/* Right form */}
+          <motion.div initial={{ opacity:0,x:20 }} whileInView={{ opacity:1,x:0 }} viewport={{ once:true }} transition={{ duration:0.55,ease:"easeOut" }}>
+            <div className="bg-white border border-slate-200 rounded-2xl p-7 card-shadow">
+              <AnimatePresence mode="wait">
+                {status === "success" ? (
+                  <motion.div key="ok" initial={{ opacity:0,scale:0.95 }} animate={{ opacity:1,scale:1 }} exit={{ opacity:0,scale:0.95 }} className="py-14 text-center">
+                    <div className="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="w-7 h-7 text-emerald-600" />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-white/70 ml-1">Email</label>
-                      <input 
-                        type="email" 
-                        name="email"
-                        required
-                        placeholder="john@example.com"
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-primary outline-none transition-all"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/70 ml-1">Subject</label>
-                    <input 
-                      type="text" 
-                      name="subject"
-                      placeholder="How can we help?"
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-primary outline-none transition-all"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/70 ml-1">Message</label>
-                    <textarea 
-                      name="message"
-                      required
-                      rows={4}
-                      placeholder="Tell us about your project..."
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:border-primary outline-none transition-all resize-none"
-                    />
-                  </div>
-                  <button 
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="w-full py-5 rounded-2xl bg-primary text-white font-bold text-lg flex items-center justify-center gap-3 hover:bg-primary/80 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {status === "loading" ? "Sending..." : "Send Message"}
-                    {status !== "loading" && <Send className="w-5 h-5" />}
-                  </button>
-                  {status === "error" && (
-                    <p className="text-red-500 text-sm text-center">Something went wrong. Please try again.</p>
-                  )}
-                </motion.form>
-              )}
-            </AnimatePresence>
+                    <h3 className="text-slate-900 font-bold text-lg mb-2">Message Sent!</h3>
+                    <p className="text-slate-500 text-sm">We&apos;ll be in touch within 24 hours.</p>
+                  </motion.div>
+                ) : (
+                  <motion.form key="form" onSubmit={handleSubmit} initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }} className="space-y-4">
+                    <input type="hidden" name="access_key" value="c419eb68-9071-4baa-ba64-5482713e1c52" />
+                    <input type="hidden" name="from_name"  value="PixoraSofttech Contact Form" />
 
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 blur-[60px] rounded-full -z-10 animate-pulse-slow" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-slate-600 text-xs font-semibold mb-1.5 uppercase tracking-wide">Full Name</label>
+                        <input type="text" name="name" required placeholder="John Doe"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm placeholder:text-slate-300 focus:outline-none focus:border-blue-400 focus:bg-white transition" />
+                      </div>
+                      <div>
+                        <label className="block text-slate-600 text-xs font-semibold mb-1.5 uppercase tracking-wide">Email</label>
+                        <input type="email" name="email" required placeholder="john@company.com"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm placeholder:text-slate-300 focus:outline-none focus:border-blue-400 focus:bg-white transition" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-slate-600 text-xs font-semibold mb-1.5 uppercase tracking-wide">Subject</label>
+                      <input type="text" name="subject" placeholder="What are you looking to build?"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm placeholder:text-slate-300 focus:outline-none focus:border-blue-400 focus:bg-white transition" />
+                    </div>
+
+                    <div>
+                      <label className="block text-slate-600 text-xs font-semibold mb-1.5 uppercase tracking-wide">Message</label>
+                      <textarea name="message" required rows={4} placeholder="Tell us about your project..."
+                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm placeholder:text-slate-300 focus:outline-none focus:border-blue-400 focus:bg-white transition resize-none" />
+                    </div>
+
+                    {status === "error" && (
+                      <p className="text-red-500 text-xs text-center">Something went wrong. Please try again.</p>
+                    )}
+
+                    <button type="submit" disabled={status==="loading"}
+                      className="w-full py-3.5 rounded-xl bg-blue-600 text-white font-semibold text-sm flex items-center justify-center gap-2 hover:bg-blue-700 transition shadow-md shadow-blue-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {status==="loading" ? "Sending..." : <><span>Send Message</span><Send className="w-4 h-4" /></>}
+                    </button>
+                  </motion.form>
+                )}
+              </AnimatePresence>
+            </div>
           </motion.div>
         </div>
       </div>

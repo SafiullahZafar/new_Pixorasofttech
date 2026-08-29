@@ -2,96 +2,106 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe, Smartphone, Shield, Layers, LayoutGrid, Terminal } from "lucide-react";
+import { ArrowRight, Code2, Smartphone, Cpu, Palette, Cloud, ShieldCheck } from "lucide-react";
 
 const services = [
   {
-    title: "Web Development",
-    desc: "Modern, scalable web applications built with the latest technologies and 3D aesthetics.",
-    icon: Globe,
-    color: "bg-blue-500/10 text-blue-500",
+    icon: Code2,
+    title: "Website Development",
+    desc: "Fast, scalable, SEO-friendly websites built with modern frameworks and pixel-perfect precision.",
+    tags: ["Responsive design", "Core Web Vitals", "CMS integration", "SEO ready"],
   },
   {
-    title: "Mobile App Dev",
-    desc: "Native and cross-platform mobile apps that offer seamless performance and premium UX.",
     icon: Smartphone,
-    color: "bg-purple-500/10 text-purple-500",
+    title: "Mobile App Development",
+    desc: "Native and cross-platform iOS & Android apps with smooth, delightful user experiences.",
+    tags: ["iOS & Android", "React Native", "Offline-first", "App Store launch"],
   },
   {
-    title: "Software Solutions",
-    desc: "Custom enterprise software tailored to solve your specific business challenges.",
-    icon: Terminal,
-    color: "bg-emerald-500/10 text-emerald-500",
+    icon: Cpu,
+    title: "Custom Software Development",
+    desc: "Tailored business software, dashboards and internal tools engineered to fit your workflow.",
+    tags: ["API integrations", "Admin dashboards", "Automation", "Cloud native"],
   },
   {
+    icon: Palette,
     title: "UI/UX Design",
-    desc: "Stunning Figma designs that bridge the gap between imagination and reality.",
-    icon: LayoutGrid,
-    color: "bg-pink-500/10 text-pink-500",
+    desc: "Research-driven interface design that turns visitors into loyal customers.",
+    tags: ["User research", "Wireframes", "Prototyping", "Design systems"],
   },
   {
+    icon: Cloud,
+    title: "Cloud Solutions",
+    desc: "Secure, elastic cloud infrastructure on AWS, Azure and GCP with zero-downtime deploys.",
+    tags: ["DevOps & CI/CD", "Auto-scaling", "Cost optimization", "Migration"],
+  },
+  {
+    icon: ShieldCheck,
     title: "Cyber Security",
-    desc: "Robust security measures to ensure your data and applications remain protected.",
-    icon: Shield,
-    color: "bg-red-500/10 text-red-500",
-  },
-  {
-    title: "Cloud Services",
-    desc: "Scalable cloud infrastructure to power your digital ecosystem with 99.9% uptime.",
-    icon: Layers,
-    color: "bg-cyan-500/10 text-cyan-500",
+    desc: "Proactive security audits, penetration testing and compliance for peace of mind.",
+    tags: ["Vulnerability scans", "Pen testing", "SOC 2 readiness", "Monitoring"],
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 relative">
+    <section id="services" className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl lg:text-5xl font-bold mb-6"
-          >
-            Our <span className="text-primary">Premium</span> Services
+        {/* Header */}
+        <div className="text-center mb-14">
+          <motion.div initial={{ opacity:0,y:8 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }}
+            className="inline-flex items-center px-4 py-1.5 rounded-full border border-slate-200 bg-white text-slate-500 text-xs font-semibold uppercase tracking-widest mb-5">
+            What We Do
+          </motion.div>
+          <motion.h2 initial={{ opacity:0,y:14 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.05 }}
+            className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
+            Services built to{" "}
+            <span className="text-blue-600">launch & scale</span>
           </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-white/50 text-lg max-w-2xl mx-auto"
-          >
-            We provide end-to-end digital solutions that help your business scale and stand out in the modern market.
+          <motion.p initial={{ opacity:0,y:14 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.1 }}
+            className="text-slate-500 text-base max-w-xl mx-auto leading-relaxed">
+            From custom software to conversion-driving creative, we cover the full spectrum of digital product work under one roof.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="glass-card tilt-card p-8 rounded-3xl group relative overflow-hidden"
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {services.map((s, i) => (
+            <motion.div key={i}
+              initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }}
+              transition={{ delay: i*0.07, duration:0.45, ease:"easeOut" }}
+              className="group bg-white border border-slate-200 rounded-2xl p-7 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-50 transition-all duration-300"
             >
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${service.color} group-hover:scale-110 transition-transform`}>
-                <service.icon className="w-7 h-7" />
+              {/* Icon */}
+              <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
+                <s.icon className="w-5 h-5 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-              <p className="text-white/50 leading-relaxed mb-6">
-                {service.desc}
-              </p>
-              <div className="flex items-center gap-2 text-sm font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                Learn More <span>→</span>
+
+              <h3 className="text-slate-900 font-bold text-[15px] mb-2.5">{s.title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed mb-4">{s.desc}</p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-1.5 mb-5">
+                {s.tags.map((t) => (
+                  <span key={t} className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-slate-500 text-[11px] font-medium">
+                    {t}
+                  </span>
+                ))}
               </div>
-              
-              {/* Hover Glow */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/10 blur-[50px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+
+              <a href="#contact" className="inline-flex items-center gap-1.5 text-blue-600 text-sm font-semibold hover:gap-2.5 transition-all">
+                Learn More <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </motion.div>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-12">
+          <a href="#contact"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 bg-white text-slate-700 font-semibold text-sm hover:border-blue-200 hover:text-blue-600 transition-all">
+            View all 15 services <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

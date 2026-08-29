@@ -2,12 +2,11 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
-/* ─── Fonts ──────────────────────────────────────────────── */
+// Fonts
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
-  // Only preload the weights actually used on first paint
   weight: ["400", "600", "700", "800"],
   preload: true,
 });
@@ -17,17 +16,16 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600"],
-  // Don't preload Inter — Outfit is the primary display font
   preload: false,
 });
 
-/* ─── Site Config ────────────────────────────────────────── */
+// Site config
 const siteUrl = "https://www.pixorasofttech.com";
 const siteTitle = "PixoraSoftTech | Web Design, App Development & Software Solutions";
 const siteDescription =
-  "Transform your business with expert Web Design, App Development, and Software solutions. From coding to social media posting, we build your digital future. — PixoraSoftTech.";
+  "Transform your business with expert Web Design, App Development, and Software solutions. We build your digital future — PixoraSoftTech.";
 
-/* ─── Metadata ───────────────────────────────────────────── */
+// Metadata
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -69,7 +67,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  /* ── Open Graph ── */
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -82,12 +79,11 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "PIXORASOFTTECH — Premium Software & Web Development",
+        alt: "PIXORASOFTTECH - Premium Software & Web Development",
         type: "image/png",
       },
     ],
   },
-  /* ── Twitter / X ── */
   twitter: {
     card: "summary_large_image",
     site: "@pixorasofttech",
@@ -96,38 +92,38 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: ["/og-image.png"],
   },
-  /* ── Canonical & alternates ── */
   alternates: {
     canonical: siteUrl,
     languages: {
       "en-US": siteUrl,
     },
   },
-  /* ── Icons (only reference files that exist in /public) ── */
   icons: {
-    icon: [{ url: "/favicon.ico", sizes: "any" }],
-    shortcut: "/favicon.ico",
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
-  /* ── Manifest (PWA) ── */
   manifest: "/manifest.webmanifest",
-  /* ── Verification ── */
   verification: {
     google: "jFIGguaSizlS7DWwWkXSHOAFtkeuXPzG_Jm4Ynh-i_k",
   },
 };
 
-/* ─── Viewport ───────────────────────────────────────────── */
+// Viewport
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#030014" },
-    { media: "(prefers-color-scheme: light)", color: "#030014" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)",  color: "#ffffff" },
   ],
 };
 
-/* ─── JSON-LD Structured Data ────────────────────────────── */
+// JSON-LD
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -138,7 +134,7 @@ const jsonLd = {
       url: siteUrl,
       logo: {
         "@type": "ImageObject",
-        url: `${siteUrl}/favicon.ico`,
+        url: `${siteUrl}/logo.png`,
       },
       description: siteDescription,
       email: "pixorasofttech@gmail.com",
@@ -154,16 +150,7 @@ const jsonLd = {
         "https://www.instagram.com/pixorasofttech",
       ],
       foundingDate: "2024",
-      numberOfEmployees: { "@type": "QuantitativeValue", value: "50" },
       areaServed: "Worldwide",
-      serviceType: [
-        "Web Development",
-        "Mobile App Development",
-        "Custom Software Solutions",
-        "UI/UX Design",
-        "Cybersecurity",
-        "Cloud Services",
-      ],
     },
     {
       "@type": "WebSite",
@@ -172,98 +159,31 @@ const jsonLd = {
       name: "PIXORASOFTTECH",
       description: siteDescription,
       publisher: { "@id": `${siteUrl}/#organization` },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: { "@type": "EntryPoint", urlTemplate: `${siteUrl}/?q={search_term_string}` },
-        "query-input": "required name=search_term_string",
-      },
       inLanguage: "en-US",
-    },
-    {
-      "@type": "WebPage",
-      "@id": `${siteUrl}/#webpage`,
-      url: siteUrl,
-      name: siteTitle,
-      isPartOf: { "@id": `${siteUrl}/#website` },
-      about: { "@id": `${siteUrl}/#organization` },
-      description: siteDescription,
-      breadcrumb: {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: siteUrl,
-          },
-        ],
-      },
-      inLanguage: "en-US",
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": `${siteUrl}/#service`,
-      name: "PixoraSoftTech Software Development",
-      serviceType: "Software Development",
-      provider: { "@id": `${siteUrl}/#organization` },
-      areaServed: "Worldwide",
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Software Services",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Web Development" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Mobile App Development" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Custom Software Solutions" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "UI/UX Design" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Cybersecurity" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: "Cloud Services" },
-          },
-        ],
-      },
     },
   ],
 };
 
-/* ─── Root Layout ────────────────────────────────────────── */
+// Root Layout
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* DNS Prefetch for external resources */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Preload key web3forms for contact form */}
         <link rel="dns-prefetch" href="//api.web3forms.com" />
       </head>
       <body
-        className={`${outfit.variable} ${inter.variable} font-sans bg-[#030014] text-white antialiased selection:bg-purple-500/30 overflow-x-hidden`}
+        className={`${outfit.variable} ${inter.variable} font-sans bg-white text-[#0f172a] antialiased overflow-x-hidden`}
         suppressHydrationWarning
       >
         {children}
