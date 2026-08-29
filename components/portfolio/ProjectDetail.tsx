@@ -7,19 +7,19 @@ import Link from "next/link";
 import type { Project } from "@/lib/projects";
 
 const catColors: Record<string, string> = {
-  Websites: "bg-[#39ff88]/15 text-[#087a3a]",
-  "Mobile Apps": "bg-[#111a15] text-[#39ff88]",
-  Software: "bg-[#d7fbe4] text-[#087a3a]",
+  Websites: "bg-blue-100 text-blue-700",
+  "Mobile Apps": "bg-violet-100 text-violet-700",
+  Software: "bg-sky-100 text-sky-700",
 };
 
 export default function ProjectDetail({ project: p }: { project: Project }) {
   return (
     <div className="bg-white pt-[68px]">
       {/* ── HERO INFO ── */}
-      <section className="bg-gradient-to-b from-[#e8fff1] to-white pt-12 pb-10">
+      <section className="bg-gradient-to-b from-blue-50 to-white pt-12 pb-10">
         <div className="max-w-5xl mx-auto px-6">
           <Link href="/portfolio"
-            className="inline-flex items-center gap-2 text-slate-500 text-sm hover:text-[#087a3a] transition-colors mb-8 group">
+            className="inline-flex items-center gap-2 text-slate-500 text-sm hover:text-blue-600 transition-colors mb-8 group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Portfolio
           </Link>
@@ -36,14 +36,14 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
                 </span>
               )}
               {p.status === "live" && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> Live
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" /> Live
                 </span>
               )}
             </div>
 
             <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-3 leading-tight">{p.title}</h1>
-            <p className="text-[#087a3a] font-semibold text-lg mb-4">{p.tagline}</p>
+            <p className="text-blue-600 font-semibold text-lg mb-4">{p.tagline}</p>
             <p className="text-slate-500 text-base leading-relaxed max-w-2xl mb-6">{p.desc}</p>
 
             {/* Tags */}
@@ -57,7 +57,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
             <div className="flex flex-wrap gap-3">
               {p.status === "live" && p.liveUrl ? (
                 <a href={p.liveUrl} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#087a3a] text-white font-semibold text-sm hover:bg-[#055d2b] transition shadow-md shadow-emerald-100">
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-100">
                   Visit Live Site <ArrowUpRight className="w-4 h-4" />
                 </a>
               ) : (
@@ -66,7 +66,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
                 </div>
               )}
               <Link href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:border-[#39ff88] hover:text-[#087a3a] transition">
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:border-blue-200 hover:text-blue-600 transition">
                 Start a Similar Project
               </Link>
             </div>
@@ -108,7 +108,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
             {p.status === "live" && p.liveUrl && (
               <a href={p.liveUrl} target="_blank" rel="noopener noreferrer"
                 className="absolute bottom-4 right-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 backdrop-blur-sm text-slate-800 text-xs font-bold shadow-lg hover:bg-white transition border border-slate-200">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                 View Live Site <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             )}
@@ -133,8 +133,8 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
             <motion.div
               initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="bg-white border border-slate-200 rounded-2xl p-8">
-              <div className="w-10 h-10 rounded-xl bg-[#e8fff1] flex items-center justify-center mb-5">
-                <CheckCircle className="w-5 h-5 text-[#087a3a]" />
+              <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
+                <CheckCircle className="w-5 h-5 text-blue-600" />
               </div>
               <h3 className="text-slate-900 font-bold text-lg mb-3">Our Solution</h3>
               <p className="text-slate-500 text-sm leading-relaxed">{p.solution}</p>
@@ -156,8 +156,8 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
               <motion.div key={i}
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="bg-[#effff5] border border-[#c9f7da] rounded-2xl p-6 text-center">
-                <CheckCircle className="w-6 h-6 text-[#087a3a] mx-auto mb-3" />
+                className="bg-blue-50 border border-blue-100 rounded-2xl p-6 text-center">
+                <CheckCircle className="w-6 h-6 text-blue-600 mx-auto mb-3" />
                 <p className="text-slate-800 text-sm font-semibold leading-snug">{r}</p>
               </motion.div>
             ))}
@@ -190,15 +190,15 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="relative overflow-hidden rounded-3xl bg-[#07110b] py-16 px-8 text-center"
-            style={{ backgroundImage: "radial-gradient(ellipse at 50% 0%, rgba(57,255,136,0.28) 0%, transparent 65%)" }}>
+            className="relative overflow-hidden rounded-3xl bg-[#0a0f1e] py-16 px-8 text-center"
+            style={{ backgroundImage: "radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.35) 0%, transparent 65%)" }}>
             <h2 className="text-3xl font-extrabold text-white mb-4">Want a similar project?</h2>
             <p className="text-slate-400 text-base max-w-md mx-auto mb-8">
               Let&apos;s talk about your idea and build something great together.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#39ff88] text-[#07110b] font-bold text-sm hover:bg-[#72ffad] transition">
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition">
                 Start a Project <ArrowUpRight className="w-4 h-4" />
               </Link>
               <Link href="/portfolio"
