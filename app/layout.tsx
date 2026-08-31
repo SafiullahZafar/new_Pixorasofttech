@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 // Site config
-const siteUrl = "https://www.pixorasofttech.com";
+const siteUrl = "https://pixorasofttech.com";
 const siteTitle = "PixoraSoftTech | Web Design, App Development & Software Solutions";
 const siteDescription =
   "Transform your business with expert Web Design, App Development, and Software solutions. We build your digital future — PixoraSoftTech.";

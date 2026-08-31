@@ -1,9 +1,11 @@
-import { MetadataRoute } from 'next'
- 
+import { MetadataRoute } from 'next';
+import { serviceDetails } from '@/lib/service-details';
+import { projects } from '@/lib/projects';
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.pixorasofttech.com'
-  
-  return [
+  const baseUrl = 'https://pixorasofttech.com';
+
+  const corePages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -11,22 +13,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/#services`,
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/#workflow`,
+      url: `${baseUrl}/portfolio`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/#contact`,
+      url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-  ]
+  ];
+
+  const servicePages: MetadataRoute.Sitemap = serviceDetails.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: `${baseUrl}/portfolio/${project.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...corePages, ...servicePages, ...projectPages];
 }

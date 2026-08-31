@@ -60,7 +60,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-3 text-slate-400 text-sm">
                 <MapPin className="w-4 h-4 text-blue-500 shrink-0" />
-                Remote / Global
+                Faisalabad, Punjab, Pakistan — Serving clients locally and worldwide
               </div>
             </div>
           </div>
