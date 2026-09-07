@@ -307,7 +307,7 @@ export const projects: Project[] = [
     ],
     img: "/portfolio/zostel.png",
     heroImg: "/portfolio/zostel.png",
-    liveUrl: "https://zostel-by-pixorasofttech.vercel.app/",
+    liveUrl: "https://zostell-by-pixorasofttech.vercel.app/",
     status: "live",
     challenge: "Zostel relied heavily on third-party OTAs with high commission fees. They needed a direct booking site that felt as social, vibrant, and welcoming as staying in one of their hostels.",
     solution: "We developed a fast React/Next.js travel platform with interactive destination discovery maps, room category pickers, local activity calendars, and instant SMS/WhatsApp booking confirmations.",
