@@ -74,6 +74,8 @@ export default function Footer() {
                 { label: "Services", href: "/services" },
                 { label: "Portfolio", href: "/portfolio" },
                 { label: "Contact Us", href: "/contact" },
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms & Conditions", href: "/terms-and-conditions" },
               ].map((l) => (
                 <li key={l.label}>
                   <Link href={l.href} className="text-slate-400 text-sm hover:text-white transition-colors">
@@ -131,7 +133,21 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-xs">© {new Date().getFullYear()} PixoraSoftTech. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <p className="text-slate-500 text-xs">© {new Date().getFullYear()} PixoraSoftTech. All rights reserved.</p>
+            <Link
+              href="/privacy-policy"
+              className="text-xs text-slate-400 hover:text-white px-3 py-1 rounded-md border border-white/8 bg-white/5 hover:border-blue-600/40 hover:bg-blue-600/10 transition-all"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms-and-conditions"
+              className="text-xs text-slate-400 hover:text-white px-3 py-1 rounded-md border border-white/8 bg-white/5 hover:border-blue-600/40 hover:bg-blue-600/10 transition-all"
+            >
+              Terms & Conditions
+            </Link>
+          </div>
 
           {/* Social icons */}
           <div className="flex gap-3">
