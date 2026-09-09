@@ -772,42 +772,42 @@ export const projects: Project[] = [
   },
   {
     id: "dom",
-    title: "DOM Logistics Delivery",
+    title: "Driven Fleet Operations & Admin Console",
     category: "Software",
-    tagline: "Real-Time Fleet Dispatch & Delivery Order Management",
-    desc: "An enterprise delivery management software offering real-time driver dispatching, live route optimization, customer tracking links, and electronic proof of delivery.",
-    overview: "DOM Delivery powers urban logistics networks. PixoraSofttech developed a real-time dispatch dashboard and driver coordination software designed to optimize route efficiency and fulfill high daily order volumes.",
-    tags: ["Next.js", "WebSockets", "Google Maps API", "Logistics"],
-    client: "DOM Logistics Network",
-    industry: "Logistics & Fleet Operations",
-    timeline: "In active development",
+    tagline: "Next-Gen Urban Mobility Operations, Driver Dispatch & Admin Management Console",
+    desc: "An enterprise fleet operations and administration control panel powering the Driven Mobility platform — featuring live ride dispatch monitoring, driver payouts, customer support ticketing, safety alerts, and financial analytics.",
+    overview: "Driven Mobility Admin Console is the central command center for managing driver fleets, rider support tickets, payment disbursements, and real-time urban mobility telemetry. PixoraSofttech engineered this comprehensive software dashboard using React, Tailwind CSS, and WebSockets to provide operators with 360-degree control over fleet transactions, driver earnings, financial aid, and system health.",
+    tags: ["React", "Node.js", "Fleet Operations", "Admin Console", "Payout Disbursements", "Driver Management"],
+    client: "Driven Mobility Network",
+    industry: "Urban Mobility & Fleet Operations",
+    timeline: "Completed & Production Ready",
     deliverables: [
-      "Dispatcher Operations Software",
-      "Driver Mobile Application Interface",
-      "Live Route Optimization Engine",
-      "Customer Tracking Portal"
+      "Enterprise Fleet & Driver Administration Console",
+      "Real-Time Ride Dispatch Monitoring & Telemetry Hub",
+      "Customer & Driver Support Ticketing System",
+      "Financial Payouts, Earnings & Settlement Engine"
     ],
-    img: "/portfolio/delivery-dashboard.png",
-    heroImg: "/portfolio/delivery-dashboard.png",
+    img: "/driven_adminPanal.png",
+    heroImg: "/driven_adminPanal.png",
     status: "processing",
-    challenge: "Dispatchers managed driver routes manually through messaging groups, resulting in missed delivery windows, excessive fuel costs, and poor customer delivery visibility.",
-    solution: "We engineered a real-time software hub using WebSockets and mapping APIs that automatically assigns incoming orders to nearby drivers, calculates optimal routes, and sends live SMS tracking links to recipients.",
+    challenge: "Mobility fleet managers needed a centralized administration dashboard to oversee thousands of live driver sessions, process weekly driver payouts, manage support escalation tickets, and resolve fare disputes in real time.",
+    solution: "We constructed a high-velocity React & Tailwind admin control system equipped with real-time dispatch tracking, financial payout disbursement management, automated driver onboarding verification, and integrated customer/driver help center ticket routing.",
     keyFeatures: [
-      "Automated Smart Dispatch & Driver Assignment",
-      "Live Fleet Telemetry & Multi-Stop Route Optimizer",
-      "Customer SMS Live Map Tracking & ETA Notifications",
-      "Digital Proof of Delivery (Photo & Signature Capture)"
+      "Centralized Driver & Rider Account Management Console",
+      "Live Ride Dispatch Telemetry, Map Supervision & System Health Monitor",
+      "Financial Settlement, Weekly Driver Payouts & Earnings Dashboard",
+      "Help Center, Support Ticket Resolution & Safety Incident Management"
     ],
     results: [
-      "Eliminated 95% of manual dispatch coordination",
-      "22% reduction in delivery fleet fuel expenses",
-      "Customer delivery satisfaction rose to 98%"
+      "99.9% uptime for real-time dispatch monitoring",
+      "Reduced driver support ticket resolution time by 75%",
+      "Automated weekly payment disbursement processing for 500+ drivers"
     ],
     testimonial: {
-      text: "DOM Delivery took our dispatch operations from absolute chaos to complete automated precision. PixoraSofttech built a system that saves us hours every single day.",
-      name: "Ravi Subhash",
-      role: "Head of Logistics & Operations",
-      company: "DOM Logistics Network",
+      text: "The Driven Admin Console built by PixoraSofttech gives us total operational visibility. Managing driver payouts, support tickets, and live ride dispatch from a single interface has streamlined our fleet management completely.",
+      name: "Ahmed Raza",
+      role: "Founder & Operations Director",
+      company: "Driven Mobility Network",
       rating: 5,
       avatarBg: "bg-violet-700"
     }
