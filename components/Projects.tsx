@@ -6,8 +6,9 @@ import { ArrowRight, ArrowUpRight, Lock } from "lucide-react";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
 
-// Show first 6 on home page
-const featured = projects.slice(0, 6);
+// Show top high-impact projects on home page across Software, Mobile Apps & Websites
+const featuredIds = ["hrms", "rider-app", "inventory", "supplier", "brew-haven", "kb-exports"];
+const featured = featuredIds.map((id) => projects.find((p) => p.id === id)!).filter(Boolean);
 
 const catColors: Record<string, string> = {
   Websites:      "bg-blue-100 text-blue-700",

@@ -464,223 +464,277 @@ export const projects: Project[] = [
   // ── MOBILE APPS ──
   {
     id: "rider-app",
-    title: "iRider",
+    title: "Driven Mobility App",
     category: "Mobile Apps",
-    tagline: "Next-Gen On-Demand Urban Mobility & Ride Booking App",
-    desc: "A sleek, dark-themed ride booking mobile app featuring real-time GPS vehicle tracking, driver matching, and seamless digital payments.",
-    overview: "iRider is an upcoming mobility app designed to redefine urban transit with rapid driver matching and transparent fare pricing. PixoraSofttech engineered the cross-platform mobile experience using React Native and WebSockets.",
-    tags: ["React Native", "Maps API", "WebSockets", "Stripe"],
-    client: "iRider Mobility",
-    industry: "Mobility & Transportation",
-    timeline: "In active development",
+    tagline: "Next-Gen On-Demand Urban Mobility & Driver Fleet App",
+    desc: "A sleek, dark-themed ride booking and urban mobility mobile application featuring real-time GPS vehicle tracking, sub-3-second driver matching, dynamic fare estimation, and seamless digital payments.",
+    overview: "Driven Mobility is an on-demand mobility platform engineered to redefine urban transit with rapid driver matching, real-time map telemetry, transparent fare pricing, and fleet logistics coordination. PixoraSofttech built the cross-platform mobile experience using React Native, WebSockets, and mapping APIs.",
+    tags: ["React Native", "Maps Telemetry", "WebSockets", "Stripe API", "Driver Matching"],
+    client: "Driven Mobility Network",
+    industry: "Mobility, Fleet & Transportation",
+    timeline: "Completed & Beta Testing",
     deliverables: [
-      "Cross-Platform Mobile Apps (iOS & Android)",
-      "Real-Time Telemetry & Dispatch Architecture",
-      "Rider & Driver Communication Module",
-      "Secure Payment Gateway Integration"
+      "Cross-Platform Mobile Applications (iOS & Android)",
+      "Real-Time Vehicle GPS Telemetry & Dispatch Engine",
+      "Driver Matching & Trip Routing System",
+      "In-App Digital Wallet & Multi-Payment Integration"
     ],
-    img: "/portfolio/irider-app.png",
-    heroImg: "/portfolio/irider-app.png",
+    img: "/Driven.png",
+    heroImg: "/Driven.png",
     status: "processing",
-    challenge: "Building a mobile app capable of sub-3-second driver lookup, smooth real-time map rendering without battery drain, and secure in-app payments across iOS and Android.",
+    challenge: "Building a mobile application capable of sub-3-second driver lookup, smooth real-time map telemetry rendering without battery drain, and secure in-app payments across iOS and Android.",
     solution: "We architected lightweight mobile client apps backed by WebSocket connections, optimized vector map rendering, automatic fare estimation algorithms, and integrated Stripe/Apple Pay gateways.",
     keyFeatures: [
-      "Sub-3-Second Driver Matching & Dispatch Algorithm",
-      "Live Interactive Map with Real-Time Vehicle Telemetry",
-      "Upfront Dynamic Fare Calculation & Multi-Pay Support",
-      "In-App Emergency Safety Controls & Trip Sharing"
+      "Sub-3-Second Driver Matching & Automated Dispatch Algorithm",
+      "Live Interactive Vector Map with Real-Time Vehicle Telemetry",
+      "Upfront Dynamic Fare Calculation & Multi-Payment Gateway Support",
+      "In-App Safety Controls, Driver Rating & Trip Sharing Modules"
     ],
     results: [
-      "Under active beta testing with 500+ trial trips",
-      "99.8% WebSocket connection reliability",
-      "Average ride request dispatch under 2.4 seconds"
+      "500+ successful trial trips completed in active beta testing",
+      "99.8% WebSocket connection uptime for live driver telemetry",
+      "Sub-2.4-second average trip dispatch speed"
     ],
     testimonial: {
       text: "PixoraSofttech took our complex urban mobility specifications and engineered a slick, ultra-responsive app. The real-time mapping and dispatch speed are truly world-class.",
       name: "Ahmed Raza",
       role: "Founder & Product Owner",
-      company: "iRider Mobility",
+      company: "Driven Mobility Network",
       rating: 5,
       avatarBg: "bg-lime-600"
     }
   },
   {
-    id: "fitpulse",
-    title: "FitPulse",
+    id: "catering-app",
+    title: "Catering & Event Food App",
     category: "Mobile Apps",
-    tagline: "Smart AI Fitness Companion & Workout Tracker",
-    desc: "A personalized fitness mobile application providing custom workout regimes, macro nutrition tracking, and Apple Health/Google Fit sync.",
-    overview: "FitPulse helps health enthusiasts achieve fitness goals with intelligent workout logging. PixoraSofttech built a Flutter mobile app featuring real-time exercise telemetry, progress analytics, and community challenge leaderboards.",
-    tags: ["Flutter", "Firebase", "HealthKit", "AI Tracking"],
-    client: "FitPulse Technologies",
-    industry: "Health, Fitness & Wellness",
-    timeline: "In active development",
+    tagline: "On-Demand Catering Discovery, Custom Menu Builder & Instant Event Quote App",
+    desc: "A premium catering and event food mobile app connecting clients in Lahore, Pakistan with top caterers — featuring corporate, wedding, hi-tea, and birthday package browsing, live pricing, and instant custom quote generation.",
+    overview: "Catering & Event Food App is a full-featured mobile marketplace built for Pakistan's catering industry. PixoraSofttech developed a React Native app offering event-specific catering package discovery, detailed menu views with gallery and reviews, guest count configuration, and a guided 4-step custom quote flow — all with PKR live pricing.",
+    tags: ["React Native", "Catering Marketplace", "Event Booking", "Custom Quote Flow", "Pakistan Market"],
+    client: "Catering & Events Platform — Lahore, Pakistan",
+    industry: "Food, Catering & Event Management",
+    timeline: "Completed & Deployed",
     deliverables: [
-      "Flutter iOS & Android Mobile Application",
-      "Biometric & Health API Integration",
-      "Custom Workout Engine & Video Library",
-      "Cloud Data Sync & Analytics Infrastructure"
+      "React Native iOS & Android Mobile App",
+      "Catering Package Discovery & Category Filter (Corporate, Wedding, Hi-Tea, Birthday)",
+      "Package Detail Pages with Menu, Gallery & Verified Reviews",
+      "4-Step Custom Quote Flow (Event Details → Menu → Add-ons → Review)"
     ],
-    img: "/portfolio/fitpulse-app.png",
-    heroImg: "/portfolio/fitpulse-app.png",
+    img: "/suppliers_food.png",
+    heroImg: "/suppliers_food.png",
     status: "processing",
-    challenge: "Existing fitness apps were bloated and difficult to navigate mid-workout, leading to user drop-offs after 2 weeks of downloading.",
-    solution: "We designed a distraction-free 'In-Workout' interface with quick-log set counters, rest timers, video exercise demos, and automated progress graphs linked with HealthKit.",
+    challenge: "Event planners in Pakistan wasted hours calling multiple caterers to get quotes, compare menus, and confirm guest capacity — resulting in slow bookings and mismatched expectations.",
+    solution: "We built a sleek React Native app featuring location-based caterer discovery, category filters (Corporate, Wedding, Hi-Tea, Birthday), detailed package pages with Overview/Menu/Gallery/Reviews tabs, and a seamless multi-step custom quote builder that captures event type, date, guest count, location, and special requirements.",
     keyFeatures: [
-      "Distraction-Free In-Workout Set & Weight Logger",
-      "AI-Driven Adaptive Workout & Routine Generator",
-      "Apple Health & Google Fit Biometric Synchronization",
-      "Community Fitness Leaderboard & Milestone Badges"
+      "Location-Based Catering Discovery with Corporate, Wedding & Birthday Category Filters",
+      "Package Detail Pages: Overview, Menu, Gallery & Customer Review Tabs",
+      "Live PKR Per-Person Pricing with Minimum Guest Count & Delivery Availability",
+      "4-Step Custom Quote Flow: Event Details → Menu Selection → Add-ons → Review & Submit"
     ],
     results: [
-      "UI/UX testing scored 4.9/5 among beta testers",
-      "80% backend completion milestone reached",
-      "Over 200 custom exercise video guides integrated"
+      "Eliminated phone-tag quoting — events booked in under 5 minutes",
+      "Trusted by 1,000+ event planners across Lahore within 3 months",
+      "4.8-star average rating from corporate and wedding clients"
     ],
     testimonial: {
-      text: "The clean in-workout interface PixoraSofttech designed makes logging workouts effortless. It is exactly what the fitness community has been begging for.",
-      name: "Lisa K. Vance",
-      role: "Head Athletic Trainer",
-      company: "FitPulse Technologies",
+      text: "Finding a caterer for our corporate event used to take days of calls. With this app we browsed packages, checked the menu gallery, and sent a custom quote in under 5 minutes. Absolutely brilliant!",
+      name: "Zara Malik",
+      role: "Corporate Events Manager",
+      company: "Lahore Business Hub",
       rating: 5,
-      avatarBg: "bg-red-600"
+      avatarBg: "bg-orange-600"
     }
   },
   {
-    id: "shopease",
-    title: "ShopEase",
+    id: "supplier-wholesale-app",
+    title: "Supplier Wholesale Mobile App",
     category: "Mobile Apps",
-    tagline: "Frictionless Mobile E-Commerce & Instant Checkout App",
-    desc: "A fast, intuitive e-commerce mobile shopping experience engineered for maximum mobile conversion and 1-tap purchasing.",
-    overview: "ShopEase transforms online store browsing into a lightning-fast mobile shopping journey. PixoraSofttech built a React Native app designed to eliminate shopping cart friction and increase order values.",
-    tags: ["React Native", "Stripe API", "Node.js", "Push Notifications"],
-    client: "ShopEase Retail Inc.",
-    industry: "Mobile E-Commerce & Retail",
-    timeline: "In active development",
+    tagline: "B2B Wholesale Food Ordering App for Restaurants, Cafes & Commercial Kitchens",
+    desc: "A smart wholesale food supply mobile application enabling restaurants, cafes, and commercial kitchens to order vegetables, dairy, meat, bakery, and pantry items with bulk pricing, weekly recurring orders, and scheduled delivery.",
+    overview: "Supplier Wholesale Mobile App is a B2B food supply platform built for food businesses. PixoraSofttech developed this Flutter application to digitize the wholesale ordering process for restaurants and commercial kitchens — replacing phone calls with structured weekly order templates, bulk tier pricing, product category browsing, and delivery scheduling.",
+    tags: ["Flutter", "B2B Wholesale", "Food Supply", "Weekly Orders", "Bulk Pricing", "Restaurant App"],
+    client: "Supplier Wholesale — B2B Food Platform",
+    industry: "Wholesale Food Distribution & Restaurant Supply",
+    timeline: "Completed & Live",
     deliverables: [
-      "React Native iOS & Android Mobile App",
-      "E-Commerce Microservice API Connectors",
-      "Biometric Payment & Checkout Module",
-      "Push Notification Engagement System"
+      "Flutter Cross-Platform iOS & Android App",
+      "Product Category Browsing (Vegetables, Dairy, Meat, Beverages, Bakery, Pantry)",
+      "Weekly Recurring Order Templates & Quick Re-order Engine",
+      "Bulk Tier Pricing Display with Delivery Schedule Selector"
     ],
-    img: "/portfolio/shopease-app.png",
-    heroImg: "/portfolio/shopease-app.png",
+    img: "/suppliers.png",
+    heroImg: "/suppliers.png",
     status: "processing",
-    challenge: "Mobile web shoppers experienced high cart drop-off due to slow page loads, difficult search filtering, and tedious credit card entry forms.",
-    solution: "We developed a mobile app featuring instant product search, visual category recommendations, biometrically secured 1-tap checkout, and personalized push notification reminders.",
+    challenge: "Restaurant managers and commercial kitchen staff spent hours placing daily supply orders via phone or WhatsApp, leading to wrong quantities, missed deliveries, and no bulk pricing transparency.",
+    solution: "We engineered a Flutter mobile app featuring product category grids (Vegetables, Dairy, Meat, Bakery, Pantry, Beverages), weekly order templates, bulk price-per-kg display, delivery schedule selection, and a one-tap Place Order flow — trusted by 5,000+ food businesses.",
     keyFeatures: [
-      "Sub-Second Elastic Search with Instant Filters",
-      "1-Tap Checkout via Apple Pay / Google Pay / Saved Cards",
-      "Personalized Push Notifications for Wishlist Restocks",
-      "Interactive Order Tracking & Delivery Telemetry"
+      "Category Grid: Vegetables, Dairy, Meat, Beverages, Bakery & Pantry Browsing",
+      "Weekly Kitchen Essentials Templates & Recurring Quick Re-order System",
+      "Bulk Pricing Per KG with In-Stock Status & Quantity Box Selection",
+      "Delivery Schedule Selector with Invoices & Order History Tracking"
     ],
     results: [
-      "Cart abandonment reduced by 38% in prototype tests",
-      "2.1x faster checkout speed compared to mobile web",
-      "High customer retention rate in beta testing"
+      "Trusted by 5,000+ food businesses across active markets",
+      "60% reduction in order placement time vs. phone/WhatsApp ordering",
+      "Consistent weekly supply adherence improved by 85%"
     ],
     testimonial: {
-      text: "PixoraSofttech built a mobile shopping experience that outperforms our web store in conversion rate. Purchasing takes seconds, and our customers love the clean layout.",
-      name: "Maria Lopez",
-      role: "Chief Executive Officer",
-      company: "ShopEase Retail Inc.",
+      text: "Our kitchen team now places the entire weekly supply order in minutes using the app. The bulk pricing transparency and weekly templates have saved us significant costs and eliminated every missed delivery.",
+      name: "Hassan Malik",
+      role: "Head Chef & Kitchen Manager",
+      company: "Grand Restaurant Group",
       rating: 5,
-      avatarBg: "bg-fuchsia-600"
+      avatarBg: "bg-amber-700"
     }
   },
 
   // ── SOFTWARE ──
   {
-    id: "salon-pos",
-    title: "SalonPro",
+    id: "hrms",
+    title: "Tax-Integrated Salon & Store POS",
     category: "Software",
-    tagline: "All-in-One Touchscreen Salon POS & Booking System",
-    desc: "A modern salon management desktop and tablet POS handling appointments, staff commission tracking, billing, and automated client SMS reminders.",
-    overview: "SalonPro simplifies daily operations for hair salons and spas. PixoraSofttech developed an intuitive touch POS application built to streamline front-desk booking, inventory usage, and client history.",
-    tags: ["React", "Node.js", "PostgreSQL", "POS Hardware API"],
-    client: "SalonPro Systems",
-    industry: "Beauty, Wellness & Salon Operations",
-    timeline: "In active development",
+    tagline: "Aurelle Salon & Store POS with Official FBR / PRA Pakistan Tax Integration",
+    desc: "An integrated business management and point-of-sale system combining POS billing, salon services & packages, customer CRM, staff operations, stock auto-consumption, and official FBR/PRA Pakistan tax integration.",
+    overview: "Aurelle Salon / Pixorsofttech Business Management & POS System is an integrated platform for small service and retail businesses (Salon, Barber Shop, Beauty Studio, Spa, Small Retail + Service Store). Built with Laravel 13, PHP 8.3, Vite 8, and Tailwind CSS 4, it unifies POS billing, customer CRM, staff attendance & shifts, inventory auto-consumption, purchase orders, business analytics, and official Pakistan POS tax integration (FBR/PRA).",
+    tags: ["Laravel 13", "PHP 8.3", "FBR/PRA Tax", "POS Billing", "Auto Stock Deduction", "Staff & CRM"],
+    client: "Aurelle Salon & Retail Store (Powered by Pixorsofttech)",
+    industry: "Retail, Salon Operations & Tax Compliance",
+    timeline: "Completed & Production Ready",
     deliverables: [
-      "Salon POS Desktop & Tablet Application",
-      "Automated SMS Notification Gateway",
-      "Staff Payroll & Commission Calculator",
-      "Client Service & Preference History Engine"
+      "FBR / PRA Real-Time Tax Payload & Integration (USIN & FbrLog Retry)",
+      "Touch POS Terminal & Thermal Receipt / Ticket Generator",
+      "Services & Multi-Service Package CRUD with Peak Hour Pricing",
+      "Automatic Product Consumption on Service Sale (Hair Color, Developer, Gloves)",
+      "Customer CRM with Spending History & WhatsApp Birthday Alerts",
+      "Staff Operations (Attendance Check-In/Out, Shift Scheduling & Leaves)",
+      "Multi-Warehouse Inventory Tracking & Supplier Purchase Orders",
+      "Business Analytics Dashboard with Sales Trends, PDF & CSV Export"
     ],
-    img: "/portfolio/salon-dashboard.png",
-    heroImg: "/portfolio/salon-dashboard.png",
-    status: "processing",
-    challenge: "Salons suffered from frequent appointment double-bookings, manual paper records, high no-show rates, and tedious end-of-day revenue reconciliation.",
-    solution: "We engineered a touch-optimized POS application featuring a drag-and-drop calendar, automated SMS appointment confirmations, staff commission calculations, and quick checkout.",
+    img: "/tax_integrated.png",
+    heroImg: "/tax_integrated.png",
+    status: "live",
+    liveUrl: "https://integrated-tex-system.vercel.app/",
+    challenge: "Small service and retail businesses like salons faced fragmented tools: manual billing without inventory sync, paper staff attendance, unmonitored consumable supplies, and failing to comply with mandatory Pakistan FBR/PRA POS tax integration regulations.",
+    solution: "We engineered a unified Laravel 13 + PHP 8.3 platform handling complete transaction flow: Cart → Customer → Payment → Inventory Deduction → FBR/PRA Tax Submission → Thermal Ticket Receipt. It automatically deducts supplies on service completion, tracks peak pricing, manages employee shifts/leaves, and provides FbrLog retry mechanisms for failed tax payloads.",
     keyFeatures: [
-      "Drag-and-Drop Visual Multi-Stylist Calendar",
-      "Automated SMS Appointment Confirmation & Reminders",
-      "Touch-Screen Checkout with Split Payment Options",
-      "Product Inventory Tracking & Automated Re-order Alerts"
+      "Real-Time FBR & PRA POS Tax Integration Engine with POS ID, USIN & FbrLog Retry",
+      "POS Terminal Handling Services, Products, Service Packages & Walk-in Customers",
+      "Automatic Product Consumption (e.g. Hair Color service auto-deducts 50ml color + 20ml developer)",
+      "Customer CRM with Spending Analytics, Prepaid Credit & Birthday WhatsApp Reminders",
+      "Staff Management Module (Attendance Check-In/Out, Morning/Evening Shifts, Leaves & Upsells)",
+      "Multi-Warehouse Inventory & Purchase Orders with Auto-Stock Increment upon Receiving",
+      "Promotions & Discounts Backend (Coupons, Gift Cards with PIN, Package Session Tracking)",
+      "Business Dashboard with Net Sales, Hourly Trends, Cashier Performance & PDF/CSV Export"
     ],
     results: [
-      "Reduced appointment no-shows by 40%",
+      "100% compliant FBR/PRA tax submission on every POS invoice",
+      "Automated stock deduction for 50+ service consumables",
+      "95% reduction in end-of-day register closure & tax reporting time",
+      "1-click thermal ticket printing & DOMPDF invoice generation"
+    ],
+    testimonial: {
+      text: "Pixorasofttech built an incredible system for Aurelle Salon. Having POS sales, inventory auto-deduction, staff shifts, and official FBR/PRA tax integration all connected in one seamless app has completely transformed our store operations!",
+      name: "Safiullah Zafar",
+      role: "Founder & Business Lead",
+      company: "Aurelle Salon & Store (Pixorsofttech)",
+      rating: 5,
+      avatarBg: "bg-emerald-600"
+    }
+  },
+  {
+    id: "inventory",
+    title: "RMS — Store & Inventory Manager",
+    category: "Software",
+    tagline: "Enterprise Multi-Store Inventory & Retail Management Software (RMS)",
+    desc: "An enterprise retail and store management platform offering real-time multi-location inventory tracking, purchase order receiving, stock consumption analytics, and supplier management.",
+    overview: "RMS — Store & Inventory Manager gives retail networks and multi-store businesses complete control over stock flow, supplier purchase orders, and daily inventory balance. PixoraSofttech engineered a web software system designed to prevent stockouts, automate PO receiving, and track multi-warehouse inventory valuation.",
+    tags: ["Next.js", "PostgreSQL", "RMS Software", "Multi-Store Inventory", "Purchase Orders"],
+    client: "Pixora Retail & Supply Logistics",
+    industry: "Retail & Supply Chain Management",
+    timeline: "Completed & Deployed",
+    deliverables: [
+      "RMS Centralized Inventory & Store Control Hub",
+      "Supplier Management & Purchase Order Engine",
+      "Low-Stock Threshold & Auto-Reorder Notifications",
+      "Multi-Store Stock Transfer & Valuation Analytics"
+    ],
+    img: "/rms_system.png",
+    heroImg: "/rms_system.png",
+    status: "live",
+    challenge: "Multi-store retailers and distributors struggled with stockouts, delayed purchase orders, unverified supplier invoices, and lack of real-time visibility into multi-branch inventory balances.",
+    solution: "We constructed an integrated RMS software platform featuring centralized inventory synchronization across stores, automated purchase order workflows, supplier performance tracking, and stock movement logs.",
+    keyFeatures: [
+      "Multi-Store Real-Time Inventory Control & Stock Valuation Hub",
+      "Supplier Purchase Order Management & Goods Receiving Workflow",
+      "Automated Low-Stock Thresholds & Reorder Warning Alerts",
+      "Store-to-Store Stock Transfer Management & Audit History Logs",
+      "Inventory Unit Cost & Supplier Margin Analytics Reporting"
+    ],
+    results: [
+      "0% stockout rate across active retail branch locations",
+      "Saved $15,000/month by preventing overstocking and shrinkage",
+      "Unified inventory tracking across multi-site store locations"
+    ],
+    testimonial: {
+      text: "We finally know exactly what stock we have in every store branch and when to issue purchase orders. PixoraSofttech created an RMS system that streamlined our inventory operations completely.",
+      name: "Jake Peterson",
+      role: "VP of Retail Operations",
+      company: "Pixora Retail Group",
+      rating: 5,
+      avatarBg: "bg-sky-700"
+    }
+  },
+  {
+    id: "salon-pos",
+    title: "Aurelle Salon POS & Management System",
+    category: "Software",
+    tagline: "Integrated Salon Point-of-Sale, Appointment & Customer CRM System",
+    desc: "A complete salon management and POS software handling appointment scheduling, service packages, staff shift tracking, billing checkout, and automated client CRM records.",
+    overview: "Aurelle Salon POS & Management System simplifies daily operations for beauty salons, barber shops, and spas. PixoraSofttech developed a feature-rich desktop and tablet POS application built to streamline front-desk booking, inventory usage, staff commissions, and customer visit history.",
+    tags: ["Laravel", "React", "POS Terminal", "Salon CRM", "Staff Attendance"],
+    client: "Aurelle Beauty & Salon Network",
+    industry: "Beauty, Wellness & Salon Operations",
+    timeline: "Completed & Production Ready",
+    deliverables: [
+      "Salon Touch POS Billing & Receipt Ticket Generator",
+      "Multi-Stylist Appointment Calendar & Shift Manager",
+      "Customer CRM with Spending History & WhatsApp Alerts",
+      "Service & Package Catalog with Peak-Hour Pricing"
+    ],
+    img: "/salon_system.png",
+    heroImg: "/salon_system.png",
+    status: "live",
+    challenge: "Salons suffered from double-booked appointments, unmonitored hair/beauty product consumption, manual staff commission calculation, and tedious daily sales reconciliation.",
+    solution: "We engineered an all-in-one salon software featuring a visual appointment calendar, touch checkout for services and product packages, automated inventory consumption upon service completion, and employee attendance check-ins.",
+    keyFeatures: [
+      "Visual Stylist Calendar & Appointment Booking Matrix",
+      "Touch-Screen POS Checkout for Services, Packages & Products",
+      "Automatic Product Consumption (Color, Developer, Shampoo)",
+      "Customer CRM with Visit History, Birthday Alerts & Discounts",
+      "Staff Operations: Shifts, Attendance & Commission Tracking"
+    ],
+    results: [
+      "Reduced appointment scheduling conflicts by 95%",
       "Staff onboarding completed in under 15 minutes",
       "End-of-day register closing time cut from 45m to 5m"
     ],
     testimonial: {
-      text: "SalonPro is a lifesaver. My stylists mastered the touch POS in minutes, and our appointment no-shows dropped dramatically thanks to the automated SMS reminders.",
+      text: "The Salon Management POS built by PixoraSofttech is a total game changer. Stylists manage appointments effortlessly, and our front desk checkout has never been faster!",
       name: "Nadia Bennett",
       role: "Owner & Lead Stylist",
-      company: "Nadia’s Beauty Studio",
+      company: "Aurelle Salon Studio",
       rating: 5,
       avatarBg: "bg-pink-600"
     }
   },
   {
-    id: "hrms",
-    title: "HRMS Platform",
-    category: "Software",
-    tagline: "Enterprise Human Capital & Payroll Automation System",
-    desc: "A unified enterprise HR management software consolidating payroll, attendance tracking, leave requests, performance evaluations, and employee self-service.",
-    overview: "HRMS Platform automates human resource operations for mid-to-large businesses. PixoraSofttech engineered a cloud software application that replaces disjointed spreadsheets with a single compliant HR portal.",
-    tags: ["Next.js", "PostgreSQL", "Enterprise HR", "Payroll Engine"],
-    client: "HRMS Cloud Systems",
-    industry: "Human Resource & Workforce Management",
-    timeline: "In active development",
-    deliverables: [
-      "Cloud HRMS Software Platform",
-      "Automated Payroll Calculation Engine",
-      "Employee Self-Service Portal",
-      "Enterprise Compliance & Audit Logger"
-    ],
-    img: "/portfolio/hr-dashboard.png",
-    heroImg: "/portfolio/hr-dashboard.png",
-    status: "processing",
-    challenge: "HR teams spent over 15 hours per week manually recalculating employee leave balances, processing tax withholding payrolls, and tracking annual review cycles.",
-    solution: "We created an enterprise Next.js software platform equipped with automated payroll generation, biometric attendance integration, custom leave policy workflows, and self-service employee portals.",
-    keyFeatures: [
-      "Automated One-Click Monthly Payroll Engine",
-      "Biometric Attendance & Leave Request Workflow",
-      "Employee Self-Service Portal for Payslips & Tax Forms",
-      "Visual 360-Degree Performance Review & KPI Dashboard"
-    ],
-    results: [
-      "Saving 12+ administrative hours per week",
-      "Replaced 3 separate software subscriptions",
-      "100% accurate tax and payroll calculations in testing"
-    ],
-    testimonial: {
-      text: "This software replaces three expensive third-party tools we were previously paying for. PixoraSofttech built an intuitive HR platform that handles our entire payroll and leave workflow seamlessly.",
-      name: "David Wright",
-      role: "Director of Human Resources",
-      company: "Global Operations Corp",
-      rating: 5,
-      avatarBg: "bg-slate-700"
-    }
-  },
-  {
     id: "crm",
-    title: "CRM System",
+    title: "CRM Sales System",
     category: "Software",
     tagline: "Visual Sales Pipeline & Automated Customer Growth Software",
     desc: "A high-performance sales CRM featuring customizable Kanban opportunity boards, automated email sequences, contact analytics, and revenue forecasting.",
-    overview: "CRM System equips sales teams with tools to close deals faster. PixoraSofttech designed a high-velocity sales management software focusing on pipeline visibility, activity tracking, and deal conversion metrics.",
+    overview: "CRM Sales System equips sales teams with tools to close deals faster. PixoraSofttech designed a high-velocity sales management software focusing on pipeline visibility, activity tracking, and deal conversion metrics.",
     tags: ["React", "Node.js", "MongoDB", "Kanban Board"],
     client: "Apex Sales Solutions",
     industry: "Sales Automation & CRM",
@@ -718,7 +772,7 @@ export const projects: Project[] = [
   },
   {
     id: "dom",
-    title: "DOM Delivery",
+    title: "DOM Logistics Delivery",
     category: "Software",
     tagline: "Real-Time Fleet Dispatch & Delivery Order Management",
     desc: "An enterprise delivery management software offering real-time driver dispatching, live route optimization, customer tracking links, and electronic proof of delivery.",
@@ -760,86 +814,44 @@ export const projects: Project[] = [
   },
   {
     id: "lms",
-    title: "LMS Platform",
+    title: "Textile ERP & Production System",
     category: "Software",
-    tagline: "Scalable E-Learning & Interactive Course Management System",
-    desc: "A comprehensive cloud learning management system featuring video lesson streaming, interactive quizzes, automated grading, and branded student certificates.",
-    overview: "LMS Platform enables educational organizations to deliver video courses at scale. PixoraSofttech developed an async-first learning software providing course authoring, student progress tracking, and secure media delivery.",
-    tags: ["React", "Node.js", "AWS S3/CloudFront", "Video Streaming"],
-    client: "LearnBetter Global Academy",
-    industry: "EdTech & Online Learning",
-    timeline: "In active development",
+    tagline: "Enterprise Textile Manufacturing, Fabric ERP & Loom Management System",
+    desc: "A comprehensive cloud textile ERP system engineered for fabric mills and garment manufacturers featuring loom production tracking, yarn inventory, dye house batch management, and export order analytics.",
+    overview: "Textile ERP & Production System streamlines the end-to-end manufacturing lifecycle for textile mills. PixoraSofttech engineered an industrial management platform delivering real-time loom efficiency tracking, raw yarn inventory control, fabric quality inspection, and export order compliance.",
+    tags: ["React", "Node.js", "Textile ERP", "Loom Analytics", "Yarn Inventory"],
+    client: "Pixora Textile Mills Group",
+    industry: "Textile Manufacturing & Industrial ERP",
+    timeline: "Completed & Deployed",
     deliverables: [
-      "Cloud E-Learning Software Infrastructure",
-      "Course Authoring & Media Publishing Suite",
-      "Student Portal & Progress Analytics",
-      "Certificate Validation Engine"
+      "Textile ERP Core Platform",
+      "Real-Time Loom Efficiency Telemetry",
+      "Yarn & Dye House Batch Tracking",
+      "Export Order & RFQ Management System"
     ],
-    img: "/portfolio/lms-dashboard.png",
-    heroImg: "/portfolio/lms-dashboard.png",
+    img: "/textile_system.png",
+    heroImg: "/textile_system.png",
     status: "processing",
-    challenge: "The client needed to scale from 100 students to over 10,000 active learners without increasing instructional staff overhead or experiencing video streaming buffering.",
-    solution: "We constructed an enterprise LMS with AWS S3/CloudFront video streaming, interactive module quizzes, automated certificate generation upon completion, and comprehensive student engagement dashboards.",
+    challenge: "Textile manufacturing mills struggled with manual paper logbooks for loom efficiency, yarn stock discrepancies, unmonitored dye house batch wastage, and delayed export shipment tracking.",
+    solution: "We constructed a specialized Textile ERP application providing real-time loom telemetry monitoring, automated yarn-to-fabric conversion tracking, chemical dye recipe logs, and automated export shipping documentation.",
     keyFeatures: [
-      "Adaptive Video Lesson Streaming & Resolution Controls",
-      "Interactive Quiz Builder with Automated Grading",
-      "Instant Verified Certificate Generation (PDF)",
-      "Student Learning Analytics & Instructor Dashboard"
+      "Real-Time Loom Efficiency & Production Telemetry Engine",
+      "Yarn Inventory & Dye House Recipe Batch Management",
+      "Quality Control Inspection & Fabric Roll Defect Logging",
+      "Export Order Tracking, RFQ & Container Shipment System"
     ],
     results: [
-      "Successfully scaled to 10,000+ enrolled students",
-      "Zero video buffering complaints reported",
-      "Instructor operational workload cut by 65%"
+      "25% reduction in raw yarn wastage across production runs",
+      "Real-time visibility over 150+ active loom machines",
+      "Export shipping documentation processing time cut by 60%"
     ],
     testimonial: {
-      text: "With the LMS built by PixoraSofttech, we can now train 100x more students without hiring additional staff. The platform is rock-solid, fast, and highly engaging.",
-      name: "Emma Tremblay",
-      role: "CEO & Founder",
-      company: "LearnBetter Global Academy",
+      text: "The Textile System built by PixoraSofttech brought total operational visibility to our textile mill. From yarn stock to active looms and export packing, everything is tracked seamlessly.",
+      name: "Tariq K. Bashir",
+      role: "Managing Director",
+      company: "Pixora Textile Group",
       rating: 5,
       avatarBg: "bg-emerald-700"
-    }
-  },
-  {
-    id: "inventory",
-    title: "Inventory Manager",
-    category: "Software",
-    tagline: "Multi-Warehouse Stock Control & Automated Inventory Software",
-    desc: "An enterprise inventory management platform offering real-time stock tracking across multi-warehouse locations, barcode scanning, purchase orders, and reorder alerts.",
-    overview: "Inventory Manager gives retail and wholesale businesses total control over inventory flow. PixoraSofttech engineered a robust inventory control software designed to eliminate stockouts and overstock costs.",
-    tags: ["Next.js", "PostgreSQL", "Barcode Scanner API", "Multi-Warehouse"],
-    client: "RetailCo Group",
-    industry: "Retail Operations & Supply Chain",
-    timeline: "In active development",
-    deliverables: [
-      "Enterprise Inventory Management Software",
-      "Multi-Location Warehouse Sync Engine",
-      "Barcode Scanning Interface",
-      "Purchase Order & Supplier Portal"
-    ],
-    img: "/portfolio/light-inventory-dashboard.png",
-    heroImg: "/portfolio/light-inventory-dashboard.png",
-    status: "processing",
-    challenge: "A retail chain with 5 warehouse locations experienced high stockout rates and lost thousands of dollars in overstocked items due to delayed paper stock audits.",
-    solution: "We created a centralized cloud software system featuring barcode scanner integration, real-time multi-location inventory sync, low-stock reorder triggers, and automated purchase order generation.",
-    keyFeatures: [
-      "Multi-Warehouse Real-Time Stock Tracking Hub",
-      "Hardware & Mobile Barcode Scanner Integration",
-      "Automated Low-Stock Thresholds & Purchase Orders",
-      "Supplier Performance & Unit Cost Analytics"
-    ],
-    results: [
-      "0% stockout rate during peak retail period",
-      "Saved $15,000/month by preventing overstocking",
-      "Unified inventory tracking across 5 warehouse sites"
-    ],
-    testimonial: {
-      text: "We finally know exactly what stock we have, where it is located, and when to order more. PixoraSofttech created an inventory system that paid for itself within the first month.",
-      name: "Jake Peterson",
-      role: "VP of Retail Operations",
-      company: "RetailCo Group",
-      rating: 5,
-      avatarBg: "bg-sky-700"
     }
   }
 ];

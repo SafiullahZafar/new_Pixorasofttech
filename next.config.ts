@@ -67,6 +67,9 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  /* ── Dev network origins (allows LAN IP HMR WebSocket) ── */
+  allowedDevOrigins: ["192.168.1.10"],
+
   /* ── Experimental performance ── */
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
