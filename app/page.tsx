@@ -1,4 +1,5 @@
 import Navbar       from "@/components/Navbar";
+import StartAnimation from "@/components/StartAnimation";
 import Hero         from "@/components/Hero";
 import Services     from "@/components/Services";
 import WhyUs        from "@/components/WhyUs";
@@ -20,6 +21,7 @@ export default function Home() {
       <Navbar />
 
       <main id="home" role="main">
+        <StartAnimation />
         {/* 1. Hero + trusted brands */}
         <Hero />
         {/* 2. Services */}
