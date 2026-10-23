@@ -3,9 +3,10 @@
 @theme {
   --font-sans: var(--font-outfit), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --color-primary: #2563eb;
-  --color-secondary: #7c3aed;
-  --color-accent: #06b6d4;
+  --color-primary: #0c3721;
+  --color-primary-hover: #174d31;
+  --color-secondary: #000000;
+  --color-accent: #0c3721;
 }
 
 html {
@@ -13,15 +14,16 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  color: #0f172a;
+  background-color: #F5F5F5;
+  color: #000000;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.15);
+  background: rgba(12, 55, 33, 0.2);
+  color: #0c3721;
 }
 
 /* Scrollbar */

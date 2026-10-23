@@ -1,168 +1,226 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { CircleArrowUp, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-[#0a0f1e] text-white">
-      {/* Newsletter strip */}
-      <div className="border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col lg:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-white font-bold text-xl mb-1">Stay ahead of the curve</h3>
-            <p className="text-slate-400 text-sm max-w-sm">
-              Get insights on design, development and marketplace growth delivered to your inbox monthly.
-            </p>
-          </div>
-          <div className="flex gap-2 w-full lg:w-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 lg:w-72 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-blue-500 transition"
-            />
-            <button className="px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold text-sm flex items-center gap-2 hover:bg-blue-700 transition whitespace-nowrap">
-              Subscribe <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      </div>
+    <footer className="w-full select-none bg-black text-[#A1A1A1] pt-16 md:pt-28 lg:pt-32 px-4 md:px-8 overflow-x-hidden font-sans">
+      <div className="max-w-[2400px] mx-auto">
+        <div className="bg-[#000] rounded-3xl md:rounded-[40px] py-8 md:py-12 px-6 md:px-10 -mt-10 md:-mt-24 shadow-2xl border border-white/5">
+          <div className="flex flex-col md:min-h-[500px]">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+              {/* Left Column: Have a project? Let's start. */}
+              <div className="md:col-span-4 flex flex-col items-start">
+                <h2 className="text-4xl md:text-[42px] font-medium leading-tight text-white mb-1">
+                  Have a project?
+                </h2>
+                <h2 className="text-4xl md:text-[42px] font-bold leading-tight text-white mb-8">
+                  Let&apos;s start.
+                </h2>
+                <div className="w-32 md:w-56 h-[2px] bg-[#23261D] mb-8"></div>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    if (email) {
+                      window.location.href = `/contact?email=${encodeURIComponent(email)}`;
+                    }
+                  }}
+                  className="w-full max-w-md relative"
+                >
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email..."
+                    className="w-full bg-transparent border-b border-[#23261D] focus:border-white pb-4 text-white placeholder:text-[#666] focus:outline-none text-base sm:text-lg transition-colors pr-12"
+                  />
+                  <button
+                    type="submit"
+                    aria-label="Go to Contact page"
+                    className="absolute right-0 bottom-2 w-10 h-9 rounded-[5px] bg-white hover:bg-[#E2E8F0] flex items-center justify-center shadow-xl transition-all cursor-pointer group"
+                  >
+                    <ArrowUpRight className="w-5 h-5 text-black group-hover:scale-110 transition-transform" />
+                  </button>
+                </form>
+              </div>
 
-      {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          {/* Brand col — wider */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-5">
-              <img
-                src="/logo.png"
-                alt="PixoraSoftTech Logo"
-                className="w-10 h-10 object-contain rounded-xl"
-              />
-              <span className="text-base font-bold">
-                Pixora<span className="text-blue-400">SoftTech</span>
-              </span>
-            </Link>
+              {/* Right Column: Explore, Services, Quick Links */}
+              <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12 md:gap-y-12">
+                {/* Explore */}
+                <div className="flex flex-col items-start">
+                  <h3 className="text-lg md:text-2xl font-semibold uppercase text-white mb-5 sm:mb-6 tracking-wider">
+                    Explore
+                  </h3>
+                  <ul className="space-y-3 text-sm md:text-lg text-[#A1A1A1]">
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="/">
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="#who-we-are">
+                        About Us
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="/portfolio">
+                        Projects
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="#tech-leverage">
+                        Team
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="/portfolio">
+                        Case Studies
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="/contact">
+                        Contact Us
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-            <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
-              We build modern websites, custom software, mobile apps and creative marketplace assets that help businesses stand out and grow.
-            </p>
+                {/* Services */}
+                <div className="flex flex-col items-start">
+                  <h3 className="text-lg md:text-2xl font-semibold uppercase text-white mb-5 sm:mb-6 tracking-wider">
+                    Services
+                  </h3>
+                  <ul className="space-y-3 text-sm md:text-lg text-[#A1A1A1]">
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="/services/custom-software-development">
+                        Custom Software
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="/services/website-development">
+                        Web Development
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="/services/ui-ux-design">
+                        UI / UX Design
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="/services/mobile-app-development">
+                        Mobile Apps
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="/services/custom-software-development">
+                        SaaS Development
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="hover:text-white transition-colors" href="/services/cloud-solutions">
+                        Cloud Solutions
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
 
-            <div className="space-y-3">
-              <a href="mailto:pixorasofttech@gmail.com" className="flex items-center gap-3 text-slate-400 text-sm hover:text-white transition-colors">
-                <Mail className="w-4 h-4 text-blue-500 shrink-0" />
-                pixorasofttech@gmail.com
-              </a>
-              <a href="tel:+923094307701" className="flex items-center gap-3 text-slate-400 text-sm hover:text-white transition-colors">
-                <Phone className="w-4 h-4 text-blue-500 shrink-0" />
-                +92 309 4307701
-              </a>
-              <div className="flex items-center gap-3 text-slate-400 text-sm">
-                <MapPin className="w-4 h-4 text-blue-500 shrink-0" />
-                Faisalabad, Punjab, Pakistan — Serving clients locally and worldwide
+                {/* Quick Links / Socials */}
+                <div className="col-span-2 md:col-span-1 flex flex-col items-start">
+                  <h3 className="text-lg md:text-2xl font-semibold uppercase text-white mb-5 sm:mb-6 tracking-wider">
+                    Quick Links
+                  </h3>
+                  <div className="flex gap-5 items-center text-[#A1A1A1]">
+                    {/* LinkedIn */}
+                    <a
+                      href="https://www.linkedin.com/company/pixorasofttech"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visit PixoraSoftTech on LinkedIn"
+                      className="hover:text-white hover:scale-110 transition-all"
+                    >
+                      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.6 1.6 0 0 0-1.6 1.6 1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6 1.6 1.6 0 0 0-1.6-1.6Z" />
+                      </svg>
+                    </a>
+                    {/* Instagram */}
+                    <a
+                      href="https://www.instagram.com/pixorasofttech/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visit PixoraSoftTech on Instagram"
+                      className="hover:text-white hover:scale-110 transition-all"
+                    >
+                      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
+                    </a>
+                    {/* GitHub */}
+                    <a
+                      href="https://github.com/pixorasofttech"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visit PixoraSoftTech on GitHub"
+                      className="hover:text-white hover:scale-110 transition-all"
+                    >
+                      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Company */}
-          <div>
-            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Company</h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Home", href: "/" },
-                { label: "Services", href: "/services" },
-                { label: "Portfolio", href: "/portfolio" },
-                { label: "Contact Us", href: "/contact" },
-                { label: "Privacy Policy", href: "/privacy-policy" },
-                { label: "Terms & Conditions", href: "/terms-and-conditions" },
-              ].map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-slate-400 text-sm hover:text-white transition-colors">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Call Us & Location */}
+            <div className="mt-16 flex flex-col md:flex-row justify-between gap-10">
+              <div>
+                <h4 className="uppercase text-lg md:text-xl font-medium tracking-widest text-white">
+                  Give Us A Call
+                </h4>
+                <a
+                  href="tel:+923094307701"
+                  className="text-[#A1A1A1] text-base md:text-lg mt-2 hover:text-white transition-colors block"
+                >
+                  +92 309 4307701
+                </a>
+              </div>
+              <div className="md:text-right select-none">
+                <h4 className="uppercase text-lg md:text-xl font-medium tracking-widest text-white">
+                  Our Location
+                </h4>
+                <p className="text-[#A1A1A1] text-base md:text-lg leading-tight max-w-full md:max-w-[260px] mt-2 block">
+                  113 Mall, Faisalabad, Pakistan
+                </p>
+              </div>
+            </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Services</h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Website Development", href: "/services/website-development" },
-                { label: "Mobile App", href: "/services/mobile-app-development" },
-                { label: "Custom Software", href: "/services/custom-software-development" },
-                { label: "UI/UX Design", href: "/services/ui-ux-design" },
-                { label: "Cloud Solutions", href: "/services/cloud-solutions" },
-                { label: "Cyber Security", href: "/services/cyber-security" },
-              ].map((s) => (
-                <li key={s.label}>
-                  <Link href={s.href} className="text-slate-400 text-sm hover:text-white transition-colors">
-                    {s.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="h-px bg-[#23261D] mt-14 md:mt-16"></div>
 
-          {/* Creative */}
-          <div>
-            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Creative</h4>
-            <ul className="space-y-3">
-              {[
-                { label: "Branding & Identity", href: "/services/branding-identity-design" },
-                { label: "Logo Design", href: "/services/logo-design" },
-                { label: "Packaging Design", href: "/services/packaging-design" },
-                { label: "Social Media Design", href: "/services/social-media-design" },
-                { label: "Amazon Listing", href: "/services/amazon-listing-design" },
-                { label: "Lifestyle Images", href: "/services/lifestyle-images" },
-              ].map((s) => (
-                <li key={s.label}>
-                  <Link href={s.href} className="text-slate-400 text-sm hover:text-white transition-colors">
-                    {s.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {/* Back to top */}
+            <div className="flex justify-end mt-10">
+              <button
+                onClick={scrollToTop}
+                className="flex items-center gap-3 text-lg md:text-2xl font-light text-[#A1A1A1] hover:text-white transition-all group cursor-pointer"
+              >
+                <span>Back To Top</span>
+                <CircleArrowUp className="w-7 h-7 md:w-8 md:h-8 text-white group-hover:-translate-y-1 transition-transform" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex flex-wrap items-center gap-4">
-            <p className="text-slate-500 text-xs">© {new Date().getFullYear()} PixoraSoftTech. All rights reserved.</p>
-            <Link
-              href="/privacy-policy"
-              className="text-xs text-slate-400 hover:text-white px-3 py-1 rounded-md border border-white/8 bg-white/5 hover:border-blue-600/40 hover:bg-blue-600/10 transition-all"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms-and-conditions"
-              className="text-xs text-slate-400 hover:text-white px-3 py-1 rounded-md border border-white/8 bg-white/5 hover:border-blue-600/40 hover:bg-blue-600/10 transition-all"
-            >
-              Terms & Conditions
-            </Link>
-          </div>
-
-          {/* Social icons */}
-          <div className="flex gap-3">
-            {[
-              { label:"LinkedIn", href:"https://www.linkedin.com/company/pixorasofttech-smc-private-limited", svg:<svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
-              { label:"Twitter", href:"https://x.com/Pixorasofttech", svg:<svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.258 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg> },
-              { label:"Instagram", href:"https://www.instagram.com/pixrasofttech/", svg:<svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> },
-              { label:"GitHub", href:"https://github.com/pixrasofttech-maker", svg:<svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> },
-              { label:"Facebook", href:"https://www.facebook.com/profile.php?id=61589128270064", svg:<svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> },
-            ].map((s) => (
-              <a key={s.label} href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-600/40 transition-all">
-                {s.svg}
-              </a>
-            ))}
+        {/* Watermark Typographic Brand Graphic at Bottom */}
+        <div className="flex justify-center mt-8 md:mt-10 pb-8 select-none opacity-40 hover:opacity-70 transition-opacity">
+          <div className="text-center font-extrabold tracking-[-0.05em] text-[40px] sm:text-[70px] md:text-[110px] lg:text-[140px] text-zinc-800 leading-none select-none">
+            PIXORASOFTTECH
           </div>
         </div>
       </div>

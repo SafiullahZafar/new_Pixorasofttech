@@ -185,7 +185,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//api.web3forms.com" />
       </head>
       <body
-        className={`${outfit.variable} ${inter.variable} font-sans bg-white text-[#0f172a] antialiased overflow-x-hidden`}
+        className={`${outfit.variable} ${inter.variable} font-sans bg-[#F5F5F5] text-black antialiased overflow-x-hidden`}
         suppressHydrationWarning
       >
         {children}

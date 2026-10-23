@@ -1,0 +1,69 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const technologies = [
+  { name: "Next.js", category: "Fullstack Framework", tag: "Frontend" },
+  { name: "React 19", category: "Modern UI Architecture", tag: "Frontend" },
+  { name: "TypeScript", category: "Type-Safe Systems", tag: "Language" },
+  { name: "Node.js", category: "High Concurrency APIs", tag: "Backend" },
+  { name: "Python / AI", category: "Data & Automation", tag: "Intelligence" },
+  { name: "PostgreSQL", category: "Relational Data Hub", tag: "Database" },
+  { name: "AWS Cloud", category: "Scalable Infrastructure", tag: "DevOps" },
+  { name: "Tailwind CSS", category: "Design System UI", tag: "Styling" },
+  { name: "Flutter", category: "Cross-Platform Mobile", tag: "Mobile" },
+  { name: "Docker", category: "Containerization", tag: "DevOps" },
+  { name: "GraphQL", category: "Flexible Data Queries", tag: "API" },
+  { name: "Redis", category: "In-Memory Speed", tag: "Cache" },
+];
+
+export default function TechLeverage() {
+  return (
+    <section id="tech-leverage" className="bg-transparent py-16 md:py-24 px-6 md:px-12 lg:px-12 select-none overflow-hidden border-t border-dashed border-zinc-300">
+      <div className="max-w-[2200px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16 md:mb-24 items-start">
+          <div className="lg:col-span-5 flex flex-col items-start">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#111111] leading-[1.1] font-medium tracking-tight mb-4">
+              For companies with
+              <br />
+              tech leverage
+            </h2>
+          </div>
+          <div className="lg:col-span-7 lg:pl-12 lg:pt-2">
+            <p className="text-base md:text-lg text-[#555555] leading-relaxed max-w-2xl font-normal">
+              We specialize in working with digital products and brands, regardless of the size and lifecycle stage, from startups to established businesses striving to achieve significant tech leverage.
+            </p>
+          </div>
+        </div>
+
+        {/* Tech Stack Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
+          {technologies.map((tech, i) => (
+            <motion.div
+              key={tech.name}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.04 }}
+              className="group p-5 rounded-2xl bg-white border border-zinc-200 hover:border-[#0c3721]/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[120px]"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 group-hover:text-[#0c3721] transition-colors">
+                  {tech.tag}
+                </span>
+                <span className="h-1.5 w-1.5 rounded-full bg-zinc-300 group-hover:bg-[#0c3721] transition-colors"></span>
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold text-zinc-900 group-hover:text-black">
+                  {tech.name}
+                </h4>
+                <p className="text-[11px] text-zinc-500 mt-0.5 line-clamp-1">{tech.category}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

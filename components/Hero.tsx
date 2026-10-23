@@ -1,185 +1,168 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { ArrowRight, Paintbrush, Shield, Headphones, TrendingUp } from "lucide-react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
-
-const features = [
-  { icon: Paintbrush, title: "Modern Design",    sub: "Clean & Creative"  },
-  { icon: Shield,     title: "Secure & Reliable",sub: "Safe & Scalable"   },
-  { icon: Headphones, title: "Support 24/7",     sub: "We're Always Here" },
-];
+import { motion } from "framer-motion";
 
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0, isHovering: false });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+      isHovering: true,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos((prev) => ({ ...prev, isHovering: false }));
+  };
+
   return (
-    <section
-      id="home"
-      className="relative overflow-hidden bg-white pt-[68px]"
-    >
-      {/* subtle dot grid matching image bg */}
-      <div
-        className="absolute inset-0 opacity-20 pointer-events-none"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, #bfdbfe 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      />
-      {/* light blue tint top-right to match image */}
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-blue-50/60 to-transparent pointer-events-none" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-8 lg:py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-
-          {/* ── LEFT ── */}
+    <section className="relative z-0 overflow-hidden bg-transparent text-black pt-28 sm:pt-32 lg:pt-36">
+      <div className="mx-auto max-w-[2250px] px-5 py-8 sm:px-8 sm:py-12 lg:px-8 lg:py-16 xl:py-20">
+        {/* Top Split: Huge Headline & Subtext + CTA */}
+        <div className="grid items-end gap-10 lg:grid-cols-[1.6fr_0.8fr] lg:gap-16">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.65, ease: "easeOut" }}
-            className="-mt-40 lg:mt-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Badge */}
-            {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-200 bg-white text-blue-600 text-[11px] font-bold uppercase tracking-widest mb-6 shadow-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-              Digital Solutions That Drive Real Growth
-            </div> */}
-
-            {/* Headline */}
-            <h1 className="text-5xl lg:text-[3.5rem] font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-5">
-              We Build Digital
-              <br />
-              Solutions That
-              <br />
-              <span className="text-blue-600">Grow Your Business</span>
+            <h1 className="max-w-[1000px] text-[40px] font-medium leading-[1.12] tracking-[-0.05em] sm:text-[56px] md:text-[64px] lg:text-[68px] xl:text-[76px] 2xl:text-[90px]">
+              <span className="block overflow-hidden">
+                <span className="block transform-gpu">Software Development</span>
+              </span>
+              <span className="block overflow-hidden text-black">
+                <span className="block transform-gpu">
+                  <span className="text-[#000000]">&amp;</span> Digital Product
+                </span>
+              </span>
+              <span className="block overflow-hidden text-black">
+                <span className="block transform-gpu">Design Company.</span>
+              </span>
             </h1>
+          </motion.div>
 
-            {/* Description */}
-            <p className="text-slate-500 text-base lg:text-[17px] leading-relaxed mb-8 max-w-md">
-              We create modern, responsive and result-driven web solutions that help your brand stand out and achieve real success.
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-[470px] lg:pb-2"
+          >
+            <p className="text-[15px] leading-6 text-slate-600 sm:text-base sm:leading-7 lg:text-[17px]">
+              You bring the &quot;what if.&quot; We bring the code, the systems, and the launch. Somewhere between your brainstorm and your customers, there&apos;s us.
             </p>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-3 mt-20 mb-10">
-              <Link
-                href="#services"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-200"
-              >
-                Explore Services <ArrowRight className="w-4 h-4" />
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="inline-block">
+                <button className="group inline-flex w-full items-center justify-center gap-4 rounded-2xl bg-[#0c3721] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#174d31] sm:w-auto cursor-pointer shadow-sm">
+                  Start a Project
+                  <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <path d="M5 19L19 5"></path>
+                      <path d="M8 5h11v11"></path>
+                    </svg>
+                  </span>
+                </button>
               </Link>
-              <Link
-                href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-slate-300 bg-white text-slate-800 font-semibold text-sm hover:border-blue-300 hover:text-blue-600 transition-all"
-              >
-                View Our Work <ArrowRight className="w-4 h-4" />
+              <Link href="/portfolio" className="inline-block">
+                <button className="w-full rounded-2xl border border-black/15 bg-transparent px-6 py-3.5 text-sm font-medium text-black transition-all duration-300 hover:border-black hover:bg-black hover:text-white sm:w-auto cursor-pointer">
+                  View Our Work
+                </button>
               </Link>
-            </div>
-
-            {/* Feature pills */}
-            <div className="flex flex-wrap gap-6">
-              {features.map((f, i) => (
-                <div key={i} className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
-                    <f.icon className="w-4 h-4 text-blue-600" />
-                  </div>
-                  <div>
-                    <p className="text-slate-900 text-[13px] font-bold leading-tight">{f.title}</p>
-                    <p className="text-slate-400 text-[11px]">{f.sub}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </motion.div>
+        </div>
 
-          {/* ── RIGHT — Hero Visual Image ── */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-            className="relative flex items-start justify-center -mt-10 lg:-mt-20"
+        {/* Media Showcase Banner with Interactive SHOW CASES Cursor Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 50, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className="relative mt-10 sm:mt-16 lg:mt-20 w-full aspect-video sm:aspect-auto sm:h-[480px] lg:h-[600px] xl:h-[620px]"
+        >
+          <div
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="relative block h-full w-full overflow-hidden rounded-2xl group cursor-pointer"
           >
-            {/* Main visual image — static, blended into bg */}
-            <img
-              src="/hero-visual.png"
-              alt="PixoraSoftTech 3D Visual"
-              className="w-full max-w-[540px] h-auto object-contain select-none mt-16 lg:mt-24"
-              style={{ mixBlendMode: "multiply" }}
-              draggable={false}
-            />
+            <Link href="/portfolio" aria-label="View our projects" className="block h-full w-full">
+              <div className="absolute inset-0 overflow-hidden bg-[#0c3721]">
+                <img
+                  src="/suppliers.png"
+                  alt="PixoraSoftTech Showcase"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src =
+                      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+              </div>
 
-            {/* Floating card — Performance */}
-            {/* <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-              className="absolute top-8 right-0 bg-white rounded-2xl border border-slate-200 shadow-xl px-4 py-3 z-20 min-w-[145px]"
-            >
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                  <TrendingUp className="w-4 h-4 text-blue-600" />
+              {/* Floating SHOW CASES Badge (Fixed position on mobile, Interactive follower on desktop) */}
+              <div
+                className={`pointer-events-none absolute z-20 hidden md:flex h-32 w-32 items-center justify-center rounded-full bg-white/60 backdrop-blur-md shadow-2xl border border-white/20 transition-opacity duration-300 ${
+                  mousePos.isHovering ? "opacity-100" : "opacity-90"
+                }`}
+                style={{
+                  left: mousePos.isHovering ? `${mousePos.x}px` : "calc(100% - 140px)",
+                  top: mousePos.isHovering ? `${mousePos.y}px` : "calc(100% - 140px)",
+                  transform: "translate(-50%, -50%)",
+                  transition: mousePos.isHovering ? "transform 0.1s ease-out, opacity 0.2s" : "all 0.4s ease-out",
+                }}
+              >
+                <div className="absolute z-10 text-black">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 3l7 18 3-7 7-3L3 3z"></path>
+                  </svg>
                 </div>
-                <span className="text-slate-600 text-xs font-semibold">Performance</span>
+                <div className="relative flex h-full w-full items-center justify-center animate-[spin_12s_linear_infinite]">
+                  <svg className="h-full w-full p-2" viewBox="0 0 100 100">
+                    <path
+                      id="circlePathHero"
+                      d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0"
+                      fill="none"
+                    ></path>
+                    <text className="text-[9.5px] font-semibold uppercase tracking-[0.27em] fill-black">
+                      <textPath href="#circlePathHero" startOffset="0%">
+                        SHOW CASES&nbsp;&nbsp;•&nbsp;&nbsp;SHOW CASES&nbsp;&nbsp;•&nbsp;&nbsp;
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
               </div>
-              <p className="text-emerald-600 text-sm font-extrabold">+120% ↗</p>
-            </motion.div> */}
 
-            {/* Floating card — Trusted Solutions */}
-            {/* <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-              className="absolute bottom-16 right-0 bg-white rounded-2xl border border-slate-200 shadow-xl px-4 py-3 z-20"
-            >
-              <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center mb-2">
-                <Shield className="w-4 h-4 text-blue-600" />
+              {/* Mobile version of badge */}
+              <div className="md:hidden absolute right-4 bottom-4 z-20 flex h-24 w-24 items-center justify-center rounded-full bg-white/70 backdrop-blur-md shadow-xl border border-white/20">
+                <div className="absolute z-10 text-black">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 3l7 18 3-7 7-3L3 3z"></path>
+                  </svg>
+                </div>
+                <div className="relative flex h-full w-full items-center justify-center animate-[spin_12s_linear_infinite]">
+                  <svg className="h-full w-full p-1.5" viewBox="0 0 100 100">
+                    <path
+                      id="circlePathHeroMobile"
+                      d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0"
+                      fill="none"
+                    ></path>
+                    <text className="text-[9.5px] font-semibold uppercase tracking-[0.27em] fill-black">
+                      <textPath href="#circlePathHeroMobile" startOffset="0%">
+                        SHOW CASES&nbsp;&nbsp;•&nbsp;&nbsp;SHOW CASES&nbsp;&nbsp;•&nbsp;&nbsp;
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
               </div>
-              <p className="text-slate-900 text-xs font-bold">Trusted</p>
-              <p className="text-slate-400 text-[11px]">Solutions</p>
-            </motion.div> */}
-
-            {/* Floating icon — code bracket */}
-            {/* <motion.div
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-              className="absolute top-1/3 left-4 bg-white rounded-2xl border border-slate-200 shadow-lg w-12 h-12 flex items-center justify-center z-20"
-            >
-              <svg className="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-              </svg>
-            </motion.div> */}
-
-            {/* Floating icon — users */}
-            {/* <motion.div
-              animate={{ y: [0, 5, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-              className="absolute bottom-1/3 left-4 bg-slate-900 rounded-2xl shadow-lg w-12 h-12 flex items-center justify-center z-20"
-            >
-              <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </motion.div> */}
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Trusted brands strip */}
-      <div className="relative z-10 border-t border-slate-100 bg-white/80 backdrop-blur-sm py-7">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-slate-400 text-[11px] font-bold uppercase tracking-[0.2em] mb-5">
-            Trusted by Fast-Growing Brands Worldwide
-          </p>
-          <div className="overflow-hidden">
-            <div className="flex gap-12 animate-marquee whitespace-nowrap">
-              {["Fit","FinSight","Lumen","ApexGear","PureLeaf","Wander","Brew","NovaCart","PulseFit",
-                "Fit","FinSight","Lumen","ApexGear","PureLeaf","Wander","Brew","NovaCart","PulseFit"].map((b, i) => (
-                <span key={i} className="text-slate-400 text-base font-bold shrink-0 hover:text-slate-600 transition-colors">
-                  {b}
-                </span>
-              ))}
-            </div>
+            </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

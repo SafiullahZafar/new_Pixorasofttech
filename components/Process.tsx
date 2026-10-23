@@ -2,55 +2,120 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MessageSquare, PenTool, CheckCircle, Code2, Search, Rocket, Send, RefreshCcw } from "lucide-react";
-
-const steps = [
-  { num:"01", icon:MessageSquare, title:"Discovery Call",    desc:"We understand your vision, goals, and business requirements in depth." },
-  { num:"02", icon:PenTool,       title:"UI/UX Design",      desc:"High-fidelity Figma prototypes and design systems tailored to your brand." },
-  { num:"03", icon:CheckCircle,   title:"Design Approval",   desc:"Iterate until every design decision is perfect and signed off." },
-  { num:"04", icon:Code2,         title:"Development",       desc:"Senior engineers build the product with clean, scalable, tested code." },
-  { num:"05", icon:Search,        title:"QA & Testing",      desc:"Cross-device, cross-browser testing for a flawless launch." },
-  { num:"06", icon:Rocket,        title:"SEO & Launch",      desc:"Search-optimised, deployed to production with zero downtime." },
-  { num:"07", icon:Send,          title:"Handoff",           desc:"Full codebase, docs, and knowledge transfer to your team." },
-  { num:"08", icon:RefreshCcw,    title:"Ongoing Support",   desc:"Post-launch maintenance and unlimited reviews until you're 100% happy." },
-];
 
 export default function Process() {
   return (
-    <section id="process" className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-5">
+    <section className="bg-transparent text-black py-16 sm:py-24 border-t border-zinc-200 relative z-20 font-sans">
+      <div className="mx-auto max-w-[2200px] px-6 sm:px-8 lg:px-12">
         {/* Header */}
-        <div className="text-center mb-14">
-          <motion.p initial={{ opacity:0,y:8 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} className="text-blue-600 text-sm font-semibold uppercase tracking-widest mb-2">
-            How We Work
-          </motion.p>
-          <motion.h2 initial={{ opacity:0,y:14 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.05 }} className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-3">
-            Our <span className="text-blue-600">Work Process</span>
-          </motion.h2>
-          <motion.p initial={{ opacity:0,y:14 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.1 }} className="text-slate-500 text-base max-w-xl mx-auto">
-            A transparent, collaborative process designed to deliver excellence at every step.
-          </motion.p>
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between pb-16 sm:pb-20 border-b border-zinc-200 mb-8">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-black uppercase">
+            FLOW
+          </h2>
+          <p className="max-w-xs text-sm sm:text-base font-medium text-zinc-800 leading-snug mt-4 sm:mt-0">
+            How we turn a brief into a brand and a site that performs.
+          </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {steps.map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity:0, y:20 }}
-              whileInView={{ opacity:1, y:0 }}
-              viewport={{ once:true }}
-              transition={{ delay: i * 0.07, duration:0.45, ease:"easeOut" }}
-              className="group bg-slate-50 border border-slate-200 hover:border-blue-200 rounded-2xl p-6 hover:shadow-lg hover:shadow-slate-100 transition-all duration-300"
-            >
-              <span className="text-[11px] font-bold text-blue-400 uppercase tracking-widest mb-4 block">{s.num}</span>
-              <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-100 transition-colors">
-                <s.icon className="w-5 h-5 text-blue-600" />
+        {/* 4-Step Progressive Staircase Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 min-h-[500px]">
+          {/* Step 1: DISCOVER */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col py-6 md:py-8 pr-4 sm:pr-6 md:pr-8"
+          >
+            <div className="flex flex-col mt-0">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-black uppercase mb-3">
+                DISCOVER
+              </h3>
+              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-xs mb-10">
+                We learn your business, your buyer, and what the brand and product need to achieve.
+              </p>
+              <div className="w-full">
+                <span className="block text-xs font-bold font-mono mb-2 text-black">25%</span>
+                <div className="w-full bg-zinc-200 h-1 rounded-full overflow-hidden">
+                  <div className="bg-black h-full rounded-full w-1/4"></div>
+                </div>
               </div>
-              <h3 className="text-slate-900 font-bold text-base mb-2">{s.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{s.desc}</p>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
+
+          {/* Step 2: DESIGN */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex flex-col py-6 md:py-8 pr-4 sm:pr-6 md:pr-8 md:border-l md:border-zinc-200 md:pl-6 lg:pl-8"
+          >
+            <div className="flex flex-col mt-0 md:mt-20">
+              {/* Gradient Box graphic */}
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl mb-6 bg-gradient-to-b from-[#0c3721] via-emerald-800 to-teal-400 shadow-md"></div>
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-black uppercase mb-3">
+                DESIGN
+              </h3>
+              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-xs mb-10">
+                We shape the interface, prototypes, and user flows, testing directions until it is right.
+              </p>
+              <div className="w-full">
+                <span className="block text-xs font-bold font-mono mb-2 text-black">50%</span>
+                <div className="w-full bg-zinc-200 h-1 rounded-full overflow-hidden">
+                  <div className="bg-black h-full rounded-full w-1/2"></div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Step 3: BUILD */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-col py-6 md:py-8 pr-4 sm:pr-6 md:pr-8 md:border-l md:border-zinc-200 md:pl-6 lg:pl-8"
+          >
+            <div className="flex flex-col mt-0 md:mt-48 lg:mt-56">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-black uppercase mb-3">
+                BUILD
+              </h3>
+              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-xs mb-10">
+                We engineer it in modern Next.js and clean code, fast, secure, and ready for your team.
+              </p>
+              <div className="w-full">
+                <span className="block text-xs font-bold font-mono mb-2 text-black">75%</span>
+                <div className="w-full bg-zinc-200 h-1 rounded-full overflow-hidden">
+                  <div className="bg-black h-full rounded-full w-3/4"></div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Step 4: LAUNCH */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col py-6 md:py-8 pr-4 sm:pr-6 md:pr-8 md:border-l md:border-zinc-200 md:pl-6 lg:pl-8"
+          >
+            <div className="flex flex-col mt-0 md:mt-72 lg:mt-80">
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-black uppercase mb-3">
+                LAUNCH
+              </h3>
+              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-xs mb-10">
+                We deploy with zero-downtime, complete handoff, and stay on to help it scale.
+              </p>
+              <div className="w-full">
+                <span className="block text-xs font-bold font-mono mb-2 text-black">100%</span>
+                <div className="w-full bg-zinc-200 h-1 rounded-full overflow-hidden">
+                  <div className="bg-[#0c3721] h-full rounded-full w-full"></div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

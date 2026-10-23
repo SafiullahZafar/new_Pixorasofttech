@@ -1,114 +1,101 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { ArrowRight, Code2, Smartphone, Cpu, Palette, Cloud, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
-const services = [
+const serviceCards = [
   {
-    slug: "website-development",
-    icon: Code2,
-    title: "Website Development",
-    desc: "Fast, scalable, SEO-friendly websites built with modern frameworks and pixel-perfect precision.",
-    tags: ["Responsive design", "Core Web Vitals", "CMS integration", "SEO ready"],
+    number: "S/ 001",
+    titleLine1: "Custom Software",
+    titleLine2: "Development",
+    href: "/services/custom-software-development",
+    tags: ["Architecture", "Enterprise", "Cloud Native", "API Integration", "Scalability"],
+    desc: "We build custom software that solves real problems, not just checks boxes. Tailored architecture built for high performance, reliability, and enterprise scale.",
   },
   {
-    slug: "mobile-app-development",
-    icon: Smartphone,
-    title: "Mobile App Development",
-    desc: "Native and cross-platform iOS & Android apps with smooth, delightful user experiences.",
-    tags: ["iOS & Android", "React Native", "Offline-first", "App Store launch"],
+    number: "S/ 002",
+    titleLine1: "Web",
+    titleLine2: "Development",
+    href: "/services/website-development",
+    tags: ["Next.js", "React", "Performance", "SEO Optimized", "Tailwind CSS"],
+    desc: "We design and build websites that represent your brand and convert visitors into customers. Fast, responsive, accessible, and engineered to outperform competitors.",
   },
   {
-    slug: "custom-software-development",
-    icon: Cpu,
-    title: "Custom Software Development",
-    desc: "Tailored business software, dashboards and internal tools engineered to fit your workflow.",
-    tags: ["API integrations", "Admin dashboards", "Automation", "Cloud native"],
+    number: "S/ 003",
+    titleLine1: "SaaS",
+    titleLine2: "Products",
+    href: "/services/custom-software-development",
+    tags: ["MVP", "Subscription", "Multi-tenant", "Payment Gateway", "Analytics"],
+    desc: "From MVP to full scale enterprise platform, we build subscription-ready digital products designed to scale with your user base and accelerate recurring revenue.",
   },
   {
-    slug: "ui-ux-design",
-    icon: Palette,
-    title: "UI/UX Design",
-    desc: "Research-driven interface design that turns visitors into loyal customers.",
-    tags: ["User research", "Wireframes", "Prototyping", "Design systems"],
-  },
-  {
-    slug: "cloud-solutions",
-    icon: Cloud,
-    title: "Cloud Solutions",
-    desc: "Secure, elastic cloud infrastructure on AWS, Azure and GCP with zero-downtime deploys.",
-    tags: ["DevOps & CI/CD", "Auto-scaling", "Cost optimization", "Migration"],
-  },
-  {
-    slug: "cyber-security",
-    icon: ShieldCheck,
-    title: "Cyber Security",
-    desc: "Proactive security audits, penetration testing and compliance for peace of mind.",
-    tags: ["Vulnerability scans", "Pen testing", "SOC 2 readiness", "Monitoring"],
+    number: "S/ 004",
+    titleLine1: "Mobile",
+    titleLine2: "Apps",
+    href: "/services/mobile-app-development",
+    tags: ["React Native", "iOS", "Android", "Cross-Platform", "UX Animation"],
+    desc: "Your app is often the first touchpoint customers experience. We build fluid, performant mobile experiences for iOS and Android engineered to drive engagement.",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="bg-white py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="bg-transparent font-sans text-black py-12 sm:py-20 lg:py-28 relative z-10">
+      <div className="mx-auto max-w-[2200px] px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-14">
-          <motion.div initial={{ opacity:0,y:8 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }}
-            className="inline-flex items-center px-4 py-1.5 rounded-full border border-slate-200 bg-white text-slate-500 text-xs font-semibold uppercase tracking-widest mb-5">
-            What We Do
-          </motion.div>
-          <motion.h2 initial={{ opacity:0,y:14 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.05 }}
-            className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
-            Services built to{" "}
-            <span className="text-blue-600">launch & scale</span>
-          </motion.h2>
-          <motion.p initial={{ opacity:0,y:14 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.1 }}
-            className="text-slate-500 text-base max-w-xl mx-auto leading-relaxed">
-            From custom software to conversion-driving creative, we cover the full spectrum of digital product work under one roof.
-          </motion.p>
+        <div className="flex items-end justify-between pb-6 sm:pb-8 border-b border-dashed border-zinc-300 mb-8 sm:mb-14">
+          <div>
+            <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">
+              <span className="h-2 w-2 rounded-full bg-[#0c3721] inline-block"></span>
+              <span>OUR SERVICES</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-zinc-950">Services</h2>
+          </div>
+          <div className="font-mono text-zinc-600 text-lg sm:text-3xl">
+            02<span className="text-xs align-top text-[#0c3721] font-bold">+</span>
+          </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((s, i) => (
-            <motion.div key={i}
-              initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }}
-              transition={{ delay: i*0.07, duration:0.45, ease:"easeOut" }}
-              className="group bg-white border border-slate-200 rounded-2xl p-7 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-50 transition-all duration-300"
+        {/* Sticky Stacking Cards */}
+        <div className="relative space-y-6 sm:space-y-8 pb-20 sm:pb-28">
+          {serviceCards.map((card, idx) => (
+            <div
+              key={card.number}
+              style={{ top: `calc(75px + ${idx} * 14px)` }}
+              className="sticky group rounded-2xl sm:rounded-[2rem] bg-white text-zinc-900 p-6 sm:p-10 lg:p-12 shadow-xl shadow-zinc-200/50 transition-all duration-300 border border-zinc-200 hover:border-[#0c3721]/30 hover:shadow-2xl"
             >
-              {/* Icon */}
-              <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
-                <s.icon className="w-5 h-5 text-blue-600" />
-              </div>
+              <Link className="block relative z-10" href={card.href}>
+                <div className="flex flex-col-reverse sm:flex-row justify-between items-start gap-4 mb-8 sm:mb-14 lg:mb-16">
+                  <h3 className="text-3xl sm:text-5xl lg:text-7xl font-normal tracking-tight leading-[1.08] text-zinc-900 group-hover:text-[#0c3721] transition-colors duration-300">
+                    <span className="block">{card.titleLine1}</span>
+                    <span className="block text-zinc-400 group-hover:text-zinc-600 transition-colors duration-300">
+                      {card.titleLine2}
+                    </span>
+                  </h3>
+                  <div className="flex items-center gap-2 font-mono text-xs sm:text-sm text-zinc-500 self-end sm:self-auto">
+                    <span>{card.number}</span>
+                  </div>
+                </div>
 
-              <h3 className="text-slate-900 font-bold text-[15px] mb-2.5">{s.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed mb-4">{s.desc}</p>
+                {/* Tags */}
+                <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 py-3 sm:py-4 border-t border-zinc-100 mb-4 sm:mb-6 text-xs sm:text-sm text-zinc-500 font-light">
+                  {card.tags.map((tag) => (
+                    <span key={tag} className="hover:text-black transition-colors">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-1.5 mb-5">
-                {s.tags.map((t) => (
-                  <span key={t} className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-100 text-slate-500 text-[11px] font-medium">
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              <Link href={`/services/${s.slug}`} className="inline-flex items-center gap-1.5 text-blue-600 text-sm font-semibold hover:gap-2.5 transition-all">
-                Learn More <ArrowRight className="w-3.5 h-3.5" />
+                {/* Asterisk + Description */}
+                <div className="flex items-start gap-2 sm:gap-3 max-w-3xl pt-1">
+                  <span className="text-[#0c3721] text-sm sm:text-base mt-0.5 select-none font-bold">✹</span>
+                  <p className="text-xs sm:text-sm leading-relaxed text-zinc-600 font-normal group-hover:text-zinc-900 transition-colors">
+                    {card.desc}
+                  </p>
+                </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <Link href="/services"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 bg-white text-slate-700 font-semibold text-sm hover:border-blue-200 hover:text-blue-600 transition-all">
-            View all 15 services <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </div>
     </section>
