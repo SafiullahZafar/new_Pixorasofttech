@@ -94,7 +94,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-[60] px-0 sm:px-0 lg:px-0 pt-0 transition-all duration-300 ${
         scrolled
-          ? "bg-[#f5f5f5]/85 backdrop-blur-md shadow-xs border-b border-black/5"
+          ? "bg-[#FAFAFC]/85 backdrop-blur-md shadow-xs border-b border-black/5"
           : "bg-transparent"
       }`}
     >
@@ -287,7 +287,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="xl:hidden bg-[#f5f5f5] border-b border-slate-200 px-5 py-6 overflow-y-auto max-h-[85vh] shadow-xl"
+            className="xl:hidden bg-[#FAFAFC] border-b border-slate-200 px-5 py-6 overflow-y-auto max-h-[85vh] shadow-xl"
           >
             <div className="flex flex-col gap-2.5">
               <Link

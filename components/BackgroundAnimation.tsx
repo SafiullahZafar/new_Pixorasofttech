@@ -3,21 +3,19 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-export type BackgroundAnimationTheme = "dark-gray" | "charcoal" | "light-gray" | "custom";
+export type BackgroundAnimationTheme = "light-gray" | "dark-gray" | "charcoal" | "custom";
 
 export interface BackgroundAnimationProps {
   /**
-   * Theme preset. Defaults to "dark-gray".
+   * Theme preset. Defaults to "light-gray".
    */
   theme?: BackgroundAnimationTheme;
   /**
-   * Custom background color (Hex string, e.g. "#1e1e24").
-   * Overrides preset when theme is "custom" or if provided.
+   * Custom background color (Hex string, e.g. "#FAFAFD").
    */
   backgroundColor?: string;
   /**
-   * Custom wave highlight color (Hex string, e.g. "#9ca3af").
-   * Overrides preset when theme is "custom" or if provided.
+   * Custom wave highlight color (Hex string, e.g. "#707888").
    */
   waveColor?: string;
   /**
@@ -31,16 +29,14 @@ export interface BackgroundAnimationProps {
    */
   sensitivity?: number;
   /**
-   * Friction / deceleration rate (between 0.85 and 0.98).
-   * Higher values mean waves glide longer after mouse stops.
-   * Defaults to 0.92.
+   * Friction / deceleration rate (0.90 to 0.97).
+   * Defaults to 0.94 for smooth gliding.
    */
   friction?: number;
   /**
-   * Disable the radial center dimming effect.
-   * Defaults to false.
+   * Wave blend intensity. Defaults to 0.55 for crisp, clear visibility.
    */
-  disableCenterDimming?: boolean;
+  intensity?: number;
   /**
    * Additional Tailwind or CSS classes for the container.
    */
@@ -51,15 +47,21 @@ export interface BackgroundAnimationProps {
   style?: React.CSSProperties;
 }
 
-// Color presets for grayish aesthetics
+// Light grayish-white background with clearly visible grayish wave ribbons
 const THEME_PRESETS: Record<
   Exclude<BackgroundAnimationTheme, "custom">,
   { bgHex: string; waveHex: string; bgRgb: [number, number, number]; waveRgb: [number, number, number] }
 > = {
+  "light-gray": {
+    bgHex: "#FAFAFD", // Luminous, clean light grayish-white
+    waveHex: "#707888", // Distinct, visible slate-gray wave ribbons
+    bgRgb: [0.98, 0.98, 0.992],
+    waveRgb: [0.44, 0.47, 0.53],
+  },
   "dark-gray": {
-    bgHex: "#1a1a1f",
+    bgHex: "#18181b",
     waveHex: "#a1a1aa",
-    bgRgb: [0.10, 0.10, 0.12],
+    bgRgb: [0.09, 0.09, 0.11],
     waveRgb: [0.63, 0.63, 0.67],
   },
   charcoal: {
@@ -67,12 +69,6 @@ const THEME_PRESETS: Record<
     waveHex: "#cbd5e1",
     bgRgb: [0.13, 0.13, 0.15],
     waveRgb: [0.75, 0.78, 0.82],
-  },
-  "light-gray": {
-    bgHex: "#F5F5F5",
-    waveHex: "#8e95a2",
-    bgRgb: [0.96, 0.96, 0.96],
-    waveRgb: [0.52, 0.55, 0.62],
   },
 };
 
@@ -95,8 +91,8 @@ export default function BackgroundAnimation({
   waveColor,
   onlyMoveOnCursor = true,
   sensitivity = 1.0,
-  friction = 0.92,
-  disableCenterDimming = true,
+  friction = 0.94,
+  intensity = 0.55,
   className = "",
   style = {},
 }: BackgroundAnimationProps) {
@@ -104,14 +100,14 @@ export default function BackgroundAnimation({
   const materialRef = useRef<THREE.ShaderMaterial | null>(null);
 
   // Motion physics refs
-  const accumulatedTimeRef = useRef<number>(1.2); // Start with formed wave patterns
+  const accumulatedTimeRef = useRef<number>(1.8);
   const velocityRef = useRef<number>(0);
   const lastMousePosRef = useRef<{ x: number; y: number } | null>(null);
   const targetMouseRef = useRef<THREE.Vector2>(new THREE.Vector2(0, 0));
   const currentMouseRef = useRef<THREE.Vector2>(new THREE.Vector2(0, 0));
 
   // Determine active colors
-  const activePreset = theme !== "custom" && THEME_PRESETS[theme] ? THEME_PRESETS[theme] : THEME_PRESETS["dark-gray"];
+  const activePreset = theme !== "custom" && THEME_PRESETS[theme] ? THEME_PRESETS[theme] : THEME_PRESETS["light-gray"];
   const finalBgRgb = backgroundColor ? hexToRgb(backgroundColor, activePreset.bgRgb) : activePreset.bgRgb;
   const finalWaveRgb = waveColor ? hexToRgb(waveColor, activePreset.waveRgb) : activePreset.waveRgb;
   const containerBgColor = backgroundColor || activePreset.bgHex;
@@ -121,15 +117,14 @@ export default function BackgroundAnimation({
     if (materialRef.current) {
       materialRef.current.uniforms.uBgColor.value.set(...finalBgRgb);
       materialRef.current.uniforms.uWaveColor.value.set(...finalWaveRgb);
-      materialRef.current.uniforms.disableCenterDimming.value = disableCenterDimming;
+      materialRef.current.uniforms.uIntensity.value = intensity;
     }
-  }, [finalBgRgb, finalWaveRgb, disableCenterDimming]);
+  }, [finalBgRgb, finalWaveRgb, intensity]);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container || typeof window === "undefined") return;
 
-    // 1. Renderer initialization with safety check
     let renderer: THREE.WebGLRenderer;
     try {
       renderer = new THREE.WebGLRenderer({
@@ -148,7 +143,6 @@ export default function BackgroundAnimation({
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
     const clock = new THREE.Clock();
 
-    // 2. Vertex & Fragment Shaders
     const vertexShader = `
       varying vec2 vTextureCoord;
       void main() {
@@ -157,6 +151,8 @@ export default function BackgroundAnimation({
       }
     `;
 
+    // Dynamic wave shader preserving the user's signature wave formula,
+    // now rendered in elegant grayish ribbons on a light white background
     const fragmentShader = `
       precision mediump float;
       uniform vec2 iResolution;
@@ -164,42 +160,32 @@ export default function BackgroundAnimation({
       uniform vec2 iMouse;
       uniform vec3 uBgColor;
       uniform vec3 uWaveColor;
-      uniform bool disableCenterDimming;
+      uniform float uIntensity;
       varying vec2 vTextureCoord;
 
       void mainImage(out vec4 fragColor, in vec2 fragCoord) {
         vec2 uv = (2.0 * fragCoord - iResolution.xy) / min(iResolution.x, iResolution.y);
 
-        // Center dimming
-        vec2 center = iResolution.xy * 0.5;
-        float dist = distance(fragCoord, center);
-        float radius = min(iResolution.x, iResolution.y) * 0.5;
-        float centerDim = disableCenterDimming ? 1.0 : smoothstep(radius * 0.25, radius * 0.65, dist);
-
-        // Subtle cursor proximity ripple
+        // Gentle cursor magnetic ripple
         vec2 mouseUV = (2.0 * iMouse - iResolution.xy) / min(iResolution.x, iResolution.y);
         mouseUV.y = -mouseUV.y;
         float mouseDist = length(uv - mouseUV);
-        float mousePush = smoothstep(0.8, 0.0, mouseDist) * 0.18;
-        uv += normalize(uv - mouseUV + 0.0001) * mousePush;
+        float mouseAura = smoothstep(1.2, 0.0, mouseDist);
+        uv += (mouseUV - uv) * (mouseAura * 0.05);
 
-        // Wave harmonics (organic flowing contours)
-        for(float i = 1.0; i < 9.0; i++){
-          uv.x += 0.55 / i * cos(i * 2.5 * uv.y + iTime);
-          uv.y += 0.55 / i * cos(i * 1.5 * uv.x + iTime);
+        // Harmonic wave oscillation (your signature wave distortion)
+        for(float i = 1.0; i < 7.0; i++){
+          uv.x += (0.42 / i) * cos(i * 2.0 * uv.y + iTime);
+          uv.y += (0.42 / i) * cos(i * 1.4 * uv.x + iTime);
         }
 
-        // Luminous grayish wave ridge intensity
-        float waveIntensity = 0.085 / max(abs(sin(iTime - uv.y - uv.x)), 0.035);
+        // Distinct, clearly visible wave ribbons
+        float waveShape = abs(sin(iTime - uv.y - uv.x));
+        float waveIntensity = 0.09 / max(waveShape, 0.045);
         waveIntensity = clamp(waveIntensity, 0.0, 1.0);
 
-        // Smooth blend: from grayish background to elegant silver/gray wave crests
-        vec3 finalColor = mix(uBgColor, uWaveColor, waveIntensity * 0.88);
-
-        // Optional center depth attenuation
-        if (!disableCenterDimming) {
-          finalColor = mix(finalColor * 0.65, finalColor, centerDim);
-        }
+        // Blend from luminous light grayish-white base to distinct grayish wave ribbons
+        vec3 finalColor = mix(uBgColor, uWaveColor, waveIntensity * uIntensity);
 
         fragColor = vec4(finalColor, 1.0);
       }
@@ -211,14 +197,13 @@ export default function BackgroundAnimation({
       }
     `;
 
-    // 3. Uniforms & Material
     const uniforms = {
       iTime: { value: accumulatedTimeRef.current },
       iResolution: { value: new THREE.Vector2() },
       iMouse: { value: new THREE.Vector2() },
       uBgColor: { value: new THREE.Vector3(...finalBgRgb) },
       uWaveColor: { value: new THREE.Vector3(...finalWaveRgb) },
-      disableCenterDimming: { value: disableCenterDimming },
+      uIntensity: { value: intensity },
     };
 
     const material = new THREE.ShaderMaterial({
@@ -232,7 +217,6 @@ export default function BackgroundAnimation({
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    // 4. Resize Handling
     const onResize = () => {
       if (!container) return;
       const w = container.clientWidth || window.innerWidth;
@@ -241,7 +225,7 @@ export default function BackgroundAnimation({
       uniforms.iResolution.value.set(w, h);
     };
 
-    // 5. Mouse Interaction: Wave moves ONLY when cursor moves
+    // Responsive cursor tracking: moves when mouse moves
     const onMouseMove = (event: MouseEvent) => {
       const clientX = event.clientX;
       const clientY = event.clientY;
@@ -254,15 +238,13 @@ export default function BackgroundAnimation({
         const dist = Math.hypot(dx, dy);
 
         if (onlyMoveOnCursor) {
-          // Add velocity proportional to cursor movement
-          velocityRef.current += Math.min(dist * 0.0016 * sensitivity, 0.07);
+          velocityRef.current += Math.min(dist * 0.00065 * sensitivity, 0.025);
         }
       }
 
       lastMousePosRef.current = { x: clientX, y: clientY };
     };
 
-    // Handle touch move for mobile devices
     const onTouchMove = (event: TouchEvent) => {
       if (event.touches.length > 0) {
         const touch = event.touches[0];
@@ -277,7 +259,7 @@ export default function BackgroundAnimation({
           const dist = Math.hypot(dx, dy);
 
           if (onlyMoveOnCursor) {
-            velocityRef.current += Math.min(dist * 0.0016 * sensitivity, 0.07);
+            velocityRef.current += Math.min(dist * 0.00065 * sensitivity, 0.025);
           }
         }
         lastMousePosRef.current = { x: clientX, y: clientY };
@@ -289,29 +271,25 @@ export default function BackgroundAnimation({
     window.addEventListener("touchmove", onTouchMove, { passive: true });
     onResize();
 
-    // 6. Animation Loop with Friction Decay
+    // Silky animation loop with smooth friction glide
     renderer.setAnimationLoop(() => {
       if (onlyMoveOnCursor) {
-        // Apply friction to velocity so waves smoothly glide to a stop
         velocityRef.current *= friction;
-        if (Math.abs(velocityRef.current) < 0.00003) {
+        if (Math.abs(velocityRef.current) < 0.00002) {
           velocityRef.current = 0;
         }
         accumulatedTimeRef.current += velocityRef.current;
         uniforms.iTime.value = accumulatedTimeRef.current;
       } else {
-        // Continuous ambient animation mode
-        uniforms.iTime.value = clock.getElapsedTime() * sensitivity;
+        uniforms.iTime.value = clock.getElapsedTime() * (sensitivity * 0.4);
       }
 
-      // Smooth mouse coordinate tracking
-      currentMouseRef.current.lerp(targetMouseRef.current, 0.08);
+      currentMouseRef.current.lerp(targetMouseRef.current, 0.07);
       uniforms.iMouse.value.copy(currentMouseRef.current);
 
       renderer.render(scene, camera);
     });
 
-    // 7. Cleanup
     return () => {
       window.removeEventListener("resize", onResize);
       window.removeEventListener("mousemove", onMouseMove);
@@ -327,7 +305,7 @@ export default function BackgroundAnimation({
       geometry.dispose();
       renderer.dispose();
     };
-  }, [onlyMoveOnCursor, sensitivity, friction, disableCenterDimming]);
+  }, [onlyMoveOnCursor, sensitivity, friction, intensity]);
 
   return (
     <div
