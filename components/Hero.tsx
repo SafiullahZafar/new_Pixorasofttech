@@ -1,12 +1,35 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0, isHovering: false });
+  const [isRevealed, setIsRevealed] = useState(false);
+
+  useEffect(() => {
+    // If start animation is not on page, reveal immediately
+    const hasIntro = typeof document !== "undefined" && document.querySelector(".start-animation");
+    if (!hasIntro) {
+      setIsRevealed(true);
+      return;
+    }
+
+    // Trigger right as the monogram flips at 2.8s - 3.1s, or on custom reveal event
+    const timer = setTimeout(() => {
+      setIsRevealed(true);
+    }, 2800);
+
+    const onReveal = () => setIsRevealed(true);
+    window.addEventListener("start-animation-reveal", onReveal);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("start-animation-reveal", onReveal);
+    };
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
@@ -27,30 +50,71 @@ export default function Hero() {
       <div className="mx-auto max-w-[2250px] px-5 py-8 sm:px-8 sm:py-12 lg:px-8 lg:py-16 xl:py-20">
         {/* Top Split: Huge Headline & Subtext + CTA */}
         <div className="grid items-end gap-10 lg:grid-cols-[1.6fr_0.8fr] lg:gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          <div
+            style={{ perspective: 1200, transformStyle: "preserve-3d" }}
           >
             <h1 className="max-w-[1000px] text-[40px] font-medium leading-[1.12] tracking-[-0.05em] sm:text-[56px] md:text-[64px] lg:text-[68px] xl:text-[76px] 2xl:text-[90px]">
-              <span className="block overflow-hidden">
-                <span className="block transform-gpu">Software Development</span>
+              <span className="block" style={{ perspective: 1000 }}>
+                <motion.span
+                  className="block transform-gpu"
+                  initial={{ opacity: 0, rotateX: -75 }}
+                  animate={isRevealed ? { opacity: 1, rotateX: 0 } : { opacity: 0, rotateX: -75 }}
+                  transition={{ duration: 0.85, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    transformOrigin: "top center",
+                    transformPerspective: 1000,
+                    transformStyle: "preserve-3d",
+                    backfaceVisibility: "hidden",
+                  }}
+                >
+                  Software Development
+                </motion.span>
               </span>
-              <span className="block overflow-hidden text-black">
-                <span className="block transform-gpu">
+              <span className="block text-black" style={{ perspective: 1000 }}>
+                <motion.span
+                  className="block transform-gpu"
+                  initial={{ opacity: 0, rotateX: -75 }}
+                  animate={isRevealed ? { opacity: 1, rotateX: 0 } : { opacity: 0, rotateX: -75 }}
+                  transition={{ duration: 0.85, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    transformOrigin: "top center",
+                    transformPerspective: 1000,
+                    transformStyle: "preserve-3d",
+                    backfaceVisibility: "hidden",
+                  }}
+                >
                   <span className="text-[#000000]">&amp;</span> Digital Product
-                </span>
+                </motion.span>
               </span>
-              <span className="block overflow-hidden text-black">
-                <span className="block transform-gpu">Design Company.</span>
+              <span className="block text-black" style={{ perspective: 1000 }}>
+                <motion.span
+                  className="block transform-gpu"
+                  initial={{ opacity: 0, rotateX: -75 }}
+                  animate={isRevealed ? { opacity: 1, rotateX: 0 } : { opacity: 0, rotateX: -75 }}
+                  transition={{ duration: 0.85, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    transformOrigin: "top center",
+                    transformPerspective: 1000,
+                    transformStyle: "preserve-3d",
+                    backfaceVisibility: "hidden",
+                  }}
+                >
+                  Design Company.
+                </motion.span>
               </span>
             </h1>
-          </motion.div>
+          </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, rotateX: -40 }}
+            animate={isRevealed ? { opacity: 1, rotateX: 0 } : { opacity: 0, rotateX: -40 }}
+            transition={{ duration: 0.85, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              transformOrigin: "top center",
+              transformPerspective: 1000,
+              transformStyle: "preserve-3d",
+              backfaceVisibility: "hidden",
+            }}
             className="max-w-[470px] lg:pb-2"
           >
             <p className="text-[15px] leading-6 text-slate-600 sm:text-base sm:leading-7 lg:text-[17px]">
@@ -78,11 +142,16 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Media Showcase Banner with Interactive SHOW CASES Cursor Badge */}
+        {/* Media Showcase Banner with Interactive SHOW CASES Cursor Badge & 3D In-Place Flip */}
         <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, rotateX: -18, scale: 0.97 }}
+          animate={isRevealed ? { opacity: 1, rotateX: 0, scale: 1 } : { opacity: 0, rotateX: -18, scale: 0.97 }}
+          transition={{ duration: 1.0, delay: 0.48, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            transformOrigin: "top center",
+            transformPerspective: 1400,
+            transformStyle: "preserve-3d",
+          }}
           className="relative mt-10 sm:mt-16 lg:mt-20 w-full aspect-video sm:aspect-auto sm:h-[480px] lg:h-[600px] xl:h-[620px]"
         >
           <div

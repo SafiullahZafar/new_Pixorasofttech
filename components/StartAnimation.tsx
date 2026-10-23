@@ -28,29 +28,35 @@ export function ShaderAnimation() {
 
       void main(void) {
         vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
-        // float t = time * 0.04;
         float t = max(time - 0.09, 0.0) * 0.05;
-        float lineWidth = 0.002;
+        float lineWidth = 0.0025;
 
-        vec3 color = vec3(0.0);
-        for (int j = 0; j < 3; j++) {
-          for (int i = 0; i < 5; i++) {
-            color[j] += lineWidth * float(i * i) / abs(
-              fract(t - 0.01 * float(j) + float(i) * 0.01) * 5.0
-              - length(uv)
-              + mod(uv.x + uv.y, 0.2)
-            );
-          }
+        float ringIntensity = 0.0;
+        for (int i = 0; i < 5; i++) {
+          ringIntensity += lineWidth * float(i * i) / abs(
+            fract(t + float(i) * 0.015) * 5.0
+            - length(uv)
+            + mod(uv.x + uv.y, 0.2)
+          );
         }
+        ringIntensity = clamp(ringIntensity, 0.0, 1.0);
+
+        // Blends seamlessly with website background (#FAFAFD)
+        vec3 bgColor = vec3(0.98039, 0.98039, 0.99216);
+        // Website dark blue (#0A2540) & slate gray (#707888)
+        vec3 darkBlue = vec3(0.0392, 0.1451, 0.2510);
+        vec3 slateGray = vec3(0.4392, 0.4706, 0.5333);
+        vec3 ringColor = mix(darkBlue, slateGray, clamp(length(uv) * 0.7, 0.0, 1.0));
+
+        // Blend the rings smoothly onto the #FAFAFD background
+        vec3 finalColor = mix(bgColor, ringColor, ringIntensity * 0.9);
 
         float radius = length(uv);
         float revealDistance = 18.4 * max(resolution.x, resolution.y) / min(resolution.x, resolution.y);
-        // Follow the same outward-moving ring phase as the original shader,
-        // keeping its diagonal ripple and letting the hero show behind it.
         float revealRadius = min((t + 0.01) * 5.0, revealDistance)
                            + mod(uv.x + uv.y, 0.2) - 0.4;
         float alpha = smoothstep(revealRadius - 0.045, revealRadius + 0.045, radius);
-        gl_FragColor = vec4(color[0], color[1], color[2], alpha);
+        gl_FragColor = vec4(finalColor, alpha);
       }
     `;
 
@@ -127,6 +133,19 @@ export function ShaderAnimation() {
     };
   }, []);
 
+  const [isRevealed, setIsRevealed] = useState(false);
+
+  useEffect(() => {
+    const handleReveal = () => setIsRevealed(true);
+    window.addEventListener("start-animation-reveal", handleReveal);
+    const timer = setTimeout(() => setIsRevealed(true), 3100);
+
+    return () => {
+      window.removeEventListener("start-animation-reveal", handleReveal);
+      clearTimeout(timer);
+    };
+  }, []);
+
   if (!isVisible) return null;
 
   return (
@@ -137,21 +156,31 @@ export function ShaderAnimation() {
           setIsVisible(false);
         }
       }}
-      className="start-animation fixed inset-0 z-[100] flex min-h-[100svh] w-full items-center justify-center overflow-hidden"
+      className={`start-animation fixed inset-0 z-[100] flex min-h-[100svh] w-full items-center justify-center overflow-hidden transition-all duration-700 ${
+        isRevealed ? "pointer-events-none" : ""
+      }`}
     >
       <div
         ref={containerRef}
         aria-hidden="true"
         className="start-animation__shader absolute inset-0"
       />
-      <div className="start-animation__logo relative z-10 flex w-[min(72vw,42vh,420px)] max-w-[min(72vw,42vh,420px)] items-center justify-center">
+      <div
+        onAnimationEnd={(event) => {
+          if (event.animationName === "monogram-appear") {
+            setIsRevealed(true);
+            window.dispatchEvent(new CustomEvent("start-animation-reveal"));
+          }
+        }}
+        className="start-animation__logo relative z-10 flex w-[min(72vw,42vh,420px)] max-w-[min(72vw,42vh,420px)] items-center justify-center"
+      >
         <Image
           src="/pixora-monogram.png"
           alt="PixoraSoftTech monogram"
           width={264}
           height={272}
           priority
-          className="relative h-auto w-full object-contain"
+          className="relative h-auto w-full object-contain brightness-0"
         />
       </div>
     </div>

@@ -266,9 +266,15 @@ export default function BackgroundAnimation({
       }
     };
 
+    const onStartReveal = () => {
+      // Gracefully bloom wave ribbon motion as the start animation reveals into the background
+      velocityRef.current = 0.016;
+    };
+
     window.addEventListener("resize", onResize, { passive: true });
     window.addEventListener("mousemove", onMouseMove, { passive: true });
     window.addEventListener("touchmove", onTouchMove, { passive: true });
+    window.addEventListener("start-animation-reveal", onStartReveal);
     onResize();
 
     // Silky animation loop with smooth friction glide
@@ -294,6 +300,7 @@ export default function BackgroundAnimation({
       window.removeEventListener("resize", onResize);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("start-animation-reveal", onStartReveal);
       renderer.setAnimationLoop(null);
 
       const canvas = renderer.domElement;

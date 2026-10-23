@@ -72,19 +72,33 @@ const caseStudiesCol3 = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileCaseOpen, setMobileCaseOpen] = useState(false);
+  const [isRevealed, setIsRevealed] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 15);
+    // If start animation is not present on the current page, reveal immediately
+    const hasIntro = typeof document !== "undefined" && document.querySelector(".start-animation");
+    if (!hasIntro) {
+      setIsRevealed(true);
+      return;
+    }
+
+    // Synchronize with start animation monogram flip (at ~2.8s - 3.1s)
+    const timer = setTimeout(() => {
+      setIsRevealed(true);
+    }, 2800);
+
+    const onReveal = () => setIsRevealed(true);
+    window.addEventListener("start-animation-reveal", onReveal);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("start-animation-reveal", onReveal);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -92,13 +106,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-[60] px-0 sm:px-0 lg:px-0 pt-0 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#FAFAFC]/85 backdrop-blur-md shadow-xs border-b border-black/5"
-          : "bg-transparent"
+      className={`absolute top-0 left-0 right-0 w-full z-[60] bg-transparent transition-opacity duration-700 ease-out ${
+        isRevealed
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="max-w-[2440px] mx-auto py-4 px-5 sm:px-8 lg:px-10 transition-all duration-300">
+      <div className="max-w-[2440px] mx-auto py-4 px-5 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
@@ -118,9 +132,8 @@ export default function Navbar() {
           <nav className="hidden xl:flex items-center gap-1.5 2xl:gap-3">
             <Link
               href="/"
-              className={`px-4.5 py-2.5 text-[15px] sm:text-base font-semibold transition-colors duration-200 rounded-full hover:bg-black/5 relative ${
-                pathname === "/" ? "text-slate-950 font-bold" : "text-slate-800 hover:text-slate-950"
-              }`}
+              className={`px-4.5 py-2.5 text-[15px] sm:text-base font-semibold transition-colors duration-200 rounded-full hover:bg-black/5 relative ${pathname === "/" ? "text-slate-950 font-bold" : "text-slate-800 hover:text-slate-950"
+                }`}
             >
               Home
             </Link>
@@ -313,9 +326,8 @@ export default function Navbar() {
                 >
                   <span>Services</span>
                   <ChevronDown
-                    className={`w-5 h-5 transition-transform duration-200 ${
-                      mobileServicesOpen ? "rotate-180" : ""
-                    }`}
+                    className={`w-5 h-5 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
                 {mobileServicesOpen && (
@@ -342,9 +354,8 @@ export default function Navbar() {
                 >
                   <span>Case Studies</span>
                   <ChevronDown
-                    className={`w-5 h-5 transition-transform duration-200 ${
-                      mobileCaseOpen ? "rotate-180" : ""
-                    }`}
+                    className={`w-5 h-5 transition-transform duration-200 ${mobileCaseOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
                 {mobileCaseOpen && (
