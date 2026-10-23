@@ -166,7 +166,7 @@ export default function Projects() {
         <div className="flex justify-center mt-16 sm:mt-24">
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-3 bg-[#0c3721] text-white text-xs sm:text-sm font-medium px-8 py-3.5 rounded-2xl hover:bg-black/80 transition-all duration-300 active:scale-95 shadow-sm"
+            className="inline-flex items-center gap-3 bg-[#0A2540] text-white text-xs sm:text-sm font-medium px-8 py-3.5 rounded-2xl hover:bg-[#143960] transition-all duration-300 active:scale-95 shadow-sm"
           >
             <span>View All Projects</span>
           </Link>

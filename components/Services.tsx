@@ -46,13 +46,13 @@ export default function Services() {
         <div className="flex items-end justify-between pb-6 sm:pb-8 border-b border-dashed border-zinc-300 mb-8 sm:mb-14">
           <div>
             <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">
-              <span className="h-2 w-2 rounded-full bg-[#0c3721] inline-block"></span>
+              <span className="h-2 w-2 rounded-full bg-[#0A2540] inline-block"></span>
               <span>OUR SERVICES</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-zinc-950">Services</h2>
           </div>
           <div className="font-mono text-zinc-600 text-lg sm:text-3xl">
-            02<span className="text-xs align-top text-[#0c3721] font-bold">+</span>
+            02<span className="text-xs align-top text-[#0A2540] font-bold">+</span>
           </div>
         </div>
 
@@ -62,11 +62,11 @@ export default function Services() {
             <div
               key={card.number}
               style={{ top: `calc(75px + ${idx} * 14px)` }}
-              className="sticky group rounded-2xl sm:rounded-[2rem] bg-white text-zinc-900 p-6 sm:p-10 lg:p-12 shadow-xl shadow-zinc-200/50 transition-all duration-300 border border-zinc-200 hover:border-[#0c3721]/30 hover:shadow-2xl"
+              className="sticky group rounded-2xl sm:rounded-[2rem] bg-white text-zinc-900 p-6 sm:p-10 lg:p-12 shadow-xl shadow-zinc-200/50 transition-all duration-300 border border-zinc-200 hover:border-[#0A2540]/30 hover:shadow-2xl"
             >
               <Link className="block relative z-10" href={card.href}>
                 <div className="flex flex-col-reverse sm:flex-row justify-between items-start gap-4 mb-8 sm:mb-14 lg:mb-16">
-                  <h3 className="text-3xl sm:text-5xl lg:text-7xl font-normal tracking-tight leading-[1.08] text-zinc-900 group-hover:text-[#0c3721] transition-colors duration-300">
+                  <h3 className="text-3xl sm:text-5xl lg:text-7xl font-normal tracking-tight leading-[1.08] text-zinc-900 group-hover:text-[#0A2540] transition-colors duration-300">
                     <span className="block">{card.titleLine1}</span>
                     <span className="block text-zinc-400 group-hover:text-zinc-600 transition-colors duration-300">
                       {card.titleLine2}
@@ -88,7 +88,7 @@ export default function Services() {
 
                 {/* Asterisk + Description */}
                 <div className="flex items-start gap-2 sm:gap-3 max-w-3xl pt-1">
-                  <span className="text-[#0c3721] text-sm sm:text-base mt-0.5 select-none font-bold">✹</span>
+                  <span className="text-[#0A2540] text-sm sm:text-base mt-0.5 select-none font-bold">✹</span>
                   <p className="text-xs sm:text-sm leading-relaxed text-zinc-600 font-normal group-hover:text-zinc-900 transition-colors">
                     {card.desc}
                   </p>

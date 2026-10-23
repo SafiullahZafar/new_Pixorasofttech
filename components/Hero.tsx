@@ -59,7 +59,7 @@ export default function Hero() {
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="inline-block">
-                <button className="group inline-flex w-full items-center justify-center gap-4 rounded-2xl bg-[#0c3721] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#174d31] sm:w-auto cursor-pointer shadow-sm">
+                <button className="group inline-flex w-full items-center justify-center gap-4 rounded-2xl bg-[#0A2540] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#143960] sm:w-auto cursor-pointer shadow-sm">
                   Start a Project
                   <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
                     <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -92,7 +92,7 @@ export default function Hero() {
             className="relative block h-full w-full overflow-hidden rounded-2xl group cursor-pointer"
           >
             <Link href="/portfolio" aria-label="View our projects" className="block h-full w-full">
-              <div className="absolute inset-0 overflow-hidden bg-[#0c3721]">
+              <div className="absolute inset-0 overflow-hidden bg-[#0A2540]">
                 <img
                   src="/suppliers.png"
                   alt="PixoraSoftTech Showcase"

@@ -94,32 +94,32 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-[60] px-0 sm:px-0 lg:px-0 pt-0 transition-all duration-300 ${
         scrolled
-          ? "bg-[#f5f5f5]/90 backdrop-blur-md shadow-sm border-b border-black/5"
-          : "bg-[#f5f5f5]/95 backdrop-blur-md"
+          ? "bg-[#f5f5f5]/85 backdrop-blur-md shadow-xs border-b border-black/5"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-[2440px] mx-auto py-3 px-4 sm:px-8 transition-all duration-300">
+      <div className="max-w-[2440px] mx-auto py-4 px-5 sm:px-8 lg:px-10 transition-all duration-300">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
+          <Link href="/" className="flex items-center gap-3 shrink-0 group">
             <img
-              src="/logo.png"
+              src="/pixora-monogram.png"
               alt="PixoraSoftTech Logo"
-              width={140}
-              height={40}
-              className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              width={160}
+              height={160}
+              className="h-10 sm:h-12 w-auto object-contain brightness-0 transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="text-[17px] font-bold tracking-tight text-slate-900 hidden sm:inline-block">
-              Pixora<span className="text-[#0c3721]">SoftTech</span>
+            <span className="text-xl sm:text-2xl font-bold tracking-tight text-black hidden sm:inline-block">
+              Pixora<span className="text-zinc-500 font-medium">SoftTech</span>
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-1 2xl:gap-2">
+          <nav className="hidden xl:flex items-center gap-1.5 2xl:gap-3">
             <Link
               href="/"
-              className={`px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-full hover:bg-black/5 relative ${
-                pathname === "/" ? "text-slate-950 font-semibold" : "text-slate-700 hover:text-slate-950"
+              className={`px-4.5 py-2.5 text-[15px] sm:text-base font-semibold transition-colors duration-200 rounded-full hover:bg-black/5 relative ${
+                pathname === "/" ? "text-slate-950 font-bold" : "text-slate-800 hover:text-slate-950"
               }`}
             >
               Home
@@ -127,7 +127,7 @@ export default function Navbar() {
 
             <Link
               href="#who-we-are"
-              className="px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 relative"
+              className="px-4.5 py-2.5 text-[15px] sm:text-base font-semibold text-slate-800 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 relative"
             >
               About
             </Link>
@@ -135,16 +135,16 @@ export default function Navbar() {
             {/* Services Dropdown */}
             <div className="relative group">
               <button
-                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 cursor-pointer"
+                className="flex items-center gap-1.5 px-4.5 py-2.5 text-[15px] sm:text-base font-semibold text-slate-800 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 cursor-pointer"
                 aria-haspopup="true"
               >
                 <span>Services</span>
-                <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 text-slate-500 group-hover:text-slate-950" />
+                <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180 text-slate-600 group-hover:text-slate-950" />
               </button>
 
               <div
                 className="invisible absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out pointer-events-none group-hover:pointer-events-auto"
-                style={{ width: "340px" }}
+                style={{ width: "360px" }}
               >
                 <div className="bg-white border border-slate-200/80 rounded-2xl p-3 shadow-xl backdrop-blur-xl">
                   <div className="flex flex-col gap-1">
@@ -160,7 +160,7 @@ export default function Navbar() {
                             <div className="p-2 rounded-lg bg-slate-100 text-slate-700 group-hover/item:bg-black group-hover/item:text-white transition-colors">
                               <Icon className="w-4 h-4" />
                             </div>
-                            <span className="text-sm font-medium text-slate-800 group-hover/item:text-slate-950">
+                            <span className="text-[15px] font-semibold text-slate-800 group-hover/item:text-slate-950">
                               {item.title}
                             </span>
                           </div>
@@ -175,16 +175,16 @@ export default function Navbar() {
             {/* Case Studies Dropdown */}
             <div className="relative group">
               <button
-                className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 cursor-pointer"
+                className="flex items-center gap-1.5 px-4.5 py-2.5 text-[15px] sm:text-base font-semibold text-slate-800 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 cursor-pointer"
                 aria-haspopup="true"
               >
                 <span>Case Studies</span>
-                <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 text-slate-500 group-hover:text-slate-950" />
+                <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180 text-slate-600 group-hover:text-slate-950" />
               </button>
 
               <div
                 className="invisible absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out pointer-events-none group-hover:pointer-events-auto"
-                style={{ width: "720px" }}
+                style={{ width: "740px" }}
               >
                 <div className="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-xl backdrop-blur-xl">
                   <div className="grid grid-cols-3 gap-x-4">
@@ -197,7 +197,7 @@ export default function Navbar() {
                           <Link
                             key={c.title}
                             href={c.href}
-                            className="px-2.5 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors"
+                            className="px-2.5 py-2 rounded-xl text-[14px] font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors"
                           >
                             {c.title}
                           </Link>
@@ -214,7 +214,7 @@ export default function Navbar() {
                           <Link
                             key={c.title}
                             href={c.href}
-                            className="px-2.5 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors"
+                            className="px-2.5 py-2 rounded-xl text-[14px] font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors"
                           >
                             {c.title}
                           </Link>
@@ -231,7 +231,7 @@ export default function Navbar() {
                           <Link
                             key={c.title}
                             href={c.href}
-                            className="px-2.5 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors"
+                            className="px-2.5 py-2 rounded-xl text-[14px] font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors"
                           >
                             {c.title}
                           </Link>
@@ -245,14 +245,14 @@ export default function Navbar() {
 
             <Link
               href="/portfolio"
-              className="px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 relative"
+              className="px-4.5 py-2.5 text-[15px] sm:text-base font-semibold text-slate-800 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 relative"
             >
               Projects
             </Link>
 
             <Link
               href="#tech-leverage"
-              className="px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 relative"
+              className="px-4.5 py-2.5 text-[15px] sm:text-base font-semibold text-slate-800 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 relative"
             >
               Team & Tech
             </Link>
@@ -262,18 +262,18 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               href="/contact"
-              className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-2xl bg-[#0c3721] text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg hover:bg-[#174d31] active:scale-95"
+              className="hidden sm:inline-flex items-center gap-2 px-7 py-3 rounded-2xl bg-[#0A2540] text-white text-sm font-semibold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg hover:bg-[#143960] active:scale-95"
             >
               <span>Get Started</span>
-              <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+              <ArrowUpRight className="w-4.5 h-4.5 stroke-[2.5]" />
             </Link>
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="xl:hidden p-2 text-slate-700 hover:text-black hover:bg-black/5 rounded-full transition-colors cursor-pointer"
+              className="xl:hidden p-2.5 text-slate-800 hover:text-black hover:bg-black/5 rounded-full transition-colors cursor-pointer"
               aria-label="Toggle Navigation"
             >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
         </div>
@@ -289,17 +289,17 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="xl:hidden bg-[#f5f5f5] border-b border-slate-200 px-5 py-6 overflow-y-auto max-h-[85vh] shadow-xl"
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               <Link
                 href="/"
-                className="px-3 py-2.5 rounded-xl text-base font-medium text-slate-900 hover:bg-black/5"
+                className="px-4 py-3 rounded-xl text-lg font-semibold text-slate-950 hover:bg-black/5"
                 onClick={() => setMobileOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="#who-we-are"
-                className="px-3 py-2.5 rounded-xl text-base font-medium text-slate-900 hover:bg-black/5"
+                className="px-4 py-3 rounded-xl text-lg font-semibold text-slate-950 hover:bg-black/5"
                 onClick={() => setMobileOpen(false)}
               >
                 About
@@ -309,23 +309,23 @@ export default function Navbar() {
               <div>
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className="flex items-center justify-between w-full px-3 py-2.5 rounded-xl text-base font-medium text-slate-900 hover:bg-black/5"
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-lg font-semibold text-slate-950 hover:bg-black/5 cursor-pointer"
                 >
                   <span>Services</span>
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${
+                    className={`w-5 h-5 transition-transform duration-200 ${
                       mobileServicesOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {mobileServicesOpen && (
-                  <div className="pl-4 pr-2 py-2 flex flex-col gap-1.5 border-l-2 border-[#0c3721]/30 ml-3 mt-1">
+                  <div className="pl-4 pr-2 py-2 flex flex-col gap-2 border-l-2 border-[#0A2540]/30 ml-3 mt-1">
                     {serviceItems.map((s) => (
                       <Link
                         key={s.title}
                         href={s.href}
                         onClick={() => setMobileOpen(false)}
-                        className="py-1.5 text-sm text-slate-700 hover:text-black font-medium"
+                        className="py-2 text-[15px] text-slate-700 hover:text-black font-semibold"
                       >
                         {s.title}
                       </Link>
@@ -338,23 +338,23 @@ export default function Navbar() {
               <div>
                 <button
                   onClick={() => setMobileCaseOpen(!mobileCaseOpen)}
-                  className="flex items-center justify-between w-full px-3 py-2.5 rounded-xl text-base font-medium text-slate-900 hover:bg-black/5"
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-lg font-semibold text-slate-950 hover:bg-black/5 cursor-pointer"
                 >
                   <span>Case Studies</span>
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${
+                    className={`w-5 h-5 transition-transform duration-200 ${
                       mobileCaseOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {mobileCaseOpen && (
-                  <div className="pl-4 pr-2 py-2 flex flex-col gap-1.5 border-l-2 border-[#0c3721]/30 ml-3 mt-1">
+                  <div className="pl-4 pr-2 py-2 flex flex-col gap-2 border-l-2 border-[#0A2540]/30 ml-3 mt-1">
                     {[...caseStudiesCol1, ...caseStudiesCol2, ...caseStudiesCol3].slice(0, 8).map((c) => (
                       <Link
                         key={c.title}
                         href={c.href}
                         onClick={() => setMobileOpen(false)}
-                        className="py-1.5 text-sm text-slate-700 hover:text-black font-medium"
+                        className="py-2 text-[15px] text-slate-700 hover:text-black font-semibold"
                       >
                         {c.title}
                       </Link>
@@ -365,7 +365,7 @@ export default function Navbar() {
 
               <Link
                 href="/portfolio"
-                className="px-3 py-2.5 rounded-xl text-base font-medium text-slate-900 hover:bg-black/5"
+                className="px-4 py-3 rounded-xl text-lg font-semibold text-slate-950 hover:bg-black/5"
                 onClick={() => setMobileOpen(false)}
               >
                 Projects
@@ -373,7 +373,7 @@ export default function Navbar() {
 
               <Link
                 href="#tech-leverage"
-                className="px-3 py-2.5 rounded-xl text-base font-medium text-slate-900 hover:bg-black/5"
+                className="px-4 py-3 rounded-xl text-lg font-semibold text-slate-950 hover:bg-black/5"
                 onClick={() => setMobileOpen(false)}
               >
                 Team & Tech
@@ -383,10 +383,10 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-[#0c3721] text-white text-sm font-semibold tracking-wider uppercase shadow-md"
+                  className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-2xl bg-[#0A2540] text-white text-base font-semibold tracking-wider uppercase shadow-md active:scale-95 transition-transform"
                 >
                   <span>Get Started</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight className="w-5 h-5 stroke-[2.5]" />
                 </Link>
               </div>
             </div>

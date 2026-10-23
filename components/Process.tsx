@@ -53,7 +53,7 @@ export default function Process() {
           >
             <div className="flex flex-col mt-0 md:mt-20">
               {/* Gradient Box graphic */}
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl mb-6 bg-gradient-to-b from-[#0c3721] via-emerald-800 to-teal-400 shadow-md"></div>
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl mb-6 bg-gradient-to-b from-[#0A2540] via-blue-900 to-sky-500 shadow-md"></div>
               <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-black uppercase mb-3">
                 DESIGN
               </h3>
@@ -111,7 +111,7 @@ export default function Process() {
               <div className="w-full">
                 <span className="block text-xs font-bold font-mono mb-2 text-black">100%</span>
                 <div className="w-full bg-zinc-200 h-1 rounded-full overflow-hidden">
-                  <div className="bg-[#0c3721] h-full rounded-full w-full"></div>
+                  <div className="bg-[#0A2540] h-full rounded-full w-full"></div>
                 </div>
               </div>
             </div>

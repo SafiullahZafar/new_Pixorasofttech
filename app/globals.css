@@ -3,10 +3,10 @@
 @theme {
   --font-sans: var(--font-outfit), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --color-primary: #0c3721;
-  --color-primary-hover: #174d31;
+  --color-primary: #0A2540;
+  --color-primary-hover: #143960;
   --color-secondary: #000000;
-  --color-accent: #0c3721;
+  --color-accent: #0A2540;
 }
 
 html {
@@ -22,8 +22,8 @@ body {
 }
 
 ::selection {
-  background: rgba(12, 55, 33, 0.2);
-  color: #0c3721;
+  background: rgba(10, 37, 64, 0.2);
+  color: #0A2540;
 }
 
 /* Scrollbar */

@@ -46,13 +46,13 @@ export default function TechLeverage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.04 }}
-              className="group p-5 rounded-2xl bg-white border border-zinc-200 hover:border-[#0c3721]/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[120px]"
+              className="group p-5 rounded-2xl bg-white border border-zinc-200 hover:border-[#0A2540]/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[120px]"
             >
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 group-hover:text-[#0c3721] transition-colors">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 group-hover:text-[#0A2540] transition-colors">
                   {tech.tag}
                 </span>
-                <span className="h-1.5 w-1.5 rounded-full bg-zinc-300 group-hover:bg-[#0c3721] transition-colors"></span>
+                <span className="h-1.5 w-1.5 rounded-full bg-zinc-300 group-hover:bg-[#0A2540] transition-colors"></span>
               </div>
               <div>
                 <h4 className="text-base sm:text-lg font-semibold text-zinc-900 group-hover:text-black">

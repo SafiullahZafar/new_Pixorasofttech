@@ -26,7 +26,7 @@ export default function WhoWeAre() {
             </h2>
           </div>
           <div className="font-mono text-zinc-600 text-lg sm:text-2xl">
-            01<span className="text-xs align-top text-[#0c3721] font-bold">+</span>
+            01<span className="text-xs align-top text-[#0A2540] font-bold">+</span>
           </div>
         </div>
 
