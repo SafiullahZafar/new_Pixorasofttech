@@ -40,51 +40,38 @@ body {
   animation: marquee 28s linear infinite;
 }
 
-/* Responsive sizing and separate entrance timing for the start animation. */
+/* The shader's moving rings clear their trail to reveal the hero underneath. */
+.start-animation {
+  isolation: isolate;
+  animation: intro-exit 0.9s ease-in 8s forwards;
+}
+
+@keyframes intro-exit {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Grow the monogram for 2.9 seconds, then fade after the hero reveal begins. */
 .start-animation__logo {
-  width: min(78vw, 68vh, 1100px);
-  max-width: min(78vw, 68vh, 1100px);
+  width: min(20vw, 24vh, 300px);
+  max-width: min(34vw, 38vh, 400px);
   transform-origin: center;
-  animation: monogram-appear 3.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: monogram-appear 3.1s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes monogram-appear {
-  0% { opacity: 0; transform: scale(0.68) translateY(14px); filter: blur(16px); }
-  20% { opacity: 1; transform: scale(1.06) translateY(0); filter: blur(0); }
-  34%, 58% { opacity: 1; transform: scale(1); filter: blur(0); }
-  78% { opacity: 0.88; transform: scale(1.16); filter: blur(1px); }
-  100% { opacity: 0; transform: scale(1.32); filter: blur(12px); }
-}
-
-.start-animation__shader {
-  --reveal-radius: 0px;
-  -webkit-mask-image: radial-gradient(circle at center, transparent 0, transparent var(--reveal-radius), #000 calc(var(--reveal-radius) + 2px));
-  mask-image: radial-gradient(circle at center, transparent 0, transparent var(--reveal-radius), #000 calc(var(--reveal-radius) + 2px));
-  animation: hero-circle-reveal 3s cubic-bezier(0.65, 0, 0.35, 1) 1.7s forwards;
-}
-
-@property --reveal-radius {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0px;
-}
-
-@keyframes hero-circle-reveal {
-  to {
-    --reveal-radius: 150vmax;
-    visibility: hidden;
-  }
+  0% { opacity: 0; transform: scale(0.18); }
+  14% { opacity: 1; transform: scale(0.72); }
+  50% { opacity: 1; transform: scale(3); }
+  62% { opacity: 1; transform: scale(3); }
+  82% { opacity: 0.45; transform: scale(3); }
+  100% { opacity: 0; transform: scale(3); }
 }
 
 @media (max-width: 639px) {
   .start-animation__logo {
-    width: min(86vw, 56vh, 600px);
-    max-width: min(86vw, 56vh, 600px);
-    animation-duration: 3.8s;
-  }
-
-  .start-animation__glow {
-    background-image: radial-gradient(circle at center, rgba(37, 99, 235, 0.18), transparent 48%);
+    width: min(34vw, 38svh, 280px);
+    max-width: min(34vw, 38svh, 280px);
+    animation-duration: 5.8s;
   }
 }
 
@@ -94,7 +81,7 @@ body {
     opacity: 0;
   }
 
-  .start-animation__shader {
+  .start-animation {
     animation-duration: 1ms;
     animation-delay: 0ms;
   }

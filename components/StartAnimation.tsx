@@ -28,7 +28,8 @@ export function ShaderAnimation() {
 
       void main(void) {
         vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
-        float t = time * 0.05;
+        // float t = time * 0.04;
+        float t = max(time - 0.09, 0.0) * 0.05;
         float lineWidth = 0.002;
 
         vec3 color = vec3(0.0);
@@ -42,7 +43,14 @@ export function ShaderAnimation() {
           }
         }
 
-        gl_FragColor = vec4(color[0], color[1], color[2], 1.0);
+        float radius = length(uv);
+        float revealDistance = 18.4 * max(resolution.x, resolution.y) / min(resolution.x, resolution.y);
+        // Follow the same outward-moving ring phase as the original shader,
+        // keeping its diagonal ripple and letting the hero show behind it.
+        float revealRadius = min((t + 0.01) * 5.0, revealDistance)
+                           + mod(uv.x + uv.y, 0.2) - 0.4;
+        float alpha = smoothstep(revealRadius - 0.045, revealRadius + 0.045, radius);
+        gl_FragColor = vec4(color[0], color[1], color[2], alpha);
       }
     `;
 
@@ -52,15 +60,21 @@ export function ShaderAnimation() {
     const scene = new THREE.Scene();
     const geometry = new THREE.PlaneGeometry(2, 2);
     const uniforms = {
-      time: { type: "f", value: 1 },
+      time: { type: "f", value: 0.001 },
       resolution: { type: "v2", value: new THREE.Vector2() },
     };
-    const material = new THREE.ShaderMaterial({ uniforms, vertexShader, fragmentShader });
+    const material = new THREE.ShaderMaterial({
+      uniforms,
+      vertexShader,
+      fragmentShader,
+      transparent: true,
+      depthWrite: false,
+    });
     scene.add(new THREE.Mesh(geometry, material));
 
     let renderer: THREE.WebGLRenderer;
     try {
-      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     } catch {
       // Keep the page usable in browsers or devices without WebGL support.
       return () => {
@@ -70,6 +84,7 @@ export function ShaderAnimation() {
     }
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearColor(0x00000, 0);
     renderer.domElement.setAttribute("aria-hidden", "true");
     renderer.domElement.style.position = "absolute";
     renderer.domElement.style.inset = "0";
@@ -117,28 +132,26 @@ export function ShaderAnimation() {
   return (
     <div
       aria-label="PixoraSoftTech intro animation"
+      onAnimationEnd={(event) => {
+        if (event.target === event.currentTarget && event.animationName === "intro-exit") {
+          setIsVisible(false);
+        }
+      }}
       className="start-animation fixed inset-0 z-[100] flex min-h-[100svh] w-full items-center justify-center overflow-hidden"
     >
       <div
         ref={containerRef}
-        onAnimationEnd={(event) => {
-          if (event.target === event.currentTarget && event.animationName === "hero-circle-reveal") {
-            setIsVisible(false);
-          }
-        }}
-        className="start-animation__shader absolute inset-0 bg-[#050914]"
-      >
-        <div className="start-animation__glow pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.15),transparent_34%)]" />
-      </div>
+        aria-hidden="true"
+        className="start-animation__shader absolute inset-0"
+      />
       <div className="start-animation__logo relative z-10 flex w-[min(72vw,42vh,420px)] max-w-[min(72vw,42vh,420px)] items-center justify-center">
-        <div className="absolute inset-[18%] rounded-full bg-blue-500/20 blur-3xl" />
         <Image
           src="/pixora-monogram.png"
           alt="PixoraSoftTech monogram"
-          width={1664}
-          height={936}
+          width={264}
+          height={272}
           priority
-          className="relative h-auto w-full object-contain drop-shadow-[0_0_28px_rgba(96,165,250,0.5)]"
+          className="relative h-auto w-full object-contain"
         />
       </div>
     </div>
