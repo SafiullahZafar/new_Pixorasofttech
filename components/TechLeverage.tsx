@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import IconCloud, { defaultTechSlugs } from "@/components/IconCloud";
 
 const technologies = [
   { name: "Next.js", category: "Fullstack Framework", tag: "Frontend" },
@@ -20,24 +21,34 @@ const technologies = [
 
 export default function TechLeverage() {
   return (
-    <section id="tech-leverage" className="bg-transparent py-16 md:py-24 px-6 md:px-12 lg:px-12 select-none overflow-hidden border-t border-dashed border-zinc-300">
+    <section
+      id="tech-leverage"
+      className="bg-transparent py-16 md:py-24 px-6 md:px-12 lg:px-12 select-none overflow-hidden border-t border-dashed border-zinc-300 font-sans"
+    >
       <div className="max-w-[2200px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16 md:mb-24 items-start">
-          <div className="lg:col-span-5 flex flex-col items-start">
+        {/* Main Showcase: Heading & Paragraph on Left, 3D Interactive Icon Sphere on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-16 md:mb-20 items-center">
+          {/* Left Column: Clean Heading & Description */}
+          <div className="lg:col-span-6 flex flex-col items-start">
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#111111] leading-[1.1] font-medium tracking-tight mb-4">
               For companies with
               <br />
               tech leverage
             </h2>
-          </div>
-          <div className="lg:col-span-7 lg:pl-12 lg:pt-2">
-            <p className="text-base md:text-lg text-[#555555] leading-relaxed max-w-2xl font-normal">
+            <p className="text-base md:text-lg text-[#555555] leading-relaxed max-w-xl font-normal">
               We specialize in working with digital products and brands, regardless of the size and lifecycle stage, from startups to established businesses striving to achieve significant tech leverage.
             </p>
           </div>
+
+          {/* Right Column: 3D Interactive Icon Sphere */}
+          <div className="lg:col-span-6 flex items-center justify-center relative">
+            <div className="relative w-full max-w-[480px] aspect-square flex items-center justify-center">
+              <IconCloud iconSlugs={defaultTechSlugs} />
+            </div>
+          </div>
         </div>
 
-        {/* Tech Stack Grid */}
+        {/* Tech Stack Grid Below with dark hover */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
           {technologies.map((tech, i) => (
             <motion.div
@@ -45,8 +56,8 @@ export default function TechLeverage() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.04 }}
-              className="group p-5 rounded-2xl bg-white border border-zinc-200 hover:border-[#0A2540]/40 hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[120px]"
+              transition={{ duration: 0.4, delay: i * 0.03 }}
+              className="group p-5 rounded-2xl bg-white border border-zinc-200 hover:border-[#0A2540] hover:shadow-lg transition-all duration-300 flex flex-col justify-between min-h-[120px]"
             >
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 group-hover:text-[#0A2540] transition-colors">
@@ -67,3 +78,5 @@ export default function TechLeverage() {
     </section>
   );
 }
+
+
