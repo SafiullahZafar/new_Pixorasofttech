@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import HeadingAnimationService from "@/components/HeadingAnimationService";
+import AnimationServiceDescription from "@/components/AnimationServiceDescription";
 
 export interface ServiceItem {
   id: number;
@@ -195,62 +196,16 @@ export default function Services() {
               </span>
             </div>
 
-            {/* Persistent Particle Heading Animation that morphs between service titles */}
+            {/* Heading: Pure Particle Animation (retained as requested) */}
             <div className="w-full min-h-[100px] sm:min-h-[115px] lg:min-h-[130px] flex items-center mb-2">
               <HeadingAnimationService title={activeService.title} />
             </div>
 
-            {/* Smooth dynamic text crossfade for active service details */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeService.id}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col justify-between"
-              >
-                <div>
-                  <p className="text-sm sm:text-base lg:text-lg font-medium text-slate-700 leading-snug">
-                    {activeService.eyebrow}
-                  </p>
-                  <p className="mt-3 sm:mt-4 text-xs sm:text-sm lg:text-base text-slate-600 leading-relaxed max-w-xl">
-                    {activeService.description}
-                  </p>
-                </div>
-
-                {/* Capability Tags */}
-                <div className="mt-5 sm:mt-6 flex flex-wrap gap-2">
-                  {activeService.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-black/[0.05] border border-black/10 text-black backdrop-blur-sm"
-                    >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0A2540]" />
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Action CTA */}
-                <div className="mt-7 sm:mt-8 flex items-center gap-4">
-                  <Link
-                    href={`/services/${activeService.slug}`}
-                    className="inline-flex items-center gap-2.5 rounded-full bg-[#0A2540] px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#143960] active:scale-95 hover:shadow-xl"
-                  >
-                    <span>Explore {activeService.title}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/70 backdrop-blur-md px-5 sm:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold text-black transition-all duration-300 hover:bg-black hover:text-white"
-                  >
-                    Contact Us
-                  </a>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+            {/* Description & Button: Rolling Text Shift Animation on card change */}
+            <AnimationServiceDescription
+              activeService={activeService}
+              activeIndex={activeIndex}
+            />
           </div>
 
           {/* Right Column: 5 Expandable Accordion Cards */}
