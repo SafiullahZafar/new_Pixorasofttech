@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import HeadingAnimationService from "@/components/HeadingAnimationService";
 
 export interface ServiceItem {
   id: number;
@@ -194,21 +195,23 @@ export default function Services() {
               </span>
             </div>
 
-            {/* Smooth dynamic text crossfade for active service */}
+            {/* Persistent Particle Heading Animation that morphs between service titles */}
+            <div className="w-full min-h-[100px] sm:min-h-[115px] lg:min-h-[130px] flex items-center mb-2">
+              <HeadingAnimationService title={activeService.title} />
+            </div>
+
+            {/* Smooth dynamic text crossfade for active service details */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeService.id}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="min-h-[260px] sm:min-h-[280px] flex flex-col justify-between"
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col justify-between"
               >
                 <div>
-                  <h2 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-5xl 2xl:text-6xl font-bold tracking-tight text-black leading-[1.08]">
-                    {activeService.title}
-                  </h2>
-                  <p className="mt-3 text-sm sm:text-base lg:text-lg font-medium text-slate-700 leading-snug">
+                  <p className="text-sm sm:text-base lg:text-lg font-medium text-slate-700 leading-snug">
                     {activeService.eyebrow}
                   </p>
                   <p className="mt-3 sm:mt-4 text-xs sm:text-sm lg:text-base text-slate-600 leading-relaxed max-w-xl">
