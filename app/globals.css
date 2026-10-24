@@ -42,39 +42,69 @@ body {
   animation: marquee 28s linear infinite;
 }
 
-/* The shader's moving rings clear their trail to reveal the hero underneath. */
+/* The start animation overlay */
 .start-animation {
-  isolation: isolate;
-  animation: intro-exit 0.9s ease-in 5.8s forwards;
+  /* Controlled via React state */
 }
 
-@keyframes intro-exit {
-  to { opacity: 0; visibility: hidden; }
-}
-
-/* Smoothly scale the monogram up to 3x, then fade it away. */
+/* Monogram Logo Animation:
+   0s - 1.1s: Closed start animation with curly animated rings, logo in center at scale(1).
+   1.1s - 3.2s: As the curly circular reveal opens slowly and elegantly to expose the hero section,
+   the logo scales up smoothly with the expanding curly wave and fades out.
+*/
 .start-animation__logo {
-  width: min(16vw, 20vh, 250px);
-  max-width: min(34vw, 38vh, 400px);
+  width: min(18vw, 22vh, 260px);
+  max-width: min(32vw, 36vh, 360px);
   transform-origin: center;
-  transform-style: flat;
-  backface-visibility: visible;
-  animation: monogram-zoom-fade 2.4s cubic-bezier(0.12, 0.6, 0.26, 0.7) both;
+  will-change: transform, opacity;
 }
 
-@keyframes monogram-zoom-fade {
-  0% { opacity: 0; transform: scale(0.2); }
-  14% { opacity: 1; transform: scale(0.75); }
-  55% { opacity: 1; transform: scale(3); }
-  68% { opacity: 1; transform: scale(3); }
-  100% { opacity: 0; transform: scale(3); }
+.animate-monogram-reveal {
+  animation: monogram-scale-reveal 3.3s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes monogram-scale-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.25);
+  }
+  18% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  33% {
+    /* At ~1.1s: Screen is closed, curly rings swirling, logo crisp in center */
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+    /* As curly reveal expands, logo scales up with the flowing waves */
+    opacity: 0.9;
+    transform: scale(1.65);
+  }
+  82% {
+    opacity: 0.35;
+    transform: scale(2.5);
+  }
+  95% {
+    /* Logo scales past bounds and fades completely away */
+    opacity: 0;
+    transform: scale(3.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.4);
+  }
 }
 
 @media (max-width: 639px) {
   .start-animation__logo {
-    width: min(34vw, 38svh, 280px);
-    max-width: min(34vw, 38svh, 280px);
-    animation-duration: 5.8s;
+    width: min(32vw, 36svh, 260px);
+    max-width: min(32vw, 36svh, 260px);
+  }
+
+  .animate-monogram-reveal {
+    animation-duration: 3.3s;
   }
 }
 
@@ -85,7 +115,6 @@ body {
   }
 
   .start-animation {
-    animation-duration: 1ms;
-    animation-delay: 0ms;
+    opacity: 0 !important;
   }
 }
