@@ -156,7 +156,7 @@ export function ShaderAnimation() {
           setIsVisible(false);
         }
       }}
-      className={`start-animation fixed inset-0 z-[100] flex min-h-[100svh] w-full items-center justify-center overflow-hidden transition-all duration-700 ${
+      className={`start-animation fixed inset-0 z-[10000] flex min-h-[100svh] w-full items-center justify-center overflow-hidden transition-all duration-700 ${
         isRevealed ? "pointer-events-none" : ""
       }`}
     >

@@ -75,30 +75,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileCaseOpen, setMobileCaseOpen] = useState(false);
-  const [isRevealed, setIsRevealed] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    // If start animation is not present on the current page, reveal immediately
-    const hasIntro = typeof document !== "undefined" && document.querySelector(".start-animation");
-    if (!hasIntro) {
-      setIsRevealed(true);
-      return;
-    }
-
-    // Synchronize with start animation monogram flip (at ~2.8s - 3.1s)
-    const timer = setTimeout(() => {
-      setIsRevealed(true);
-    }, 2800);
-
-    const onReveal = () => setIsRevealed(true);
-    window.addEventListener("start-animation-reveal", onReveal);
-
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener("start-animation-reveal", onReveal);
-    };
-  }, [pathname]);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -106,11 +83,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`absolute top-0 left-0 right-0 w-full z-[60] bg-transparent transition-opacity duration-700 ease-out ${
-        isRevealed
-          ? "opacity-100 pointer-events-auto"
-          : "opacity-0 pointer-events-none"
-      }`}
+      className="absolute top-0 left-0 right-0 w-full z-[60] bg-transparent"
     >
       <div className="max-w-[2440px] mx-auto py-4 px-5 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between">

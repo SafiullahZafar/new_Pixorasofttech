@@ -26,10 +26,10 @@ export default function Home() {
       {/* 1. Floating Studio Header / Navbar */}
       <Navbar />
 
-      <main id="home" role="main" className="relative z-10 min-h-screen bg-transparent">
-        {/* Intro Start Animation (Preserved as requested) */}
-        <StartAnimation />
+      {/* Intro overlay is a root-level sibling so its z-index can cover the navbar. */}
+      <StartAnimation />
 
+      <main id="home" role="main" className="relative z-10 min-h-screen bg-transparent">
         {/* 2. Hero Section */}
         <Hero />
 

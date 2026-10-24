@@ -45,7 +45,7 @@ body {
 /* The shader's moving rings clear their trail to reveal the hero underneath. */
 .start-animation {
   isolation: isolate;
-  animation: intro-exit 0.9s ease-in 8s forwards;
+  animation: intro-exit 0.9s ease-in 5.8s forwards;
 }
 
 @keyframes intro-exit {
