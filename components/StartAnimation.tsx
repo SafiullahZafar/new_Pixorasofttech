@@ -167,7 +167,7 @@ export function ShaderAnimation() {
       />
       <div
         onAnimationEnd={(event) => {
-          if (event.animationName === "monogram-appear") {
+          if (event.animationName === "monogram-zoom-fade") {
             setIsRevealed(true);
             window.dispatchEvent(new CustomEvent("start-animation-reveal"));
           }

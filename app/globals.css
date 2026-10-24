@@ -52,40 +52,22 @@ body {
   to { opacity: 0; visibility: hidden; }
 }
 
-/* Grow the monogram for 2.9 seconds, then 3D flip as the hero reveal begins. */
+/* Smoothly scale the monogram up to 3x, then fade it away. */
 .start-animation__logo {
-  width: min(20vw, 24vh, 300px);
+  width: min(16vw, 20vh, 250px);
   max-width: min(34vw, 38vh, 400px);
   transform-origin: center;
-  perspective: 1000px;
-  animation: monogram-appear 3.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-style: flat;
+  backface-visibility: visible;
+  animation: monogram-zoom-fade 2.4s cubic-bezier(0.12, 0.6, 0.26, 0.7) both;
 }
 
-@keyframes monogram-appear {
-  0% {
-    opacity: 0;
-    transform: perspective(1000px) scale(0.2) rotateY(-35deg);
-  }
-  14% {
-    opacity: 1;
-    transform: perspective(1000px) scale(0.85) rotateY(0deg);
-  }
-  50% {
-    opacity: 1;
-    transform: perspective(1000px) scale(1.05) rotateY(0deg);
-  }
-  72% {
-    opacity: 1;
-    transform: perspective(1000px) scale(1.1) rotateY(15deg);
-  }
-  86% {
-    opacity: 0.65;
-    transform: perspective(1000px) scale(1.22) rotateY(65deg) rotateX(10deg);
-  }
-  100% {
-    opacity: 0;
-    transform: perspective(1000px) scale(1.35) rotateY(90deg) rotateX(20deg);
-  }
+@keyframes monogram-zoom-fade {
+  0% { opacity: 0; transform: scale(0.2); }
+  14% { opacity: 1; transform: scale(0.75); }
+  55% { opacity: 1; transform: scale(3); }
+  68% { opacity: 1; transform: scale(3); }
+  100% { opacity: 0; transform: scale(3); }
 }
 
 @media (max-width: 639px) {
