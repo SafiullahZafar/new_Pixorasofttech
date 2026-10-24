@@ -1,101 +1,273 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-const serviceCards = [
+export interface ServiceItem {
+  id: number;
+  slug: string;
+  badge: string;
+  title: string;
+  eyebrow: string;
+  description: string;
+  imageUrl: string;
+  tags: string[];
+}
+
+export const servicesData: ServiceItem[] = [
   {
-    number: "S/ 001",
-    titleLine1: "Custom Software",
-    titleLine2: "Development",
-    href: "/services/custom-software-development",
-    tags: ["Architecture", "Enterprise", "Cloud Native", "API Integration", "Scalability"],
-    desc: "We build custom software that solves real problems, not just checks boxes. Tailored architecture built for high performance, reliability, and enterprise scale.",
+    id: 1,
+    slug: "website-development",
+    badge: "SERVICE 01",
+    title: "Website Development",
+    eyebrow: "High-Performance Next.js Websites Engineered to Convert",
+    description:
+      "We design and build fast, responsive, SEO-optimized web applications with sub-second loading speeds, modern frameworks, and conversion-focused architectures that elevate your brand.",
+    imageUrl: "/portfolio/brew-haven.png",
+    tags: ["Next.js & React", "Responsive UI", "Core Web Vitals", "SEO Ready"],
   },
   {
-    number: "S/ 002",
-    titleLine1: "Web",
-    titleLine2: "Development",
-    href: "/services/website-development",
-    tags: ["Next.js", "React", "Performance", "SEO Optimized", "Tailwind CSS"],
-    desc: "We design and build websites that represent your brand and convert visitors into customers. Fast, responsive, accessible, and engineered to outperform competitors.",
+    id: 2,
+    slug: "mobile-app-development",
+    badge: "SERVICE 02",
+    title: "Mobile App Development",
+    eyebrow: "Cross-Platform iOS & Android Apps Built for Scale",
+    description:
+      "Intuitive, native-feel mobile applications crafted with React Native and Flutter. We engineer low-latency, offline-first apps with delightful interactions and App Store launch readiness.",
+    imageUrl: "/portfolio/fitpulse-app.png",
+    tags: ["iOS & Android", "React Native", "Offline First", "Store Launch"],
   },
   {
-    number: "S/ 003",
-    titleLine1: "SaaS",
-    titleLine2: "Products",
-    href: "/services/custom-software-development",
-    tags: ["MVP", "Subscription", "Multi-tenant", "Payment Gateway", "Analytics"],
-    desc: "From MVP to full scale enterprise platform, we build subscription-ready digital products designed to scale with your user base and accelerate recurring revenue.",
+    id: 3,
+    slug: "custom-software-development",
+    badge: "SERVICE 03",
+    title: "Custom Software Development",
+    eyebrow: "Enterprise Dashboards, Internal Systems & Portals",
+    description:
+      "Tailor-made SaaS platforms, admin dashboards, and operations software built around your exact business logic to streamline manual workflows and unify data.",
+    imageUrl: "/portfolio/delivery-dashboard.png",
+    tags: ["Custom Portals", "API Integrations", "Automation", "Role-Based Access"],
+  },
+  /*
+  {
+    id: 4,
+    slug: "ui-ux-design",
+    badge: "SERVICE 04",
+    title: "UI/UX & Product Design",
+    eyebrow: "Human-Centered Digital Interfaces That Drive Action",
+    description:
+      "Research-backed interface design and comprehensive design systems that transform complex software into intuitive, visually breathtaking experiences users love.",
+    imageUrl: "/portfolio/shopease-app.png",
+    tags: ["User Research", "Wireframes", "Design Systems", "Interactive Prototypes"],
+  },
+  */
+  {
+    id: 4,
+    slug: "cloud-solutions",
+    badge: "SERVICE 04",
+    title: "Cloud & DevOps Solutions",
+    eyebrow: "Elastic, Secure & Zero-Downtime Infrastructure",
+    description:
+      "Scalable cloud deployment architectures on AWS, GCP, and Azure with automated CI/CD pipelines, containerization, and 24/7 reliability for mission-critical software.",
+    imageUrl: "/portfolio/solar-solutions.png",
+    tags: ["AWS & Azure", "CI/CD Pipelines", "Auto Scaling", "Zero Downtime"],
   },
   {
-    number: "S/ 004",
-    titleLine1: "Mobile",
-    titleLine2: "Apps",
-    href: "/services/mobile-app-development",
-    tags: ["React Native", "iOS", "Android", "Cross-Platform", "UX Animation"],
-    desc: "Your app is often the first touchpoint customers experience. We build fluid, performant mobile experiences for iOS and Android engineered to drive engagement.",
+    id: 5,
+    slug: "custom-software-development",
+    badge: "SERVICE 05",
+    title: "AI & Intelligent Automation",
+    eyebrow: "Smart Workflows, Custom AI Integrations & Agents",
+    description:
+      "Practical AI integrations, automated data pipelines, and intelligent assistant workflows designed to eliminate repetitive operational tasks and multiply productivity.",
+    imageUrl: "/portfolio/flowcrm-dashboard.png",
+    tags: ["AI Integrations", "Smart Workflows", "API Bridges", "Analytics"],
   },
 ];
 
-export default function Services() {
+function AccordionCard({
+  item,
+  isActive,
+  onActivate,
+}: {
+  item: ServiceItem;
+  isActive: boolean;
+  onActivate: () => void;
+}) {
   return (
-    <section id="services" className="bg-transparent font-sans text-black py-12 sm:py-20 lg:py-28 relative z-10">
-      <div className="mx-auto max-w-[2200px] px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="flex items-end justify-between pb-6 sm:pb-8 border-b border-dashed border-zinc-300 mb-8 sm:mb-14">
-          <div>
-            <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono uppercase tracking-widest text-zinc-600 mb-2">
-              <span className="h-2 w-2 rounded-full bg-[#0A2540] inline-block"></span>
-              <span>OUR SERVICES</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-zinc-950">Services</h2>
-          </div>
-          <div className="font-mono text-zinc-600 text-lg sm:text-3xl">
-            02<span className="text-xs align-top text-[#0A2540] font-bold">+</span>
-          </div>
+    <button
+      type="button"
+      aria-pressed={isActive}
+      onMouseEnter={onActivate}
+      onFocus={onActivate}
+      onClick={onActivate}
+      className={`group relative h-[420px] sm:h-[480px] lg:h-[510px] xl:h-[540px] shrink-0 overflow-hidden rounded-2xl sm:rounded-3xl text-left border border-black/10 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-black ${
+        isActive
+          ? "w-[min(82vw,340px)] sm:w-[360px] lg:w-[330px] xl:w-[400px] 2xl:w-[450px] shadow-[0_24px_60px_-15px_rgba(10,37,64,0.25)]"
+          : "w-[44px] sm:w-[52px] lg:w-[48px] xl:w-[58px] 2xl:w-[68px] hover:w-[50px] sm:hover:w-[58px] lg:hover:w-[54px] xl:hover:w-[64px] shadow-[0_10px_25px_-5px_rgba(0,0,0,0.1)]"
+      }`}
+    >
+      {/* Background Image */}
+      <img
+        src={item.imageUrl}
+        alt={item.title}
+        className="absolute inset-0 size-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+        onError={(event) => {
+          event.currentTarget.onerror = null;
+          event.currentTarget.src = "/hero-visual.png";
+        }}
+      />
+
+      {/* Dark gradient overlay */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-500 ${
+          isActive
+            ? "bg-gradient-to-t from-black/90 via-black/40 to-black/20"
+            : "bg-black/60 group-hover:bg-black/45"
+        }`}
+      />
+
+      {/* Expanded Content View (when active) */}
+      <div
+        className={`absolute inset-0 p-5 sm:p-7 lg:p-8 flex flex-col justify-between transition-opacity duration-300 ${
+          isActive ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex items-center justify-between">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wider uppercase bg-white/20 text-white backdrop-blur-md border border-white/20">
+            {item.badge}
+          </span>
+          <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
+            <ArrowRight className="w-4 h-4" />
+          </span>
         </div>
 
-        {/* Sticky Stacking Cards */}
-        <div className="relative space-y-6 sm:space-y-8 pb-20 sm:pb-28">
-          {serviceCards.map((card, idx) => (
-            <div
-              key={card.number}
-              style={{ top: `calc(75px + ${idx} * 14px)` }}
-              className="sticky group rounded-2xl sm:rounded-[2rem] bg-white text-zinc-900 p-6 sm:p-10 lg:p-12 shadow-xl shadow-zinc-200/50 transition-all duration-300 border border-zinc-200 hover:border-[#0A2540]/30 hover:shadow-2xl"
-            >
-              <Link className="block relative z-10" href={card.href}>
-                <div className="flex flex-col-reverse sm:flex-row justify-between items-start gap-4 mb-8 sm:mb-14 lg:mb-16">
-                  <h3 className="text-3xl sm:text-5xl lg:text-7xl font-normal tracking-tight leading-[1.08] text-zinc-900 group-hover:text-[#0A2540] transition-colors duration-300">
-                    <span className="block">{card.titleLine1}</span>
-                    <span className="block text-zinc-400 group-hover:text-zinc-600 transition-colors duration-300">
-                      {card.titleLine2}
-                    </span>
-                  </h3>
-                  <div className="flex items-center gap-2 font-mono text-xs sm:text-sm text-zinc-500 self-end sm:self-auto">
-                    <span>{card.number}</span>
-                  </div>
+        <div>
+          <h3 className="text-xl sm:text-2xl lg:text-[26px] xl:text-3xl font-bold text-white tracking-tight leading-tight mb-2">
+            {item.title}
+          </h3>
+          <p className="text-xs sm:text-sm text-white/85 line-clamp-2 leading-relaxed">
+            {item.description}
+          </p>
+          <div className="mt-3 sm:mt-4 flex items-center gap-2 text-xs font-semibold text-white/95">
+            <span>Explore Service Details</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+          </div>
+        </div>
+      </div>
+
+      {/* Collapsed Pill View (vertical title when inactive) */}
+      <div
+        className={`absolute inset-0 flex flex-col items-center justify-between py-5 sm:py-6 transition-opacity duration-300 ${
+          !isActive ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <span className="text-[10px] sm:text-[11px] font-bold tracking-wider text-white/70">
+          0{item.id}
+        </span>
+        <span className="whitespace-nowrap text-xs sm:text-sm lg:text-[13px] xl:text-sm font-semibold tracking-wide text-white [writing-mode:vertical-rl] rotate-180">
+          {item.title}
+        </span>
+        <span className="w-2 h-2 rounded-full bg-white/40 group-hover:bg-white transition-colors" />
+      </div>
+    </button>
+  );
+}
+
+export default function Services() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeService = servicesData[activeIndex] || servicesData[0];
+
+  return (
+    <section id="services" className="relative w-full bg-transparent font-sans text-black py-16 sm:py-24 overflow-hidden">
+      <div className="mx-auto max-w-[2000px] px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8 xl:gap-14">
+          {/* Left Column: Dynamic service description updating on hover */}
+          <div className="w-full lg:w-[42%] xl:w-[40%] flex flex-col justify-center">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
+              <span className="text-xs font-bold tracking-widest uppercase text-black">OUR EXPERTISE</span>
+              <span className="text-xs font-bold text-slate-400 ml-2">
+                • 0{activeIndex + 1} / 0{servicesData.length}
+              </span>
+            </div>
+
+            {/* Smooth dynamic text crossfade for active service */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeService.id}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="min-h-[260px] sm:min-h-[280px] flex flex-col justify-between"
+              >
+                <div>
+                  <h2 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-5xl 2xl:text-6xl font-bold tracking-tight text-black leading-[1.08]">
+                    {activeService.title}
+                  </h2>
+                  <p className="mt-3 text-sm sm:text-base lg:text-lg font-medium text-slate-700 leading-snug">
+                    {activeService.eyebrow}
+                  </p>
+                  <p className="mt-3 sm:mt-4 text-xs sm:text-sm lg:text-base text-slate-600 leading-relaxed max-w-xl">
+                    {activeService.description}
+                  </p>
                 </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 py-3 sm:py-4 border-t border-zinc-100 mb-4 sm:mb-6 text-xs sm:text-sm text-zinc-500 font-light">
-                  {card.tags.map((tag) => (
-                    <span key={tag} className="hover:text-black transition-colors">
+                {/* Capability Tags */}
+                <div className="mt-5 sm:mt-6 flex flex-wrap gap-2">
+                  {activeService.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-black/[0.05] border border-black/10 text-black backdrop-blur-sm"
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#0A2540]" />
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                {/* Asterisk + Description */}
-                <div className="flex items-start gap-2 sm:gap-3 max-w-3xl pt-1">
-                  <span className="text-[#0A2540] text-sm sm:text-base mt-0.5 select-none font-bold">✹</span>
-                  <p className="text-xs sm:text-sm leading-relaxed text-zinc-600 font-normal group-hover:text-zinc-900 transition-colors">
-                    {card.desc}
-                  </p>
+                {/* Action CTA */}
+                <div className="mt-7 sm:mt-8 flex items-center gap-4">
+                  <Link
+                    href={`/services/${activeService.slug}`}
+                    className="inline-flex items-center gap-2.5 rounded-full bg-[#0A2540] px-6 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#143960] active:scale-95 hover:shadow-xl"
+                  >
+                    <span>Explore {activeService.title}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/70 backdrop-blur-md px-5 sm:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold text-black transition-all duration-300 hover:bg-black hover:text-white"
+                  >
+                    Contact Us
+                  </a>
                 </div>
-              </Link>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Right Column: 5 Expandable Accordion Cards */}
+          <div className="w-full lg:w-[58%] xl:w-[60%] min-w-0">
+            <div className="w-full flex justify-center lg:justify-end">
+              <div className="flex flex-row items-center gap-2 sm:gap-2.5 lg:gap-2.5 xl:gap-3 max-w-full overflow-x-auto lg:overflow-visible pb-4 pt-2 px-1 scrollbar-none">
+                {servicesData.map((item, index) => (
+                  <AccordionCard
+                    key={item.id}
+                    item={item}
+                    isActive={index === activeIndex}
+                    onActivate={() => setActiveIndex(index)}
+                  />
+                ))}
+              </div>
             </div>
-          ))}
+            <p className="text-xs text-slate-400 text-center lg:text-right mt-2 pr-2 hidden sm:block">
+              Hover over any service card to expand details
+            </p>
+          </div>
         </div>
       </div>
     </section>
