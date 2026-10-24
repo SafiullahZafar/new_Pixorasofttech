@@ -141,7 +141,7 @@ export default function BackgroundAnimation({
 
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    const clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const vertexShader = `
       varying vec2 vTextureCoord;
@@ -287,7 +287,8 @@ export default function BackgroundAnimation({
         accumulatedTimeRef.current += velocityRef.current;
         uniforms.iTime.value = accumulatedTimeRef.current;
       } else {
-        uniforms.iTime.value = clock.getElapsedTime() * (sensitivity * 0.4);
+        const elapsedTime = (performance.now() - startTime) * 0.001;
+        uniforms.iTime.value = elapsedTime * (sensitivity * 0.4);
       }
 
       currentMouseRef.current.lerp(targetMouseRef.current, 0.07);

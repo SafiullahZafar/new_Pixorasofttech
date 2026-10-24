@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import StartAnimation from "@/components/StartAnimation";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
 import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
+import OurWork from "@/components/OurWork";
 import WhoWeAre from "@/components/WhoWeAre";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
@@ -34,7 +34,7 @@ export default function Home() {
         <Hero />
 
         {/* 3. Selected Works & Digital Experiences (Projects) */}
-        <Projects />
+        <OurWork />
 
         {/* 4. Who We Are */}
         <WhoWeAre />
