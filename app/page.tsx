@@ -8,6 +8,7 @@ import Services from "@/components/Services";
 import Process from "@/components/Process";
 import TechLeverage from "@/components/TechLeverage";
 import GlobalNetwork from "@/components/GlobalNetwork";
+import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
@@ -52,7 +53,10 @@ export default function Home() {
         {/* 8. Our Global Network */}
         <GlobalNetwork />
 
-        {/* 9. FAQ Accordion */}
+        {/* 9. Client Reviews & Testimonials Marquee */}
+        <Testimonials />
+
+        {/* 10. FAQ Accordion */}
         <FAQ />
       </main>
 

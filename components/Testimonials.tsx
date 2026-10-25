@@ -1,107 +1,272 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 import { Star } from "lucide-react";
 
-const reviews = [
+export interface TestimonialItem {
+  text: string;
+  image: string;
+  name: string;
+  role: string;
+  rating?: number;
+}
+
+export const testimonials: TestimonialItem[] = [
   {
-    text: "PixoraSoftTech rebuilt our storefront and conversions jumped 38% in the first quarter. They feel like an extension of our own team.",
+    text: "PixoraSoftTech engineered our e-commerce platform from the ground up. Checkout latency dropped by 62%, and conversions surged 38% in our first quarter post-launch.",
     name: "Sarah Mitchell",
-    role: "CEO, NovaCart",
-    img: "https://i.pravatar.cc/48?img=47",
+    role: "CEO & Co-Founder, NovaCart",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5,
   },
   {
-    text: "The mobile app they delivered is fast, beautiful and our 4.9 star rating speaks for itself. Truly premium work.",
+    text: "The cross-platform mobile app they delivered is blisteringly fast. Our 4.9-star rating on the App Store with 120k+ MAU is a direct result of their architectural standards.",
     name: "David Chen",
-    role: "Founder, PulseFit",
-    img: "https://i.pravatar.cc/48?img=12",
+    role: "VP of Engineering, PulseFit",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5,
   },
   {
-    text: "Our Amazon listings never looked this good. Click-through rate doubled within two weeks of the new images going live.",
+    text: "Their technical execution is world-class. From real-time inventory synchronization to custom analytics, everything performed flawlessly through our peak sales events.",
     name: "Aisha Rahman",
-    role: "Marketing Director, ApexGear",
-    img: "https://i.pravatar.cc/48?img=5",
+    role: "Head of Growth, ApexGear",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5,
   },
   {
-    text: "From brand strategy to a full identity system, they nailed every detail. Our investors noticed the difference immediately.",
+    text: "From brand identity to a full-stack digital ecosystem, PixoraSoftTech understood our enterprise requirements intuitively. Our investors and board noticed immediately.",
     name: "Marcus Weber",
     role: "COO, Lumen Energy",
-    img: "https://i.pravatar.cc/48?img=15",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5,
   },
   {
-    text: "A complex analytics dashboard delivered ahead of schedule with zero compromises on quality. Exceptional engineering.",
+    text: "A high-throughput financial dashboard delivered ahead of schedule with zero compromises on security or SOC-2 compliance. Exceptional engineering talent.",
     name: "Priya Nair",
-    role: "Product Lead, FinSight",
-    img: "https://i.pravatar.cc/48?img=23",
+    role: "Lead Product Manager, FinSight",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5,
   },
   {
-    text: "The packaging design gave our coffee a premium shelf presence. Sales through retail partners climbed noticeably.",
+    text: "They elevated our digital presence into a luxury lifestyle experience. Subscription retention increased by 45% within 60 days of the redesigned platform.",
     name: "Tom Becker",
-    role: "Owner, Brew Coffee",
-    img: "https://i.pravatar.cc/48?img=33",
+    role: "Co-Founder, Brew Haven Roasters",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5,
+  },
+  {
+    text: "The microservices architecture and automated CI/CD pipeline they implemented cut our deployment cycle from days to minutes. A huge force multiplier for our team.",
+    name: "Elena Rostova",
+    role: "CTO, CloudVantage",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5,
+  },
+  {
+    text: "Finding developers who master low-level performance while obsessing over modern UI aesthetics is rare. Pixora delivered an AI interface that our users love.",
+    name: "Alex Rivera",
+    role: "Founder & CEO, Omnistack AI",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5,
+  },
+  {
+    text: "Collaborating with PixoraSoftTech across time zones felt completely seamless. Their clear sprints, transparent communication, and speed set a new benchmark.",
+    name: "Liam O'Connor",
+    role: "Director of Digital, Horizon Media",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=150&q=80",
+    rating: 5,
   },
 ];
 
-export default function Testimonials() {
+export const TestimonialsColumn = (props: {
+  className?: string;
+  testimonials: TestimonialItem[];
+  duration?: number;
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const firstSetRef = useRef<HTMLDivElement>(null);
+  const [setHeight, setSetHeight] = useState(0);
+  const y = useMotionValue(0);
+  const isDraggingRef = useRef(false);
+  const isHoveredRef = useRef(false);
+
+  useEffect(() => {
+    const measure = () => {
+      if (firstSetRef.current) {
+        // Height of one full batch plus gap (24px)
+        setSetHeight(firstSetRef.current.offsetHeight + 24);
+      }
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [props.testimonials]);
+
+  useAnimationFrame((_, delta) => {
+    if (!setHeight) return;
+
+    // Smooth speed in pixels per second
+    const speed = setHeight / (props.duration || 16);
+    const deltaSeconds = Math.min(delta / 1000, 0.1);
+
+    if (!isDraggingRef.current) {
+      if (!isHoveredRef.current) {
+        const currentY = y.get();
+        const nextY = currentY - speed * deltaSeconds;
+        if (nextY <= -setHeight) {
+          y.set(nextY + setHeight);
+        } else if (nextY >= 0) {
+          y.set(nextY - setHeight);
+        } else {
+          y.set(nextY);
+        }
+      }
+    } else {
+      // Infinite drag wrap: allow user to pull continuously in either direction
+      const currentY = y.get();
+      if (currentY <= -setHeight) {
+        y.set(currentY + setHeight);
+      } else if (currentY >= 0) {
+        y.set(currentY - setHeight);
+      }
+    }
+  });
+
+  const renderCard = (
+    { text, image, name, role, rating = 5 }: TestimonialItem,
+    i: number,
+    prefix: string
+  ) => (
+    <div
+      key={`${prefix}-${i}`}
+      className="p-8 sm:p-10 rounded-3xl border border-zinc-200/90 bg-white/95 backdrop-blur-md shadow-sm hover:border-[#0342DD]/35 hover:shadow-md transition-all duration-300 max-w-xs sm:max-w-sm w-full select-none"
+    >
+      {/* Rating Stars */}
+      <div className="flex gap-1 mb-4">
+        {[...Array(rating)].map((_, s) => (
+          <Star
+            key={s}
+            className="w-3.5 h-3.5 fill-[#0342DD] text-[#0342DD]"
+          />
+        ))}
+      </div>
+
+      <p className="text-sm sm:text-[15px] leading-relaxed text-zinc-700 font-normal">
+        &ldquo;{text}&rdquo;
+      </p>
+
+      <div className="flex items-center gap-3 mt-6 pt-5 border-t border-zinc-100">
+        <img
+          width={42}
+          height={42}
+          src={image}
+          alt={name}
+          className="h-10 w-10 sm:h-11 sm:w-11 rounded-full object-cover border border-zinc-200/80 pointer-events-none"
+          loading="lazy"
+          draggable={false}
+        />
+        <div className="flex flex-col">
+          <div className="font-semibold text-black tracking-tight text-sm leading-5">
+            {name}
+          </div>
+          <div className="text-xs text-zinc-500 font-medium tracking-tight leading-4 mt-0.5">
+            {role}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
-    <section id="testimonials" className="bg-[#f8fafc] py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <motion.div initial={{ opacity:0,y:8 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }}
-            className="inline-flex items-center px-4 py-1.5 rounded-full border border-slate-200 bg-white text-slate-500 text-xs font-semibold uppercase tracking-widest mb-5">
-            Client Love
-          </motion.div>
-          <motion.h2 initial={{ opacity:0,y:14 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.05 }}
-            className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4">
-            Don&apos;t take our{" "}
-            <span className="text-blue-600">word for it</span>
-          </motion.h2>
-          <motion.p initial={{ opacity:0,y:14 }} whileInView={{ opacity:1,y:0 }} viewport={{ once:true }} transition={{ delay:0.1 }}
-            className="text-slate-500 text-base max-w-xl mx-auto leading-relaxed">
-            We measure our success by the success of the people we work with. Here is what a few of them have to say.
-          </motion.p>
+    <div
+      className={`${props.className || ""} overflow-visible`}
+      onMouseEnter={() => {
+        isHoveredRef.current = true;
+      }}
+      onMouseLeave={() => {
+        isHoveredRef.current = false;
+      }}
+    >
+      <motion.div
+        ref={containerRef}
+        style={{ y }}
+        drag="y"
+        dragConstraints={{ top: -999999, bottom: 999999 }}
+        dragElastic={0.05}
+        onDragStart={() => {
+          isDraggingRef.current = true;
+        }}
+        onDragEnd={() => {
+          isDraggingRef.current = false;
+        }}
+        className="flex flex-col gap-6 pb-6 bg-transparent cursor-grab active:cursor-grabbing select-none touch-none"
+      >
+        {/* Set 1: Measured anchor */}
+        <div ref={firstSetRef} className="flex flex-col gap-6">
+          {props.testimonials.map((t, i) => renderCard(t, i, "s1"))}
+        </div>
+        {/* Set 2: Seamless loop */}
+        <div className="flex flex-col gap-6">
+          {props.testimonials.map((t, i) => renderCard(t, i, "s2"))}
+        </div>
+        {/* Set 3: Headroom for reverse dragging */}
+        <div className="flex flex-col gap-6">
+          {props.testimonials.map((t, i) => renderCard(t, i, "s3"))}
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default function Testimonials() {
+  const firstColumn = testimonials.slice(0, 3);
+  const secondColumn = testimonials.slice(3, 6);
+  const thirdColumn = testimonials.slice(6, 9);
+
+  return (
+    <section
+      id="testimonials"
+      className="bg-transparent py-16 md:py-24 px-6 md:px-12 lg:px-12 select-none overflow-hidden border-t border-dashed border-zinc-300 font-sans"
+    >
+      <div className="max-w-[2200px] mx-auto">
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between pb-10 sm:pb-14 border-b border-zinc-200 mb-8 sm:mb-12">
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#0342DD]"></span>
+              <span className="text-xs font-bold tracking-widest uppercase text-black">
+                CLIENT REVIEWS
+              </span>
+              <span className="text-xs font-bold text-slate-400 ml-2">
+                • DRAG & EXPLORE
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black uppercase">
+              WHAT FOUNDERS SAY
+            </h2>
+          </div>
+          <p className="max-w-md text-sm sm:text-base font-normal text-[#555555] leading-relaxed mt-4 sm:mt-8">
+            Engineering digital solutions that accelerate businesses worldwide. Here is what leading founders and enterprise executives say about partnering with us.
+          </p>
         </div>
 
-        {/* 3-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {reviews.map((r, i) => (
-            <motion.div key={i}
-              initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }}
-              transition={{ delay: i*0.07, duration:0.45, ease:"easeOut" }}
-              className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-blue-100 hover:shadow-md transition-all duration-300 relative"
-            >
-              {/* Quote icon top right */}
-              <div className="absolute top-5 right-5 text-slate-100">
-                <svg width="28" height="22" viewBox="0 0 28 22" fill="currentColor">
-                  <path d="M0 22V13.5C0 5.833 4.167.5 12.5 0l1 2C9.333 3 7.083 5.583 6.5 10H12V22H0zm16 0V13.5C16 5.833 20.167.5 28.5 0l1 2C25.333 3 23.083 5.583 22.5 10H28V22H16z"/>
-                </svg>
-              </div>
-
-              {/* Stars */}
-              <div className="flex gap-0.5 mb-4">
-                {[...Array(5)].map((_,s) => (
-                  <Star key={s} className="w-4 h-4 fill-blue-600 text-blue-600" />
-                ))}
-              </div>
-
-              {/* Review */}
-              <p className="text-slate-600 text-sm leading-relaxed mb-5">
-                &ldquo;{r.text}&rdquo;
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <img src={r.img} alt={r.name} width={40} height={40}
-                  className="w-10 h-10 rounded-full object-cover border border-slate-100" />
-                <div>
-                  <p className="text-slate-900 text-sm font-semibold">{r.name}</p>
-                  <p className="text-slate-400 text-xs">{r.role}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* Interactive Marquee Columns: Smooth Auto-Scroll + Grab & Move */}
+        <div className="flex justify-center gap-6 [mask-image:linear-gradient(to_bottom,transparent_0%,black_12%,black_88%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_12%,black_88%,transparent_100%)] max-h-[720px] overflow-hidden">
+          <TestimonialsColumn
+            testimonials={firstColumn}
+            duration={16}
+          />
+          <TestimonialsColumn
+            testimonials={secondColumn}
+            className="hidden md:block"
+            duration={22}
+          />
+          <TestimonialsColumn
+            testimonials={thirdColumn}
+            className="hidden lg:block"
+            duration={18}
+          />
         </div>
       </div>
     </section>
