@@ -7,6 +7,7 @@ import WhoWeAre from "@/components/WhoWeAre";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import TechLeverage from "@/components/TechLeverage";
+import GlobalNetwork from "@/components/GlobalNetwork";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
@@ -48,7 +49,10 @@ export default function Home() {
         {/* 7. For Companies With Tech Leverage */}
         <TechLeverage />
 
-        {/* 8. FAQ Accordion */}
+        {/* 8. Our Global Network */}
+        <GlobalNetwork />
+
+        {/* 9. FAQ Accordion */}
         <FAQ />
       </main>
 
