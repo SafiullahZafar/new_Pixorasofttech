@@ -11,6 +11,7 @@ import {
 } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
+import { useMotionValueEvent, type MotionValue } from "framer-motion";
 import * as THREE from "three";
 
 export type ImageItem = string | { src: string; alt?: string };
@@ -49,6 +50,7 @@ export interface InfiniteGalleryProps {
   className?: string;
   style?: React.CSSProperties;
   centerTitle?: string;
+  scrollProgress?: MotionValue<number>;
 }
 
 interface PlaneData {
@@ -202,11 +204,13 @@ function GalleryScene({
     blurOut: { start: 0.9, end: 1.0 },
     maxBlur: 3.0,
   },
+  scrollProgress,
 }: Omit<InfiniteGalleryProps, "className" | "style">) {
   const [scrollVelocity, setScrollVelocity] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
   const lastInteraction = useRef(Date.now());
   const touchStartY = useRef(0);
+  const prevProgress = useRef(0);
 
   const normalizedImages = useMemo(
     () =>
@@ -278,6 +282,23 @@ function GalleryScene({
     }));
   }, [depthRange, spatialPositions, totalImages, visibleCount]);
 
+  // Pinned scroll tracking: card flight smoothly advances with page scroll
+  useMotionValueEvent(
+    scrollProgress || ({ get: () => 0, on: () => () => {} } as unknown as MotionValue<number>),
+    "change",
+    (latest: number) => {
+      const inside = latest > 0.005 && latest < 0.995;
+      const delta = latest - prevProgress.current;
+      prevProgress.current = latest;
+
+      if (inside && Math.abs(delta) > 0.0001) {
+        setScrollVelocity((prev) => prev + delta * 24 * speed);
+        setAutoPlay(false);
+        lastInteraction.current = Date.now();
+      }
+    }
+  );
+
   // Non-blocking wheel handler: gentle, controlled scroll advance
   const handleWheel = useCallback(
     (event: WheelEvent) => {
@@ -288,8 +309,9 @@ function GalleryScene({
     [speed]
   );
 
-  // Synchronize with natural page scrolling with smooth, gentle damping
+  // Synchronize with natural page scrolling when not pinned
   useEffect(() => {
+    if (scrollProgress) return;
     let lastY = typeof window !== "undefined" ? window.scrollY : 0;
     const onScroll = () => {
       const currentY = window.scrollY;
@@ -299,7 +321,6 @@ function GalleryScene({
       const canvasEl = document.querySelector("#infinite-gallery-canvas");
       if (canvasEl) {
         const rect = canvasEl.getBoundingClientRect();
-        // Gentle, smooth advance when this section is in the viewport
         if (rect.top < window.innerHeight && rect.bottom > 0) {
           if (Math.abs(delta) > 0.5) {
             setScrollVelocity((prev) => prev + delta * 0.012 * speed);
@@ -311,7 +332,7 @@ function GalleryScene({
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [speed]);
+  }, [speed, scrollProgress]);
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
@@ -372,22 +393,33 @@ function GalleryScene({
     }
   }, [handleWheel, handleKeyDown, handleTouchStart, handleTouchMove]);
 
-  // Gentle auto-play resumes after 3s of inactivity
+  // Gentle auto-play resumes after 2s of inactivity while inside section
   useEffect(() => {
     const interval = setInterval(() => {
-      if (Date.now() - lastInteraction.current > 3000) {
+      const isInside = scrollProgress
+        ? scrollProgress.get() > 0.005 && scrollProgress.get() < 0.995
+        : true;
+
+      if (isInside && Date.now() - lastInteraction.current > 2000) {
         setAutoPlay(true);
+      } else if (!isInside) {
+        setAutoPlay(false);
+        setScrollVelocity(0);
       }
-    }, 1000);
+    }, 500);
     return () => clearInterval(interval);
-  }, []);
+  }, [scrollProgress]);
 
   useFrame((state, delta) => {
-    if (autoPlay) {
-      setScrollVelocity((prev) => prev + 0.16 * delta);
+    const isInside = scrollProgress
+      ? scrollProgress.get() > 0.005 && scrollProgress.get() < 0.995
+      : true;
+
+    if (autoPlay && isInside) {
+      setScrollVelocity((prev) => prev + 0.3 * delta);
     }
 
-    setScrollVelocity((prev) => prev * 0.92);
+    setScrollVelocity((prev) => prev * 0.94);
 
     const time = state.clock.getElapsedTime();
     materials.forEach((material) => {
@@ -402,7 +434,7 @@ function GalleryScene({
     const totalRange = depthRange;
 
     planesData.current.forEach((plane, i) => {
-      let newZ = plane.z + scrollVelocity * delta * 7;
+      let newZ = plane.z + scrollVelocity * delta * 6;
       let wrapsForward = 0;
       let wrapsBackward = 0;
 
@@ -547,7 +579,7 @@ function FallbackGallery({ images }: { images: ImageItem[] }) {
 
 export default function InfiniteGallery({
   images,
-  className = "h-[92vh] sm:h-[98vh] lg:h-[105vh] min-h-[750px] w-full",
+  className = "h-full w-full",
   style,
   fadeSettings = {
     fadeIn: { start: 0.05, end: 0.25 },
@@ -559,6 +591,7 @@ export default function InfiniteGallery({
     maxBlur: 6.0,
   },
   centerTitle = "Who We Are",
+  scrollProgress,
 }: InfiniteGalleryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
@@ -582,7 +615,7 @@ export default function InfiniteGallery({
   if (!mounted) {
     return (
       <div
-        className={`${className} flex items-center justify-center bg-transparent rounded-3xl border border-zinc-200/60`}
+        className={`${className} flex items-center justify-center bg-transparent`}
         style={style}
       >
         <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
@@ -605,7 +638,7 @@ export default function InfiniteGallery({
     <div
       ref={containerRef}
       id="infinite-gallery-canvas"
-      className={`relative ${className} bg-transparent overflow-hidden select-none cursor-default [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]`}
+      className={`relative ${className} bg-transparent overflow-hidden select-none cursor-default [mask-image:linear-gradient(to_bottom,transparent_0%,black_6%,black_94%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_6%,black_94%,transparent_100%)]`}
       style={style}
     >
       {/* Center Cinematic Serif Italic Title with luxury gradient color */}
@@ -626,6 +659,7 @@ export default function InfiniteGallery({
             images={images}
             fadeSettings={fadeSettings}
             blurSettings={blurSettings}
+            scrollProgress={scrollProgress}
           />
         </Suspense>
       </Canvas>

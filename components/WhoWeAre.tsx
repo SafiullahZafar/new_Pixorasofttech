@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
+import { useScroll } from "framer-motion";
 import InfiniteGallery, { ImageItem } from "@/components/InfiniteGallery";
 
 const GALLERY_IMAGES: ImageItem[] = [
@@ -43,59 +44,71 @@ const GALLERY_IMAGES: ImageItem[] = [
 ];
 
 export default function WhoWeAre() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  // Pinned scroll track driving the full-screen 3D tunnel gallery
+  const { scrollYProgress } = useScroll({
+    target: trackRef,
+    offset: ["start start", "end end"],
+  });
+
   return (
-    <section
-      id="who-we-are"
-      className="bg-transparent font-sans text-black py-16 sm:py-24 border-t border-dashed border-zinc-300 select-none overflow-hidden"
-    >
-      <div className="mx-auto max-w-[2200px] px-6 sm:px-8 lg:px-10">
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between pb-8 sm:pb-12 border-b border-zinc-200 mb-8 sm:mb-12">
+    <section id="who-we-are" className="relative w-full bg-transparent text-black font-sans border-t border-dashed border-zinc-300">
+      {/* 1. Header Section - Clean, proper responsive width, no overlap with 3D cards */}
+      <div className="w-full max-w-[2200px] mx-auto px-6 sm:px-10 lg:px-16 pt-16 sm:pt-24 pb-8 sm:pb-12 border-b border-zinc-200">
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-zinc-600 mb-3">
-              <span className="h-2 w-2 rounded-full bg-[#0342DD] inline-block"></span>
+              <span className="h-2.5 w-2.5 rounded-full bg-[#0342DD] inline-block"></span>
               <span className="font-bold text-black">WHO WE ARE</span>
               <span className="text-zinc-400">• YOUR VISION, OUR CRAFT</span>
             </div>
-            {/* Clean Two-Line Heading matching other sections */}
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-black uppercase leading-[1.08]">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-black uppercase leading-[1.08]">
               YOUR VISION.
               <br />
               OUR ENGINEERING.
             </h2>
           </div>
-          <p className="max-w-md text-sm sm:text-base font-normal text-[#555555] leading-relaxed mt-4 sm:mt-6">
+          <p className="max-w-md text-sm sm:text-base font-normal text-[#555555] leading-relaxed mt-2 sm:mt-6">
             You bring the bold vision, user insights, and business ambition. We bring deep technical architecture, modern full-stack development, and rapid execution to turn your vision into production-grade software.
           </p>
         </div>
+      </div>
 
-        {/* Tall Grand 3D Infinite Tunnel Gallery on Transparent Background */}
-        <div className="w-full relative">
+      {/* 2. Full-Screen 3D Animation Stage (Dedicated 100vh Sticky Viewport with Pinned Scroll Track) */}
+      <div
+        ref={trackRef}
+        className="relative w-full h-[280vh]"
+      >
+        <div className="sticky top-0 h-screen w-full overflow-hidden bg-transparent select-none">
           <InfiniteGallery
             images={GALLERY_IMAGES}
-            className="h-[92vh] sm:h-[98vh] lg:h-[105vh] min-h-[750px] w-full bg-transparent"
+            className="w-full h-full"
             speed={1.0}
             centerTitle="Who We Are"
+            scrollProgress={scrollYProgress}
           />
         </div>
+      </div>
 
-        {/* Partnership Collaboration Pillars */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10 sm:mt-12">
-          <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-xs flex flex-col justify-between">
+      {/* 3. Partnership Collaboration Pillars */}
+      <div className="w-full max-w-[2200px] mx-auto px-6 sm:px-10 lg:px-16 py-14 sm:py-20 border-t border-zinc-200">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="p-5 sm:p-6 rounded-2xl bg-white border border-zinc-200/90 shadow-xs flex flex-col justify-between">
             <span className="text-xl sm:text-2xl font-bold text-black tracking-tight">You Dream It</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Vision, Strategy & Roadmap</span>
+            <span className="text-xs text-zinc-500 font-medium mt-2">Vision, Strategy & Roadmap</span>
           </div>
-          <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-xs flex flex-col justify-between">
+          <div className="p-5 sm:p-6 rounded-2xl bg-white border border-zinc-200/90 shadow-xs flex flex-col justify-between">
             <span className="text-xl sm:text-2xl font-bold text-black tracking-tight">We Build It</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Full-Stack & Cloud Architecture</span>
+            <span className="text-xs text-zinc-500 font-medium mt-2">Full-Stack & Cloud Architecture</span>
           </div>
-          <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-xs flex flex-col justify-between">
+          <div className="p-5 sm:p-6 rounded-2xl bg-white border border-zinc-200/90 shadow-xs flex flex-col justify-between">
             <span className="text-xl sm:text-2xl font-bold text-[#0342DD] tracking-tight">We Ship Fast</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Weekly Sprints & Continuous CI/CD</span>
+            <span className="text-xs text-zinc-500 font-medium mt-2">Weekly Sprints & Continuous CI/CD</span>
           </div>
-          <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-xs flex flex-col justify-between">
+          <div className="p-5 sm:p-6 rounded-2xl bg-white border border-zinc-200/90 shadow-xs flex flex-col justify-between">
             <span className="text-xl sm:text-2xl font-bold text-black tracking-tight">Shared Scale</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Production Reliability & Global Growth</span>
+            <span className="text-xs text-zinc-500 font-medium mt-2">Production Reliability & Growth</span>
           </div>
         </div>
       </div>
