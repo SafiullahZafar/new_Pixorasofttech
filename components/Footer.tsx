@@ -212,7 +212,16 @@ const FOOTER_CSS = `
   justify-content: space-between;
   align-items: flex-start;
   gap: 24px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+.pft-contact-strip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: clamp(24px, 5vw, 80px);
+  right: clamp(24px, 5vw, 80px);
+  height: 1px;
+  background: rgba(255,255,255,0.1);
 }
 .pft-contact-group {}
 .pft-contact-label {
@@ -237,11 +246,20 @@ const FOOTER_CSS = `
   max-width: 3000px;
   margin: 0 auto;
   padding: clamp(12px, 1.4vw, 20px) clamp(24px, 5vw, 80px);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+}
+.pft-rule-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: clamp(24px, 5vw, 80px);
+  right: clamp(24px, 5vw, 80px);
+  height: 1px;
+  background: rgba(255,255,255,0.1);
 }
 .pft-copy {
   font-size: clamp(10px, 0.85vw, 12px);
@@ -473,22 +491,24 @@ export default function Footer() {
 
       {/* ── Animated wordmark ── */}
       <style>{`.hwf-brand, .hwf-rule { display: none !important; } .hwf-top { display: none !important; }`}</style>
-      <HalftoneWordmarkFooter
-        wordmark="PIXORASOFTTECH"
-        label=""
-        meta=""
-        columns={[]}
-        backToTop={false}
-        preset="night"
-        palette={{ background: "#000000", ink: "#f4f4f5", warm: "#0342DD" }}
-        dotGap={5}
-        radius={84}
-        crop={0.2}
-        grain={0.22}
-        height="clamp(160px, 22vw, 320px)"
-        fontFamily="Outfit, Arial, sans-serif"
-        className="font-sans"
-      />
+      <div style={{ padding: "0 clamp(24px, 5vw, 80px)" }}>
+        <HalftoneWordmarkFooter
+          wordmark="PIXORASOFTTECH"
+          label=""
+          meta=""
+          columns={[]}
+          backToTop={false}
+          preset="night"
+          palette={{ background: "#000000", ink: "#f4f4f5", warm: "#0342DD" }}
+          dotGap={5}
+          radius={84}
+          crop={0.2}
+          grain={0.22}
+          height="clamp(80px, 11vw, 160px)"
+          fontFamily="Outfit, Arial, sans-serif"
+          className="font-sans"
+        />
+      </div>
     </div>
   );
 }
