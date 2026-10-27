@@ -350,9 +350,9 @@ export default function HalftoneWordmarkFooter({
         ctx.fillStyle =
           k > 0.02
             ? "rgb(" +
-              Math.round(ink[0] + (warm[0] - ink[0]) * k) + "," +
-              Math.round(ink[1] + (warm[1] - ink[1]) * k) + "," +
-              Math.round(ink[2] + (warm[2] - ink[2]) * k) + ")"
+            Math.round(ink[0] + (warm[0] - ink[0]) * k) + "," +
+            Math.round(ink[1] + (warm[1] - ink[1]) * k) + "," +
+            Math.round(ink[2] + (warm[2] - ink[2]) * k) + ")"
             : o.colors.ink
         ctx.beginPath()
         ctx.arc(x, y, dots[j + 6], 0, 6.2832)
