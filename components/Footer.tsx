@@ -72,8 +72,8 @@ const FOOTER_CSS = `
 /* ── Main grid ──────────────────────── */
 .pft-main {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1fr 0.9fr;
-  gap: clamp(24px, 4vw, 56px);
+  grid-template-columns: 2fr 0.85fr 0.85fr 0.7fr;
+  gap: clamp(24px, 3.5vw, 48px);
   max-width: 3000px;
   margin: 0 auto;
   padding: clamp(52px, 6vw, 96px) clamp(24px, 5vw, 80px) clamp(40px, 5vw, 72px);
@@ -81,13 +81,19 @@ const FOOTER_CSS = `
 }
 
 /* ── CTA / newsletter col ────────────── */
+.pft-cta-col {
+  padding-right: clamp(24px, 5vw, 80px);
+}
 .pft-cta-heading {
-  font-size: clamp(28px, 3.5vw, 52px);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin: 0 0 clamp(24px, 3vw, 40px);
+  font-size: clamp(38px, 5vw, 72px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0 0 clamp(32px, 4vw, 56px);
   color: #fff;
+}
+.pft-cta-heading span {
+  display: block;
 }
 
 .pft-email-form {
@@ -137,13 +143,13 @@ const FOOTER_CSS = `
 
 /* ── Nav columns ─────────────────────── */
 .pft-col-title {
-  font-size: clamp(10px, 0.85vw, 12px);
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-size: clamp(18px, 1.7vw, 26px);
+  font-weight: 200;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #fff;
-  margin: 0 0 clamp(16px, 2vw, 28px);
-  opacity: 0.55;
+  margin: 0 0 clamp(18px, 2.2vw, 32px);
+  opacity: 1;
 }
 .pft-col-list {
   list-style: none;
@@ -156,7 +162,7 @@ const FOOTER_CSS = `
 .pft-col-list a {
   color: rgba(255,255,255,0.65);
   text-decoration: none;
-  font-size: clamp(14px, 1.15vw, 17px);
+  font-size: clamp(16px, 1.4vw, 20px);
   font-weight: 400;
   display: inline-block;
   position: relative;
@@ -265,7 +271,7 @@ const FOOTER_CSS = `
   font-size: clamp(10px, 0.85vw, 12px);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.75);
   margin: 0;
 }
 .pft-back-top {
@@ -383,7 +389,8 @@ export default function Footer() {
         {/* CTA + Newsletter */}
         <div className="pft-cta-col">
           <h2 className="pft-cta-heading">
-            Have a project?{"\n"}Let&rsquo;s start.
+            <span>Have a project?</span>
+            <span>Let&rsquo;s start.</span>
           </h2>
           <form className="pft-email-form" onSubmit={handleSubmit}>
             <input
