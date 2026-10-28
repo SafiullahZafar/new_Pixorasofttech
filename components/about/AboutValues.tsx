@@ -21,8 +21,8 @@ const values = [
 
 export default function AboutValues() {
   return (
-    <section className="w-full bg-[#f5f5f5] px-4 py-12 font-sans sm:px-6 sm:py-16 md:py-20 lg:px-12">
-      <div className="mx-auto max-w-7xl rounded-2xl bg-white p-6 shadow-sm sm:rounded-3xl sm:p-10 md:p-16 lg:p-20">
+    <section className="w-full bg-transparent px-4 py-12 font-sans sm:px-6 sm:py-16 md:py-20 lg:px-12">
+      <div className="mx-auto max-w-7xl rounded-2xl border border-white/70 bg-white/80 p-6 shadow-sm backdrop-blur-sm sm:rounded-3xl sm:p-10 md:p-16 lg:p-20">
         <h2 className="mb-10 text-3xl font-medium leading-tight tracking-tight text-[#111] sm:mb-14 sm:text-4xl md:mb-20 md:text-[2.75rem]">
           Our values and <br className="hidden sm:inline" /> commitments
         </h2>

@@ -29,7 +29,7 @@ export default function AboutPage() {
         <AboutFocus />
         <AboutStory />
         <AboutValues />
-        <section className="bg-[#f5f5f5] px-5 py-12 sm:px-8 sm:py-20 lg:px-12">
+        <section className="bg-transparent px-5 py-12 sm:px-8 sm:py-20 lg:px-12">
           <div className="mx-auto flex max-w-[2200px] flex-col gap-7 rounded-3xl bg-[#0A2540] px-6 py-9 text-white sm:px-10 sm:py-12 lg:flex-row lg:items-end lg:justify-between lg:px-14 lg:py-14">
             <div className="max-w-3xl">
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-blue-300">

@@ -1,6 +1,6 @@
 export default function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f5f5] px-6 pb-24 pt-32 text-black sm:px-12 sm:pb-32 sm:pt-36 lg:px-16 lg:pb-40 lg:pt-44">
+    <section className="relative overflow-hidden bg-transparent px-6 pb-24 pt-32 text-black sm:px-12 sm:pb-32 sm:pt-36 lg:px-16 lg:pb-40 lg:pt-44">
       <div className="mx-auto grid max-w-[2200px] grid-cols-1 items-start gap-10 md:grid-cols-12 lg:gap-16">
         <div className="md:col-span-5 flex flex-col justify-between">
           <h1 className="text-5xl font-semibold leading-none tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">

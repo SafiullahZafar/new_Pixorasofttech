@@ -15,7 +15,7 @@ const statements = [
 
 export default function AboutStory() {
   return (
-    <section className="relative w-full overflow-hidden border-b border-black/10 bg-[#f5f5f5] px-6 py-24 text-black sm:px-12 lg:px-16 lg:py-40">
+    <section className="relative w-full overflow-hidden border-b border-black/10 bg-transparent px-6 py-24 text-black sm:px-12 lg:px-16 lg:py-40">
       <div className="relative z-10 mx-auto flex max-w-[2200px] flex-col gap-24 lg:gap-36">
         {statements.map((statement, index) => (
           <div
