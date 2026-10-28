@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 const focusItems = [
   {
@@ -168,7 +169,7 @@ export default function AboutFocus() {
                 href={activeItem.href}
                 className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
               >
-                Explore {activeItem.title} <span aria-hidden="true">↗</span>
+                Explore {activeItem.title} <ArrowUpRight aria-hidden="true" className="size-4" />
               </a>
             </div>
             <span className="shrink-0 font-mono text-2xl font-bold italic tracking-tighter text-white/50 sm:text-3xl">

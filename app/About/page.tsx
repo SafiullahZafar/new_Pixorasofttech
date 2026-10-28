@@ -8,6 +8,7 @@ import AboutValues from "@/components/about/AboutValues";
 import Link from "next/link";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
 import StartAnimation from "@/components/StartAnimation";
+import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About PixoraSoftTech | Your Digital Engineering Partner",
@@ -47,7 +48,7 @@ export default function AboutPage() {
               href="/contact"
               className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0A2540] transition hover:-translate-y-0.5 hover:bg-blue-50"
             >
-              Start a project <span aria-hidden="true" className="ml-2">↗</span>
+              Start a project <ArrowUpRight aria-hidden="true" className="ml-2 size-4" />
             </Link>
           </div>
         </section>
