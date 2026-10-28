@@ -274,13 +274,18 @@ const FOOTER_CSS = `
   color: rgba(255,255,255,0.75);
   margin: 0;
 }
+/* ── Interactive Back To Top button ───────── */
 .pft-back-top {
-  display: flex;
+  position: relative;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.7);
+  justify-content: center;
+  width: clamp(130px, 11vw, 160px);
+  height: clamp(38px, 3.2vw, 46px);
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color: #fff;
   font-family: inherit;
   font-size: clamp(11px, 0.9vw, 13px);
   font-weight: 500;
@@ -288,22 +293,65 @@ const FOOTER_CSS = `
   text-transform: uppercase;
   cursor: pointer;
   padding: 0;
-  transition: color 0.2s ease;
+  overflow: hidden;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
-.pft-back-top:hover { color: #fff; }
-.pft-back-top:hover .pft-arrow-circle { transform: translateY(-3px); }
-.pft-arrow-circle {
+.pft-back-top:hover {
+  border-color: #fff;
+  color: #000;
+}
+/* text that slides out */
+.pft-btt-label {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(0);
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+}
+.pft-back-top:hover .pft-btt-label {
+  transform: translateX(60px);
+  opacity: 0;
+}
+/* text + arrow that slides in */
+.pft-btt-hover {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.35);
-  transition: transform 0.25s cubic-bezier(.2,.8,.2,1), border-color 0.2s ease;
+  gap: 6px;
+  transform: translateX(-60px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  color: #000;
+  font-size: clamp(11px, 0.9vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
-.pft-back-top:hover .pft-arrow-circle { border-color: rgba(255,255,255,0.7); }
-.pft-arrow-circle svg { width: 16px; height: 16px; }
+.pft-btt-hover svg { width: 14px; height: 14px; flex-shrink: 0; }
+.pft-back-top:hover .pft-btt-hover {
+  transform: translateX(0);
+  opacity: 1;
+}
+/* expanding circle */
+.pft-btt-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background: #fff;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
+  z-index: 1;
+}
+.pft-back-top:hover .pft-btt-circle {
+  transform: translate(-50%, -50%) scale(3);
+}
 
 /* ── Wordmark section ────────────────── */
 .pft-wordmark-wrap {
@@ -487,12 +535,17 @@ export default function Footer() {
           onClick={scrollToTop}
           aria-label="Back to top"
         >
-          Back To Top
-          <span className="pft-arrow-circle">
+          {/* sliding-out label */}
+          <span className="pft-btt-label">Back To Top</span>
+          {/* sliding-in label + arrow */}
+          <span className="pft-btt-hover" aria-hidden="true">
+            Back To Top
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 19V5M5 12l7-7 7 7" />
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </span>
+          {/* expanding fill circle */}
+          <span className="pft-btt-circle" aria-hidden="true" />
         </button>
       </div>
 
