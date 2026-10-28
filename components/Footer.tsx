@@ -559,7 +559,7 @@ export default function Footer() {
           columns={[]}
           backToTop={false}
           preset="night"
-          palette={{ background: "#000000", ink: "#f4f4f5", warm: "#0342DD" }}
+      palette={{ background: "#000000", ink: "#f1f1f1", warm: "#0342DD" }}
           dotGap={5}
           radius={84}
           crop={0.2}
