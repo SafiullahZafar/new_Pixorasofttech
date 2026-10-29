@@ -76,23 +76,23 @@ export default function AboutStory() {
         {statements.map((statement) => (
           <div
             key={statement.label}
-            className="grid grid-cols-1 items-start gap-8 md:grid-cols-12 lg:gap-16"
+            className="grid grid-cols-1 items-start pt-6 sm:pt-8 md:grid-cols-12"
           >
             <h2
-              className={`text-xl font-bold tracking-tight sm:text-2xl md:col-span-4 ${
+              className={`text-2xl font-bold tracking-tight sm:text-4xl md:col-span-4 ${
                 statement.label === "About - Clients"
                   ? "md:col-start-9 md:text-right"
-                  : ""
+                  : "md:col-start-1"
               }`}
             >
               {statement.label}
             </h2>
             <ScrollRevealText
               text={statement.text}
-              className={`text-2xl font-medium leading-[1.2] tracking-tight sm:text-3xl md:col-span-8 lg:col-span-7 lg:text-[2.4rem] ${
+              className={`mt-2 text-[1.7rem] font-medium leading-[1.2] tracking-tight sm:text-4xl md:col-span-8 md:mt-8 lg:col-span-7 lg:mt-10 lg:text-[2.6rem] ${
                 statement.label === "About - Clients"
                   ? "md:col-start-1 lg:col-start-1"
-                  : "lg:col-start-6"
+                  : "md:col-start-5 lg:col-start-6"
               }`}
             />
           </div>

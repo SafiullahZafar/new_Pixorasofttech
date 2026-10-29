@@ -21,26 +21,32 @@ const values = [
 
 export default function AboutValues() {
   return (
-    <section className="w-full bg-transparent px-4 py-12 font-sans sm:px-6 sm:py-16 md:py-20 lg:px-12">
-      <div className="mx-auto max-w-7xl rounded-2xl border border-white/70 bg-white/80 p-6 shadow-sm backdrop-blur-sm sm:rounded-3xl sm:p-10 md:p-16 lg:p-20">
-        <h2 className="mb-10 text-3xl font-medium leading-tight tracking-tight text-[#111] sm:mb-14 sm:text-4xl md:mb-20 md:text-[2.75rem]">
-          Our values and <br className="hidden sm:inline" /> commitments
-        </h2>
-        <div className="space-y-10 sm:space-y-12 md:space-y-16">
+    <section className="w-full bg-transparent px-5 py-20 font-sans sm:px-8 sm:py-28 lg:px-16 lg:py-36">
+      <div className="mx-auto max-w-[2200px] rounded-[2rem] border border-black/10 bg-white/80 px-6 py-10 shadow-[0_24px_80px_-48px_rgba(10,37,64,0.28)] backdrop-blur-sm sm:px-10 sm:py-14 md:px-16 md:py-20 lg:rounded-[2.5rem] lg:px-24 lg:py-24">
+        <div className="mb-12 max-w-3xl sm:mb-16 lg:mb-20">
+          <p className="mb-5 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-black/45 sm:text-sm">
+            What guides us
+          </p>
+          <h2 className="text-4xl font-medium leading-[1.05] tracking-tight text-[#111] sm:text-5xl md:text-6xl lg:text-7xl">
+            Our values and
+            <br className="hidden sm:block" /> commitments
+          </h2>
+        </div>
+        <div>
           {values.map((value) => (
             <div
               key={value.number}
-              className="grid grid-cols-1 items-start gap-4 md:grid-cols-12 md:gap-8"
+              className="grid grid-cols-1 items-start gap-5 py-8 sm:py-10 md:grid-cols-12 md:gap-10 lg:py-12"
             >
-              <div className="flex items-start gap-4 sm:gap-6 md:col-span-5">
-                <span className="select-none pt-1 text-xs font-medium text-[#111] sm:text-sm">
+              <div className="flex items-baseline gap-5 sm:gap-8 md:col-span-5">
+                <span className="select-none font-mono text-xs font-medium tracking-wider text-black/45 sm:text-sm">
                   {value.number}
                 </span>
-                <h3 className="text-xl font-semibold tracking-tight text-[#111] sm:text-2xl">
+                <h3 className="text-2xl font-semibold tracking-tight text-[#111] sm:text-3xl lg:text-4xl">
                   {value.title}
                 </h3>
               </div>
-              <p className="text-sm font-normal leading-relaxed text-[#4a4a4a] sm:text-base md:col-span-7">
+              <p className="max-w-3xl text-base font-normal leading-relaxed text-[#4a4a4a] sm:text-lg sm:leading-[1.75] md:col-span-7 lg:text-xl">
                 {value.description}
               </p>
             </div>
