@@ -57,6 +57,7 @@ const focusItems = [
 
 export default function AboutFocus() {
   const sectionRef = useRef<HTMLElement>(null);
+  const imagePanelRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const focusPanelRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -67,16 +68,17 @@ export default function AboutFocus() {
     damping: 20,
     mass: 0.5,
   });
-  const imageRotateY = useTransform(smoothImageProgress, [0, 1], [-20, -5]);
-  const imageRotateX = useTransform(smoothImageProgress, [0, 1], [12, 3]);
-  const imageRotateZ = useTransform(smoothImageProgress, [0, 1], [6, 0]);
-  const imageTranslateZ = useTransform(smoothImageProgress, [0, 1], [-100, 0]);
-  const columnY1 = useTransform(smoothImageProgress, [0, 1], ["0%", "-28%"]);
-  const columnY2 = useTransform(smoothImageProgress, [0, 1], ["-28%", "0%"]);
-  const columnY3 = useTransform(smoothImageProgress, [0, 1], ["0%", "-28%"]);
-  const columnY4 = useTransform(smoothImageProgress, [0, 1], ["-28%", "0%"]);
-  const columnY5 = useTransform(smoothImageProgress, [0, 1], ["0%", "-28%"]);
-  const columnY6 = useTransform(smoothImageProgress, [0, 1], ["-28%", "0%"]);
+  const bannerWidth = useTransform(smoothImageProgress, [0, 0.15], ["90%", "100%"]);
+  const bannerHeight = useTransform(smoothImageProgress, [0, 0.15], ["80%", "100%"]);
+  const bannerRadius = useTransform(smoothImageProgress, [0, 0.15], ["28px", "0px"]);
+  const imageRotateY = useTransform(smoothImageProgress, [0.15, 1], [-45, -8]);
+  const imageRotateX = useTransform(smoothImageProgress, [0.15, 1], [25, 4]);
+  const imageRotateZ = useTransform(smoothImageProgress, [0.15, 1], [15, 2]);
+  const imageTranslateZ = useTransform(smoothImageProgress, [0.15, 1], [-800, 0]);
+  const columnY1 = useTransform(smoothImageProgress, [0.15, 1], ["0%", "-40%"]);
+  const columnY2 = useTransform(smoothImageProgress, [0.15, 1], ["-40%", "10%"]);
+  const columnY3 = useTransform(smoothImageProgress, [0.15, 1], ["0%", "-40%"]);
+  const columnY4 = useTransform(smoothImageProgress, [0.15, 1], ["-30%", "20%"]);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -89,13 +91,13 @@ export default function AboutFocus() {
         const rect = section.getBoundingClientRect();
         const scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
         const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
-        imageProgress.set(progress);
         // The first service is active when the section enters; each following
         // service takes over at an even scroll step, with the last at the end.
         const next = Math.min(
           focusItems.length - 1,
           Math.round(progress * (focusItems.length - 1)),
         );
+        if (next !== activeIndex) imageProgress.set(0);
         setActiveIndex((current) => (current === next ? current : next));
         if (progressRef.current) {
           progressRef.current.style.transform = `scaleY(${progress})`;
@@ -111,9 +113,38 @@ export default function AboutFocus() {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-  }, [imageProgress]);
+  }, [activeIndex, imageProgress]);
 
   const activeItem = focusItems[activeIndex];
+
+  useEffect(() => {
+    const imagePanel = imagePanelRef.current;
+    if (!imagePanel) return;
+
+    const handleWheel = (event: WheelEvent) => {
+      event.preventDefault();
+      const delta = event.deltaY / Math.max(1, imagePanel.clientHeight * 5);
+      const current = imageProgress.get();
+      const step = sectionRef.current
+        ? (sectionRef.current.offsetHeight - window.innerHeight) / (focusItems.length - 1)
+        : window.innerHeight;
+
+      if (delta > 0 && current >= 0.995 && activeIndex < focusItems.length - 1) {
+        window.scrollBy({ top: step, behavior: "smooth" });
+        return;
+      }
+
+      if (delta < 0 && current <= 0.005 && activeIndex > 0) {
+        window.scrollBy({ top: -step, behavior: "smooth" });
+        return;
+      }
+
+      imageProgress.set(Math.max(0, Math.min(1, current + delta)));
+    };
+
+    imagePanel.addEventListener("wheel", handleWheel, { passive: false });
+    return () => imagePanel.removeEventListener("wheel", handleWheel);
+  }, [activeIndex, imageProgress]);
 
   const handleFocusPanelMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const panel = focusPanelRef.current;
@@ -138,14 +169,16 @@ export default function AboutFocus() {
       className="relative h-[600vh] bg-black text-white"
     >
       <div className="sticky top-0 grid h-screen min-h-[680px] grid-cols-1 md:h-screen md:min-h-0 md:grid-cols-12">
-        <div className="relative min-h-0 overflow-hidden bg-black md:col-span-6 md:h-full">
+        <div
+          ref={imagePanelRef}
+          className="relative min-h-0 overflow-hidden bg-black md:col-span-6 md:h-full"
+        >
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            <motion.div
-              className="absolute inset-0 flex items-center justify-center overflow-hidden"
-              style={{
-                perspective: 1000,
-              }}
-            >
+            <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: 1000 }}>
+              <motion.div
+                className="relative flex items-center justify-center overflow-hidden border border-white/10 bg-black"
+                style={{ width: bannerWidth, height: bannerHeight, borderRadius: bannerRadius }}
+              >
               <AnimatePresence mode="sync">
                 <motion.div
                   key={activeIndex}
@@ -153,7 +186,7 @@ export default function AboutFocus() {
                   animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                   exit={{ opacity: 0, scale: 1.03, filter: "blur(8px)" }}
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute inset-0 flex h-[130%] w-full origin-center items-center justify-center gap-2 opacity-90 sm:gap-3"
+                  className="absolute flex h-[150%] w-[120%] origin-center items-center justify-center gap-3 opacity-100 sm:gap-4"
                   style={{
                     rotateX: imageRotateX,
                     rotateY: imageRotateY,
@@ -162,36 +195,37 @@ export default function AboutFocus() {
                     transformStyle: "preserve-3d",
                   }}
                 >
-                {[columnY1, columnY2, columnY3, columnY4, columnY5, columnY6].map((columnY, columnIndex) => {
-                  const columnImage = activeItem.gridImages[columnIndex];
+                {[columnY1, columnY2, columnY3, columnY4].map((columnY, columnIndex) => {
+                  const columnImages = activeItem.gridImages.filter((_, index) => index % 4 === columnIndex);
+                  const repeatedImages = [...columnImages, ...columnImages];
 
                   return (
                     <motion.div
                       key={columnIndex}
-                      className="flex h-full min-w-0 flex-1 flex-col gap-2 sm:gap-3"
+                      className="flex h-full w-[22%] min-w-0 flex-col gap-3 sm:gap-4"
                       style={{ y: columnY }}
                     >
-                      {[0, 1, 2, 3].map((cardIndex) => {
-                        return (
+                      {repeatedImages.map((image, cardIndex) => (
                           <div
-                            key={`${activeIndex}-${columnIndex}-${cardIndex}`}
-                            className="relative min-h-0 flex-1 overflow-hidden bg-[#111]"
+                            key={`${activeIndex}-${columnIndex}-${cardIndex}-${image}`}
+                            className="relative h-[200px] w-full shrink-0 overflow-hidden bg-[#111] sm:h-[300px] md:h-[400px]"
                           >
                             <img
-                              src={columnImage}
+                              src={image}
                               alt={cardIndex === 0 ? activeItem.title : ""}
                               aria-hidden={cardIndex !== 0}
-                              className="size-full object-cover"
+                              loading={cardIndex < 2 ? "eager" : "lazy"}
+                              className="size-full object-cover opacity-80 transition-opacity duration-300 hover:opacity-100"
                             />
                           </div>
-                        );
-                      })}
+                      ))}
                     </motion.div>
                   );
                 })}
                 </motion.div>
               </AnimatePresence>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/30" />
           <span className="absolute bottom-5 left-5 z-20 rounded-full border border-white/25 bg-black/45 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-white/80 backdrop-blur-sm md:bottom-7 md:left-7">
