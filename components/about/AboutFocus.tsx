@@ -212,7 +212,7 @@ export default function AboutFocus() {
                 >
                 {[columnY1, columnY2, columnY3, columnY4].map((columnY, columnIndex) => {
                   const columnImages = activeItem.gridImages.filter((_, index) => index % 4 === columnIndex);
-                  const repeatedImages = [...columnImages, ...columnImages];
+                  const repeatedImages = [...columnImages, ...columnImages, ...columnImages];
 
                   return (
                     <motion.div
@@ -223,7 +223,7 @@ export default function AboutFocus() {
                       {repeatedImages.map((image, cardIndex) => (
                           <div
                             key={`${activeIndex}-${columnIndex}-${cardIndex}-${image}`}
-                            className="relative h-[200px] w-full shrink-0 overflow-hidden bg-[#111] sm:h-[300px] md:h-[400px]"
+                            className="relative h-[130px] w-full shrink-0 overflow-hidden bg-[#111] sm:h-[200px] md:h-[260px]"
                           >
                             <img
                               src={image}
