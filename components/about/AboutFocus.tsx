@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const focusItems = [
   {
     title: "Software Development",
     image: "/portfolio/brew-haven.png",
+    gridImages: ["/portfolio/brew-haven.png", "/portfolio/inventory-dashboard.png", "/portfolio/hr-dashboard.png", "/portfolio/supplier.png", "/portfolio/light-inventory-dashboard.png", "/portfolio/crm-dashboard.png"],
     href: "/services/custom-software-development",
     description:
       "We build reliable software around your workflows, bringing your tools and data together in a system that can grow with your business.",
@@ -14,6 +16,7 @@ const focusItems = [
   {
     title: "Web Development",
     image: "/portfolio/inventory-dashboard.png",
+    gridImages: ["/portfolio/brew-haven.png", "/portfolio/glass-haven.png", "/portfolio/solar-solutions.png", "/portfolio/eduka-college.png", "/portfolio/kb-exports.png", "/portfolio/state-college.png"],
     href: "/services/website-development",
     description:
       "We create fast, responsive websites that reflect your brand, connect with your audience, and help your business grow online.",
@@ -21,6 +24,7 @@ const focusItems = [
   {
     title: "SaaS Development",
     image: "/portfolio/light-crm-dashboard.png",
+    gridImages: ["/portfolio/light-crm-dashboard.png", "/portfolio/crm-dashboard.png", "/portfolio/flowcrm-dashboard.png", "/portfolio/delivery-dashboard.png", "/portfolio/inventory-dashboard.png", "/portfolio/light-inventory-dashboard.png"],
     href: "/services/custom-software-development",
     description:
       "We develop scalable digital products, from the first release through the features and infrastructure needed to grow.",
@@ -28,6 +32,7 @@ const focusItems = [
   {
     title: "Mobile App Development",
     image: "/portfolio/fitpulse-app.png",
+    gridImages: ["/portfolio/fitpulse-app.png", "/portfolio/irider-app.png", "/portfolio/shopease-app.png", "/portfolio/fitpulse-app.png", "/portfolio/irider-app.png", "/portfolio/shopease-app.png"],
     href: "/services/mobile-app-development",
     description:
       "We create useful, polished mobile experiences with thoughtful interactions and dependable performance across devices.",
@@ -35,6 +40,7 @@ const focusItems = [
   {
     title: "UI / UX Design",
     image: "/portfolio/glass-haven.png",
+    gridImages: ["/portfolio/glass-haven.png", "/portfolio/brew-haven.png", "/portfolio/solar-solutions.png", "/portfolio/eduka-college.png", "/portfolio/zostel.png", "/portfolio/travel-hotel-hub.png"],
     href: "/services/ui-ux-design",
     description:
       "We design clear, research-driven interfaces that make digital products easier and more enjoyable to use.",
@@ -42,6 +48,7 @@ const focusItems = [
   {
     title: "Cloud Solutions",
     image: "/portfolio/light-inventory-dashboard.png",
+    gridImages: ["/portfolio/light-inventory-dashboard.png", "/portfolio/inventory-dashboard.png", "/portfolio/flowcrm-dashboard.png", "/portfolio/hr-dashboard.png", "/portfolio/supplier.png", "/portfolio/lms-dashboard.png"],
     href: "/services/cloud-solutions",
     description:
       "We build secure, scalable cloud infrastructure that keeps products reliable as your business grows.",
@@ -54,6 +61,23 @@ export default function AboutFocus() {
   const focusPanelRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const imageProgress = useMotionValue(0);
+  const smoothImageProgress = useSpring(imageProgress, {
+    stiffness: 100,
+    damping: 20,
+    mass: 0.5,
+  });
+  const imageRotateY = useTransform(smoothImageProgress, [0, 1], [-20, -5]);
+  const imageRotateX = useTransform(smoothImageProgress, [0, 1], [12, 3]);
+  const imageRotateZ = useTransform(smoothImageProgress, [0, 1], [6, 0]);
+  const imageTranslateZ = useTransform(smoothImageProgress, [0, 1], [-100, 0]);
+  const columnY1 = useTransform(smoothImageProgress, [0, 1], ["0%", "-28%"]);
+  const columnY2 = useTransform(smoothImageProgress, [0, 1], ["-28%", "0%"]);
+  const columnY3 = useTransform(smoothImageProgress, [0, 1], ["0%", "-28%"]);
+  const columnY4 = useTransform(smoothImageProgress, [0, 1], ["-28%", "0%"]);
+  const columnY5 = useTransform(smoothImageProgress, [0, 1], ["0%", "-28%"]);
+  const columnY6 = useTransform(smoothImageProgress, [0, 1], ["-28%", "0%"]);
+
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -65,6 +89,7 @@ export default function AboutFocus() {
         const rect = section.getBoundingClientRect();
         const scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
         const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
+        imageProgress.set(progress);
         // The first service is active when the section enters; each following
         // service takes over at an even scroll step, with the last at the end.
         const next = Math.min(
@@ -86,7 +111,7 @@ export default function AboutFocus() {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-  }, []);
+  }, [imageProgress]);
 
   const activeItem = focusItems[activeIndex];
 
@@ -113,29 +138,62 @@ export default function AboutFocus() {
       className="relative h-[600vh] bg-black text-white"
     >
       <div className="sticky top-0 grid h-screen min-h-[680px] grid-cols-1 md:h-screen md:min-h-0 md:grid-cols-12">
-        <div className="relative min-h-0 overflow-hidden border border-white/10 bg-[#121212] md:col-span-6 md:h-full">
-          {focusItems.map((item, index) => (
-            <div
-              key={item.title}
-              aria-hidden={index !== activeIndex}
-              className={`absolute inset-0 transition-[opacity,transform] duration-500 ease-out ${
-                index === activeIndex
-                  ? "z-10 scale-100 opacity-100"
-                  : "pointer-events-none z-0 scale-[1.02] opacity-0"
-              }`}
+        <div className="relative min-h-0 overflow-hidden bg-black md:col-span-6 md:h-full">
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center overflow-hidden"
+              style={{
+                perspective: 1000,
+              }}
             >
-              <img
-                src={item.image}
-                alt={item.title}
-                loading={index === 0 ? "eager" : "lazy"}
-                onError={(event) => {
-                  event.currentTarget.src = "/portfolio/light-crm-dashboard.png";
-                }}
-                className="size-full object-cover object-center"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-black/10" />
-            </div>
-          ))}
+              <AnimatePresence mode="sync">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, scale: 0.96, filter: "blur(8px)" }}
+                  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, scale: 1.03, filter: "blur(8px)" }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute inset-0 flex h-[130%] w-full origin-center items-center justify-center gap-2 opacity-90 sm:gap-3"
+                  style={{
+                    rotateX: imageRotateX,
+                    rotateY: imageRotateY,
+                    rotateZ: imageRotateZ,
+                    z: imageTranslateZ,
+                    transformStyle: "preserve-3d",
+                  }}
+                >
+                {[columnY1, columnY2, columnY3, columnY4, columnY5, columnY6].map((columnY, columnIndex) => {
+                  const columnImage = activeItem.gridImages[columnIndex];
+
+                  return (
+                    <motion.div
+                      key={columnIndex}
+                      className="flex h-full min-w-0 flex-1 flex-col gap-2 sm:gap-3"
+                      style={{ y: columnY }}
+                    >
+                      {[0, 1, 2, 3].map((cardIndex) => {
+                        return (
+                          <div
+                            key={`${activeIndex}-${columnIndex}-${cardIndex}`}
+                            className="relative min-h-0 flex-1 overflow-hidden bg-[#111]"
+                          >
+                            <img
+                              src={columnImage}
+                              alt={cardIndex === 0 ? activeItem.title : ""}
+                              aria-hidden={cardIndex !== 0}
+                              className="size-full object-cover"
+                            />
+                          </div>
+                        );
+                      })}
+                    </motion.div>
+                  );
+                })}
+                </motion.div>
+              </AnimatePresence>
+            </motion.div>
+          </div>
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/30" />
           <span className="absolute bottom-5 left-5 z-20 rounded-full border border-white/25 bg-black/45 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-white/80 backdrop-blur-sm md:bottom-7 md:left-7">
             PixoraSoftTech · Focus {String(activeIndex + 1).padStart(2, "0")}
           </span>
