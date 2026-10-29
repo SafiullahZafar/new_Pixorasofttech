@@ -1,6 +1,62 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import { useRef } from "react";
+
+function ScrollRevealWord({
+  children,
+  progress,
+  range,
+}: {
+  children: string;
+  progress: MotionValue<number>;
+  range: [number, number];
+}) {
+  const opacity = useTransform(progress, range, [0, 1]);
+
+  return (
+    <span className="relative mr-[0.28em] inline-block">
+      <span aria-hidden="true" className="absolute inset-0 text-black/20">
+        {children}
+      </span>
+      <motion.span style={{ opacity }}>{children}</motion.span>
+    </span>
+  );
+}
+
+function ScrollRevealText({
+  text,
+  className,
+}: {
+  text: string;
+  className: string;
+}) {
+  const containerRef = useRef<HTMLParagraphElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 0.9", "start 0.25"],
+  });
+  const words = text.split(/\s+/);
+
+  return (
+    <p ref={containerRef} className={className}>
+      {words.map((word, index) => {
+        const start = index / words.length;
+        const end = (index + 1) / words.length;
+
+        return (
+          <ScrollRevealWord
+            key={`${index}-${word}`}
+            progress={scrollYProgress}
+            range={[start, end]}
+          >
+            {word}
+          </ScrollRevealWord>
+        );
+      })}
+    </p>
+  );
+}
 
 const statements = [
   {
@@ -17,23 +73,28 @@ export default function AboutStory() {
   return (
     <section className="relative w-full overflow-hidden border-b border-black/10 bg-transparent px-6 py-24 text-black sm:px-12 lg:px-16 lg:py-40">
       <div className="relative z-10 mx-auto flex max-w-[2200px] flex-col gap-24 lg:gap-36">
-        {statements.map((statement, index) => (
+        {statements.map((statement) => (
           <div
             key={statement.label}
             className="grid grid-cols-1 items-start gap-8 md:grid-cols-12 lg:gap-16"
           >
-            <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:col-span-4">
+            <h2
+              className={`text-xl font-bold tracking-tight sm:text-2xl md:col-span-4 ${
+                statement.label === "About - Clients"
+                  ? "md:col-start-9 md:text-right"
+                  : ""
+              }`}
+            >
               {statement.label}
             </h2>
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: 0.7, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-              className="text-2xl font-medium leading-[1.2] tracking-tight sm:text-3xl md:col-span-8 lg:col-span-7 lg:col-start-6 lg:text-[2.4rem]"
-            >
-              {statement.text}
-            </motion.p>
+            <ScrollRevealText
+              text={statement.text}
+              className={`text-2xl font-medium leading-[1.2] tracking-tight sm:text-3xl md:col-span-8 lg:col-span-7 lg:text-[2.4rem] ${
+                statement.label === "About - Clients"
+                  ? "md:col-start-1 lg:col-start-1"
+                  : "lg:col-start-6"
+              }`}
+            />
           </div>
         ))}
       </div>
