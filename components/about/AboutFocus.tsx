@@ -38,14 +38,6 @@ const focusItems = [
       "We create useful, polished mobile experiences with thoughtful interactions and dependable performance across devices.",
   },
   {
-    title: "UI / UX Design",
-    image: "/portfolio/glass-haven.png",
-    gridImages: ["/portfolio/glass-haven.png", "/portfolio/brew-haven.png", "/portfolio/solar-solutions.png", "/portfolio/eduka-college.png", "/portfolio/zostel.png", "/portfolio/travel-hotel-hub.png"],
-    href: "/services/ui-ux-design",
-    description:
-      "We design clear, research-driven interfaces that make digital products easier and more enjoyable to use.",
-  },
-  {
     title: "Cloud Solutions",
     image: "/portfolio/light-inventory-dashboard.png",
     gridImages: ["/portfolio/light-inventory-dashboard.png", "/portfolio/inventory-dashboard.png", "/portfolio/flowcrm-dashboard.png", "/portfolio/hr-dashboard.png", "/portfolio/supplier.png", "/portfolio/lms-dashboard.png"],
@@ -53,7 +45,19 @@ const focusItems = [
     description:
       "We build secure, scalable cloud infrastructure that keeps products reliable as your business grows.",
   },
+  {
+    title: "UI / UX Design",
+    image: "/portfolio/glass-haven.png",
+    gridImages: ["/portfolio/glass-haven.png", "/portfolio/brew-haven.png", "/portfolio/solar-solutions.png", "/portfolio/eduka-college.png", "/portfolio/zostel.png", "/portfolio/travel-hotel-hub.png"],
+    href: "/services/ui-ux-design",
+    description:
+      "We design clear, research-driven interfaces that make digital products easier and more enjoyable to use.",
+  },
 ];
+
+const GRID_STRIP_COUNT = 10;
+const GRID_STRIP_DURATION = 0.5;
+const GRID_STRIP_STAGGER = 0.04;
 
 export default function AboutFocus() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -122,7 +126,6 @@ export default function AboutFocus() {
     if (!imagePanel) return;
 
     const handleWheel = (event: WheelEvent) => {
-      event.preventDefault();
       const delta = event.deltaY / Math.max(1, imagePanel.clientHeight * 5);
       const current = imageProgress.get();
       const step = sectionRef.current
@@ -130,15 +133,27 @@ export default function AboutFocus() {
         : window.innerHeight;
 
       if (delta > 0 && current >= 0.995 && activeIndex < focusItems.length - 1) {
+        event.preventDefault();
         window.scrollBy({ top: step, behavior: "smooth" });
         return;
       }
 
       if (delta < 0 && current <= 0.005 && activeIndex > 0) {
+        event.preventDefault();
         window.scrollBy({ top: -step, behavior: "smooth" });
         return;
       }
 
+      // Let the document continue past the section after the final grid ends,
+      // and scroll back above it before the first grid begins.
+      if (
+        (delta > 0 && current >= 0.995 && activeIndex === focusItems.length - 1) ||
+        (delta < 0 && current <= 0.005 && activeIndex === 0)
+      ) {
+        return;
+      }
+
+      event.preventDefault();
       imageProgress.set(Math.max(0, Math.min(1, current + delta)));
     };
 
@@ -182,11 +197,11 @@ export default function AboutFocus() {
               <AnimatePresence mode="sync">
                 <motion.div
                   key={activeIndex}
-                  initial={{ opacity: 0, scale: 0.96, filter: "blur(8px)" }}
-                  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, scale: 1.03, filter: "blur(8px)" }}
-                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute flex h-[150%] w-[120%] origin-center items-center justify-center gap-3 opacity-100 sm:gap-4"
+                  initial={{ opacity: 1, scale: 1.08 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.9, ease: "easeOut" }}
+                  className="absolute flex h-[150%] w-[120%] origin-center items-center justify-center gap-3 sm:gap-4"
                   style={{
                     rotateX: imageRotateX,
                     rotateY: imageRotateY,
@@ -215,8 +230,29 @@ export default function AboutFocus() {
                               alt={cardIndex === 0 ? activeItem.title : ""}
                               aria-hidden={cardIndex !== 0}
                               loading={cardIndex < 2 ? "eager" : "lazy"}
-                              className="size-full object-cover opacity-80 transition-opacity duration-300 hover:opacity-100"
+                              className="size-full object-cover opacity-0"
                             />
+                            {Array.from({ length: GRID_STRIP_COUNT }, (_, stripIndex) => (
+                              <motion.div
+                                key={`${activeIndex}-${columnIndex}-${cardIndex}-strip-${stripIndex}`}
+                                initial={{ clipPath: "inset(0 100% 0 0)" }}
+                                animate={{ clipPath: "inset(0 0% 0 0)" }}
+                                transition={{
+                                  duration: GRID_STRIP_DURATION,
+                                  delay: stripIndex * GRID_STRIP_STAGGER,
+                                  ease: "easeOut",
+                                }}
+                                className="absolute inset-y-0"
+                                style={{
+                                  left: `${(stripIndex * 100) / GRID_STRIP_COUNT}%`,
+                                  width: `${100 / GRID_STRIP_COUNT + 0.25}%`,
+                                  backgroundImage: `url(${image})`,
+                                  backgroundSize: `${GRID_STRIP_COUNT * 100}% 100%`,
+                                  backgroundPosition: `${(stripIndex * 100) / (GRID_STRIP_COUNT - 1)}% center`,
+                                  backgroundRepeat: "no-repeat",
+                                }}
+                              />
+                            ))}
                           </div>
                       ))}
                     </motion.div>
