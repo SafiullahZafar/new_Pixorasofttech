@@ -5,38 +5,53 @@ import { ArrowUpRight } from "lucide-react";
 
 const focusItems = [
   {
-    title: "Web Design",
+    title: "Software Development",
     image: "/portfolio/brew-haven.png",
-    href: "/portfolio/brew-haven",
-    description:
-      "We design modern, responsive websites that reflect your brand, connect with your audience, and help your business grow online.",
-  },
-  {
-    title: "Custom Software",
-    image: "/portfolio/inventory-dashboard.png",
-    href: "/portfolio/inventory",
+    href: "/services/custom-software-development",
     description:
       "We build reliable software around your workflows, bringing your tools and data together in a system that can grow with your business.",
   },
   {
-    title: "Apps",
-    image: "/portfolio/fitpulse-app.png",
-    href: "/portfolio/rider-app",
+    title: "Web Development",
+    image: "/portfolio/inventory-dashboard.png",
+    href: "/services/website-development",
     description:
-      "We create useful, polished mobile experiences with thoughtful interactions and dependable performance across devices.",
+      "We create fast, responsive websites that reflect your brand, connect with your audience, and help your business grow online.",
   },
   {
     title: "SaaS Development",
     image: "/portfolio/light-crm-dashboard.png",
-    href: "/portfolio/crm",
+    href: "/services/custom-software-development",
     description:
       "We develop scalable digital products, from the first release through the features and infrastructure needed to grow.",
+  },
+  {
+    title: "Mobile App Development",
+    image: "/portfolio/fitpulse-app.png",
+    href: "/services/mobile-app-development",
+    description:
+      "We create useful, polished mobile experiences with thoughtful interactions and dependable performance across devices.",
+  },
+  {
+    title: "UI / UX Design",
+    image: "/portfolio/glass-haven.png",
+    href: "/services/ui-ux-design",
+    description:
+      "We design clear, research-driven interfaces that make digital products easier and more enjoyable to use.",
+  },
+  {
+    title: "Cloud Solutions",
+    image: "/portfolio/light-inventory-dashboard.png",
+    href: "/services/cloud-solutions",
+    description:
+      "We build secure, scalable cloud infrastructure that keeps products reliable as your business grows.",
   },
 ];
 
 export default function AboutFocus() {
   const sectionRef = useRef<HTMLElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
+  const focusPanelRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
@@ -50,7 +65,12 @@ export default function AboutFocus() {
         const rect = section.getBoundingClientRect();
         const scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
         const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
-        const next = Math.min(focusItems.length - 1, Math.floor(progress * focusItems.length));
+        // The first service is active when the section enters; each following
+        // service takes over at an even scroll step, with the last at the end.
+        const next = Math.min(
+          focusItems.length - 1,
+          Math.round(progress * (focusItems.length - 1)),
+        );
         setActiveIndex((current) => (current === next ? current : next));
         if (progressRef.current) {
           progressRef.current.style.transform = `scaleY(${progress})`;
@@ -70,11 +90,27 @@ export default function AboutFocus() {
 
   const activeItem = focusItems[activeIndex];
 
+  const handleFocusPanelMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    const panel = focusPanelRef.current;
+    if (!panel || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    const bounds = panel.getBoundingClientRect();
+    const rotateY = (event.clientX - bounds.left - bounds.width / 2) / 25;
+    const rotateX = (event.clientY - bounds.top - bounds.height / 2) / 25;
+    panel.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+  };
+
+  const resetFocusPanelTilt = () => {
+    if (focusPanelRef.current) {
+      focusPanelRef.current.style.transform = "rotateY(0deg) rotateX(0deg)";
+    }
+  };
+
   return (
     <section
       ref={sectionRef}
       aria-label="PixoraSoftTech main focus"
-      className="relative h-[400vh] bg-black text-white"
+      className="relative h-[600vh] bg-black text-white"
     >
       <div className="sticky top-0 grid h-screen min-h-[680px] grid-cols-1 md:h-screen md:min-h-0 md:grid-cols-12">
         <div className="relative min-h-0 overflow-hidden border border-white/10 bg-[#121212] md:col-span-6 md:h-full">
@@ -82,15 +118,19 @@ export default function AboutFocus() {
             <div
               key={item.title}
               aria-hidden={index !== activeIndex}
-              className={`absolute inset-0 transition-all duration-700 ease-out ${
+              className={`absolute inset-0 transition-[opacity,transform] duration-500 ease-out ${
                 index === activeIndex
                   ? "z-10 scale-100 opacity-100"
-                  : "z-0 scale-[1.03] opacity-0"
+                  : "pointer-events-none z-0 scale-[1.02] opacity-0"
               }`}
             >
               <img
                 src={item.image}
                 alt={item.title}
+                loading={index === 0 ? "eager" : "lazy"}
+                onError={(event) => {
+                  event.currentTarget.src = "/portfolio/light-crm-dashboard.png";
+                }}
                 className="size-full object-cover object-center"
               />
               <div className="pointer-events-none absolute inset-0 bg-black/10" />
@@ -101,7 +141,16 @@ export default function AboutFocus() {
           </span>
         </div>
 
-        <div className="relative flex min-h-[440px] flex-col justify-between bg-black p-6 sm:p-10 md:col-span-6 md:h-screen md:min-h-0 md:p-10 lg:p-12">
+        <div
+          className="relative min-h-[440px] md:col-span-6 md:h-screen md:min-h-0"
+          style={{ perspective: "1000px" }}
+        >
+          <div
+            ref={focusPanelRef}
+            onMouseMove={handleFocusPanelMouseMove}
+            onMouseLeave={resetFocusPanelTilt}
+            className="relative flex h-full flex-col justify-between bg-black p-6 transition-transform duration-200 ease-linear [transform-style:preserve-3d] sm:p-10 md:p-10 lg:p-12"
+          >
           <div className="z-20 flex w-full items-center justify-between font-mono text-xs font-bold uppercase tracking-[0.12em]">
             <span>Main Focus</span>
             <div className="relative">
@@ -136,14 +185,14 @@ export default function AboutFocus() {
             </div>
           </div>
 
-          <div className="relative z-10 mt-12 flex flex-col gap-1 sm:mt-16 md:mt-0 md:w-[72%]">
+          <div className="relative z-10 mt-12 flex flex-col gap-[6px] sm:mt-16 md:mt-0 md:w-[72%]">
             {focusItems.map((item, index) => (
               <button
                 type="button"
                 key={item.title}
                 aria-pressed={activeIndex === index}
                 onClick={() => setActiveIndex(index)}
-                className={`select-none text-left text-3xl font-bold leading-[1.1] tracking-tight transition-colors duration-300 sm:text-4xl lg:text-[2.5rem] ${
+                className={`select-none text-left text-3xl font-semibold leading-[1.1] tracking-tight transition-colors duration-300 sm:text-4xl lg:text-[2.5rem] ${
                   activeIndex === index ? "text-white" : "text-[#3e3e42] hover:text-white/80"
                 }`}
               >
@@ -173,8 +222,9 @@ export default function AboutFocus() {
               </a>
             </div>
             <span className="shrink-0 font-mono text-2xl font-bold italic tracking-tighter text-white/50 sm:text-3xl">
-              {String(activeIndex + 1).padStart(2, "0")}*
+              {String(activeIndex + 1).padStart(2, "0")}
             </span>
+          </div>
           </div>
         </div>
       </div>
