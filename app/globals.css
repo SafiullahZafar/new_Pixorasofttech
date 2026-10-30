@@ -142,3 +142,231 @@ body {
     opacity: 0 !important;
   }
 }
+
+/* ==========================================================================
+   3D Animated MacBook Air Styles & Keyframes
+   ========================================================================== */
+.macbook-container {
+  perspective: 800px;
+}
+
+.macbook-inner {
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.macbook-screen {
+  transform-style: preserve-3d;
+  transform-origin: 0 100%;
+  transform: rotateX(0deg);
+}
+
+.macbook-screen-face-one {
+  transform: translateZ(2px);
+}
+
+.macbook-body {
+  transform-style: preserve-3d;
+  transform-origin: 0 100%;
+  transform: rotateX(-90deg);
+}
+
+.macbook-body-face-one {
+  transform-style: preserve-3d;
+  transform: translateZ(-2px);
+}
+
+.macbook-keyboard {
+  transform-style: preserve-3d;
+}
+
+.macbook-key {
+  transform: translateZ(-2px);
+}
+
+.macbook-shadow {
+  transform: rotateX(90deg) translateZ(-60px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  }
+  5% {
+    transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
+  }
+  20% {
+    transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
+  }
+  60% {
+    transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
+  }
+  65% {
+    transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
+  }
+  80% {
+    transform: rotateX(-20deg) rotateY(375deg) rotateZ(0deg);
+  }
+  85% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+}
+
+.custom-animate-rotate {
+  animation: rotate infinite 9s ease;
+}
+
+@keyframes lid-screen {
+  0% {
+    transform: rotateX(0deg);
+    background-position: left bottom;
+  }
+  5% {
+    transform: rotateX(-90deg);
+    background-position: -150px top;
+  }
+  20% {
+    transform: rotateX(-90deg);
+    background-position: -150px top;
+  }
+  25% {
+    transform: rotateX(15deg);
+    background-position: left bottom;
+  }
+  30% {
+    transform: rotateX(-5deg);
+    background-position: left bottom;
+  }
+  38% {
+    transform: rotateX(0deg);
+    background-position: left bottom;
+  }
+  100% {
+    transform: rotateX(0deg);
+    background-position: left bottom;
+  }
+}
+
+.custom-animate-lid-screen {
+  animation: lid-screen infinite 9s ease;
+}
+
+@keyframes lid-macbody {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+.custom-animate-lid-macbody {
+  animation: lid-macbody infinite 9s ease;
+}
+
+@keyframes screen-shade {
+  0% {
+    background-position: 0px 0px;
+  }
+  5% {
+    background-position: -300px -200px;
+  }
+  20% {
+    background-position: -300px -200px;
+  }
+  25% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 0px 0px;
+  }
+}
+
+.custom-animate-screen-shade {
+  animation: screen-shade infinite 9s ease;
+}
+
+@keyframes lid-keyboard-area {
+  0% {
+    background-color: #dfdfdf;
+  }
+  5% {
+    background-color: #ccc;
+  }
+  20% {
+    background-color: #bbb;
+  }
+  25% {
+    background-color: #dfdfdf;
+  }
+  100% {
+    background-color: #dfdfdf;
+  }
+}
+
+.custom-animate-lid-keyboard-area {
+  animation: lid-keyboard-area infinite 9s ease;
+}
+
+@keyframes keys {
+  0% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  5% {
+    box-shadow: 1 -1px 0 #222;
+  }
+  20% {
+    box-shadow: -1 -1px 0 #222;
+  }
+  25% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  100% {
+    box-shadow: 0 -2px 0 #222;
+  }
+}
+
+.custom-animate-keys {
+  animation: keys infinite 9s ease;
+}
+
+@keyframes macbook-shadow {
+  0% {
+    transform: rotateX(90deg) translateZ(-60px) scale(1);
+    opacity: 0.5;
+  }
+  5% {
+    transform: rotateX(90deg) translateZ(-60px) scale(0.9);
+    opacity: 0.4;
+  }
+  20% {
+    transform: rotateX(90deg) translateZ(-60px) scale(0.7);
+    opacity: 0.25;
+  }
+  25% {
+    transform: rotateX(90deg) translateZ(-60px) scale(1.05);
+    opacity: 0.55;
+  }
+  30% {
+    transform: rotateX(90deg) translateZ(-60px) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotateX(90deg) translateZ(-60px) scale(1);
+    opacity: 0.5;
+  }
+}
+
+.custom-animate-macbook-shadow {
+  animation: macbook-shadow infinite 9s ease;
+}
+

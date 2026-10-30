@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import Macbook from "./ProjectHeroShowcase";
 
 export default function PortfolioHero() {
   const scrollToProjects = () => {
@@ -38,6 +39,18 @@ export default function PortfolioHero() {
           Explore live websites, in-progress mobile apps, and business software built to solve real client problems.
         </motion.p>
 
+        {/* 3D Animated MacBook Showcase */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.88 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.16 }}
+          className="relative my-4 flex h-[220px] w-full items-center justify-center sm:my-6 sm:h-[260px] lg:my-8 lg:h-[300px]"
+        >
+          <div className="relative scale-[1.5] sm:scale-[1.85] lg:scale-[2.2]">
+            <Macbook />
+          </div>
+        </motion.div>
+
         <motion.button
           type="button"
           aria-label="Scroll to projects"
@@ -45,7 +58,7 @@ export default function PortfolioHero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.2 }}
-          className="mt-5 inline-flex size-12 items-center justify-center rounded-full bg-[#0A2540] text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#143960] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0A2540] sm:mt-8 sm:size-14"
+          className="mt-2 inline-flex size-12 items-center justify-center rounded-full bg-[#0A2540] text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#143960] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0A2540] sm:mt-4 sm:size-14"
         >
           <ArrowDown aria-hidden="true" className="size-5 sm:size-6" />
         </motion.button>
