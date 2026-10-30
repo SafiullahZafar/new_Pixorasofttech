@@ -41,14 +41,12 @@ export default function PortfolioHero() {
 
         {/* 3D Animated MacBook Showcase */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.88 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.16 }}
-          className="relative my-4 flex h-[220px] w-full items-center justify-center sm:my-6 sm:h-[260px] lg:my-8 lg:h-[300px]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.18 }}
+          className="relative my-6 sm:my-10 flex w-full items-center justify-center"
         >
-          <div className="relative scale-[1.5] sm:scale-[1.85] lg:scale-[2.2]">
-            <Macbook />
-          </div>
+          <Macbook />
         </motion.div>
 
         <motion.button
