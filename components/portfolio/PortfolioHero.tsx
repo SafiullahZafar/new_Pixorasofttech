@@ -45,7 +45,7 @@ export default function PortfolioHero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.2 }}
-          className="mt-5 inline-flex size-12 items-center justify-center rounded-full bg-[#0c3721] text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#174a31] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0c3721] sm:mt-8 sm:size-14"
+          className="mt-5 inline-flex size-12 items-center justify-center rounded-full bg-[#0A2540] text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#143960] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0A2540] sm:mt-8 sm:size-14"
         >
           <ArrowDown aria-hidden="true" className="size-5 sm:size-6" />
         </motion.button>

@@ -49,9 +49,9 @@ export default function PortfolioGrid() {
               aria-label="Grid view"
               aria-pressed={viewMode === "grid"}
               onClick={() => setViewMode("grid")}
-              className={`inline-flex size-10 items-center justify-center rounded-xl border transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0c3721] sm:size-11 ${
+              className={`inline-flex size-10 items-center justify-center rounded-xl border transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A2540] sm:size-11 ${
                 viewMode === "grid"
-                  ? "border-[#0c3721] bg-[#0c3721] text-white"
+                  ? "border-[#0A2540] bg-[#0A2540] text-white"
                   : "border-black/10 bg-white text-black hover:bg-black/5"
               }`}
             >
@@ -62,9 +62,9 @@ export default function PortfolioGrid() {
               aria-label="List view"
               aria-pressed={viewMode === "list"}
               onClick={() => setViewMode("list")}
-              className={`inline-flex size-10 items-center justify-center rounded-xl border transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0c3721] sm:size-11 ${
+              className={`inline-flex size-10 items-center justify-center rounded-xl border transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A2540] sm:size-11 ${
                 viewMode === "list"
-                  ? "border-[#0c3721] bg-[#0c3721] text-white"
+                  ? "border-[#0A2540] bg-[#0A2540] text-white"
                   : "border-black/10 bg-white text-black hover:bg-black/5"
               }`}
             >
@@ -145,7 +145,7 @@ function ProjectCard({
     >
       <Link
         href={`/projects/${project.id}`}
-        className={`relative block overflow-hidden rounded-2xl bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0c3721] sm:rounded-[1.4rem] ${
+        className={`relative block overflow-hidden rounded-2xl bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0A2540] sm:rounded-[1.4rem] ${
           isList ? "aspect-[16/10] md:aspect-auto md:min-h-[280px]" : "aspect-[16/10]"
         }`}
       >
@@ -182,8 +182,8 @@ function ProjectCard({
 
       <div className={`flex min-w-0 flex-col ${isList ? "py-1 md:py-3" : "pt-5 sm:pt-6"}`}>
         <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
-          <h2 className="text-xl font-semibold tracking-tight text-[#111] transition-colors group-hover:text-[#0c3721] sm:text-2xl lg:text-3xl">
-            <Link href={`/projects/${project.id}`} className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0c3721]">
+          <h2 className="text-xl font-semibold tracking-tight text-[#111] transition-colors group-hover:text-[#0A2540] sm:text-2xl lg:text-3xl">
+            <Link href={`/projects/${project.id}`} className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A2540]">
               {project.title}
             </Link>
           </h2>
@@ -210,7 +210,7 @@ function ProjectCard({
         <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/10 pt-5">
           <Link
             href={`/projects/${project.id}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#0c3721] transition-all hover:gap-3 sm:text-base"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#0A2540] transition-all hover:gap-3 sm:text-base"
           >
             View Details <ArrowUpRight aria-hidden="true" className="size-4" />
           </Link>
@@ -219,7 +219,7 @@ function ProjectCard({
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-black/45 transition-colors hover:text-[#0c3721]"
+              className="inline-flex items-center gap-2 text-sm font-medium text-black/45 transition-colors hover:text-[#0A2540]"
             >
               Open Website <ExternalLink aria-hidden="true" className="size-3.5" />
             </a>
