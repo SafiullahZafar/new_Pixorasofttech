@@ -44,11 +44,12 @@ export default function PortfolioHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.18 }}
-          className="relative my-6 sm:my-10 flex w-full items-center justify-center"
+          className="relative my-4 sm:my-6 flex w-full items-center justify-center"
         >
           <Macbook />
         </motion.div>
 
+        {/* Scroll button clearly placed below the laptop */}
         <motion.button
           type="button"
           aria-label="Scroll to projects"
@@ -56,7 +57,7 @@ export default function PortfolioHero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.2 }}
-          className="mt-2 inline-flex size-12 items-center justify-center rounded-full bg-[#0A2540] text-white shadow-md transition hover:-translate-y-0.5 hover:bg-[#143960] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0A2540] sm:mt-4 sm:size-14"
+          className="relative z-30 mt-2 sm:mt-4 inline-flex size-12 items-center justify-center rounded-full bg-[#0A2540] text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#143960] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0A2540] sm:size-14 cursor-pointer"
         >
           <ArrowDown aria-hidden="true" className="size-5 sm:size-6" />
         </motion.button>

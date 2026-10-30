@@ -12,7 +12,7 @@ const Macbook: React.FC<MacbookProps> = ({
   imageAlt = "PixoraSoftTech Project Showcase"
 }) => {
   return (
-    <div className="macbook-3d-scene relative flex items-center justify-center select-none">
+    <div className="macbook-3d-scene relative flex items-center justify-center select-none pb-16 sm:pb-24 md:pb-28">
       {/* Dynamic 3D Keyframe Styles */}
       <style>{`
         .macbook-3d-scene {
