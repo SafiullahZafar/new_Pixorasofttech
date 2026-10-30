@@ -1,6 +1,14 @@
 import React from 'react';
 
-const Macbook: React.FC = () => {
+export interface MacbookProps {
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+const Macbook: React.FC<MacbookProps> = ({
+  imageSrc = "/portfolio/brew-haven.png",
+  imageAlt = "Website preview"
+}) => {
   // Base classes for keys, animation will be added via custom-animate-keys
   const keyBaseClasses = "w-[6px] h-[6px] bg-[#444] float-left m-[1px] rounded-[2px] shadow-[0_-2px_0_#222] macbook-key custom-animate-keys";
   // Note: macbook-key applies transform: translateZ(-2px) from index.css
@@ -26,8 +34,15 @@ const Macbook: React.FC = () => {
           <div className={`macbook-screen-face-one w-[150px] h-[96px] absolute left-0 bottom-0 rounded-[7px] bg-[#d3d3d3]
                           bg-[linear-gradient(45deg,rgba(0,0,0,0.24)_0%,rgba(0,0,0,0)_100%)]`}>
             <div className="w-[3px] h-[3px] rounded-full bg-black absolute left-1/2 top-[4px] ml-[-1.5px]"></div>
-            <div className="w-[130px] h-[74px] m-[10px] bg-black bg-[length:100%_100%] rounded-[1px] relative shadow-[inset_0_0_2px_rgba(0,0,0,1)]">
-              <div className={`custom-animate-screen-shade absolute left-0 top-0 w-[130px] h-[74px] 
+            <div className="w-[130px] h-[74px] m-[10px] bg-black rounded-[1px] relative overflow-hidden shadow-[inset_0_0_2px_rgba(0,0,0,1)]">
+              {imageSrc && (
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="w-full h-full object-cover object-top"
+                />
+              )}
+              <div className={`custom-animate-screen-shade pointer-events-none absolute left-0 top-0 w-[130px] h-[74px] 
                               bg-[linear-gradient(-135deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.1)_47%,rgba(255,255,255,0)_48%)] 
                               bg-[length:300px_200px] bg-[position:0px_0px]`}></div>
             </div>
