@@ -64,7 +64,7 @@ export default function Hero() {
                   </span>
                 </button>
               </Link>
-              <Link href="/portfolio" className="inline-block">
+              <Link href="/projects" className="inline-block">
                 <button className="w-full rounded-2xl border border-black/15 bg-transparent px-6 py-3.5 text-sm font-medium text-black transition-all duration-300 hover:border-black hover:bg-black hover:text-white sm:w-auto cursor-pointer">
                   View Our Work
                 </button>
@@ -81,7 +81,7 @@ export default function Hero() {
             onMouseLeave={handleMouseLeave}
             className="relative block h-full w-full overflow-hidden rounded-2xl group cursor-pointer"
           >
-            <Link href="/portfolio" aria-label="View our projects" className="block h-full w-full">
+            <Link href="/projects" aria-label="View our projects" className="block h-full w-full">
               <div className="absolute inset-0 overflow-hidden bg-[#0A2540]">
                 <img
                   src="/suppliers.png"

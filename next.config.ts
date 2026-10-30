@@ -57,6 +57,16 @@ const nextConfig: NextConfig = {
   /* ── Redirects (www canonical) ── */
   async redirects() {
     return [
+      {
+        source: "/portfolio",
+        destination: "/projects",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/:id",
+        destination: "/projects/:id",
+        permanent: true,
+      },
       // Uncomment when deployed to redirect non-www to www
       // {
       //   source: "/:path*",

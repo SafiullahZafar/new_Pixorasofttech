@@ -15,7 +15,7 @@ const projectItems = [
     badge: "Development",
     img: "/portfolio/crm-dashboard.png",
     fallbackImg: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80",
-    href: "/portfolio/crm",
+    href: "/projects/crm",
   },
   {
     col: 1,
@@ -26,7 +26,7 @@ const projectItems = [
     badge: "Development",
     img: "/portfolio/fitpulse-app.png",
     fallbackImg: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1000&q=80",
-    href: "/portfolio/rider-app",
+    href: "/projects/rider-app",
   },
   // Col 2 items (with offset pt-20)
   {
@@ -38,7 +38,7 @@ const projectItems = [
     badge: "Design & Dev",
     img: "/portfolio/brew-haven.png",
     fallbackImg: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1000&q=80",
-    href: "/portfolio/brew-haven",
+    href: "/projects/brew-haven",
   },
   {
     col: 2,
@@ -49,7 +49,7 @@ const projectItems = [
     badge: "Systems",
     img: "/portfolio/inventory-dashboard.png",
     fallbackImg: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80",
-    href: "/portfolio/inventory",
+    href: "/projects/inventory",
   },
 ];
 
@@ -165,7 +165,7 @@ export default function Projects() {
         {/* View All Projects Button */}
         <div className="flex justify-center mt-16 sm:mt-24">
           <Link
-            href="/portfolio"
+            href="/projects"
             className="inline-flex items-center gap-3 bg-[#0A2540] text-white text-xs sm:text-sm font-medium px-8 py-3.5 rounded-2xl hover:bg-[#143960] transition-all duration-300 active:scale-95 shadow-sm"
           >
             <span>View All Projects</span>

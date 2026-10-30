@@ -40,7 +40,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
       <section className="bg-gradient-to-b from-blue-50/70 via-slate-50/50 to-white pt-12 pb-12 border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6">
           <Link
-            href="/portfolio"
+            href="/projects"
             className="inline-flex items-center gap-2 text-slate-500 text-sm font-medium hover:text-blue-600 transition-colors mb-8 group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -418,7 +418,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
                 Start a Project <ArrowUpRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/portfolio"
+                href="/projects"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-white/20 text-white font-semibold text-sm hover:bg-white/10 transition"
               >
                 Explore More Portfolio Projects

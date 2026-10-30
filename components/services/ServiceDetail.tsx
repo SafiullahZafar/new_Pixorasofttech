@@ -59,7 +59,7 @@ export default function ServiceDetail({ service }: { service: ServiceDetailType 
                 Discuss Your Project <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/portfolio"
+                href="/projects"
                 className="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 font-semibold text-sm px-7 py-3.5 rounded-xl hover:border-blue-300 hover:text-blue-600 transition shadow-2xs"
               >
                 View Case Studies

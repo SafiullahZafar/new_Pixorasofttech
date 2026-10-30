@@ -393,42 +393,42 @@ const featuredWorks: WorksWheelItem[] = [
   {
     title: "Brew Haven Coffee",
     image: "/portfolio/brew-haven.png",
-    href: "/portfolio/brew-haven",
+    href: "/projects/brew-haven",
   },
   {
     title: "Light CRM Suite",
     image: "/portfolio/light-crm-dashboard.png",
-    href: "/portfolio/crm",
+    href: "/projects/crm",
   },
   {
     title: "Delivery Flow System",
     image: "/portfolio/delivery-dashboard.png",
-    href: "/portfolio/delivery-dashboard",
+    href: "/projects/delivery-dashboard",
   },
   {
     title: "FitPulse Mobile App",
     image: "/portfolio/fitpulse-app.png",
-    href: "/portfolio/rider-app",
+    href: "/projects/rider-app",
   },
   {
     title: "Inventory Cloud POS",
     image: "/portfolio/inventory-dashboard.png",
-    href: "/portfolio/inventory",
+    href: "/projects/inventory",
   },
   {
     title: "K.B. Exports Global",
     image: "/portfolio/kb-exports.png",
-    href: "/portfolio/kb-exports",
+    href: "/projects/kb-exports",
   },
   {
     title: "Eduka College Platform",
     image: "/portfolio/eduka-college.png",
-    href: "/portfolio/eduka-college",
+    href: "/projects/eduka-college",
   },
   {
     title: "Solar Solutions Portal",
     image: "/portfolio/solar-solutions.png",
-    href: "/portfolio/solar-solutions",
+    href: "/projects/solar-solutions",
   },
 ];
 
@@ -468,7 +468,7 @@ export default function OurWork() {
       {/* 3. View All Projects Button */}
       <div className="flex justify-center py-16 sm:py-24">
         <Link
-          href="/portfolio"
+          href="/projects"
           className="inline-flex items-center gap-3 bg-[#0A2540] text-white text-xs sm:text-sm font-medium px-9 py-4 rounded-full hover:bg-[#143960] transition-all duration-300 active:scale-95 shadow-md hover:shadow-xl"
         >
           <span>View All Projects</span>

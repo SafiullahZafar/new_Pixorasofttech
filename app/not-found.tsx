@@ -33,7 +33,7 @@ export default function NotFound() {
           Go Home
         </Link>
         <Link
-          href="/portfolio"
+          href="/projects"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold text-sm hover:border-blue-200 hover:text-blue-600 transition"
         >
           <ArrowLeft className="w-4 h-4" />

@@ -52,24 +52,24 @@ const serviceItems = [
 ];
 
 const caseStudiesCol1 = [
-  { title: "Brew Haven Coffee", href: "/portfolio/brew-haven" },
-  { title: "Delivery Flow System", href: "/portfolio/delivery-dashboard" },
-  { title: "HRMS Enterprise", href: "/portfolio/hrms" },
-  { title: "KB Exports Global", href: "/portfolio/kb-exports" },
-  { title: "Light CRM Suite", href: "/portfolio/crm" },
+  { title: "Brew Haven Coffee", href: "/projects/brew-haven" },
+  { title: "Delivery Flow System", href: "/projects/delivery-dashboard" },
+  { title: "HRMS Enterprise", href: "/projects/hrms" },
+  { title: "KB Exports Global", href: "/projects/kb-exports" },
+  { title: "Light CRM Suite", href: "/projects/crm" },
 ];
 
 const caseStudiesCol2 = [
-  { title: "Inventory Cloud POS", href: "/portfolio/inventory" },
-  { title: "Restaurant Management", href: "/portfolio/supplier" },
-  { title: "Salon Appointment System", href: "/portfolio/salon" },
-  { title: "Textile ERP System", href: "/portfolio/supplier" },
+  { title: "Inventory Cloud POS", href: "/projects/inventory" },
+  { title: "Restaurant Management", href: "/projects/supplier" },
+  { title: "Salon Appointment System", href: "/projects/salon" },
+  { title: "Textile ERP System", href: "/projects/supplier" },
 ];
 
 const caseStudiesCol3 = [
-  { title: "FitPulse Mobile App", href: "/portfolio/rider-app" },
-  { title: "IRider Transportation", href: "/portfolio/rider-app" },
-  { title: "ShopEase E-Commerce", href: "/portfolio/brew-haven" },
+  { title: "FitPulse Mobile App", href: "/projects/rider-app" },
+  { title: "IRider Transportation", href: "/projects/rider-app" },
+  { title: "ShopEase E-Commerce", href: "/projects/brew-haven" },
 ];
 
 // Luxury smooth easing curve (natural deceleration over 0.65s)
@@ -334,7 +334,7 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="/portfolio"
+              href="/projects"
               className="px-4 py-2 text-[15px] font-semibold text-slate-800 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 relative"
             >
               Projects
@@ -475,7 +475,7 @@ export default function Navbar() {
                 </div>
 
                 <Link
-                  href="/portfolio"
+                  href="/projects"
                   className="px-4 py-2.5 rounded-xl text-base font-semibold text-slate-950 hover:bg-black/5"
                   onClick={() => setMobileOpen(false)}
                 >

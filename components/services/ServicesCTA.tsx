@@ -48,7 +48,7 @@ export default function ServicesCTA() {
                 Start a project <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/portfolio"
+                href="/projects"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-white/20 bg-white/5 text-white font-semibold text-sm hover:bg-white/10 transition"
               >
                 See our work

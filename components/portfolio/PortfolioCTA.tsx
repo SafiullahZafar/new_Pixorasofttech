@@ -6,14 +6,14 @@ import Link from "next/link";
 
 export default function PortfolioCTA() {
   return (
-    <section className="bg-white py-10">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-transparent px-5 py-10 sm:px-8 sm:py-16 lg:px-14 lg:py-20 2xl:px-20">
+      <div className="mx-auto w-full max-w-[2440px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-3xl bg-[#0a0f1e] py-20 px-8 text-center"
+          className="relative overflow-hidden rounded-3xl bg-[#0a0f1e] px-6 py-14 text-center sm:px-10 sm:py-20 lg:rounded-[2.5rem] lg:px-16 lg:py-28"
           style={{
             backgroundImage:
               "radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.35) 0%, transparent 65%)",
@@ -32,11 +32,11 @@ export default function PortfolioCTA() {
               Let&apos;s Talk
             </div>
 
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-5">
+            <h2 className="mb-5 text-[clamp(2rem,3vw,4.5rem)] font-extrabold leading-tight text-white">
               Have a project in mind?
             </h2>
 
-            <p className="text-slate-400 text-base max-w-md mx-auto mb-10 leading-relaxed">
+            <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-slate-400 sm:text-lg lg:text-xl">
               Whether it is a full product or a single creative asset, we would love to hear about it.
             </p>
 

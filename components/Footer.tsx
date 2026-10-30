@@ -10,7 +10,7 @@ import HalftoneWordmarkFooter from "@/components/HalftoneWordmarkFooter";
 const exploreLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/About" },
-  { label: "Our Work", href: "/portfolio" },
+  { label: "Our Work", href: "/projects" },
   { label: "Services", href: "/#services" },
   { label: "Contact Us", href: "/contact" },
 ];

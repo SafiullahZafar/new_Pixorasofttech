@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/portfolio`,
+      url: `${baseUrl}/projects`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${baseUrl}/portfolio/${project.id}`,
+    url: `${baseUrl}/projects/${project.id}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.7,
