@@ -8,6 +8,7 @@ import StartAnimation from "@/components/StartAnimation";
 import WhoWeAre from "@/components/WhoWeAre";
 import TechLeverage from "@/components/TechLeverage";
 import TeamHero from "@/components/TeamHero";
+import TeamSplineSection from "@/components/TeamSplineSection";
 
 export const metadata: Metadata = {
   title: "Team & Technology | PixoraSoftTech",
@@ -26,6 +27,7 @@ export default function TeamPage() {
       <StartAnimation />
       <main className="relative z-10">
         <TeamHero />
+        <TeamSplineSection />
         <WhoWeAre />
         <TechLeverage />
         <section className="px-5 py-12 sm:px-8 sm:py-20 lg:px-12">
