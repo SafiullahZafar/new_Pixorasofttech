@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import {
   type HTMLMotionProps,
   type MotionValue,
@@ -102,7 +101,7 @@ export const GalleryContainer = ({
 
   return (
     <motion.div
-      className={cn("relative grid size-full grid-cols-2 gap-2 rounded-2xl sm:gap-3 md:grid-cols-3", className)}
+      className={cn("relative grid size-full grid-cols-2 gap-2 rounded-2xl sm:gap-4 md:grid-cols-3", className)}
       style={{
         rotateX,
         scale,
@@ -201,10 +200,8 @@ export default function ProjectAnimation() {
       const columnCount = viewportWidth >= 768 ? 3 : 2;
       const horizontalPadding = viewportWidth >= 1024 ? 0 : viewportWidth >= 640 ? 64 : 32;
       const gap = viewportWidth >= 640 ? 12 : 8;
-      const columnWidth = Math.max(
-        120,
-        (viewportWidth - horizontalPadding - gap * (columnCount - 1)) / columnCount,
-      );
+      const galleryWidth = Math.min(viewportWidth - horizontalPadding, 1800);
+      const columnWidth = Math.max(120, (galleryWidth - gap * (columnCount - 1)) / columnCount);
       const cardHeight = (columnWidth * 10) / 16;
       const columnHeight = galleryColumns[0].length * cardHeight + (galleryColumns[0].length - 1) * gap;
       const stickyHeight = Math.max(0, viewportHeight - 80);
@@ -223,21 +220,27 @@ export default function ProjectAnimation() {
 
   return (
     <section aria-label="Project image gallery">
-      <ContainerScroll className="min-h-[240svh] px-4 py-12 sm:px-8 sm:py-16 lg:px-0">
-        <div className="mx-auto mb-8 w-full max-w-[1800px] text-center sm:mb-10 lg:mb-12">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-[#0A2540]/60 sm:text-sm">
+      <ContainerScroll className="min-h-[240svh] px-4 pb-12 pt-3 sm:px-8 sm:pt-5 lg:px-0">
+        <div className="mx-auto mb-[clamp(7rem,14vh,10rem)] w-full max-w-[1800px] text-center">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-[#0A2540]/60 sm:mb-3 sm:text-sm">
             Selected work
           </p>
           <h2 className="text-balance text-[clamp(2rem,4vw,4.25rem)] font-semibold leading-[1.08] tracking-[-0.04em] text-[#111]">
             Projects built to make a difference
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-black/55 sm:mt-5 sm:text-base lg:text-lg">
+            Explore live websites, in-progress mobile apps, and business software built to solve real client problems.
+          </p>
         </div>
-        <ContainerSticky className="top-20 h-[calc(100svh-5rem)] min-h-[min(30rem,calc(100svh-5rem))] overflow-visible">
+        <ContainerSticky className="top-20 mx-auto h-[calc(100svh-5rem)] min-h-[min(30rem,calc(100svh-5rem))] max-w-[1800px] overflow-visible">
           <GalleryContainer className="overflow-visible">
             {galleryColumns.map((column, columnIndex) => (
               <GalleryCol
                 key={`project-column-${columnIndex}`}
-                className={cn(columnIndex === 2 && "hidden md:flex")}
+                className={cn(
+                  columnIndex === 2 && "hidden md:flex",
+                  columnIndex === 1 && "pt-6 sm:pt-10 lg:pt-14",
+                )}
                 yRange={columnIndex === 1 ? ["-2%", columnTravel] : ["0%", columnTravel]}
               >
                 <ContainerStagger className="flex flex-col gap-2 sm:gap-3" transition={{ staggerChildren: 0.12 }}>
@@ -245,15 +248,14 @@ export default function ProjectAnimation() {
                     <ContainerAnimated
                       key={project.src}
                       transition={{ duration: 0.65, ease: "easeOut" }}
-                      className="group relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-slate-200 shadow-[0_12px_35px_rgba(15,23,42,0.16)]"
+                      className="group relative aspect-[16/10] w-full overflow-hidden rounded-[1.25rem] bg-slate-200 shadow-[0_12px_35px_rgba(15,23,42,0.16)] sm:rounded-[1.5rem]"
                     >
-                      <Image
+                      <img
                         src={project.src}
                         alt={`${project.title} project preview`}
-                        fill
-                        unoptimized
-                        sizes="(max-width: 639px) 48vw, (max-width: 1023px) 32vw, 30vw"
-                        className="object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       <p className="pointer-events-none absolute bottom-3 left-3 text-xs font-semibold tracking-wide text-white sm:bottom-5 sm:left-5 sm:text-base">
