@@ -98,11 +98,11 @@ export const GalleryContainer = ({
   const { scrollYProgress } = useContainerScrollContext();
   const rotateX = useTransform(scrollYProgress, [0, 0.5], [75, 0]);
   // Gently compress the gallery as it settles into view; this reverses on scroll-up.
-  const scale = useTransform(scrollYProgress, [0.5, 0.9], [1, 0.89]);
+  const scale = useTransform(scrollYProgress, [0.5, 0.9], [1, 0.96]);
 
   return (
     <motion.div
-      className={cn("relative grid size-full grid-cols-2 gap-2 rounded-2xl sm:gap-4 md:grid-cols-3", className)}
+      className={cn("relative grid size-full grid-cols-3 gap-2 rounded-2xl sm:gap-4", className)}
       style={{
         rotateX,
         scale,
@@ -172,22 +172,16 @@ const galleryColumns = [
     { src: "/portfolio/brew-haven.png", title: "Brew Haven" },
     { src: "/portfolio/eduka-college.png", title: "Eduka College" },
     { src: "/portfolio/fitpulse-app.png", title: "FitPulse" },
-    { src: "/portfolio/solar-solutions.png", title: "Solar Solutions" },
-    { src: "/portfolio/zostel.png", title: "Zostel" },
   ],
   [
     { src: "/portfolio/kb-exports.png", title: "K.B. Exports" },
     { src: "/portfolio/flowcrm-dashboard.png", title: "Flow CRM" },
     { src: "/portfolio/shopease-app.png", title: "ShopEase" },
-    { src: "/portfolio/supplier.png", title: "Supplier Portal" },
-    { src: "/portfolio/travel-hotel-hub.png", title: "Travel Hotel Hub" },
   ],
   [
     { src: "/portfolio/crm-dashboard.png", title: "CRM Dashboard" },
     { src: "/portfolio/irider-app.png", title: "iRider" },
     { src: "/portfolio/lms-dashboard.png", title: "Learning Platform" },
-    { src: "/portfolio/goody-supplies.png", title: "Goody Supplies" },
-    { src: "/portfolio/glass-haven.png", title: "Glass Haven" },
   ],
 ];
 
@@ -198,7 +192,7 @@ export default function ProjectAnimation() {
     const updateTravel = () => {
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
-      const columnCount = viewportWidth >= 768 ? 3 : 2;
+      const columnCount = 3;
       const horizontalPadding = viewportWidth >= 1024 ? 0 : viewportWidth >= 640 ? 64 : 32;
       const gap = viewportWidth >= 640 ? 12 : 8;
       const galleryWidth = Math.min(viewportWidth - horizontalPadding, 1800);
@@ -239,7 +233,6 @@ export default function ProjectAnimation() {
               <GalleryCol
                 key={`project-column-${columnIndex}`}
                 className={cn(
-                  columnIndex === 2 && "hidden md:flex",
                   columnIndex === 1 && "pt-6 sm:pt-10 lg:pt-14",
                 )}
                 yRange={columnIndex === 1 ? ["-2%", columnTravel] : ["0%", columnTravel]}
