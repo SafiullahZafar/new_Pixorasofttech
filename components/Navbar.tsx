@@ -341,7 +341,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="#tech-leverage"
+              href="/Team"
               className="px-4 py-2 text-[15px] font-semibold text-slate-800 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 relative"
             >
               Team & Tech
@@ -483,7 +483,8 @@ export default function Navbar() {
                 </Link>
 
                 <Link
-                  href="#tech-leverage"
+                  href="/Team"
+                  onClick={() => setMobileOpen(false)}
                   className="px-4 py-2.5 rounded-xl text-base font-semibold text-slate-950 hover:bg-black/5"
                 >
                   Team & Tech
