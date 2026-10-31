@@ -10,30 +10,22 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Activity,
-  Users,
-  Cpu,
-  Zap,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 const bentoGridVariants = cva(
-  "relative grid gap-2.5 sm:gap-3 md:gap-3.5 w-full h-full [&>*:first-child]:origin-top-right [&>*:nth-child(3)]:origin-bottom-right [&>*:nth-child(4)]:origin-top-right",
+  "relative grid gap-2.5 sm:gap-3.5 w-full h-full [&>*:first-child]:origin-top-right [&>*:nth-child(3)]:origin-bottom-right [&>*:nth-child(4)]:origin-top-right",
   {
     variants: {
       variant: {
         default: `
-          grid-cols-8 grid-rows-[1fr_0.5fr_0.5fr_1fr]
-          [&>*:first-child]:col-span-8 md:[&>*:first-child]:col-span-6 [&>*:first-child]:row-span-3
-          [&>*:nth-child(2)]:col-span-2 md:[&>*:nth-child(2)]:row-span-2 [&>*:nth-child(2)]:hidden md:[&>*:nth-child(2)]:block
-          [&>*:nth-child(3)]:col-span-2 md:[&>*:nth-child(3)]:row-span-2 [&>*:nth-child(3)]:hidden md:[&>*:nth-child(3)]:block
-          [&>*:nth-child(4)]:col-span-4 md:[&>*:nth-child(4)]:col-span-3
-          [&>*:nth-child(5)]:col-span-4 md:[&>*:nth-child(5)]:col-span-3
+          grid-cols-12 grid-rows-[1.3fr_0.35fr_0.25fr_1.1fr]
+          [&>*:first-child]:col-span-12 md:[&>*:first-child]:col-span-8 [&>*:first-child]:row-span-3
+          [&>*:nth-child(2)]:col-span-6 md:[&>*:nth-child(2)]:col-span-4 md:[&>*:nth-child(2)]:row-span-2 [&>*:nth-child(2)]:hidden md:[&>*:nth-child(2)]:block
+          [&>*:nth-child(3)]:col-span-6 md:[&>*:nth-child(3)]:col-span-4 md:[&>*:nth-child(3)]:row-span-2 [&>*:nth-child(3)]:hidden md:[&>*:nth-child(3)]:block
+          [&>*:nth-child(4)]:col-span-6 md:[&>*:nth-child(4)]:col-span-4
+          [&>*:nth-child(5)]:col-span-6 md:[&>*:nth-child(5)]:col-span-4
         `,
         threeCells: `
           grid-cols-2 grid-rows-2
@@ -112,12 +104,13 @@ BentoGrid.displayName = "BentoGrid";
 const BentoCell = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
   ({ className, style, ...props }, ref) => {
     const { scrollYProgress } = useContainerScrollContext();
-    // Cards do NOT appear at start. As user scrolls more, they become more visible and expand to full size:
-    const opacity = useTransform(scrollYProgress, [0.06, 0.32], [0, 1]);
-    const translate = useTransform(scrollYProgress, [0.06, 0.72], ["-35%", "0%"]);
-    const scale = useTransform(scrollYProgress, [0.06, 0.72], [0.5, 1]);
+    // Cards do NOT appear at start (opacity 0 from 0 to 0.04).
+    // As user scrolls, opacity quickly hits 1 (solid opaque, no washed-out ghost look):
+    const opacity = useTransform(scrollYProgress, [0.04, 0.16], [0, 1]);
+    const translate = useTransform(scrollYProgress, [0.06, 0.38], ["-20%", "0%"]);
+    const scale = useTransform(scrollYProgress, [0.06, 0.38], [0.75, 1]);
     const pointerEvents = useTransform(scrollYProgress, (pos) =>
-      pos < 0.1 ? "none" : "auto"
+      pos < 0.08 ? "none" : "auto"
     );
 
     return (
@@ -135,16 +128,16 @@ BentoCell.displayName = "BentoCell";
 const ContainerScale = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
   ({ className, style, ...props }, ref) => {
     const { scrollYProgress } = useContainerScrollContext();
-    // Text goes back and shrinks smoothly as user scrolls:
-    const opacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
-    const scale = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
+    // Text stays locked in the center, shrinks smaller and smaller down to 0, then vanishes completely:
+    const opacity = useTransform(scrollYProgress, [0, 0.32], [1, 0]);
+    const scale = useTransform(scrollYProgress, [0, 0.32], [1, 0]);
 
     const position = useTransform(scrollYProgress, (pos) =>
-      pos >= 0.55 ? "absolute" : "fixed"
+      pos >= 0.45 ? "absolute" : "fixed"
     );
 
     const pointerEvents = useTransform(scrollYProgress, (pos) =>
-      pos >= 0.4 ? "none" : "auto"
+      pos >= 0.3 ? "none" : "auto"
     );
 
     return (
@@ -168,7 +161,7 @@ ContainerScale.displayName = "ContainerScale";
 
 export default function TeamHero() {
   return (
-    <ContainerScroll className="h-[300vh] w-full">
+    <ContainerScroll className="h-[240vh] w-full">
       {/* 1. HERO TITLE & CTA (Fixed in center at start; goes back and shrinks away on scroll) */}
       <ContainerScale className="z-30 w-full max-w-5xl px-5 text-center">
         <div className="mx-auto w-full">
@@ -201,48 +194,46 @@ export default function TeamHero() {
         </div>
       </ContainerScale>
 
-      {/* 2. BENTO GRID - TRUE FULL SCREEN (Edge-to-edge, fills 100% viewport, no empty side margins) */}
-      <div className="sticky top-0 z-10 flex h-screen w-full items-center justify-center p-2 sm:p-3 md:p-4 pt-16 sm:pt-18 pb-2 sm:pb-3">
+      {/* 2. BENTO GRID (Covers top of screen, fills fully, less rounded corners, developer/designer roles without icons) */}
+      <div className="sticky top-0 z-10 flex h-screen w-full flex-col justify-center px-3 sm:px-6 lg:px-8 pt-2 sm:pt-3.5 pb-2 sm:pb-3.5">
         <BentoGrid
           variant="default"
-          className="w-full h-full max-w-none"
+          className="w-full max-w-[1540px] mx-auto h-full min-h-[520px]"
         >
-          {/* Card 1: Main Flagship - In-House Engineering Pods */}
-          <BentoCell className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
+          {/* Card 1: Core Developers & Full-Stack Engineers (Big top card, touches top of screen) */}
+          <BentoCell className="group relative overflow-hidden rounded-lg border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
             <img
               src="/team-hero.jpg"
-              alt="PixoraSoftTech Elite Engineering Team"
+              alt="PixoraSoftTech Core Developers"
               className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               loading="eager"
             />
             {/* Elegant vignette gradient so text is razor-sharp */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25" />
 
-            <div className="relative z-10 flex h-full flex-col justify-between p-6 sm:p-8 text-white">
+            <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-7 lg:p-8 text-white">
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-md">
-                  <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-                  Core Architecture • Engineering
+                <span className="rounded-full border border-white/20 bg-black/50 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-md">
+                  Core Engineering &bull; Full-Stack
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-emerald-300 backdrop-blur-md">
-                  <Activity className="size-3.5 text-emerald-400" />
-                  99.99% Reliability
+                <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-emerald-300 backdrop-blur-md">
+                  Active Production
                 </span>
               </div>
 
               <div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-semibold tracking-tight text-white max-w-2xl leading-tight">
-                  Enterprise Systems Built for Velocity &amp; Scale.
+                <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight text-white max-w-2xl leading-tight">
+                  Software Engineers &amp; Core Developers
                 </h3>
-                <p className="mt-2.5 text-xs sm:text-sm lg:text-base text-zinc-200/90 leading-relaxed max-w-2xl">
-                  Senior engineers, tech leads, and product architects working together to build resilient digital systems and high-concurrency cloud infrastructure.
+                <p className="mt-2 text-xs sm:text-sm lg:text-[15px] text-zinc-200/90 leading-relaxed max-w-2xl">
+                  Building high-performance web applications, robust backend APIs, and distributed cloud systems with modern stacks.
                 </p>
 
-                <div className="mt-4 flex flex-wrap gap-2 pt-3 border-t border-white/15">
-                  {["Next.js 16", "React 19", "Strict TypeScript", "Python AI", "Sub-50ms Edge"].map((tech) => (
+                <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 pt-2.5 sm:pt-3 border-t border-white/15">
+                  {["Next.js 16", "React 19", "Strict TypeScript", "Python AI", "PostgreSQL", "Node.js"].map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md border border-white/20 bg-white/10 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-sm"
+                      className="rounded border border-white/20 bg-white/10 px-2 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-medium text-white backdrop-blur-sm"
                     >
                       {tech}
                     </span>
@@ -252,11 +243,11 @@ export default function TeamHero() {
             </div>
           </BentoCell>
 
-          {/* Card 2: Dedicated Agile Pods */}
-          <BentoCell className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
+          {/* Card 2: UI/UX & Product Designers (Top-Right Side Card - Big, reaches top) */}
+          <BentoCell className="group relative overflow-hidden rounded-lg border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
             <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-              alt="Dedicated Agile Pods"
+              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80"
+              alt="UI/UX Designers"
               className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               loading="eager"
             />
@@ -264,29 +255,29 @@ export default function TeamHero() {
 
             <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6 text-white">
               <div className="flex items-center justify-between">
-                <div className="size-9 rounded-lg bg-blue-600/90 backdrop-blur-md flex items-center justify-center text-white shadow-sm">
-                  <Users className="size-4" />
-                </div>
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-300">
+                  Design Craft
+                </span>
                 <span className="rounded-full border border-white/20 bg-black/40 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-md">
-                  100% In-House
+                  Figma &bull; Prototyping
                 </span>
               </div>
 
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-wider text-blue-300">Agile Pods</div>
-                <h4 className="mt-1 text-lg font-semibold text-white">Dedicated Pods</h4>
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-blue-300">Product Design</div>
+                <h4 className="mt-1 text-base sm:text-lg lg:text-xl font-semibold text-white">UI/UX Designers</h4>
                 <p className="mt-1.5 text-xs text-zinc-300 leading-relaxed">
-                  Senior tech leads and UI architects integrated directly into your team.
+                  Crafting intuitive user journeys, interactive design systems, and responsive product interfaces.
                 </p>
               </div>
             </div>
           </BentoCell>
 
-          {/* Card 3: Modern Tech Stack Matrix */}
-          <BentoCell className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
+          {/* Card 3: Frontend & Mobile Developers (Bottom-Right Side Card - Big & Spacious) */}
+          <BentoCell className="group relative overflow-hidden rounded-lg border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
             <img
               src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
-              alt="Modern Tech Stack"
+              alt="Frontend & Mobile Developers"
               className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               loading="eager"
             />
@@ -294,29 +285,29 @@ export default function TeamHero() {
 
             <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6 text-white">
               <div className="flex items-center justify-between">
-                <div className="size-9 rounded-lg bg-indigo-600/90 backdrop-blur-md flex items-center justify-center text-white shadow-sm">
-                  <Cpu className="size-4" />
-                </div>
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-indigo-300">
+                  Client Engineering
+                </span>
                 <span className="rounded-full border border-white/20 bg-black/40 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-md">
-                  Zero Debt
+                  iOS &bull; Android &bull; Web
                 </span>
               </div>
 
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-wider text-indigo-300">Modern Matrix</div>
-                <h4 className="mt-1 text-lg font-semibold text-white">Curated Toolchains</h4>
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-indigo-300">App Specialists</div>
+                <h4 className="mt-1 text-base sm:text-lg lg:text-xl font-semibold text-white">Frontend &amp; Mobile Developers</h4>
                 <p className="mt-1.5 text-xs text-zinc-300 leading-relaxed">
-                  Next.js, React 19, TypeScript, PostgreSQL, and cloud-native velocity.
+                  Delivering 60fps mobile applications and smooth, accessible client-side web interactions.
                 </p>
               </div>
             </div>
           </BentoCell>
 
-          {/* Card 4: Rapid 2-Week Sprints */}
-          <BentoCell className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
+          {/* Card 4: DevOps & Cloud Engineers (Bottom-Left Card - Responsive) */}
+          <BentoCell className="group relative overflow-hidden rounded-lg border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
             <img
-              src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
-              alt="Rapid Sprints"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+              alt="DevOps & Cloud Engineers"
               className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               loading="eager"
             />
@@ -324,30 +315,38 @@ export default function TeamHero() {
 
             <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6 text-white">
               <div className="flex items-center justify-between">
-                <div className="size-9 rounded-lg bg-blue-500/90 backdrop-blur-md flex items-center justify-center text-white shadow-sm">
-                  <Zap className="size-4" />
-                </div>
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-300">
-                  2-Week Sprints
+                  Cloud Infrastructure
+                </span>
+                <span className="rounded-full border border-blue-400/30 bg-blue-950/50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-blue-300 backdrop-blur-md">
+                  CI/CD &bull; Kubernetes
                 </span>
               </div>
 
               <div>
                 <h4 className="text-base sm:text-lg font-semibold text-white">
-                  Continuous Iterations
+                  DevOps &amp; Cloud Engineers
                 </h4>
                 <p className="mt-1 text-xs text-zinc-300 leading-relaxed">
-                  Automated CI/CD pipelines provide functional software every 14 days.
+                  Automating continuous deployment pipelines, container clusters, and cloud environments.
                 </p>
+                <div className="mt-2.5 flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
+                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-medium text-zinc-200">
+                    Automated Pipelines
+                  </span>
+                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-medium text-zinc-200">
+                    Zero-Downtime Rollouts
+                  </span>
+                </div>
               </div>
             </div>
           </BentoCell>
 
-          {/* Card 5: Multi-Region Cloud & Security */}
-          <BentoCell className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
+          {/* Card 5: QA & Security Specialists (Bottom-Center Card - Responsive) */}
+          <BentoCell className="group relative overflow-hidden rounded-lg border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
             <img
               src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"
-              alt="Cloud Scale and Security"
+              alt="QA & Security Specialists"
               className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               loading="eager"
             />
@@ -355,21 +354,29 @@ export default function TeamHero() {
 
             <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6 text-white">
               <div className="flex items-center justify-between">
-                <div className="size-9 rounded-lg bg-emerald-500/90 backdrop-blur-md flex items-center justify-center text-white shadow-sm">
-                  <ShieldCheck className="size-4" />
-                </div>
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-300">
+                  Reliability &amp; QA
+                </span>
+                <span className="rounded-full border border-emerald-400/30 bg-emerald-950/50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
                   Security-First
                 </span>
               </div>
 
               <div>
                 <h4 className="text-base sm:text-lg font-semibold text-white">
-                  Multi-Region Cloud Scale
+                  QA &amp; Security Specialists
                 </h4>
                 <p className="mt-1 text-xs text-zinc-300 leading-relaxed">
-                  End-to-end encryption with auto-scaling infrastructure built for growth.
+                  Validating software reliability with end-to-end testing, zero-trust security, and performance audits.
                 </p>
+                <div className="mt-2.5 flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
+                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-medium text-zinc-200">
+                    Automated Test Suites
+                  </span>
+                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-medium text-zinc-200">
+                    Bank-Grade Security
+                  </span>
+                </div>
               </div>
             </div>
           </BentoCell>
