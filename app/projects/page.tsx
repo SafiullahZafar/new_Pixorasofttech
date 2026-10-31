@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
 import PortfolioHero from "@/components/portfolio/PortfolioHero";
+import ProjectAnimation from "@/components/portfolio/ProjectAnimation";
 import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 import PortfolioCTA from "@/components/portfolio/PortfolioCTA";
 
@@ -12,6 +13,7 @@ export default function PortfolioPage() {
       <Navbar />
       <main className="relative z-10 bg-transparent">
         <PortfolioHero />
+        <ProjectAnimation />
         <PortfolioGrid />
         <PortfolioCTA />
       </main>
