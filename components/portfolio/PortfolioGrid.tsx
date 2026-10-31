@@ -192,22 +192,7 @@ function ProjectCard({
           </span>
         </div>
 
-        <p className="max-w-4xl text-sm leading-relaxed text-black/60 sm:text-base lg:text-lg lg:leading-[1.7]">
-          {project.desc}
-        </p>
-
-        <div className="mt-5 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-black/10 bg-white/60 px-3 py-1.5 text-[11px] font-medium text-black/60 sm:text-xs"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-black/10 pt-5">
+        <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3">
           <Link
             href={`/projects/${project.id}`}
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#0A2540] transition-all hover:gap-3 sm:text-base"
