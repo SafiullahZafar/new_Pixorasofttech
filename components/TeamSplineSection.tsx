@@ -19,11 +19,11 @@ export default function TeamSplineSection() {
             Our cross-functional pods fuse spatial computing, low-latency 3D rendering, and resilient cloud architectures. We don&apos;t just build interfaces—we build immersive digital products engineered for velocity, scale, and high engagement.
           </p>
 
-          {/* Core Feature Blocks - Less rounded, clean styling */}
+          {/* Core Feature Blocks - Transparent with backdrop blur & very dark blue icons */}
           <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-lg">
-            <div className="flex items-center gap-3 rounded-lg border border-black/10 bg-white/80 p-3.5 backdrop-blur-md shadow-xs transition-transform hover:-translate-y-0.5">
-              <div className="size-8 rounded-md bg-blue-500/10 text-[#0342DD] flex items-center justify-center shrink-0">
-                <Layers className="size-4" />
+            <div className="flex items-center gap-3 rounded-lg border border-black/15 bg-transparent backdrop-blur-md p-3.5 shadow-xs transition-transform hover:-translate-y-0.5">
+              <div className="size-8 rounded-md bg-[#0A2540]/10 text-[#0A2540] flex items-center justify-center shrink-0 border border-[#0A2540]/15">
+                <Layers className="size-4 text-[#0A2540]" />
               </div>
               <div>
                 <div className="text-xs font-semibold text-slate-900">Spatial &amp; 3D Web</div>
@@ -31,9 +31,9 @@ export default function TeamSplineSection() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 rounded-lg border border-black/10 bg-white/80 p-3.5 backdrop-blur-md shadow-xs transition-transform hover:-translate-y-0.5">
-              <div className="size-8 rounded-md bg-indigo-500/10 text-indigo-600 flex items-center justify-center shrink-0">
-                <Cpu className="size-4" />
+            <div className="flex items-center gap-3 rounded-lg border border-black/15 bg-transparent backdrop-blur-md p-3.5 shadow-xs transition-transform hover:-translate-y-0.5">
+              <div className="size-8 rounded-md bg-[#0A2540]/10 text-[#0A2540] flex items-center justify-center shrink-0 border border-[#0A2540]/15">
+                <Cpu className="size-4 text-[#0A2540]" />
               </div>
               <div>
                 <div className="text-xs font-semibold text-slate-900">Sub-16ms Edge APIs</div>
