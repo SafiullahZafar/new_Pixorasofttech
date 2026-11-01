@@ -5,8 +5,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
 import StartAnimation from "@/components/StartAnimation";
-import WhoWeAre from "@/components/WhoWeAre";
-import TechLeverage from "@/components/TechLeverage";
 import TeamHero from "@/components/TeamHero";
 import TeamSplineSection from "@/components/TeamSplineSection";
 
@@ -28,8 +26,6 @@ export default function TeamPage() {
       <main className="relative z-10">
         <TeamHero />
         <TeamSplineSection />
-        <WhoWeAre />
-        <TechLeverage />
         <section className="px-5 py-12 sm:px-8 sm:py-20 lg:px-12">
           <div className="mx-auto flex max-w-[1800px] flex-col gap-6 rounded-3xl bg-[#0A2540] px-6 py-9 text-white sm:px-10 sm:py-12 lg:flex-row lg:items-end lg:justify-between lg:px-14 lg:py-14">
             <div className="max-w-3xl">
