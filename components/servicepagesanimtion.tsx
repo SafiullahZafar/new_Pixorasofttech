@@ -154,32 +154,33 @@ export default function ServicePagesAnimation({
       // Themes: "light" tuned to PixoraSoftTech's homepage luminous palette (#FAFAFD & #707888 wave tone), plus dark themes
       const theme = {
         light: {
-          bg: "#FAFAFD",
-          dot: "rgba(112, 120, 136, 0.08)",
-          lineBase: { r: 112, g: 120, b: 136, a: 0.16 },
-          lineActive: { r: 10, g: 37, b: 64, a: 0.85 },
-          nodeBase: { r: 112, g: 120, b: 136, a: 0.28 },
-          nodeActive: { r: 10, g: 37, b: 64, a: 1.0 },
-          glow: "10, 37, 64",
-          ripple: "10, 37, 64",
+          bg: "#F1F2F6",
+          dot: "rgba(112, 120, 136, 0.025)",
+          lineBase: { r: 112, g: 120, b: 136, a: 0.055 },
+          lineActive: { r: 112, g: 120, b: 136, a: 0.35 },
+          nodeBase: { r: 112, g: 120, b: 136, a: 0.08 },
+          nodeActive: { r: 112, g: 120, b: 136, a: 0.45 },
+          ripple: "112, 120, 136",
         },
         default: {
           bg: "#161618",
-          dot: "rgba(255,255,255,0.05)",
-          lineBase: { r: 255, g: 255, b: 255, a: 0.13 },
-          lineActive: { r: 74, g: 158, b: 255, a: 0.9 },
-          nodeBase: { r: 255, g: 255, b: 255, a: 0.2 },
-          nodeActive: { r: 74, g: 158, b: 255, a: 1.0 },
+          dot: "rgba(255,255,255,0.03)",
+          boxFill: "74, 158, 255",
+          lineBase: { r: 255, g: 255, b: 255, a: 0.06 },
+          lineActive: { r: 74, g: 158, b: 255, a: 0.50 },
+          nodeBase: { r: 255, g: 255, b: 255, a: 0.10 },
+          nodeActive: { r: 74, g: 158, b: 255, a: 0.65 },
           glow: "74,158,255",
           ripple: "100,180,255",
         },
         monochrome: {
           bg: "#000000",
-          dot: "rgba(255,255,255,0.05)",
-          lineBase: { r: 255, g: 255, b: 255, a: 0.13 },
-          lineActive: { r: 255, g: 255, b: 255, a: 0.9 },
-          nodeBase: { r: 255, g: 255, b: 255, a: 0.2 },
-          nodeActive: { r: 255, g: 255, b: 255, a: 1.0 },
+          dot: "rgba(255,255,255,0.03)",
+          boxFill: "255, 255, 255",
+          lineBase: { r: 255, g: 255, b: 255, a: 0.06 },
+          lineActive: { r: 255, g: 255, b: 255, a: 0.50 },
+          nodeBase: { r: 255, g: 255, b: 255, a: 0.10 },
+          nodeActive: { r: 255, g: 255, b: 255, a: 0.65 },
           glow: "255,255,255",
           ripple: "255,255,255",
         },
@@ -191,12 +192,12 @@ export default function ServicePagesAnimation({
       ctx.fillStyle = theme.bg;
       ctx.fillRect(0, 0, W, H);
 
-      // Static background dot texture
+      // Static background dot texture (subtle)
       ctx.fillStyle = theme.dot;
       for (let x = DOT_SPACING / 2; x < W; x += DOT_SPACING) {
         for (let y = DOT_SPACING / 2; y < H; y += DOT_SPACING) {
           ctx.beginPath();
-          ctx.arc(x, y, 0.75, 0, Math.PI * 2);
+          ctx.arc(x, y, 0.6, 0, Math.PI * 2);
           ctx.fill();
         }
       }
@@ -246,7 +247,7 @@ export default function ServicePagesAnimation({
         ctx.moveTo(p1.x, p1.y);
         ctx.lineTo(p2.x, p2.y);
         ctx.strokeStyle = lerpColor(theme.lineBase, theme.lineActive, t);
-        ctx.lineWidth = lerpN(0.85, 1.6, t);
+        ctx.lineWidth = lerpN(0.75, 1.35, t);
         ctx.stroke();
       };
 
@@ -270,7 +271,7 @@ export default function ServicePagesAnimation({
             prox[row + 1][col],
           );
 
-      // ── Intersection nodes ────────────────────────────────────────────────
+      // ── Intersection nodes (clean crisp nodes, no glow) ───────────────────
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
           const p = pts[row][col];
@@ -278,26 +279,7 @@ export default function ServicePagesAnimation({
           const t = pr * pr * (3 - 2 * pr); // smoothstep
           const r = lerpN(NODE_BASE_RADIUS, NODE_ACTIVE_RADIUS, t);
 
-          // Outer glow ring for active nodes
-          if (t > 0.3) {
-            const glowR = r + lerpN(0, 6.5, (t - 0.3) / 0.7);
-            const grd = ctx.createRadialGradient(
-              p.x,
-              p.y,
-              r * 0.5,
-              p.x,
-              p.y,
-              glowR,
-            );
-            grd.addColorStop(0, `rgba(${theme.glow},${(t * 0.35).toFixed(3)})`);
-            grd.addColorStop(1, `rgba(${theme.glow},0)`);
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, glowR, 0, Math.PI * 2);
-            ctx.fillStyle = grd;
-            ctx.fill();
-          }
-
-          // Node fill
+          // Crisp node fill without any glow or blur
           ctx.beginPath();
           ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
           ctx.fillStyle = lerpColor(theme.nodeBase, theme.nodeActive, t);
