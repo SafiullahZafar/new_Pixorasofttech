@@ -143,7 +143,7 @@ const ContainerScale = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
     return (
       <motion.div
         ref={ref}
-        className={cn("left-1/2 top-1/2 size-fit", className)}
+        className={cn("left-1/2 top-[53%] sm:top-[54%] size-fit", className)}
         style={{
           translate: "-50% -50%",
           scale,
