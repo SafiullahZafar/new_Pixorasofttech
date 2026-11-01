@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ServiceDetail from "@/components/services/ServiceDetail";
+import CustomSoftwareService from "@/components/services/CustomSoftwareService";
 import { getServiceDetail, serviceDetails } from "@/lib/service-details";
 
 export function generateStaticParams() {
@@ -14,5 +15,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   if (!service) notFound();
 
-  return <><Navbar /><ServiceDetail service={service} /><Footer /></>;
+  const content = service.slug === "custom-software-development"
+    ? <CustomSoftwareService service={service} />
+    : <ServiceDetail service={service} />;
+
+  return <><Navbar />{content}<Footer /></>;
 }

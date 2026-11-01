@@ -117,8 +117,12 @@ export const serviceDetails: ServiceDetail[] = [
     ],
     technologies: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "Docker", "AWS"],
     faqs: [
+      { question: "What kinds of custom software can you build?", answer: "We build web applications, SaaS products, internal tools, dashboards, APIs, and integrations based on your users and business workflows." },
+      { question: "How long does a custom software project take?", answer: "Timelines depend on the features, integrations, and scope. We agree on a clear delivery plan after understanding your requirements." },
+      { question: "How do you estimate the cost of a project?", answer: "We scope the requirements, integrations, and delivery stages with you before sharing a project estimate. The final cost depends on the solution we agree to build." },
       { question: "Can custom software integrate with our existing tools?", answer: "Yes, we build custom REST or GraphQL integrations to connect with your existing CRMs, accounting software, and databases." },
-      { question: "Is the software scalable as our business grows?", answer: "We build on cloud-native containerized architecture that easily scales from 10 to 100,000+ active users without refactoring." }
+      { question: "Can the software grow as our business changes?", answer: "We design the architecture around your current needs while keeping future users, features, and integrations in mind." },
+      { question: "Do you provide support after launch?", answer: "Yes, we can help monitor, maintain, and improve your software after launch. The support plan is agreed as part of your project." }
     ]
   },
   {
