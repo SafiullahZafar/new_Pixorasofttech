@@ -19,11 +19,11 @@ export default function SoftwareGallerySection() {
   const displayImages = [...MARQUEE_IMAGES, ...MARQUEE_IMAGES, ...MARQUEE_IMAGES];
 
   return (
-    <section className="w-full bg-[#F5F5F5] py-10 sm:py-14 relative overflow-hidden flex items-center justify-center select-none">
+    <section className="w-full bg-transparent py-10 sm:py-14 relative overflow-hidden flex items-center justify-center select-none">
       {/* Left Gradient Fade */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-r from-[#F5F5F5] to-transparent z-20" />
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-r from-[#FAFAFD] to-transparent z-20" />
       {/* Right Gradient Fade */}
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-l from-[#F5F5F5] to-transparent z-20" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-l from-[#FAFAFD] to-transparent z-20" />
 
       <style jsx>{`
         @keyframes scrollMarquee {

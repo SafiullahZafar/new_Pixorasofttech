@@ -78,7 +78,7 @@ export default function SelectedWorkSection() {
   };
 
   return (
-    <section className="w-full bg-[#F4F4F4] py-12 md:py-20 2xl:py-28 select-none overflow-hidden px-0">
+    <section className="w-full bg-transparent py-12 md:py-20 2xl:py-28 select-none overflow-hidden px-0">
       {/* Heading */}
       <div className="w-full px-6 sm:px-12 lg:px-14 2xl:px-24 mb-8 md:mb-12">
         <h2 className="text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl font-medium tracking-tight text-slate-900">

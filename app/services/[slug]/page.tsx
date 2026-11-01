@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ServicePagesAnimation from "@/components/servicepagesanimtion";
 import ServiceDetail from "@/components/services/ServiceDetail";
 import CustomSoftwareService from "@/components/services/CustomSoftwareService";
 import { getServiceDetail, serviceDetails } from "@/lib/service-details";
@@ -19,5 +20,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     ? <CustomSoftwareService service={service} />
     : <ServiceDetail service={service} />;
 
-  return <><Navbar />{content}<Footer /></>;
+  return (
+    <>
+      <ServicePagesAnimation className="fixed inset-0 z-0 h-screen w-full pointer-events-none" />
+      <Navbar />
+      <div className="relative z-10">
+        {content}
+      </div>
+      <Footer />
+    </>
+  );
 }

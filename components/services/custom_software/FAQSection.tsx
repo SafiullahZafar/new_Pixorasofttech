@@ -52,7 +52,7 @@ export default function FAQSection({ faqs = DEFAULT_FAQS }: { faqs?: FAQItem[] }
   const list = faqs && faqs.length > 0 ? faqs : DEFAULT_FAQS;
 
   return (
-    <section className="bg-[#F4F4F4] text-black py-16 sm:py-20 2xl:py-28 font-sans">
+    <section className="bg-transparent text-black py-16 sm:py-20 2xl:py-28 font-sans">
       <div className="mx-auto max-w-[2400px] px-6 sm:px-8 lg:px-14 2xl:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 2xl:gap-20 items-start">
           {/* Left Column: FAQ header and contact card */}

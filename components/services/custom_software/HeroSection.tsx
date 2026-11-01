@@ -39,7 +39,7 @@ export default function HeroSection() {
   return (
     <section 
       ref={sectionRef}
-      className="w-full bg-[#F5F5F5] pt-18 md:pt-16 lg:pt-40 pb-12 px-6 md:px-12 lg:px-10 text-[#131927] overflow-hidden"
+      className="w-full bg-transparent pt-18 md:pt-16 lg:pt-40 pb-12 px-6 md:px-12 lg:px-10 text-[#131927] overflow-hidden"
     >
       <div className="max-w-[2440px] mx-auto">
         {/* Top Header Row */}

@@ -49,7 +49,7 @@ export default function CapabilitiesSection({
   };
 
   return (
-    <section className="relative w-full bg-[#F5F5F5] py-16 sm:py-20 lg:py-24 px-6 md:px-12 lg:px-14 font-sans text-[#131927]">
+    <section className="relative w-full bg-transparent py-16 sm:py-20 lg:py-24 px-6 md:px-12 lg:px-14 font-sans text-[#131927]">
       <div className="max-w-[2280px] mx-auto flex flex-col md:flex-row gap-10 lg:gap-16 2xl:gap-24 items-start">
         {/* Left Sticky Sidebar */}
         <aside className="w-full md:w-20 flex-shrink-0 md:sticky md:top-24 z-20">

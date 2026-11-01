@@ -15,7 +15,7 @@ export default function AboutSection({ overview }: { overview?: string } = {}) {
   return (
     <section 
       ref={containerRef}
-      className="w-full bg-[#F5F5F5] py-16 md:py-24 2xl:py-32 px-6 sm:px-12 lg:px-20 font-sans select-none flex items-center justify-center overflow-hidden"
+      className="w-full bg-transparent py-16 md:py-24 2xl:py-32 px-6 sm:px-12 lg:px-20 font-sans select-none flex items-center justify-center overflow-hidden"
     >
       <div className="max-w-[2280px] w-full grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
         {/* Left Column: Label with Dot and slide animation */}
