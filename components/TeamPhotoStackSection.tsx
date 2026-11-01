@@ -3,9 +3,7 @@
 import React, { useState } from "react";
 import { 
   Sparkles, 
-  RotateCw, 
-  CheckCircle2, 
-  ArrowUpRight
+  CheckCircle2
 } from "lucide-react";
 
 // Inline clean SVG icons for brand socials
@@ -196,26 +194,16 @@ export default function TeamPhotoStackSection() {
       id="team-members" 
       className="relative w-full px-4 sm:px-6 lg:px-10 py-16 sm:py-24 max-w-[1540px] mx-auto z-20"
     >
-      {/* Header section */}
-      <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#0A2540]/15 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#0A2540] shadow-xs backdrop-blur-md mb-4">
+      {/* Header section - aligned to corner */}
+      <div className="flex flex-col items-start text-left mb-10 sm:mb-14">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#0A2540]/15 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#0A2540] shadow-xs backdrop-blur-md mb-3">
           <Sparkles className="size-3.5 text-blue-600" />
           <span>The Minds Behind PixoraSoftTech</span>
         </div>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#111] max-w-3xl">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#111]">
           Meet Our Exceptional Squad
         </h2>
-
-        <p className="mt-3.5 text-sm sm:text-base text-black/65 max-w-2xl leading-relaxed">
-          Hover over any card to reveal their profile photo, or click to lock the card in place. Click again to flip it back.
-        </p>
-
-        {/* Quick legend / hint */}
-        <div className="mt-5 inline-flex items-center gap-2 rounded-lg bg-black/[0.04] px-3.5 py-1.5 text-xs font-medium text-slate-700">
-          <RotateCw className="size-3.5 text-blue-600 animate-spin" style={{ animationDuration: "6s" }} />
-          <span>Hover to preview photo &bull; Click to hold flipped state</span>
-        </div>
       </div>
 
       {/* 9 Cards Grid (3 columns on desktop, 2 on tablet, 1 on mobile) */}
@@ -231,10 +219,10 @@ export default function TeamPhotoStackSection() {
               onClick={() => handleClick(member.id)}
               onMouseEnter={() => handleMouseEnter(member.id)}
               onMouseLeave={() => handleMouseLeave(member.id)}
-              className="cursor-pointer select-none group w-full h-[470px] sm:h-[490px] [perspective:1200px]"
+              className="cursor-pointer select-none group w-full h-[470px] sm:h-[480px] [perspective:1200px]"
               role="button"
               tabIndex={0}
-              aria-label={`${member.name} - ${member.role}. Click to toggle flip.`}
+              aria-label={`${member.name} - ${member.role}`}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
@@ -244,49 +232,32 @@ export default function TeamPhotoStackSection() {
             >
               {/* 3D Flip Card Inner Container */}
               <div
-                className="relative w-full h-full rounded-2xl transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [transform-style:preserve-3d] shadow-md group-hover:shadow-xl"
+                className="relative w-full h-full rounded-2xl transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] [transform-style:preserve-3d] shadow-sm hover:shadow-xl"
                 style={{
                   transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
                 }}
               >
                 {/* ---------------- FRONT SIDE: ROLE, DETAILS & TECH ---------------- */}
                 <div
-                  className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-slate-200/90 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] p-6 sm:p-7 flex flex-col justify-between overflow-hidden"
+                  className="absolute inset-0 w-full h-full rounded-2xl bg-white border border-black/10 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] p-6 sm:p-7 flex flex-col justify-between overflow-hidden transition-colors hover:border-black/20"
                 >
-                  {/* Subtle top background decorative glow */}
-                  <div className="absolute top-0 right-0 -mr-12 -mt-12 w-44 h-44 rounded-full bg-gradient-to-br from-blue-100/70 to-indigo-100/30 blur-2xl pointer-events-none" />
-
-                  {/* Top: Department Badge + Flip Status Indicator */}
-                  <div className="relative z-10 flex items-center justify-between gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200/90 bg-blue-50/80 px-3 py-1 text-[11px] font-semibold text-blue-700 tracking-wide">
-                      <span className="size-1.5 rounded-full bg-blue-600 animate-pulse" />
+                  {/* Top: Role Kicker & Title */}
+                  <div>
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#0A2540]/60">
                       {member.department}
                     </span>
-
-                    <div 
-                      className={`inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-md border transition-colors ${
-                        isLocked 
-                          ? "bg-blue-600 text-white border-blue-600" 
-                          : "bg-slate-100 text-slate-500 border-slate-200 group-hover:text-blue-600 group-hover:border-blue-200"
-                      }`}
-                    >
-                      <RotateCw className="size-3" />
-                      <span>{isLocked ? "Locked" : "Flip"}</span>
-                    </div>
-                  </div>
-
-                  {/* Middle: Role Title, Bio & Highlights */}
-                  <div className="relative z-10 my-auto pt-3">
-                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#0A2540] leading-snug">
+                    <h3 className="mt-1 text-2xl font-bold tracking-tight text-[#0A2540]">
                       {member.role}
                     </h3>
-                    
-                    <p className="mt-2 text-xs sm:text-[13px] text-slate-600 leading-relaxed line-clamp-3">
+                  </div>
+
+                  {/* Middle: Bio & Highlights */}
+                  <div className="my-auto py-2">
+                    <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed line-clamp-3">
                       {member.bio}
                     </p>
 
-                    {/* Key responsibilities/highlights */}
-                    <div className="mt-3.5 space-y-1.5 pt-3 border-t border-slate-100">
+                    <div className="mt-4 space-y-1.5 pt-3 border-t border-slate-100">
                       {member.highlights.map((item, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-xs text-slate-700">
                           <CheckCircle2 className="size-3.5 text-blue-600 shrink-0" />
@@ -296,11 +267,8 @@ export default function TeamPhotoStackSection() {
                     </div>
                   </div>
 
-                  {/* Bottom: Skills & Instruction */}
-                  <div className="relative z-10 pt-3 border-t border-slate-100">
-                    <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2">
-                      Core Stack &amp; Focus
-                    </div>
+                  {/* Bottom: Skills Pills */}
+                  <div className="pt-3 border-t border-slate-100">
                     <div className="flex flex-wrap gap-1.5">
                       {member.skills.map((skill) => (
                         <span
@@ -310,13 +278,6 @@ export default function TeamPhotoStackSection() {
                           {skill}
                         </span>
                       ))}
-                    </div>
-
-                    <div className="mt-3 pt-2 flex items-center justify-between text-[11px] text-slate-500">
-                      <span className="font-medium text-blue-600 group-hover:underline">
-                        Hover or click to view portrait
-                      </span>
-                      <ArrowUpRight className="size-3.5 text-slate-400 group-hover:text-blue-600 transition-colors" />
                     </div>
                   </div>
                 </div>
@@ -334,33 +295,10 @@ export default function TeamPhotoStackSection() {
                   />
 
                   {/* Vignette Overlay for Crisp Readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
 
-                  {/* Top Status & Pin Indicator on Back */}
-                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                    <span className="rounded-full border border-white/20 bg-black/60 px-3 py-1 text-[11px] font-medium text-white backdrop-blur-md">
-                      {member.department}
-                    </span>
-
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleClick(member.id);
-                      }}
-                      className={`inline-flex items-center gap-1 text-[11px] font-medium px-2.5 py-1 rounded-full border backdrop-blur-md transition-all ${
-                        isLocked
-                          ? "bg-blue-600 text-white border-blue-500 shadow-md"
-                          : "bg-black/50 text-white/80 border-white/20 hover:bg-black/70"
-                      }`}
-                    >
-                      <RotateCw className="size-3" />
-                      <span>{isLocked ? "Pinned" : "Pin Flip"}</span>
-                    </button>
-                  </div>
-
-                  {/* Bottom: Person's Name and Role prominently styled */}
-                  <div className="relative z-10 p-5 sm:p-6 text-white">
+                  {/* Bottom: Person's Name and Role */}
+                  <div className="relative z-10 p-6 text-white">
                     <p className="text-xs font-semibold uppercase tracking-wider text-blue-300">
                       {member.role}
                     </p>
@@ -369,13 +307,13 @@ export default function TeamPhotoStackSection() {
                       {member.name}
                     </h4>
 
-                    {/* Social links & Click to flip back prompt */}
-                    <div className="mt-3 pt-3 border-t border-white/20 flex items-center justify-between">
-                      <div className="flex items-center gap-2.5">
+                    {/* Clean social links */}
+                    <div className="mt-3.5 pt-3 border-t border-white/20 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
                         {member.socials?.linkedin && (
                           <span
                             aria-label="LinkedIn"
-                            className="text-white/70 hover:text-white transition-colors"
+                            className="text-white/80 hover:text-white transition-colors"
                           >
                             <LinkedInIcon className="size-4" />
                           </span>
@@ -383,7 +321,7 @@ export default function TeamPhotoStackSection() {
                         {member.socials?.github && (
                           <span
                             aria-label="GitHub"
-                            className="text-white/70 hover:text-white transition-colors"
+                            className="text-white/80 hover:text-white transition-colors"
                           >
                             <GitHubIcon className="size-4" />
                           </span>
@@ -391,16 +329,15 @@ export default function TeamPhotoStackSection() {
                         {member.socials?.twitter && (
                           <span
                             aria-label="Twitter"
-                            className="text-white/70 hover:text-white transition-colors"
+                            className="text-white/80 hover:text-white transition-colors"
                           >
                             <TwitterIcon className="size-4" />
                           </span>
                         )}
                       </div>
 
-                      <span className="text-[11px] text-white/70 flex items-center gap-1">
-                        <RotateCw className="size-3 text-blue-300" />
-                        <span>{isLocked ? "Click to unflip" : "Mouse out to flip back"}</span>
+                      <span className="text-[11px] font-medium text-white/50">
+                        {member.department}
                       </span>
                     </div>
                   </div>
