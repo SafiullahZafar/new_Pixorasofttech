@@ -27,7 +27,7 @@ const DOT_SPACING = 28;
 const LERP_SPEED = 0.08;
 
 const NODE_BASE_RADIUS = 1.8;
-const NODE_ACTIVE_RADIUS = 3.2;
+const NODE_ACTIVE_RADIUS = 3.6;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -156,10 +156,10 @@ export default function ServicePagesAnimation({
         light: {
           bg: "#F1F2F6",
           dot: "rgba(112, 120, 136, 0.025)",
-          lineBase: { r: 112, g: 120, b: 136, a: 0.055 },
-          lineActive: { r: 112, g: 120, b: 136, a: 0.35 },
+          lineBase: { r: 112, g: 120, b: 136, a: 0.06 },
+          lineActive: { r: 40, g: 60, b: 88, a: 0.75 },
           nodeBase: { r: 112, g: 120, b: 136, a: 0.08 },
-          nodeActive: { r: 112, g: 120, b: 136, a: 0.45 },
+          nodeActive: { r: 30, g: 50, b: 78, a: 0.88 },
           ripple: "112, 120, 136",
         },
         default: {
@@ -247,7 +247,7 @@ export default function ServicePagesAnimation({
         ctx.moveTo(p1.x, p1.y);
         ctx.lineTo(p2.x, p2.y);
         ctx.strokeStyle = lerpColor(theme.lineBase, theme.lineActive, t);
-        ctx.lineWidth = lerpN(0.75, 1.35, t);
+        ctx.lineWidth = lerpN(0.8, 1.85, t);
         ctx.stroke();
       };
 
