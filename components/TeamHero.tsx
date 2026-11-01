@@ -143,7 +143,7 @@ const ContainerScale = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
     return (
       <motion.div
         ref={ref}
-        className={cn("left-1/2 top-[53%] sm:top-[54%] size-fit", className)}
+        className={cn("left-1/2 top-[58%] sm:top-[59%] size-fit", className)}
         style={{
           translate: "-50% -50%",
           scale,
@@ -194,8 +194,8 @@ export default function TeamHero() {
         </div>
       </ContainerScale>
 
-      {/* 2. BENTO GRID (Covers top of screen, fills fully, less rounded corners, developer/designer roles without icons) */}
-      <div className="sticky top-0 z-10 flex h-screen w-full flex-col justify-center px-3 sm:px-6 lg:px-8 pt-2 sm:pt-3.5 pb-2 sm:pb-3.5">
+      {/* 2. BENTO GRID (Moved downward with proper padding to clear the top navbar) */}
+      <div className="sticky top-0 z-10 flex h-screen w-full flex-col justify-center px-3 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-4 sm:pb-6">
         <BentoGrid
           variant="default"
           className="w-full max-w-[1540px] mx-auto h-full min-h-[520px]"
