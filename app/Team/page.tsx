@@ -7,6 +7,7 @@ import BackgroundAnimation from "@/components/BackgroundAnimation";
 import StartAnimation from "@/components/StartAnimation";
 import TeamHero from "@/components/TeamHero";
 import TeamSplineSection from "@/components/TeamSplineSection";
+import TeamPhotoStackSection from "@/components/TeamPhotoStackSection";
 
 export const metadata: Metadata = {
   title: "Team & Technology | PixoraSoftTech",
@@ -25,6 +26,7 @@ export default function TeamPage() {
       <StartAnimation />
       <main className="relative z-10">
         <TeamHero />
+        <TeamPhotoStackSection />
         <TeamSplineSection />
         <section className="px-5 py-12 sm:px-8 sm:py-20 lg:px-12">
           <div className="mx-auto flex max-w-[1800px] flex-col gap-6 rounded-3xl bg-[#0A2540] px-6 py-9 text-white sm:px-10 sm:py-12 lg:flex-row lg:items-end lg:justify-between lg:px-14 lg:py-14">
