@@ -46,6 +46,13 @@ const services = [
     tags: ["API integrations", "Admin dashboards", "Automation", "Cloud native"],
   },
   {
+    slug: "saas-development",
+    icon: Cloud,
+    title: "SaaS Development",
+    desc: "Scalable SaaS products with customer workspaces, subscriptions, analytics, and secure user access.",
+    tags: ["Multi-tenant apps", "Subscriptions", "Product dashboards", "Cloud ready"],
+  },
+  {
     slug: "ui-ux-design",
     icon: Palette,
     title: "UI/UX Design",

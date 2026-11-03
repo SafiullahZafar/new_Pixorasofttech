@@ -126,6 +126,44 @@ export const serviceDetails: ServiceDetail[] = [
     ]
   },
   {
+    slug: "saas-development",
+    title: "SaaS Development",
+    category: "Software & Systems",
+    eyebrow: "Scalable SaaS Products Built Around Your Users",
+    intro: "We design and build secure SaaS platforms with subscription billing, customer workspaces, analytics, and the architecture to grow with your business.",
+    overview: "A successful SaaS product brings a clear customer problem together with a dependable, easy-to-use platform. We help shape the product, build its core workflows, and prepare it to serve customers as adoption grows.",
+    problem: "SaaS teams can struggle with unclear product scope, disconnected customer workspaces, complicated billing, and platforms that become difficult to extend as usage grows.",
+    solution: "We build SaaS products around clear user journeys, secure tenant-aware architecture, flexible permissions, reliable integrations, and operational visibility.",
+    deliverables: [
+      "Multi-tenant SaaS web application and customer workspaces",
+      "User authentication, team roles, and account management",
+      "Subscription plans, recurring billing, and invoices",
+      "Product analytics, reporting, and admin dashboards",
+      "API integrations, notifications, and automated workflows",
+      "Cloud deployment, monitoring, and post-launch support"
+    ],
+    process: [
+      { title: "Product Discovery", text: "We clarify your customers, product goals, business model, and the core workflows for the first release." },
+      { title: "Architecture & UX", text: "We plan tenant boundaries, user roles, data structures, integrations, and the product experience." },
+      { title: "Build & Validate", text: "We build in focused releases, share working demos, and use feedback to improve the product." },
+      { title: "Launch & Scale", text: "We prepare production, monitor the launch, and support reliability and product improvements as usage grows." }
+    ],
+    outcomes: [
+      "A clear, usable product experience for your customers",
+      "Secure workspaces and access controls for each organization",
+      "Subscription and billing flows aligned with your business model",
+      "A platform foundation ready for new features and customer growth"
+    ],
+    technologies: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "AWS"],
+    faqs: [
+      { question: "What kinds of SaaS products can you build?", answer: "We build subscription platforms, customer portals, vertical SaaS products, team tools, and multi-tenant business applications tailored to your users and operating model." },
+      { question: "Can you build subscriptions, billing, and user roles?", answer: "Yes. We can implement plans, recurring payments, invoices, account permissions, and separate workspaces for your customer organizations." },
+      { question: "How long does it take to build a SaaS product?", answer: "It depends on the product scope. We define an initial release with the core user flows, then plan additional features and integrations in stages." },
+      { question: "Can the platform scale as the number of customers grows?", answer: "We plan the platform around your needs today while making room for more users, data, integrations, and product features as adoption grows." },
+      { question: "Do you provide support after launch?", answer: "Yes. We can help monitor, maintain, secure, and improve the platform after launch through an ongoing support plan that fits your team." }
+    ]
+  },
+  {
     slug: "ui-ux-design",
     title: "UI/UX Design",
     category: "Software & Systems",
