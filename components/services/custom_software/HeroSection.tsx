@@ -124,6 +124,7 @@ export default function HeroSection() {
               src="/driven_adminPanal.png"
               alt="Service Banner"
               fill
+              sizes="100vw"
               priority
               className="w-full h-full object-cover object-center"
             />
