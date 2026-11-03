@@ -1,67 +1,95 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 
-const MARQUEE_IMAGES = [
-  { src: "/salon_system.png", alt: "Salon Management System" },
-  { src: "/rms_system.png", alt: "Restaurant Management ERP" },
-  { src: "/textile_system.png", alt: "Textile Distribution Platform" },
-  { src: "/suppliers.png", alt: "Suppliers & Inventory Network" },
-  { src: "/tax_integrated.png", alt: "FBR Tax Integrated System" },
-  { src: "/driven_adminPanal1.png", alt: "Driven Logistics Dashboard" },
-  { src: "/portfolio/flowcrm-dashboard.png", alt: "Flow CRM Platform" },
-  { src: "/portfolio/delivery-dashboard.png", alt: "Dispatch Operations Platform" },
+const GALLERY_IMAGES = [
+  { src: "/salon_system.png", alt: "Salon management system" },
+  { src: "/rms_system.png", alt: "Restaurant management platform" },
+  { src: "/textile_system.png", alt: "Textile distribution platform" },
+  { src: "/suppliers.png", alt: "Supplier and inventory network" },
+  { src: "/tax_integrated.png", alt: "Tax-integrated business software" },
+  { src: "/driven_adminPanal1.png", alt: "Logistics administration dashboard" },
+  { src: "/driven_adminPanal2.png", alt: "Logistics platform dashboard" },
+  { src: "/suppliers_food.png", alt: "Food supplier platform" },
+  { src: "/driven_adminPanal.png", alt: "Fleet operations dashboard" },
+  { src: "/portfolio/crm-dashboard.png", alt: "Customer relationship dashboard" },
+  { src: "/portfolio/delivery-dashboard.png", alt: "Delivery operations dashboard" },
+  { src: "/portfolio/inventory-dashboard.png", alt: "Inventory management software" },
+  { src: "/portfolio/hr-dashboard.png", alt: "Human resources dashboard" },
+  { src: "/portfolio/light-crm-dashboard.png", alt: "CRM analytics dashboard" },
+  { src: "/portfolio/light-inventory-dashboard.png", alt: "Inventory analytics dashboard" },
+  { src: "/portfolio/lms-dashboard.png", alt: "Learning management platform" },
+  { src: "/portfolio/salon-dashboard.png", alt: "Salon booking platform" },
+  { src: "/portfolio/supplier.png", alt: "Supplier management portal" },
+  { src: "/portfolio/brew-haven.png", alt: "Brew Haven ordering platform" },
+  { src: "/portfolio/fitpulse-app.png", alt: "FitPulse mobile app" },
+  { src: "/portfolio/shopease-app.png", alt: "ShopEase shopping app" },
+  { src: "/portfolio/eduka-college.png", alt: "Eduka college platform" },
+  { src: "/portfolio/solar-solutions.png", alt: "Solar solutions platform" },
+  { src: "/portfolio/goody-supplies.png", alt: "Goody Supplies storefront" },
+  { src: "/portfolio/glass-haven.png", alt: "Glass Haven website" },
+  { src: "/portfolio/state-college.png", alt: "State College portal" },
+  { src: "/portfolio/travel-hotel-hub.png", alt: "Travel and hotel booking platform" },
+  { src: "/portfolio/irider-app.png", alt: "iRider mobile app" },
+  { src: "/portfolio/zostel.png", alt: "Zostel booking experience" },
 ];
 
+const IMAGE_COLUMNS = Array.from({ length: 6 }, (_, columnIndex) =>
+  Array.from({ length: 10 }, (_, cardIndex) =>
+    GALLERY_IMAGES[(cardIndex * 4 + columnIndex) % GALLERY_IMAGES.length],
+  ),
+);
+
 export default function SoftwareGallerySection() {
-  // Duplicate for seamless infinite loop
-  const displayImages = [...MARQUEE_IMAGES, ...MARQUEE_IMAGES, ...MARQUEE_IMAGES];
+  const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="w-full bg-transparent py-10 sm:py-14 relative overflow-hidden flex items-center justify-center select-none">
-      {/* Left Gradient Fade */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-r from-[#FAFAFD] to-transparent z-20" />
-      {/* Right Gradient Fade */}
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-l from-[#FAFAFD] to-transparent z-20" />
+    <section
+      aria-label="Custom software project gallery"
+      className="relative flex h-[440px] items-center justify-center overflow-hidden bg-transparent sm:h-[540px] md:h-[620px] 2xl:h-[700px]"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-35 [background-image:radial-gradient(#94a3b8_0.65px,transparent_0.65px)] [background-size:22px_22px]"
+      />
 
-      <style jsx>{`
-        @keyframes scrollMarquee {
-          0% {
-            transform: translate3d(0, 0, 0);
-          }
-          100% {
-            transform: translate3d(-33.333%, 0, 0);
-          }
-        }
-        .marquee-track {
-          display: flex;
-          gap: 1.5rem;
-          width: max-content;
-          will-change: transform;
-          animation: scrollMarquee 32s linear infinite;
-        }
-        .marquee-track:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
-
-      <div className="w-full overflow-hidden py-3">
-        <div className="marquee-track">
-          {displayImages.map((item, index) => (
-            <div
-              key={`${item.src}-${index}`}
-              className="flex-shrink-0 w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 2xl:w-80 2xl:h-80 overflow-hidden cursor-pointer rounded-2xl bg-slate-200 border border-black/5 shadow-xs transition-transform duration-300 hover:scale-[1.03]"
+      <div className="absolute left-1/2 top-1/2 h-[1900px] w-[3200px] -translate-x-1/2 -translate-y-1/2 scale-[0.75] sm:scale-[0.88] md:scale-100 lg:scale-[1.12] xl:scale-[1.22] 2xl:scale-[1.32] min-[2560px]:scale-[1.45] min-[3000px]:scale-[1.58]">
+        <div
+          className="relative grid h-full w-full origin-center grid-cols-6 gap-5 sm:gap-6 xl:gap-8"
+          style={{ transform: "perspective(1200px) rotateX(55deg) rotateZ(-45deg)" }}
+        >
+          {IMAGE_COLUMNS.map((column, columnIndex) => (
+            <motion.div
+              key={`gallery-column-${columnIndex}`}
+              animate={{ y: prefersReducedMotion ? 0 : columnIndex % 2 === 0 ? 100 : -100 }}
+              transition={{
+                duration: columnIndex % 2 === 0 ? 10 : 15,
+                repeat: prefersReducedMotion ? 0 : Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+              }}
+              className="relative flex flex-col items-start justify-center gap-5 sm:gap-6 xl:gap-8"
             >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                width={400}
-                height={400}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-108"
-                loading="lazy"
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -left-4 -top-4 h-[calc(100%+2rem)] w-[calc(100%+2rem)] border-l border-dashed border-slate-400/40"
               />
-            </div>
+              {column.map((item, cardIndex) => (
+                <div
+                  key={`${item.src}-${cardIndex}`}
+                  className="group relative aspect-[970/700] w-full overflow-hidden rounded-xl border border-slate-300/70 bg-slate-200 shadow-[0_18px_40px_-24px_rgba(10,37,64,0.5)] ring-1 ring-white/70"
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(min-width: 3000px) 650px, (min-width: 2560px) 600px, (min-width: 1280px) 520px, (min-width: 768px) 430px, 360px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              ))}
+            </motion.div>
           ))}
         </div>
       </div>
