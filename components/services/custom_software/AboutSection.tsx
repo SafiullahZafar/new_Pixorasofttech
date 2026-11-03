@@ -33,38 +33,32 @@ export default function AboutSection({ overview }: { overview?: string } = {}) {
 
         {/* Right Column: 3D Perspective Word Stagger Reveal */}
         <div className="md:col-span-8 lg:col-span-9">
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl 2xl:text-5xl font-medium leading-[1.3] flex flex-wrap gap-x-[0.25em] gap-y-[0.1em] [perspective:1000px]">
+          <p
+            aria-label={quoteText}
+            className="text-lg sm:text-xl md:text-2xl lg:text-4xl 2xl:text-5xl font-medium leading-[1.3] flex flex-wrap gap-x-[0.25em] gap-y-[0.1em]"
+          >
             {words.map((word, index) => (
-              <span key={index} className="inline-block overflow-hidden py-1">
+              <span key={`${word}-${index}`} aria-hidden="true" className="inline-block py-1">
                 <motion.span
-                  className="inline-block transform-gpu origin-bottom transition-colors duration-150"
+                  className="inline-block"
                   initial={{
-                    color: "rgba(161, 161, 170, 1)",
-                    opacity: 0.2,
-                    filter: "blur(8px)",
-                    y: "110%",
-                    rotateX: -35,
+                    opacity: 0,
+                    filter: "blur(10px)",
                   }}
                   animate={
                     isInView
                       ? {
-                          color: "rgba(19, 25, 39, 1)",
                           opacity: 1,
                           filter: "blur(0px)",
-                          y: "0%",
-                          rotateX: 0,
                         }
                       : {
-                          color: "rgba(161, 161, 170, 1)",
-                          opacity: 0.2,
-                          filter: "blur(8px)",
-                          y: "110%",
-                          rotateX: -35,
+                          opacity: 0,
+                          filter: "blur(10px)",
                         }
                   }
                   transition={{
-                    duration: 0.7,
-                    delay: 0.08 + index * 0.025,
+                    duration: 0.9,
+                    delay: 0.12 + index * 0.1,
                     ease: [0.22, 1, 0.36, 1],
                   }}
                 >
