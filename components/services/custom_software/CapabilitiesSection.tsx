@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Share2, Copy, Check } from "lucide-react";
 
 // Inline clean SVG icons
@@ -28,6 +28,46 @@ export default function CapabilitiesSection({
   technologies?: string[];
 }) {
   const [copied, setCopied] = useState(false);
+  const descriptionRef = useRef<HTMLDivElement>(null);
+  const [revealedWordCount, setRevealedWordCount] = useState(0);
+  const descriptionSegments = [
+    "At PixoraSoftTech, we design and build software around your business, your workflow, your users, and the way you plan to grow.",
+    "From architecture through launch and ongoing support, we shape each product to solve real problems and scale with your team.",
+  ];
+  const descriptionWords = descriptionSegments.map((segment) => segment.split(" "));
+  const totalDescriptionWords = descriptionWords.reduce((total, words) => total + words.length, 0);
+
+  useEffect(() => {
+    let frameId = 0;
+    let currentProgress = 0;
+    let targetProgress = 0;
+    const revealNextFrame = () => {
+      currentProgress += (targetProgress - currentProgress) * 0.32;
+      setRevealedWordCount(Math.floor(currentProgress * totalDescriptionWords));
+      if (Math.abs(targetProgress - currentProgress) > 0.002) frameId = requestAnimationFrame(revealNextFrame);
+    };
+    const handleScroll = () => {
+      const element = descriptionRef.current;
+      if (!element) return;
+      const rect = element.getBoundingClientRect();
+      const start = window.innerHeight * 0.92;
+      const end = window.innerHeight * 0.45 - rect.height;
+      targetProgress = Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
+      cancelAnimationFrame(frameId);
+      if (targetProgress >= 1) {
+        currentProgress = 1;
+        setRevealedWordCount(totalDescriptionWords);
+        return;
+      }
+      frameId = requestAnimationFrame(revealNextFrame);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(frameId);
+    };
+  }, [totalDescriptionWords]);
 
   const handleCopyLink = () => {
     if (typeof window !== "undefined") {
@@ -112,13 +152,29 @@ export default function CapabilitiesSection({
             <h2 className="text-3xl sm:text-4xl 2xl:text-5xl font-semibold tracking-tight text-[#131927] mb-6">
               Custom Software Development
             </h2>
-            <div className="space-y-4 text-slate-600 text-base sm:text-lg 2xl:text-xl leading-relaxed font-normal">
-              <p>
-                At PixoraSoftTech, we design and build software crafted specifically for your business—not off-the-shelf, not generic. Every line of code is written with your workflow, users, and growth in mind.
-              </p>
-              <p>
-                From ideation and architecture to deployment and ongoing maintenance, we handle the full product lifecycle so you can focus on what matters most—growing your business.
-              </p>
+            <div ref={descriptionRef} className="space-y-4 text-base font-normal leading-relaxed sm:text-lg 2xl:text-xl" aria-label={descriptionSegments.join(" ")}>
+              {descriptionWords.map((words, segmentIndex) => {
+                const segmentStart = descriptionWords
+                  .slice(0, segmentIndex)
+                  .reduce((total, previousWords) => total + previousWords.length, 0);
+                return (
+                  <p key={descriptionSegments[segmentIndex]}>
+                    {words.map((word, wordIndex) => {
+                      const isRevealed = segmentStart + wordIndex < revealedWordCount;
+                      return (
+                        <React.Fragment key={`${word}-${wordIndex}`}>
+                          <span
+                            aria-hidden="true"
+                            className={`transition-colors duration-300 ${isRevealed ? "text-slate-700" : "text-[#0342DD]/25"}`}
+                          >
+                            {word}
+                          </span>{" "}
+                        </React.Fragment>
+                      );
+                    })}
+                  </p>
+                );
+              })}
             </div>
           </div>
 
