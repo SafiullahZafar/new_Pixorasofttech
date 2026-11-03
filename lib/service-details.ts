@@ -196,8 +196,11 @@ export const serviceDetails: ServiceDetail[] = [
     ],
     technologies: ["Figma", "Design Systems", "Prototyping", "User Research", "WCAG Accessibility"],
     faqs: [
-      { question: "What deliverables will we receive from the design stage?", answer: "You will receive clickable Figma prototypes, high-res UI screen designs, asset exports, and a reusable UI design system library." },
-      { question: "Do you design for both web and mobile platforms?", answer: "Yes, all our design systems are responsive and tailored for desktop, tablet, iOS, and Android guidelines." }
+      { question: "What do you include in a UI/UX design project?", answer: "Projects can include user research, information architecture, user flows, wireframes, high-fidelity screens, clickable prototypes, and a reusable design system." },
+      { question: "Do you design for both web and mobile?", answer: "Yes. We design responsive web experiences and mobile interfaces, adapting layouts and interactions to the needs of each device." },
+      { question: "Will we receive a clickable prototype?", answer: "Yes. We can create an interactive prototype in Figma so your team can review and test key journeys before development begins." },
+      { question: "Can you create a reusable design system?", answer: "Yes. We can organize colors, typography, components, and usage guidance into a consistent library your team can extend." },
+      { question: "How do you make designs accessible?", answer: "We consider readable contrast, clear hierarchy, keyboard and screen reader needs, and inclusive interaction patterns throughout the design process." }
     ]
   },
   {
