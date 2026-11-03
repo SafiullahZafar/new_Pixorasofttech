@@ -69,10 +69,10 @@ export const servicesData: ServiceItem[] = [
     id: 4,
     slug: "cloud-solutions",
     badge: "SERVICE 04",
-    title: "Cloud & DevOps Solutions",
-    eyebrow: "Elastic, Secure & Zero-Downtime Infrastructure",
+    title: "Cloud & AI Solutions",
+    eyebrow: "Secure Cloud Systems, APIs & Practical AI Integrations",
     description:
-      "Scalable cloud deployment architectures on AWS, GCP, and Azure with automated CI/CD pipelines, containerization, and 24/7 reliability for mission-critical software.",
+      "Secure cloud infrastructure, reliable APIs, automated deployments, and practical AI integrations that help your products connect, scale, and run smoothly.",
     imageUrl: "/portfolio/solar-solutions.png",
     tags: ["AWS & Azure", "CI/CD Pipelines", "Auto Scaling", "Zero Downtime"],
   },

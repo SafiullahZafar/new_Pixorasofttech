@@ -62,9 +62,9 @@ const services = [
   {
     slug: "cloud-solutions",
     icon: Cloud,
-    title: "Cloud Solutions",
-    desc: "Secure, elastic cloud infrastructure on AWS, Azure and GCP with zero-downtime deploys.",
-    tags: ["DevOps & CI/CD", "Auto-scaling", "Cost optimization", "Migration"],
+    title: "Cloud & AI Solutions",
+    desc: "Secure cloud infrastructure, API integrations, DevOps automation, and practical AI features for your products.",
+    tags: ["Cloud architecture", "APIs", "AI integrations", "DevOps"],
   },
   {
     slug: "cyber-security",

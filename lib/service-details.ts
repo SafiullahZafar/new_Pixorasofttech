@@ -205,37 +205,40 @@ export const serviceDetails: ServiceDetail[] = [
   },
   {
     slug: "cloud-solutions",
-    title: "Cloud Solutions",
+    title: "Cloud & AI Solutions",
     category: "Software & Systems",
-    eyebrow: "Scalable Cloud Architecture, DevOps & Zero-Downtime Infrastructure",
-    intro: "We plan, deploy, and manage secure cloud infrastructure on AWS, GCP, and Azure to ensure high availability, fast asset delivery, and automated CI/CD deployments.",
+    eyebrow: "Secure Cloud Systems, APIs & Practical AI Integrations",
+    intro: "We design secure cloud infrastructure, connect applications through reliable APIs, automate deployments, and add practical AI features that help your products scale.",
     overview: "Modern web and mobile applications require robust backend infrastructure. PixoraSofttech provides end-to-end cloud engineering—including serverless functions, container orchestration, database clustering, CDN caching, and automated backup management.",
-    problem: "Businesses frequently experience server crashes during traffic spikes, slow worldwide page loading, high unoptimized cloud bills, and manual deployment procedures that risk downtime.",
-    solution: "We implement cloud infrastructure with auto-scaling groups, global edge caching, infrastructure-as-code (Terraform/Docker), automated CI/CD pipelines, and proactive health monitoring.",
+    problem: "Disconnected systems, manual deployments, limited monitoring, rising cloud costs, and unclear AI use cases can make products harder to operate and scale.",
+    solution: "We assess your systems, design a fit-for-purpose cloud architecture, connect services through secure APIs, automate delivery, and implement AI features around real product needs.",
     deliverables: [
-      "Cloud architecture design & infrastructure provisioning (AWS/GCP)",
-      "Automated CI/CD deployment pipeline (GitHub Actions / GitLab)",
-      "Containerization with Docker & Kubernetes orchestration",
-      "Database clustering, automated backup & failover configuration",
-      "Global CDN asset delivery & edge caching setup",
-      "Cloud security hardening & monthly cost optimization"
+      "Cloud architecture and infrastructure provisioning on AWS, Google Cloud, or Azure",
+      "Secure API design, implementation, and third-party integrations",
+      "CI/CD pipelines, containers, and infrastructure automation",
+      "Monitoring, backups, access controls, and recovery planning",
+      "AI-assisted search, content processing, or workflow automation where useful",
+      "Performance, reliability, and cloud cost optimization"
     ],
     process: [
-      { title: "Infrastructure Audit", text: "We analyze server logs, response times, database bottlenecks, security policies, and cloud expenditure." },
-      { title: "Architectural Planning", text: "We design a high-availability topology with auto-scaling triggers, load balancing, and redundancy." },
-      { title: "DevOps Implementation", text: "We write automated deployment scripts, provision cloud resources, and configure monitoring alerts." },
-      { title: "Load Testing & Go-Live", text: "We conduct stress testing under simulated traffic bursts before executing seamless zero-downtime migration." }
+      { title: "Systems & Goals Audit", text: "We review your infrastructure, applications, APIs, data flows, security needs, and opportunities for useful AI." },
+      { title: "Cloud Architecture", text: "We plan a secure, scalable cloud foundation with suitable services, data stores, and deployment patterns." },
+      { title: "Build & Integrate", text: "We provision infrastructure, connect APIs and services, automate delivery, and implement agreed AI workflows." },
+      { title: "Deploy & Optimize", text: "We validate security and reliability, deploy to production, and tune performance, monitoring, and cloud costs." }
     ],
     outcomes: [
-      "99.99% infrastructure uptime SLA and failover safety",
-      "Automatic scaling to handle sudden customer traffic surges",
-      "Substantial cost reduction through right-sized cloud resource management",
-      "Zero-downtime single-click code deployments"
+      "Secure and reliable infrastructure matched to your product needs",
+      "Connected applications and data through maintainable APIs",
+      "Repeatable releases with automated deployment workflows",
+      "AI features focused on useful, measurable product tasks"
     ],
     technologies: ["AWS", "Google Cloud", "Docker", "Kubernetes", "GitHub Actions", "Terraform", "Nginx"],
     faqs: [
-      { question: "Which cloud providers do you specialize in?", answer: "We specialize in AWS, Google Cloud Platform (GCP), Vercel, DigitalOcean, and Microsoft Azure." },
-      { question: "Can you help migrate our existing server to the cloud?", answer: "Yes, we handle complete server migrations with zero data loss and guaranteed minimal downtime." }
+      { question: "Which cloud providers do you work with?", answer: "We work with AWS, Google Cloud, and Azure, choosing services to match your security, performance, and operating requirements." },
+      { question: "Can you migrate an existing application to the cloud?", answer: "Yes. We can plan and carry out a migration with backups, validation, and a release approach designed to limit disruption." },
+      { question: "Can you connect our APIs and third-party tools?", answer: "Yes. We build and connect secure APIs and integrate external tools so your systems can exchange data and automate workflows." },
+      { question: "How do you decide where AI can help?", answer: "We look for specific tasks where AI can improve search, processing, or automation, then assess data, accuracy, security, and operational fit." },
+      { question: "Do you provide monitoring and support after deployment?", answer: "Yes. We can configure monitoring and alerts, help maintain the environment, and improve reliability and cloud costs over time." }
     ]
   },
   {

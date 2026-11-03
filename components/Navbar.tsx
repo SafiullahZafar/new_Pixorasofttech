@@ -45,7 +45,7 @@ const serviceItems = [
     icon: Palette,
   },
   {
-    title: "Cloud Solutions",
+    title: "Cloud & AI Solutions",
     href: "/services/cloud-solutions",
     icon: Server,
   },

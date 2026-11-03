@@ -8,6 +8,7 @@ import WebDevelopmentService from "@/components/services/WebDevelopmentService";
 import SaaSDevelopmentService from "@/components/services/SaaSDevelopmentService";
 import MobileAppDevelopmentService from "@/components/services/MobileAppDevelopmentService";
 import UIUXService from "@/components/services/UIUXService";
+import CloudAISolutionsService from "@/components/services/CloudAISolutionsService";
 import { getServiceDetail, serviceDetails } from "@/lib/service-details";
 
 export function generateStaticParams() {
@@ -30,7 +31,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           ? <MobileAppDevelopmentService service={service} />
           : service.slug === "ui-ux-design"
             ? <UIUXService service={service} />
-            : <ServiceDetail service={service} />;
+            : service.slug === "cloud-solutions"
+              ? <CloudAISolutionsService service={service} />
+              : <ServiceDetail service={service} />;
 
   return (
     <>
