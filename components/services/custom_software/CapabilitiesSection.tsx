@@ -90,10 +90,10 @@ export default function CapabilitiesSection({
 
   return (
     <section className="relative w-full bg-transparent py-16 sm:py-20 lg:py-24 px-6 md:px-12 lg:px-14 font-sans text-[#131927]">
-      <div className="max-w-[2280px] mx-auto flex flex-col md:flex-row gap-10 lg:gap-16 2xl:gap-24 items-start">
+      <div className="max-w-[2280px] mx-auto flex flex-col md:flex-row md:items-stretch gap-10 lg:gap-16 2xl:gap-24 items-start">
         {/* Left Sticky Sidebar */}
-        <aside className="w-full md:w-20 flex-shrink-0 md:sticky md:top-24 z-20">
-          <div className="flex md:flex-col items-center justify-between md:justify-start gap-5 p-4 md:p-0 bg-slate-50 md:bg-transparent rounded-2xl md:rounded-none border md:border-r md:border-l-0 md:border-t-0 md:border-b-0 border-slate-100 md:border-slate-200 md:pr-6">
+        <aside className="relative z-20 w-full flex-shrink-0 md:w-20 md:self-stretch">
+          <div className="flex items-center justify-between gap-5 rounded-2xl border border-slate-100 bg-slate-50 p-4 md:sticky md:top-24 md:flex-col md:justify-start md:rounded-none md:border-0 md:border-r md:border-slate-200 md:bg-transparent md:p-0 md:pr-6">
             <button
               onClick={handleShare}
               className="group flex flex-col items-center text-center cursor-pointer focus:outline-none"

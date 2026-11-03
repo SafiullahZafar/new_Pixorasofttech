@@ -13,7 +13,7 @@ export default function CustomSoftwarePage({
   service: ServiceDetail;
 }) {
   return (
-    <main className="overflow-hidden bg-transparent pt-[60px] text-[#131927]">
+    <main className="overflow-x-clip bg-transparent pt-[60px] text-[#131927]">
       <HeroSection />
       <AboutSection overview={service.overview} />
       <SoftwareGallerySection />
