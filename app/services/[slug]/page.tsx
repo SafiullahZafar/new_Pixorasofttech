@@ -6,6 +6,7 @@ import ServiceDetail from "@/components/services/ServiceDetail";
 import CustomSoftwareService from "@/components/services/CustomSoftwareService";
 import WebDevelopmentService from "@/components/services/WebDevelopmentService";
 import SaaSDevelopmentService from "@/components/services/SaaSDevelopmentService";
+import MobileAppDevelopmentService from "@/components/services/MobileAppDevelopmentService";
 import { getServiceDetail, serviceDetails } from "@/lib/service-details";
 
 export function generateStaticParams() {
@@ -24,7 +25,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       ? <WebDevelopmentService service={service} />
       : service.slug === "saas-development"
         ? <SaaSDevelopmentService service={service} />
-        : <ServiceDetail service={service} />;
+        : service.slug === "mobile-app-development"
+          ? <MobileAppDevelopmentService service={service} />
+          : <ServiceDetail service={service} />;
 
   return (
     <>

@@ -82,8 +82,11 @@ export const serviceDetails: ServiceDetail[] = [
     ],
     technologies: ["React Native", "Flutter", "TypeScript", "Firebase", "Stripe API", "Google Maps API"],
     faqs: [
-      { question: "Do you build for both iOS and Android simultaneously?", answer: "Yes! Using React Native or Flutter, we build single-codebase applications that run natively on both iOS and Android." },
-      { question: "Will you publish the app to the Apple App Store and Google Play Store?", answer: "Yes, we handle the entire submission, review, and publication workflow for both store accounts." }
+      { question: "What types of mobile apps can you build?", answer: "We build commerce, booking, fitness, transport, community, and business apps tailored to your users and the way your service works." },
+      { question: "Do you build for both iOS and Android?", answer: "Yes. We can build for both platforms with a shared cross-platform codebase or choose a native approach based on the product requirements." },
+      { question: "Can the app use features like maps, camera, and notifications?", answer: "Yes. We can integrate device capabilities such as location, camera, push notifications, biometrics, and payment services where they fit the app." },
+      { question: "Can you publish the app to the App Store and Google Play?", answer: "Yes. We prepare the app for review and support the submission and release process for Apple App Store and Google Play." },
+      { question: "Do you support the app after launch?", answer: "Yes. We can help maintain the app, address issues, update dependencies, and plan improvements as your users and needs grow." }
     ]
   },
   {
