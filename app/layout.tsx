@@ -1,22 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Outfit } from "next/font/google";
+import localFont from "next/font/local";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 // Fonts
-const outfit = Outfit({
+const outfit = localFont({
+  src: "../public/fonts/outfit-latin.woff2",
   variable: "--font-outfit",
-  subsets: ["latin"],
   display: "swap",
-  weight: ["400", "600", "700", "800"],
+  weight: "400 800",
   preload: true,
 });
 
-const inter = Inter({
+const inter = localFont({
+  src: "../public/fonts/inter-latin.woff2",
   variable: "--font-inter",
-  subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600"],
+  weight: "400 600",
   preload: false,
 });
 

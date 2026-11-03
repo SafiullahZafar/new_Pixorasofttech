@@ -1,12 +1,43 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 interface FAQItem {
   question: string;
   answer: string;
+}
+
+function TypewriterAnswer({ text }: { text: string }) {
+  const [displayText, setDisplayText] = useState("");
+
+  useEffect(() => {
+    setDisplayText("");
+    let index = 0;
+    const timeout = window.setInterval(() => {
+      index += 1;
+      setDisplayText(text.slice(0, index));
+
+      if (index >= text.length) window.clearInterval(timeout);
+    }, 24);
+
+    return () => window.clearInterval(timeout);
+  }, [text]);
+
+  return (
+    <p
+      aria-label={text}
+      className="text-xs sm:text-sm 2xl:text-base leading-relaxed text-zinc-600 max-w-xl 2xl:max-w-2xl"
+    >
+      <span aria-hidden="true">{displayText}</span>
+      {displayText.length < text.length && (
+        <span aria-hidden="true" className="animate-pulse">
+          |
+        </span>
+      )}
+    </p>
+  );
 }
 
 const DEFAULT_FAQS: FAQItem[] = [
@@ -52,7 +83,7 @@ export default function FAQSection({ faqs = DEFAULT_FAQS }: { faqs?: FAQItem[] }
   const list = faqs && faqs.length > 0 ? faqs : DEFAULT_FAQS;
 
   return (
-    <section className="bg-transparent text-black py-16 sm:py-20 2xl:py-28 font-sans">
+     <section className="bg-transparent text-black py-16 sm:py-20 2xl:py-28 font-sans">
       <div className="mx-auto max-w-[2400px] px-6 sm:px-8 lg:px-14 2xl:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 2xl:gap-20 items-start">
           {/* Left Column: FAQ header and contact card */}
@@ -66,18 +97,18 @@ export default function FAQSection({ faqs = DEFAULT_FAQS }: { faqs?: FAQItem[] }
               </h2>
             </div>
 
-            <div className="pt-6 border-t border-zinc-200/80">
-              <h3 className="text-sm sm:text-base 2xl:text-lg font-bold tracking-tight text-zinc-950 mb-1.5">
-                NOT FINDING ANSWERS?
+            <div className="rounded-[20px] border border-slate-300/55 bg-transparent p-5 shadow-[0_18px_55px_rgba(15,23,42,0.04)] backdrop-blur-[2px] sm:p-7 2xl:p-9">
+              <h3 className="mb-2 text-base font-bold tracking-tight text-zinc-950 sm:text-lg 2xl:text-xl">
+                Have a custom inquiry?
               </h3>
-              <p className="text-zinc-600 text-xs sm:text-sm 2xl:text-base mb-5">
-                Reach out anytime, our architects are happy to help.
+              <p className="mb-5 max-w-lg text-sm leading-relaxed text-zinc-800 sm:text-base 2xl:text-lg">
+                Can’t find the answer you’re looking for? Reach out to our technical consulting team.
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-2xl bg-[#0A2540] hover:bg-[#143960] px-5 py-2.5 text-xs sm:text-sm font-semibold text-white transition-all duration-300 shadow-md hover:shadow-lg"
+                className="inline-flex items-center gap-2 rounded-2xl bg-black px-5 py-3 text-xs font-semibold text-white shadow-md transition-all duration-300 hover:bg-zinc-800 hover:shadow-lg sm:text-sm"
               >
-                <span>CONTACT US</span>
+                <span>GET IN TOUCH</span>
                 <ArrowUpRight className="size-4" />
               </Link>
             </div>
@@ -112,9 +143,7 @@ export default function FAQSection({ faqs = DEFAULT_FAQS }: { faqs?: FAQItem[] }
 
                   {isOpen && (
                     <div className="pb-5 pl-8 sm:pl-12 transition-all duration-300">
-                      <p className="text-xs sm:text-sm 2xl:text-base leading-relaxed text-zinc-600 max-w-xl 2xl:max-w-2xl">
-                        {faq.answer}
-                      </p>
+                      <TypewriterAnswer text={faq.answer} />
                     </div>
                   )}
                 </div>
