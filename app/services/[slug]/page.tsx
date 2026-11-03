@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ServicePagesAnimation from "@/components/servicepagesanimtion";
 import ServiceDetail from "@/components/services/ServiceDetail";
 import CustomSoftwareService from "@/components/services/CustomSoftwareService";
+import WebDevelopmentService from "@/components/services/WebDevelopmentService";
 import { getServiceDetail, serviceDetails } from "@/lib/service-details";
 
 export function generateStaticParams() {
@@ -18,7 +19,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   const content = service.slug === "custom-software-development"
     ? <CustomSoftwareService service={service} />
-    : <ServiceDetail service={service} />;
+    : service.slug === "website-development"
+      ? <WebDevelopmentService service={service} />
+      : <ServiceDetail service={service} />;
 
   return (
     <>
