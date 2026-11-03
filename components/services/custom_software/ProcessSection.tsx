@@ -8,29 +8,25 @@ const PROCESS_STEPS = [
   {
     number: "01",
     title: "Discovery & Scoping",
-    description:
-      "We start by understanding your business, users, and goals, then shape a clear direction for the product.",
+    description: "We start by understanding your business, users, and goals, then shape a clear direction for the product.",
     pills: [],
   },
   {
     number: "02",
     title: "Architecture & Design",
-    description:
-      "We plan the system architecture and user experience, from data structures and APIs to interactive prototypes.",
+    description: "We plan the system architecture and user experience, from data structures and APIs to interactive prototypes.",
     pills: ["System Architecture", "UI/UX Prototyping", "API Design"],
   },
   {
     number: "03",
     title: "Build & Iterate",
-    description:
-      "We build in focused sprints, share working previews, and use your feedback to refine the product as we go.",
+    description: "We build in focused sprints, share working previews, and use your feedback to refine the product as we go.",
     pills: ["Agile Sprints", "Live Previews", "Continuous Feedback"],
   },
   {
     number: "04",
     title: "Launch & Support",
-    description:
-      "We manage deployment, monitoring, and post-launch support so your software is ready to grow with your business.",
+    description: "We manage deployment, monitoring, and post-launch support so your software is ready to grow with your business.",
     pills: ["Deployment", "CI/CD Setup", "Post-launch Support"],
   },
 ];
@@ -50,11 +46,7 @@ function Pin({ className = "" }: { className?: string }) {
   );
 }
 
-export default function ProcessSection({
-  process: _process,
-}: {
-  process?: ServiceDetail["process"];
-}) {
+export default function ProcessSection({ process: _process }: { process?: ServiceDetail["process"] }) {
   return (
     <section className="relative w-full overflow-hidden border-t border-zinc-200 bg-transparent py-20 text-black sm:py-28 2xl:py-32">
       <div className="relative z-10 mx-auto max-w-[2200px] px-6 sm:px-8 lg:px-12">
@@ -74,27 +66,14 @@ export default function ProcessSection({
 
         <div className="relative mx-auto max-w-6xl">
           <div className="relative flex flex-col gap-8 pb-2 md:block md:h-[1020px]">
-            <svg
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full md:block"
-              viewBox="0 0 1000 1020"
-              preserveAspectRatio="none"
-            >
-              <defs>
-                <style>{`
-                  @keyframes customFlowDash { to { stroke-dashoffset: -112px; } }
-                  .custom-flow-dash { animation: customFlowDash 3s linear infinite; }
-                  @media (prefers-reduced-motion: reduce) { .custom-flow-dash { animation: none; } }
-                `}</style>
-              </defs>
-              <motion.path
+            <svg aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full md:block" viewBox="0 0 1000 1020" preserveAspectRatio="none">
+              <path
                 d="M 280 150 C 470 150 540 280 720 300 C 900 320 520 420 280 550 C 180 610 520 700 720 750"
                 fill="none"
                 stroke="#94a3b8"
                 strokeWidth="2.5"
                 strokeDasharray="8 7"
                 strokeLinecap="round"
-                className="custom-flow-dash"
                 vectorEffect="non-scaling-stroke"
               />
             </svg>
@@ -113,22 +92,12 @@ export default function ProcessSection({
                   <div className="rounded-[25px] border border-neutral-100 bg-white p-2.5 shadow-[0_10px_25px_0_#D3D3D3]">
                     <Pin className={`mx-auto mb-4 size-8 ${isBlue ? "text-[#0342DD]" : "text-zinc-900"}`} />
                     <div className={`relative min-h-[220px] overflow-hidden rounded-2xl border p-5 sm:p-6 ${isBlue ? "border-blue-100 bg-blue-50/70" : "border-neutral-200 bg-neutral-50/90"}`}>
-                      <span className={`mb-3 block font-mono text-4xl font-light sm:text-5xl ${isBlue ? "text-[#0342DD]" : "text-zinc-400"}`}>
-                        {step.number}
-                      </span>
-                      <h3 className="mb-2.5 text-xl font-semibold leading-snug text-zinc-900 sm:text-2xl">
-                        {step.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed text-zinc-600 sm:text-[15px]">
-                        {step.description}
-                      </p>
+                      <span className={`mb-3 block font-mono text-4xl font-light sm:text-5xl ${isBlue ? "text-[#0342DD]" : "text-zinc-400"}`}>{step.number}</span>
+                      <h3 className="mb-2.5 text-xl font-semibold leading-snug text-zinc-900 sm:text-2xl">{step.title}</h3>
+                      <p className="text-sm leading-relaxed text-zinc-600 sm:text-[15px]">{step.description}</p>
                       {step.pills.length > 0 && (
                         <div className="mt-4 flex flex-wrap gap-1.5">
-                          {step.pills.map((pill) => (
-                            <span key={pill} className="rounded-full border border-zinc-200 bg-white/80 px-2.5 py-1 text-[10px] font-medium text-zinc-600 sm:text-xs">
-                              {pill}
-                            </span>
-                          ))}
+                          {step.pills.map((pill) => <span key={pill} className="rounded-full border border-zinc-200 bg-white/80 px-2.5 py-1 text-[10px] font-medium text-zinc-600 sm:text-xs">{pill}</span>)}
                         </div>
                       )}
                     </div>
