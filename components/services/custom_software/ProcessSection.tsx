@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 import type { ServiceDetail } from "@/lib/service-details";
 
 const PROCESS_STEPS = [
@@ -8,91 +9,131 @@ const PROCESS_STEPS = [
     number: "01",
     title: "Discovery & Scoping",
     description:
-      "We start by deeply understanding your business, users, and goals. We map out requirements, define technical scope, and align on timelines and budget before a single line of code is written.",
-    pills: ["Requirements Workshop", "Technical Scoping", "Timeline Planning"],
+      "We start by understanding your business, users, and goals, then shape a clear direction for the product.",
+    pills: [],
   },
   {
     number: "02",
     title: "Architecture & Design",
     description:
-      "We design the system architecture and UI/UX before development. This includes database schema, API contracts, component hierarchy, and interactive Figma prototypes for your approval.",
+      "We plan the system architecture and user experience, from data structures and APIs to interactive prototypes.",
     pills: ["System Architecture", "UI/UX Prototyping", "API Design"],
   },
   {
     number: "03",
     title: "Build & Iterate",
     description:
-      "Development happens in two-week sprints with live previews. You see progress continuously, give feedback, and we iterate fast—no surprises at the end.",
+      "We build in focused sprints, share working previews, and use your feedback to refine the product as we go.",
     pills: ["Agile Sprints", "Live Previews", "Continuous Feedback"],
   },
   {
     number: "04",
     title: "Launch & Support",
     description:
-      "We handle deployment, CI/CD pipeline setup, monitoring, and post-launch bug fixes. After launch, we offer retainer support for ongoing features and maintenance.",
+      "We manage deployment, monitoring, and post-launch support so your software is ready to grow with your business.",
     pills: ["Deployment", "CI/CD Setup", "Post-launch Support"],
   },
 ];
 
+const CARD_POSITIONS = [
+  "md:left-[5%] md:top-0",
+  "md:right-[5%] md:top-[180px]",
+  "md:left-[5%] md:top-[450px]",
+  "md:right-[5%] md:top-[630px]",
+];
+
+function Pin({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M16 3a1 1 0 0 1 .12 1.99L16 5v4.76l1.89 3.79a1 1 0 0 1 .11.33V16a1 1 0 0 1-.88.99L17 17h-4v4a1 1 0 0 1-1.99.12L11 21v-4H7a1 1 0 0 1-.99-.88L6 16v-2a1 1 0 0 1 .06-.34l.05-.11L8 9.76V5a1 1 0 0 1-.12-1.99L8 3h8Z" />
+    </svg>
+  );
+}
+
 export default function ProcessSection({
-  process,
+  process: _process,
 }: {
   process?: ServiceDetail["process"];
 }) {
-  const [activeStep, setActiveStep] = useState<number | null>(null);
-
   return (
-    <section className="w-full bg-transparent text-zinc-900 py-20 2xl:py-28 px-6 sm:px-12 lg:px-14 2xl:px-24 overflow-hidden">
-      <div className="max-w-[2440px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 2xl:gap-24 items-start">
-          {/* Left Title: Design Process */}
-          <div className="lg:col-span-4">
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl 2xl:text-8xl tracking-tight leading-[0.95] text-zinc-900">
-              Design <br /> Process
-            </h2>
+    <section className="relative w-full overflow-hidden border-t border-zinc-200 bg-transparent py-20 text-black sm:py-28 2xl:py-32">
+      <div className="relative z-10 mx-auto max-w-[2200px] px-6 sm:px-8 lg:px-12">
+        <header className="mb-14 flex flex-col justify-between border-b border-zinc-200 pb-12 sm:mb-16 sm:flex-row sm:items-start sm:pb-16">
+          <div>
+            <div className="mb-3 flex items-center gap-2">
+              <span className="size-2.5 rounded-full bg-[#0342DD]" />
+              <span className="text-xs font-bold uppercase tracking-widest">HOW WE WORK</span>
+              <span className="ml-2 text-xs font-bold text-slate-400">• 04 PHASES</span>
+            </div>
+            <h2 className="text-5xl font-normal tracking-tight sm:text-6xl lg:text-7xl">Design Process</h2>
           </div>
+          <p className="mt-4 max-w-sm text-sm font-medium leading-relaxed text-zinc-700 sm:mt-8 sm:text-base">
+            From the first conversation to launch, each phase moves your custom software forward.
+          </p>
+        </header>
 
-          {/* Right Steps Accordion */}
-          <div className="lg:col-span-8 divide-y divide-zinc-300/70 border-t border-b border-zinc-300/70">
-            {PROCESS_STEPS.map((step, idx) => {
-              const isHovered = activeStep === idx;
+        <div className="relative mx-auto max-w-6xl">
+          <div className="relative flex flex-col gap-8 pb-2 md:block md:h-[1020px]">
+            <svg
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full md:block"
+              viewBox="0 0 1000 1020"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <style>{`
+                  @keyframes customFlowDash { to { stroke-dashoffset: -112px; } }
+                  .custom-flow-dash { animation: customFlowDash 3s linear infinite; }
+                  @media (prefers-reduced-motion: reduce) { .custom-flow-dash { animation: none; } }
+                `}</style>
+              </defs>
+              <motion.path
+                d="M 280 150 C 470 150 540 280 720 300 C 900 320 520 420 280 550 C 180 610 520 700 720 750"
+                fill="none"
+                stroke="#94a3b8"
+                strokeWidth="2.5"
+                strokeDasharray="8 7"
+                strokeLinecap="round"
+                className="custom-flow-dash"
+                vectorEffect="non-scaling-stroke"
+              />
+            </svg>
+
+            {PROCESS_STEPS.map((step, index) => {
+              const isBlue = index % 2 === 0;
               return (
-                <div
+                <motion.article
                   key={step.number}
-                  onMouseEnter={() => setActiveStep(idx)}
-                  onMouseLeave={() => setActiveStep(null)}
-                  className="py-10 transition-all duration-300 group cursor-pointer"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.55, delay: index * 0.08 }}
+                  className={`group relative z-10 w-full transition-transform duration-300 hover:z-20 hover:scale-[1.02] md:absolute md:w-[min(38vw,350px)] ${CARD_POSITIONS[index]} ${index % 2 === 0 ? "md:rotate-2" : "md:-rotate-2"}`}
                 >
-                  <div className="grid grid-cols-12 gap-4 items-start">
-                    {/* Big Mono Number */}
-                    <div className="col-span-3 sm:col-span-2">
-                      <span className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-light text-zinc-400 font-mono transition-colors duration-300 group-hover:text-zinc-950">
+                  <div className="rounded-[25px] border border-neutral-100 bg-white p-2.5 shadow-[0_10px_25px_0_#D3D3D3]">
+                    <Pin className={`mx-auto mb-4 size-8 ${isBlue ? "text-[#0342DD]" : "text-zinc-900"}`} />
+                    <div className={`relative min-h-[220px] overflow-hidden rounded-2xl border p-5 sm:p-6 ${isBlue ? "border-blue-100 bg-blue-50/70" : "border-neutral-200 bg-neutral-50/90"}`}>
+                      <span className={`mb-3 block font-mono text-4xl font-light sm:text-5xl ${isBlue ? "text-[#0342DD]" : "text-zinc-400"}`}>
                         {step.number}
                       </span>
-                    </div>
-
-                    {/* Step Title, Description & Pills */}
-                    <div className="col-span-9 sm:col-span-10 space-y-2.5 pr-2">
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl font-medium tracking-tight text-zinc-900 transition-colors duration-300">
+                      <h3 className="mb-2.5 text-xl font-semibold leading-snug text-zinc-900 sm:text-2xl">
                         {step.title}
                       </h3>
-                      <p className="text-zinc-600 text-xs sm:text-sm 2xl:text-base leading-relaxed max-w-2xl transition-colors duration-300 group-hover:text-zinc-800">
+                      <p className="text-sm leading-relaxed text-zinc-600 sm:text-[15px]">
                         {step.description}
                       </p>
-
-                      <div className="pt-2 flex flex-wrap gap-2">
-                        {step.pills.map((pill) => (
-                          <span
-                            key={pill}
-                            className="rounded-full border border-zinc-300/80 bg-white/70 px-3 py-1 text-xs font-medium text-zinc-700"
-                          >
-                            {pill}
-                          </span>
-                        ))}
-                      </div>
+                      {step.pills.length > 0 && (
+                        <div className="mt-4 flex flex-wrap gap-1.5">
+                          {step.pills.map((pill) => (
+                            <span key={pill} className="rounded-full border border-zinc-200 bg-white/80 px-2.5 py-1 text-[10px] font-medium text-zinc-600 sm:text-xs">
+                              {pill}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
-                </div>
+                </motion.article>
               );
             })}
           </div>
