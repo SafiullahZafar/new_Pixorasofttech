@@ -159,7 +159,7 @@ export default function HeroSection() {
           )}
 
           {/* Bottom Glass Overlay Bar */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: "100%" }}
             animate={isInView ? { opacity: 1, y: "0%" } : { opacity: 0, y: "100%" }}
             transition={{ duration: 0.75, delay: 0.5, ease: "easeOut" }}
@@ -182,7 +182,7 @@ export default function HeroSection() {
                 <span>Live demo ↗</span>
               </Link>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
