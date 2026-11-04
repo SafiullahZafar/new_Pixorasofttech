@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectDetail from "@/components/portfolio/ProjectDetail";
+import CaseStudyBrewHaven from "@/components/case_study_brew_haven";
 import { projects } from "@/lib/projects";
 
 export function generateStaticParams() {
@@ -25,7 +26,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     <>
       <Navbar />
       <main>
-        <ProjectDetail project={project!} />
+        {id === "brew-haven" ? (
+          <CaseStudyBrewHaven project={project!} />
+        ) : (
+          <ProjectDetail project={project!} />
+        )}
       </main>
       <Footer />
     </>
