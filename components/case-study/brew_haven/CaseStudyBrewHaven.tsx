@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import { useScroll, useTransform } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+// import { ArrowLeft } from "lucide-react";
 import type { Project } from "@/lib/projects";
 import HeroSection from "./sections/HeroSection";
 import AboutSection from "./sections/AboutSection";
@@ -50,14 +50,14 @@ export default function CaseStudyBrewHaven({ project }: CaseStudyBrewHavenProps)
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
       {/* ── Top Back Navigation Floating Pill ── */}
-      <div className="fixed top-20 sm:top-24 left-4 sm:left-8 z-40">
+      {/* <div className="fixed top-20 sm:top-24 left-4 sm:left-8 z-40">
         <Link
           href="/projects"
           className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/85 px-4 py-2 text-xs sm:text-sm font-semibold text-slate-800 shadow-md backdrop-blur-md transition hover:bg-white hover:border-black/25 hover:-translate-y-0.5"
         >
           <ArrowLeft className="size-4" /> All Projects
         </Link>
-      </div>
+      </div> */}
 
       {/* ── 1. HERO PARALLAX SECTION (Module 6499) ── */}
       <HeroSection

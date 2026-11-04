@@ -6,7 +6,7 @@ export default function HeroSection({ heroRef, heroScale, mobileHeroImage, heroI
   return (
       <section
         ref={heroRef}
-        className="relative z-0 w-full h-[45vh] sm:h-[70vh] lg:h-screen mt-[68px] sm:mt-[76px] overflow-hidden bg-black select-none"
+        className="relative z-0 w-full h-[45vh] sm:h-[70vh] lg:h-screen overflow-hidden bg-black select-none"
       >
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <motion.div
