@@ -15,7 +15,7 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const bentoGridVariants = cva(
-  "relative grid gap-2.5 sm:gap-3.5 w-full h-full [&>*:first-child]:origin-top-right [&>*:nth-child(3)]:origin-bottom-right [&>*:nth-child(4)]:origin-top-right",
+  "relative grid gap-2 sm:gap-3 lg:gap-3.5 2xl:gap-5 w-full h-full [&>*:first-child]:origin-top-right [&>*:nth-child(3)]:origin-bottom-right [&>*:nth-child(4)]:origin-top-right",
   {
     variants: {
       variant: {
@@ -163,17 +163,17 @@ export default function TeamHero() {
   return (
     <ContainerScroll className="h-[240vh] w-full">
       {/* 1. HERO TITLE & CTA (Fixed in center at start; goes back and shrinks away on scroll) */}
-      <ContainerScale className="z-30 w-full max-w-5xl px-5 text-center">
+      <ContainerScale className="z-30 w-full max-w-5xl 2xl:max-w-7xl min-[2200px]:max-w-[2400px] px-5 text-center">
         <div className="mx-auto w-full">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#0A2540]/75 sm:mb-6 sm:text-sm">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#0A2540]/75 sm:mb-6 sm:text-sm 2xl:text-base">
             Team &amp; Technology
           </p>
 
-          <h1 className="mx-auto max-w-[1400px] text-balance text-[clamp(2.5rem,5.5vw,7.5rem)] font-semibold leading-[1.0] tracking-[-0.05em] text-[#111]">
+          <h1 className="mx-auto max-w-[1400px] 2xl:max-w-[2200px] text-balance text-[clamp(2.5rem,5.5vw,7.5rem)] 2xl:text-[clamp(4.5rem,5.5vw,9rem)] font-semibold leading-[1.0] tracking-[-0.05em] text-[#111]">
             The people and technology behind what&apos;s next.
           </h1>
 
-          <p className="mx-auto mt-5 max-w-[50rem] text-balance text-[clamp(0.95rem,1.15vw,1.3rem)] leading-[1.7] text-black/60 sm:mt-7">
+          <p className="mx-auto mt-5 max-w-[50rem] 2xl:max-w-[70rem] text-balance text-[clamp(0.95rem,1.15vw,1.3rem)] 2xl:text-xl leading-[1.7] text-black/60 sm:mt-7">
             We bring product strategy, engineering, and modern technology together to build dependable digital products—from the first idea through launch and beyond.
           </p>
 
@@ -194,11 +194,11 @@ export default function TeamHero() {
         </div>
       </ContainerScale>
 
-      {/* 2. BENTO GRID (Moved downward with proper padding to clear the top navbar) */}
-      <div className="sticky top-0 z-10 flex h-screen w-full flex-col justify-center px-3 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-4 sm:pb-6">
+      {/* 2. BENTO GRID (Covers top & bottom almost fully, preserves width margins, responsive up to 3000px) */}
+      <div className="sticky top-0 z-10 flex h-[100dvh] min-h-screen w-full flex-col justify-center px-3 sm:px-6 lg:px-8 2xl:px-12 min-[2800px]:px-16 py-1.5 sm:py-2">
         <BentoGrid
           variant="default"
-          className="w-full max-w-[1540px] mx-auto h-full min-h-[520px]"
+          className="w-full max-w-[1540px] 2xl:max-w-[2000px] min-[2200px]:max-w-[2600px] min-[2800px]:max-w-[2920px] mx-auto h-full min-h-[520px]"
         >
           {/* Card 1: Core Developers & Full-Stack Engineers (Big top card, touches top of screen) */}
           <BentoCell className="group relative overflow-hidden rounded-lg border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
@@ -211,7 +211,7 @@ export default function TeamHero() {
             {/* Elegant vignette gradient so text is razor-sharp */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25" />
 
-            <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-7 lg:p-8 text-white">
+            <div className="relative z-10 flex h-full flex-col justify-between p-4 sm:p-6 lg:p-7 2xl:p-9 min-[2200px]:p-11 text-white">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <span className="rounded-full border border-white/20 bg-black/50 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur-md">
                   Core Engineering &bull; Full-Stack
@@ -222,18 +222,18 @@ export default function TeamHero() {
               </div>
 
               <div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold tracking-tight text-white max-w-2xl leading-tight">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold tracking-tight text-white max-w-2xl 2xl:max-w-4xl leading-tight">
                   Software Engineers &amp; Core Developers
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm lg:text-[15px] text-zinc-200/90 leading-relaxed max-w-2xl">
+                <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm lg:text-[15px] 2xl:text-lg text-zinc-200/90 leading-relaxed max-w-2xl 2xl:max-w-4xl">
                   Building high-performance web applications, robust backend APIs, and distributed cloud systems with modern stacks.
                 </p>
 
-                <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 pt-2.5 sm:pt-3 border-t border-white/15">
+                <div className="mt-2.5 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 2xl:gap-3 pt-2 sm:pt-3 border-t border-white/15">
                   {["Next.js 16", "React 19", "Strict TypeScript", "Python AI", "PostgreSQL", "Node.js"].map((tech) => (
                     <span
                       key={tech}
-                      className="rounded border border-white/20 bg-white/10 px-2 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-[11px] font-medium text-white backdrop-blur-sm"
+                      className="rounded border border-white/20 bg-white/10 px-2 sm:px-2.5 2xl:px-3 py-0.5 sm:py-1 2xl:py-1.5 text-[10px] sm:text-[11px] 2xl:text-sm font-medium text-white backdrop-blur-sm"
                     >
                       {tech}
                     </span>
@@ -253,7 +253,7 @@ export default function TeamHero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25" />
 
-            <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6 text-white">
+            <div className="relative z-10 flex h-full flex-col justify-between p-4 sm:p-5 lg:p-6 2xl:p-7 min-[2200px]:p-8 text-white">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-300">
                   Design Craft
@@ -265,8 +265,8 @@ export default function TeamHero() {
 
               <div>
                 <div className="text-[11px] font-semibold uppercase tracking-wider text-blue-300">Product Design</div>
-                <h4 className="mt-1 text-base sm:text-lg lg:text-xl font-semibold text-white">UI/UX Designers</h4>
-                <p className="mt-1.5 text-xs text-zinc-300 leading-relaxed">
+                <h4 className="mt-1 text-base sm:text-lg lg:text-xl 2xl:text-2xl font-semibold text-white">UI/UX Designers</h4>
+                <p className="mt-1 text-xs 2xl:text-sm text-zinc-300 leading-relaxed">
                   Crafting intuitive user journeys, interactive design systems, and responsive product interfaces.
                 </p>
               </div>
@@ -283,7 +283,7 @@ export default function TeamHero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25" />
 
-            <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6 text-white">
+            <div className="relative z-10 flex h-full flex-col justify-between p-4 sm:p-5 lg:p-6 2xl:p-7 min-[2200px]:p-8 text-white">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-indigo-300">
                   Client Engineering
@@ -295,8 +295,8 @@ export default function TeamHero() {
 
               <div>
                 <div className="text-[11px] font-semibold uppercase tracking-wider text-indigo-300">App Specialists</div>
-                <h4 className="mt-1 text-base sm:text-lg lg:text-xl font-semibold text-white">Frontend &amp; Mobile Developers</h4>
-                <p className="mt-1.5 text-xs text-zinc-300 leading-relaxed">
+                <h4 className="mt-1 text-base sm:text-lg lg:text-xl 2xl:text-2xl font-semibold text-white">Frontend &amp; Mobile Developers</h4>
+                <p className="mt-1 text-xs 2xl:text-sm text-zinc-300 leading-relaxed">
                   Delivering 60fps mobile applications and smooth, accessible client-side web interactions.
                 </p>
               </div>
@@ -313,7 +313,7 @@ export default function TeamHero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25" />
 
-            <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6 text-white">
+            <div className="relative z-10 flex h-full flex-col justify-between p-4 sm:p-5 lg:p-6 2xl:p-7 min-[2200px]:p-8 text-white">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-300">
                   Cloud Infrastructure
@@ -324,17 +324,17 @@ export default function TeamHero() {
               </div>
 
               <div>
-                <h4 className="text-base sm:text-lg font-semibold text-white">
+                <h4 className="text-base sm:text-lg 2xl:text-xl font-semibold text-white">
                   DevOps &amp; Cloud Engineers
                 </h4>
-                <p className="mt-1 text-xs text-zinc-300 leading-relaxed">
+                <p className="mt-1 text-xs 2xl:text-sm text-zinc-300 leading-relaxed">
                   Automating continuous deployment pipelines, container clusters, and cloud environments.
                 </p>
                 <div className="mt-2.5 flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
-                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-medium text-zinc-200">
+                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] 2xl:text-xs font-medium text-zinc-200">
                     Automated Pipelines
                   </span>
-                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-medium text-zinc-200">
+                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] 2xl:text-xs font-medium text-zinc-200">
                     Zero-Downtime Rollouts
                   </span>
                 </div>
@@ -352,7 +352,7 @@ export default function TeamHero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25" />
 
-            <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6 text-white">
+            <div className="relative z-10 flex h-full flex-col justify-between p-4 sm:p-5 lg:p-6 2xl:p-7 min-[2200px]:p-8 text-white">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-300">
                   Reliability &amp; QA
@@ -363,17 +363,17 @@ export default function TeamHero() {
               </div>
 
               <div>
-                <h4 className="text-base sm:text-lg font-semibold text-white">
+                <h4 className="text-base sm:text-lg 2xl:text-xl font-semibold text-white">
                   QA &amp; Security Specialists
                 </h4>
-                <p className="mt-1 text-xs text-zinc-300 leading-relaxed">
+                <p className="mt-1 text-xs 2xl:text-sm text-zinc-300 leading-relaxed">
                   Validating software reliability with end-to-end testing, zero-trust security, and performance audits.
                 </p>
                 <div className="mt-2.5 flex flex-wrap gap-1.5 pt-2 border-t border-white/10">
-                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-medium text-zinc-200">
+                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] 2xl:text-xs font-medium text-zinc-200">
                     Automated Test Suites
                   </span>
-                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] font-medium text-zinc-200">
+                  <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] 2xl:text-xs font-medium text-zinc-200">
                     Bank-Grade Security
                   </span>
                 </div>
