@@ -36,21 +36,7 @@ export default function HeroSection({ heroRef, heroScale, mobileHeroImage, heroI
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
 
         {/* Hero Bottom Floating Label */}
-        <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-12 2xl:left-20 z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex items-center gap-3"
-          >
-            <span className="rounded-full border border-white/25 bg-black/60 px-3.5 py-1 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md">
-              E-Commerce &bull; Brand Experience
-            </span>
-            <span className="rounded-full border border-emerald-400/30 bg-emerald-950/60 px-3 py-1 text-[11px] sm:text-xs font-medium text-emerald-300 backdrop-blur-md">
-              Live &amp; Deployed
-            </span>
-          </motion.div>
-        </div>
+
       </section>
   );
 }
