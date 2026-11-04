@@ -393,7 +393,7 @@ const featuredWorks: WorksWheelItem[] = [
   {
     title: "Brew Haven Coffee",
     image: "/portfolio/brew-haven.png",
-    href: "/projects/brew-haven",
+    href: "/case-study/brew-heaven",
   },
   {
     title: "Light CRM Suite",

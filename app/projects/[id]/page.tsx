@@ -1,8 +1,7 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectDetail from "@/components/portfolio/ProjectDetail";
-import CaseStudyBrewHaven from "@/components/case_study_brew_haven";
 import { projects } from "@/lib/projects";
 
 export function generateStaticParams() {
@@ -14,6 +13,9 @@ export const dynamicParams = true;
 
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+  if (id === "brew-haven") {
+    redirect("/case-study/brew-heaven");
+  }
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
@@ -26,11 +28,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     <>
       <Navbar />
       <main>
-        {id === "brew-haven" ? (
-          <CaseStudyBrewHaven project={project!} />
-        ) : (
-          <ProjectDetail project={project!} />
-        )}
+        <ProjectDetail project={project!} />
       </main>
       <Footer />
     </>

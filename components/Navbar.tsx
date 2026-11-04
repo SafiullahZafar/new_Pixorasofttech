@@ -52,7 +52,7 @@ const serviceItems = [
 ];
 
 const caseStudiesCol1 = [
-  { title: "Brew Haven Coffee", href: "/projects/brew-haven" },
+  { title: "Brew Haven Coffee", href: "/case-study/brew-heaven" },
   { title: "Delivery Flow System", href: "/projects/delivery-dashboard" },
   { title: "HRMS Enterprise", href: "/projects/hrms" },
   { title: "KB Exports Global", href: "/projects/kb-exports" },
@@ -69,7 +69,7 @@ const caseStudiesCol2 = [
 const caseStudiesCol3 = [
   { title: "FitPulse Mobile App", href: "/projects/rider-app" },
   { title: "IRider Transportation", href: "/projects/rider-app" },
-  { title: "ShopEase E-Commerce", href: "/projects/brew-haven" },
+  { title: "ShopEase E-Commerce", href: "/case-study/brew-heaven" },
 ];
 
 // Luxury smooth easing curve (natural deceleration over 0.65s)
