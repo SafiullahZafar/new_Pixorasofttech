@@ -7,9 +7,9 @@ import type { BrewHavenSectionProps } from "./types";
 export default function SummarySection({ liveUrl }: Pick<BrewHavenSectionProps, "liveUrl">) {
   return (
     <section className="w-full bg-transparent text-black py-16 sm:py-24 2xl:py-32 px-6 sm:px-12 lg:px-16 2xl:px-24 select-none">
-      <div className="max-w-[1500px] 2xl:max-w-[1800px] mx-auto w-full">
-        {/* Title */}
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-950 mb-12 sm:mb-16">
+      <div className="max-w-[1600px] 2xl:max-w-[1920px] mx-auto w-full">
+        {/* Title matching upper sections */}
+        <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-8xl font-bold tracking-tight text-zinc-950 leading-none break-words mb-12 sm:mb-16 2xl:mb-20">
           Summary
         </h2>
 
@@ -22,7 +22,7 @@ export default function SummarySection({ liveUrl }: Pick<BrewHavenSectionProps, 
               <span className="text-xs sm:text-sm text-zinc-400 font-normal">
                 Industry
               </span>
-              <p className="text-base sm:text-lg font-semibold text-zinc-950 mt-1">
+              <p className="text-base sm:text-lg 2xl:text-xl font-semibold text-zinc-950 mt-1">
                 Hospitality &amp; Specialty Coffee
               </p>
             </div>
@@ -57,7 +57,7 @@ export default function SummarySection({ liveUrl }: Pick<BrewHavenSectionProps, 
                   ].map((svc, i) => (
                     <span
                       key={i}
-                      className="text-base sm:text-lg font-semibold text-zinc-950 leading-snug"
+                      className="text-base sm:text-lg 2xl:text-xl font-semibold text-zinc-950 leading-snug"
                     >
                       {svc}
                     </span>
@@ -69,7 +69,9 @@ export default function SummarySection({ liveUrl }: Pick<BrewHavenSectionProps, 
 
           {/* Right Column: Narrative + Action Button */}
           <div className="lg:col-span-6 flex flex-col justify-between h-full w-full">
-            <p className="text-base sm:text-lg 2xl:text-xl text-zinc-800 font-normal leading-relaxed max-w-xl">
+            {/* <p className="text-base sm:text-xl md:text-2xl 2xl:text-3xl text-zinc-800 leading-relaxed font-normal max-w-2xl 2xl:max-w-3xl"> */}
+                        <p className="text-base sm:text-lg 2xl:text-xl text-zinc-800 font-normal leading-relaxed max-w-xl">
+
               PixoraSofttech took our physical roastery experience and captured it flawlessly online. Our online bean subscriptions doubled within two months, and the custom roast selector has received immense praise from our regular customers.
             </p>
 
