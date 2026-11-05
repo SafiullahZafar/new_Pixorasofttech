@@ -48,7 +48,7 @@ export default function BrandingSection() {
     <section className="w-full bg-[#F3F3F7] text-black pt-20 sm:pt-24 2xl:pt-28 pb-16 sm:pb-20 2xl:pb-28 px-4 sm:px-8 lg:px-12 2xl:px-20 select-none border-t border-b border-zinc-200/70">
       <div className="max-w-[1600px] 2xl:max-w-[1920px] mx-auto w-full">
         {/* Section Heading with ample clearance for floating navbar */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-12 sm:mb-16">
+        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-24 sm:mb-28 lg:mb-32 2xl:mb-36">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -56,9 +56,6 @@ export default function BrandingSection() {
             transition={{ duration: 0.5 }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/80 border border-zinc-200 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#7B511A] shadow-xs mb-3">
-              Brand Identity &bull; Design System
-            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-semibold tracking-tight text-zinc-950 leading-tight">
               Crafting the sensory language of Brew Haven
             </h2>
