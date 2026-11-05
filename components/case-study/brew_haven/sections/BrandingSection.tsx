@@ -45,7 +45,7 @@ export default function BrandingSection() {
   ];
 
   return (
-    <section className="w-full bg-[#F3F3F7] text-black pt-20 sm:pt-24 2xl:pt-28 pb-16 sm:pb-20 2xl:pb-28 px-4 sm:px-8 lg:px-12 2xl:px-20 select-none border-t border-b border-zinc-200/70">
+    <section className="w-full bg-transparent text-black pt-16 sm:pt-20 2xl:pt-24 pb-16 sm:pb-20 2xl:pb-24 px-4 sm:px-8 lg:px-12 2xl:px-20 select-none">
       <div className="max-w-[1600px] 2xl:max-w-[1920px] mx-auto w-full">
         {/* Section Heading with ample clearance for floating navbar */}
         <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-24 sm:mb-28 lg:mb-32 2xl:mb-36">
