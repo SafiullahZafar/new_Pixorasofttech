@@ -6,7 +6,7 @@ import WordReveal from "./WordReveal";
 import type { BrewHavenSectionProps } from "./types";
 export default function EditorialSection({ title, challengeText, solutionText, resultsText, heroImage, liveUrl, cardHovered, setCardHovered }: Pick<BrewHavenSectionProps, "title" | "challengeText" | "solutionText" | "resultsText" | "heroImage" | "liveUrl" | "cardHovered" | "setCardHovered">) {
   return (
-      <section className="w-full bg-[#030b1c] text-white py-16 sm:py-24 2xl:py-36 relative select-none">
+      <section className="w-full bg-[#020817] text-white py-16 sm:py-24 2xl:py-36 relative select-none">
         <div className="max-w-[1600px] 2xl:max-w-[2400px] mx-auto px-6 sm:px-12 2xl:px-20 relative z-10 flex flex-col gap-20 sm:gap-32 2xl:gap-48">
           {/* Part A: Main Title & The Challenge */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
