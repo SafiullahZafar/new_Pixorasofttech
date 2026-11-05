@@ -10,6 +10,7 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import MetricsSection from "./sections/MetricsSection";
+import BrandingSection from "./sections/BrandingSection";
 import SummarySection from "./sections/SummarySection";
 
 // ── Word-by-Word Text Reveal (Matches reference UI exactly) ────────────────
@@ -92,6 +93,9 @@ export default function CaseStudyBrewHaven({ project }: CaseStudyBrewHavenProps)
 
       {/* ── 5. KEY METRICS & TAKEAWAYS SECTION ── */}
       <MetricsSection />
+
+      {/* ── 6. BRANDING & DESIGN SYSTEM SECTION (#F3F3F7) ── */}
+      <BrandingSection />
 
       {/* ── 6. PROJECT SUMMARY SECTION (Module 13141) ── */}
       <SummarySection
