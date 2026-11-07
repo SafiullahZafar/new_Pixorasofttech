@@ -63,7 +63,7 @@ const caseStudiesCol2 = [
   { title: "Inventory Cloud POS", href: "/projects/inventory" },
   { title: "Restaurant Management", href: "/projects/supplier" },
   { title: "Salon Appointment System", href: "/projects/salon" },
-  { title: "Textile ERP System", href: "/projects/supplier" },
+  { title: "Textile ERP System", href: "/projects/textile-erp" },
 ];
 
 const caseStudiesCol3 = [
