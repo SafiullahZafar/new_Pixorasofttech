@@ -408,7 +408,7 @@ const featuredWorks: WorksWheelItem[] = [
   {
     title: "FitPulse Mobile App",
     image: "/portfolio/fitpulse-app.png",
-    href: "/projects/rider-app",
+    href: "/projects/fitplus-app",
   },
   {
     title: "Inventory Cloud POS",

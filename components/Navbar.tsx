@@ -67,7 +67,7 @@ const caseStudiesCol2 = [
 ];
 
 const caseStudiesCol3 = [
-  { title: "FitPulse Mobile App", href: "/projects/rider-app" },
+  { title: "FitPulse Mobile App", href: "/projects/fitplus-app" },
   { title: "IRider Transportation", href: "/projects/rider-app" },
   { title: "ShopEase E-Commerce", href: "/case-study/brew-heaven" },
 ];

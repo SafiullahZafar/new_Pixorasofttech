@@ -505,6 +505,48 @@ export const projects: Project[] = [
     }
   },
   {
+    id: "fitplus-app",
+    title: "FitPlus Fitness App",
+    category: "Mobile Apps",
+    tagline: "Personal Training, Progress Tracking & Everyday Wellness",
+    desc: "A fitness companion app that brings guided workouts, personalized plans, activity tracking, and progress insights into one motivating mobile experience.",
+    overview: "FitPlus helps people build consistent, sustainable fitness habits with guided workout programs, clear activity summaries, and progress tracking. PixoraSofttech shaped a mobile experience that makes it easier to find a plan, stay on track, and see how daily effort adds up.",
+    tags: ["React Native", "Fitness", "Workout Plans", "Activity Tracking", "Wellness"],
+    client: "FitPlus Wellness",
+    industry: "Fitness & Digital Wellness",
+    timeline: "Completed & Live",
+    deliverables: [
+      "Cross-Platform Fitness Mobile App",
+      "Guided Workout Plans & Exercise Library",
+      "Activity, Goal & Progress Tracking",
+      "Personalized Fitness Dashboard"
+    ],
+    img: "/portfolio/fitpulse-app.png",
+    heroImg: "/portfolio/fitpulse-app.png",
+    status: "processing",
+    challenge: "People often lose momentum when workout plans feel generic and progress is hard to see. FitPlus needed to make it simple to choose a suitable routine, track activity, and stay motivated across busy schedules.",
+    solution: "We designed a mobile fitness companion that brings guided routines, exercise details, personal goals, and progress summaries into one clear flow. The experience helps users move from choosing a workout to recording activity and reviewing their consistency.",
+    keyFeatures: [
+      "Guided Workout Plans for Different Fitness Goals",
+      "Exercise Library with Clear Routine Details",
+      "Daily Activity, Goal & Progress Tracking",
+      "Personal Fitness Dashboard and History"
+    ],
+    results: [
+      "Workout planning and tracking brought into one app",
+      "Clear progress summaries support consistent routines",
+      "Personalized goals make daily activity easier to follow"
+    ],
+    testimonial: {
+      text: "FitPlus brings our workout plans and progress tools together in an experience that feels clear and easy to return to. Members can focus on their routine and see the progress they are making.",
+      name: "FitPlus Product Team",
+      role: "Digital Wellness Team",
+      company: "FitPlus Wellness",
+      rating: 5,
+      avatarBg: "bg-emerald-600"
+    }
+  },
+  {
     id: "catering-app",
     title: "Catering & Event Food App",
     category: "Mobile Apps",
