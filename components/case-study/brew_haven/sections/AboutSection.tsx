@@ -72,32 +72,18 @@ export default function AboutSection({
           </div>
         </div>
 
-        {/* Third Row: Project Detail Text (Beneath Second Image) + Third Image (Beneath Description) */}
+        {/* Third Row: Description (Matching Upper Style) + Third Image */}
         <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16 2xl:gap-24">
-          <div className="w-full lg:w-1/2 pt-2 lg:pt-20 2xl:pt-24">
-            <motion.div
+          <div className="w-full lg:w-1/2 pt-2 lg:pt-28 2xl:pt-24">
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-col gap-4 sm:gap-5 max-w-xl 2xl:max-w-2xl"
+              className="text-base sm:text-lg md:text-xl 2xl:text-2xl text-slate-800 leading-relaxed max-w-xl 2xl:max-w-2xl font-normal"
             >
-              <div className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-[#7B511A]" />
-                <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-[#7B511A]">
-                  Artisan Sourcing &amp; Craft
-                </span>
-              </div>
-              <h3 className="text-2xl sm:text-3xl 2xl:text-4xl font-bold tracking-tight text-zinc-950">
-                Bridging Craftsmanship with Digital Precision
-              </h3>
-              <p className="text-base sm:text-lg md:text-xl 2xl:text-2xl text-slate-800 leading-relaxed font-normal">
-                Every roast at Brew Haven originates from high-altitude micro-lots across Ethiopia, Colombia, and Sumatra. Our core objective was translating this intimate, artisanal ritual into an intuitive digital experience—enabling coffee lovers to explore single-origin origins, flavor notes, and roast profiles with the same personal nuance as talking to a master roaster.
-              </p>
-              <p className="text-sm sm:text-base 2xl:text-lg text-zinc-600 leading-relaxed font-normal">
-                Through interactive roast dials, custom grind preferences, and an automated bean subscription pipeline, we converted first-time explorers into regular retail subscribers and passionate brand advocates.
-              </p>
-            </motion.div>
+              Every roast at Brew Haven originates from high-altitude micro-lots across Ethiopia, Colombia, and Sumatra. Our core objective was translating this intimate, artisanal ritual into an intuitive digital experience—enabling coffee lovers to explore single-origin origins, flavor notes, and roast profiles with the same personal nuance as talking to a master roaster.
+            </motion.p>
           </div>
 
           <div className="w-full lg:w-1/2 lg:pl-1 2xl:pl-16">
