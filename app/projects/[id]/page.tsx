@@ -22,6 +22,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
   if (id === "hrms") {
     redirect("/case-study/hrms");
   }
+  if (id === "kb-exports") {
+    redirect("/case-study/kb-exports");
+  }
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
