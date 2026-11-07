@@ -69,7 +69,7 @@ const caseStudiesCol2 = [
 const caseStudiesCol3 = [
   { title: "FitPulse Mobile App", href: "/projects/fitplus-app" },
   { title: "IRider Transportation", href: "/projects/rider-app" },
-  { title: "ShopEase E-Commerce", href: "/case-study/brew-heaven" },
+  { title: "ShopEase E-Commerce", href: "/projects/shopease-ecommerce" },
 ];
 
 // Luxury smooth easing curve (natural deceleration over 0.65s)

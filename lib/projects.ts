@@ -547,6 +547,48 @@ export const projects: Project[] = [
     }
   },
   {
+    id: "shopease-ecommerce",
+    title: "ShopEase E-Commerce App",
+    category: "Mobile Apps",
+    tagline: "A simpler way to discover, shop, and track every order",
+    desc: "A mobile commerce experience bringing product discovery, curated collections, secure checkout, and order tracking together in one storefront.",
+    overview: "ShopEase makes everyday shopping straightforward with a browsable product catalog, clear product details, a focused cart, and a reliable checkout flow. PixoraSofttech designed the mobile commerce experience to help shoppers move naturally from discovery to delivery updates.",
+    tags: ["React Native", "Mobile Commerce", "E-Commerce", "Shopping Cart", "Order Tracking"],
+    client: "ShopEase Retail",
+    industry: "Retail & Mobile E-Commerce",
+    timeline: "Completed & Live",
+    deliverables: [
+      "Cross-Platform Mobile Shopping App",
+      "Product Catalog & Category Discovery",
+      "Shopping Cart & Secure Checkout Flow",
+      "Order History & Delivery Status Tracking"
+    ],
+    img: "/portfolio/shopease-app.png",
+    heroImg: "/portfolio/shopease-app.png",
+    status: "processing",
+    challenge: "Mobile shoppers needed a quicker way to find products and complete purchases. The shopping journey had to keep category browsing, product information, cart updates, and checkout clear on smaller screens.",
+    solution: "We created a mobile storefront with organized product discovery, detailed item views, a persistent cart, and a guided checkout flow. Order history and delivery updates help customers stay informed after placing an order.",
+    keyFeatures: [
+      "Product Catalog with Search and Category Browsing",
+      "Product Detail Pages with Image and Pricing Information",
+      "Shopping Cart with Quantity and Order Summary Controls",
+      "Secure Checkout, Order History, and Status Updates"
+    ],
+    results: [
+      "Discovery, cart, and checkout combined in one shopping flow",
+      "Clear order summaries help shoppers review purchases before checkout",
+      "Order status visibility supports customers after purchase"
+    ],
+    testimonial: {
+      text: "ShopEase gives our customers a clear path from browsing to checkout. The product catalog, cart, and order updates now work together in one convenient mobile experience.",
+      name: "ShopEase Product Team",
+      role: "Digital Commerce Team",
+      company: "ShopEase Retail",
+      rating: 5,
+      avatarBg: "bg-violet-600"
+    }
+  },
+  {
     id: "catering-app",
     title: "Catering & Event Food App",
     category: "Mobile Apps",
