@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import type { SolarSolutionsSectionProps } from "./types";
 
@@ -9,50 +8,54 @@ export default function SummarySection({
   project,
 }: Pick<SolarSolutionsSectionProps, "liveUrl" | "project">) {
   if (!project) return null;
+
+  const duration = project.timeline.match(/\d+/)?.[0] ?? project.timeline;
+  const durationUnit = project.timeline.toLowerCase().includes("week") ? "weeks" : "";
+
   return (
-    <section className="w-full bg-transparent text-black py-16 sm:py-24 2xl:py-32 px-6 sm:px-12 lg:px-16 2xl:px-24 select-none">
-      <div className="max-w-[1600px] 2xl:max-w-[1920px] mx-auto w-full">
-        <h2 className="text-4xl sm:text-6xl md:text-7xl 2xl:text-8xl font-bold tracking-tight text-zinc-950 leading-none break-words mb-12 sm:mb-16 2xl:mb-20">
+    <section className="w-full select-none bg-transparent px-6 py-16 text-black sm:px-12 sm:py-24 lg:px-16 2xl:px-24 2xl:py-32">
+      <div className="mx-auto w-full max-w-[1600px] 2xl:max-w-[1920px]">
+        <h2 className="mb-12 break-words text-4xl font-bold leading-none tracking-tight text-zinc-950 sm:mb-16 sm:text-6xl md:text-7xl 2xl:mb-20 2xl:text-8xl">
           Summary
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 2xl:gap-24 items-start">
-          <div className="lg:col-span-6 flex flex-col gap-10 sm:gap-14 w-full">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16 2xl:gap-24">
+          <div className="flex w-full flex-col gap-10 sm:gap-14 lg:col-span-6">
             <div>
-              <span className="text-xs sm:text-sm text-zinc-400 font-normal">
+              <span className="text-xs font-normal text-zinc-400 sm:text-sm">
                 Industry
               </span>
-              <p className="text-base sm:text-lg 2xl:text-xl font-semibold text-zinc-950 mt-1">
+              <p className="mt-1 text-base font-semibold text-zinc-950 sm:text-lg 2xl:text-xl">
                 {project.industry}
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-8 sm:gap-12 items-start">
+            <div className="grid grid-cols-2 items-start gap-8 sm:gap-12">
               <div>
-                <span className="text-xs sm:text-sm text-zinc-400 font-normal">
+                <span className="text-xs font-normal text-zinc-400 sm:text-sm">
                   Duration
                 </span>
-                <div className="flex items-baseline mt-1.5">
-                  <span className="text-5xl sm:text-6xl 2xl:text-7xl font-bold text-zinc-950 tracking-tight leading-none">
-                    {project.timeline.match(/\d+/)?.[0] ?? project.timeline}
+                <div className="mt-1.5 flex items-baseline">
+                  <span className="text-5xl font-bold leading-none tracking-tight text-zinc-950 sm:text-6xl 2xl:text-7xl">
+                    {duration}
                   </span>
-                  <span className="text-xs sm:text-sm text-zinc-400 font-normal ml-2 pb-0.5">
-                    {project.timeline.toLowerCase().includes("week") ? "weeks" : ""}
+                  <span className="ml-2 pb-0.5 text-xs font-normal text-zinc-400 sm:text-sm">
+                    {durationUnit}
                   </span>
                 </div>
               </div>
 
               <div>
-                <span className="text-xs sm:text-sm text-zinc-400 font-normal">
+                <span className="text-xs font-normal text-zinc-400 sm:text-sm">
                   Services
                 </span>
-                <div className="flex flex-col gap-1.5 mt-1.5">
-                  {project.deliverables.slice(0, 3).map((svc, i) => (
+                <div className="mt-1.5 flex flex-col gap-1.5">
+                  {project.deliverables.slice(0, 3).map((service) => (
                     <span
-                      key={i}
-                      className="text-base sm:text-lg 2xl:text-xl font-semibold text-zinc-950 leading-snug"
+                      key={service}
+                      className="text-base font-semibold leading-snug text-zinc-950 sm:text-lg 2xl:text-xl"
                     >
-                      {svc}
+                      {service}
                     </span>
                   ))}
                 </div>
@@ -60,50 +63,23 @@ export default function SummarySection({
             </div>
           </div>
 
-          <div className="lg:col-span-6 flex flex-col gap-10 sm:gap-14 w-full">
-            <div className="max-w-xl">
-              <p className="text-lg sm:text-xl 2xl:text-2xl text-zinc-900 leading-relaxed font-normal">
-                "{project.testimonial.text}"
-              </p>
-            </div>
+          <div className="flex h-full w-full flex-col justify-between lg:col-span-6">
+            <p className="max-w-xl text-base font-normal leading-relaxed text-zinc-800 sm:text-lg 2xl:text-xl">
+              {project.overview || project.testimonial.text}
+            </p>
 
-            <div className="flex flex-wrap items-center justify-between gap-6 pt-2">
-              <div className="flex items-center gap-4">
-                <div
-                  className={`size-12 2xl:size-14 rounded-full flex items-center justify-center text-white font-bold text-lg 2xl:text-xl shrink-0 shadow-sm ${
-                    project.testimonial.avatarBg ?? "bg-zinc-800"
-                  }`}
-                >
-                  {project.testimonial.name.charAt(0)}
-                </div>
-                <div>
-                  <h4 className="text-base 2xl:text-lg font-semibold text-zinc-950 leading-tight">
-                    {project.testimonial.name}
-                  </h4>
-                  <p className="text-xs 2xl:text-sm text-zinc-400 mt-0.5">
-                    {project.testimonial.role}, {project.testimonial.company}
-                  </p>
-                </div>
-              </div>
-
-              {liveUrl ? (
+            {liveUrl && (
+              <div className="mt-8 pt-6">
                 <a
                   href={liveUrl}
                   target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#111] hover:bg-black text-white text-xs sm:text-sm font-semibold px-6 py-3.5 transition-transform hover:-translate-y-0.5 shadow-md shrink-0"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-black"
                 >
-                  Visit Site <ArrowUpRight className="size-4" />
+                  Visit Live Website <ArrowUpRight className="size-4" />
                 </a>
-              ) : (
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#111] hover:bg-black text-white text-xs sm:text-sm font-semibold px-6 py-3.5 transition-transform hover:-translate-y-0.5 shadow-md shrink-0"
-                >
-                  Start a Project <ArrowUpRight className="size-4" />
-                </a>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
