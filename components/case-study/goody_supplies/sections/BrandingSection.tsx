@@ -1,0 +1,143 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { BrandingCard } from "@/components/ui/branding-card";
+
+export default function BrandingSection() {
+  const brandingData = [
+    {
+        "category": "Typography",
+        "title": "Culinary Display",
+        "subtitle": "Playfair Display Serif",
+        "displayElement": "Aa",
+        "displayClassName": "font-serif italic font-bold",
+        "colors": [
+            "#4C0519",
+            "#881337",
+            "#BE123C",
+            "#FDA4AF",
+            "#FFF1F2"
+        ],
+        "colorNames": [
+            "Wine 950",
+            "Deep Crimson",
+            "Rose Gold",
+            "Blush Tint",
+            "Ivory"
+        ]
+    },
+    {
+        "category": "Typography",
+        "title": "Menu & Ingredients",
+        "subtitle": "Inter Clean UI",
+        "displayElement": "Ag",
+        "displayClassName": "font-sans font-bold tracking-normal",
+        "colors": [
+            "#18181B",
+            "#3F3F46",
+            "#71717A",
+            "#E4E4E7",
+            "#FAFAFA"
+        ],
+        "colorNames": [
+            "Ink 900",
+            "Slate 700",
+            "Muted 500",
+            "Border 200",
+            "Surface 50"
+        ]
+    },
+    {
+        "category": "Brand Palette",
+        "title": "Gourmet Hospitality",
+        "subtitle": "Artisanal Flavor Tones",
+        "displayElement": "GS",
+        "displayClassName": "font-serif font-black tracking-tighter",
+        "colors": [
+            "#BE123C",
+            "#F97316",
+            "#15803D",
+            "#18181B",
+            "#FFF7ED"
+        ],
+        "colorNames": [
+            "Cabernet",
+            "Warm Apricot",
+            "Fresh Herb",
+            "Charcoal",
+            "Linen"
+        ]
+    },
+    {
+        "category": "Color System",
+        "title": "Dietary Badges",
+        "subtitle": "Guest Preference Indicators",
+        "displayElement": "EAT",
+        "displayClassName": "font-mono font-bold tracking-tight text-3xl pt-1",
+        "colors": [
+            "#16A34A",
+            "#EAB308",
+            "#DC2626",
+            "#8B5CF6",
+            "#F3F4F6"
+        ],
+        "colorNames": [
+            "Vegan/Veg",
+            "Gluten-Free",
+            "Contains Nuts",
+            "Halal",
+            "Neutral"
+        ]
+    }
+];
+
+  return (
+    <section className="w-full bg-transparent text-black pt-16 sm:pt-20 2xl:pt-24 pb-16 sm:pb-20 2xl:pb-24 px-4 sm:px-8 lg:px-12 2xl:px-20 select-none">
+      <div className="max-w-[1600px] 2xl:max-w-[1920px] mx-auto w-full">
+        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-24 sm:mb-28 lg:mb-32 2xl:mb-36">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl"
+          >
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-[#BE123C] mb-3">
+              Brand Identity &amp; Design System
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-semibold tracking-tight text-zinc-950 leading-tight">
+              Crafting the sensory digital language of Goody Supplies Catering
+            </h2>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="max-w-xl text-sm sm:text-base text-zinc-600 leading-relaxed"
+          >
+            A tailored visual identity uniting purposeful typography, balanced interface neutrals, and high-converting touchpoints.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {brandingData.map((card, index) => (
+            <BrandingCard
+              key={index}
+              category={card.category}
+              title={card.title}
+              subtitle={card.subtitle}
+              displayElement={
+                <span className={card.displayClassName}>{card.displayElement}</span>
+              }
+              colors={card.colors}
+              colorNames={card.colorNames}
+              transition={{ delay: index * 0.1 }}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

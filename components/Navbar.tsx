@@ -51,25 +51,40 @@ const serviceItems = [
   },
 ];
 
-const caseStudiesCol1 = [
+interface CaseStudyNavItem {
+  title: string;
+  href: string;
+  isNew?: boolean;
+}
+
+const caseStudiesCol1: CaseStudyNavItem[] = [
   { title: "Brew Haven Coffee", href: "/case-study/brew-heaven" },
-  { title: "Delivery Flow System", href: "/projects/delivery-dashboard" },
-  { title: "HRMS Enterprise", href: "/projects/hrms" },
-  { title: "KB Exports Global", href: "/projects/kb-exports" },
-  { title: "Light CRM Suite", href: "/projects/crm" },
+  { title: "Eduka College Portal", href: "/case-study/eduka-college", isNew: true },
+  { title: "Glass Haven Luxury", href: "/case-study/glass-haven", isNew: true },
+  { title: "Solar Solutions Energy", href: "/case-study/solar-solutions", isNew: true },
+  { title: "State College Campus", href: "/case-study/state-college", isNew: true },
+  { title: "Zostel Travel & Hostels", href: "/case-study/zostel", isNew: true },
+  { title: "Travel Hotel Hub", href: "/case-study/travel-hotel-hub", isNew: true },
+  { title: "Goody Supplies Catering", href: "/case-study/goody-supplies", isNew: true },
+  { title: "KB Exports Global", href: "/case-study/kb-exports" },
 ];
 
-const caseStudiesCol2 = [
-  { title: "Inventory Cloud POS", href: "/projects/inventory" },
-  { title: "Restaurant Management", href: "/projects/supplier" },
-  { title: "Salon Appointment System", href: "/projects/salon" },
-  { title: "Textile ERP System", href: "/projects/textile-erp" },
+const caseStudiesCol2: CaseStudyNavItem[] = [
+  { title: "Delivery Flow System", href: "/case-study/delivery-dashboard" },
+  { title: "HRMS Enterprise", href: "/case-study/hrms" },
+  { title: "Light CRM Suite", href: "/case-study/crm" },
+  { title: "Inventory Cloud POS", href: "/case-study/inventory" },
+  { title: "Restaurant Supplier B2B", href: "/case-study/supplier" },
+  { title: "Salon Appointment POS", href: "/case-study/salon" },
+  { title: "Textile ERP System", href: "/case-study/textile-erp" },
 ];
 
-const caseStudiesCol3 = [
-  { title: "FitPulse Mobile App", href: "/projects/fitplus-app" },
-  { title: "IRider Transportation", href: "/projects/rider-app" },
-  { title: "ShopEase E-Commerce", href: "/projects/shopease-ecommerce" },
+const caseStudiesCol3: CaseStudyNavItem[] = [
+  { title: "FitPulse Mobile App", href: "/case-study/fitplus-app" },
+  { title: "IRider Transportation", href: "/case-study/rider-app" },
+  { title: "ShopEase E-Commerce", href: "/case-study/shopease-ecommerce" },
+  { title: "Catering & Event Food App", href: "/case-study/catering-app", isNew: true },
+  { title: "Supplier Wholesale App", href: "/case-study/supplier-wholesale-app", isNew: true },
 ];
 
 // Luxury smooth easing curve (natural deceleration over 0.65s)
@@ -274,60 +289,83 @@ export default function Navbar() {
 
               <div
                 className="invisible absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out pointer-events-none group-hover:pointer-events-auto"
-                style={{ width: "740px" }}
+                style={{ width: "880px" }}
               >
-                <div className="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-xl backdrop-blur-xl">
-                  <div className="grid grid-cols-3 gap-x-4">
+                <div className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-2xl backdrop-blur-xl">
+                  <div className="grid grid-cols-3 gap-x-6">
                     <div>
-                      <span className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2 px-2.5">
-                        Enterprise & ERP
+                      <span className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2 px-2.5 font-semibold">
+                        Websites &amp; Portals
                       </span>
                       <div className="flex flex-col gap-0.5">
                         {caseStudiesCol1.map((c) => (
                           <Link
                             key={c.title}
                             href={c.href}
-                            className="px-2.5 py-2 rounded-xl text-[14px] font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors"
+                            className="px-2.5 py-1.5 rounded-xl text-[13.5px] font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors flex items-center justify-between group/link"
                           >
-                            {c.title}
+                            <span className="truncate">{c.title}</span>
+                            {c.isNew && (
+                              <span className="text-[9px] font-bold text-blue-600 bg-blue-50 border border-blue-200/60 px-1.5 py-0.2 rounded-full uppercase tracking-wider shrink-0">
+                                New
+                              </span>
+                            )}
                           </Link>
                         ))}
                       </div>
                     </div>
 
                     <div>
-                      <span className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2 px-2.5">
-                        Commerce & POS
+                      <span className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2 px-2.5 font-semibold">
+                        Enterprise &amp; SaaS
                       </span>
                       <div className="flex flex-col gap-0.5">
                         {caseStudiesCol2.map((c) => (
                           <Link
                             key={c.title}
                             href={c.href}
-                            className="px-2.5 py-2 rounded-xl text-[14px] font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors"
+                            className="px-2.5 py-1.5 rounded-xl text-[13.5px] font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors flex items-center justify-between group/link"
                           >
-                            {c.title}
+                            <span className="truncate">{c.title}</span>
                           </Link>
                         ))}
                       </div>
                     </div>
 
                     <div>
-                      <span className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2 px-2.5">
-                        Mobile & Apps
+                      <span className="block text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2 px-2.5 font-semibold">
+                        Mobile Applications
                       </span>
                       <div className="flex flex-col gap-0.5">
                         {caseStudiesCol3.map((c) => (
                           <Link
                             key={c.title}
                             href={c.href}
-                            className="px-2.5 py-2 rounded-xl text-[14px] font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors"
+                            className="px-2.5 py-1.5 rounded-xl text-[13.5px] font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition-colors flex items-center justify-between group/link"
                           >
-                            {c.title}
+                            <span className="truncate">{c.title}</span>
+                            {c.isNew && (
+                              <span className="text-[9px] font-bold text-amber-600 bg-amber-50 border border-amber-200/60 px-1.5 py-0.2 rounded-full uppercase tracking-wider shrink-0">
+                                New
+                              </span>
+                            )}
                           </Link>
                         ))}
                       </div>
                     </div>
+                  </div>
+
+                  {/* Mega-menu footer */}
+                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between px-2.5">
+                    <span className="text-xs text-slate-400">
+                      Explore our full engineering portfolio &amp; live deployments
+                    </span>
+                    <Link
+                      href="/projects"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0A2540] hover:text-[#143960] transition-colors"
+                    >
+                      View All 21 Projects &amp; Case Studies <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -457,19 +495,22 @@ export default function Navbar() {
                     />
                   </button>
                   {mobileCaseOpen && (
-                    <div className="pl-4 pr-2 py-1.5 flex flex-col gap-1 border-l-2 border-[#0A2540]/30 ml-3 mt-1">
-                      {[...caseStudiesCol1, ...caseStudiesCol2, ...caseStudiesCol3]
-                        .slice(0, 8)
-                        .map((c) => (
-                          <Link
-                            key={c.title}
-                            href={c.href}
-                            onClick={() => setMobileOpen(false)}
-                            className="py-1.5 text-sm text-slate-700 hover:text-black font-semibold"
-                          >
-                            {c.title}
-                          </Link>
-                        ))}
+                    <div className="pl-4 pr-2 py-1.5 flex flex-col gap-1 border-l-2 border-[#0A2540]/30 ml-3 mt-1 max-h-[340px] overflow-y-auto">
+                      {[...caseStudiesCol1, ...caseStudiesCol2, ...caseStudiesCol3].map((c) => (
+                        <Link
+                          key={c.title}
+                          href={c.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="py-1.5 text-sm text-slate-700 hover:text-black font-semibold flex items-center justify-between"
+                        >
+                          <span>{c.title}</span>
+                          {c.isNew && (
+                            <span className="text-[9px] font-bold text-blue-600 bg-blue-50 border border-blue-200/60 px-1.5 py-0.2 rounded-full uppercase tracking-wider shrink-0">
+                              New
+                            </span>
+                          )}
+                        </Link>
+                      ))}
                     </div>
                   )}
                 </div>

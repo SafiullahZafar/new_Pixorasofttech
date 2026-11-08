@@ -1,5 +1,6 @@
 import type { RefObject } from "react";
 import type { MotionValue } from "framer-motion";
+import type { Project } from "@/lib/projects";
 
 export interface CRMSectionProps {
   heroRef: RefObject<HTMLDivElement | null>;
@@ -14,4 +15,5 @@ export interface CRMSectionProps {
   liveUrl: string;
   cardHovered: boolean;
   setCardHovered: (hovered: boolean) => void;
+  project?: Project;
 }
