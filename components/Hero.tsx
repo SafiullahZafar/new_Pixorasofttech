@@ -84,13 +84,9 @@ export default function Hero() {
             <Link href="/projects" aria-label="View our projects" className="block h-full w-full">
               <div className="absolute inset-0 overflow-hidden bg-[#0A2540]">
                 <img
-                  src="/suppliers.png"
+                  src="/home_page/hero/hero1.png"
                   alt="PixoraSoftTech Showcase"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src =
-                      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80";
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
               </div>

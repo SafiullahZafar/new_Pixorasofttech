@@ -392,42 +392,42 @@ export function WorksWheel({
 const featuredWorks: WorksWheelItem[] = [
   {
     title: "Brew Haven Coffee",
-    image: "/portfolio/brew-haven.png",
+    image: "/home_page/our_projects/ourprojects1.png",
     href: "/case-study/brew-heaven",
   },
   {
     title: "Light CRM Suite",
-    image: "/portfolio/light-crm-dashboard.png",
+    image: "/home_page/our_projects/ourprojects2.png",
     href: "/projects/crm",
   },
   {
     title: "Delivery Flow System",
-    image: "/portfolio/delivery-dashboard.png",
+    image: "/home_page/our_projects/ourprojects3.png",
     href: "/projects/delivery-dashboard",
   },
   {
     title: "FitPulse Mobile App",
-    image: "/portfolio/fitpulse-app.png",
+    image: "/home_page/our_projects/ourprojects4.png",
     href: "/projects/fitplus-app",
   },
   {
     title: "Inventory Cloud POS",
-    image: "/portfolio/inventory-dashboard.png",
+    image: "/home_page/our_projects/ourprojects5.png",
     href: "/projects/inventory",
   },
   {
     title: "K.B. Exports Global",
-    image: "/portfolio/kb-exports.png",
+    image: "/home_page/our_projects/ourprojects6.png",
     href: "/projects/kb-exports",
   },
   {
     title: "Eduka College Platform",
-    image: "/portfolio/eduka-college.png",
+    image: "/home_page/our_projects/ourprojects7.png",
     href: "/projects/eduka-college",
   },
   {
     title: "Solar Solutions Portal",
-    image: "/portfolio/solar-solutions.png",
+    image: "/home_page/our_projects/ourprojects8.png",
     href: "/projects/solar-solutions",
   },
 ];

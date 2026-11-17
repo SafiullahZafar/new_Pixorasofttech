@@ -6,39 +6,39 @@ import InfiniteGallery, { ImageItem } from "@/components/InfiniteGallery";
 
 const GALLERY_IMAGES: ImageItem[] = [
   {
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    src: "/home_page/who_we_are/whoweare1.png",
     alt: "High-Performance Analytics Platforms",
   },
   {
-    src: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
+    src: "/home_page/who_we_are/whoweare2.png",
     alt: "Digital Product Architecture & UI",
   },
   {
-    src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
+    src: "/home_page/who_we_are/whoweare3.png",
     alt: "Mobile App Ecosystems & UX",
   },
   {
-    src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+    src: "/home_page/who_we_are/whoweare4.png",
     alt: "Full-Stack Web & Software Engineering",
   },
   {
-    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    src: "/home_page/who_we_are/whoweare5.png",
     alt: "Cloud Infrastructure & Edge APIs",
   },
   {
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
+    src: "/home_page/who_we_are/whoweare6.png",
     alt: "Product Strategy & Agile Sprints",
   },
   {
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    src: "/home_page/who_we_are/whoweare7.png",
     alt: "Scalable Enterprise Software Systems",
   },
   {
-    src: "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1200&q=80",
+    src: "/home_page/who_we_are/whoweare8.png",
     alt: "Digital Brand Identity & Design Systems",
   },
   {
-    src: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    src: "/home_page/who_we_are/whoweare9.png",
     alt: "Next-Gen AI & Modern Intelligence",
   },
 ];

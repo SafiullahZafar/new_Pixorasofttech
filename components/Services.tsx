@@ -27,7 +27,7 @@ export const servicesData: ServiceItem[] = [
     eyebrow: "High-Performance Next.js Websites Engineered to Convert",
     description:
       "We design and build fast, responsive, SEO-optimized web applications with sub-second loading speeds, modern frameworks, and conversion-focused architectures that elevate your brand.",
-    imageUrl: "/portfolio/brew-haven.png",
+    imageUrl: "/home_page/our_expertise/ourexpertise1.png?v=2",
     tags: ["Next.js & React", "Responsive UI", "Core Web Vitals", "SEO Ready"],
   },
   {
@@ -38,7 +38,7 @@ export const servicesData: ServiceItem[] = [
     eyebrow: "Cross-Platform iOS & Android Apps Built for Scale",
     description:
       "Intuitive, native-feel mobile applications crafted with React Native and Flutter. We engineer low-latency, offline-first apps with delightful interactions and App Store launch readiness.",
-    imageUrl: "/portfolio/fitpulse-app.png",
+    imageUrl: "/home_page/our_expertise/ourexpertise2.png?v=2",
     tags: ["iOS & Android", "React Native", "Offline First", "Store Launch"],
   },
   {
@@ -49,7 +49,7 @@ export const servicesData: ServiceItem[] = [
     eyebrow: "Enterprise Dashboards, Internal Systems & Portals",
     description:
       "Tailor-made SaaS platforms, admin dashboards, and operations software built around your exact business logic to streamline manual workflows and unify data.",
-    imageUrl: "/portfolio/delivery-dashboard.png",
+    imageUrl: "/home_page/our_expertise/ourexpertise3.png?v=2",
     tags: ["Custom Portals", "API Integrations", "Automation", "Role-Based Access"],
   },
   /*
@@ -61,30 +61,30 @@ export const servicesData: ServiceItem[] = [
     eyebrow: "Human-Centered Digital Interfaces That Drive Action",
     description:
       "Research-backed interface design and comprehensive design systems that transform complex software into intuitive, visually breathtaking experiences users love.",
-    imageUrl: "/portfolio/shopease-app.png",
+    imageUrl: "/home_page/our_expertise/ourexpertise5.png?v=2",
     tags: ["User Research", "Wireframes", "Design Systems", "Interactive Prototypes"],
   },
   */
   {
     id: 4,
-    slug: "cloud-solutions",
+    slug: "UI?UX-design",
     badge: "SERVICE 04",
-    title: "Cloud & AI Solutions",
+    title: "UI/UX & Product Design",
     eyebrow: "Secure Cloud Systems, APIs & Practical AI Integrations",
     description:
       "Secure cloud infrastructure, reliable APIs, automated deployments, and practical AI integrations that help your products connect, scale, and run smoothly.",
-    imageUrl: "/portfolio/solar-solutions.png",
+    imageUrl: "/home_page/our_expertise/ourexpertise4.png?v=2",
     tags: ["AWS & Azure", "CI/CD Pipelines", "Auto Scaling", "Zero Downtime"],
   },
   {
     id: 5,
-    slug: "custom-software-development",
+    slug: "cloud-solutions",
     badge: "SERVICE 05",
-    title: "AI & Intelligent Automation",
+    title: "Cloud & AI Solutions",
     eyebrow: "Smart Workflows, Custom AI Integrations & Agents",
     description:
       "Practical AI integrations, automated data pipelines, and intelligent assistant workflows designed to eliminate repetitive operational tasks and multiply productivity.",
-    imageUrl: "/portfolio/flowcrm-dashboard.png",
+    imageUrl: "/home_page/our_expertise/ourexpertise5.png?v=2",
     tags: ["AI Integrations", "Smart Workflows", "API Bridges", "Analytics"],
   },
 ];
