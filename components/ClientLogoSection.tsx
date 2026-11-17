@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 
 const logos = [
-  { src: "/home_page/client_logos/clientlogos1.jpg", alt: "Client brand" },
+  { src: "/home_page/client_logos/clientlogos1.png", alt: "Client brand" },
   { src: "/home_page/client_logos/clientlogos2.png", alt: "Billora POS" },
   { src: "/home_page/client_logos/clientlogos3.png", alt: "Byte and Brew" },
   { src: "/home_page/client_logos/clientlogos4.png", alt: "Client brand" },
@@ -21,6 +21,7 @@ const logos = [
   { src: "/home_page/client_logos/clientlogos15.png", alt: "Threadix" },
   { src: "/home_page/client_logos/clientlogos16.png", alt: "Travel Hub" },
   { src: "/home_page/client_logos/clientlogos17.png", alt: "Zostell Travel" },
+  { src: "/home_page/client_logos/clientlogos18.png", alt: "Client brand" },
 ];
 
 const orbitCount = 3;
