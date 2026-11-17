@@ -84,7 +84,7 @@ export default function ClientLogoSection() {
                   return (
                     <div
                       key={logo.src}
-                      className="absolute flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center p-2 sm:size-16"
+                      className="absolute flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center p-1.5 sm:size-[4.5rem]"
                       style={{ left: `${x}%`, top: `${y}%` }}
                     >
                       <img
