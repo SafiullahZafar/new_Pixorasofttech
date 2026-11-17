@@ -51,10 +51,10 @@ export default function ClientLogoSection() {
             Clients we&apos;ve worked with
           </h2>
           <p className="mt-4 max-w-2xl text-sm font-normal leading-relaxed text-[#555555] sm:mt-8 sm:text-base">
-            We partner with ambitious teams to turn their ideas into thoughtful,
-            reliable digital products. From the first plans through launch and
-            ongoing improvements, we work closely with each client to build
-            solutions that support the way their business grows.
+            The logos shown here represent just some of the clients we’ve had
+            the pleasure of working with. We partner with ambitious teams to
+            turn ideas into thoughtful, reliable digital products and support
+            them as their businesses grow.
           </p>
         </div>
 
