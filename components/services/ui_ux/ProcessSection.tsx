@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import type { ServiceDetail } from "@/lib/service-details";
 
 const PROCESS_STEPS = [
@@ -81,12 +80,8 @@ export default function ProcessSection({ process: _process }: { process?: Servic
             {PROCESS_STEPS.map((step, index) => {
               const isBlue = index % 2 === 0;
               return (
-                <motion.article
+                <article
                   key={step.number}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.55, delay: index * 0.08 }}
                   className={`group relative z-10 w-full transition-transform duration-300 hover:z-20 hover:scale-[1.02] md:absolute md:w-[min(38vw,350px)] ${CARD_POSITIONS[index]} ${index % 2 === 0 ? "md:rotate-2" : "md:-rotate-2"}`}
                 >
                   <div className="rounded-[25px] border border-neutral-100 bg-white p-2.5 shadow-[0_10px_25px_0_#D3D3D3]">
@@ -102,7 +97,7 @@ export default function ProcessSection({ process: _process }: { process?: Servic
                       )}
                     </div>
                   </div>
-                </motion.article>
+                </article>
               );
             })}
           </div>
