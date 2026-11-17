@@ -74,7 +74,7 @@ export default function Hero() {
         </div>
 
         {/* Media Showcase Banner with Interactive SHOW CASES Cursor Badge & 3D In-Place Flip */}
-        <div className="relative mt-10 sm:mt-16 lg:mt-20 w-full aspect-video sm:aspect-auto sm:h-[480px] lg:h-[600px] xl:h-[620px]">
+        <div className="relative mt-10 sm:mt-16 lg:mt-20 w-full aspect-[4/3] sm:aspect-video">
           <div
             ref={containerRef}
             onMouseMove={handleMouseMove}
@@ -82,13 +82,12 @@ export default function Hero() {
             className="relative block h-full w-full overflow-hidden rounded-2xl group cursor-pointer"
           >
             <Link href="/projects" aria-label="View our projects" className="block h-full w-full">
-              <div className="absolute inset-0 overflow-hidden bg-[#0A2540]">
+              <div className="absolute inset-0 overflow-hidden bg-transparent">
                 <img
                   src="/home_page/hero/hero1.png"
                   alt="PixoraSoftTech Showcase"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="absolute inset-0 h-full w-full object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
               </div>
 
               {/* Floating SHOW CASES Badge (Fixed position on mobile, Interactive follower on desktop) */}
