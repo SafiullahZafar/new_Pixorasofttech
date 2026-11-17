@@ -370,3 +370,12 @@ body {
   animation: macbook-shadow infinite 9s ease;
 }
 
+@keyframes orbit-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+

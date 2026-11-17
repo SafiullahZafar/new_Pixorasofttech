@@ -7,6 +7,7 @@ import WhoWeAre from "@/components/WhoWeAre";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import TechLeverage from "@/components/TechLeverage";
+import ClientLogoSection from "@/components/ClientLogoSection";
 import GlobalNetwork from "@/components/GlobalNetwork";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -49,6 +50,9 @@ export default function Home() {
 
         {/* 7. For Companies With Tech Leverage */}
         <TechLeverage />
+
+        {/* Client logo orbit */}
+        <ClientLogoSection />
 
         {/* 8. Our Global Network */}
         <GlobalNetwork />
