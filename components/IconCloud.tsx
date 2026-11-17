@@ -1,13 +1,20 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import {
-  Cloud,
   fetchSimpleIcons,
   ICloud,
   renderSimpleIcon,
   SimpleIcon,
 } from "react-icon-cloud";
+
+// This library generates random canvas IDs while rendering. Load its Cloud
+// component only in the browser so the server and client markup cannot differ.
+const Cloud = dynamic(
+  () => import("react-icon-cloud").then((module) => module.Cloud),
+  { ssr: false },
+);
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
