@@ -116,7 +116,7 @@ export function WorksWheel({
     const stageH = h || 900;
     const stageW = w || 1600;
 
-    // Front card dimensions on scroll drum: clean, impressive showcase
+    // Full-size cards for the selected-work orbit.
     const targetCardH = Math.min(Math.max(stageH * 0.46, 300), 480);
     const cardW = Math.min(
       targetCardH * CARD_RATIO,
@@ -127,7 +127,7 @@ export function WorksWheel({
 
     const drumR = cardH * DRUM;
 
-    // Ring radius: spacious, elegant circle in full screen
+    // Keep the orbit compact enough to show full card faces without shrinking them.
     const ringR = Math.min(stageH * 0.40, stageW * 0.33, 380);
 
     // Make card size in circle formation noticeably bigger:
@@ -255,7 +255,7 @@ export function WorksWheel({
     <div
       aria-label={label}
       className={cn(
-        "relative h-full w-full select-none bg-transparent text-black overflow-hidden",
+        "relative h-full w-full select-none bg-transparent text-black",
         className,
       )}
       {...props}
@@ -438,7 +438,7 @@ export default function OurWork() {
   return (
     <section id="projects" className="relative w-full bg-transparent text-black font-sans">
       {/* 1. Header Section - Big, bold, proper typography above the animation */}
-      <div className="w-full max-w-[2200px] mx-auto px-6 sm:px-10 lg:px-16 pt-16 sm:pt-24 pb-8 sm:pb-12">
+      <div className="relative z-10 w-full max-w-[2200px] mx-auto px-6 sm:px-10 lg:px-16 pt-16 sm:pt-24 pb-8 sm:pb-12">
         <div className="flex items-center gap-2.5 mb-3">
           <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
           <span className="text-xs font-bold tracking-widest uppercase text-black">OUR PROJECTS</span>
@@ -451,10 +451,10 @@ export default function OurWork() {
       {/* 2. Full-Screen 3D Animation Stage (Dedicated 100vh Sticky Viewport) */}
       <div
         ref={trackRef}
-        className="relative w-full"
+        className="relative z-0 w-full"
         style={{ height: `${(featuredWorks.length + 1) * 70 + 100}vh` }}
       >
-        <div className="sticky top-0 h-screen w-full overflow-hidden bg-transparent">
+        <div className="sticky top-0 h-screen w-full overflow-visible bg-transparent">
           <WorksWheel
             items={featuredWorks}
             label="Our Work"
