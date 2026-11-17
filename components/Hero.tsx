@@ -1,10 +1,20 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+
+const HERO_VIDEOS = Array.from(
+  { length: 10 },
+  (_, index) => `/videos/video-${String(index + 1).padStart(2, "0")}.mp4`,
+);
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const loadedVideosRef = useRef(new Map<string, HTMLVideoElement>());
+  const failedVideosRef = useRef(new Set<string>());
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+  const [videoReady, setVideoReady] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0, isHovering: false });
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
@@ -18,6 +28,89 @@ export default function Hero() {
 
   const handleMouseLeave = () => {
     setMousePos((prev) => ({ ...prev, isHovering: false }));
+  };
+
+  useEffect(() => {
+    let cancelled = false;
+    let nextVideoIndex = 1;
+    const loadedVideos = loadedVideosRef.current;
+
+    const preloadNextVideo = () => {
+      if (cancelled || nextVideoIndex >= HERO_VIDEOS.length) return;
+
+      const src = HERO_VIDEOS[nextVideoIndex];
+      const preloadVideo = document.createElement("video");
+      preloadVideo.preload = "auto";
+      preloadVideo.muted = true;
+      preloadVideo.playsInline = true;
+      preloadVideo.src = src;
+
+      const handleLoaded = (failed = false) => {
+        if (cancelled) {
+          preloadVideo.src = "";
+          return;
+        }
+
+        if (failed) {
+          failedVideosRef.current.add(src);
+          preloadVideo.src = "";
+        } else {
+          loadedVideos.set(src, preloadVideo);
+        }
+        nextVideoIndex += 1;
+        preloadNextVideo();
+      };
+
+      preloadVideo.addEventListener("canplaythrough", () => handleLoaded(), { once: true });
+      preloadVideo.addEventListener("error", () => handleLoaded(true), { once: true });
+      preloadVideo.load();
+    };
+
+    preloadNextVideo();
+
+    return () => {
+      cancelled = true;
+      loadedVideos.forEach((preloadVideo) => {
+        preloadVideo.pause();
+        preloadVideo.removeAttribute("src");
+        preloadVideo.load();
+      });
+      loadedVideos.clear();
+    };
+  }, []);
+
+  const playNextVideo = () => {
+    let nextIndex = (activeVideoIndex + 1) % HERO_VIDEOS.length;
+    let checkedVideos = 0;
+
+    while (
+      failedVideosRef.current.has(HERO_VIDEOS[nextIndex]) &&
+      checkedVideos < HERO_VIDEOS.length
+    ) {
+      nextIndex = (nextIndex + 1) % HERO_VIDEOS.length;
+      checkedVideos += 1;
+    }
+
+    if (checkedVideos < HERO_VIDEOS.length) {
+      setVideoReady(false);
+      setActiveVideoIndex(nextIndex);
+    }
+  };
+
+  const handleVideoCanPlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    void video.play().then(() => {
+      setVideoReady(true);
+    }).catch(() => {
+      setVideoReady(false);
+    });
+  };
+
+  const handleVideoError = () => {
+    failedVideosRef.current.add(HERO_VIDEOS[activeVideoIndex]);
+    playNextVideo();
   };
 
   return (
@@ -86,7 +179,21 @@ export default function Hero() {
                 <img
                   src="/home_page/hero/hero1.png"
                   alt="PixoraSoftTech Showcase"
-                  className="absolute inset-0 h-full w-full object-contain"
+                  className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${videoReady ? "opacity-0" : "opacity-100"}`}
+                />
+                <video
+                  ref={videoRef}
+                  key={HERO_VIDEOS[activeVideoIndex]}
+                  src={HERO_VIDEOS[activeVideoIndex]}
+                  poster="/home_page/hero/hero1.png"
+                  muted
+                  playsInline
+                  preload="auto"
+                  onCanPlay={handleVideoCanPlay}
+                  onEnded={playNextVideo}
+                  onError={handleVideoError}
+                  aria-label={`PixoraSoftTech showcase video ${activeVideoIndex + 1}`}
+                  className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${videoReady ? "opacity-100" : "opacity-0"}`}
                 />
               </div>
 
