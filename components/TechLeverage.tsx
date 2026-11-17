@@ -36,7 +36,10 @@ export default function TechLeverage() {
               tech leverage
             </h2>
             <p className="text-base md:text-lg text-[#555555] leading-relaxed max-w-xl font-normal">
-              We specialize in working with digital products and brands, regardless of the size and lifecycle stage, from startups to established businesses striving to achieve significant tech leverage.
+              We choose the right technologies for each product, from modern
+              frameworks and cloud platforms to data, AI, and automation. The
+              tools shown here are a small selection of what we work with; we
+              tailor the stack to each team&apos;s goals and needs.
             </p>
           </div>
 
