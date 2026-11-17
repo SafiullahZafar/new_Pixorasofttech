@@ -3,14 +3,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import HeadingAnimationService from "@/components/HeadingAnimationService";
 import AnimationServiceDescription from "@/components/AnimationServiceDescription";
 
 export interface ServiceItem {
   id: number;
   slug: string;
-  badge: string;
   title: string;
   eyebrow: string;
   description: string;
@@ -22,7 +21,6 @@ export const servicesData: ServiceItem[] = [
   {
     id: 1,
     slug: "website-development",
-    badge: "SERVICE 01",
     title: "Website Development",
     eyebrow: "High-Performance Next.js Websites Engineered to Convert",
     description:
@@ -33,7 +31,6 @@ export const servicesData: ServiceItem[] = [
   {
     id: 2,
     slug: "mobile-app-development",
-    badge: "SERVICE 02",
     title: "Mobile App Development",
     eyebrow: "Cross-Platform iOS & Android Apps Built for Scale",
     description:
@@ -44,7 +41,6 @@ export const servicesData: ServiceItem[] = [
   {
     id: 3,
     slug: "custom-software-development",
-    badge: "SERVICE 03",
     title: "Custom Software Development",
     eyebrow: "Enterprise Dashboards, Internal Systems & Portals",
     description:
@@ -56,7 +52,6 @@ export const servicesData: ServiceItem[] = [
   {
     id: 4,
     slug: "ui-ux-design",
-    badge: "SERVICE 04",
     title: "UI/UX & Product Design",
     eyebrow: "Human-Centered Digital Interfaces That Drive Action",
     description:
@@ -67,25 +62,23 @@ export const servicesData: ServiceItem[] = [
   */
   {
     id: 4,
-    slug: "UI?UX-design",
-    badge: "SERVICE 04",
+    slug: "ui-ux-design",
     title: "UI/UX & Product Design",
-    eyebrow: "Secure Cloud Systems, APIs & Practical AI Integrations",
+    eyebrow: "Human-Centered Digital Interfaces That Drive Action",
     description:
-      "Secure cloud infrastructure, reliable APIs, automated deployments, and practical AI integrations that help your products connect, scale, and run smoothly.",
+      "Research-backed interface design and comprehensive design systems that turn complex software into clear, intuitive experiences.",
     imageUrl: "/home_page/our_expertise/ourexpertise4.png?v=2",
-    tags: ["AWS & Azure", "CI/CD Pipelines", "Auto Scaling", "Zero Downtime"],
+    tags: ["User Research", "Wireframes", "Design Systems", "Interactive Prototypes"],
   },
   {
     id: 5,
     slug: "cloud-solutions",
-    badge: "SERVICE 05",
     title: "Cloud & AI Solutions",
-    eyebrow: "Smart Workflows, Custom AI Integrations & Agents",
+    eyebrow: "Secure Cloud Systems, APIs & Practical AI Integrations",
     description:
-      "Practical AI integrations, automated data pipelines, and intelligent assistant workflows designed to eliminate repetitive operational tasks and multiply productivity.",
+      "Secure cloud infrastructure, reliable APIs, automated deployments, and practical AI integrations that help your products connect, scale, and run smoothly.",
     imageUrl: "/home_page/our_expertise/ourexpertise5.png?v=2",
-    tags: ["AI Integrations", "Smart Workflows", "API Bridges", "Analytics"],
+    tags: ["AWS & Azure", "CI/CD Pipelines", "Auto Scaling", "Zero Downtime"],
   },
 ];
 
@@ -99,12 +92,11 @@ function AccordionCard({
   onActivate: () => void;
 }) {
   return (
-    <button
-      type="button"
-      aria-pressed={isActive}
+    <Link
+      href={`/services/${item.slug}`}
+      aria-label={`View ${item.title} service`}
       onMouseEnter={onActivate}
       onFocus={onActivate}
-      onClick={onActivate}
       className={`group relative h-[420px] sm:h-[480px] lg:h-[510px] xl:h-[540px] shrink-0 overflow-hidden rounded-2xl sm:rounded-3xl text-left border border-black/10 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-black ${
         isActive
           ? "w-[min(82vw,340px)] sm:w-[360px] lg:w-[330px] xl:w-[400px] 2xl:w-[450px] shadow-[0_24px_60px_-15px_rgba(10,37,64,0.25)]"
@@ -131,50 +123,30 @@ function AccordionCard({
         }`}
       />
 
-      {/* Expanded Content View (when active) */}
+      {/* Expanded Title View (when active) */}
       <div
-        className={`absolute inset-0 p-5 sm:p-7 lg:p-8 flex flex-col justify-between transition-opacity duration-300 ${
+        className={`absolute inset-0 p-5 sm:p-7 lg:p-8 flex flex-col justify-end transition-opacity duration-300 ${
           isActive ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex items-center justify-between">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wider uppercase bg-white/20 text-white backdrop-blur-md border border-white/20">
-            {item.badge}
-          </span>
-          <span className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
-            <ArrowRight className="w-4 h-4" />
-          </span>
-        </div>
-
         <div>
-          <h3 className="text-xl sm:text-2xl lg:text-[26px] xl:text-3xl font-bold text-white tracking-tight leading-tight mb-2">
+          <h3 className="text-xl sm:text-2xl lg:text-[26px] xl:text-3xl font-bold text-white tracking-tight leading-tight">
             {item.title}
           </h3>
-          <p className="text-xs sm:text-sm text-white/85 line-clamp-2 leading-relaxed">
-            {item.description}
-          </p>
-          <div className="mt-3 sm:mt-4 flex items-center gap-2 text-xs font-semibold text-white/95">
-            <span>Explore Service Details</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-          </div>
         </div>
       </div>
 
       {/* Collapsed Pill View (vertical title when inactive) */}
       <div
-        className={`absolute inset-0 flex flex-col items-center justify-between py-5 sm:py-6 transition-opacity duration-300 ${
+        className={`absolute inset-0 flex flex-col items-center justify-center py-5 sm:py-6 transition-opacity duration-300 ${
           !isActive ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
-        <span className="text-[10px] sm:text-[11px] font-bold tracking-wider text-white/70">
-          0{item.id}
-        </span>
         <span className="whitespace-nowrap text-xs sm:text-sm lg:text-[13px] xl:text-sm font-semibold tracking-wide text-white [writing-mode:vertical-rl] rotate-180">
           {item.title}
         </span>
-        <span className="w-2 h-2 rounded-full bg-white/40 group-hover:bg-white transition-colors" />
       </div>
-    </button>
+    </Link>
   );
 }
 
@@ -223,7 +195,7 @@ export default function Services() {
               </div>
             </div>
             <p className="text-xs text-slate-400 text-center lg:text-right mt-2 pr-2 hidden sm:block">
-              Hover over any service card to expand details
+              Select a service card to open its page
             </p>
           </div>
         </div>
