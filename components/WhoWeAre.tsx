@@ -22,7 +22,7 @@ const GALLERY_IMAGES: ImageItem[] = [
     alt: "Full-Stack Web & Software Engineering",
   },
   {
-    src: "/home_page/who_we_are/whoweare5.png",
+    src: "/home_page/who_we_are/whoweare5.webp",
     alt: "Cloud Infrastructure & Edge APIs",
   },
   {
@@ -30,7 +30,7 @@ const GALLERY_IMAGES: ImageItem[] = [
     alt: "Product Strategy & Agile Sprints",
   },
   {
-    src: "/home_page/who_we_are/whoweare7.png",
+    src: "/home_page/who_we_are/whoweare7.webp",
     alt: "Scalable Enterprise Software Systems",
   },
   {
@@ -40,6 +40,50 @@ const GALLERY_IMAGES: ImageItem[] = [
   {
     src: "/home_page/who_we_are/whoweare9.png",
     alt: "Next-Gen AI & Modern Intelligence",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare10.png",
+    alt: "AI-Powered Product Innovation",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare11.png",
+    alt: "Modern Developer Experience & Tooling",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare12.png",
+    alt: "Real-Time Data & Live Systems",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare13.webp",
+    alt: "Creative Digital Experiences",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare14.png",
+    alt: "Enterprise Platform Engineering",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare15.webp",
+    alt: "Security & Compliance Architecture",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare16.png",
+    alt: "Global Deployment & Edge Networks",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare17.png",
+    alt: "Design Systems & Component Libraries",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare18.png",
+    alt: "API-First & Microservices Architecture",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare19.png",
+    alt: "Performance Optimization & Core Web Vitals",
+  },
+  {
+    src: "/home_page/who_we_are/whoweare20.png",
+    alt: "End-to-End Product Partnership",
   },
 ];
 
@@ -174,6 +218,7 @@ export default function WhoWeAre() {
             images={GALLERY_IMAGES}
             className="w-full h-full"
             speed={1.0}
+            visibleCount={12}
             centerTitle="Who We Are"
             scrollProgress={scrollYProgress}
           />

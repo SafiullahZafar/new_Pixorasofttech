@@ -581,6 +581,7 @@ export default function InfiniteGallery({
   images,
   className = "h-full w-full",
   style,
+  visibleCount,
   fadeSettings = {
     fadeIn: { start: 0.05, end: 0.25 },
     fadeOut: { start: 0.4, end: 0.43 },
@@ -657,6 +658,7 @@ export default function InfiniteGallery({
         <Suspense fallback={null}>
           <GalleryScene
             images={images}
+            visibleCount={visibleCount}
             fadeSettings={fadeSettings}
             blurSettings={blurSettings}
             scrollProgress={scrollProgress}

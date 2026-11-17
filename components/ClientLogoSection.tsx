@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 
 const logos = [
@@ -30,6 +31,10 @@ const orbits = Array.from({ length: orbitCount }, (_, orbitIndex) =>
 
 export default function ClientLogoSection() {
   const shouldReduceMotion = useReducedMotion();
+  // Guard against hydration mismatch: useReducedMotion returns null on the server
+  // but true/false on the client. Apply animation styles only after mount.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
 
   return (
     <section
@@ -51,7 +56,7 @@ export default function ClientLogoSection() {
             Clients we&apos;ve worked with
           </h2>
           <p className="mt-4 max-w-2xl text-sm font-normal leading-relaxed text-[#555555] sm:mt-8 sm:text-base">
-            The logos shown here represent just some of the clients we’ve had
+            The logos shown here represent just some of the clients we've had
             the pleasure of working with. We partner with ambitious teams to
             turn ideas into thoughtful, reliable digital products and support
             them as their businesses grow.
@@ -71,9 +76,10 @@ export default function ClientLogoSection() {
                   width: orbitSize,
                   height: orbitSize,
                   transform: "translate(-50%, -50%)",
-                  animation: shouldReduceMotion
-                    ? undefined
-                    : `orbit-spin ${duration} linear infinite`,
+                  // Only apply animation after client mount to avoid SSR/client mismatch
+                  animation: mounted && !shouldReduceMotion
+                    ? `orbit-spin ${duration} linear infinite`
+                    : undefined,
                 }}
               >
                 {orbitLogos.map((logo, iconIndex) => {
