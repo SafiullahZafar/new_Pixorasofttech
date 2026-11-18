@@ -85,8 +85,9 @@ export default function ClientLogoSection() {
               >
                 {orbitLogos.map((logo, iconIndex) => {
                   const angle = (2 * Math.PI * iconIndex) / orbitLogos.length;
-                  const x = 50 + 50 * Math.cos(angle);
-                  const y = 50 + 50 * Math.sin(angle);
+                  // Round trig output so server and browser serialize identical styles.
+                  const x = Number((50 + 50 * Math.cos(angle)).toFixed(4));
+                  const y = Number((50 + 50 * Math.sin(angle)).toFixed(4));
 
                   return (
                     <div

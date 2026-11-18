@@ -3,18 +3,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-const HERO_VIDEOS = Array.from(
-  { length: 10 },
-  (_, index) => `/videos/video-${String(index + 1).padStart(2, "0")}.mp4`,
-);
+const PREVIEW_VIDEOS = ["/videos/video-01.mp4", "/videos/video-03.mp4"];
+const FULL_HERO_VIDEO = "/videos/video-full.mp4";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const loadedVideosRef = useRef(new Map<string, HTMLVideoElement>());
-  const failedVideosRef = useRef(new Set<string>());
-  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
-  const [videoReady, setVideoReady] = useState(false);
+  const previewVideoRef = useRef<HTMLVideoElement>(null);
+  const fullVideoRef = useRef<HTMLVideoElement>(null);
+  const [previewIndex, setPreviewIndex] = useState(0);
+  const [activeVideo, setActiveVideo] = useState<"preview" | "full">("preview");
+  const [videoVisible, setVideoVisible] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0, isHovering: false });
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
@@ -30,87 +28,29 @@ export default function Hero() {
     setMousePos((prev) => ({ ...prev, isHovering: false }));
   };
 
-  useEffect(() => {
-    let cancelled = false;
-    let nextVideoIndex = 1;
-    const loadedVideos = loadedVideosRef.current;
-
-    const preloadNextVideo = () => {
-      if (cancelled || nextVideoIndex >= HERO_VIDEOS.length) return;
-
-      const src = HERO_VIDEOS[nextVideoIndex];
-      const preloadVideo = document.createElement("video");
-      preloadVideo.preload = "auto";
-      preloadVideo.muted = true;
-      preloadVideo.playsInline = true;
-      preloadVideo.src = src;
-
-      const handleLoaded = (failed = false) => {
-        if (cancelled) {
-          preloadVideo.src = "";
-          return;
-        }
-
-        if (failed) {
-          failedVideosRef.current.add(src);
-          preloadVideo.src = "";
-        } else {
-          loadedVideos.set(src, preloadVideo);
-        }
-        nextVideoIndex += 1;
-        preloadNextVideo();
-      };
-
-      preloadVideo.addEventListener("canplaythrough", () => handleLoaded(), { once: true });
-      preloadVideo.addEventListener("error", () => handleLoaded(true), { once: true });
-      preloadVideo.load();
-    };
-
-    preloadNextVideo();
-
-    return () => {
-      cancelled = true;
-      loadedVideos.forEach((preloadVideo) => {
-        preloadVideo.pause();
-        preloadVideo.removeAttribute("src");
-        preloadVideo.load();
-      });
-      loadedVideos.clear();
-    };
-  }, []);
-
-  const playNextVideo = () => {
-    let nextIndex = (activeVideoIndex + 1) % HERO_VIDEOS.length;
-    let checkedVideos = 0;
-
-    while (
-      failedVideosRef.current.has(HERO_VIDEOS[nextIndex]) &&
-      checkedVideos < HERO_VIDEOS.length
-    ) {
-      nextIndex = (nextIndex + 1) % HERO_VIDEOS.length;
-      checkedVideos += 1;
-    }
-
-    if (checkedVideos < HERO_VIDEOS.length) {
-      setVideoReady(false);
-      setActiveVideoIndex(nextIndex);
-    }
-  };
-
-  const handleVideoCanPlay = () => {
-    const video = videoRef.current;
+  const handlePreviewCanPlay = () => {
+    if (activeVideo !== "preview") return;
+    const video = previewVideoRef.current;
     if (!video) return;
 
-    void video.play().then(() => {
-      setVideoReady(true);
-    }).catch(() => {
-      setVideoReady(false);
-    });
+    void video.play().then(() => setVideoVisible(true)).catch(() => {});
   };
 
-  const handleVideoError = () => {
-    failedVideosRef.current.add(HERO_VIDEOS[activeVideoIndex]);
-    playNextVideo();
+  const handleFullVideoCanPlay = () => {
+    const video = fullVideoRef.current;
+    if (!video || activeVideo === "full") return;
+
+    void video.play().then(() => {
+      setActiveVideo("full");
+      setVideoVisible(true);
+      previewVideoRef.current?.pause();
+    }).catch(() => {});
+  };
+
+  const handlePreviewEnded = () => {
+    if (activeVideo === "preview") {
+      setPreviewIndex((currentIndex) => (currentIndex + 1) % PREVIEW_VIDEOS.length);
+    }
   };
 
   return (
@@ -172,28 +112,38 @@ export default function Hero() {
             ref={containerRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative block h-full w-full overflow-hidden rounded-2xl group cursor-pointer"
+            className="group relative block h-full w-full overflow-hidden rounded-2xl"
           >
-            <Link href="/projects" aria-label="View our projects" className="block h-full w-full">
+            <div className="block h-full w-full">
               <div className="absolute inset-0 overflow-hidden bg-transparent">
                 <img
                   src="/home_page/hero/hero1.png"
                   alt="PixoraSoftTech Showcase"
-                  className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${videoReady ? "opacity-0" : "opacity-100"}`}
+                  fetchPriority="high"
+                  className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${videoVisible ? "opacity-0" : "opacity-100"}`}
                 />
+                {activeVideo === "preview" && (
+                  <video
+                    ref={previewVideoRef}
+                    src={PREVIEW_VIDEOS[previewIndex]}
+                    muted
+                    playsInline
+                    preload="auto"
+                    onCanPlay={handlePreviewCanPlay}
+                    onEnded={handlePreviewEnded}
+                    className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 ${videoVisible ? "opacity-100" : "opacity-0"}`}
+                  />
+                )}
                 <video
-                  ref={videoRef}
-                  key={HERO_VIDEOS[activeVideoIndex]}
-                  src={HERO_VIDEOS[activeVideoIndex]}
-                  poster="/home_page/hero/hero1.png"
+                  ref={fullVideoRef}
+                  src={FULL_HERO_VIDEO}
                   muted
                   playsInline
                   preload="auto"
-                  onCanPlay={handleVideoCanPlay}
-                  onEnded={playNextVideo}
-                  onError={handleVideoError}
-                  aria-label={`PixoraSoftTech showcase video ${activeVideoIndex + 1}`}
-                  className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${videoReady ? "opacity-100" : "opacity-0"}`}
+                  loop
+                  onCanPlay={handleFullVideoCanPlay}
+                  aria-label="PixoraSoftTech full showcase video"
+                  className={`pointer-events-none absolute inset-0 h-full w-full object-contain transition-opacity duration-300 ${activeVideo === "full" ? "opacity-100" : "opacity-0"}`}
                 />
               </div>
 
@@ -252,7 +202,7 @@ export default function Hero() {
                   </svg>
                 </div>
               </div>
-            </Link>
+            </div>
           </div>
         </div>
       </div>
