@@ -113,7 +113,7 @@ export default function Hero() {
             ref={containerRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="group relative block h-full w-full overflow-hidden rounded-2xl"
+            className="group relative block h-full w-full overflow-hidden rounded-md"
           >
             <div className="block h-full w-full">
               <div className="absolute inset-0 overflow-hidden bg-transparent">
@@ -145,6 +145,11 @@ export default function Hero() {
                   onCanPlay={handleFullVideoCanPlay}
                   aria-label="PixoraSoftTech full showcase video"
                   className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${activeVideo === "full" ? "opacity-100" : "opacity-0"}`}
+                />
+                <img
+                  src="/logos/logo_hero_video.png"
+                  alt="Pixora Social Automation"
+                  className={`pointer-events-none absolute bottom-0 right-4 z-20 w-44 object-contain transition-opacity duration-300 sm:bottom-0 sm:right-6 sm:w-52 lg:w-60 ${videoVisible ? "opacity-100" : "opacity-0"}`}
                 />
               </div>
 
