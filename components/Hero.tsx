@@ -49,6 +49,7 @@ export default function Hero() {
 
   const handlePreviewEnded = () => {
     if (activeVideo === "preview") {
+      setVideoVisible(false);
       setPreviewIndex((currentIndex) => (currentIndex + 1) % PREVIEW_VIDEOS.length);
     }
   };
@@ -107,7 +108,7 @@ export default function Hero() {
         </div>
 
         {/* Media Showcase Banner with Interactive SHOW CASES Cursor Badge & 3D In-Place Flip */}
-        <div className="relative mt-10 sm:mt-16 lg:mt-20 w-full aspect-[4/3] sm:aspect-video">
+        <div className="relative left-1/2 mt-10 h-[calc(100svh-5px)] max-h-[70rem] min-h-[24rem] w-[calc(100vw-10px)] -translate-x-1/2 sm:mt-16 lg:mt-20">
           <div
             ref={containerRef}
             onMouseMove={handleMouseMove}
@@ -120,7 +121,7 @@ export default function Hero() {
                   src="/home_page/hero/hero1.png"
                   alt="PixoraSoftTech Showcase"
                   fetchPriority="high"
-                  className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${videoVisible ? "opacity-0" : "opacity-100"}`}
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${videoVisible ? "opacity-0" : "opacity-100"}`}
                 />
                 {activeVideo === "preview" && (
                   <video
@@ -131,7 +132,7 @@ export default function Hero() {
                     preload="auto"
                     onCanPlay={handlePreviewCanPlay}
                     onEnded={handlePreviewEnded}
-                    className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 ${videoVisible ? "opacity-100" : "opacity-0"}`}
+                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${videoVisible ? "opacity-100" : "opacity-0"}`}
                   />
                 )}
                 <video
@@ -143,7 +144,7 @@ export default function Hero() {
                   loop
                   onCanPlay={handleFullVideoCanPlay}
                   aria-label="PixoraSoftTech full showcase video"
-                  className={`pointer-events-none absolute inset-0 h-full w-full object-contain transition-opacity duration-300 ${activeVideo === "full" ? "opacity-100" : "opacity-0"}`}
+                  className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${activeVideo === "full" ? "opacity-100" : "opacity-0"}`}
                 />
               </div>
 
