@@ -112,7 +112,7 @@ export default function HeroSection() {
         {/* Large Banner Image with Custom Rotating Follow Cursor */}
         <div
           ref={bannerRef}
-          className="relative aspect-square min-h-[320px] w-full overflow-hidden rounded-2xl shadow-sm select-none bg-slate-200 md:cursor-none"
+          className="relative aspect-square min-h-[320px] w-full overflow-hidden select-none md:cursor-none"
         >
           <motion.div
             initial={{ opacity: 0, scale: 1 }}
@@ -121,7 +121,7 @@ export default function HeroSection() {
             className="absolute inset-0 w-full h-full"
           >
             <Image
-              src="/service/saas_dev/hero_serv/saas_hero_service_1.png"
+              src="/service/saas_dev/hero_serv/saas_hero_service_1_updated.png"
               alt="SaaS analytics dashboard for a web application"
               fill
               sizes="100vw"
