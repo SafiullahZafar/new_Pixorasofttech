@@ -7,26 +7,11 @@ const PREVIEW_VIDEOS = ["/videos/video-01.mp4", "/videos/video-03.mp4"];
 const FULL_HERO_VIDEO = "/videos/video-full.mp4";
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
   const previewVideoRef = useRef<HTMLVideoElement>(null);
   const fullVideoRef = useRef<HTMLVideoElement>(null);
   const [previewIndex, setPreviewIndex] = useState(0);
   const [activeVideo, setActiveVideo] = useState<"preview" | "full">("preview");
   const [videoVisible, setVideoVisible] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0, isHovering: false });
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-      isHovering: true,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setMousePos((prev) => ({ ...prev, isHovering: false }));
-  };
 
   const handlePreviewCanPlay = () => {
     if (activeVideo !== "preview") return;
@@ -107,12 +92,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Media Showcase Banner with Interactive SHOW CASES Cursor Badge & 3D In-Place Flip */}
+        {/* Hero video showcase */}
         <div className="relative left-1/2 mt-10 h-[calc(100svh-5px)] max-h-[70rem] min-h-[24rem] w-[calc(100vw-10px)] -translate-x-1/2 sm:mt-16 lg:mt-20">
           <div
-            ref={containerRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
             className="group relative block h-full w-full overflow-hidden rounded-md"
           >
             <div className="block h-full w-full">
@@ -153,61 +135,6 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating SHOW CASES Badge (Fixed position on mobile, Interactive follower on desktop) */}
-              <div
-                className={`pointer-events-none absolute z-20 hidden md:flex h-32 w-32 items-center justify-center rounded-full bg-white/60 backdrop-blur-md shadow-2xl border border-white/20 transition-opacity duration-300 ${
-                  mousePos.isHovering ? "opacity-100" : "opacity-90"
-                }`}
-                style={{
-                  left: mousePos.isHovering ? `${mousePos.x}px` : "calc(100% - 140px)",
-                  top: mousePos.isHovering ? `${mousePos.y}px` : "calc(100% - 140px)",
-                  transform: "translate(-50%, -50%)",
-                  transition: mousePos.isHovering ? "transform 0.1s ease-out, opacity 0.2s" : "all 0.4s ease-out",
-                }}
-              >
-                <div className="absolute z-10 text-black">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3 3l7 18 3-7 7-3L3 3z"></path>
-                  </svg>
-                </div>
-                  <div className="relative flex h-full w-full items-center justify-center">
-                  <svg className="h-full w-full p-2" viewBox="0 0 100 100">
-                    <path
-                      id="circlePathHero"
-                      d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0"
-                      fill="none"
-                    ></path>
-                    <text className="text-[9.5px] font-semibold uppercase tracking-[0.27em] fill-black">
-                      <textPath href="#circlePathHero" startOffset="0%">
-                        SHOW CASES&nbsp;&nbsp;•&nbsp;&nbsp;SHOW CASES&nbsp;&nbsp;•&nbsp;&nbsp;
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
-              </div>
-
-              {/* Mobile version of badge */}
-              <div className="md:hidden absolute right-4 bottom-4 z-20 flex h-24 w-24 items-center justify-center rounded-full bg-white/70 backdrop-blur-md shadow-xl border border-white/20">
-                <div className="absolute z-10 text-black">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3 3l7 18 3-7 7-3L3 3z"></path>
-                  </svg>
-                </div>
-                <div className="relative flex h-full w-full items-center justify-center">
-                  <svg className="h-full w-full p-1.5" viewBox="0 0 100 100">
-                    <path
-                      id="circlePathHeroMobile"
-                      d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0"
-                      fill="none"
-                    ></path>
-                    <text className="text-[9.5px] font-semibold uppercase tracking-[0.27em] fill-black">
-                      <textPath href="#circlePathHeroMobile" startOffset="0%">
-                        SHOW CASES&nbsp;&nbsp;•&nbsp;&nbsp;SHOW CASES&nbsp;&nbsp;•&nbsp;&nbsp;
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
-              </div>
             </div>
           </div>
         </div>
