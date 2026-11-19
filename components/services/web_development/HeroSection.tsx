@@ -112,11 +112,11 @@ export default function HeroSection() {
         {/* Large Banner Image with Custom Rotating Follow Cursor */}
         <div
           ref={bannerRef}
-          className="w-full h-[320px] sm:h-[420px] md:h-[540px] lg:h-[620px] overflow-hidden relative shadow-sm rounded-2xl md:cursor-none select-none bg-slate-200"
+          className="relative aspect-[3/2] min-h-[370px] w-full overflow-hidden rounded-2xl select-none md:cursor-none"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 1.08 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.08 }}
+            initial={{ opacity: 0, scale: 1 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1 }}
             transition={{ duration: 1.0, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="absolute inset-0 w-full h-full"
           >
@@ -126,7 +126,8 @@ export default function HeroSection() {
               fill
               sizes="100vw"
               priority
-              className="w-full h-full object-cover object-center"
+              unoptimized
+              className="h-full w-full object-contain object-center"
             />
           </motion.div>
 
