@@ -1,36 +1,13 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useInView } from "framer-motion";
-import { Plus, ArrowUpRight } from "lucide-react";
+import { Plus } from "lucide-react";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const bannerRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
   const isInView = useInView(sectionRef, { once: true });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!bannerRef.current) return;
-      const rect = bannerRef.current.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
-        setMousePos({ x, y });
-        setIsHovered(true);
-      } else {
-        setIsHovered(false);
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   const titleWords = ["Custom", "Software", "Development"];
   const servicesLeft = ["Web Applications", "SaaS Platforms", "API Development"];
@@ -109,10 +86,9 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Large Banner Image with Custom Rotating Follow Cursor */}
+        {/* Custom software hero image card */}
         <div
-          ref={bannerRef}
-          className="relative left-1/2 h-[320px] w-[calc(100%+2rem)] -translate-x-1/2 overflow-hidden rounded-2xl bg-transparent shadow-sm sm:h-[420px] sm:w-[calc(100%+4rem)] md:h-[540px] lg:h-[620px] lg:w-[calc(100%+6rem)] md:cursor-none select-none"
+          className="relative left-1/2 mb-[10px] mt-[10px] h-[550px] min-h-[320px] w-[calc(100vw-30px)] -translate-x-1/2 overflow-hidden rounded-md bg-transparent sm:h-[650px] md:h-[770px] lg:h-[850px] 2xl:h-[1000px] min-[2560px]:h-[1150px] min-[3000px]:h-[1300px] select-none"
         >
           <motion.div
             initial={{ opacity: 0, scale: 1 }}
@@ -126,63 +102,11 @@ export default function HeroSection() {
               fill
               sizes="100vw"
               priority
-              className="object-contain object-center"
+              className="object-cover object-center"
             />
           </motion.div>
 
-          {/* Interactive Floating Circular Cursor with Spinning Text */}
-          {isHovered && (
-            <div
-              className="pointer-events-none absolute left-0 top-0 z-20 hidden md:flex h-32 w-32 items-center justify-center rounded-full bg-white/55 backdrop-blur-md shadow-2xl border border-white/10 transition-transform duration-75 ease-out"
-              style={{
-                left: `${mousePos.x}px`,
-                top: `${mousePos.y}px`,
-                transform: "translate(-50%, -50%)",
-              }}
-            >
-              <div className="absolute z-10 text-black">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M3 3l7 18 3-7 7-3L3 3z" />
-                </svg>
-              </div>
-              <div className="relative flex h-full w-full items-center justify-center animate-spin" style={{ animationDuration: "12s" }}>
-                <svg className="h-full w-full p-2" viewBox="0 0 100 100">
-                  <path id="serviceHeroCircle" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="none" />
-                  <text className="text-[9.5px] font-semibold uppercase tracking-[0.27em] fill-black">
-                    <textPath href="#serviceHeroCircle" startOffset="0%">
-                      VIEW LIVE DEMO • VIEW LIVE • 
-                    </textPath>
-                  </text>
-                </svg>
-              </div>
-            </div>
-          )}
 
-          {/* Bottom Glass Overlay Bar */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: "100%" }}
-            animate={isInView ? { opacity: 1, y: "0%" } : { opacity: 0, y: "100%" }}
-            transition={{ duration: 0.75, delay: 0.5, ease: "easeOut" }}
-            className="absolute inset-x-4 bottom-4 z-20"
-          >
-            <div className="flex items-center justify-between gap-4 bg-white/20 backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:px-5 sm:py-4 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]">
-              <div>
-                <p className="text-xs sm:text-sm font-semibold text-white drop-shadow-sm">
-                  CloudKhata &amp; Enterprise Systems
-                </p>
-                <p className="hidden sm:block text-[11px] text-white/90">
-                  Custom software for inventory, POS, billing &amp; HR.
-                </p>
-              </div>
-
-              <Link
-                href="/projects"
-                className="flex-shrink-0 flex items-center gap-1.5 bg-black hover:bg-white/20 text-white border border-white/20 backdrop-blur-md text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg whitespace-nowrap"
-              >
-                <span>Live demo ↗</span>
-              </Link>
-            </div>
-          </motion.div> */}
         </div>
       </div>
     </section>
