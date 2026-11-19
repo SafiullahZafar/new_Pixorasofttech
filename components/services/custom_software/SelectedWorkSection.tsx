@@ -89,6 +89,7 @@ export default function SelectedWorkSection() {
                     src={item.image}
                     alt={item.title}
                     fill
+                    unoptimized
                     sizes="(max-width: 640px) 82vw, (max-width: 1024px) 480px, (max-width: 1536px) 600px, 740px"
                     className="object-cover object-top shadow-md transition-transform duration-500 group-hover:scale-[1.03]"
                   />
