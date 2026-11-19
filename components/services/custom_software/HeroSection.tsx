@@ -112,16 +112,16 @@ export default function HeroSection() {
         {/* Large Banner Image with Custom Rotating Follow Cursor */}
         <div
           ref={bannerRef}
-          className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-sm md:cursor-none select-none"
+          className="relative left-1/2 h-[320px] w-[calc(100%+2rem)] -translate-x-1/2 overflow-hidden rounded-2xl bg-transparent shadow-sm sm:h-[420px] sm:w-[calc(100%+4rem)] md:h-[540px] lg:h-[620px] lg:w-[calc(100%+6rem)] md:cursor-none select-none"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 1.08 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.08 }}
+            initial={{ opacity: 0, scale: 1 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1 }}
             transition={{ duration: 1.0, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="absolute inset-0 w-full h-full"
           >
             <Image
-              src="/service/custom_softw/hero_sec/AuraPOS Dashboard Laptop Showcase.png"
+              src="/service/custom_softw/hero_sec/custom_software_hero_service_2.png"
               alt="AuraPOS hospitality management dashboard shown on a laptop"
               fill
               sizes="100vw"

@@ -121,7 +121,7 @@ export default function HeroSection() {
             className="absolute inset-0 w-full h-full"
           >
             <Image
-              src="/portfolio/delivery-dashboard.png"
+              src="/service/cloude_ai/hero_sec/cloud_ai_hero_service_1.png"
               alt="Cloud-hosted operations dashboard connected to live data"
               fill
               sizes="100vw"

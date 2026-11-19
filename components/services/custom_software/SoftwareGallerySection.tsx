@@ -4,17 +4,17 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 const GALLERY_IMAGES = [
-  { src: "/service/custom_softw/about_ser/ChatGPT Image Sep 11, 2026, 08_12_18 AM.png", alt: "Custom business software interface" },
-  { src: "/service/custom_softw/about_ser/ChatGPT Image Sep 12, 2026, 11_13_58 AM (2).png", alt: "Business operations software dashboard" },
-  { src: "/service/custom_softw/about_ser/ChatGPT Image Sep 15, 2026, 01_29_41 AM (1).png", alt: "Custom software product interface" },
-  { src: "/service/custom_softw/about_ser/Dark Laptop Dashboard Mockup-2.png", alt: "Dark custom software dashboard" },
-  { src: "/service/custom_softw/about_ser/Futuristic Staff Dashboard Tablet Mockup.png", alt: "Staff management software dashboard" },
-  { src: "/service/custom_softw/about_ser/Loomline ERP Laptop Showcase.png", alt: "Loomline ERP software" },
-  { src: "/service/custom_softw/about_ser/Nexora CRM Laptop Showcase.png", alt: "Nexora CRM software" },
-  { src: "/service/custom_softw/about_ser/PeopleFlow Dashboard Laptop Mockup (1).png", alt: "PeopleFlow business dashboard" },
-  { src: "/service/custom_softw/about_ser/PeopleFlow Leave Requests Dashboard.png", alt: "PeopleFlow leave management software" },
-  { src: "/service/custom_softw/about_ser/PetroFlow Tank Dashboard Tablet Mockup.png", alt: "PetroFlow operations dashboard" },
-  { src: "/service/custom_softw/about_ser/Tables Floor Map Laptop Mockup.png", alt: "Table and floor management software" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_1.png", alt: "Custom software image 1" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_2.png", alt: "Custom software image 2" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_3.png", alt: "Custom software image 3" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_4.png", alt: "Custom software image 4" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_5.png", alt: "Custom software image 5" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_6.png", alt: "Custom software image 6" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_7.png", alt: "Custom software image 7" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_8.png", alt: "Custom software image 8" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_9.png", alt: "Custom software image 9" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_10.png", alt: "Custom software image 10" },
+  { src: "/service/custom_softw/about_ser/custom_software_about_service_11.png", alt: "Custom software image 11" },
 ];
 
 const IMAGE_COLUMNS = Array.from({ length: 6 }, (_, columnIndex) =>

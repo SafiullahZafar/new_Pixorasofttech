@@ -17,10 +17,10 @@ interface WorkProject {
 }
 
 const WORKS_DATA: WorkProject[] = [
-  { id: "1", title: "FlowCRM", year: "2026", tags: ["Dashboard UX", "Data Visualization"], image: "/portfolio/flowcrm-dashboard.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
-  { id: "2", title: "ShopEase", year: "2026", tags: ["Mobile UX", "E-commerce UI"], image: "/portfolio/shopease-app.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
-  { id: "3", title: "Eduka College", year: "2026", tags: ["Portal Design", "Information Architecture"], image: "/portfolio/eduka-college.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
-  { id: "4", title: "FitPulse", year: "2026", tags: ["Mobile Product", "Interaction Design"], image: "/portfolio/fitpulse-app.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
+  { id: "1", title: "FlowCRM", year: "2026", tags: ["Dashboard UX", "Data Visualization"], image: "/service/ui_ux/work_serv/ui_ux_work_service_1.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
+  { id: "2", title: "ShopEase", year: "2026", tags: ["Mobile UX", "E-commerce UI"], image: "/service/ui_ux/work_serv/ui_ux_work_service_2.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
+  { id: "3", title: "Eduka College", year: "2026", tags: ["Portal Design", "Information Architecture"], image: "/service/ui_ux/work_serv/ui_ux_work_service_3.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
+  { id: "4", title: "FitPulse", year: "2026", tags: ["Mobile Product", "Interaction Design"], image: "/service/ui_ux/work_serv/ui_ux_work_service_4.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
 ];
 
 export default function SelectedWorkSection() {

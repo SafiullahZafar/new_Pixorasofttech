@@ -17,10 +17,10 @@ interface WorkProject {
 }
 
 const WORKS_DATA: WorkProject[] = [
-  { id: "1", title: "Glass Haven", year: "2026", tags: ["Business Website", "Product Showcase"], image: "/portfolio/glass-haven.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
-  { id: "2", title: "Goody Supplies", year: "2026", tags: ["E-commerce", "Online Store"], image: "/portfolio/goody-supplies.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
-  { id: "3", title: "Brew Haven", year: "2026", tags: ["Cafe Website", "Online Ordering"], image: "/portfolio/brew-haven.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
-  { id: "4", title: "Travel & Hotel Hub", year: "2026", tags: ["Booking Website", "Travel"], image: "/portfolio/travel-hotel-hub.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
+  { id: "1", title: "Glass Haven", year: "2026", tags: ["Business Website", "Product Showcase"], image: "/service/web_dev/works_serv/web_development_work_service_1.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
+  { id: "2", title: "Goody Supplies", year: "2026", tags: ["E-commerce", "Online Store"], image: "/service/web_dev/works_serv/web_development_work_service_2.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
+  { id: "3", title: "Brew Haven", year: "2026", tags: ["Cafe Website", "Online Ordering"], image: "/service/web_dev/works_serv/web_development_work_service_3.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
+  { id: "4", title: "Travel & Hotel Hub", year: "2026", tags: ["Booking Website", "Travel"], image: "/service/web_dev/works_serv/web_development_work_service_4.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
 ];
 
 export default function SelectedWorkSection() {

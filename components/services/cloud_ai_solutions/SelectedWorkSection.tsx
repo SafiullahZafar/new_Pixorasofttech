@@ -17,10 +17,10 @@ interface WorkProject {
 }
 
 const WORKS_DATA: WorkProject[] = [
-  { id: "1", title: "Driven Fleet Cloud", year: "2026", tags: ["Cloud Platform", "Live Operations"], image: "/driven_adminPanal.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
-  { id: "2", title: "FlowCRM Integrations", year: "2026", tags: ["API Integrations", "Customer Data"], image: "/portfolio/flowcrm-dashboard.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
-  { id: "3", title: "Inventory Cloud", year: "2026", tags: ["Cloud Analytics", "Operations"], image: "/portfolio/inventory-dashboard.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
-  { id: "4", title: "Learning Platform", year: "2026", tags: ["Cloud Application", "Digital Learning"], image: "/portfolio/lms-dashboard.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
+  { id: "1", title: "Driven Fleet Cloud", year: "2026", tags: ["Cloud Platform", "Live Operations"], image: "/service/cloude_ai/work_sec/cloud_ai_work_service_1.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
+  { id: "2", title: "FlowCRM Integrations", year: "2026", tags: ["API Integrations", "Customer Data"], image: "/service/cloude_ai/work_sec/cloud_ai_work_service_2.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
+  { id: "3", title: "Inventory Cloud", year: "2026", tags: ["Cloud Analytics", "Operations"], image: "/service/cloude_ai/work_sec/cloud_ai_work_service_3.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
+  { id: "4", title: "Learning Platform", year: "2026", tags: ["Cloud Application", "Digital Learning"], image: "/service/cloude_ai/work_sec/cloud_ai_work_service_4.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
 ];
 
 export default function SelectedWorkSection() {

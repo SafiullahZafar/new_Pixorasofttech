@@ -121,7 +121,7 @@ export default function HeroSection() {
             className="absolute inset-0 w-full h-full"
           >
             <Image
-              src="/portfolio/fitpulse-app.png"
+              src="/service/app_dev/hero_sec/mobile_app_hero_service_1.png"
               alt="Mobile app interface displayed on a phone"
               fill
               sizes="100vw"

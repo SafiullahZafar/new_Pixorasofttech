@@ -121,7 +121,7 @@ export default function HeroSection() {
             className="absolute inset-0 w-full h-full"
           >
             <Image
-              src="/portfolio/glass-haven.png"
+              src="/service/web_dev/hero_sec/web_development_hero_service_1.png"
               alt="Responsive website design showcased on desktop"
               fill
               sizes="100vw"

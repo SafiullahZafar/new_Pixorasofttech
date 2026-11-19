@@ -121,7 +121,7 @@ export default function HeroSection() {
             className="absolute inset-0 w-full h-full"
           >
             <Image
-              src="/portfolio/flowcrm-dashboard.png"
+              src="/service/ui_ux/hero_sec/ui_ux_hero_service_1.png"
               alt="Product interface design for an analytics dashboard"
               fill
               sizes="100vw"

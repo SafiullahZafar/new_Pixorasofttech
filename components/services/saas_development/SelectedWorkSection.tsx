@@ -17,10 +17,10 @@ interface WorkProject {
 }
 
 const WORKS_DATA: WorkProject[] = [
-  { id: "1", title: "FlowCRM", year: "2026", tags: ["SaaS CRM", "Sales Analytics"], image: "/portfolio/flowcrm-dashboard.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
-  { id: "2", title: "Driven Fleet Platform", year: "2026", tags: ["Fleet SaaS", "Live Operations"], image: "/driven_adminPanal.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
-  { id: "3", title: "Restaurant Management", year: "2026", tags: ["Business Platform", "Operations"], image: "/rms_system.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
-  { id: "4", title: "Learning Management", year: "2026", tags: ["Education SaaS", "Learning Platform"], image: "/portfolio/lms-dashboard.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
+  { id: "1", title: "FlowCRM", year: "2026", tags: ["SaaS CRM", "Sales Analytics"], image: "/service/saas_dev/work_serv/saas_work_service_1.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
+  { id: "2", title: "Driven Fleet Platform", year: "2026", tags: ["Fleet SaaS", "Live Operations"], image: "/service/saas_dev/work_serv/saas_work_service_2.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
+  { id: "3", title: "Restaurant Management", year: "2026", tags: ["Business Platform", "Operations"], image: "/service/saas_dev/work_serv/saas_work_service_3.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
+  { id: "4", title: "Learning Management", year: "2026", tags: ["Education SaaS", "Learning Platform"], image: "/service/saas_dev/work_serv/saas_work_service_4.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
 ];
 
 export default function SelectedWorkSection() {
