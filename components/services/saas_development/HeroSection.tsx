@@ -43,7 +43,7 @@ export default function HeroSection() {
     >
       <div className="max-w-[2440px] mx-auto">
         {/* Top Header Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12 md:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-6 md:mb-8">
           <div className="lg:col-span-7">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[82px] font-bold tracking-tight leading-[0.98] text-[#131927] flex flex-wrap gap-x-[0.28em] gap-y-2">
               {titleWords.map((word, idx) => (
@@ -112,7 +112,7 @@ export default function HeroSection() {
         {/* Large Banner Image with Custom Rotating Follow Cursor */}
         <div
           ref={bannerRef}
-          className="relative aspect-square min-h-[320px] w-full overflow-hidden select-none md:cursor-none"
+          className="relative aspect-[4/3] min-h-[280px] w-full overflow-hidden select-none md:cursor-none"
         >
           <motion.div
             initial={{ opacity: 0, scale: 1 }}
