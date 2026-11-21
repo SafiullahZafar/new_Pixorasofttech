@@ -32,7 +32,7 @@ export default function CaseStudyDeliveryDashboard({ project }: CaseStudyDeliver
 
   const title = "Delivery Flow System";
   const heroImage = project?.heroImg || "/driven_adminPanal.png";
-  const mobileHeroImage = project?.img || "/driven_adminPanal.png";
+  const heroDemoImage = "/case_studies/driven_soft/driven_showcase_soft_01.png";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription =
@@ -63,8 +63,8 @@ export default function CaseStudyDeliveryDashboard({ project }: CaseStudyDeliver
       <HeroSection
         heroRef={heroRef}
         heroScale={heroScale}
-        mobileHeroImage={mobileHeroImage}
-        heroImage={heroImage}
+        mobileHeroImage={heroDemoImage}
+        heroImage={heroDemoImage}
         title={title}
       />
 
@@ -79,7 +79,7 @@ export default function CaseStudyDeliveryDashboard({ project }: CaseStudyDeliver
         challengeText={challengeText}
         solutionText={solutionText}
         resultsText={resultsText}
-        heroImage={heroImage}
+        heroImage={heroDemoImage}
         liveUrl={liveUrl}
         cardHovered={cardHovered}
         setCardHovered={setCardHovered}
