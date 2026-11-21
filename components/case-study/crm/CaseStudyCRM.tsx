@@ -32,7 +32,7 @@ export default function CaseStudyCRM({ project }: CaseStudyCRMProps) {
 
   const title = project?.title || "CRM Sales System";
   const heroImage = project?.heroImg || "/portfolio/light-crm-dashboard.png";
-  const mobileHeroImage = project?.img || "/portfolio/light-crm-dashboard.png";
+  const heroDemoImage = "/case_studies/crm_soft/crm_about_soft_02.png";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription =
@@ -63,8 +63,8 @@ export default function CaseStudyCRM({ project }: CaseStudyCRMProps) {
       <HeroSection
         heroRef={heroRef}
         heroScale={heroScale}
-        mobileHeroImage={mobileHeroImage}
-        heroImage={heroImage}
+        mobileHeroImage={heroDemoImage}
+        heroImage={heroDemoImage}
         title={title}
       />
 
@@ -79,7 +79,7 @@ export default function CaseStudyCRM({ project }: CaseStudyCRMProps) {
         challengeText={challengeText}
         solutionText={solutionText}
         resultsText={resultsText}
-        heroImage={heroImage}
+        heroImage={heroDemoImage}
         liveUrl={liveUrl}
         cardHovered={cardHovered}
         setCardHovered={setCardHovered}
