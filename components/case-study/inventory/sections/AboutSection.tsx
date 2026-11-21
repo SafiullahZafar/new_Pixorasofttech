@@ -52,7 +52,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/rms_soft/rms_showcase_soft_03.png"
+                src="/case_studies/rms_soft/rms_mobile_soft_02.png"
                 alt="RMS store management dashboard"
                 className="w-full h-full object-cover object-center block"
               />
@@ -99,7 +99,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/rms_soft/rms_about_soft_02.png"
+                src="/case_studies/rms_soft/rms_work_soft_03_updated.png"
                 alt="RMS inventory and store control system"
                 className="w-full h-full object-cover object-center block"
               />
