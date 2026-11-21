@@ -33,7 +33,6 @@ export default function CaseStudyInventory({ project }: CaseStudyInventoryProps)
   const title = "Messenger Software";
   const messengerPreview = "/case_studies/messenger_soft/messenger_showcase_soft_01.png";
   const heroDemoImage = "/case_studies/messenger_soft/messenger_showcase_soft_10.png";
-  const heroImage = project?.heroImg || messengerPreview;
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription =
@@ -87,9 +86,7 @@ export default function CaseStudyInventory({ project }: CaseStudyInventoryProps)
       />
 
       {/* ── 4. SHOWCASE 3-IMAGE GRID (Module 944) ── */}
-      <ShowcaseSection
-        heroImage={heroImage}
-      />
+      <ShowcaseSection />
       {/* ── 6. BRANDING & DESIGN SYSTEM SECTION (#F3F3F7) ── */}
       <BrandingSection />
 
