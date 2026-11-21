@@ -73,7 +73,7 @@ const caseStudiesCol2: CaseStudyNavItem[] = [
   { title: "Delivery Flow System", href: "/case-study/delivery-dashboard" },
   { title: "HRMS Enterprise", href: "/case-study/hrms" },
   { title: "Light CRM Suite", href: "/case-study/crm" },
-  { title: "Inventory Cloud POS", href: "/case-study/inventory" },
+  { title: "Messenger Software", href: "/case-study/messenger" },
   { title: "Restaurant Supplier B2B", href: "/case-study/supplier" },
   { title: "Salon Appointment POS", href: "/case-study/salon" },
   { title: "Textile ERP System", href: "/case-study/textile-erp" },

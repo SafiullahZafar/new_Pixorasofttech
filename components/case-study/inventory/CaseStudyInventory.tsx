@@ -30,9 +30,10 @@ export default function CaseStudyInventory({ project }: CaseStudyInventoryProps)
   // Showcase Card Hover
   const [cardHovered, setCardHovered] = useState(false);
 
-  const title = "Inventory Cloud POS";
-  const heroImage = project?.heroImg || "/rms_system.png";
-  const mobileHeroImage = project?.img || "/rms_system.png";
+  const title = "Messenger Software";
+  const messengerPreview = "/case_studies/messenger_soft/messenger_showcase_soft_01.png";
+  const heroImage = project?.heroImg || messengerPreview;
+  const mobileHeroImage = project?.img || messengerPreview;
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription =

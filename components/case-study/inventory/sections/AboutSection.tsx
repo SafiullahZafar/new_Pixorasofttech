@@ -22,16 +22,16 @@ export default function AboutSection({
               whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
               viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 1.1, ease: [0.77, 0, 0.175, 1] }}
-              className="w-44 sm:w-64 2xl:w-80 h-56 sm:h-72 2xl:h-96 relative overflow-hidden bg-zinc-200 rounded-2xl shrink-0 shadow-lg"
+              className="w-44 sm:w-64 2xl:w-80 h-56 sm:h-72 2xl:h-96 relative overflow-hidden shrink-0"
             >
               <motion.img
                 initial={{ scale: 1.25 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/rms_soft/rms_about_soft_01.png"
-                alt="Multi-store inventory management dashboard"
-                className="w-full h-full object-cover object-center block"
+                src="/case_studies/messenger_soft/messenger_branding_soft_03.png"
+                alt="Messenger software logo"
+                className="w-full h-full object-contain object-center block"
               />
             </motion.div>
           </div>
@@ -45,14 +45,14 @@ export default function AboutSection({
               whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
               viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }}
-              className="w-full h-[380px] sm:h-[520px] md:h-[660px] 2xl:h-[680px] relative overflow-hidden bg-zinc-200 rounded-2xl shadow-xl"
+              className="w-full h-[380px] sm:h-[520px] md:h-[660px] 2xl:h-[680px] relative overflow-hidden"
             >
               <motion.img
                 initial={{ scale: 1.25 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/rms_soft/rms_about_soft_02.png"
+                src="/case_studies/messenger_soft/messenger_showcase_soft_02.png"
                 alt="Retail stock and purchase order management dashboard"
                 className="w-full h-full object-cover object-center block"
               />
@@ -92,14 +92,14 @@ export default function AboutSection({
               whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
               viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }}
-              className="w-full h-[380px] sm:h-[520px] md:h-[660px] 2xl:h-[680px] relative overflow-hidden bg-zinc-200 rounded-2xl shadow-xl"
+              className="w-full h-[380px] sm:h-[520px] md:h-[660px] 2xl:h-[680px] relative overflow-hidden"
             >
               <motion.img
                 initial={{ scale: 1.25 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/rms_soft/rms_hero_soft_01.png"
+                src="/case_studies/messenger_soft/messenger_showcase_soft_04.png"
                 alt="Centralized retail inventory and store control system"
                 className="w-full h-full object-cover object-center block"
               />

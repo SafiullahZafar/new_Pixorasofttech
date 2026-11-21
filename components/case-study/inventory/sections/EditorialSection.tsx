@@ -93,7 +93,7 @@ export default function EditorialSection({ title, challengeText, solutionText, r
                 <div className="flex items-center gap-3">
                   <div>
                     <p className="text-sm font-semibold text-white leading-tight">
-                      Inventory Cloud POS
+                      Messenger Software
                     </p>
                     <p className="text-xs text-white/80 leading-tight mt-0.5">
                       Retail Operations &bull; Multi-Store Inventory

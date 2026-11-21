@@ -728,7 +728,7 @@ export const projects: Project[] = [
   },
   {
     id: "inventory",
-    title: "RMS — Store & Inventory Manager",
+    title: "Messenger Software",
     category: "Software",
     tagline: "Enterprise Multi-Store Inventory & Retail Management Software (RMS)",
     desc: "An enterprise retail and store management platform offering real-time multi-location inventory tracking, purchase order receiving, stock consumption analytics, and supplier management.",
@@ -743,8 +743,8 @@ export const projects: Project[] = [
       "Low-Stock Threshold & Auto-Reorder Notifications",
       "Multi-Store Stock Transfer & Valuation Analytics"
     ],
-    img: "/case_studies/rms_soft/rms_work_soft_02.png",
-    heroImg: "/case_studies/rms_soft/rms_hero_soft_01.png",
+    img: "/case_studies/messenger_soft/messenger_showcase_soft_01.png",
+    heroImg: "/case_studies/messenger_soft/messenger_showcase_soft_01.png",
     liveUrl: "https://rms.pixorasofttech.com",
     status: "live",
     challenge: "Multi-store retailers and distributors struggled with stockouts, delayed purchase orders, unverified supplier invoices, and lack of real-time visibility into multi-branch inventory balances.",

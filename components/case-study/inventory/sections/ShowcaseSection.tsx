@@ -10,7 +10,7 @@ export default function ShowcaseSection({ heroImage }: Pick<InventorySectionProp
             <div className="lg:col-span-7 2xl:col-span-7 h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px] overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
               <img
                 src={heroImage}
-                alt="Inventory Cloud POS multi-store dashboard showcase"
+                alt="Messenger software dashboard showcase"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -19,14 +19,14 @@ export default function ShowcaseSection({ heroImage }: Pick<InventorySectionProp
             <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/case_studies/rms_soft/rms_work_soft_01.png"
+                  src="/case_studies/messenger_soft/messenger_showcase_soft_03.png"
                   alt="Multi-location inventory overview"
                   className="w-full h-full object-cover object-center block"
                 />
               </div>
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/case_studies/rms_soft/rms_work_soft_02.png"
+                  src="/case_studies/messenger_soft/messenger_showcase_soft_06.png"
                   alt="Purchase order and stock management interface"
                   className="w-full h-full object-cover object-center block"
                 />
