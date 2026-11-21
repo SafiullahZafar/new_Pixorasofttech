@@ -20,7 +20,7 @@ export default function ShowcaseSection() {
                 <img
                   src="/case_studies/messenger_soft/messenger_showcase_soft_12.png"
                   alt="Multi-location inventory overview"
-                  className="w-[92%] h-[92%] mx-auto my-auto object-contain object-center block"
+                  className="w-[120%] h-[120%] mx-auto my-auto object-contain object-center block"
                 />
               </div>
               <div className="flex-1 h-1/2 overflow-hidden w-full">
