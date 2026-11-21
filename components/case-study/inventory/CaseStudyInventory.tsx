@@ -32,8 +32,8 @@ export default function CaseStudyInventory({ project }: CaseStudyInventoryProps)
 
   const title = "Messenger Software";
   const messengerPreview = "/case_studies/messenger_soft/messenger_showcase_soft_01.png";
+  const heroDemoImage = "/case_studies/messenger_soft/messenger_showcase_soft_10.png";
   const heroImage = project?.heroImg || messengerPreview;
-  const mobileHeroImage = project?.img || messengerPreview;
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription =
@@ -64,8 +64,8 @@ export default function CaseStudyInventory({ project }: CaseStudyInventoryProps)
       <HeroSection
         heroRef={heroRef}
         heroScale={heroScale}
-        mobileHeroImage={mobileHeroImage}
-        heroImage={heroImage}
+        mobileHeroImage={heroDemoImage}
+        heroImage={heroDemoImage}
         title={title}
       />
 
@@ -80,7 +80,7 @@ export default function CaseStudyInventory({ project }: CaseStudyInventoryProps)
         challengeText={challengeText}
         solutionText={solutionText}
         resultsText={resultsText}
-        heroImage={heroImage}
+        heroImage={heroDemoImage}
         liveUrl={liveUrl}
         cardHovered={cardHovered}
         setCardHovered={setCardHovered}
