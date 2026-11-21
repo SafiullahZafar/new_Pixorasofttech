@@ -32,7 +32,7 @@ export default function CaseStudyHRMS({ project }: CaseStudyHRMSProps) {
 
   const title = "Aurelle HRMS";
   const heroImage = "/portfolio/hr-dashboard.png";
-  const mobileHeroImage = "/portfolio/hr-dashboard.png";
+  const heroDemoImage = "/case_studies/hrms_soft/hrms_hero_soft_01.png";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription =
@@ -63,8 +63,8 @@ export default function CaseStudyHRMS({ project }: CaseStudyHRMSProps) {
       <HeroSection
         heroRef={heroRef}
         heroScale={heroScale}
-        mobileHeroImage={mobileHeroImage}
-        heroImage={heroImage}
+        mobileHeroImage={heroDemoImage}
+        heroImage={heroDemoImage}
         title={title}
       />
 
@@ -79,7 +79,7 @@ export default function CaseStudyHRMS({ project }: CaseStudyHRMSProps) {
         challengeText={challengeText}
         solutionText={solutionText}
         resultsText={resultsText}
-        heroImage={heroImage}
+        heroImage={heroDemoImage}
         liveUrl={liveUrl}
         cardHovered={cardHovered}
         setCardHovered={setCardHovered}
