@@ -86,9 +86,7 @@ export default function CaseStudyCRM({ project }: CaseStudyCRMProps) {
       />
 
       {/* ── 4. SHOWCASE 3-IMAGE GRID (Module 944) ── */}
-      <ShowcaseSection
-        heroImage={heroImage}
-      />
+      <ShowcaseSection />
       {/* ── 6. BRANDING & DESIGN SYSTEM SECTION (#F3F3F7) ── */}
       <BrandingSection />
 
