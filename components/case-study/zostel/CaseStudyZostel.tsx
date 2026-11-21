@@ -54,7 +54,7 @@ export default function CaseStudyZostel({ project }: CaseStudyZostelProps) {
         cardHovered={cardHovered}
         setCardHovered={setCardHovered}
       />
-      <ShowcaseSection heroImage={heroImage} />
+      <ShowcaseSection />
       <BrandingSection />
       <MetricsSection project={project} />
       <SummarySection liveUrl={liveUrl} project={project} />
