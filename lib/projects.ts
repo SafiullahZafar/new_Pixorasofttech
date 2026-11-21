@@ -305,8 +305,8 @@ export const projects: Project[] = [
       "Community Event Publishing Hub",
       "Payment Gateway Integration"
     ],
-    img: "/case_studies/zostel_web/zostel_work_web_01.png",
-    heroImg: "/case_studies/zostel_web/zostel_hero_web_01.png",
+    img: "/case_studies/zostel_web/zostel_hero_web_01_updated.png",
+    heroImg: "/case_studies/zostel_web/zostel_hero_web_01_updated.png",
     liveUrl: "https://zostell-by-pixorasofttech.vercel.app/",
     status: "live",
     challenge: "Zostel relied heavily on third-party OTAs with high commission fees. They needed a direct booking site that felt as social, vibrant, and welcoming as staying in one of their hostels.",
