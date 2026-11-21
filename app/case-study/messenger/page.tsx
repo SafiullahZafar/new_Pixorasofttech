@@ -1,5 +1,18 @@
-import { redirect } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CaseStudyMessenger from "@/components/case-study/messenger/CaseStudyMessenger";
+import { projects } from "@/lib/projects";
 
 export default function MessengerCaseStudyPage() {
-  redirect("/case-study/rms");
+  const project = projects.find((item) => item.id === "messenger");
+
+  return (
+    <>
+      <Navbar />
+      <main>
+        <CaseStudyMessenger project={project} />
+      </main>
+      <Footer />
+    </>
+  );
 }

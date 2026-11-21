@@ -727,6 +727,48 @@ export const projects: Project[] = [
     }
   },
   {
+    id: "messenger",
+    title: "Messenger Software",
+    category: "Software",
+    tagline: "Social Media Publishing & Automation Platform",
+    desc: "A unified workspace for planning, reviewing, scheduling, and tracking social media content across connected platforms.",
+    overview: "Messenger Software brings content creation, review queues, publishing schedules, automation controls, and platform activity into one coordinated workspace for social media teams.",
+    tags: ["Social Media", "Content Publishing", "Automation", "Approval Workflows"],
+    client: "PixoraSoftTech",
+    industry: "Social Media & Digital Marketing",
+    timeline: "Custom delivery",
+    deliverables: [
+      "Social Content Planning Workspace",
+      "Review and Approval Queue",
+      "Publishing Schedule and Automation Controls",
+      "Cross-Platform Activity Dashboard"
+    ],
+    img: "/case_studies/messenger_soft/messenger_showcase_soft_10.png",
+    heroImg: "/case_studies/messenger_soft/messenger_showcase_soft_10.png",
+    status: "processing",
+    challenge: "Social teams were coordinating drafts, approvals, publishing schedules, and platform activity across disconnected tools, making it difficult to keep campaigns consistent and visible.",
+    solution: "We created a unified publishing command center with content review queues, scheduling controls, platform management, automation settings, and publishing activity tracking.",
+    keyFeatures: [
+      "Centralized Draft and Review Queues",
+      "Scheduled Multi-Platform Publishing",
+      "Automation and Approval Controls",
+      "Published Content and Activity Tracking"
+    ],
+    results: [
+      "Content planning and publishing coordinated in one workspace",
+      "Review and approval steps visible to the whole team",
+      "Publishing schedules managed across connected social platforms"
+    ],
+    testimonial: {
+      text: "Messenger gives our team one clear place to review content, coordinate publishing schedules, and track what is going live across our social channels.",
+      name: "Product Team",
+      role: "Social Media Operations",
+      company: "PixoraSoftTech",
+      rating: 5,
+      avatarBg: "bg-blue-700"
+    }
+  },
+  {
     id: "inventory",
     title: "RMS — Store & Inventory Manager",
     category: "Software",
