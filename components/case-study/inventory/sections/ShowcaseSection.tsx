@@ -6,28 +6,28 @@ export default function ShowcaseSection() {
         <div className="w-full max-w-[3000px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 2xl:gap-8 items-stretch w-full">
             {/* Left Big Card (col-span-7) */}
-            <div className="lg:col-span-7 2xl:col-span-7 h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px] overflow-hidden w-full">
+            <div className="lg:col-span-7 2xl:col-span-7 h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px] overflow-hidden border border-zinc-200/60 w-full">
               <img
-                src="/case_studies/rms_soft/rms_showcase_soft_01.jpg"
+                src="/case_studies/rms_soft/rms_hero_soft_01.png"
                 alt="RMS software dashboard showcase"
-                className="w-full h-full object-contain object-center"
+                className="w-full h-full object-cover object-center"
               />
             </div>
 
             {/* Right Two Stacked Cards (col-span-5) */}
             <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
-              <div className="flex-1 h-1/2 overflow-hidden w-full">
+              <div className="flex-1 h-1/2 overflow-hidden border border-zinc-200/60 w-full">
                 <img
-                  src="/case_studies/rms_soft/rms_work_soft_01.png"
+                  src="/case_studies/rms_soft/rms_work_soft_03_update.png"
                   alt="RMS multi-location inventory overview"
-                  className="w-[120%] h-[120%] mx-auto my-auto object-contain object-center block"
+                  className="w-full h-full object-cover object-center block"
                 />
               </div>
-              <div className="flex-1 h-1/2 overflow-hidden w-full">
+              <div className="flex-1 h-1/2 overflow-hidden border border-zinc-200/60 w-full">
                 <img
-                  src="/case_studies/rms_soft/rms_work_soft_02.png"
+                  src="/case_studies/rms_soft/rms_work_soft_02_upda.png"
                   alt="RMS purchase order and stock management interface"
-                  className="w-full h-full object-contain object-center block"
+                  className="w-full h-full object-cover object-center block"
                 />
               </div>
             </div>
