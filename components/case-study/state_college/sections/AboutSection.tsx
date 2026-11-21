@@ -28,9 +28,9 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/state_college_web/state_college_about_web_01.png"
-                alt="State College Digital Campus Detail"
-                className="w-full h-full object-cover object-center block"
+                src="/case_studies/state_college_web/state_college_branding_web_01_logo.png"
+                alt="State College logo"
+                className="w-full h-full object-contain object-center block"
               />
             </motion.div>
           </div>
@@ -50,7 +50,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/state_college_web/state_college_about_web_02.png"
+                src="/case_studies/state_college_web/state_college_work_web_02.png"
                 alt="State College Digital Campus Showcase"
                 className="w-full h-full object-cover object-center block"
               />
