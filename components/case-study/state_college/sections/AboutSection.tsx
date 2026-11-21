@@ -28,7 +28,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/state_college_web/state_college_about_web_01.png"
                 alt="State College Digital Campus Detail"
                 className="w-full h-full object-cover object-center block"
               />
@@ -50,7 +50,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/state_college_web/state_college_about_web_02.png"
                 alt="State College Digital Campus Showcase"
                 className="w-full h-full object-cover object-center block"
               />
@@ -94,7 +94,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/state_college_web/state_college_about_web_03.png"
                 alt="State College Digital Campus Environment"
                 className="w-full h-full object-cover object-center block"
               />

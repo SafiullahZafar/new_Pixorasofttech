@@ -28,7 +28,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/glass_haven_web/glass_haven_about_web_03.png"
                 alt="Glass Haven Luxury Real Estate Detail"
                 className="w-full h-full object-cover object-center block"
               />
@@ -50,7 +50,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/glass_haven_web/glass_haven_about_web_02.png"
                 alt="Glass Haven Luxury Real Estate Showcase"
                 className="w-full h-full object-cover object-center block"
               />
@@ -94,7 +94,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/glass_haven_web/glass_haven_about_web_01.png"
                 alt="Glass Haven Luxury Real Estate Environment"
                 className="w-full h-full object-cover object-center block"
               />

@@ -28,7 +28,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/zostel_web/zostel_about_web_01.png"
                 alt="Zostel Backpacker Travel Detail"
                 className="w-full h-full object-cover object-center block"
               />
@@ -50,7 +50,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/zostel_web/zostel_about_web_03.png"
                 alt="Zostel Backpacker Travel Showcase"
                 className="w-full h-full object-cover object-center block"
               />
@@ -94,7 +94,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/zostel_web/zostel_about_web_02.png"
                 alt="Zostel Backpacker Travel Environment"
                 className="w-full h-full object-cover object-center block"
               />

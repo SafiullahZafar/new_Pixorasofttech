@@ -29,7 +29,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="/portfolio/inventory-dashboard.png"
+                src="/case_studies/rms_soft/rms_about_soft_01.png"
                 alt="Multi-store inventory management dashboard"
                 className="w-full h-full object-cover object-center block"
               />
@@ -52,7 +52,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/portfolio/light-inventory-dashboard.png"
+                src="/case_studies/rms_soft/rms_about_soft_02.png"
                 alt="Retail stock and purchase order management dashboard"
                 className="w-full h-full object-cover object-center block"
               />
@@ -99,7 +99,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/rms_system.png"
+                src="/case_studies/rms_soft/rms_hero_soft_01.png"
                 alt="Centralized retail inventory and store control system"
                 className="w-full h-full object-cover object-center block"
               />

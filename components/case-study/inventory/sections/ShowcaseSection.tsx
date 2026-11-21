@@ -19,14 +19,14 @@ export default function ShowcaseSection({ heroImage }: Pick<InventorySectionProp
             <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/portfolio/inventory-dashboard.png"
+                  src="/case_studies/rms_soft/rms_work_soft_01.png"
                   alt="Multi-location inventory overview"
                   className="w-full h-full object-cover object-center block"
                 />
               </div>
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/portfolio/light-inventory-dashboard.png"
+                  src="/case_studies/rms_soft/rms_work_soft_02.png"
                   alt="Purchase order and stock management interface"
                   className="w-full h-full object-cover object-center block"
                 />

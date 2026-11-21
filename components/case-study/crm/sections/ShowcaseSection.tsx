@@ -19,14 +19,14 @@ export default function ShowcaseSection({ heroImage }: Pick<CRMSectionProps, "he
             <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/portfolio/crm-dashboard.png"
+                  src="/case_studies/crm_soft/crm_work_soft_02.png"
                   alt="CRM sales pipeline dashboard"
                   className="w-full h-full object-cover object-center block"
                 />
               </div>
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/portfolio/flowcrm-dashboard.png"
+                  src="/case_studies/crm_soft/crm_work_soft_01.png"
                   alt="CRM customer activity and analytics dashboard"
                   className="w-full h-full object-cover object-center block"
                 />

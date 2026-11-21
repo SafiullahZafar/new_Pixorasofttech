@@ -19,14 +19,14 @@ export default function ShowcaseSection({ heroImage }: Pick<SalonSectionProps, "
             <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/portfolio/salon-dashboard.png"
+                  src="/case_studies/salon_soft/salon_work_soft_01.png"
                   alt="Salon stylist calendar and staff scheduling"
                   className="w-full h-full object-cover object-center block"
                 />
               </div>
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/salon_system.png"
+                  src="/case_studies/salon_soft/salon_hero_soft_01.png"
                   alt="Salon services, packages, and checkout system"
                   className="w-full h-full object-cover object-center block"
                 />

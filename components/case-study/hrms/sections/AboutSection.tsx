@@ -29,7 +29,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="/portfolio/hr-dashboard.png"
+                src="/case_studies/hrms_soft/hrms_hero_soft_01.png"
                 alt="Aurelle staff and operations dashboard"
                 className="w-full h-full object-cover object-center block"
               />
@@ -52,7 +52,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/portfolio/hr-dashboard.png"
+                src="/case_studies/hrms_soft/hrms_about_soft_01.png"
                 alt="Aurelle employee attendance dashboard"
                 className="w-full h-full object-cover object-center block"
               />
@@ -99,7 +99,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/tax_integrated.png"
+                src="/case_studies/hrms_soft/hrms_about_soft_02.png"
                 alt="Aurelle business management dashboard"
                 className="w-full h-full object-cover object-center block"
               />

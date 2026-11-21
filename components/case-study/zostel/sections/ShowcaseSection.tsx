@@ -19,14 +19,14 @@ export default function ShowcaseSection({
           <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
             <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/zostel_web/zostel_about_web_01.png"
                 alt="Zostel Backpacker Travel Interface Detail"
                 className="w-full h-full object-cover object-center block"
               />
             </div>
             <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/zostel_web/zostel_work_web_02.png"
                 alt="Zostel Backpacker Travel Operational Workflow"
                 className="w-full h-full object-cover object-center block"
               />

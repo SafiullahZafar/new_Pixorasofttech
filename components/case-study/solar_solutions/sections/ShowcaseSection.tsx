@@ -19,14 +19,14 @@ export default function ShowcaseSection({
           <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
             <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/solar_solutions_web/solar_solutions_about_web_01.png"
                 alt="Solar Solutions Energy Interface Detail"
                 className="w-full h-full object-cover object-center block"
               />
             </div>
             <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1508873696983-2df57046475a?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/solar_solutions_web/solar_solutions_work_web_01.png"
                 alt="Solar Solutions Energy Operational Workflow"
                 className="w-full h-full object-cover object-center block"
               />

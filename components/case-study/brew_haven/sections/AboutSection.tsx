@@ -29,7 +29,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=85"
+                src="/case_studies/brew_haven_web/brew_haven_about_web_02.png"
                 alt="Brew Haven Artisan Pour-Over"
                 className="w-full h-full object-cover object-center block"
               />
@@ -52,7 +52,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/brew_haven_web/brew_haven_about_web_01.png"
                 alt="Brew Haven Roastery Atmosphere"
                 className="w-full h-full object-cover object-center block"
               />
@@ -99,7 +99,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&q=85"
+                src="/case_studies/brew_haven_web/brew_haven_about_web_03.png"
                 alt="Brew Haven Specialty Roasted Beans"
                 className="w-full h-full object-cover object-center block"
               />

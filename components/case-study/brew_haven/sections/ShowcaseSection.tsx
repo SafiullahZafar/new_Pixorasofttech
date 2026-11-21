@@ -19,14 +19,14 @@ export default function ShowcaseSection({ heroImage }: Pick<BrewHavenSectionProp
             <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85"
+                  src="/case_studies/brew_haven_web/brew_haven_work_web_03.png"
                   alt="Espresso Crafting & Roast Profiling"
                   className="w-full h-full object-cover object-center block"
                 />
               </div>
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=85"
+                  src="/case_studies/brew_haven_web/brew_haven_work_web_02.png"
                   alt="Specialty Coffee Bar Experience"
                   className="w-full h-full object-cover object-center block"
                 />
