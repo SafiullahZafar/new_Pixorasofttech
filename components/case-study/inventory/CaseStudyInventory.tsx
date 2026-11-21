@@ -31,8 +31,8 @@ export default function CaseStudyInventory({ project }: CaseStudyInventoryProps)
   const [cardHovered, setCardHovered] = useState(false);
 
   const title = "RMS System";
-  const heroImage = "/case_studies/rms_soft/rms_showcase_soft_02.png";
-  const demoImage = "/case_studies/rms_soft/rms_showcase_soft_04.png";
+  const heroImage = "/case_studies/rms_soft/rms_work_soft_01.png";
+  const demoImage = "/case_studies/rms_soft/rms_work_soft_01.png";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription =
