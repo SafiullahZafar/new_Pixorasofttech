@@ -102,8 +102,10 @@ const navVariants: Variants = {
     backdropFilter: "blur(0px)",
     paddingLeft: "1.25rem",
     paddingRight: "1.25rem",
-    paddingTop: "0.85rem",
-    paddingBottom: "0.85rem",
+    paddingTop: "0.75rem",
+    paddingBottom: "0.75rem",
+    paddingTop: "0.75rem",
+    paddingBottom: "0.75rem",
     transition: smoothTransition,
   },
   expanded: {
@@ -132,6 +134,41 @@ const navVariants: Variants = {
   },
 };
 
+const caseStudyNavVariants: Variants = {
+  top: {
+    ...navVariants.top,
+    maxWidth: "100%",
+    backgroundColor: "#f5f5f5",
+    borderColor: "rgba(0, 0, 0, 0.08)",
+    boxShadow: "0 8px 24px -12px rgba(0, 0, 0, 0.18)",
+    backdropFilter: "blur(0px)",
+    paddingLeft: "1.25rem",
+    paddingRight: "1.25rem",
+  },
+  expanded: {
+    ...navVariants.expanded,
+    maxWidth: "1520px",
+    backgroundColor: "#f5f5f5",
+    borderColor: "rgba(0, 0, 0, 0.08)",
+    backdropFilter: "blur(0px)",
+    paddingLeft: "1.25rem",
+    paddingRight: "1.25rem",
+    paddingTop: "0.75rem",
+    paddingBottom: "0.75rem",
+  },
+  collapsed: {
+    ...navVariants.collapsed,
+    maxWidth: "185px",
+    backgroundColor: "#f5f5f5",
+    borderColor: "rgba(0, 0, 0, 0.08)",
+    backdropFilter: "blur(0px)",
+    paddingLeft: "1.25rem",
+    paddingRight: "1.25rem",
+    paddingTop: "0.85rem",
+    paddingBottom: "0.85rem",
+  },
+};
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -139,6 +176,7 @@ export default function Navbar() {
   const [isAtTop, setIsAtTop] = useState(true);
   const [isExpanded, setExpanded] = useState(true);
   const pathname = usePathname();
+  const isCaseStudyPage = pathname.startsWith("/case-study/");
 
   const { scrollY } = useScroll();
 
@@ -170,18 +208,28 @@ export default function Navbar() {
   const navState = isAtTop ? "top" : isExpanded ? "expanded" : "collapsed";
 
   return (
-    <header className="fixed top-2 sm:top-4 left-0 right-0 w-full z-[60] pointer-events-none flex justify-center px-4 sm:px-8">
+    <header
+      className={cn(
+        "fixed left-0 right-0 w-full z-[60] pointer-events-none flex justify-center",
+        isCaseStudyPage
+          ? isAtTop
+            ? "top-0 px-0"
+            : "top-2 sm:top-4 px-4 sm:px-8"
+          : "top-2 sm:top-4 px-4 sm:px-8"
+      )}
+    >
       <motion.nav
         layout
         initial={false}
         animate={navState}
-        variants={navVariants}
+        variants={isCaseStudyPage ? caseStudyNavVariants : navVariants}
         transition={smoothTransition}
         whileHover={navState === "collapsed" ? { scale: 1.05 } : undefined}
         whileTap={navState === "collapsed" ? { scale: 0.96 } : undefined}
         onClick={handleNavClick}
         className={cn(
-          "pointer-events-auto relative flex items-center justify-between rounded-full border w-full",
+          "pointer-events-auto relative flex items-center justify-between border w-full",
+          isCaseStudyPage && isAtTop ? "rounded-none" : "rounded-full",
           navState === "collapsed" && "cursor-pointer hover:shadow-2xl"
         )}
       >
