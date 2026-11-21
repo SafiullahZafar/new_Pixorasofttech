@@ -54,7 +54,7 @@ export default function CaseStudyGlassHaven({ project }: CaseStudyGlassHavenProp
         cardHovered={cardHovered}
         setCardHovered={setCardHovered}
       />
-      <ShowcaseSection heroImage={heroImage} />
+      <ShowcaseSection />
       <BrandingSection />
       <MetricsSection project={project} />
       <SummarySection liveUrl={liveUrl} project={project} />
