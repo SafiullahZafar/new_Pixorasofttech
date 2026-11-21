@@ -22,7 +22,7 @@ export default function MetricsSection({ project }: { project?: Project }) {
               Key Takeaways
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-semibold tracking-tight text-zinc-950 leading-tight">
-              Measurable impact for Messenger Software
+              Measurable impact for RMS System
             </h2>
           </motion.div>
           <motion.p

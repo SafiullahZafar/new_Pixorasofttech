@@ -6,7 +6,7 @@ export default function HeroSection({ heroRef, heroScale, mobileHeroImage, heroI
   return (
       <section
         ref={heroRef}
-        className="mt-16 relative z-0 w-full h-[45vh] sm:h-[70vh] lg:h-screen overflow-hidden bg-black select-none"
+        className="mt-16 relative z-0 w-full h-[calc(100svh-4rem)] min-h-[480px] overflow-hidden bg-black select-none"
       >
         <div className="absolute inset-0 w-full h-full overflow-hidden">
           <motion.div
@@ -20,14 +20,14 @@ export default function HeroSection({ heroRef, heroScale, mobileHeroImage, heroI
               style={{ scale: 1 }}
               src={mobileHeroImage}
               alt={title}
-              className="block md:hidden w-full h-full object-contain object-center"
+              className="block md:hidden w-full h-full object-cover object-center"
             />
             {/* Desktop Hero Image */}
             <motion.img
               style={{ scale: 1 }}
               src={heroImage}
               alt={title}
-              className="hidden md:block w-full h-full object-contain object-center"
+              className="hidden md:block w-full h-full object-cover object-center"
             />
           </motion.div>
         </div>

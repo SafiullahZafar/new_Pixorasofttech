@@ -8,8 +8,8 @@ export default function ShowcaseSection() {
             {/* Left Big Card (col-span-7) */}
             <div className="lg:col-span-7 2xl:col-span-7 h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px] overflow-hidden w-full">
               <img
-                src="/case_studies/messenger_soft/messenger_showcase_soft_19.png"
-                alt="Messenger software dashboard showcase"
+                src="/case_studies/rms_soft/rms_showcase_soft_01.jpg"
+                alt="RMS software dashboard showcase"
                 className="w-full h-full object-contain object-center"
               />
             </div>
@@ -18,15 +18,15 @@ export default function ShowcaseSection() {
             <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
               <div className="flex-1 h-1/2 overflow-hidden w-full">
                 <img
-                  src="/case_studies/messenger_soft/messenger_showcase_soft_12.png"
-                  alt="Multi-location inventory overview"
+                  src="/case_studies/rms_soft/rms_work_soft_01.png"
+                  alt="RMS multi-location inventory overview"
                   className="w-[120%] h-[120%] mx-auto my-auto object-contain object-center block"
                 />
               </div>
               <div className="flex-1 h-1/2 overflow-hidden w-full">
                 <img
-                  src="/case_studies/messenger_soft/messenger_showcase_soft_13.png"
-                  alt="Purchase order and stock management interface"
+                  src="/case_studies/rms_soft/rms_work_soft_02.png"
+                  alt="RMS purchase order and stock management interface"
                   className="w-full h-full object-contain object-center block"
                 />
               </div>

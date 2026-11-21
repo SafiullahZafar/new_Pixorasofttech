@@ -30,9 +30,9 @@ export default function CaseStudyInventory({ project }: CaseStudyInventoryProps)
   // Showcase Card Hover
   const [cardHovered, setCardHovered] = useState(false);
 
-  const title = "Messenger Software";
-  const messengerPreview = "/case_studies/messenger_soft/messenger_showcase_soft_01.png";
-  const heroDemoImage = "/case_studies/messenger_soft/messenger_showcase_soft_10.png";
+  const title = "RMS System";
+  const heroImage = "/case_studies/rms_soft/rms_showcase_soft_02.png";
+  const demoImage = "/case_studies/rms_soft/rms_showcase_soft_04.png";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription =
@@ -63,8 +63,8 @@ export default function CaseStudyInventory({ project }: CaseStudyInventoryProps)
       <HeroSection
         heroRef={heroRef}
         heroScale={heroScale}
-        mobileHeroImage={heroDemoImage}
-        heroImage={heroDemoImage}
+        mobileHeroImage={heroImage}
+        heroImage={heroImage}
         title={title}
       />
 
@@ -79,7 +79,7 @@ export default function CaseStudyInventory({ project }: CaseStudyInventoryProps)
         challengeText={challengeText}
         solutionText={solutionText}
         resultsText={resultsText}
-        heroImage={heroDemoImage}
+        heroImage={demoImage}
         liveUrl={liveUrl}
         cardHovered={cardHovered}
         setCardHovered={setCardHovered}

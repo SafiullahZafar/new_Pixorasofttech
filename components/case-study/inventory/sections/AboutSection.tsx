@@ -29,8 +29,8 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/messenger_soft/messenger_branding_soft_03.png"
-                alt="Messenger software logo"
+                src="/case_studies/rms_soft/rms_branding_soft_01.png"
+                alt="RMS System logo"
                 className="w-full h-full object-contain object-center block"
               />
             </motion.div>
@@ -52,8 +52,8 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/messenger_soft/messenger_showcase_soft_02.png"
-                alt="Retail stock and purchase order management dashboard"
+                src="/case_studies/rms_soft/rms_about_soft_01.png"
+                alt="RMS store management dashboard"
                 className="w-full h-full object-cover object-center block"
               />
             </motion.div>
@@ -99,8 +99,8 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/messenger_soft/messenger_showcase_soft_04.png"
-                alt="Centralized retail inventory and store control system"
+                src="/case_studies/rms_soft/rms_about_soft_02.png"
+                alt="RMS inventory and store control system"
                 className="w-full h-full object-cover object-center block"
               />
             </motion.div>
