@@ -21,16 +21,16 @@ export default function AboutSection({
               whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
               viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 1.1, ease: [0.77, 0, 0.175, 1] }}
-              className="w-44 sm:w-64 2xl:w-80 h-56 sm:h-72 2xl:h-96 relative overflow-hidden bg-zinc-200 rounded-2xl shrink-0 shadow-lg"
+              className="w-44 sm:w-64 2xl:w-80 h-56 sm:h-72 2xl:h-96 relative shrink-0"
             >
               <motion.img
                 initial={{ scale: 1.25 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/glass_haven_web/glass_haven_about_web_03.png"
-                alt="Glass Haven Luxury Real Estate Detail"
-                className="w-full h-full object-cover object-center block"
+                src="/case_studies/glass_haven_web/glass_haven_about_web_01_logo.png"
+                alt="Glass Haven logo"
+                className="w-full h-full object-contain object-center block"
               />
             </motion.div>
           </div>
@@ -94,7 +94,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/glass_haven_web/glass_haven_about_web_01.png"
+                src="/case_studies/glass_haven_web/glass_haven_about_web_03.png"
                 alt="Glass Haven Luxury Real Estate Environment"
                 className="w-full h-full object-cover object-center block"
               />
