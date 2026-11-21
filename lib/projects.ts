@@ -47,8 +47,8 @@ export const projects: Project[] = [
       "Automated Email Confirmation Journeys",
       "Speed-Optimized Next.js Frontend"
     ],
-    img: "/case_studies/brew_haven_web/brew_haven_work_web_01.png",
-    heroImg: "/case_studies/brew_haven_web/brew_haven_hero_web_01.png",
+    img: "/case_studies/brew_haven_web/brew_haven_about_web_01_updated.png",
+    heroImg: "/case_studies/brew_haven_web/brew_haven_about_web_01_updated.png",
     liveUrl: "https://brew-haven-beta.vercel.app/",
     status: "live",
     challenge: "Brew Haven suffered from low digital engagement and a high abandonment rate during online checkout. Their previous website failed to reflect their premium craft identity and lacked real-time order customisation options for retail bean buyers.",

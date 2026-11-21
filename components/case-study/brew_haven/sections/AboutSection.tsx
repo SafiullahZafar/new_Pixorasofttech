@@ -29,8 +29,8 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/brew_haven_web/brew_haven_about_web_02.png"
-                alt="Brew Haven Artisan Pour-Over"
+                src="/case_studies/brew_haven_web/brew_haven_branding_web_02_logo.png"
+                alt="Brew Haven brand logo"
                 className="w-full h-full object-cover object-center block"
               />
             </motion.div>
