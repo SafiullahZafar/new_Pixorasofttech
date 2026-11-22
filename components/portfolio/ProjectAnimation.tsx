@@ -242,17 +242,16 @@ export default function ProjectAnimation() {
                     <ContainerAnimated
                       key={project.src}
                       transition={{ duration: 0.65, ease: "easeOut" }}
-                      className="group relative aspect-[16/10] w-full overflow-hidden rounded-[1.25rem] bg-slate-200 shadow-[0_12px_35px_rgba(15,23,42,0.16)] sm:rounded-[1.5rem]"
+                      className="group relative aspect-[16/10] w-full overflow-hidden rounded-[1.25rem] bg-black/5 sm:rounded-[1.5rem]"
                     >
                       <img
                         src={project.src}
                         alt={`${project.title} project preview`}
                         loading="lazy"
                         decoding="async"
-                        className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                       />
-                      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      <p className="pointer-events-none absolute bottom-3 left-3 text-xs font-semibold tracking-wide text-white sm:bottom-5 sm:left-5 sm:text-base">
+                      <p className="pointer-events-none absolute bottom-3 left-3 text-xs font-semibold tracking-wide text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.85)] sm:bottom-5 sm:left-5 sm:text-base">
                         {project.title}
                       </p>
                     </ContainerAnimated>
