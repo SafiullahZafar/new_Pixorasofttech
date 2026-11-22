@@ -479,7 +479,7 @@ export const projects: Project[] = [
       "Driver Matching & Trip Routing System",
       "In-App Digital Wallet & Multi-Payment Integration"
     ],
-    img: "/case_studies/driven_app/driven_about_app_03.png",
+    img: "/case_studies/driven_app/driven_hero_app_01.png",
     heroImg: "/case_studies/driven_app/driven_hero_app_01.png",
     status: "processing",
     challenge: "Building a mobile application capable of sub-3-second driver lookup, smooth real-time map telemetry rendering without battery drain, and secure in-app payments across iOS and Android.",
