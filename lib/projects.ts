@@ -521,14 +521,14 @@ export const projects: Project[] = [
       "Appointment booking and visit details",
       "Client account and appointment management"
     ],
-    img: "/case_studies/salon_app/salon_showcase_app_01.png",
-    heroImg: "/case_studies/salon_app/salon_showcase_app_01.png",
+    img: "/case_studies/salon_app/salon_showcase_app_29.png",
+    heroImg: "/case_studies/salon_app/salon_showcase_app_29.png",
     status: "processing",
     challenge: "Clients needed a straightforward way to find salon services, choose a stylist, and book appointments without juggling calls and messages.",
     solution: "Veloura brings salon service discovery, stylist information, appointment selection, and booking details into one mobile flow.",
     keyFeatures: [
       "Browse salon services and treatments",
-      "Explore stylist profiles and availability",
+      "Explore stylist profiles and availability`",
       "Choose appointment dates and times",
       "Review upcoming booking details"
     ],
