@@ -169,19 +169,19 @@ ContainerAnimated.displayName = "ContainerAnimated";
 
 const galleryColumns = [
   [
-    { src: "/portfolio/brew-haven.png", title: "Brew Haven" },
-    { src: "/portfolio/eduka-college.png", title: "Eduka College" },
-    { src: "/portfolio/fitpulse-app.png", title: "FitPulse" },
+    { src: "/project/selected_wo/selected_work_driven_ride_booking_app.webp", title: "Driven Mobility App" },
+    { src: "/project/selected_wo/selected_work_customer_app_rocky_ledge.png", title: "Veloura Salon App" },
+    { src: "/project/selected_wo/selected_work_kb_exports_website_phone.png", title: "K.B. Exports" },
   ],
   [
-    { src: "/portfolio/kb-exports.png", title: "K.B. Exports" },
-    { src: "/portfolio/flowcrm-dashboard.png", title: "Flow CRM" },
-    { src: "/portfolio/shopease-app.png", title: "ShopEase" },
+    { src: "/project/selected_wo/selected_work_driven_dashboard_tablet.png", title: "Driven Fleet Operations & Admin Console" },
+    { src: "/project/selected_wo/selected_work_zostel_crm_laptop.png", title: "Zostel Travel & Hostels" },
+    { src: "/project/selected_wo/selected_work_crm_activity_tablet.png", title: "CRM Sales System" },
   ],
   [
-    { src: "/portfolio/crm-dashboard.png", title: "CRM Dashboard" },
-    { src: "/portfolio/irider-app.png", title: "iRider" },
-    { src: "/portfolio/lms-dashboard.png", title: "Learning Platform" },
+    { src: "/project/selected_wo/selected_work_textile_erp_dashboard.png", title: "Textile ERP & Production System" },
+    { src: "/project/selected_wo/selected_work_textile_engineering_laptop.png", title: "K.B. Exports" },
+    { src: "/project/selected_wo/selected_work_pos_app_showcase.png", title: "Aurelle Salon POS & Management System" },
   ],
 ];
 

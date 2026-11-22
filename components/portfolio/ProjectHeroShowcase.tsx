@@ -8,7 +8,7 @@ export interface MacbookProps {
 }
 
 const Macbook: React.FC<MacbookProps> = ({
-  imageSrc = "/portfolio/brew-haven.png",
+  imageSrc = "/project/hero_sec/hero_sec_neon_ui_dashboard_showcase.png",
   imageAlt = "PixoraSoftTech Project Showcase"
 }) => {
   return (

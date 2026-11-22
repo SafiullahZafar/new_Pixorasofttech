@@ -23,6 +23,24 @@ const categoryColors: Record<string, string> = {
   Software: "bg-white/90 text-slate-800",
 };
 
+const projectCardImages: Partial<Record<Project["id"], string>> = {
+  "brew-haven": "/project/our_project/our_project_brew_haven_menu.png",
+  "kb-exports": "/project/our_project/our_project_kb_exports_products_tablet.png",
+  "eduka-college": "/project/our_project/our_project_eduka_college_website.png",
+  "glass-haven": "/project/our_project/our_project_glass_haven_website.png",
+  "solar-solutions": "/project/our_project/our_project_solar_solutions_website.png",
+  "state-college": "/project/our_project/our_project_state_college_website.png",
+  zostel: "/project/our_project/our_project_zostel_website.png",
+  "travel-hotel-hub": "/project/our_project/our_project_travel_hotel_website.png",
+  "rider-app": "/project/our_project/our_project_driven_ride_booking_app.webp",
+  veloura: "/project/our_project/our_project_veloura_salon_app_showcase.png",
+  "catering-app": "/project/our_project/our_project_goodfood_menu_mobile.png",
+  hrms: "/project/our_project/our_project_aurapos_dashboard_laptop.png",
+  messenger: "/project/our_project/our_project_messenger_social_dashboard.png",
+  crm: "/project/our_project/our_project_crm_dashboard.png",
+  lms: "/project/our_project/our_project_textile_erp_dashboard.png",
+};
+
 export default function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
@@ -152,11 +170,11 @@ function ProjectCard({
         }`}
       >
         <img
-          src={project.img}
+          src={projectCardImages[project.id] ?? project.img}
           alt={project.title}
           loading={index < 4 ? "eager" : "lazy"}
           onError={(event) => {
-            event.currentTarget.src = "/portfolio/brew-haven.png";
+            event.currentTarget.src = "/project/our_project/our_project_brew_haven_menu.png";
           }}
           className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
         />
