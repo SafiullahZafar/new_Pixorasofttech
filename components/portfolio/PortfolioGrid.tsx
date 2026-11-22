@@ -41,15 +41,18 @@ const projectCardImages: Partial<Record<Project["id"], string>> = {
   lms: "/project/our_project/our_project_textile_erp_dashboard.png",
 };
 
+const excludedProjectIds = new Set(["supplier", "fitplus-app", "shopease-ecommerce"]);
+
 export default function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
+  const visibleProjects = projects.filter((project) => !excludedProjectIds.has(project.id));
   const filteredProjects =
     activeCategory === "All"
-      ? projects
+      ? visibleProjects
       : activeCategory === "Mobile Apps"
-        ? projects.filter((project) => project.category === "Mobile Apps" && ["rider-app", "veloura"].includes(project.id))
-        : projects.filter((project) => project.category === activeCategory);
+        ? visibleProjects.filter((project) => project.category === "Mobile Apps" && ["rider-app", "veloura"].includes(project.id))
+        : visibleProjects.filter((project) => project.category === activeCategory);
 
   return (
     <section
