@@ -19,7 +19,7 @@ export default function ShowcaseSection({ heroImage }: Pick<RiderAppSectionProps
             <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/case_studies/driven_app/driven_work_app_02.webp"
+                  src="/case_studies/driven_app/driven_showcase_app_02.png"
                   alt="Live ride matching and trip status"
                   className="w-full h-full object-cover object-center block"
                 />
@@ -37,3 +37,4 @@ export default function ShowcaseSection({ heroImage }: Pick<RiderAppSectionProps
       </section>
   );
 }
+
