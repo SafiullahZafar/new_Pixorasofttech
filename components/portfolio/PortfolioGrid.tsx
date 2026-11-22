@@ -29,7 +29,9 @@ export default function PortfolioGrid() {
   const filteredProjects =
     activeCategory === "All"
       ? projects
-      : projects.filter((project) => project.category === activeCategory);
+      : activeCategory === "Mobile Apps"
+        ? projects.filter((project) => project.category === "Mobile Apps" && ["rider-app", "veloura"].includes(project.id))
+        : projects.filter((project) => project.category === activeCategory);
 
   return (
     <section

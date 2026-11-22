@@ -505,6 +505,48 @@ export const projects: Project[] = [
     }
   },
   {
+    id: "veloura",
+    title: "Veloura Salon App",
+    category: "Mobile Apps",
+    tagline: "Salon discovery, appointment booking, and client care in one app",
+    desc: "A mobile salon experience for discovering beauty services, choosing a stylist, booking appointments, and keeping track of upcoming visits.",
+    overview: "Veloura makes salon visits easier to plan. Clients can explore services, compare stylist availability, book a suitable time, and keep appointment details together in a clear mobile experience.",
+    tags: ["Mobile App", "Salon Booking", "Beauty Services", "Stylist Discovery", "Appointment Management"],
+    client: "Veloura",
+    industry: "Beauty, Wellness & Salon Services",
+    timeline: "Mobile App Case Study",
+    deliverables: [
+      "Mobile salon discovery and service browsing",
+      "Stylist profiles and availability",
+      "Appointment booking and visit details",
+      "Client account and appointment management"
+    ],
+    img: "/case_studies/salon_app/salon_showcase_app_01.png",
+    heroImg: "/case_studies/salon_app/salon_showcase_app_01.png",
+    status: "processing",
+    challenge: "Clients needed a straightforward way to find salon services, choose a stylist, and book appointments without juggling calls and messages.",
+    solution: "Veloura brings salon service discovery, stylist information, appointment selection, and booking details into one mobile flow.",
+    keyFeatures: [
+      "Browse salon services and treatments",
+      "Explore stylist profiles and availability",
+      "Choose appointment dates and times",
+      "Review upcoming booking details"
+    ],
+    results: [
+      "Service discovery and appointment booking in one mobile experience",
+      "Clear stylist and availability details before booking",
+      "Appointment information kept together for clients"
+    ],
+    testimonial: {
+      text: "Veloura gives clients a simple way to explore our services and plan their salon visits from their phones.",
+      name: "Veloura Team",
+      role: "Salon Services",
+      company: "Veloura",
+      rating: 5,
+      avatarBg: "bg-fuchsia-600"
+    }
+  },
+  {
     id: "fitplus-app",
     title: "FitPlus Fitness App",
     category: "Mobile Apps",

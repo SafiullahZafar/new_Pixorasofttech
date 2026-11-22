@@ -80,11 +80,8 @@ const caseStudiesCol2: CaseStudyNavItem[] = [
 ];
 
 const caseStudiesCol3: CaseStudyNavItem[] = [
-  { title: "FitPulse Mobile App", href: "/case-study/fitplus-app" },
-  { title: "IRider Transportation", href: "/case-study/rider-app" },
-  { title: "ShopEase E-Commerce", href: "/case-study/shopease-ecommerce" },
-  { title: "Catering & Event Food App", href: "/case-study/catering-app", isNew: true },
-  { title: "Supplier Wholesale App", href: "/case-study/supplier-wholesale-app", isNew: true },
+  { title: "Driven Mobility App", href: "/case-study/rider-app" },
+  { title: "Veloura Salon App", href: "/case-study/veloura" },
 ];
 
 // Luxury smooth easing curve (natural deceleration over 0.65s)
