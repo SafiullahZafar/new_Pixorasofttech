@@ -9,8 +9,8 @@ export default function ShowcaseSection({ heroImage }: Pick<TextileERPSectionPro
             {/* Left Big Card (col-span-7) */}
             <div className="lg:col-span-7 2xl:col-span-7 h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px] overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
               <img
-                src={heroImage}
-                alt="Textile ERP production management platform showcase"
+                src="/case_studies/textile_erp_soft/textile_erp_mobile_soft_01.png"
+                alt="Textile ERP mobile application"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -19,14 +19,14 @@ export default function ShowcaseSection({ heroImage }: Pick<TextileERPSectionPro
             <div className="lg:col-span-5 2xl:col-span-5 flex flex-col gap-4 sm:gap-6 2xl:gap-8 w-full h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px]">
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/case_studies/textile_erp_soft/textile_erp_work_soft_01.webp"
+                  src="/case_studies/textile_erp_soft/textile_erp_showcase_soft_01.png"
                   alt="Textile loom production monitoring dashboard"
                   className="w-full h-full object-cover object-center block"
                 />
               </div>
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/case_studies/textile_erp_soft/textile_erp_hero_soft_01.png"
+                  src="/case_studies/textile_erp_soft/textile_erp_work_soft_01_updated.png"
                   alt="Textile ERP yarn inventory and export workflow"
                   className="w-full h-full object-cover object-center block"
                 />
