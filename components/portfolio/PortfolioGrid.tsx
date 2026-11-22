@@ -37,8 +37,10 @@ const projectCardImages: Partial<Record<Project["id"], string>> = {
   "catering-app": "/project/our_project/our_project_goodfood_menu_mobile.png",
   hrms: "/project/our_project/our_project_aurapos_dashboard_laptop_updated.png",
   inventory: "/project/our_project/our_project_aurapos_dashboard_laptop.png",
+  "salon-pos": "/case_studies/salon_soft/salon_showcase_soft_03.png",
+  dom: "/project/our_project/our_project_driven_hr_dashboard.png",
   messenger: "/project/our_project/our_project_messenger_social_dashboard.png",
-  crm: "/project/our_project/our_project_crm_dashboard.png",
+  crm: "/project/our_project/crm_work_soft_01_updated.png",
   lms: "/project/our_project/our_project_textile_erp_dashboard.png",
 };
 
