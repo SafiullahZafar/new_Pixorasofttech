@@ -25,7 +25,7 @@ export default function ShowcaseSection() {
               </div>
               <div className="flex-1 h-1/2 overflow-hidden w-full">
                 <img
-                  src="/case_studies/salon_app/salon_showcase_app_05_updtaed.webp"
+                  src="/case_studies/salon_app/salon_showcase_app_05_updta.webp"
                   alt="Veloura salon appointment screens"
                   className="w-full h-full object-cover object-center block"
                 />
