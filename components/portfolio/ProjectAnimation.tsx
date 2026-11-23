@@ -169,19 +169,20 @@ ContainerAnimated.displayName = "ContainerAnimated";
 
 const galleryColumns = [
   [
-    { src: "/project/selected_wo/selected_work_driven_ride_booking_app.webp", title: "Driven Mobility App" },
-    { src: "/project/selected_wo/selected_work_customer_app_rocky_ledge.png", title: "Veloura Salon App" },
-    { src: "/project/selected_wo/selected_work_kb_exports_website_phone.png", title: "K.B. Exports" },
+    { src: "/project/selected_wo/driven_mobility_ride_booking_app.webp", title: "Driven Mobility App" },
+    { src: "/project/selected_wo/veloura_customer_management_app.png", title: "Veloura Salon App" },
+    // { src: "/project/selected_wo/kb_exports_solar_mobile_websites.png", title: "K.B. Exports & Solar Solutions" },
+    { src: "/project/selected_wo/eduka_college_mobile_website.png", title: "Eduka College" },
   ],
   [
-    { src: "/project/selected_wo/selected_work_driven_dashboard_tablet.png", title: "Driven Fleet Operations & Admin Console" },
-    { src: "/project/selected_wo/selected_work_zostel_crm_laptop.png", title: "Zostel Travel & Hostels" },
-    { src: "/project/selected_wo/selected_work_crm_activity_tablet.png", title: "CRM Sales System" },
+    { src: "/project/selected_wo/driven_fleet_operations_dashboard.png", title: "Driven Fleet Operations & Admin Console" },
+    { src: "/project/selected_wo/zostel_booking_website_laptop.png", title: "Zostel Travel & Hostels" },
+    { src: "/project/selected_wo/crm_sales_activity_tablet.png", title: "CRM Sales System" },
   ],
   [
-    { src: "/project/selected_wo/selected_work_textile_erp_dashboard.png", title: "Textile ERP & Production System" },
-    { src: "/project/selected_wo/selected_work_textile_engineering_laptop.png", title: "K.B. Exports" },
-    { src: "/project/selected_wo/selected_work_pos_app_showcase.png", title: "Aurelle Salon POS & Management System" },
+    { src: "/project/selected_wo/textile_erp_fabric_costing_tablet.png", title: "Textile ERP & Production System" },
+    { src: "/project/selected_wo/kb_exports_website_laptop.png", title: "K.B. Exports" },
+    { src: "/project/selected_wo/rms_pos_dashboard_laptop.png", title: "RMS — Store & Inventory Manager" },
   ],
 ];
 
