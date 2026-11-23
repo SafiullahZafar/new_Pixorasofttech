@@ -391,43 +391,43 @@ export function WorksWheel({
 
 const featuredWorks: WorksWheelItem[] = [
   {
-    title: "Brew Haven Coffee",
-    image: "/home_page/our_projects/ourprojects1.png",
-    href: "/case-study/brew-heaven",
-  },
-  {
-    title: "Light CRM Suite",
-    image: "/home_page/our_projects/ourprojects2.png",
-    href: "/projects/crm",
-  },
-  {
-    title: "Delivery Flow System",
-    image: "/home_page/our_projects/ourprojects3.png",
-    href: "/projects/delivery-dashboard",
-  },
-  {
-    title: "FitPulse Mobile App",
-    image: "/home_page/our_projects/ourprojects4.png",
-    href: "/projects/fitplus-app",
-  },
-  {
-    title: "Inventory Cloud POS",
-    image: "/home_page/our_projects/ourprojects5.png",
+    title: "RMS — Store & Inventory Manager",
+    image: "/home_page/our_projects/rms_store_inventory_manager.png",
     href: "/projects/inventory",
   },
   {
-    title: "K.B. Exports Global",
-    image: "/home_page/our_projects/ourprojects6.png",
-    href: "/projects/kb-exports",
+    title: "Brew Haven Coffee",
+    image: "/home_page/our_projects/brew_haven_coffee.png",
+    href: "/case-study/brew-heaven",
+  },
+  {
+    title: "Driven Fleet Operations & Admin Console",
+    image: "/home_page/our_projects/driven_fleet_operations_admin.png",
+    href: "/projects/dom",
+  },
+  {
+    title: "CRM Sales System",
+    image: "/home_page/our_projects/crm_sales_system.png",
+    href: "/projects/crm",
   },
   {
     title: "Eduka College Platform",
-    image: "/home_page/our_projects/ourprojects7.png",
+    image: "/home_page/our_projects/eduka_college_platform.png",
     href: "/projects/eduka-college",
   },
   {
+    title: "K.B. Exports Global",
+    image: "/home_page/our_projects/kb_exports_global.png",
+    href: "/projects/kb-exports",
+  },
+  {
+    title: "Driven Mobility App",
+    image: "/home_page/our_projects/driven_mobility_app.png",
+    href: "/case-study/rider-app",
+  },
+  {
     title: "Solar Solutions Portal",
-    image: "/home_page/our_projects/ourprojects8.png",
+    image: "/home_page/our_projects/solar_solutions_portal.png",
     href: "/projects/solar-solutions",
   },
 ];

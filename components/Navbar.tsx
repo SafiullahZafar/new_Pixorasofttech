@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent, type Variants, type Transition } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { excludedProjectIds, projects } from "@/lib/projects";
 
 const serviceItems = [
   {
@@ -83,6 +84,9 @@ const caseStudiesCol3: CaseStudyNavItem[] = [
   { title: "Driven Mobility App", href: "/case-study/rider-app" },
   { title: "Veloura Salon App", href: "/case-study/veloura" },
 ];
+
+const projectCount = projects.filter((project) => !excludedProjectIds.has(project.id)).length;
+const caseStudyCount = caseStudiesCol1.length + caseStudiesCol2.length + caseStudiesCol3.length;
 
 // Luxury smooth easing curve (natural deceleration over 0.65s)
 const smoothTransition: Transition = {
@@ -409,7 +413,7 @@ export default function Navbar() {
                       href="/projects"
                       className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0A2540] hover:text-[#143960] transition-colors"
                     >
-                      View All 21 Projects &amp; Case Studies <ArrowUpRight className="w-3.5 h-3.5" />
+                      View All {projectCount} Projects &amp; {caseStudyCount} Case Studies <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>

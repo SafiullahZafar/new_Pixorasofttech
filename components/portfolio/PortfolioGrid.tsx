@@ -11,7 +11,7 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import Link from "next/link";
-import { projects, type Project } from "@/lib/projects";
+import { excludedProjectIds, projects, type Project } from "@/lib/projects";
 
 const categories = ["All", "Websites", "Mobile Apps", "Software"] as const;
 type Category = (typeof categories)[number];
@@ -43,8 +43,6 @@ const projectCardImages: Partial<Record<Project["id"], string>> = {
   crm: "/project/our_project/crm_work_soft_01_updated.png",
   lms: "/project/our_project/our_project_textile_erp_dashboard.png",
 };
-
-const excludedProjectIds = new Set(["supplier", "fitplus-app", "shopease-ecommerce"]);
 
 export default function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");

@@ -28,6 +28,8 @@ export type Project = {
   };
 };
 
+export const excludedProjectIds = new Set(["supplier", "fitplus-app", "shopease-ecommerce"]);
+
 export const projects: Project[] = [
   // ── WEBSITES ──
   {
