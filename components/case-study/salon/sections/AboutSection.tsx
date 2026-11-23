@@ -45,14 +45,14 @@ export default function AboutSection({
               whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
               viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }}
-              className="w-full h-[380px] sm:h-[520px] md:h-[660px] 2xl:h-[680px] relative overflow-hidden bg-zinc-200 rounded-2xl shadow-xl"
+              className="w-full h-[380px] sm:h-[520px] md:h-[660px] 2xl:h-[680px] relative overflow-hidden rounded-2xl shadow-xl"
             >
               <motion.img
                 initial={{ scale: 1.25 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/salon_soft/salon_about_soft_02.png"
+                src="/case_studies/salon_soft/salon_showcase_soft_07.png"
                 alt="Aurelle salon point of sale system"
                 className="w-full h-full object-cover object-center block"
               />
@@ -92,14 +92,14 @@ export default function AboutSection({
               whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
               viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }}
-              className="w-full h-[380px] sm:h-[520px] md:h-[660px] 2xl:h-[680px] relative overflow-hidden bg-zinc-200 rounded-2xl shadow-xl"
+              className="w-full h-[380px] sm:h-[520px] md:h-[750px] 2xl:h-[830px] relative overflow-hidden bg-zinc-200 rounded-2xl shadow-xl"
             >
               <motion.img
                 initial={{ scale: 1.25 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/salon_soft/salon_about_soft_01.png"
+                src="/case_studies/salon_soft/salon_about_soft_01_updated.png"
                 alt="Aurelle salon operations dashboard"
                 className="w-full h-full object-cover object-center block"
               />
