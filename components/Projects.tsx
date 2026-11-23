@@ -38,7 +38,7 @@ const projectItems = [
     badge: "Design & Dev",
     img: "/portfolio/brew-haven.png",
     fallbackImg: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1000&q=80",
-    href: "/case-study/brew-heaven",
+    href: "/case-study/brew-haven",
   },
   {
     col: 2,

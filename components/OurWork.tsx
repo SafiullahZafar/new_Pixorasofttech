@@ -398,7 +398,7 @@ const featuredWorks: WorksWheelItem[] = [
   {
     title: "Brew Haven Coffee",
     image: "/home_page/our_projects/brew_haven_coffee.png",
-    href: "/case-study/brew-heaven",
+    href: "/case-study/brew-haven",
   },
   {
     title: "Driven Fleet Operations & Admin Console",

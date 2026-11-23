@@ -59,7 +59,7 @@ interface CaseStudyNavItem {
 }
 
 const caseStudiesCol1: CaseStudyNavItem[] = [
-  { title: "Brew Haven Coffee", href: "/case-study/brew-heaven" },
+  { title: "Brew Haven Coffee", href: "/case-study/brew-haven" },
   { title: "Eduka College Portal", href: "/case-study/eduka-college", isNew: true },
   { title: "Glass Haven Luxury", href: "/case-study/glass-haven", isNew: true },
   { title: "Solar Solutions Energy", href: "/case-study/solar-solutions", isNew: true },

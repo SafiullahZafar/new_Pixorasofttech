@@ -12,7 +12,8 @@ export function generateStaticParams() {
 export const dynamicParams = true;
 
 const caseStudyRedirectMap: Record<string, string> = {
-  "brew-haven": "/case-study/brew-heaven",
+  "brew-haven": "/case-study/brew-haven",
+  "brew-heaven": "/case-study/brew-haven",
   "delivery-dashboard": "/case-study/delivery-dashboard",
   dom: "/case-study/delivery-dashboard",
   hrms: "/case-study/hrms",
