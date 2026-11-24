@@ -94,7 +94,6 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: siteUrl,
     languages: {
       "en-US": siteUrl,
     },

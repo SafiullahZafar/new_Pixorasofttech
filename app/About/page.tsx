@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://pixorasofttech.com/About",
   },
+  openGraph: {
+    type: "website",
+    url: "https://pixorasofttech.com/About",
+    title: "About PixoraSoftTech | Your Digital Engineering Partner",
+    description:
+      "Meet PixoraSoftTech: a digital product and software engineering team helping businesses turn ambitious ideas into reliable, scalable solutions.",
+  },
 };
 
 export default function AboutPage() {
