@@ -64,7 +64,7 @@ export const defaultGlobalConnections = [
   },
   {
     start: { lat: 25.2048, lng: 55.2708, label: "Dubai", offsetX: -22, offsetY: -12 },
-    end: { lat: 24.8607, lng: 67.0011, label: "Karachi", offsetX: 22, offsetY: 10 },
+    end: { lat: 31.4504, lng: 73.135, label: "Faisalabad", offsetX: 22, offsetY: 10 },
   },
   {
     start: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
