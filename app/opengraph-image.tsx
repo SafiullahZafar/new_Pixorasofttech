@@ -106,9 +106,9 @@ export default async function OGImage() {
           }}
         >
           {[
-            { value: "1,000+", label: "Projects" },
-            { value: "500+", label: "Clients" },
-            { value: "99%", label: "Success Rate" },
+            { value: "Web", label: "Development" },
+            { value: "Mobile", label: "Applications" },
+            { value: "Software", label: "Solutions" },
           ].map((stat) => (
             <div
               key={stat.label}
