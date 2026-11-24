@@ -118,7 +118,7 @@ const PILLARS = [
     description: [
       "Full-Stack Web & Next.js Platforms",
       "Modern Edge APIs & Cloud Infrastructure",
-      "Fault-Tolerant Microservice Architecture",
+      "Cloud & Service Architecture",
     ],
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -150,13 +150,13 @@ const PILLARS = [
     tag: "PHASE 04",
     label: "SCALE",
     title: "Shared Scale",
-    subtitle: "Enterprise Reliability & Growth",
+    subtitle: "Production Readiness & Growth",
     accent: "#0A2540",
     gradient: "from-[#0A2540] to-[#0342DD]",
     iconBg: "bg-slate-50 text-[#0A2540] border-slate-200/90",
     description: [
       "Production Reliability & Global Scale",
-      "Enterprise SLA, Security & Monitoring",
+      "Security, Monitoring & Support Planning",
       "Long-Term Engineering Partnership",
     ],
     icon: (

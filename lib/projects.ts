@@ -971,7 +971,7 @@ export const projects: Project[] = [
       "Help Center, Support Ticket Resolution & Safety Incident Management"
     ],
     results: [
-      "99.9% uptime for real-time dispatch monitoring",
+      "Real-time dispatch visibility for fleet operators",
       "Reduced driver support ticket resolution time by 75%",
       "Automated weekly payment disbursement processing for 500+ drivers"
     ],

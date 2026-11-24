@@ -45,20 +45,20 @@ export default function GlobalNetwork() {
         {/* Global Delivery Metrics */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-10">
           <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex flex-col justify-between">
-            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">15+</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Countries Served</span>
+            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Global</span>
+            <span className="text-xs text-zinc-500 font-medium mt-1">Cross-border Collaboration</span>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex flex-col justify-between">
-            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">24/7</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Global Delivery & Support</span>
+            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Flexible</span>
+            <span className="text-xs text-zinc-500 font-medium mt-1">Communication Across Time Zones</span>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex flex-col justify-between">
-            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">99.9%</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Production Uptime SLA</span>
+            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Reliable</span>
+            <span className="text-xs text-zinc-500 font-medium mt-1">Quality-Focused Delivery</span>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex flex-col justify-between">
-            <span className="text-2xl sm:text-3xl font-semibold text-[#0342DD] tracking-tight">&lt; 50ms</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Global Edge Response</span>
+            <span className="text-2xl sm:text-3xl font-semibold text-[#0342DD] tracking-tight">Modern</span>
+            <span className="text-xs text-zinc-500 font-medium mt-1">Web & Cloud Technologies</span>
           </div>
         </div>
       </div>
