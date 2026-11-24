@@ -11,10 +11,7 @@ export default function BubbleText({ text, className = "" }: BubbleTextProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <span
-      onMouseLeave={() => setHoveredIndex(null)}
-      className={className}
-    >
+    <span onMouseLeave={() => setHoveredIndex(null)} className={className}>
       {Array.from(text).map((char, index) => {
         const distance = hoveredIndex === null ? null : Math.abs(hoveredIndex - index);
         const emphasis =
@@ -30,14 +27,12 @@ export default function BubbleText({ text, className = "" }: BubbleTextProps) {
           <span
             key={`${index}-${char}`}
             onMouseEnter={() => setHoveredIndex(index)}
-            aria-hidden="true"
             className={`inline transition-all duration-300 ease-in-out cursor-default ${emphasis}`}
           >
             {char}
           </span>
         );
       })}
-      <span className="sr-only">{text}</span>
     </span>
   );
 }

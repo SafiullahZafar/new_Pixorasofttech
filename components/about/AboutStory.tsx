@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
-import { useRef } from "react";
+import { Fragment, useRef } from "react";
 
 function ScrollRevealWord({
   children,
@@ -15,11 +15,17 @@ function ScrollRevealWord({
   const opacity = useTransform(progress, range, [0, 1]);
 
   return (
-    <span className="relative mr-[0.28em] inline-block">
-      <span aria-hidden="true" className="absolute inset-0 text-black/20">
+    <span className="relative inline-block">
+      <span aria-hidden="true" className="text-black/20">
         {children}
       </span>
-      <motion.span style={{ opacity }}>{children}</motion.span>
+      <motion.span
+        aria-hidden="true"
+        className="absolute inset-0 text-black"
+        style={{ opacity }}
+      >
+        {children}
+      </motion.span>
     </span>
   );
 }
@@ -45,13 +51,15 @@ function ScrollRevealText({
         const end = (index + 1) / words.length;
 
         return (
-          <ScrollRevealWord
-            key={`${index}-${word}`}
-            progress={scrollYProgress}
-            range={[start, end]}
-          >
-            {word}
-          </ScrollRevealWord>
+          <Fragment key={`${index}-${word}`}>
+            <ScrollRevealWord
+              progress={scrollYProgress}
+              range={[start, end]}
+            >
+              {word}
+            </ScrollRevealWord>
+            {index < words.length - 1 ? " " : null}
+          </Fragment>
         );
       })}
     </p>
