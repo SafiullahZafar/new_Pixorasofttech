@@ -15,8 +15,8 @@ const technologies = [
   { name: "Tailwind CSS", category: "Design System UI", tag: "Styling" },
   { name: "Flutter", category: "Cross-Platform Mobile", tag: "Mobile" },
   { name: "Docker", category: "Containerization", tag: "DevOps" },
-  { name: "GraphQL", category: "Flexible Data Queries", tag: "API" },
-  { name: "Redis", category: "In-Memory Speed", tag: "Cache" },
+  { name: "Laravel", category: "Business Software & APIs", tag: "Backend" },
+  { name: "Go", category: "Backend Services", tag: "Language" },
 ];
 
 export default function TechLeverage() {
