@@ -9,7 +9,7 @@ const faqs = [
   {
     num: "01",
     q: "How does a typical software project start?",
-    a: "Every engagement begins with an in-depth discovery call to understand your business objectives, target audience, and functional specifications. We then prepare a technical roadmap, architecture overview, and transparent timeline with deliverables before work begins.",
+    a: "We start by discussing your goals, users, scope, and constraints. From there, we outline the proposed work, milestones, and next steps for your review before development begins.",
   },
   {
     num: "02",
@@ -19,7 +19,7 @@ const faqs = [
   {
     num: "03",
     q: "How long does development typically take?",
-    a: "Project timelines vary by scope and complexity. Rapid MVP delivery typically takes 2 to 4 weeks, while complex full-stack web platforms and enterprise mobile ecosystems usually range from 6 to 12 weeks with weekly sprint demos.",
+    a: "Timing depends on the product scope, integrations, and review process. After understanding the requirements, we break the work into milestones and share a schedule for your project.",
   },
   {
     num: "04",
@@ -29,17 +29,17 @@ const faqs = [
   {
     num: "05",
     q: "Do you work with international clients across different time zones?",
-    a: "Yes, over 80% of our clients are based across North America, Europe, the UAE, and Asia. We maintain overlapping communication hours, weekly video reviews, and continuous async Slack updates.",
+    a: "Yes. We work remotely with teams in different regions and agree on communication channels, review points, and overlapping hours at the start of an engagement.",
   },
   {
     num: "06",
     q: "Do you provide post-launch support and maintenance?",
-    a: "Yes, all projects include 30 days of complimentary post-launch monitoring and bug resolution. We also offer dedicated ongoing SLA support, continuous feature expansion, and infrastructure maintenance packages.",
+    a: "Post-launch support can be scoped around your product, from a handover and issue-fixing period to ongoing maintenance and feature work. We agree on the support scope before launch.",
   },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(3);
 
   const toggle = (i: number) => {
     setOpenIndex(openIndex === i ? null : i);
@@ -47,6 +47,23 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="bg-transparent text-black py-16 sm:py-24 font-sans border-t border-dashed border-zinc-300">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className="mx-auto max-w-[2200px] px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left Column */}

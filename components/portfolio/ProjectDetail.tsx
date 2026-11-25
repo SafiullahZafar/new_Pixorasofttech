@@ -100,7 +100,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
                 </a>
               ) : (
                 <div className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-100 text-slate-400 font-semibold text-sm select-none border border-slate-200">
-                  <Lock className="w-4 h-4" /> Under Active Processing
+                  <Lock className="w-4 h-4" /> In Progress
                 </div>
               )}
               <Link
@@ -139,7 +139,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
                 <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shadow-lg">
                   <Lock className="w-7 h-7 text-white" />
                 </div>
-                <p className="text-white font-bold text-xl tracking-tight">Under Active Processing</p>
+                <p className="text-white font-bold text-xl tracking-tight">In Progress</p>
                 <p className="text-white/70 text-sm max-w-md leading-relaxed">
                   This project is undergoing active engineering and QA testing by PixoraSofttech. Live link will be available upon launch.
                 </p>
@@ -324,7 +324,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-8">
             <p className="text-blue-600 text-xs font-bold tracking-[0.16em] uppercase mb-2">Impact &amp; Growth</p>
-            <h2 className="text-2xl font-extrabold text-slate-900">Measurable Results Achieved</h2>
+            <h2 className="text-2xl font-extrabold text-slate-900">Project Outcomes</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {p.results.map((r, i) => (

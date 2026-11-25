@@ -561,7 +561,7 @@ function FallbackGallery({
 }) {
   const normalizedImages = useMemo(
     () =>
-        images.map((img, index) =>
+      images.map((img, index) =>
         typeof img === "string"
           ? { src: img, alt: `${title} project image ${index + 1}` }
           : { ...img, alt: img.alt || `${title} project image ${index + 1}` }
@@ -580,6 +580,7 @@ function FallbackGallery({
             key={i}
             src={img.src || "/placeholder.svg"}
             alt={img.alt}
+            loading="lazy"
             className="w-full h-36 object-cover rounded-2xl border border-zinc-200"
           />
         ))}
@@ -606,11 +607,34 @@ export default function InfiniteGallery({
   scrollProgress,
 }: InfiniteGalleryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const hostRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
+  const [nearViewport, setNearViewport] = useState(false);
   const [webglSupported, setWebglSupported] = useState(true);
 
   useEffect(() => {
     setMounted(true);
+    const host = hostRef.current;
+    if (!host || !("IntersectionObserver" in window)) {
+      setNearViewport(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setNearViewport(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "250px" },
+    );
+    observer.observe(host);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!nearViewport) return;
     try {
       const canvas = document.createElement("canvas");
       const gl =
@@ -622,11 +646,11 @@ export default function InfiniteGallery({
     } catch {
       setWebglSupported(false);
     }
-  }, []);
+  }, [nearViewport]);
 
-  if (!mounted) {
+  if (!mounted || !nearViewport) {
     return (
-      <div className={className} style={style}>
+      <div ref={hostRef} className={className} style={style}>
         <FallbackGallery images={images} title={centerTitle} />
       </div>
     );
@@ -634,7 +658,7 @@ export default function InfiniteGallery({
 
   if (!webglSupported) {
     return (
-      <div className={className} style={style}>
+      <div ref={hostRef} className={className} style={style}>
         <FallbackGallery images={images} title={centerTitle} />
       </div>
     );

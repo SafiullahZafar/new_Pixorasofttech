@@ -6,19 +6,19 @@ import InfiniteGallery, { ImageItem } from "@/components/InfiniteGallery";
 
 const GALLERY_IMAGES: ImageItem[] = [
   {
-    src: "/home_page/who_we_are/whoweare1.png",
+    src: "/home_page/who_we_are/whoweare1.webp",
     alt: "High-Performance Analytics Platforms",
   },
   {
-    src: "/home_page/who_we_are/whoweare2.png",
+    src: "/home_page/who_we_are/whoweare2.webp",
     alt: "Digital Product Architecture & UI",
   },
   {
-    src: "/home_page/who_we_are/whoweare3.png",
+    src: "/home_page/who_we_are/whoweare3-optimized.webp",
     alt: "Mobile App Ecosystems & UX",
   },
   {
-    src: "/home_page/who_we_are/whoweare4.png",
+    src: "/home_page/who_we_are/whoweare4.webp",
     alt: "Full-Stack Web & Software Engineering",
   },
   {
@@ -26,7 +26,7 @@ const GALLERY_IMAGES: ImageItem[] = [
     alt: "Cloud Infrastructure & Edge APIs",
   },
   {
-    src: "/home_page/who_we_are/whoweare6.png",
+    src: "/home_page/who_we_are/whoweare6.webp",
     alt: "Product Strategy & Agile Sprints",
   },
   {
@@ -34,23 +34,23 @@ const GALLERY_IMAGES: ImageItem[] = [
     alt: "Scalable Enterprise Software Systems",
   },
   {
-    src: "/home_page/who_we_are/whoweare8.png",
+    src: "/home_page/who_we_are/whoweare8.webp",
     alt: "Digital Brand Identity & Design Systems",
   },
   {
-    src: "/home_page/who_we_are/whoweare9.png",
+    src: "/home_page/who_we_are/whoweare9.webp",
     alt: "Next-Gen AI & Modern Intelligence",
   },
   {
-    src: "/home_page/who_we_are/whoweare10.png",
+    src: "/home_page/who_we_are/whoweare10.webp",
     alt: "AI-Powered Product Innovation",
   },
   {
-    src: "/home_page/who_we_are/whoweare11.png",
+    src: "/home_page/who_we_are/whoweare11.webp",
     alt: "Modern Developer Experience & Tooling",
   },
   {
-    src: "/home_page/who_we_are/whoweare12.png",
+    src: "/home_page/who_we_are/whoweare12.webp",
     alt: "Real-Time Data & Live Systems",
   },
   {
@@ -58,7 +58,7 @@ const GALLERY_IMAGES: ImageItem[] = [
     alt: "Creative Digital Experiences",
   },
   {
-    src: "/home_page/who_we_are/whoweare14.png",
+    src: "/home_page/who_we_are/whoweare14.webp",
     alt: "Enterprise Platform Engineering",
   },
   {
@@ -66,23 +66,23 @@ const GALLERY_IMAGES: ImageItem[] = [
     alt: "Security & Compliance Architecture",
   },
   {
-    src: "/home_page/who_we_are/whoweare16.png",
+    src: "/home_page/who_we_are/whoweare16.webp",
     alt: "Global Deployment & Edge Networks",
   },
   {
-    src: "/home_page/who_we_are/whoweare17.png",
+    src: "/home_page/who_we_are/whoweare17.webp",
     alt: "Design Systems & Component Libraries",
   },
   {
-    src: "/home_page/who_we_are/whoweare18.png",
+    src: "/home_page/who_we_are/whoweare18.webp",
     alt: "API-First & Microservices Architecture",
   },
   {
-    src: "/home_page/who_we_are/whoweare19.png",
+    src: "/home_page/who_we_are/whoweare19.webp",
     alt: "Performance Optimization & Core Web Vitals",
   },
   {
-    src: "/home_page/who_we_are/whoweare20.png",
+    src: "/home_page/who_we_are/whoweare20.webp",
     alt: "End-to-End Product Partnership",
   },
 ];

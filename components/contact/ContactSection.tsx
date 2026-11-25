@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle, CalendarDays } from "lucide-react";
 import toast from "react-hot-toast";
 
 const hours = [
@@ -218,6 +218,31 @@ export default function ContactSection() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              <a
+                href="mailto:pixorasofttech@gmail.com"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 transition hover:border-blue-300 hover:text-blue-700"
+              >
+                <Mail aria-hidden="true" className="size-4" /> Email us
+              </a>
+              <a
+                href="https://wa.me/923094307701?text=Hello%2C%20I%27d%20like%20to%20discuss%20a%20project."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#128C7E] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#0f766b]"
+              >
+                <MessageCircle aria-hidden="true" className="size-4" /> WhatsApp
+              </a>
+              <a
+                href="https://wa.me/923094307701?text=Hello%2C%20I%27d%20like%20to%20book%20an%20introductory%20call.%20Please%20share%20available%20times."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0A2540] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#143960] sm:col-span-2 lg:col-span-1"
+              >
+                <CalendarDays aria-hidden="true" className="size-4" /> Book a call on WhatsApp
+              </a>
             </div>
 
             {/* Working hours */}

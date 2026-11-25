@@ -11,6 +11,7 @@ const exploreLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Our Work", href: "/projects" },
+  // { label: "Insights", href: "/insights" },
   { label: "Services", href: "/#services" },
   { label: "Contact Us", href: "/contact" },
 ];

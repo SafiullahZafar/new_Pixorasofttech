@@ -9,9 +9,40 @@ const FULL_HERO_VIDEO = "/videos/video-full.mp4";
 export default function Hero() {
   const previewVideoRef = useRef<HTMLVideoElement>(null);
   const fullVideoRef = useRef<HTMLVideoElement>(null);
+  const videoFrameRef = useRef<HTMLDivElement>(null);
   const [previewIndex, setPreviewIndex] = useState(0);
   const [activeVideo, setActiveVideo] = useState<"preview" | "full">("preview");
   const [videoVisible, setVideoVisible] = useState(false);
+  const [videoSourcesReady, setVideoSourcesReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mobileQuery.matches);
+
+    if (!mobileQuery.matches) {
+      setVideoSourcesReady(true);
+      return;
+    }
+
+    const frame = videoFrameRef.current;
+    if (!frame || !("IntersectionObserver" in window)) {
+      setVideoSourcesReady(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVideoSourcesReady(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(frame);
+    return () => observer.disconnect();
+  }, []);
 
   const handlePreviewCanPlay = () => {
     if (activeVideo !== "preview") return;
@@ -93,14 +124,14 @@ export default function Hero() {
         </div>
 
         {/* Hero video showcase */}
-        <div className="relative left-1/2 mt-10 h-[calc(100svh-5px)] max-h-[70rem] min-h-[24rem] w-[calc(100vw-10px)] -translate-x-1/2 sm:mt-16 lg:mt-20">
+        <div ref={videoFrameRef} className="relative left-1/2 mt-10 h-[calc(100svh-5px)] max-h-[70rem] min-h-[24rem] w-[calc(100vw-10px)] -translate-x-1/2 sm:mt-16 lg:mt-20">
           <div
             className="group relative block h-full w-full overflow-hidden rounded-md"
           >
             <div className="block h-full w-full">
               <div className="absolute inset-0 overflow-hidden bg-transparent">
                 <img
-                  src="/home_page/hero/hero1.png"
+                  src="/home_page/hero/hero1.webp"
                   alt="PixoraSoftTech Showcase"
                   fetchPriority="high"
                   className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${videoVisible ? "opacity-0" : "opacity-100"}`}
@@ -108,12 +139,12 @@ export default function Hero() {
                 {activeVideo === "preview" && (
                   <video
                     ref={previewVideoRef}
-                    src={PREVIEW_VIDEOS[previewIndex]}
-                    poster="/home_page/hero/hero1.png"
+                    src={videoSourcesReady ? PREVIEW_VIDEOS[previewIndex] : undefined}
+                    poster="/home_page/hero/hero1.webp"
                     muted
                     playsInline
-                    preload="auto"
-                    onCanPlay={handlePreviewCanPlay}
+                    preload={isMobile ? "metadata" : "auto"}
+                    onLoadedMetadata={handlePreviewCanPlay}
                     onEnded={handlePreviewEnded}
                     onError={() => setVideoVisible(false)}
                     className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${videoVisible ? "opacity-100" : "opacity-0"}`}
@@ -121,13 +152,13 @@ export default function Hero() {
                 )}
                 <video
                   ref={fullVideoRef}
-                  src={FULL_HERO_VIDEO}
-                  poster="/home_page/hero/hero1.png"
+                  src={videoSourcesReady ? FULL_HERO_VIDEO : undefined}
+                  poster="/home_page/hero/hero1.webp"
                   muted
                   playsInline
-                  preload="auto"
+                  preload={isMobile ? "metadata" : "auto"}
                   loop
-                  onCanPlay={handleFullVideoCanPlay}
+                  onLoadedMetadata={handleFullVideoCanPlay}
                   onError={() => setVideoVisible(false)}
                   aria-label="PixoraSoftTech full showcase video"
                   className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${activeVideo === "full" ? "opacity-100" : "opacity-0"}`}
