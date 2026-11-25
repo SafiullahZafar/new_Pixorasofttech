@@ -16,8 +16,8 @@ const focusItems = [
       "/about_page/software_dev/Driven Control Center on a Tablet.png",
       "/about_page/software_dev/Dark Tablet CRM Dashboard Mockup.png",
       "/about_page/software_dev/PetroFlow Fuel Prices Smartwatch Mockup.png",
-      "/about_page/software_dev/ChatGPT Image Sep 15, 2026, 01_35_16 AM (1).png",
-      "/about_page/software_dev/ChatGPT Image Sep 11, 2026, 11_57_54 AM (1).png",
+      "/about_page/software_dev/messenger_updtaed.png",
+      "/about_page/software_dev/veloura-salon-pos-dashboard-laptop.png",
     ],
     href: "/services/custom-software-development",
     description:
@@ -47,9 +47,9 @@ const focusItems = [
   },
   {
     title: "SaaS Development",
-    image: "/about_page/saas_cus/Nexora CRM Laptop Showcase.png",
+    image: "/about_page/saas_cus/nexora-crm-laptop-showcase.png",
     gridImages: [
-      "/about_page/saas_cus/Nexora CRM Laptop Showcase.png",
+      "/about_page/saas_cus/nexora-crm-laptop-showcase.png",
       "/about_page/saas_cus/Driven Dashboard Tablet Mockup.png",
       "/about_page/saas_cus/PeopleFlow Job Openings Phone Mockup.png",
       "/about_page/saas_cus/Tables Floor Map Laptop Mockup.png",
@@ -57,7 +57,7 @@ const focusItems = [
       "/about_page/saas_cus/ChatGPT Image Sep 15, 2026, 01_30_25 AM (4) - Copy.png",
       "/about_page/saas_cus/ChatGPT Image Sep 12, 2026, 11_13_58 AM (2).png",
     ],
-    href: "/services/custom-software-development",
+    href: "/services/saas-development",
     description:
       "We develop scalable digital products, from the first release through the features and infrastructure needed to grow.",
   },
@@ -285,7 +285,7 @@ export default function AboutFocus() {
                           >
                             <img
                               src={image}
-                              alt={cardIndex === 0 ? activeItem.title : ""}
+                              alt={`${activeItem.title}: ${image.split("/").pop()?.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ") ?? `project image ${cardIndex + 1}`}`}
                               aria-hidden={cardIndex !== 0}
                               loading={cardIndex < 2 ? "eager" : "lazy"}
                               className="size-full object-cover opacity-0"

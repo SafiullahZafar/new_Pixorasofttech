@@ -80,6 +80,16 @@ export const servicesData: ServiceItem[] = [
     imageUrl: "/home_page/our_expertise/ourexpertise5.png?v=2",
     tags: ["AWS & Azure", "CI/CD Pipelines", "Auto Scaling", "Zero Downtime"],
   },
+  {
+    id: 6,
+    slug: "saas-development",
+    title: "SaaS Development",
+    eyebrow: "Scalable SaaS Products Built Around Your Users",
+    description:
+      "We design and build SaaS platforms with clear customer workflows, secure workspaces, and room to grow.",
+    imageUrl: "/about_page/saas_cus/nexora-crm-laptop-showcase.png",
+    tags: ["SaaS Products", "Customer Workspaces", "Subscriptions", "Product Growth"],
+  },
 ];
 
 function AccordionCard({
@@ -180,7 +190,7 @@ export default function Services() {
             />
           </div>
 
-          {/* Right Column: 5 Expandable Accordion Cards */}
+          {/* Right Column: Expandable service cards */}
           <div className="w-full lg:w-[58%] xl:w-[60%] min-w-0">
             <div className="w-full flex justify-center lg:justify-end">
               <div className="flex flex-row items-center gap-2 sm:gap-2.5 lg:gap-2.5 xl:gap-3 max-w-full overflow-x-auto lg:overflow-visible pb-4 pt-2 px-1 scrollbar-none">

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     "Meet the approach and technology behind PixoraSoftTech: strategy, product engineering, and scalable digital systems built for growth.",
   alternates: {
-    canonical: "https://pixorasofttech.com/Team",
+    canonical: "https://pixorasofttech.com/team",
   },
 };
 

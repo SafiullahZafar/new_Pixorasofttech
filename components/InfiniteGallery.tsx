@@ -552,17 +552,28 @@ function GalleryScene({
   );
 }
 
-function FallbackGallery({ images }: { images: ImageItem[] }) {
+function FallbackGallery({
+  images,
+  title,
+}: {
+  images: ImageItem[];
+  title: string;
+}) {
   const normalizedImages = useMemo(
     () =>
-      images.map((img) =>
-        typeof img === "string" ? { src: img, alt: "" } : img
+        images.map((img, index) =>
+        typeof img === "string"
+          ? { src: img, alt: `${title} project image ${index + 1}` }
+          : { ...img, alt: img.alt || `${title} project image ${index + 1}` }
       ),
     [images]
   );
 
   return (
-    <div className="flex flex-col items-center justify-center h-full p-4 bg-transparent text-black">
+    <div className="relative flex h-full min-h-[280px] flex-col items-center justify-center overflow-hidden bg-white/70 p-4 text-black">
+      <h2 className="mb-4 text-center text-3xl font-serif italic text-black/70 sm:text-5xl">
+        {title}
+      </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-96 overflow-y-auto w-full">
         {normalizedImages.map((img, i) => (
           <img
@@ -615,14 +626,8 @@ export default function InfiniteGallery({
 
   if (!mounted) {
     return (
-      <div
-        className={`${className} flex items-center justify-center bg-transparent`}
-        style={style}
-      >
-        <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-          <span className="w-2 h-2 rounded-full bg-[#0342DD] animate-ping"></span>
-          <span>INITIALIZING 3D CANVAS...</span>
-        </div>
+      <div className={className} style={style}>
+        <FallbackGallery images={images} title={centerTitle} />
       </div>
     );
   }
@@ -630,7 +635,7 @@ export default function InfiniteGallery({
   if (!webglSupported) {
     return (
       <div className={className} style={style}>
-        <FallbackGallery images={images} />
+        <FallbackGallery images={images} title={centerTitle} />
       </div>
     );
   }

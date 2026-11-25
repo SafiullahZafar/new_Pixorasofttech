@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   description:
     "Meet PixoraSoftTech: a digital product and software engineering team helping businesses turn ambitious ideas into reliable, scalable solutions.",
   alternates: {
-    canonical: "https://pixorasofttech.com/About",
+    canonical: "https://pixorasofttech.com/about",
   },
   openGraph: {
     type: "website",
-    url: "https://pixorasofttech.com/About",
+    url: "https://pixorasofttech.com/about",
     title: "About PixoraSoftTech | Your Digital Engineering Partner",
     description:
       "Meet PixoraSoftTech: a digital product and software engineering team helping businesses turn ambitious ideas into reliable, scalable solutions.",

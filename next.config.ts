@@ -67,6 +67,16 @@ const nextConfig: NextConfig = {
         destination: "/projects/:id",
         permanent: true,
       },
+      {
+        source: "/About",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/Team",
+        destination: "/team",
+        permanent: true,
+      },
       // Uncomment when deployed to redirect non-www to www
       // {
       //   source: "/:path*",

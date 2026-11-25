@@ -280,7 +280,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/About"
+              href="/about"
               className="px-4 py-2 text-[15px] font-semibold text-slate-800 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 relative"
             >
               About
@@ -428,7 +428,7 @@ export default function Navbar() {
             </Link>
 
             <Link
-              href="/Team"
+              href="/team"
               className="px-4 py-2 text-[15px] font-semibold text-slate-800 hover:text-slate-950 transition-colors duration-200 rounded-full hover:bg-black/5 relative"
             >
               Team & Tech
@@ -496,7 +496,7 @@ export default function Navbar() {
                   Home
                 </Link>
                 <Link
-                  href="/About"
+                  href="/about"
                   className="px-4 py-2.5 rounded-xl text-base font-semibold text-slate-950 hover:bg-black/5"
                   onClick={() => setMobileOpen(false)}
                 >
@@ -573,7 +573,7 @@ export default function Navbar() {
                 </Link>
 
                 <Link
-                  href="/Team"
+                  href="/team"
                   onClick={() => setMobileOpen(false)}
                   className="px-4 py-2.5 rounded-xl text-base font-semibold text-slate-950 hover:bg-black/5"
                 >

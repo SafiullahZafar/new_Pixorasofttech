@@ -109,22 +109,26 @@ export default function Hero() {
                   <video
                     ref={previewVideoRef}
                     src={PREVIEW_VIDEOS[previewIndex]}
+                    poster="/home_page/hero/hero1.png"
                     muted
                     playsInline
                     preload="auto"
                     onCanPlay={handlePreviewCanPlay}
                     onEnded={handlePreviewEnded}
+                    onError={() => setVideoVisible(false)}
                     className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${videoVisible ? "opacity-100" : "opacity-0"}`}
                   />
                 )}
                 <video
                   ref={fullVideoRef}
                   src={FULL_HERO_VIDEO}
+                  poster="/home_page/hero/hero1.png"
                   muted
                   playsInline
                   preload="auto"
                   loop
                   onCanPlay={handleFullVideoCanPlay}
+                  onError={() => setVideoVisible(false)}
                   aria-label="PixoraSoftTech full showcase video"
                   className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${activeVideo === "full" ? "opacity-100" : "opacity-0"}`}
                 />

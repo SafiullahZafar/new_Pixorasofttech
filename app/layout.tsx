@@ -40,7 +40,6 @@ export const metadata: Metadata = {
     "mobile app development",
     "custom software solutions",
     "UI/UX design",
-    "cybersecurity services",
     "cloud services",
     "React development",
     "Next.js development",

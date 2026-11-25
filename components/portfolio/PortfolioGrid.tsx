@@ -195,7 +195,7 @@ function ProjectCard({
         {project.status === "processing" && (
           <span className="absolute bottom-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-black/70 px-3 py-1.5 text-[10px] font-semibold text-white backdrop-blur-sm sm:bottom-5 sm:right-5">
             <Lock aria-hidden="true" className="size-3" />
-            Under Processing
+            Coming Soon
           </span>
         )}
 
