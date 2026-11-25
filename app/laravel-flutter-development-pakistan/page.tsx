@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Laravel and Flutter Development in Pakistan | PixoraSoftTech",
+  title: "Laravel and Flutter Development in Pakistan",
   description:
     "Plan a Laravel business system or Flutter mobile app with PixoraSoftTech, a software development team based in Faisalabad, Pakistan.",
   alternates: { canonical: "https://pixorasofttech.com/laravel-flutter-development-pakistan" },

@@ -11,7 +11,7 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import Link from "next/link";
-import { excludedProjectIds, projects, type Project } from "@/lib/projects";
+import { excludedProjectIds, projectCaseStudyRoutes, projects, type Project } from "@/lib/projects";
 
 const categories = ["All", "Websites", "Mobile Apps", "Software"] as const;
 type Category = (typeof categories)[number];
@@ -51,9 +51,7 @@ export default function PortfolioGrid() {
   const filteredProjects =
     activeCategory === "All"
       ? visibleProjects
-      : activeCategory === "Mobile Apps"
-        ? visibleProjects.filter((project) => project.category === "Mobile Apps" && ["rider-app", "veloura"].includes(project.id))
-        : visibleProjects.filter((project) => project.category === activeCategory);
+      : visibleProjects.filter((project) => project.category === activeCategory);
 
   return (
     <section
@@ -153,6 +151,7 @@ function ProjectCard({
   viewMode: ViewMode;
 }) {
   const isList = viewMode === "list";
+  const projectHref = projectCaseStudyRoutes[project.id] ?? `/projects/${project.id}`;
 
   return (
     <motion.article
@@ -168,7 +167,7 @@ function ProjectCard({
       }`}
     >
       <Link
-        href={`/projects/${project.id}`}
+        href={projectHref}
         className={`relative block overflow-hidden rounded-2xl bg-black/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0A2540] sm:rounded-[1.4rem] ${
           isList ? "aspect-[16/10] md:aspect-auto md:min-h-[280px]" : "aspect-[16/10]"
         }`}
@@ -207,7 +206,7 @@ function ProjectCard({
       <div className={`flex min-w-0 flex-col ${isList ? "py-1 md:py-3" : "pt-5 sm:pt-6"}`}>
         <div className="mb-3 flex flex-wrap items-start justify-between gap-3">
           <h2 className="text-xl font-semibold tracking-tight text-[#111] transition-colors group-hover:text-[#0A2540] sm:text-2xl lg:text-3xl">
-            <Link href={`/projects/${project.id}`} className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A2540]">
+            <Link href={projectHref} className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A2540]">
               {project.title}
             </Link>
           </h2>
@@ -218,7 +217,7 @@ function ProjectCard({
 
         <div className="mt-1 flex flex-wrap items-center gap-x-6 gap-y-3">
           <Link
-            href={`/projects/${project.id}`}
+            href={projectHref}
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#0A2540] transition-all hover:gap-3 sm:text-base"
           >
             View Details <ArrowUpRight aria-hidden="true" className="size-4" />

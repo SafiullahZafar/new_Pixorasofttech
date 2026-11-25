@@ -230,7 +230,7 @@ export default function TeamHero() {
                 </p>
 
                 <div className="mt-2.5 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 2xl:gap-3 pt-2 sm:pt-3 border-t border-white/15">
-                  {["Next.js 16", "React 19", "Strict TypeScript", "Python AI", "PostgreSQL", "Node.js"].map((tech) => (
+                  {["Laravel", "Flutter", "Go", "React", "Next.js", "TypeScript"].map((tech) => (
                     <span
                       key={tech}
                       className="rounded border border-white/20 bg-white/10 px-2 sm:px-2.5 2xl:px-3 py-0.5 sm:py-1 2xl:py-1.5 text-[10px] sm:text-[11px] 2xl:text-sm font-medium text-white backdrop-blur-sm"

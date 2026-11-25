@@ -115,7 +115,7 @@ export default function EditorialSection({ title, challengeText, solutionText, r
             </motion.div>
           </div>
 
-          {/* Part D: The Results */}
+          {/* Part D: Delivered Capabilities */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-4 lg:pl-12">
               <motion.div
@@ -132,7 +132,7 @@ export default function EditorialSection({ title, challengeText, solutionText, r
                   <span className="w-1.5 h-1.5 rounded-full bg-white" />
                 </span>
                 <span className="text-xs sm:text-sm 2xl:text-base text-zinc-400 font-medium tracking-wide">
-                  The Results
+                  Delivered Capabilities
                 </span>
               </motion.div>
 

@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Product Engineering Insights | PixoraSoftTech",
+  title: "Product Engineering Insights",
   description:
     "Practical notes on planning business software, choosing a technology stack, and preparing a digital product for launch.",
   alternates: { canonical: "https://pixorasofttech.com/insights" },

@@ -11,7 +11,7 @@ import StartAnimation from "@/components/StartAnimation";
 import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About PixoraSoftTech | Your Digital Engineering Partner",
+  title: "About",
   description:
     "Meet PixoraSoftTech: a digital product and software engineering team helping businesses turn ambitious ideas into reliable, scalable solutions.",
   alternates: {

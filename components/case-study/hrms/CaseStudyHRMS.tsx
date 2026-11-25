@@ -10,7 +10,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 // ── Word-by-Word Text Reveal (Matches reference UI exactly) ────────────────
@@ -30,22 +29,18 @@ export default function CaseStudyHRMS({ project }: CaseStudyHRMSProps) {
   // Showcase Card Hover
   const [cardHovered, setCardHovered] = useState(false);
 
-  const title = "Aurelle HRMS";
+  const title = project?.title || "HRMS — Workforce Management System";
   const heroImage = "/portfolio/hr-dashboard.png";
   const heroDemoImage = "/case_studies/hrms_soft/hrms_hero_soft_01.png";
   const liveUrl = project?.liveUrl || "";
 
-  const aboutDescription =
-    "Aurelle brings staff profiles, attendance, shift scheduling, and leave tracking into a connected business management workspace. Managers can see team coverage and employee activity alongside the sales and inventory operations that keep the business running.";
+  const aboutDescription = project?.overview || "The HRMS brings employee records, attendance, shifts, and leave requests into one workforce management workspace.";
 
-  const challengeText =
-    "Small service businesses managed staff schedules and attendance separately from their day-to-day operations, making it difficult to track coverage, shifts, and leave alongside customer service and store activity.";
+  const challengeText = project?.challenge || "Employee records, attendance, schedules, and leave requests were spread across separate processes.";
 
-  const solutionText =
-    "We integrated staff profiles, check-in and check-out, morning and evening shift schedules, leave tracking, and staff activity into Aurelle’s Laravel business management platform, alongside POS, inventory, and customer records.";
+  const solutionText = project?.solution || "We organized employee profiles, attendance, shifts, and leave tracking in one HR workspace.";
 
-  const resultsText =
-    project?.results.join(". ") || "Staff attendance, shift schedules, leave requests, sales, and inventory can be managed from one connected workspace.";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -91,7 +86,6 @@ export default function CaseStudyHRMS({ project }: CaseStudyHRMSProps) {
       <BrandingSection />
 
       {/* ── 5. KEY METRICS & TAKEAWAYS SECTION ── */}
-      <MetricsSection project={project} />
 
 
       {/* ── 6. PROJECT SUMMARY SECTION (Module 13141) ── */}

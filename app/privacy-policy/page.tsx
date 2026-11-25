@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import PrivacyPolicyView from "@/components/privacy-policy/PrivacyPolicyView";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | PIXORASOFTTECH (SMC-PRIVATE) LIMITED",
+  title: "Privacy Policy",
   description:
     "Official Privacy Policy for PIXORASOFTTECH (SMC-PRIVATE) LIMITED (Pixra Softtech). Learn how we handle personal information, social media integrations, AI workflows, data deletion, and LinkedIn API privacy.",
   alternates: {

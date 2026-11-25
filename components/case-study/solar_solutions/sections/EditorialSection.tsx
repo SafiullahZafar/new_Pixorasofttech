@@ -93,7 +93,7 @@ export default function EditorialSection({
 
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
           <div className="flex flex-col gap-4 lg:col-span-6 lg:col-start-7 lg:pl-12">
-            <SectionLabel active={3}>The Results</SectionLabel>
+            <SectionLabel active={3}>Delivered Capabilities</SectionLabel>
             <p className="max-w-xl text-base font-normal leading-relaxed text-zinc-300 sm:text-xl 2xl:max-w-3xl 2xl:text-3xl">
               <WordReveal text={resultsText} delay={0.2} />
             </p>

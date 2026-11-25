@@ -9,7 +9,7 @@ export default function ShowcaseSection() {
             <div className="lg:col-span-7 2xl:col-span-7 h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px] overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
               <img
                 src="/case_studies/hrms_soft/hrms_work_soft_01_updat.png"
-                alt="Aurelle staff operations and attendance dashboard"
+                alt="HRMS staff operations and attendance dashboard"
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -19,14 +19,14 @@ export default function ShowcaseSection() {
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
                   src="/case_studies/hrms_soft/hrms_work_soft_02_updated.png"
-                  alt="Aurelle staff management dashboard"
+                  alt="HRMS staff management dashboard"
                   className="w-full h-full object-cover object-center block"
                 />
               </div>
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
                   src="/case_studies/hrms_soft/hrms_work_soft_01.png"
-                  alt="Aurelle business operations dashboard"
+                  alt="HRMS workforce operations dashboard"
                   className="w-full h-full object-cover object-center block"
                 />
               </div>

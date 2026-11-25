@@ -1,4 +1,5 @@
 "use client";
+import { getProjectTechnologyStack } from "@/lib/project-stack";
 
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
@@ -64,7 +65,7 @@ export default function SummarySection({ liveUrl, project }: Pick<RiderAppSectio
           {/* Right Column: Narrative + Action Button */}
           <div className="lg:col-span-6 flex flex-col justify-between h-full w-full">
             <p className="text-base sm:text-lg 2xl:text-xl text-zinc-800 font-normal leading-relaxed max-w-xl">
-              {project.testimonial.text}
+              {`${project.overview}${getProjectTechnologyStack(project.tags).length ? ` Technology stack: ${getProjectTechnologyStack(project.tags).join(", ")}.` : ""}`}
             </p>
 
             {liveUrl && (

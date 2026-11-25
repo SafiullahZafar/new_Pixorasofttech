@@ -10,7 +10,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 // ── Word-by-Word Text Reveal (Matches reference UI exactly) ────────────────
@@ -44,8 +43,7 @@ export default function CaseStudySalon({ project }: CaseStudySalonProps) {
   const solutionText =
     project?.solution || "We built an integrated salon platform with a visual stylist calendar, touch POS, service packages, automatic product consumption, attendance tracking, and client visit history.";
 
-  const resultsText =
-    project?.results.join(". ") || "The team can coordinate appointments and checkout in one system, with less scheduling friction and faster daily closeout.";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -93,7 +91,6 @@ export default function CaseStudySalon({ project }: CaseStudySalonProps) {
       <BrandingSection />
 
       {/* ── 5. KEY METRICS & TAKEAWAYS SECTION ── */}
-      <MetricsSection project={project} />
 
 
       {/* ── 6. PROJECT SUMMARY SECTION (Module 13141) ── */}

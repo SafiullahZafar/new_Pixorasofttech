@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ServicePagesAnimation from "@/components/servicepagesanimtion";
@@ -13,6 +14,26 @@ import { getServiceDetail, serviceDetails } from "@/lib/service-details";
 
 export function generateStaticParams() {
   return serviceDetails.map((service) => ({ slug: service.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getServiceDetail(slug);
+  if (!service) return {};
+
+  const title = service.title;
+  const description = service.intro;
+  const canonical = `https://pixorasofttech.com/services/${service.slug}`;
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: { type: "website", url: canonical, title, description },
+  };
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {

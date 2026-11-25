@@ -14,7 +14,7 @@ const faqs = [
   {
     num: "02",
     q: "What technologies and frameworks do you specialize in?",
-    a: "We specialize in modern full-stack architectures including Next.js, React, TypeScript, Node.js, Python, Three.js for interactive 3D, and cloud infrastructures across AWS, Google Cloud, and Vercel edge networks.",
+    a: "Our project work includes Laravel and PHP business systems, Flutter mobile apps, Go services, and web products built with React and Next.js. We choose tools to fit each product and list confirmed technologies in its case study.",
   },
   {
     num: "03",

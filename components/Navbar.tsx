@@ -68,6 +68,7 @@ const caseStudiesCol1: CaseStudyNavItem[] = [
   { title: "Travel Hotel Hub", href: "/case-study/travel-hotel-hub", isNew: true },
   { title: "Goody Supplies Catering", href: "/case-study/goody-supplies", isNew: true },
   { title: "KB Exports Global", href: "/case-study/kb-exports" },
+  { title: "Catering Ordering App", href: "/case-study/catering-app", isNew: true },
 ];
 
 const caseStudiesCol2: CaseStudyNavItem[] = [
@@ -78,6 +79,7 @@ const caseStudiesCol2: CaseStudyNavItem[] = [
   { title: "Messenger Software", href: "/case-study/messenger" },
   { title: "Salon Appointment POS", href: "/case-study/salon" },
   { title: "Textile ERP System", href: "/case-study/textile-erp" },
+  { title: "Supplier Wholesale App", href: "/case-study/supplier-wholesale-app", isNew: true },
 ];
 
 const caseStudiesCol3: CaseStudyNavItem[] = [

@@ -45,7 +45,7 @@ function ScrollRevealText({
   const words = text.split(/\s+/);
 
   return (
-    <p ref={containerRef} className={className}>
+    <p ref={containerRef} className={className} aria-label={text}>
       {words.map((word, index) => {
         const start = index / words.length;
         const end = (index + 1) / words.length;

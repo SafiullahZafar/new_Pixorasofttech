@@ -61,19 +61,6 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Mini testimonial */}
-            <div className="p-5 rounded-2xl bg-white border border-slate-200 card-shadow">
-              <div className="flex gap-1 mb-3">
-                {[...Array(5)].map((_,i) => (
-                  <svg key={i} className="w-3.5 h-3.5 fill-amber-400" viewBox="0 0 20 20"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
-                ))}
-              </div>
-              <p className="text-slate-600 text-sm italic leading-relaxed">
-                &ldquo;Pixorasofttech turned our rough idea into a production app in record time. Highly recommend.&rdquo;
-              </p>
-              <p className="text-slate-400 text-xs mt-3">— James T., Founder</p>
-            </div>
-          </motion.div>
 
           {/* Right form */}
           <motion.div initial={{ opacity:0,x:20 }} whileInView={{ opacity:1,x:0 }} viewport={{ once:true }} transition={{ duration:0.55,ease:"easeOut" }}>

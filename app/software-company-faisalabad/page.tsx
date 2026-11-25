@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Software Company in Faisalabad | PixoraSoftTech",
+  title: "Software Company in Faisalabad",
   description:
     "PixoraSoftTech is a Faisalabad-based software team building websites, mobile apps, and custom business systems for local and international teams.",
   alternates: { canonical: "https://pixorasofttech.com/software-company-faisalabad" },

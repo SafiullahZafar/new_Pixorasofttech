@@ -68,7 +68,7 @@ export default function BrandingSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="max-w-xl text-sm sm:text-base 2xl:text-lg text-zinc-600 leading-relaxed font-normal"
           >
-            Aurelle brings staff attendance, shift schedules, leave tracking, point of sale, and inventory into one clear operational interface, with a visual system designed to keep everyday tasks easy to scan.
+            The HRMS brings employee records, attendance, shift schedules, and leave tracking into one clear workforce interface, designed to keep everyday tasks easy to scan.
           </motion.p>
         </div>
 

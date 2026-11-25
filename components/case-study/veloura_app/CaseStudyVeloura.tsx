@@ -10,7 +10,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 // ── Word-by-Word Text Reveal (Matches reference UI exactly) ────────────────
@@ -44,8 +43,7 @@ export default function CaseStudyVeloura({ project }: CaseStudyVelouraProps) {
   const solutionText =
     project?.solution || "Veloura brings service discovery, stylist information, appointment selection, and booking details into one mobile flow.";
 
-  const resultsText =
-    project?.results.join(". ") || "Clients can discover services, choose a stylist, and review appointment details in one mobile experience.";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -91,7 +89,6 @@ export default function CaseStudyVeloura({ project }: CaseStudyVelouraProps) {
       <BrandingSection />
 
       {/* ── 5. KEY METRICS & TAKEAWAYS SECTION ── */}
-      <MetricsSection project={project} />
 
 
       {/* ── 6. PROJECT SUMMARY SECTION (Module 13141) ── */}

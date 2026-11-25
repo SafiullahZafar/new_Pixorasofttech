@@ -16,7 +16,7 @@ export default function TeamSplineSection() {
           </h2>
 
           <p className="mt-4 2xl:mt-6 text-sm sm:text-base 2xl:text-xl min-[2200px]:text-2xl text-black/65 leading-relaxed max-w-xl 2xl:max-w-3xl min-[2200px]:max-w-4xl">
-            Our cross-functional pods fuse spatial computing, low-latency 3D rendering, and resilient cloud architectures. We don&apos;t just build interfaces—we build immersive digital products engineered for velocity, scale, and high engagement.
+            Our cross-functional team combines spatial computing, interactive 3D, and cloud architecture to build immersive digital products around clear user needs.
           </p>
 
           {/* Core Feature Blocks - Responsive scale up to 3000px */}
@@ -36,7 +36,7 @@ export default function TeamSplineSection() {
                 <Cpu className="size-4 2xl:size-6 text-[#0A2540]" />
               </div>
               <div>
-                <div className="text-xs 2xl:text-base min-[2200px]:text-lg font-semibold text-slate-900">Sub-16ms Edge APIs</div>
+                <div className="text-xs 2xl:text-base min-[2200px]:text-lg font-semibold text-slate-900">Edge API Integrations</div>
                 <div className="text-[11px] 2xl:text-sm min-[2200px]:text-base text-black/60">60fps Ultra-smooth Motion</div>
               </div>
             </div>

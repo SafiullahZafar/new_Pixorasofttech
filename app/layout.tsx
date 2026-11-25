@@ -70,7 +70,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteUrl,
     siteName: "PIXORASOFTTECH",
     title: siteTitle,
     description: siteDescription,
@@ -91,11 +90,6 @@ export const metadata: Metadata = {
     title: siteTitle,
     description: siteDescription,
     images: ["/og-image.png"],
-  },
-  alternates: {
-    languages: {
-      "en-US": siteUrl,
-    },
   },
   icons: {
     icon: [
@@ -139,8 +133,16 @@ const jsonLd = {
       description: siteDescription,
       email: "pixorasofttech@gmail.com",
       telephone: "+92-309-4307701",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: "+92-309-4307701",
+        email: "pixorasofttech@gmail.com",
+        availableLanguage: ["English", "Urdu"],
+      },
       address: {
         "@type": "PostalAddress",
+        addressLocality: "Faisalabad",
         addressCountry: "PK",
       },
       sameAs: [

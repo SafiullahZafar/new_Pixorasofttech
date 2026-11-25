@@ -10,7 +10,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 // ── Word-by-Word Text Reveal (Matches reference UI exactly) ────────────────
@@ -45,8 +44,7 @@ export default function CaseStudyBrewHaven({ project }: CaseStudyBrewHavenProps)
   const solutionText =
     "We rearchitected the web application using Next.js and Tailwind CSS with custom micro-animations. We implemented a step-by-step custom bean selector, dynamic roast strength indicators, and an optimized single-page checkout flow connected directly to their inventory POS.";
 
-  const resultsText =
-    "Visitors can customize and order any artisanal roast in three clicks or fewer. Online sales doubled within two months of rollout.";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -92,7 +90,6 @@ export default function CaseStudyBrewHaven({ project }: CaseStudyBrewHavenProps)
       <BrandingSection />
 
       {/* ── 5. KEY METRICS & TAKEAWAYS SECTION ── */}
-      <MetricsSection />
 
 
       {/* ── 6. PROJECT SUMMARY SECTION (Module 13141) ── */}

@@ -51,14 +51,14 @@ export default function MetricsSection({ project }: { project?: Project }) {
             />
             <div className="relative z-10">
               <span className="inline-block px-3 py-1 bg-white/10 text-amber-300 border border-white/10 rounded-full text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-6">
-                Trial Trips
+                Driver Operations
               </span>
               <h3 className="text-5xl sm:text-6xl 2xl:text-7xl font-bold tracking-tighter text-white">
-                500+
+                Live
               </h3>
             </div>
             <p className="relative z-10 text-zinc-300 text-sm sm:text-base max-w-sm mt-6 leading-relaxed">
-              Successful trips completed during active beta testing.
+              A single view for dispatch activity and driver status.
             </p>
           </div>
 
@@ -66,13 +66,13 @@ export default function MetricsSection({ project }: { project?: Project }) {
           <div className="md:col-span-3 bg-white text-zinc-950 rounded-3xl p-8 border border-zinc-200/80 shadow-sm flex items-center justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-1">
-                Live Telemetry Uptime
+                Live Telemetry
               </p>
               <p className="text-3xl sm:text-4xl font-bold text-zinc-950 tracking-tight">
-                99.8%
+                Connected
               </p>
               <p className="text-xs text-zinc-500 mt-1">
-                Stable WebSocket vehicle tracking connections
+                Vehicle location updates
               </p>
             </div>
             <div className="flex gap-1.5 items-end h-10 shrink-0">
@@ -89,10 +89,10 @@ export default function MetricsSection({ project }: { project?: Project }) {
           {/* Tertiary Stat B */}
           <div className="md:col-span-1 bg-white text-zinc-950 rounded-3xl p-6 sm:p-8 border border-zinc-200/80 shadow-sm flex flex-col justify-center text-center">
             <p className="text-2xl sm:text-3xl font-bold text-zinc-950 tracking-tight">
-              2.4s
+              Dispatch
             </p>
             <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-zinc-400 mt-1">
-              Average Dispatch
+              Assignment workflow
             </p>
           </div>
 

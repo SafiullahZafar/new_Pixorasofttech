@@ -22,13 +22,13 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Software & Systems",
     eyebrow: "High-Performance Next.js Websites Engineered to Convert",
     intro: "We design and build fast, responsive, SEO-optimized web applications that communicate your brand authority, capture leads, and turn visitors into long-term clients.",
-    overview: "In today's digital landscape, a website is your primary business storefront. PixoraSofttech delivers custom Next.js and React web applications built with clean architecture, sub-second loading speeds, semantic SEO foundations, and conversion-focused user flows.",
+    overview: "In today's digital landscape, a website is your primary business storefront. PixoraSofttech delivers custom Next.js and React web applications built with clean architecture, performance best practices, semantic SEO foundations, and conversion-focused user flows.",
     problem: "Many businesses rely on slow, outdated website templates that look generic, fail mobile responsiveness standards, load in 5+ seconds, and suffer high visitor bounce rates without driving inquiries or sales.",
     solution: "We combine modern frontend frameworks (Next.js, React, Tailwind CSS), optimized asset delivery, structured metadata, and custom UI components into a high-converting web platform tailored specifically to your audience.",
     deliverables: [
       "Custom responsive Next.js / React web application",
       "Pixel-perfect UI design system & Tailwind CSS components",
-      "Core Web Vitals & PageSpeed 95+ performance optimization",
+      "Core Web Vitals and page performance optimization",
       "On-page SEO setup, meta tagging, and schema markup",
       "Contact form, appointment scheduling, or lead capture engine",
       "Content Management System (CMS) integration & handover"
@@ -48,7 +48,7 @@ export const serviceDetails: ServiceDetail[] = [
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Vercel / AWS"],
     faqs: [
       { question: "How long does a custom website build take?", answer: "Most custom website projects are completed within 3 to 5 weeks depending on page count and special functionality." },
-      { question: "Will my website be mobile-friendly and fast?", answer: "Yes, every site we build is mobile-first, responsive, and performance-tuned to achieve 90+ Google PageSpeed scores." },
+      { question: "Will my website be mobile-friendly and fast?", answer: "Yes. We build mobile-first, responsive websites and review performance during implementation." },
       { question: "Can I update content on my site after launch?", answer: "Absolutely. We integrate easy-to-use CMS solutions or provide direct admin access so you can update text and images anytime." }
     ]
   },
@@ -58,7 +58,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Software & Systems",
     eyebrow: "Cross-Platform iOS & Android Apps Built for Scale",
     intro: "We build intuitive, high-performance iOS and Android mobile applications that connect users directly to your products, services, and live data.",
-    overview: "From ride-hailing and e-commerce apps to fitness trackers and enterprise field tools, PixoraSofttech crafts native-feel mobile applications using React Native and Flutter. We focus on low latency, offline resilience, secure authentication, and delightful micro-interactions.",
+    overview: "From ride-hailing and e-commerce apps to fitness trackers and field tools, PixoraSofttech crafts native-feel mobile applications using React Native and Flutter, with attention to offline resilience, secure authentication, and clear interactions.",
     problem: "Mobile app initiatives frequently fail when user interfaces are clunky, battery drain is excessive, backend API sync is unreliable, or launch timelines are delayed by building separate native codebases.",
     solution: "We leverage modern cross-platform mobile frameworks with single-codebase efficiency, optimized native bridges, offline caching, push notifications, and biometrically secured payment flows.",
     deliverables: [

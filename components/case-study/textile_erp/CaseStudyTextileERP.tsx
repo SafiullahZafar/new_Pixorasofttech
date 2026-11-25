@@ -10,7 +10,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 // ── Word-by-Word Text Reveal (Matches reference UI exactly) ────────────────
@@ -44,8 +43,7 @@ export default function CaseStudyTextileERP({ project }: CaseStudyTextileERPProp
   const solutionText =
     project?.solution || "We built a textile ERP with real-time loom monitoring, yarn-to-fabric tracking, dye recipe and batch logs, quality control, and export shipment documentation.";
 
-  const resultsText =
-    project?.results.join(". ") || "Teams get clearer production visibility, less yarn waste, and faster export documentation processing.";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -93,7 +91,6 @@ export default function CaseStudyTextileERP({ project }: CaseStudyTextileERPProp
       <BrandingSection />
 
       {/* ── 5. KEY METRICS & TAKEAWAYS SECTION ── */}
-      <MetricsSection project={project} />
 
 
       {/* ── 6. PROJECT SUMMARY SECTION (Module 13141) ── */}

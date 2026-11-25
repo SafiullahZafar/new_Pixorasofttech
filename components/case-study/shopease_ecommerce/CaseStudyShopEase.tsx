@@ -10,7 +10,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 // ── Word-by-Word Text Reveal (Matches reference UI exactly) ────────────────
@@ -44,8 +43,7 @@ export default function CaseStudyShopEase({ project }: CaseStudyShopEaseProps) {
   const solutionText =
     project?.solution || "We created a mobile storefront with organized product discovery, detailed item views, a persistent cart, and a guided checkout flow.";
 
-  const resultsText =
-    project?.results.join(". ") || "ShopEase brings catalog browsing, purchase review, and order status into a single shopping experience.";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -93,7 +91,6 @@ export default function CaseStudyShopEase({ project }: CaseStudyShopEaseProps) {
       <BrandingSection />
 
       {/* ── 5. KEY METRICS & TAKEAWAYS SECTION ── */}
-      <MetricsSection project={project} />
 
 
       {/* ── 6. PROJECT SUMMARY SECTION (Module 13141) ── */}

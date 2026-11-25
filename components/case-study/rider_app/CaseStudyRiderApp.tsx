@@ -10,7 +10,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 // ── Word-by-Word Text Reveal (Matches reference UI exactly) ────────────────
@@ -44,8 +43,7 @@ export default function CaseStudyRiderApp({ project }: CaseStudyRiderAppProps) {
   const solutionText =
     project?.solution || "We developed a React Native mobile experience with WebSocket trip updates, optimized map rendering, dynamic fare estimates, and integrated payment options.";
 
-  const resultsText =
-    project?.results.join(". ") || "Riders can request trips with quick matching, live driver visibility, upfront pricing, and built-in safety tools.";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -93,7 +91,6 @@ export default function CaseStudyRiderApp({ project }: CaseStudyRiderAppProps) {
       <BrandingSection />
 
       {/* ── 5. KEY METRICS & TAKEAWAYS SECTION ── */}
-      <MetricsSection project={project} />
 
 
       {/* ── 6. PROJECT SUMMARY SECTION (Module 13141) ── */}

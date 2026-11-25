@@ -8,7 +8,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 interface CaseStudyEdukaCollegeProps {
@@ -32,7 +31,7 @@ export default function CaseStudyEdukaCollege({ project }: CaseStudyEdukaCollege
   const aboutDescription = project?.overview || "Eduka College required a complete digital transformation to streamline prospective student inquiries, present 40+ degree programs, and provide current students with instant access to academic announcements and campus portals.";
   const challengeText = project?.challenge || "";
   const solutionText = project?.solution || "";
-  const resultsText = project?.results.join(". ") || "";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -56,7 +55,6 @@ export default function CaseStudyEdukaCollege({ project }: CaseStudyEdukaCollege
       />
       <ShowcaseSection />
       <BrandingSection />
-      <MetricsSection project={project} />
       <SummarySection liveUrl={liveUrl} project={project} />
     </div>
   );

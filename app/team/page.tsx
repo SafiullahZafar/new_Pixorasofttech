@@ -10,7 +10,7 @@ import TeamSplineSection from "@/components/TeamSplineSection";
 import TeamPhotoStackSection from "@/components/TeamPhotoStackSection";
 
 export const metadata: Metadata = {
-  title: "Team & Technology | PixoraSoftTech",
+  title: "Team & Technology",
   description:
     "Meet the approach and technology behind PixoraSoftTech: strategy, product engineering, and scalable digital systems built for growth.",
   alternates: {

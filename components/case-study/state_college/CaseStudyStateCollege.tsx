@@ -8,7 +8,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 interface CaseStudyStateCollegeProps {
@@ -32,7 +31,7 @@ export default function CaseStudyStateCollege({ project }: CaseStudyStateCollege
   const aboutDescription = project?.overview || "State College serves over 15,000 enrolled students and faculty. PixoraSofttech re-engineered the institution’s core web infrastructure to deliver fast, mobile-friendly access to academic resources, research publications, and administrative forms.";
   const challengeText = project?.challenge || "";
   const solutionText = project?.solution || "";
-  const resultsText = project?.results.join(". ") || "";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -56,7 +55,6 @@ export default function CaseStudyStateCollege({ project }: CaseStudyStateCollege
       />
       <ShowcaseSection />
       <BrandingSection />
-      <MetricsSection project={project} />
       <SummarySection liveUrl={liveUrl} project={project} />
     </div>
   );

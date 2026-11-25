@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import StartAnimation from "@/components/StartAnimation";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
@@ -12,6 +13,20 @@ import GlobalNetwork from "@/components/GlobalNetwork";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Web Design, App Development & Software Solutions",
+  description:
+    "PixoraSoftTech designs and builds websites, mobile apps, and business software for teams turning ideas into useful digital products.",
+  alternates: { canonical: "https://pixorasofttech.com/" },
+  openGraph: {
+    type: "website",
+    url: "https://pixorasofttech.com/",
+    title: "PixoraSoftTech | Web Design, App Development & Software Solutions",
+    description:
+      "PixoraSoftTech designs and builds websites, mobile apps, and business software for teams turning ideas into useful digital products.",
+  },
+};
 
 export default function Home() {
   return (
@@ -57,10 +72,10 @@ export default function Home() {
         {/* 8. Our Global Network */}
         <GlobalNetwork />
 
-        {/* 9. Client Reviews & Testimonials Marquee */}
+           {/* 9. Client Reviews & Testimonials Marquee */}
         <Testimonials />
 
-        {/* 10. FAQ Accordion */}
+        {/* 9. FAQ Accordion */}
         <FAQ />
       </main>
 
@@ -69,3 +84,4 @@ export default function Home() {
     </>
   );
 }
+import type { Metadata } from "next";

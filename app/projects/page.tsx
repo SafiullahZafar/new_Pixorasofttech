@@ -8,7 +8,7 @@ import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 import PortfolioCTA from "@/components/portfolio/PortfolioCTA";
 
 export const metadata: Metadata = {
-  title: "Projects | PixoraSoftTech",
+  title: "Projects",
   description:
     "Explore selected web, mobile, and software projects built with PixoraSoftTech for businesses and product teams.",
   alternates: {

@@ -30,7 +30,7 @@ export default function AboutSection({
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
                 src="/case_studies/hrms_soft/hrms_branding_soft_01_logo.png"
-                alt="Aurelle HRMS logo"
+                alt="HRMS workforce management logo"
                 className="w-full h-full object-contain object-center block"
               />
             </motion.div>
@@ -53,7 +53,7 @@ export default function AboutSection({
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
                 src="/case_studies/hrms_soft/hrms_about_soft_03_updated.png"
-                alt="Aurelle employee attendance dashboard"
+                alt="HRMS employee attendance dashboard"
                 className="w-full h-full object-cover object-center block"
               />
             </motion.div>
@@ -82,7 +82,7 @@ export default function AboutSection({
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-base sm:text-lg md:text-xl 2xl:text-2xl text-slate-800 leading-relaxed max-w-xl 2xl:max-w-2xl font-normal"
             >
-              From employee profiles and attendance to shift schedules and leave requests, Aurelle brings day-to-day staff operations into the same workspace as sales and inventory. Managers get a clearer view of coverage and activity while employees have a straightforward way to keep their work information current.
+              The HRMS brings employee profiles, attendance, shift schedules, and leave requests into one workforce workspace. Managers can review team coverage and activity while employees keep their work information current.
             </motion.p>
           </div>
 
@@ -100,7 +100,7 @@ export default function AboutSection({
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
                 src="/case_studies/hrms_soft/hrms_about_soft_02_updat.png"
-                alt="Aurelle business management dashboard"
+                alt="HRMS workforce management dashboard"
                 className="w-full h-full object-cover object-center block"
               />
             </motion.div>

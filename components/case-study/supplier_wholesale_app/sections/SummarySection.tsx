@@ -1,4 +1,5 @@
 "use client";
+import { getProjectTechnologyStack } from "@/lib/project-stack";
 
 import { ArrowUpRight } from "lucide-react";
 import type { SupplierWholesaleAppSectionProps } from "./types";
@@ -73,7 +74,7 @@ export default function SummarySection({
 
           <div className="flex h-full w-full flex-col justify-between lg:col-span-6">
             <p className="max-w-xl text-base font-normal leading-relaxed text-zinc-800 sm:text-lg 2xl:text-xl">
-              {project.overview || project.testimonial.text}
+              {`${project.overview}${getProjectTechnologyStack(project.tags).length ? ` Technology stack: ${getProjectTechnologyStack(project.tags).join(", ")}.` : ""}`}
             </p>
 
             {liveUrl && (

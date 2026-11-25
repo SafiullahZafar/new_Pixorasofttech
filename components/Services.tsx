@@ -24,7 +24,7 @@ export const servicesData: ServiceItem[] = [
     title: "Website Development",
     eyebrow: "High-Performance Next.js Websites Engineered to Convert",
     description:
-      "We design and build fast, responsive, SEO-optimized web applications with sub-second loading speeds, modern frameworks, and conversion-focused architectures that elevate your brand.",
+      "We design and build responsive, SEO-ready web applications with modern frameworks and conversion-focused architectures that fit your brand.",
     imageUrl: "/home_page/our_expertise/ourexpertise1.png?v=2",
     tags: ["Next.js & React", "Responsive UI", "Core Web Vitals", "SEO Ready"],
   },
@@ -34,7 +34,7 @@ export const servicesData: ServiceItem[] = [
     title: "Mobile App Development",
     eyebrow: "Cross-Platform iOS & Android Apps Built for Scale",
     description:
-      "Intuitive, native-feel mobile applications crafted with React Native and Flutter. We engineer low-latency, offline-first apps with delightful interactions and App Store launch readiness.",
+      "Intuitive, native-feel mobile applications crafted with React Native and Flutter, with offline support, secure sign-in, and polished interactions.",
     imageUrl: "/home_page/our_expertise/ourexpertise2.png?v=2",
     tags: ["iOS & Android", "React Native", "Offline First", "Store Launch"],
   },

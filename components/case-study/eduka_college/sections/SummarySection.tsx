@@ -12,7 +12,7 @@ export default function SummarySection({
   const duration = project.timeline.match(/\d+/)?.[0] ?? project.timeline;
   const durationUnit = project.timeline.toLowerCase().includes("week") ? "weeks" : "";
   const summaryCopy =
-    project.overview || project.testimonial.text;
+    project.overview || project.overview;
 
   return (
     <section className="w-full select-none bg-transparent px-6 py-16 text-black sm:px-12 sm:py-24 lg:px-16 2xl:px-24 2xl:py-32">

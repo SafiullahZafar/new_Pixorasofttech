@@ -75,7 +75,7 @@ export default function EditorialSection({ title, challengeText, solutionText, r
           >
             <motion.img
               src={heroImage}
-              alt="Aurelle business management platform showcase"
+              alt="HRMS workforce management platform showcase"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
 
@@ -93,7 +93,7 @@ export default function EditorialSection({ title, challengeText, solutionText, r
                 <div className="flex items-center gap-3">
                   <div>
                     <p className="text-sm font-semibold text-white leading-tight">
-                      Aurelle Salon & Store
+                      HRMS Workforce Management
                     </p>
                     <p className="text-xs text-white/80 leading-tight mt-0.5">
                       Staff Operations &bull; Business Management
@@ -115,7 +115,7 @@ export default function EditorialSection({ title, challengeText, solutionText, r
             </motion.div>
           </div>
 
-          {/* Part D: The Results */}
+          {/* Part D: Delivered Capabilities */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-6 lg:col-start-7 flex flex-col gap-4 lg:pl-12">
               <motion.div
@@ -132,7 +132,7 @@ export default function EditorialSection({ title, challengeText, solutionText, r
                   <span className="w-1.5 h-1.5 rounded-full bg-white" />
                 </span>
                 <span className="text-xs sm:text-sm 2xl:text-base text-zinc-400 font-medium tracking-wide">
-                  The Results
+                  Delivered Capabilities
                 </span>
               </motion.div>
 

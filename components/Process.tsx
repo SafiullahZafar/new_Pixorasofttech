@@ -125,7 +125,7 @@ export const defaultFlowSteps: Step[] = [
   {
     title: "QA & Speed Optimization",
     description:
-      "Rigorous cross-device testing, automated security audits, sub-second load optimizations, and accessibility compliance.",
+      "Cross-device testing, security review, performance optimization, and accessibility checks.",
     colorTheme: "dark",
   },
   {

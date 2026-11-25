@@ -10,7 +10,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 // ── Word-by-Word Text Reveal (Matches reference UI exactly) ────────────────
@@ -44,8 +43,7 @@ export default function CaseStudyDeliveryDashboard({ project }: CaseStudyDeliver
   const solutionText =
     project?.solution || "We built a React and Tailwind administration console that brings live dispatch monitoring, driver onboarding, payouts, support ticket routing, and safety workflows into one responsive interface.";
 
-  const resultsText =
-    project?.results.join(". ") || "Teams can monitor fleet activity in real time, resolve support cases faster, and manage driver payouts from one command center.";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -91,7 +89,6 @@ export default function CaseStudyDeliveryDashboard({ project }: CaseStudyDeliver
       <BrandingSection />
 
       {/* ── 5. KEY METRICS & TAKEAWAYS SECTION ── */}
-      <MetricsSection project={project} />
 
 
       {/* ── 6. PROJECT SUMMARY SECTION (Module 13141) ── */}

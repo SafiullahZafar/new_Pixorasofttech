@@ -6,16 +6,13 @@ import {
   ArrowLeft,
   ArrowUpRight,
   Lock,
-  Star,
   CheckCircle,
   AlertCircle,
   Building2,
   Clock3,
   PackageCheck,
   Sparkles,
-  ShieldCheck,
   Layers,
-  Quote
 } from "lucide-react";
 import Link from "next/link";
 import type { Project } from "@/lib/projects";
@@ -27,16 +24,9 @@ const catColors: Record<string, string> = {
 };
 
 export default function ProjectDetail({ project: p }: { project: Project }) {
-  // Helper to extract initials from name
-  const initials = p.testimonial.name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .substring(0, 2);
-
   return (
     <div className="bg-white pt-[68px]">
-      {/* ── HERO INFO SECTION ── */}
+      {/* â”€â”€ HERO INFO SECTION â”€â”€ */}
       <section className="bg-gradient-to-b from-blue-50/70 via-slate-50/50 to-white pt-12 pb-12 border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-6">
           <Link
@@ -114,7 +104,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
         </div>
       </section>
 
-      {/* ── HERO IMAGE ── */}
+      {/* â”€â”€ HERO IMAGE â”€â”€ */}
       <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
@@ -162,7 +152,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
         </div>
       </section>
 
-      {/* ── METADATA CARDS ── */}
+      {/* â”€â”€ METADATA CARDS â”€â”€ */}
       <section className="py-8 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -188,7 +178,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
         </div>
       </section>
 
-      {/* ── PROJECT OVERVIEW ── */}
+      {/* â”€â”€ PROJECT OVERVIEW â”€â”€ */}
       {p.overview && (
         <section className="py-10 bg-white">
           <div className="max-w-5xl mx-auto px-6">
@@ -209,7 +199,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
         </section>
       )}
 
-      {/* ── CHALLENGE & SOLUTION DEEP DIVE ── */}
+      {/* â”€â”€ CHALLENGE & SOLUTION DEEP DIVE â”€â”€ */}
       <section className="py-12 bg-slate-50/80 border-y border-slate-200/60">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-10">
@@ -261,7 +251,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
         </div>
       </section>
 
-      {/* ── KEY FEATURES SECTION ── */}
+      {/* â”€â”€ KEY FEATURES SECTION â”€â”€ */}
       {p.keyFeatures && p.keyFeatures.length > 0 && (
         <section className="py-14 bg-white">
           <div className="max-w-5xl mx-auto px-6">
@@ -295,7 +285,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
         </section>
       )}
 
-      {/* ── DELIVERABLES & MEASURABLE RESULTS ── */}
+      {/* â”€â”€ DELIVERABLES & MEASURABLE RESULTS â”€â”€ */}
       <section className="py-14 bg-slate-50/50 border-t border-slate-200/60">
         <div className="max-w-5xl mx-auto px-6 pb-14">
           <div className="max-w-2xl mb-8">
@@ -321,6 +311,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
           </div>
         </div>
 
+        {p.results.length > 0 && (
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-8">
             <p className="text-blue-600 text-xs font-bold tracking-[0.16em] uppercase mb-2">Impact &amp; Growth</p>
@@ -342,56 +333,12 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
             ))}
           </div>
         </div>
+        )}
       </section>
 
-      {/* ── CLIENT TESTIMONIAL SHOWCASE ── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative bg-gradient-to-b from-blue-50/60 to-slate-50/80 border border-blue-100/80 rounded-3xl p-8 sm:p-12 shadow-lg shadow-blue-500/5 text-center overflow-hidden"
-          >
-            <Quote className="w-16 h-16 text-blue-200/70 absolute -top-2 left-6 -rotate-12 pointer-events-none" />
+      {/* â”€â”€ CLIENT TESTIMONIAL SHOWCASE â”€â”€ */}
 
-            {/* Verified badge */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-6">
-              <ShieldCheck className="w-3.5 h-3.5" /> Verified Client Feedback
-            </div>
-
-            {/* 5-Star rating */}
-            <div className="flex justify-center gap-1 mb-6">
-              {[...Array(p.testimonial.rating || 5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-
-            {/* Quote text */}
-            <p className="text-slate-800 text-lg sm:text-xl leading-relaxed mb-8 italic font-medium max-w-2xl mx-auto">
-              &ldquo;{p.testimonial.text}&rdquo;
-            </p>
-
-            {/* Client Info with Avatar Initials */}
-            <div className="flex items-center justify-center gap-4">
-              <div
-                className={`w-12 h-12 rounded-full ${
-                  p.testimonial.avatarBg || "bg-blue-600"
-                } text-white font-extrabold text-sm flex items-center justify-center shadow-md`}
-              >
-                {initials}
-              </div>
-              <div className="text-left">
-                <p className="text-slate-900 font-extrabold text-base leading-tight">{p.testimonial.name}</p>
-                <p className="text-blue-600 font-semibold text-xs mt-0.5">{p.testimonial.role}</p>
-                <p className="text-slate-400 text-xs">{p.testimonial.company}</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── BOTTOM CTA ── */}
+      {/* â”€â”€ BOTTOM CTA â”€â”€ */}
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div

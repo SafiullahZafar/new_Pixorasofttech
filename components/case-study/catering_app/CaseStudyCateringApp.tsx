@@ -8,7 +8,6 @@ import AboutSection from "./sections/AboutSection";
 import EditorialSection from "./sections/EditorialSection";
 import ShowcaseSection from "./sections/ShowcaseSection";
 import BrandingSection from "./sections/BrandingSection";
-import MetricsSection from "./sections/MetricsSection";
 import SummarySection from "./sections/SummarySection";
 
 interface CaseStudyCateringAppProps {
@@ -32,7 +31,7 @@ export default function CaseStudyCateringApp({ project }: CaseStudyCateringAppPr
   const aboutDescription = project?.overview || "Catering & Event Food App is a full-featured mobile marketplace built for Pakistan's catering industry. PixoraSofttech developed a React Native app offering event-specific catering package discovery, detailed menu views with gallery and reviews, guest count configuration, and a guided 4-step custom quote flow — all with PKR live pricing.";
   const challengeText = project?.challenge || "";
   const solutionText = project?.solution || "";
-  const resultsText = project?.results.join(". ") || "";
+  const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";
 
   return (
     <div className="w-full bg-[#f5f5f5] text-slate-900 font-sans selection:bg-black selection:text-white">
@@ -56,7 +55,6 @@ export default function CaseStudyCateringApp({ project }: CaseStudyCateringAppPr
       />
       <ShowcaseSection heroImage={heroImage} />
       <BrandingSection />
-      <MetricsSection project={project} />
       <SummarySection liveUrl={liveUrl} project={project} />
     </div>
   );

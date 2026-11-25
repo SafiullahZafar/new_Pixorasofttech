@@ -1,4 +1,5 @@
 "use client";
+import { getProjectTechnologyStack } from "@/lib/project-stack";
 
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
@@ -68,7 +69,7 @@ export default function SummarySection({ liveUrl, project }: Pick<SalonSectionPr
             {/* <p className="text-base sm:text-xl md:text-2xl 2xl:text-3xl text-zinc-800 leading-relaxed font-normal max-w-2xl 2xl:max-w-3xl"> */}
                         <p className="text-base sm:text-lg 2xl:text-xl text-zinc-800 font-normal leading-relaxed max-w-xl">
 
-              {project.testimonial.text}
+              {`${project.overview}${getProjectTechnologyStack(project.tags).length ? ` Technology stack: ${getProjectTechnologyStack(project.tags).join(", ")}.` : ""}`}
             </p>
 
             {liveUrl && (

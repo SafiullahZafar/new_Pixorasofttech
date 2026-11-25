@@ -18,17 +18,33 @@ export type Project = {
   solution: string;
   keyFeatures: string[];
   results: string[];
-  testimonial: {
-    text: string;
-    name: string;
-    role: string;
-    company: string;
-    rating: number;
-    avatarBg?: string;
-  };
 };
 
 export const excludedProjectIds = new Set(["supplier", "fitplus-app", "shopease-ecommerce"]);
+
+// IDs with dedicated case-study pages use one canonical URL throughout the site.
+export const projectCaseStudyRoutes: Record<string, string> = {
+  "brew-haven": "/case-study/brew-haven",
+  "kb-exports": "/case-study/kb-exports",
+  "eduka-college": "/case-study/eduka-college",
+  "glass-haven": "/case-study/glass-haven",
+  "solar-solutions": "/case-study/solar-solutions",
+  "state-college": "/case-study/state-college",
+  zostel: "/case-study/zostel",
+  "travel-hotel-hub": "/case-study/travel-hotel-hub",
+  "goody-supplies": "/case-study/goody-supplies",
+  "rider-app": "/case-study/rider-app",
+  veloura: "/case-study/veloura",
+  hrms: "/case-study/hrms",
+  messenger: "/case-study/messenger",
+  inventory: "/case-study/rms",
+  "salon-pos": "/case-study/salon",
+  crm: "/case-study/crm",
+  dom: "/case-study/delivery-dashboard",
+  lms: "/case-study/textile-erp",
+  "catering-app": "/case-study/catering-app",
+  "supplier-wholesale-app": "/case-study/supplier-wholesale-app",
+};
 
 export const projects: Project[] = [
   // ── WEBSITES ──
@@ -61,19 +77,7 @@ export const projects: Project[] = [
       "Responsive Visual Storytelling & Micro-Animations",
       "Integrated Point of Sale & Inventory Sync"
     ],
-    results: [
-      "40% increase in online orders within 60 days",
-      "3.2 min average session duration",
-      "98 Google PageSpeed Performance Score"
-    ],
-    testimonial: {
-      text: "PixoraSofttech took our physical roastery experience and captured it flawlessly online. Our online bean subscriptions doubled within two months, and the custom roast selector has received immense praise from our regular customers.",
-      name: "Sarah Jenkins",
-      role: "Founder & Master Roaster",
-      company: "Brew Haven Coffee Co.",
-      rating: 5,
-      avatarBg: "bg-amber-600"
-    }
+    results: []
   },
   {
     id: "kb-exports",
@@ -104,19 +108,7 @@ export const projects: Project[] = [
       "ISO & International Sustainability Certification Hub",
       "Multi-Currency & Regional Buyer Contact Routing"
     ],
-    results: [
-      "60% increase in qualified international RFQs",
-      "Entry into 3 new European buyer markets",
-      "Sales inquiry response time cut by 70%"
-    ],
-    testimonial: {
-      text: "PixoraSofttech delivered a high-caliber global platform for K.B. Exports. International buyers can now instantly inspect our certifications, sample specs, and place RFQs directly. It transformed our B2B sales pipeline completely.",
-      name: "Tariq K. Bashir",
-      role: "Managing Director",
-      company: "K.B. Exports Textile Group",
-      rating: 5,
-      avatarBg: "bg-emerald-600"
-    }
+    results: []
   },
   {
     id: "eduka-college",
@@ -147,19 +139,7 @@ export const projects: Project[] = [
       "Faculty & Department Directory with Office Hours",
       "Student Scholarship & Financial Aid Calculator"
     ],
-    results: [
-      "50% growth in online admission applications",
-      "30% reduction in administrative inquiry handling",
-      "Mobile student portal engagement rose by 85%"
-    ],
-    testimonial: {
-      text: "Working with PixoraSofttech was an absolute game changer for our institution. Prospective students now apply effortlessly online, and our staff saved countless hours of manual paperwork. Highly recommended!",
-      name: "Prof. Dr. Ahmed Farooq",
-      role: "Principal & Academic Dean",
-      company: "Eduka College",
-      rating: 5,
-      avatarBg: "bg-blue-600"
-    }
+    results: []
   },
   {
     id: "glass-haven",
@@ -190,19 +170,7 @@ export const projects: Project[] = [
       "VIP Private Tour Scheduling & Agent Sync",
       "Curated Luxury Neighborhood & Lifestyle Guides"
     ],
-    results: [
-      "35% increase in high-intent private tour bookings",
-      "Average session time exceeded 4.5 minutes",
-      "100% positive buyer feedback on web design"
-    ],
-    testimonial: {
-      text: "Our digital presence now matches the extraordinary luxury of the estates we represent. PixoraSofttech created a masterwork that impresses our high-net-worth clients from the very first click.",
-      name: "James R. Sterling",
-      role: "Chief Executive Officer",
-      company: "Glass Haven Luxury Real Estate",
-      rating: 5,
-      avatarBg: "bg-purple-600"
-    }
+    results: []
   },
   {
     id: "solar-solutions",
@@ -233,19 +201,7 @@ export const projects: Project[] = [
       "Comprehensive Project Portfolio & Case Studies",
       "Customer Review & Warranty Documentation Hub"
     ],
-    results: [
-      "280+ qualified quote requests in Q1",
-      "Customer acquisition cost (CAC) reduced by 25%",
-      "5.0-star average rating across customer feedback"
-    ],
-    testimonial: {
-      text: "The website PixoraSofttech built for us acts as our 24/7 sales engine. The solar savings calculator instantly answers customer questions and delivers hot, qualified leads directly to our team.",
-      name: "Omar Al-Khatib",
-      role: "Founder & Director",
-      company: "Solar Solutions Energy",
-      rating: 5,
-      avatarBg: "bg-yellow-600"
-    }
+    results: []
   },
   {
     id: "state-college",
@@ -276,19 +232,7 @@ export const projects: Project[] = [
       "Unified Scholarship & Financial Aid Search Hub",
       "Integrated Campus News, Events & Press Portal"
     ],
-    results: [
-      "45% increase in prospective student inquiry rate",
-      "95/100 Accessibility Compliance Score",
-      "Mobile page load speed improved by 3.5x"
-    ],
-    testimonial: {
-      text: "PixoraSofttech successfully brought our entire university web infrastructure into the modern era. The accessible design, lightning-fast speed, and intuitive program finder have transformed student engagement.",
-      name: "Dr. Elena Williams",
-      role: "University Registrar & Vice President",
-      company: "State College Higher Ed",
-      rating: 5,
-      avatarBg: "bg-indigo-600"
-    }
+    results: []
   },
   {
     id: "zostel",
@@ -319,19 +263,7 @@ export const projects: Project[] = [
       "Hostel Community Event & Meetup Calendar",
       "Mobile-First Instant Checkout & Loyalty Sync"
     ],
-    results: [
-      "55% increase in direct commission-free bookings",
-      "Tripled community event sign-ups",
-      "Reduced customer reliance on third-party OTAs"
-    ],
-    testimonial: {
-      text: "PixoraSofttech gave our community a digital home. Travelers love how easy it is to book rooms directly and check out upcoming hostel events. Our direct booking revenue has never been higher!",
-      name: "Priya Sharma",
-      role: "Head of Digital Product",
-      company: "Zostel Hospitality",
-      rating: 5,
-      avatarBg: "bg-orange-600"
-    }
+    results: []
   },
   {
     id: "travel-hotel-hub",
@@ -362,19 +294,7 @@ export const projects: Project[] = [
       "Multi-Currency & Real-Time Availability Sync",
       "Frictionless 3-Step Reservation Journey"
     ],
-    results: [
-      "Bounce rate reduced by 40%",
-      "65% growth in resort package bookings",
-      "22% boost in average order transaction value"
-    ],
-    testimonial: {
-      text: "The conversion rate on Travel Hotel Hub doubled right after launching the new site built by PixoraSofttech. The visually rich destination guides inspire users and turn them into paying guests effortlessly.",
-      name: "Alex Turner",
-      role: "Co-Founder & Managing Director",
-      company: "Travel Hotel Hub Group",
-      rating: 5,
-      avatarBg: "bg-teal-600"
-    }
+    results: []
   },
   {
     id: "supplier",
@@ -405,19 +325,7 @@ export const projects: Project[] = [
       "Real-Time Inventory Stock Level Display",
       "Automated Delivery Window & Logistics Routing"
     ],
-    results: [
-      "60% reduction in manual order processing time",
-      "94% wholesale client retention rate",
-      "40% increase in new corporate accounts"
-    ],
-    testimonial: {
-      text: "Our restaurant clients now place their own bulk supply orders in seconds via the web portal. PixoraSofttech freed up our operational staff and helped us expand our delivery network significantly.",
-      name: "Hassan Malik",
-      role: "Chief Operating Officer",
-      company: "Supplier Wholesale Foods",
-      rating: 5,
-      avatarBg: "bg-cyan-600"
-    }
+    results: []
   },
   {
     id: "goody-supplies",
@@ -448,19 +356,7 @@ export const projects: Project[] = [
       "Corporate Event Gallery & Client Case Studies",
       "Instant PDF Quote Generation & Planner Inquiry"
     ],
-    results: [
-      "50 corporate accounts onboarded in 90 days",
-      "$850+ average corporate event transaction",
-      "120% growth in social referral traffic"
-    ],
-    testimonial: {
-      text: "PixoraSofttech transformed Goody Supplies into a recognizable corporate catering brand. Event managers constantly praise how easy it is to select menus and generate estimates directly on our website.",
-      name: "Fatima Al-Zahra",
-      role: "Founder & Creative Director",
-      company: "Goody Catering & Supplies",
-      rating: 5,
-      avatarBg: "bg-rose-600"
-    }
+    results: []
   },
 
   // ── MOBILE APPS ──
@@ -469,7 +365,7 @@ export const projects: Project[] = [
     title: "Driven Mobility App",
     category: "Mobile Apps",
     tagline: "Next-Gen On-Demand Urban Mobility & Driver Fleet App",
-    desc: "A sleek, dark-themed ride booking and urban mobility mobile application featuring real-time GPS vehicle tracking, sub-3-second driver matching, dynamic fare estimation, and seamless digital payments.",
+    desc: "A sleek, dark-themed ride booking and urban mobility mobile application featuring real-time GPS vehicle tracking, driver matching, dynamic fare estimation, and digital payments.",
     overview: "Driven Mobility is an on-demand mobility platform engineered to redefine urban transit with rapid driver matching, real-time map telemetry, transparent fare pricing, and fleet logistics coordination. PixoraSofttech built the cross-platform mobile experience using React Native, WebSockets, and mapping APIs.",
     tags: ["React Native", "Maps Telemetry", "WebSockets", "Stripe API", "Driver Matching"],
     client: "Driven Mobility Network",
@@ -484,27 +380,15 @@ export const projects: Project[] = [
     img: "/case_studies/driven_app/driven_hero_app_01.png",
     heroImg: "/case_studies/driven_app/driven_hero_app_01.png",
     status: "processing",
-    challenge: "Building a mobile application capable of sub-3-second driver lookup, smooth real-time map telemetry rendering without battery drain, and secure in-app payments across iOS and Android.",
+    challenge: "Building a mobile application with driver lookup, smooth real-time map telemetry, and secure in-app payments across iOS and Android.",
     solution: "We architected lightweight mobile client apps backed by WebSocket connections, optimized vector map rendering, automatic fare estimation algorithms, and integrated Stripe/Apple Pay gateways.",
     keyFeatures: [
-      "Sub-3-Second Driver Matching & Automated Dispatch Algorithm",
+      "Driver Matching & Automated Dispatch Workflow",
       "Live Interactive Vector Map with Real-Time Vehicle Telemetry",
       "Upfront Dynamic Fare Calculation & Multi-Payment Gateway Support",
       "In-App Safety Controls, Driver Rating & Trip Sharing Modules"
     ],
-    results: [
-      "500+ successful trial trips completed in active beta testing",
-      "99.8% WebSocket connection uptime for live driver telemetry",
-      "Sub-2.4-second average trip dispatch speed"
-    ],
-    testimonial: {
-      text: "PixoraSofttech took our complex urban mobility specifications and engineered a slick, ultra-responsive app. The real-time mapping and dispatch speed are truly world-class.",
-      name: "Ahmed Raza",
-      role: "Founder & Product Owner",
-      company: "Driven Mobility Network",
-      rating: 5,
-      avatarBg: "bg-lime-600"
-    }
+    results: []
   },
   {
     id: "veloura",
@@ -534,19 +418,7 @@ export const projects: Project[] = [
       "Choose appointment dates and times",
       "Review upcoming booking details"
     ],
-    results: [
-      "Service discovery and appointment booking in one mobile experience",
-      "Clear stylist and availability details before booking",
-      "Appointment information kept together for clients"
-    ],
-    testimonial: {
-      text: "Veloura gives clients a simple way to explore our services and plan their salon visits from their phones.",
-      name: "Veloura Team",
-      role: "Salon Services",
-      company: "Veloura",
-      rating: 5,
-      avatarBg: "bg-fuchsia-600"
-    }
+    results: []
   },
   {
     id: "fitplus-app",
@@ -576,19 +448,7 @@ export const projects: Project[] = [
       "Daily Activity, Goal & Progress Tracking",
       "Personal Fitness Dashboard and History"
     ],
-    results: [
-      "Workout planning and tracking brought into one app",
-      "Clear progress summaries support consistent routines",
-      "Personalized goals make daily activity easier to follow"
-    ],
-    testimonial: {
-      text: "FitPlus brings our workout plans and progress tools together in an experience that feels clear and easy to return to. Members can focus on their routine and see the progress they are making.",
-      name: "FitPlus Product Team",
-      role: "Digital Wellness Team",
-      company: "FitPlus Wellness",
-      rating: 5,
-      avatarBg: "bg-emerald-600"
-    }
+    results: []
   },
   {
     id: "shopease-ecommerce",
@@ -618,19 +478,7 @@ export const projects: Project[] = [
       "Shopping Cart with Quantity and Order Summary Controls",
       "Secure Checkout, Order History, and Status Updates"
     ],
-    results: [
-      "Discovery, cart, and checkout combined in one shopping flow",
-      "Clear order summaries help shoppers review purchases before checkout",
-      "Order status visibility supports customers after purchase"
-    ],
-    testimonial: {
-      text: "ShopEase gives our customers a clear path from browsing to checkout. The product catalog, cart, and order updates now work together in one convenient mobile experience.",
-      name: "ShopEase Product Team",
-      role: "Digital Commerce Team",
-      company: "ShopEase Retail",
-      rating: 5,
-      avatarBg: "bg-violet-600"
-    }
+    results: []
   },
   {
     id: "catering-app",
@@ -660,19 +508,7 @@ export const projects: Project[] = [
       "Live PKR Per-Person Pricing with Minimum Guest Count & Delivery Availability",
       "4-Step Custom Quote Flow: Event Details → Menu Selection → Add-ons → Review & Submit"
     ],
-    results: [
-      "Eliminated phone-tag quoting — events booked in under 5 minutes",
-      "Trusted by 1,000+ event planners across Lahore within 3 months",
-      "4.8-star average rating from corporate and wedding clients"
-    ],
-    testimonial: {
-      text: "Finding a caterer for our corporate event used to take days of calls. With this app we browsed packages, checked the menu gallery, and sent a custom quote in under 5 minutes. Absolutely brilliant!",
-      name: "Zara Malik",
-      role: "Corporate Events Manager",
-      company: "Lahore Business Hub",
-      rating: 5,
-      avatarBg: "bg-orange-600"
-    }
+    results: []
   },
   {
     id: "supplier-wholesale-app",
@@ -702,73 +538,40 @@ export const projects: Project[] = [
       "Bulk Pricing Per KG with In-Stock Status & Quantity Box Selection",
       "Delivery Schedule Selector with Invoices & Order History Tracking"
     ],
-    results: [
-      "Trusted by 5,000+ food businesses across active markets",
-      "60% reduction in order placement time vs. phone/WhatsApp ordering",
-      "Consistent weekly supply adherence improved by 85%"
-    ],
-    testimonial: {
-      text: "Our kitchen team now places the entire weekly supply order in minutes using the app. The bulk pricing transparency and weekly templates have saved us significant costs and eliminated every missed delivery.",
-      name: "Hassan Malik",
-      role: "Head Chef & Kitchen Manager",
-      company: "Grand Restaurant Group",
-      rating: 5,
-      avatarBg: "bg-amber-700"
-    }
+    results: []
   },
 
   // ── SOFTWARE ──
   {
     id: "hrms",
-    title: "Tax-Integrated Salon & Store POS",
+    title: "HRMS — Workforce Management System",
     category: "Software",
-    tagline: "Aurelle Salon & Store POS with Official FBR / PRA Pakistan Tax Integration",
-    desc: "An integrated business management and point-of-sale system combining POS billing, salon services & packages, customer CRM, staff operations, stock auto-consumption, and official FBR/PRA Pakistan tax integration.",
-    overview: "Aurelle Salon / Pixorsofttech Business Management & POS System is an integrated platform for small service and retail businesses (Salon, Barber Shop, Beauty Studio, Spa, Small Retail + Service Store). Built with Laravel 13, PHP 8.3, Vite 8, and Tailwind CSS 4, it unifies POS billing, customer CRM, staff attendance & shifts, inventory auto-consumption, purchase orders, business analytics, and official Pakistan POS tax integration (FBR/PRA).",
-    tags: ["Laravel 13", "PHP 8.3", "FBR/PRA Tax", "POS Billing", "Auto Stock Deduction", "Staff & CRM"],
-    client: "Aurelle Salon & Retail Store (Powered by Pixorsofttech)",
-    industry: "Retail, Salon Operations & Tax Compliance",
-    timeline: "Completed & Production Ready",
+    tagline: "Staff records, attendance, schedules, and leave in one HR workspace",
+    desc: "A human resources management system for organizing employee records, attendance, work schedules, and leave requests.",
+    overview: "The HRMS brings employee profiles, attendance, shift scheduling, and leave tracking into one workforce management workspace. Managers can review staff coverage and activity, while employees can keep their work information current.",
+    tags: ["Laravel", "Human Resources", "Employee Records", "Attendance", "Shift Scheduling", "Leave Management"],
+    client: "HRMS Workforce Management Product",
+    industry: "Human Resources & Workforce Operations",
+    timeline: "HRMS Case Study",
     deliverables: [
-      "FBR / PRA Real-Time Tax Payload & Integration (USIN & FbrLog Retry)",
-      "Touch POS Terminal & Thermal Receipt / Ticket Generator",
-      "Services & Multi-Service Package CRUD with Peak Hour Pricing",
-      "Automatic Product Consumption on Service Sale (Hair Color, Developer, Gloves)",
-      "Customer CRM with Spending History & WhatsApp Birthday Alerts",
-      "Staff Operations (Attendance Check-In/Out, Shift Scheduling & Leaves)",
-      "Multi-Warehouse Inventory Tracking & Supplier Purchase Orders",
-      "Business Analytics Dashboard with Sales Trends, PDF & CSV Export"
+      "Employee profile and staff record management",
+      "Attendance check-in and check-out tracking",
+      "Shift schedules and team coverage management",
+      "Leave request and status tracking"
     ],
     img: "/case_studies/hrms_soft/hrms_about_soft_01.png",
     heroImg: "/case_studies/hrms_soft/hrms_hero_soft_01.png",
-    status: "live",
-    liveUrl: "https://salon.pixorasofttech.com",
-    challenge: "Small service and retail businesses like salons faced fragmented tools: manual billing without inventory sync, paper staff attendance, unmonitored consumable supplies, and failing to comply with mandatory Pakistan FBR/PRA POS tax integration regulations.",
-    solution: "We engineered a unified Laravel 13 + PHP 8.3 platform handling complete transaction flow: Cart → Customer → Payment → Inventory Deduction → FBR/PRA Tax Submission → Thermal Ticket Receipt. It automatically deducts supplies on service completion, tracks peak pricing, manages employee shifts/leaves, and provides FbrLog retry mechanisms for failed tax payloads.",
+    status: "processing",
+    challenge: "Employee information, attendance, shift coverage, and leave requests can be difficult to coordinate when they are spread across separate records and manual processes.",
+    solution: "We designed an HR workspace that connects staff profiles with attendance, schedules, and leave tracking so managers can review workforce activity in one place.",
     keyFeatures: [
-      "Real-Time FBR & PRA POS Tax Integration Engine with POS ID, USIN & FbrLog Retry",
-      "POS Terminal Handling Services, Products, Service Packages & Walk-in Customers",
-      "Automatic Product Consumption (e.g. Hair Color service auto-deducts 50ml color + 20ml developer)",
-      "Customer CRM with Spending Analytics, Prepaid Credit & Birthday WhatsApp Reminders",
-      "Staff Management Module (Attendance Check-In/Out, Morning/Evening Shifts, Leaves & Upsells)",
-      "Multi-Warehouse Inventory & Purchase Orders with Auto-Stock Increment upon Receiving",
-      "Promotions & Discounts Backend (Coupons, Gift Cards with PIN, Package Session Tracking)",
-      "Business Dashboard with Net Sales, Hourly Trends, Cashier Performance & PDF/CSV Export"
+      "Employee profiles and staff directory",
+      "Attendance check-in and check-out records",
+      "Shift schedules and team coverage view",
+      "Leave request tracking",
+      "Workforce activity overview"
     ],
-    results: [
-      "100% compliant FBR/PRA tax submission on every POS invoice",
-      "Automated stock deduction for 50+ service consumables",
-      "95% reduction in end-of-day register closure & tax reporting time",
-      "1-click thermal ticket printing & DOMPDF invoice generation"
-    ],
-    testimonial: {
-      text: "Pixorasofttech built an incredible system for Aurelle Salon. Having POS sales, inventory auto-deduction, staff shifts, and official FBR/PRA tax integration all connected in one seamless app has completely transformed our store operations!",
-      name: "Safiullah Zafar",
-      role: "Founder & Business Lead",
-      company: "Aurelle Salon & Store (Pixorsofttech)",
-      rating: 5,
-      avatarBg: "bg-emerald-600"
-    }
+    results: []
   },
   {
     id: "messenger",
@@ -798,19 +601,7 @@ export const projects: Project[] = [
       "Automation and Approval Controls",
       "Published Content and Activity Tracking"
     ],
-    results: [
-      "Content planning and publishing coordinated in one workspace",
-      "Review and approval steps visible to the whole team",
-      "Publishing schedules managed across connected social platforms"
-    ],
-    testimonial: {
-      text: "Messenger gives our team one clear place to review content, coordinate publishing schedules, and track what is going live across our social channels.",
-      name: "Product Team",
-      role: "Social Media Operations",
-      company: "PixoraSoftTech",
-      rating: 5,
-      avatarBg: "bg-blue-700"
-    }
+    results: []
   },
   {
     id: "inventory",
@@ -842,19 +633,7 @@ export const projects: Project[] = [
       "Store-to-Store Stock Transfer Management & Audit History Logs",
       "Inventory Unit Cost & Supplier Margin Analytics Reporting"
     ],
-    results: [
-      "0% stockout rate across active retail branch locations",
-      "Saved $15,000/month by preventing overstocking and shrinkage",
-      "Unified inventory tracking across multi-site store locations"
-    ],
-    testimonial: {
-      text: "We finally know exactly what stock we have in every store branch and when to issue purchase orders. PixoraSofttech created an RMS system that streamlined our inventory operations completely.",
-      name: "Jake Peterson",
-      role: "VP of Retail Operations",
-      company: "Pixora Retail Group",
-      rating: 5,
-      avatarBg: "bg-sky-700"
-    }
+    results: []
   },
   {
     id: "salon-pos",
@@ -886,19 +665,7 @@ export const projects: Project[] = [
       "Customer CRM with Visit History, Birthday Alerts & Discounts",
       "Staff Operations: Shifts, Attendance & Commission Tracking"
     ],
-    results: [
-      "Reduced appointment scheduling conflicts by 95%",
-      "Staff onboarding completed in under 15 minutes",
-      "End-of-day register closing time cut from 45m to 5m"
-    ],
-    testimonial: {
-      text: "The Salon Management POS built by PixoraSofttech is a total game changer. Stylists manage appointments effortlessly, and our front desk checkout has never been faster!",
-      name: "Nadia Bennett",
-      role: "Owner & Lead Stylist",
-      company: "Aurelle Salon Studio",
-      rating: 5,
-      avatarBg: "bg-pink-600"
-    }
+    results: []
   },
   {
     id: "crm",
@@ -928,19 +695,7 @@ export const projects: Project[] = [
       "360-Degree Contact Activity & Communication History",
       "Predictive Revenue Analytics & Sales Team Leaderboards"
     ],
-    results: [
-      "30% faster deal cycle times in sales testing",
-      "Zero misplaced leads across active pipelines",
-      "Sales rep activity logging increased by 3x"
-    ],
-    testimonial: {
-      text: "Finally, a CRM software that our sales reps actually enjoy using every day! The visual pipeline and automated follow-ups gave us complete control over our sales process.",
-      name: "Carlos Mendez",
-      role: "Global Sales Director",
-      company: "Apex Business Solutions",
-      rating: 5,
-      avatarBg: "bg-blue-700"
-    }
+    results: []
   },
   {
     id: "dom",
@@ -970,19 +725,7 @@ export const projects: Project[] = [
       "Financial Settlement, Weekly Driver Payouts & Earnings Dashboard",
       "Help Center, Support Ticket Resolution & Safety Incident Management"
     ],
-    results: [
-      "Real-time dispatch visibility for fleet operators",
-      "Reduced driver support ticket resolution time by 75%",
-      "Automated weekly payment disbursement processing for 500+ drivers"
-    ],
-    testimonial: {
-      text: "The Driven Admin Console built by PixoraSofttech gives us total operational visibility. Managing driver payouts, support tickets, and live ride dispatch from a single interface has streamlined our fleet management completely.",
-      name: "Ahmed Raza",
-      role: "Founder & Operations Director",
-      company: "Driven Mobility Network",
-      rating: 5,
-      avatarBg: "bg-violet-700"
-    }
+    results: []
   },
   {
     id: "lms",
@@ -1013,18 +756,6 @@ export const projects: Project[] = [
       "Quality Control Inspection & Fabric Roll Defect Logging",
       "Export Order Tracking, RFQ & Container Shipment System"
     ],
-    results: [
-      "25% reduction in raw yarn wastage across production runs",
-      "Real-time visibility over 150+ active loom machines",
-      "Export shipping documentation processing time cut by 60%"
-    ],
-    testimonial: {
-      text: "The Textile System built by PixoraSofttech brought total operational visibility to our textile mill. From yarn stock to active looms and export packing, everything is tracked seamlessly.",
-      name: "Tariq K. Bashir",
-      role: "Managing Director",
-      company: "Pixora Textile Group",
-      rating: 5,
-      avatarBg: "bg-emerald-700"
-    }
+    results: []
   }
 ];
