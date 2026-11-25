@@ -269,6 +269,7 @@ export function WorksWheel({
         className="absolute inset-0 cursor-grab touch-pan-x outline-none active:cursor-grabbing"
         style={{ perspective: `${metrics.depth}px` }}
         onPointerDown={(event) => {
+          if ((event.target as HTMLElement).closest("a, button")) return;
           drag.current = event.clientY;
           event.currentTarget.setPointerCapture(event.pointerId);
         }}
@@ -393,7 +394,7 @@ const featuredWorks: WorksWheelItem[] = [
   {
     title: "RMS — Store & Inventory Manager",
     image: "/home_page/our_projects/rms_store_inventory_manager.png",
-    href: "/projects/inventory",
+    href: "/case-study/rms",
   },
   {
     title: "Brew Haven Coffee",
@@ -403,22 +404,22 @@ const featuredWorks: WorksWheelItem[] = [
   {
     title: "Driven Fleet Operations & Admin Console",
     image: "/home_page/our_projects/driven_fleet_operations_admin.png",
-    href: "/projects/dom",
+    href: "/case-study/delivery-dashboard",
   },
   {
     title: "CRM Sales System",
     image: "/home_page/our_projects/crm_sales_system.png",
-    href: "/projects/crm",
+    href: "/case-study/crm",
   },
   {
     title: "Eduka College Platform",
     image: "/home_page/our_projects/eduka_college_platform.png",
-    href: "/projects/eduka-college",
+    href: "/case-study/eduka-college",
   },
   {
     title: "K.B. Exports Global",
     image: "/home_page/our_projects/kb_exports_global.png",
-    href: "/projects/kb-exports",
+    href: "/case-study/kb-exports",
   },
   {
     title: "Driven Mobility App",
@@ -428,7 +429,7 @@ const featuredWorks: WorksWheelItem[] = [
   {
     title: "Solar Solutions Portal",
     image: "/home_page/our_projects/solar_solutions_portal.png",
-    href: "/projects/solar-solutions",
+    href: "/case-study/solar-solutions",
   },
 ];
 
