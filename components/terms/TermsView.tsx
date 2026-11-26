@@ -200,21 +200,21 @@ export default function TermsView() {
   );
 
   return (
-    <div className="bg-white min-h-screen pt-24 pb-24">
+    <div className="min-h-screen bg-slate-100/70 pt-20 pb-16 sm:pt-24 sm:pb-20">
 
       {/* ── HERO ── */}
-      <div className="border-b border-slate-200 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="border-b border-slate-200 bg-gradient-to-br from-white via-blue-50/70 to-slate-100">
+        <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 2xl:max-w-[1600px] 2xl:py-16 min-[2800px]:max-w-[2000px]">
           <div className="flex items-center gap-2 mb-3">
             <FileText className="w-4 h-4 text-blue-600" />
             <span className="text-xs font-semibold text-blue-600 uppercase tracking-widest">
               PIXORASOFTTECH (SMC-PRIVATE) LIMITED
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl 2xl:text-6xl">
             Terms and Conditions
           </h1>
-          <p className="text-slate-600 text-base max-w-3xl leading-relaxed mb-8">
+          <p className="mb-7 max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base 2xl:max-w-4xl 2xl:text-lg">
             These Terms and Conditions ("Terms") govern access to and use of the Pixra Softtech website,
             Pixra Social Automation and related software, integrations and services. By accessing or using
             the Services, connecting a third-party account or authorizing publication, the user agrees to
@@ -223,7 +223,7 @@ export default function TermsView() {
               Privacy Policy
             </Link>.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3">
             <div className="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-lg">
               <FileText className="w-4 h-4 text-slate-400" />
               <span className="text-sm text-slate-600">
@@ -241,11 +241,11 @@ export default function TermsView() {
       </div>
 
       {/* ── LAYOUT ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="mx-auto w-full max-w-6xl px-4 pt-6 sm:px-6 sm:pt-8 lg:px-8 2xl:max-w-[1600px] 2xl:pt-12 min-[2800px]:max-w-[2000px]">
+        <div className="grid grid-cols-1 items-start gap-5 xl:grid-cols-[minmax(280px,340px)_minmax(0,1fr)] xl:gap-8 2xl:grid-cols-[minmax(340px,420px)_minmax(0,1fr)] 2xl:gap-12">
 
           {/* ── SIDEBAR TOC (desktop) ── */}
-          <aside className="hidden lg:flex lg:col-span-4 sticky top-28 flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm max-h-[calc(100vh-140px)]">
+          <aside className="sticky top-24 hidden max-h-[calc(100vh-7rem)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm xl:flex 2xl:top-28">
             <div className="p-4 border-b border-slate-100">
               <div className="relative">
                 <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -284,7 +284,7 @@ export default function TermsView() {
           </aside>
 
           {/* ── MOBILE TOC ── */}
-          <div className="lg:hidden mb-4">
+          <div className="mb-1 xl:hidden">
             <button
               onClick={() => setTocOpen(!tocOpen)}
               className="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-sm font-semibold text-slate-700"
@@ -319,10 +319,10 @@ export default function TermsView() {
           </div>
 
           {/* ── TERMS SECTIONS ── */}
-          <main className="lg:col-span-8 space-y-5">
+          <main className="min-w-0 space-y-4 sm:space-y-5 2xl:space-y-6">
 
             {/* 1. Company Information */}
-            <section id="sec-1" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-1" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Building2} title="1. Company Information" sub="Legal entity and registered contact details" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5 text-sm">
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
@@ -348,7 +348,7 @@ export default function TermsView() {
             </section>
 
             {/* 2. Services */}
-            <section id="sec-2" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-2" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Layers} title="2. Services" sub="What Pixra Softtech may provide" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
               <p className="text-sm text-slate-700 mb-4">Pixra Softtech may provide:</p>
               <ul className="space-y-1.5 mb-4">
@@ -372,7 +372,7 @@ export default function TermsView() {
             </section>
 
             {/* 3. Eligibility */}
-            <section id="sec-3" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-3" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={UserCheck} title="3. Eligibility" sub="Requirements to access and use the Services" iconColor="text-sky-600" iconBg="bg-sky-50" iconBorder="border-sky-100" />
               <p className="text-sm text-slate-700 mb-4">A user must:</p>
               <ul className="space-y-1.5 mb-4">
@@ -393,7 +393,7 @@ export default function TermsView() {
             </section>
 
             {/* 4. Account Security */}
-            <section id="sec-4" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-4" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Lock} title="4. Account and Credential Security" sub="User responsibilities for keeping access secure" iconColor="text-emerald-600" iconBg="bg-emerald-50" iconBorder="border-emerald-100" />
               <p className="text-sm text-slate-700 mb-4">Users are responsible for:</p>
               <ul className="space-y-1.5 mb-4">
@@ -418,7 +418,7 @@ export default function TermsView() {
             </section>
 
             {/* 5. User Content */}
-            <section id="sec-5" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-5" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Edit3} title="5. User Content" sub="Ownership, permissions and content standards" iconColor="text-violet-600" iconBg="bg-violet-50" iconBorder="border-violet-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 Users retain ownership of content they submit.
@@ -441,7 +441,7 @@ export default function TermsView() {
             </section>
 
             {/* 6. AI Content */}
-            <section id="sec-6" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-6" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Bot} title="6. AI-Generated Content" sub="Accuracy, responsibility and limitations of AI output" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 AI-generated material may contain errors, omissions, outdated information or unsuitable language.
@@ -462,7 +462,7 @@ export default function TermsView() {
             </section>
 
             {/* 7. Acceptable Use */}
-            <section id="sec-7" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-7" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={ShieldOff} title="7. Acceptable Use" sub="Prohibited actions and misuse policy" iconColor="text-rose-600" iconBg="bg-rose-50" iconBorder="border-rose-100" />
               <p className="text-sm text-slate-700 mb-4">Users must not use the Services to:</p>
               <ul className="space-y-1.5 mb-4">
@@ -489,7 +489,7 @@ export default function TermsView() {
             </section>
 
             {/* 8. Social-Media Authorization */}
-            <section id="sec-8" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-8" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Wifi} title="8. Social-Media Authorization" sub="Scope of permissions and ongoing responsibilities" iconColor="text-blue-600" iconBg="bg-blue-50" iconBorder="border-blue-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 A connected account authorizes the Services to perform only the actions covered by the permissions
@@ -509,7 +509,7 @@ export default function TermsView() {
             </section>
 
             {/* 9. Third-Party Platforms */}
-            <section id="sec-9" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-9" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={ExternalLink} title="9. Third-Party Platforms" sub="Independence of external providers and platforms" iconColor="text-amber-600" iconBg="bg-amber-50" iconBorder="border-amber-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 LinkedIn, Meta, Google, AI providers, RSS publishers and infrastructure providers are independent parties.
@@ -534,7 +534,7 @@ export default function TermsView() {
             </section>
 
             {/* 10. RSS & Source Material */}
-            <section id="sec-10" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-10" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Rss} title="10. RSS and Third-Party Source Material" sub="Rights, ownership and attribution" iconColor="text-orange-600" iconBg="bg-orange-50" iconBorder="border-orange-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 External articles and RSS content remain the property of their respective owners.
@@ -549,7 +549,7 @@ export default function TermsView() {
             </section>
 
             {/* 11. Intellectual Property */}
-            <section id="sec-11" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-11" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Briefcase} title="11. Intellectual Property" sub="Ownership of software, design and content" iconColor="text-teal-600" iconBg="bg-teal-50" iconBorder="border-teal-100" />
               <p className="text-sm text-slate-700 mb-4">Pixra Softtech owns or licenses its:</p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-4">
@@ -571,7 +571,7 @@ export default function TermsView() {
             </section>
 
             {/* 12. Privacy */}
-            <section id="sec-12" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-12" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Shield} title="12. Privacy" sub="How personal information is handled" iconColor="text-blue-600" iconBg="bg-blue-50" iconBorder="border-blue-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 Personal information is processed according to our Privacy Policy:
@@ -592,7 +592,7 @@ export default function TermsView() {
             </section>
 
             {/* 13. Availability */}
-            <section id="sec-13" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-13" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Server} title="13. Availability" sub="Service continuity and operational conditions" iconColor="text-slate-600" iconBg="bg-slate-100" iconBorder="border-slate-200" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 Services are provided on an "as available" basis.
@@ -608,7 +608,7 @@ export default function TermsView() {
             </section>
 
             {/* 14. Testing & Dev */}
-            <section id="sec-14" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-14" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={RefreshCw} title="14. Testing and Development Features" sub="Beta, preview and pre-release feature limitations" iconColor="text-purple-600" iconBg="bg-purple-50" iconBorder="border-purple-100" />
               <p className="text-sm text-slate-700 mb-4">
                 Features identified as testing, development, preview or beta may:
@@ -628,7 +628,7 @@ export default function TermsView() {
             </section>
 
             {/* 15. Fees */}
-            <section id="sec-15" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-15" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={CreditCard} title="15. Fees and Billing" sub="Charges, payment obligations and refund terms" iconColor="text-emerald-600" iconBg="bg-emerald-50" iconBorder="border-emerald-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 Applicable fees will be presented separately before purchase or agreed in a written service arrangement.
@@ -648,7 +648,7 @@ export default function TermsView() {
             </section>
 
             {/* 16. Suspension & Termination */}
-            <section id="sec-16" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-16" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={XCircle} title="16. Suspension and Termination" sub="Grounds for access restriction and what follows" iconColor="text-rose-600" iconBg="bg-rose-50" iconBorder="border-rose-100" />
               <p className="text-sm text-slate-700 mb-3">We may suspend or terminate access when:</p>
               <ul className="space-y-1.5 mb-4">
@@ -670,7 +670,7 @@ export default function TermsView() {
             </section>
 
             {/* 17. Disclaimers */}
-            <section id="sec-17" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-17" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={AlertTriangle} title="17. Disclaimers" sub="Limitations of warranties and guarantees" iconColor="text-amber-600" iconBg="bg-amber-50" iconBorder="border-amber-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">To the maximum extent permitted by applicable law:</p>
               <ul className="space-y-1.5 mb-4">
@@ -689,7 +689,7 @@ export default function TermsView() {
             </section>
 
             {/* 18. Limitation of Liability */}
-            <section id="sec-18" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-18" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Scale} title="18. Limitation of Liability" sub="Cap on damages and excluded loss types" iconColor="text-slate-600" iconBg="bg-slate-100" iconBorder="border-slate-200" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 To the maximum extent permitted by applicable law, Pixra Softtech will not be liable for indirect,
@@ -712,7 +712,7 @@ export default function TermsView() {
             </section>
 
             {/* 19. Indemnification */}
-            <section id="sec-19" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-19" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Handshake} title="19. Indemnification" sub="User responsibility for third-party claims" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 To the extent permitted by applicable law, users agree to be responsible for claims, losses or
@@ -731,7 +731,7 @@ export default function TermsView() {
             </section>
 
             {/* 20. Governing Law */}
-            <section id="sec-20" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-20" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Scale} title="20. Governing Law and Disputes" sub="Applicable law and dispute resolution process" iconColor="text-sky-600" iconBg="bg-sky-50" iconBorder="border-sky-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 These Terms are governed by the applicable laws of Pakistan.
@@ -747,7 +747,7 @@ export default function TermsView() {
             </section>
 
             {/* 21. Changes */}
-            <section id="sec-21" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-21" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={RefreshCw} title="21. Changes to These Terms" sub="How updates are published and communicated" iconColor="text-teal-600" iconBg="bg-teal-50" iconBorder="border-teal-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 We may update these Terms when our Services, laws or third-party requirements change.
@@ -771,7 +771,7 @@ export default function TermsView() {
             </section>
 
             {/* 22. Severability */}
-            <section id="sec-22" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-22" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={GitMerge} title="22. Severability" sub="Effect of invalid or unenforceable provisions" iconColor="text-slate-600" iconBg="bg-slate-100" iconBorder="border-slate-200" />
               <p className="text-sm text-slate-700 leading-relaxed">
                 If a provision is held invalid or unenforceable, the remaining provisions will continue in effect.
@@ -780,7 +780,7 @@ export default function TermsView() {
             </section>
 
             {/* 23. No Waiver */}
-            <section id="sec-23" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-23" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={CheckSquare} title="23. No Waiver" sub="Preservation of rights" iconColor="text-slate-600" iconBg="bg-slate-100" iconBorder="border-slate-200" />
               <p className="text-sm text-slate-700 leading-relaxed">
                 Failure to enforce a provision does not waive our right to enforce it later.
@@ -788,7 +788,7 @@ export default function TermsView() {
             </section>
 
             {/* 24. Entire Agreement */}
-            <section id="sec-24" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-24" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={FileText} title="24. Entire Agreement" sub="Scope and precedence of this agreement" iconColor="text-blue-600" iconBg="bg-blue-50" iconBorder="border-blue-100" />
               <p className="text-sm text-slate-700 leading-relaxed">
                 These Terms, the{" "}
@@ -801,7 +801,7 @@ export default function TermsView() {
             </section>
 
             {/* 25. Contact */}
-            <section id="sec-25" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-blue-600 text-white">
+            <section id="sec-25" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 scroll-mt-28 bg-blue-600 text-white">
               <div className="flex items-start gap-4 mb-6 pb-5 border-b border-blue-500">
                 <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5 text-white" />

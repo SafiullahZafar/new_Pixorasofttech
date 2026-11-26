@@ -176,24 +176,24 @@ export default function PrivacyPolicyView() {
   );
 
   return (
-    <div className="bg-white min-h-screen pt-24 pb-24">
+    <div className="min-h-screen bg-slate-100/70 pt-20 pb-16 sm:pt-24 sm:pb-20">
 
       {/* ── HERO ── */}
-      <div className="border-b border-slate-200 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="border-b border-slate-200 bg-gradient-to-br from-white via-blue-50/70 to-slate-100">
+        <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 2xl:max-w-[1600px] 2xl:py-16 min-[2800px]:max-w-[2000px]">
           <div className="flex items-center gap-2 mb-3">
             <Shield className="w-4 h-4 text-blue-600" />
             <span className="text-xs font-semibold text-blue-600 uppercase tracking-widest">
               PIXORASOFTTECH (SMC-PRIVATE) LIMITED
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl 2xl:text-6xl">
             Privacy Policy
           </h1>
-          <p className="text-slate-600 text-base max-w-3xl leading-relaxed mb-8">
+          <p className="mb-7 max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base 2xl:max-w-4xl 2xl:text-lg">
             PIXORASOFTTECH (SMC-PRIVATE) LIMITED ("Pixra Softtech," "we," "us," or "our") respects your privacy and is committed to handling personal information responsibly, transparently and securely.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3">
             <div className="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-lg">
               <Calendar className="w-4 h-4 text-slate-400" />
               <span className="text-sm text-slate-600">Effective Date: <span className="font-semibold text-slate-900">8 September 2026</span></span>
@@ -207,8 +207,8 @@ export default function PrivacyPolicyView() {
       </div>
 
       {/* ── QUICK HIGHLIGHTS ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      <div className="mx-auto w-full max-w-6xl px-4 pt-6 pb-3 sm:px-6 sm:pt-8 lg:px-8 2xl:max-w-[1600px] min-[2800px]:max-w-[2000px]">
+        <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-4 2xl:mb-8">
           {[
             { title: "No Data Selling",      desc: "We never sell or rent your personal information to any third parties.",          icon: ShieldCheck,    iconColor: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
             { title: "OAuth Authentication", desc: "We never store your passwords for LinkedIn, Meta or Google accounts.",           icon: KeyRound,       iconColor: "text-blue-600",    bg: "bg-blue-50",    border: "border-blue-100"   },
@@ -225,11 +225,11 @@ export default function PrivacyPolicyView() {
       </div>
 
       {/* ── LAYOUT ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 2xl:max-w-[1600px] min-[2800px]:max-w-[2000px]">
+        <div className="grid grid-cols-1 items-start gap-5 xl:grid-cols-[minmax(280px,340px)_minmax(0,1fr)] xl:gap-8 2xl:grid-cols-[minmax(340px,420px)_minmax(0,1fr)] 2xl:gap-12">
 
           {/* ── SIDEBAR TOC (desktop) ── */}
-          <aside className="hidden lg:flex lg:col-span-4 sticky top-28 flex-col bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm max-h-[calc(100vh-140px)]">
+          <aside className="sticky top-24 hidden max-h-[calc(100vh-7rem)] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm xl:flex 2xl:top-28">
             <div className="p-4 border-b border-slate-100">
               <div className="relative">
                 <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -268,7 +268,7 @@ export default function PrivacyPolicyView() {
           </aside>
 
           {/* ── MOBILE TOC ── */}
-          <div className="lg:hidden mb-4">
+          <div className="mb-1 xl:hidden">
             <button
               onClick={() => setTocOpen(!tocOpen)}
               className="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-sm font-semibold text-slate-700"
@@ -297,10 +297,10 @@ export default function PrivacyPolicyView() {
           </div>
 
           {/* ── POLICY SECTIONS ── */}
-          <main className="lg:col-span-8 space-y-5">
+          <main className="min-w-0 space-y-4 sm:space-y-5 2xl:space-y-6">
 
             {/* 1. Company & Contact */}
-            <section id="sec-1" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-1" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Building2} title="1. Company and Contact Information" sub="Legal entity, registered office and direct contacts" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-sm">
@@ -332,7 +332,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 2. Scope */}
-            <section id="sec-2" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-2" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Layers} title="2. Scope of This Policy" sub="What this policy covers and what it does not" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
               <p className="text-sm text-slate-700 mb-4">This Policy applies to:</p>
               <ul className="space-y-2 mb-5">
@@ -354,7 +354,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 3. Information We Collect */}
-            <section id="sec-3" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-3" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Database} title="3. Information We Collect" sub="Categories of personal data we may process" iconColor="text-sky-600" iconBg="bg-sky-50" iconBorder="border-sky-100" />
 
               {/* 3.1 */}
@@ -450,7 +450,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 4. Sources */}
-            <section id="sec-4" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-4" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Globe} title="4. Sources of Information" sub="How data enters our systems" iconColor="text-teal-600" iconBg="bg-teal-50" iconBorder="border-teal-100" />
               <p className="text-sm text-slate-700 mb-4">Information may be obtained:</p>
               <ul className="space-y-1.5 mb-5">
@@ -471,7 +471,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 5. Purposes */}
-            <section id="sec-5" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-5" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={FileText} title="5. Purposes of Processing" sub="Why we use personal data" />
               <p className="text-sm text-slate-700 mb-4">We process information to:</p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-5">
@@ -498,7 +498,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 6. Legal Bases */}
-            <section id="sec-6" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-6" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={ShieldCheck} title="6. Legal Bases for Processing" sub="GDPR and UK GDPR compliance" iconColor="text-purple-600" iconBg="bg-purple-50" iconBorder="border-purple-100" />
               <p className="text-sm text-slate-700 mb-4">Where laws such as the GDPR or UK GDPR apply, we rely on one or more of the following legal bases:</p>
               <div className="space-y-2 mb-4">
@@ -521,7 +521,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 7. AI Content */}
-            <section id="sec-7" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-7" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Bot} title="7. AI-Assisted Content" sub="AI generation and human review" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 Pixra Social Automation may use artificial intelligence to transform approved public-source information into original draft content.
@@ -538,7 +538,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 8. LinkedIn API */}
-            <section id="sec-8" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-8" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={KeyRound} title="8. LinkedIn API Use" sub="Restrictions on LinkedIn data" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 Information received through LinkedIn APIs is used only for the authorized features disclosed in this Policy.
@@ -571,7 +571,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 9. Sharing */}
-            <section id="sec-9" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-9" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Globe} title="9. Sharing and Service Providers" sub="Who we share data with and why" iconColor="text-amber-600" iconBg="bg-amber-50" iconBorder="border-amber-100" />
               <p className="text-sm text-slate-700 mb-4">We may disclose limited information to providers needed to operate the Services, including:</p>
               <ul className="space-y-1.5 mb-4">
@@ -597,7 +597,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 10. International Transfers */}
-            <section id="sec-10" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-10" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Globe} title="10. International Data Transfers" sub="Cross-border processing safeguards" iconColor="text-cyan-600" iconBg="bg-cyan-50" iconBorder="border-cyan-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 Our providers may process information in countries other than Pakistan or the user's country.
@@ -608,7 +608,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 11. Retention */}
-            <section id="sec-11" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-11" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Calendar} title="11. Retention" sub="How long we keep different types of data" />
               <p className="text-sm text-slate-700 mb-4">We retain information only for the period reasonably necessary for the disclosed purpose:</p>
               <div className="space-y-2 mb-4">
@@ -632,7 +632,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 12. Security */}
-            <section id="sec-12" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-12" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Lock} title="12. Security" sub="Technical and organizational safeguards" iconColor="text-emerald-600" iconBg="bg-emerald-50" iconBorder="border-emerald-100" />
               <p className="text-sm text-slate-700 mb-4">We maintain reasonable technical and organizational safeguards appropriate to the nature of the information, including:</p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-4">
@@ -655,7 +655,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 13. User Rights */}
-            <section id="sec-13" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-13" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={UserCheck} title="13. User Rights" sub="Your data access and control options" iconColor="text-sky-600" iconBg="bg-sky-50" iconBorder="border-sky-100" />
               <p className="text-sm text-slate-700 mb-4">Subject to applicable law, an individual may have the right to:</p>
               <ul className="space-y-1.5 mb-5">
@@ -678,7 +678,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 14. California */}
-            <section id="sec-14" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-14" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={ShieldCheck} title="14. California and Similar United States Privacy Rights" sub="CCPA and CPRA compliance" iconColor="text-purple-600" iconBg="bg-purple-50" iconBorder="border-purple-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 Where applicable, residents may request information about categories of personal information collected, sources, purposes, recipients, access, correction or deletion.
@@ -698,7 +698,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 15. Revoking LinkedIn */}
-            <section id="sec-15" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-15" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={KeyRound} title="15. Revoking LinkedIn Access" sub="How to disconnect the integration" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 Users may revoke Pixra Social Automation's LinkedIn access through their LinkedIn account settings:
@@ -715,7 +715,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 16. Data Deletion */}
-            <section id="sec-16" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-16" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Trash2} title="16. Data Deletion" sub="How to request removal of your data" iconColor="text-rose-600" iconBg="bg-rose-50" iconBorder="border-rose-100" />
               <p className="text-sm text-slate-700 mb-4 font-semibold">To request deletion:</p>
               <div className="space-y-2 mb-6">
@@ -744,7 +744,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 17. Cookies */}
-            <section id="sec-17" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-17" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={FileText} title="17. Cookies and Tracking" sub="Essential cookies and opt-out signals" iconColor="text-slate-600" iconBg="bg-slate-100" iconBorder="border-slate-200" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 Our website may use essential cookies required for security, sessions and basic functionality.
@@ -758,7 +758,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 18. Children */}
-            <section id="sec-18" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-18" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={AlertTriangle} title="18. Children" sub="Age restrictions and minor protections" iconColor="text-amber-600" iconBg="bg-amber-50" iconBorder="border-amber-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 Our Services are intended for businesses and authorized users aged <span className="font-semibold text-slate-900">18 or older</span>.
@@ -769,7 +769,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 19. Third Parties */}
-            <section id="sec-19" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-19" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={ExternalLink} title="19. Third-Party Websites and Services" sub="External platform link disclaimer" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 Our Services may contain links to or integrations with third-party platforms. Those parties operate independently and maintain their own privacy policies.
@@ -780,7 +780,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 20. Business Transfers */}
-            <section id="sec-20" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-20" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Building2} title="20. Business Transfers" sub="Corporate reorganization and asset sales" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
               <p className="text-sm text-slate-700 leading-relaxed">
                 If Pixra Softtech undergoes a merger, acquisition, reorganization or sale of assets, relevant information may be transferred subject to applicable law and continued protection consistent with this Policy.
@@ -788,7 +788,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 21. Changes */}
-            <section id="sec-21" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-white">
+            <section id="sec-21" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
               <SectionHeader icon={Calendar} title="21. Changes to This Policy" sub="How we notify you of updates" iconColor="text-sky-600" iconBg="bg-sky-50" iconBorder="border-sky-100" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 We may update this Policy when our Services, integrations, laws or platform requirements change. The revised Policy will be posted at:
@@ -806,7 +806,7 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 22. Contact */}
-            <section id="sec-22" className="border border-slate-200 rounded-2xl p-6 sm:p-8 scroll-mt-28 bg-blue-600 text-white">
+            <section id="sec-22" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 scroll-mt-28 bg-blue-600 text-white">
               <div className="flex items-start gap-4 mb-6 pb-5 border-b border-blue-500">
                 <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5 text-white" />

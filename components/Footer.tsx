@@ -276,6 +276,38 @@ const FOOTER_CSS = `
   color: rgba(255,255,255,0.75);
   margin: 0;
 }
+.pft-copy-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+.pft-legal-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pft-legal-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(255,255,255,0.24);
+  border-radius: 999px;
+  color: rgba(255,255,255,0.78);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.pft-legal-link:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.08);
+}
 /* ── Interactive Back To Top button ───────── */
 .pft-back-top {
   position: relative;
@@ -530,7 +562,17 @@ export default function Footer() {
 
       {/* ── Bottom rule bar ── */}
       <div className="pft-rule-bar">
-        <p className="pft-copy">© 2026 PixoraSoftTech · All rights reserved</p>
+        <div className="pft-copy-group">
+          <p className="pft-copy">© 2026 PixoraSoftTech · All rights reserved</p>
+          <nav className="pft-legal-links" aria-label="Legal information">
+            <Link className="pft-legal-link" href="/terms-and-conditions">
+              Terms and Conditions
+            </Link>
+            <Link className="pft-legal-link" href="/privacy-policy">
+              Privacy Policy
+            </Link>
+          </nav>
+        </div>
         <button
           type="button"
           className="pft-back-top"
