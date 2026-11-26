@@ -36,4 +36,3 @@ export default function ServicesPage() {
     </>
   );
 }
-import type { Metadata } from "next";
