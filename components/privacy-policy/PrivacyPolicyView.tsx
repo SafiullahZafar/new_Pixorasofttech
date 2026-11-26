@@ -59,9 +59,9 @@ function SectionHeader({
   icon: Icon,
   title,
   sub,
-  iconColor = "text-blue-600",
-  iconBg   = "bg-blue-50",
-  iconBorder = "border-blue-100",
+  iconColor = "text-[#0A2540]",
+  iconBg   = "bg-[#0A2540]/5",
+  iconBorder = "border-[#0A2540]/10",
 }: {
   icon: React.ElementType;
   title: string;
@@ -84,7 +84,7 @@ function SectionHeader({
 }
 
 /* ── Simple bullet list item ── */
-function BulletItem({ children, dotColor = "text-blue-500" }: { children: React.ReactNode; dotColor?: string }) {
+function BulletItem({ children, dotColor = "text-[#0A2540]" }: { children: React.ReactNode; dotColor?: string }) {
   return (
     <li className="flex items-start gap-2.5 text-sm text-slate-700 leading-relaxed">
       <CheckCircle2 className={`w-4 h-4 ${dotColor} shrink-0 mt-0.5`} />
@@ -94,7 +94,7 @@ function BulletItem({ children, dotColor = "text-blue-500" }: { children: React.
 }
 
 /* ── Highlighted note box ── */
-function NoteBox({ children, className = "bg-blue-50 border-blue-100 text-blue-800" }: { children: React.ReactNode; className?: string }) {
+function NoteBox({ children, className = "bg-[#0A2540]/5 border-[#0A2540]/10 text-[#0A2540]" }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={`p-4 rounded-xl border text-sm leading-relaxed ${className}`}>
       {children}
@@ -127,7 +127,7 @@ function ContactRow({
             href={href}
             target={isEmail ? undefined : "_blank"}
             rel="noopener noreferrer"
-            className="text-sm text-blue-600 hover:underline font-medium"
+            className="text-sm text-[#0A2540] hover:underline font-medium"
           >
             {value}
           </a>
@@ -333,7 +333,7 @@ export default function PrivacyPolicyView() {
 
             {/* 2. Scope */}
             <section id="sec-2" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
-              <SectionHeader icon={Layers} title="2. Scope of This Policy" sub="What this policy covers and what it does not" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
+              <SectionHeader icon={Layers} title="2. Scope of This Policy" sub="What this policy covers and what it does not" iconColor="text-[#0A2540]" iconBg="bg-[#0A2540]/5" iconBorder="border-[#0A2540]/10" />
               <p className="text-sm text-slate-700 mb-4">This Policy applies to:</p>
               <ul className="space-y-2 mb-5">
                 {[
@@ -343,7 +343,7 @@ export default function PrivacyPolicyView() {
                   "Integrations with LinkedIn, Meta/Facebook, Google and authorized third-party services;",
                   "Contact forms, support requests and business communications;",
                   "Administrative dashboards and internal publishing tools.",
-                ].map((item, i) => <BulletItem key={i} dotColor="text-indigo-500">{item}</BulletItem>)}
+                ].map((item, i) => <BulletItem key={i} dotColor="text-[#0A2540]">{item}</BulletItem>)}
               </ul>
               <NoteBox className="bg-amber-50 border-amber-100 text-amber-800">
                 <div className="flex items-start gap-2">
@@ -392,7 +392,7 @@ export default function PrivacyPolicyView() {
                     "API errors and technical responses.",
                   ].map((it, i) => <BulletItem key={i} dotColor="text-sky-500">{it}</BulletItem>)}
                 </ul>
-                <NoteBox className="bg-blue-50 border-blue-100 text-blue-800">
+                <NoteBox className="bg-[#0A2540]/5 border-[#0A2540]/10 text-[#0A2540]">
                   <div className="flex items-start gap-2">
                     <ShieldCheck className="w-4 h-4 shrink-0 mt-0.5" />
                     <span>We request only permissions necessary to provide the selected functionality. We do not request, receive or store LinkedIn passwords. Authentication occurs directly through LinkedIn's OAuth authorization process.</span>
@@ -412,7 +412,7 @@ export default function PrivacyPolicyView() {
                     "Platform and Company Page identifiers;",
                     "Published post identifiers;",
                     "Publishing status and error details.",
-                  ].map((it, i) => <BulletItem key={i} dotColor="text-indigo-500">{it}</BulletItem>)}
+                  ].map((it, i) => <BulletItem key={i} dotColor="text-[#0A2540]">{it}</BulletItem>)}
                 </ul>
               </div>
 
@@ -522,14 +522,14 @@ export default function PrivacyPolicyView() {
 
             {/* 7. AI Content */}
             <section id="sec-7" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
-              <SectionHeader icon={Bot} title="7. AI-Assisted Content" sub="AI generation and human review" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
+              <SectionHeader icon={Bot} title="7. AI-Assisted Content" sub="AI generation and human review" iconColor="text-[#0A2540]" iconBg="bg-[#0A2540]/5" iconBorder="border-[#0A2540]/10" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 Pixra Social Automation may use artificial intelligence to transform approved public-source information into original draft content.
               </p>
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 AI-generated content may be incomplete, inaccurate or unsuitable. Our standard workflow supports <span className="font-semibold text-slate-900">human approval before publication</span>. An authorized administrator may enable automatic publishing, but remains responsible for the resulting content and configuration.
               </p>
-              <NoteBox className="bg-indigo-50 border-indigo-100 text-indigo-800">
+              <NoteBox className="bg-[#0A2540]/5 border-[#0A2540]/10 text-[#0A2540]">
                 <div className="flex items-start gap-2">
                   <Shield className="w-4 h-4 shrink-0 mt-0.5" />
                   <span>We do not use LinkedIn member data to train our own general-purpose AI model. We do not permit AI providers to use LinkedIn-derived information for unrelated profiling or advertising on our behalf.</span>
@@ -672,7 +672,7 @@ export default function PrivacyPolicyView() {
                 ].map((it, i) => <BulletItem key={i} dotColor="text-sky-500">{it}</BulletItem>)}
               </ul>
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm">
-                <p className="text-slate-700 mb-1.5">Send requests to: <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-blue-600 hover:underline">privacy@pixorasofttech.com</a></p>
+                <p className="text-slate-700 mb-1.5">Send requests to: <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-[#0A2540] hover:underline">privacy@pixorasofttech.com</a></p>
                 <p className="text-xs text-slate-500">We may request reasonable information to verify identity. We aim to respond within 30 days, subject to permitted extensions and applicable law.</p>
               </div>
             </section>
@@ -693,7 +693,7 @@ export default function PrivacyPolicyView() {
                 We will not unlawfully discriminate against an individual for exercising an applicable privacy right.
               </p>
               <p className="text-sm text-slate-600">
-                Requests: <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-blue-600 hover:underline">privacy@pixorasofttech.com</a>
+                Requests: <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-[#0A2540] hover:underline">privacy@pixorasofttech.com</a>
               </p>
             </section>
 
@@ -707,7 +707,7 @@ export default function PrivacyPolicyView() {
                 LinkedIn &rarr; Settings &amp; Privacy &rarr; Data privacy &rarr; Other applications &rarr; Permitted services
               </div>
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                Users may also email <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-blue-600 hover:underline">privacy@pixorasofttech.com</a> or <a href="mailto:developer@pixorasofttech.com" className="font-semibold text-blue-600 hover:underline">developer@pixorasofttech.com</a> to request disconnection.
+                Users may also email <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-[#0A2540] hover:underline">privacy@pixorasofttech.com</a> or <a href="mailto:developer@pixorasofttech.com" className="font-semibold text-[#0A2540] hover:underline">developer@pixorasofttech.com</a> to request disconnection.
               </p>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Revocation prevents new authorized API requests using the revoked token. It does not automatically remove records that must temporarily be retained for legal, security or dispute-resolution purposes.
@@ -726,7 +726,7 @@ export default function PrivacyPolicyView() {
                   'Describe the information or integration to be removed',
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-3 text-sm text-slate-700 py-2.5 border-b border-slate-100 last:border-0">
-                    <span className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-semibold shrink-0">{i + 1}</span>
+                    <span className="w-5 h-5 rounded-full bg-[#0A2540] text-white flex items-center justify-center text-xs font-semibold shrink-0">{i + 1}</span>
                     <span>{step}</span>
                   </div>
                 ))}
@@ -764,7 +764,7 @@ export default function PrivacyPolicyView() {
                 Our Services are intended for businesses and authorized users aged <span className="font-semibold text-slate-900">18 or older</span>.
               </p>
               <p className="text-sm text-slate-700 leading-relaxed">
-                We do not knowingly collect personal information from children. If such information is identified, contact <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-blue-600 hover:underline">privacy@pixorasofttech.com</a> so it can be reviewed and deleted.
+                We do not knowingly collect personal information from children. If such information is identified, contact <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-[#0A2540] hover:underline">privacy@pixorasofttech.com</a> so it can be reviewed and deleted.
               </p>
             </section>
 
@@ -781,7 +781,7 @@ export default function PrivacyPolicyView() {
 
             {/* 20. Business Transfers */}
             <section id="sec-20" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
-              <SectionHeader icon={Building2} title="20. Business Transfers" sub="Corporate reorganization and asset sales" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
+              <SectionHeader icon={Building2} title="20. Business Transfers" sub="Corporate reorganization and asset sales" iconColor="text-[#0A2540]" iconBg="bg-[#0A2540]/5" iconBorder="border-[#0A2540]/10" />
               <p className="text-sm text-slate-700 leading-relaxed">
                 If Pixra Softtech undergoes a merger, acquisition, reorganization or sale of assets, relevant information may be transferred subject to applicable law and continued protection consistent with this Policy.
               </p>
@@ -795,7 +795,7 @@ export default function PrivacyPolicyView() {
               </p>
               <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg mb-3">
                 <a href="https://pixorasofttech.com/privacy-policy" target="_blank" rel="noopener noreferrer"
-                  className="text-sm text-blue-600 hover:underline flex items-center gap-1.5">
+                  className="text-sm text-[#0A2540] hover:underline flex items-center gap-1.5">
                   https://pixorasofttech.com/privacy-policy
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
@@ -806,31 +806,31 @@ export default function PrivacyPolicyView() {
             </section>
 
             {/* 22. Contact */}
-            <section id="sec-22" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 scroll-mt-28 bg-blue-600 text-white">
-              <div className="flex items-start gap-4 mb-6 pb-5 border-b border-blue-500">
+            <section id="sec-22" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 scroll-mt-28 bg-[#0A2540] text-white">
+              <div className="flex items-start gap-4 mb-6 pb-5 border-b border-white/20">
                 <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <h2 className="text-lg font-bold text-white">22. Contact Us</h2>
-                  <p className="text-xs text-blue-100 mt-0.5">Privacy inquiries, rights requests and complaints</p>
+                  <p className="text-xs text-white/80 mt-0.5">Privacy inquiries, rights requests and complaints</p>
                 </div>
               </div>
 
               <div className="bg-white/10 border border-white/20 p-5 rounded-xl mb-6">
                 <p className="text-sm font-semibold text-white mb-0.5">PIXORASOFTTECH (SMC-PRIVATE) LIMITED</p>
-                <p className="text-sm text-blue-100 mb-4">Khurrianwala, Balail Town, Faisalabad, Jaranwala, Punjab, Pakistan</p>
+                <p className="text-sm text-white/80 mb-4">Khurrianwala, Balail Town, Faisalabad, Jaranwala, Punjab, Pakistan</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
                   <div>
-                    <p className="text-blue-200 text-xs font-semibold mb-1">Privacy</p>
+                    <p className="text-white/70 text-xs font-semibold mb-1">Privacy</p>
                     <a href="mailto:privacy@pixorasofttech.com" className="text-white hover:underline break-all">privacy@pixorasofttech.com</a>
                   </div>
                   <div>
-                    <p className="text-blue-200 text-xs font-semibold mb-1">Support</p>
+                    <p className="text-white/70 text-xs font-semibold mb-1">Support</p>
                     <a href="mailto:support@pixorasofttech.com" className="text-white hover:underline break-all">support@pixorasofttech.com</a>
                   </div>
                   <div>
-                    <p className="text-blue-200 text-xs font-semibold mb-1">Developer</p>
+                    <p className="text-white/70 text-xs font-semibold mb-1">Developer</p>
                     <a href="mailto:developer@pixorasofttech.com" className="text-white hover:underline break-all">developer@pixorasofttech.com</a>
                   </div>
                 </div>
@@ -839,7 +839,7 @@ export default function PrivacyPolicyView() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="mailto:privacy@pixorasofttech.com"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-blue-600 text-sm font-semibold hover:bg-blue-50 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#0A2540] text-sm font-semibold hover:bg-[#0A2540]/5 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   Contact Privacy Officer

@@ -67,9 +67,9 @@ function SectionHeader({
   icon: Icon,
   title,
   sub,
-  iconColor  = "text-blue-600",
-  iconBg     = "bg-blue-50",
-  iconBorder = "border-blue-100",
+  iconColor  = "text-[#0A2540]",
+  iconBg     = "bg-[#0A2540]/5",
+  iconBorder = "border-[#0A2540]/10",
 }: {
   icon: React.ElementType;
   title: string;
@@ -93,7 +93,7 @@ function SectionHeader({
 
 function BulletItem({
   children,
-  dotColor = "text-blue-500",
+  dotColor = "text-[#0A2540]",
   icon: Icon,
 }: {
   children: React.ReactNode;
@@ -111,7 +111,7 @@ function BulletItem({
 
 function NoteBox({
   children,
-  className = "bg-blue-50 border-blue-100 text-blue-800",
+  className = "bg-[#0A2540]/5 border-[#0A2540]/10 text-[#0A2540]",
 }: {
   children: React.ReactNode;
   className?: string;
@@ -147,7 +147,7 @@ function ContactRow({
             href={href}
             target={isEmail ? undefined : "_blank"}
             rel="noopener noreferrer"
-            className="text-sm text-blue-600 hover:underline"
+            className="text-sm text-[#0A2540] hover:underline"
           >
             {value}
           </a>
@@ -349,7 +349,7 @@ export default function TermsView() {
 
             {/* 2. Services */}
             <section id="sec-2" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
-              <SectionHeader icon={Layers} title="2. Services" sub="What Pixra Softtech may provide" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
+              <SectionHeader icon={Layers} title="2. Services" sub="What Pixra Softtech may provide" iconColor="text-[#0A2540]" iconBg="bg-[#0A2540]/5" iconBorder="border-[#0A2540]/10" />
               <p className="text-sm text-slate-700 mb-4">Pixra Softtech may provide:</p>
               <ul className="space-y-1.5 mb-4">
                 {[
@@ -364,7 +364,7 @@ export default function TermsView() {
                   "Publication-status and error tracking;",
                   "Duplicate-processing prevention;",
                   "Administrative dashboards and related support.",
-                ].map((item, i) => <BulletItem key={i} dotColor="text-indigo-500">{item}</BulletItem>)}
+                ].map((item, i) => <BulletItem key={i} dotColor="text-[#0A2540]">{item}</BulletItem>)}
               </ul>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Available functions depend on user authorization, platform permissions, third-party APIs and the selected service configuration.
@@ -406,7 +406,7 @@ export default function TermsView() {
                   "Revoking integrations that are no longer required.",
                 ].map((item, i) => <BulletItem key={i} dotColor="text-emerald-500">{item}</BulletItem>)}
               </ul>
-              <NoteBox className="bg-blue-50 border-blue-100 text-blue-800">
+              <NoteBox className="bg-[#0A2540]/5 border-[#0A2540]/10 text-[#0A2540]">
                 <div className="flex items-center gap-2">
                   <Shield className="w-4 h-4 shrink-0" />
                   <span>
@@ -442,7 +442,7 @@ export default function TermsView() {
 
             {/* 6. AI Content */}
             <section id="sec-6" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
-              <SectionHeader icon={Bot} title="6. AI-Generated Content" sub="Accuracy, responsibility and limitations of AI output" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
+              <SectionHeader icon={Bot} title="6. AI-Generated Content" sub="Accuracy, responsibility and limitations of AI output" iconColor="text-[#0A2540]" iconBg="bg-[#0A2540]/5" iconBorder="border-[#0A2540]/10" />
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
                 AI-generated material may contain errors, omissions, outdated information or unsuitable language.
               </p>
@@ -490,7 +490,7 @@ export default function TermsView() {
 
             {/* 8. Social-Media Authorization */}
             <section id="sec-8" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
-              <SectionHeader icon={Wifi} title="8. Social-Media Authorization" sub="Scope of permissions and ongoing responsibilities" iconColor="text-blue-600" iconBg="bg-blue-50" iconBorder="border-blue-100" />
+              <SectionHeader icon={Wifi} title="8. Social-Media Authorization" sub="Scope of permissions and ongoing responsibilities" iconColor="text-[#0A2540]" iconBg="bg-[#0A2540]/5" iconBorder="border-[#0A2540]/10" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 A connected account authorizes the Services to perform only the actions covered by the permissions
                 approved during authorization.
@@ -572,14 +572,14 @@ export default function TermsView() {
 
             {/* 12. Privacy */}
             <section id="sec-12" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
-              <SectionHeader icon={Shield} title="12. Privacy" sub="How personal information is handled" iconColor="text-blue-600" iconBg="bg-blue-50" iconBorder="border-blue-100" />
+              <SectionHeader icon={Shield} title="12. Privacy" sub="How personal information is handled" iconColor="text-[#0A2540]" iconBg="bg-[#0A2540]/5" iconBorder="border-[#0A2540]/10" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 Personal information is processed according to our Privacy Policy:
               </p>
               <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg mb-4">
                 <Link
                   href="/privacy-policy"
-                  className="text-sm text-blue-600 hover:underline flex items-center gap-1.5"
+                  className="text-sm text-[#0A2540] hover:underline flex items-center gap-1.5"
                 >
                   https://pixorasofttech.com/privacy-policy
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -713,7 +713,7 @@ export default function TermsView() {
 
             {/* 19. Indemnification */}
             <section id="sec-19" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
-              <SectionHeader icon={Handshake} title="19. Indemnification" sub="User responsibility for third-party claims" iconColor="text-indigo-600" iconBg="bg-indigo-50" iconBorder="border-indigo-100" />
+              <SectionHeader icon={Handshake} title="19. Indemnification" sub="User responsibility for third-party claims" iconColor="text-[#0A2540]" iconBg="bg-[#0A2540]/5" iconBorder="border-[#0A2540]/10" />
               <p className="text-sm text-slate-700 leading-relaxed mb-4">
                 To the extent permitted by applicable law, users agree to be responsible for claims, losses or
                 expenses arising from:
@@ -726,7 +726,7 @@ export default function TermsView() {
                   "Violation of third-party rights;",
                   "Violation of platform policies;",
                   "Material breach of these Terms.",
-                ].map((item, i) => <BulletItem key={i} dotColor="text-indigo-500">{item}</BulletItem>)}
+                ].map((item, i) => <BulletItem key={i} dotColor="text-[#0A2540]">{item}</BulletItem>)}
               </ul>
             </section>
 
@@ -758,7 +758,7 @@ export default function TermsView() {
                   href="https://pixorasofttech.com/terms-and-conditions"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-blue-600 hover:underline flex items-center gap-1.5"
+                  className="text-sm text-[#0A2540] hover:underline flex items-center gap-1.5"
                 >
                   https://pixorasofttech.com/terms-and-conditions
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -789,10 +789,10 @@ export default function TermsView() {
 
             {/* 24. Entire Agreement */}
             <section id="sec-24" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 2xl:p-10 scroll-mt-28 bg-white shadow-sm">
-              <SectionHeader icon={FileText} title="24. Entire Agreement" sub="Scope and precedence of this agreement" iconColor="text-blue-600" iconBg="bg-blue-50" iconBorder="border-blue-100" />
+              <SectionHeader icon={FileText} title="24. Entire Agreement" sub="Scope and precedence of this agreement" iconColor="text-[#0A2540]" iconBg="bg-[#0A2540]/5" iconBorder="border-[#0A2540]/10" />
               <p className="text-sm text-slate-700 leading-relaxed">
                 These Terms, the{" "}
-                <Link href="/privacy-policy" className="text-blue-600 hover:underline font-medium">
+                <Link href="/privacy-policy" className="text-[#0A2540] hover:underline font-medium">
                   Privacy Policy
                 </Link>{" "}
                 and any applicable written service agreement form the entire agreement governing the Services
@@ -801,31 +801,31 @@ export default function TermsView() {
             </section>
 
             {/* 25. Contact */}
-            <section id="sec-25" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 scroll-mt-28 bg-blue-600 text-white">
-              <div className="flex items-start gap-4 mb-6 pb-5 border-b border-blue-500">
+            <section id="sec-25" className="border border-slate-200 rounded-2xl p-4 sm:p-6 lg:p-8 scroll-mt-28 bg-[#0A2540] text-white">
+              <div className="flex items-start gap-4 mb-6 pb-5 border-b border-white/20">
                 <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <h2 className="text-lg font-bold text-white">25. Contact</h2>
-                  <p className="text-xs text-blue-100 mt-0.5">Questions about these Terms</p>
+                  <p className="text-xs text-white/80 mt-0.5">Questions about these Terms</p>
                 </div>
               </div>
 
               <div className="bg-white/10 border border-white/20 p-5 rounded-xl mb-6">
                 <p className="text-sm font-semibold text-white mb-0.5">PIXORASOFTTECH (SMC-PRIVATE) LIMITED</p>
-                <p className="text-sm text-blue-100 mb-4">Khurrianwala, Balail Town, Faisalabad, Jaranwala, Punjab, Pakistan</p>
+                <p className="text-sm text-white/80 mb-4">Khurrianwala, Balail Town, Faisalabad, Jaranwala, Punjab, Pakistan</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
                   <div>
-                    <p className="text-blue-200 text-xs font-semibold mb-1">Support</p>
+                    <p className="text-white/70 text-xs font-semibold mb-1">Support</p>
                     <a href="mailto:support@pixorasofttech.com" className="text-white hover:underline break-all">support@pixorasofttech.com</a>
                   </div>
                   <div>
-                    <p className="text-blue-200 text-xs font-semibold mb-1">General</p>
+                    <p className="text-white/70 text-xs font-semibold mb-1">General</p>
                     <a href="mailto:contact@pixorasofttech.com" className="text-white hover:underline break-all">contact@pixorasofttech.com</a>
                   </div>
                   <div>
-                    <p className="text-blue-200 text-xs font-semibold mb-1">Developer</p>
+                    <p className="text-white/70 text-xs font-semibold mb-1">Developer</p>
                     <a href="mailto:developer@pixorasofttech.com" className="text-white hover:underline break-all">developer@pixorasofttech.com</a>
                   </div>
                 </div>
@@ -834,7 +834,7 @@ export default function TermsView() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="mailto:support@pixorasofttech.com"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-blue-600 text-sm font-semibold hover:bg-blue-50 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#0A2540] text-sm font-semibold hover:bg-[#0A2540]/5 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   Email Support
