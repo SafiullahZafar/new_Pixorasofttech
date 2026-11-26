@@ -194,11 +194,11 @@ export default function ContactSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-6 2xl:col-span-6"
+            className="rounded-3xl bg-[#0A2540] p-6 text-white sm:p-8 lg:col-span-6 lg:p-10 2xl:col-span-6 2xl:p-14"
           >
             <div className="min-w-0">
 
-              <h2 className="text-2xl font-bold tracking-tight text-black sm:text-3xl 2xl:text-4xl">
+              <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl 2xl:text-4xl">
                 Let&apos;s talk!
               </h2>
 
@@ -207,14 +207,14 @@ export default function ContactSection() {
                 <div className="mt-1.5 flex flex-wrap items-center gap-x-5 gap-y-1">
                   <a
                     href="mailto:pixorasofttech@gmail.com"
-                    className="text-sm sm:text-base 2xl:text-lg font-semibold text-[#0A2540] hover:underline"
+                    className="text-sm sm:text-base 2xl:text-lg font-semibold text-white hover:underline"
                   >
                     pixorasofttech@gmail.com
                   </a>
                   <span className="text-zinc-300 hidden sm:inline">•</span>
                   <a
                     href="tel:+923094307701"
-                    className="text-sm sm:text-base 2xl:text-lg font-semibold text-[#0A2540] hover:opacity-70 transition-opacity"
+                    className="text-sm sm:text-base 2xl:text-lg font-semibold text-white hover:opacity-70 transition-opacity"
                   >
                     +92 309 4307701
                   </a>
@@ -222,7 +222,7 @@ export default function ContactSection() {
                     href="https://wa.me/923094307701?text=Hello%2C%20I%27d%20like%20to%20discuss%20a%20project."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm font-semibold text-[#0A2540] hover:opacity-70 transition-opacity"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-white hover:opacity-70 transition-opacity"
                   >
                     <MessageCircle className="h-4 w-4" /> WhatsApp
                     <ArrowUpRight className="h-3.5 w-3.5" />
@@ -230,7 +230,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="mt-4 flex flex-wrap items-center gap-3">
-                  <span className="text-xs font-mono font-semibold uppercase tracking-widest text-zinc-400 2xl:text-sm">
+                  <span className="text-xs font-mono font-semibold uppercase tracking-widest text-white/60 2xl:text-sm">
                     OR
                   </span>
                   {SOCIAL_LINKS.map((link) => (
@@ -241,7 +241,7 @@ export default function ContactSection() {
                       rel="noopener noreferrer"
                       aria-label={link.name}
                       title={link.name}
-                      className="flex h-9 w-9 2xl:h-11 2xl:w-11 items-center justify-center text-zinc-700 transition-colors hover:text-[#0A2540]"
+                      className="flex h-9 w-9 2xl:h-11 2xl:w-11 items-center justify-center text-white/75 transition-colors hover:text-white"
                     >
                       {link.icon}
                     </a>
@@ -249,7 +249,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <hr className="my-6 2xl:my-8 border-zinc-200/80" />
+              <hr className="my-6 border-white/20 2xl:my-8" />
 
               {/* Form */}
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-5 2xl:space-y-6">
@@ -269,7 +269,7 @@ export default function ContactSection() {
                   value="New Contact Form Submission - PixoraSofttech"
                 />
 
-                <p className="text-sm font-medium text-zinc-500 2xl:text-base">
+                <p className="text-sm font-medium text-white/70 2xl:text-base">
                   Leave us a brief message
                 </p>
 
@@ -277,9 +277,9 @@ export default function ContactSection() {
                   <div className="space-y-1.5">
                     <label
                       htmlFor="contact-name"
-                      className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 2xl:text-sm"
+                      className="block text-xs font-semibold uppercase tracking-wider text-white/90 2xl:text-sm"
                     >
-                      Your name <span className="text-[#0A2540]">*</span>
+                      Your name <span className="text-white/80">*</span>
                     </label>
                     <input
                       id="contact-name"
@@ -289,16 +289,16 @@ export default function ContactSection() {
                       placeholder="Your name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-zinc-300 bg-transparent px-4 py-3 2xl:px-5 2xl:py-4 text-sm 2xl:text-base text-black placeholder:text-zinc-400 transition focus:border-[#0A2540] focus:outline-none focus:ring-2 focus:ring-[#0A2540]/10"
+                      className="w-full rounded-lg border border-white/25 bg-white px-4 py-3 text-sm text-zinc-950 placeholder:text-zinc-500 transition focus:border-white focus:outline-none focus:ring-2 focus:ring-white/30 2xl:px-5 2xl:py-4 2xl:text-base"
                     />
                   </div>
 
                   <div className="space-y-1.5">
                     <label
                       htmlFor="contact-email"
-                      className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 2xl:text-sm"
+                      className="block text-xs font-semibold uppercase tracking-wider text-white/90 2xl:text-sm"
                     >
-                      Email <span className="text-[#0A2540]">*</span>
+                      Email <span className="text-white/80">*</span>
                     </label>
                     <input
                       id="contact-email"
@@ -308,7 +308,7 @@ export default function ContactSection() {
                       placeholder="you@company.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-zinc-300 bg-transparent px-4 py-3 2xl:px-5 2xl:py-4 text-sm 2xl:text-base text-black placeholder:text-zinc-400 transition focus:border-[#0A2540] focus:outline-none focus:ring-2 focus:ring-[#0A2540]/10"
+                      className="w-full rounded-lg border border-white/25 bg-white px-4 py-3 text-sm text-zinc-950 placeholder:text-zinc-500 transition focus:border-white focus:outline-none focus:ring-2 focus:ring-white/30 2xl:px-5 2xl:py-4 2xl:text-base"
                     />
                   </div>
                 </div>
@@ -316,10 +316,10 @@ export default function ContactSection() {
                 <div className="space-y-1.5">
                   <label
                     htmlFor="contact-message"
-                    className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 2xl:text-sm"
+                    className="block text-xs font-semibold uppercase tracking-wider text-white/90 2xl:text-sm"
                   >
                     Briefly describe your project idea{" "}
-                    <span className="text-[#0A2540]">*</span>
+                    <span className="text-white/80">*</span>
                   </label>
                   <textarea
                     id="contact-message"
@@ -329,13 +329,13 @@ export default function ContactSection() {
                     placeholder="Briefly describe your project idea, timeline, and goals..."
                     value={formData.message}
                     onChange={handleChange}
-                    className="min-h-[100px] 2xl:min-h-[130px] w-full resize-none rounded-lg border border-zinc-300 bg-transparent px-4 py-3 2xl:px-5 2xl:py-4 text-sm 2xl:text-base text-black placeholder:text-zinc-400 transition focus:border-[#0A2540] focus:outline-none focus:ring-2 focus:ring-[#0A2540]/10"
+                    className="min-h-[100px] w-full resize-y rounded-lg border border-white/25 bg-white px-4 py-3 text-sm text-zinc-950 placeholder:text-zinc-500 transition focus:border-white focus:outline-none focus:ring-2 focus:ring-white/30 2xl:min-h-[130px] 2xl:px-5 2xl:py-4 2xl:text-base"
                   />
                 </div>
 
                 {/* Project Type Checkboxes ("I'm looking for...") */}
                 <div className="space-y-3">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-zinc-700 2xl:text-sm">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-white/90 2xl:text-sm">
                     I&apos;m looking for...
                   </p>
                   <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 2xl:gap-3">
@@ -350,15 +350,15 @@ export default function ContactSection() {
                           onClick={() => handleCheckboxToggle(option)}
                           className={`flex items-center gap-2.5 px-1 py-2.5 2xl:px-2 2xl:py-3 text-left text-xs sm:text-sm 2xl:text-base font-medium transition-colors cursor-pointer ${
                             checked
-                              ? "text-[#0A2540]"
-                              : "text-zinc-700 hover:text-[#0A2540]"
+                              ? "text-white"
+                              : "text-white/80 hover:text-white"
                           }`}
                         >
                           <span
                             className={`flex h-4 w-4 2xl:h-5 2xl:w-5 shrink-0 items-center justify-center rounded border transition-colors ${
                               checked
-                                ? "border-[#0A2540] bg-[#0A2540] text-white"
-                                : "border-zinc-300 bg-white"
+                                ? "border-white bg-white text-[#0A2540]"
+                                : "border-white/60 bg-transparent"
                             }`}
                           >
                             {checked && <Check className="h-3 w-3 2xl:h-3.5 2xl:w-3.5 stroke-[3]" />}
@@ -373,7 +373,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#0A2540] px-6 py-3.5 2xl:py-4.5 text-sm 2xl:text-base font-semibold text-white transition-colors duration-200 hover:bg-[#143960] disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
+                  className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-white px-6 py-3.5 text-sm font-semibold text-[#0A2540] transition-colors duration-200 hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-60 2xl:py-4.5 2xl:text-base cursor-pointer"
                 >
                   {loading ? (
                     <>
