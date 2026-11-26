@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackgroundAnimation from "@/components/BackgroundAnimation";
 import ContactSection from "@/components/contact/ContactSection";
+import ContactCTA from "@/components/contact/ContactCTA";
 import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
@@ -21,6 +23,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <BackgroundAnimation />
       <Toaster
         position="top-right"
         toastOptions={{
@@ -35,6 +38,7 @@ export default function ContactPage() {
       <Navbar />
       <main className="relative z-10 min-h-screen bg-transparent">
         <ContactSection />
+        <ContactCTA />
       </main>
       <Footer />
     </>
