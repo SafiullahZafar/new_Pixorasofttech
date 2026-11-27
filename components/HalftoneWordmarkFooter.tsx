@@ -37,13 +37,13 @@ export interface FooterColumn {
 
 export interface HalftoneWordmarkFooterProps {
   /** The giant word printed in dots. Lowercase reads best. */
-  wordmark?: string
+  wordmark: string
   /** Top-left studio line. */
-  label?: string
+  label: string
   /** The muted line under it. */
-  meta?: string
+  meta: string
   /** Link columns along the top. */
-  columns?: FooterColumn[]
+  columns: FooterColumn[]
   /** Show the back-to-top link. It scrolls the window to 0. Defaults to true. */
   backToTop?: boolean
   /** Starting colours. Defaults to "night". */
@@ -78,12 +78,6 @@ const PRESETS: { [K in HalftonePreset]: HalftonePalette } = {
   ember: { background: "#160a06", ink: "#f2c48c", warm: "#ff5a1f" },
   cobalt: { background: "#0d1b4d", ink: "#dfe7ff", warm: "#ffcd3c" },
 }
-
-const DEFAULT_COLUMNS: FooterColumn[] = [
-  { title: "Work", links: [{ label: "Index" }, { label: "Archive" }, { label: "Journal" }] },
-  { title: "Studio", links: [{ label: "About" }, { label: "Process" }, { label: "Careers" }] },
-  { title: "Contact", links: [{ label: "hello@halden.co" }, { label: "+47 22 00 41 00" }] },
-]
 
 const SANS_STACK = '"Inter Tight", "Inter Variable", "Inter", "Helvetica Neue", Arial, system-ui, sans-serif'
 const MONO_STACK = '"JetBrains Mono", "SF Mono", ui-monospace, Menlo, Consolas, monospace'
@@ -180,10 +174,10 @@ const HWF_CSS = `
 `
 
 export default function HalftoneWordmarkFooter({
-  wordmark = "halden",
-  label = "Halden Studio",
-  meta = "©2026 · Oslo / Lisbon",
-  columns = DEFAULT_COLUMNS,
+  wordmark,
+  label,
+  meta,
+  columns,
   backToTop = true,
   preset = "night",
   palette,

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import WordReveal from "./WordReveal";
+import WordReveal from "@/components/case-study/WordReveal";
 import type { MessengerSectionProps } from "./types";
 export default function EditorialSection({ title, challengeText, solutionText, resultsText, heroImage, liveUrl, cardHovered, setCardHovered }: Pick<MessengerSectionProps, "title" | "challengeText" | "solutionText" | "resultsText" | "heroImage" | "liveUrl" | "cardHovered" | "setCardHovered">) {
   return (

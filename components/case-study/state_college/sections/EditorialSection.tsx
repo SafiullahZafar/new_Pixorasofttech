@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import WordReveal from "./WordReveal";
+import WordReveal from "@/components/case-study/WordReveal";
 import type { StateCollegeSectionProps } from "./types";
 
 export default function EditorialSection({

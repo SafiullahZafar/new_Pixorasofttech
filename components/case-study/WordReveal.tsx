@@ -10,6 +10,7 @@ interface WordRevealProps {
 
 const WordReveal = ({ text, className = "", delay = 0 }: WordRevealProps) => {
   const words = text.split(" ");
+
   return (
     <span className={`inline-block ${className}`}>
       {words.map((word, idx) => (
@@ -23,7 +24,7 @@ const WordReveal = ({ text, className = "", delay = 0 }: WordRevealProps) => {
             delay: delay + 0.03 * idx,
             ease: "easeOut",
           }}
-          className="inline-block mr-[0.28em] whitespace-nowrap"
+          className="mr-[0.28em] inline-block whitespace-nowrap"
         >
           {word}
         </motion.span>
@@ -32,6 +33,4 @@ const WordReveal = ({ text, className = "", delay = 0 }: WordRevealProps) => {
   );
 };
 
-// ── Component Props ────────────────────────────────────────────────────────
 export default WordReveal;
-
