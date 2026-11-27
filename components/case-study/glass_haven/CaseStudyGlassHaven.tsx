@@ -24,8 +24,8 @@ export default function CaseStudyGlassHaven({ project }: CaseStudyGlassHavenProp
   const [cardHovered, setCardHovered] = useState(false);
 
   const title = project?.title || "Glass Haven Luxury Real Estate";
-  const heroImage = project?.heroImg || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85";
-  const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85";
+  const heroImage = project?.heroImg || "/images/unsplash/photo-1600596542815-ffad4c1539a9-e8d0c68dce.jpg";
+  const mobileHeroImage = project?.img || "/images/unsplash/photo-1600596542815-ffad4c1539a9-e8d0c68dce.jpg";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription = project?.overview || "Glass Haven represents ultra-luxury architectural residences. PixoraSoftTech designed a high-end web destination engineered to evoke luxury, exclusivity, and sophistication for high-net-worth property buyers.";

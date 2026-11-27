@@ -28,7 +28,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=85"
+                src="/images/unsplash/photo-1504674900247-0877df9cc836-14f5c3be0f.jpg"
                 alt="Catering & Event Food App Detail"
                 className="w-full h-full object-cover object-center block"
               />
@@ -50,7 +50,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85"
+                src="/images/unsplash/photo-1555396273-367ea4eb4db5-be039fed5b.jpg"
                 alt="Catering & Event Food App Showcase"
                 className="w-full h-full object-cover object-center block"
               />
@@ -94,7 +94,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=85"
+                src="/images/unsplash/photo-1504674900247-0877df9cc836-14f5c3be0f.jpg"
                 alt="Catering & Event Food App Environment"
                 className="w-full h-full object-cover object-center block"
               />

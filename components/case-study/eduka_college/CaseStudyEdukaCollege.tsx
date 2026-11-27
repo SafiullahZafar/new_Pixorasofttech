@@ -24,8 +24,8 @@ export default function CaseStudyEdukaCollege({ project }: CaseStudyEdukaCollege
   const [cardHovered, setCardHovered] = useState(false);
 
   const title = project?.title || "Eduka College Portal";
-  const heroImage = project?.heroImg || "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85";
-  const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=85";
+  const heroImage = project?.heroImg || "/images/unsplash/photo-1541339907198-e08756dedf3f-b6ebec4b43.jpg";
+  const mobileHeroImage = project?.img || "/images/unsplash/photo-1541339907198-e08756dedf3f-b6ebec4b43.jpg";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription = project?.overview || "Eduka College required a complete digital transformation to streamline prospective student inquiries, present 40+ degree programs, and provide current students with instant access to academic announcements and campus portals.";

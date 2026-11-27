@@ -246,7 +246,7 @@ export default function TeamHero() {
           {/* Card 2: UI/UX & Product Designers (Top-Right Side Card - Big, reaches top) */}
           <BentoCell className="group relative overflow-hidden rounded-lg border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
             <img
-              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80"
+              src="/images/unsplash/photo-1581291518857-4e27b48ff24e-9b64bdc104.jpg"
               alt="UI/UX Designers"
               className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               loading="eager"
@@ -276,7 +276,7 @@ export default function TeamHero() {
           {/* Card 3: Frontend & Mobile Developers (Bottom-Right Side Card - Big & Spacious) */}
           <BentoCell className="group relative overflow-hidden rounded-lg border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
             <img
-              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+              src="/images/unsplash/photo-1555066931-4365d14bab8c-aeda8297fe.jpg"
               alt="Frontend & Mobile Developers"
               className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               loading="eager"
@@ -306,7 +306,7 @@ export default function TeamHero() {
           {/* Card 4: DevOps & Cloud Engineers (Bottom-Left Card - Responsive) */}
           <BentoCell className="group relative overflow-hidden rounded-lg border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
             <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+              src="/images/unsplash/photo-1522071820081-009f0129c71c-04e8b9aae8.jpg"
               alt="DevOps & Cloud Engineers"
               className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               loading="eager"
@@ -345,7 +345,7 @@ export default function TeamHero() {
           {/* Card 5: QA & Security Specialists (Bottom-Center Card - Responsive) */}
           <BentoCell className="group relative overflow-hidden rounded-lg border border-zinc-200/90 bg-zinc-950 shadow-2xl transition-all duration-300">
             <img
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80"
+              src="/images/unsplash/photo-1451187580459-43490279c0fa-4358ccef32.jpg"
               alt="QA & Security Specialists"
               className="absolute inset-0 size-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
               loading="eager"

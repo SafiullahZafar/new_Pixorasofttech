@@ -24,8 +24,8 @@ export default function CaseStudyTravelHotelHub({ project }: CaseStudyTravelHote
   const [cardHovered, setCardHovered] = useState(false);
 
   const title = project?.title || "Travel Hotel Hub";
-  const heroImage = project?.heroImg || "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85";
-  const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85";
+  const heroImage = project?.heroImg || "/images/unsplash/photo-1582719478250-c89cae4dc85b-c02a233498.jpg";
+  const mobileHeroImage = project?.img || "/images/unsplash/photo-1582719478250-c89cae4dc85b-c02a233498.jpg";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription = project?.overview || "Travel Hotel Hub pairs wanderlust content with seamless hotel booking. PixoraSoftTech designed a visual travel destination platform engineered to captivate visitors and streamline trip planning from inspiration to reservation.";

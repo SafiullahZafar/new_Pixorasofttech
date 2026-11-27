@@ -24,8 +24,8 @@ export default function CaseStudySolarSolutions({ project }: CaseStudySolarSolut
   const [cardHovered, setCardHovered] = useState(false);
 
   const title = project?.title || "Solar Solutions Energy";
-  const heroImage = project?.heroImg || "https://images.unsplash.com/photo-1508873696983-2df57046475a?auto=format&fit=crop&w=1200&q=85";
-  const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1508873696983-2df57046475a?auto=format&fit=crop&w=1200&q=85";
+  const heroImage = project?.heroImg || "/case_studies/solar_solutions_web/solar_solutions_hero_web_01.png";
+  const mobileHeroImage = project?.img || "/case_studies/solar_solutions_web/solar_solutions_work_web_02.png";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription = project?.overview || "Solar Solutions empowers homeowners and businesses to transition to renewable solar energy. PixoraSoftTech developed an educational, trust-building web application designed to simplify solar adoption and capture qualified customer leads.";

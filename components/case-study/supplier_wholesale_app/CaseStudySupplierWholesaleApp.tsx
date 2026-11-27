@@ -24,8 +24,8 @@ export default function CaseStudySupplierWholesaleApp({ project }: CaseStudySupp
   const [cardHovered, setCardHovered] = useState(false);
 
   const title = project?.title || "Supplier Wholesale App";
-  const heroImage = project?.heroImg || "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1200&q=85";
-  const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1200&q=85";
+  const heroImage = project?.heroImg || "/images/unsplash/photo-1578916171728-46686eac8d58-f4f7822702.jpg";
+  const mobileHeroImage = project?.img || "/images/unsplash/photo-1578916171728-46686eac8d58-f4f7822702.jpg";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription = project?.overview || "Supplier Wholesale Mobile App is a B2B food supply platform built for food businesses. PixoraSoftTech developed this Flutter application to digitize the wholesale ordering process for restaurants and commercial kitchens — replacing phone calls with structured weekly order templates, bulk tier pricing, product category browsing, and delivery scheduling.";

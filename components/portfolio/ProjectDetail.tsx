@@ -119,7 +119,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
               className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               onError={(e) => {
                 (e.target as HTMLImageElement).src =
-                  "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=85";
+                  "/images/unsplash/photo-1467232004584-a241de8bcf5d-ef9982468e.jpg";
               }}
             />
 

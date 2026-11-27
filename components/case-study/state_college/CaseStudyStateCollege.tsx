@@ -24,8 +24,8 @@ export default function CaseStudyStateCollege({ project }: CaseStudyStateCollege
   const [cardHovered, setCardHovered] = useState(false);
 
   const title = project?.title || "State College Digital Campus";
-  const heroImage = project?.heroImg || "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85";
-  const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85";
+  const heroImage = project?.heroImg || "/images/unsplash/photo-1523240795612-9a054b0db644-8087b87f23.jpg";
+  const mobileHeroImage = project?.img || "/images/unsplash/photo-1523240795612-9a054b0db644-8087b87f23.jpg";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription = project?.overview || "State College serves over 15,000 enrolled students and faculty. PixoraSoftTech re-engineered the institution’s core web infrastructure to deliver fast, mobile-friendly access to academic resources, research publications, and administrative forms.";

@@ -21,6 +21,15 @@ export const metadata: Metadata = {
     description:
       "Explore selected web, mobile, and software projects built with PixoraSoftTech for businesses and product teams.",
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@pixorasofttech",
+    creator: "@pixorasofttech",
+    title: "Projects | PixoraSoftTech",
+    description:
+      "Explore selected web, mobile, and software projects built with PixoraSoftTech for businesses and product teams.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function PortfolioPage() {

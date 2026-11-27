@@ -28,7 +28,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.3, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=85"
+                src="/images/unsplash/photo-1542838132-92c53300491e-bbfe856ff4.jpg"
                 alt="Supplier Wholesale App Detail"
                 className="w-full h-full object-cover object-center block"
               />
@@ -50,7 +50,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1200&q=85"
+                src="/images/unsplash/photo-1578916171728-46686eac8d58-f4f7822702.jpg"
                 alt="Supplier Wholesale App Showcase"
                 className="w-full h-full object-cover object-center block"
               />
@@ -94,7 +94,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=85"
+                src="/images/unsplash/photo-1542838132-92c53300491e-bbfe856ff4.jpg"
                 alt="Supplier Wholesale App Environment"
                 className="w-full h-full object-cover object-center block"
               />

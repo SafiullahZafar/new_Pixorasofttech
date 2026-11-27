@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
   /* ── Image Optimization ── */
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year
+    minimumCacheTTL: 60 * 60 * 24,
     deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     dangerouslyAllowSVG: false,
@@ -28,7 +28,10 @@ const nextConfig: NextConfig = {
           // Security
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "DENY" },
-          { key: "X-XSS-Protection", value: "1; mode=block" },
+          {
+            key: "Content-Security-Policy",
+            value: "object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+          },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           // Performance
@@ -36,12 +39,12 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Long-cache for static assets
+        // Revalidate public assets so same-name replacements do not stay stale for a year.
         source: "/(.*)\\.(ico|png|jpg|jpeg|svg|webp|avif|woff2|woff|ttf)",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value: "public, max-age=86400, stale-while-revalidate=3600",
           },
         ],
       },
@@ -58,9 +61,15 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  /* ── Redirects (www canonical) ── */
+  /* ── Redirects ── */
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.pixorasofttech.com" }],
+        destination: "https://pixorasofttech.com/:path*",
+        permanent: true,
+      },
       {
         source: "/portfolio",
         destination: "/projects",
@@ -71,13 +80,6 @@ const nextConfig: NextConfig = {
         destination: "/projects/:id",
         permanent: true,
       },
-      // Uncomment when deployed to redirect non-www to www
-      // {
-      //   source: "/:path*",
-      //   has: [{ type: "host", value: "pixorasofttech.com" }],
-      //   destination: "https://www.pixorasofttech.com/:path*",
-      //   permanent: true,
-      // },
     ];
   },
 

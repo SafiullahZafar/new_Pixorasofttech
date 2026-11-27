@@ -24,8 +24,8 @@ export default function CaseStudyGoodySupplies({ project }: CaseStudyGoodySuppli
   const [cardHovered, setCardHovered] = useState(false);
 
   const title = project?.title || "Goody Supplies Catering";
-  const heroImage = project?.heroImg || "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=85";
-  const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=85";
+  const heroImage = project?.heroImg || "/images/unsplash/photo-1511795409834-ef04bbd61622-69134cd0ce.jpg";
+  const mobileHeroImage = project?.img || "/images/unsplash/photo-1511795409834-ef04bbd61622-69134cd0ce.jpg";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription = project?.overview || "Goody Supplies provides premium culinary services for corporate events and weddings. PixoraSoftTech created an appetizing digital storefront showcasing artisanal menus, dietary customization options, and instant event budgeting.";
