@@ -19,7 +19,7 @@ interface WorkProject {
 const WORKS_DATA: WorkProject[] = [
   { id: "1", title: "FitPulse", year: "2026", tags: ["Fitness App", "iOS & Android"], image: "/service/app_dev/work_serv/mobile_app_work_service_1.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
   { id: "2", title: "ShopEase", year: "2026", tags: ["Mobile Commerce", "Shopping App"], image: "/service/app_dev/work_serv/mobile_app_work_service_2.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
-  { id: "3", title: "iRider", year: "2026", tags: ["Ride Booking", "Location Services"], image: "/service/app_dev/work_serv/mobile_app_work_service_3.webp", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
+  { id: "3", title: "iRider", year: "2026", tags: ["Ride Booking", "Location Services"], image: "/case_studies/driven_app/driven_work_app_02.webp", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
   { id: "4", title: "FitPulse Mobile", year: "2026", tags: ["Health & Wellness", "Product Design"], image: "/service/app_dev/work_serv/mobile_app_work_service_1.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
 ];
 

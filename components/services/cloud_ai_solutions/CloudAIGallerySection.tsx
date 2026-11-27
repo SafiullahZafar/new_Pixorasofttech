@@ -4,12 +4,12 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 const GALLERY_IMAGES = [
-  { src: "/service/cloude_ai/about_serv/cloud_ai_about_service_1.png", alt: "Cloud and AI image 1" },
+  { src: "/home_page/our_expertise/ourexpertise5.png", alt: "Cloud and AI image 1" },
   { src: "/service/cloude_ai/about_serv/cloud_ai_about_service_2.png", alt: "Cloud and AI image 2" },
-  { src: "/service/cloude_ai/about_serv/cloud_ai_about_service_3.png", alt: "Cloud and AI image 3" },
-  { src: "/service/cloude_ai/about_serv/cloud_ai_about_service_4.png", alt: "Cloud and AI image 4" },
-  { src: "/service/cloude_ai/about_serv/cloud_ai_about_service_5.png", alt: "Cloud and AI image 5" },
-  { src: "/service/cloude_ai/about_serv/cloud_ai_about_service_6.png", alt: "Cloud and AI image 6" },
+  { src: "/about_page/cloude_ai/Futuristic Cloud and AI Solutions Dashboard.png", alt: "Cloud and AI image 3" },
+  { src: "/about_page/cloude_ai/Futuristic Cloud Network Interface.png", alt: "Cloud and AI image 4" },
+  { src: "/about_page/cloude_ai/Neon Cloud Network Over City.png", alt: "Cloud and AI image 5" },
+  { src: "/about_page/cloude_ai/Touching the Cloud Network.png", alt: "Cloud and AI image 6" },
 ];
 
 const IMAGE_COLUMNS = Array.from({ length: 6 }, (_, columnIndex) =>

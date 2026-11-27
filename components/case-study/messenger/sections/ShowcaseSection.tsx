@@ -8,7 +8,7 @@ export default function ShowcaseSection() {
             {/* Left Big Card (col-span-7) */}
             <div className="lg:col-span-7 2xl:col-span-7 h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px] overflow-hidden border border-zinc-200/60 w-full">
               <img
-                src="/case_studies/messenger_soft/messenger_showcase_soft_19.png"
+                src="/about_page/software_dev/messenger_updtaed.png"
                 alt="Messenger social publishing software showcase"
                 className="w-full h-full object-cover object-center"
               />

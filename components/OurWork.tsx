@@ -398,37 +398,37 @@ const featuredWorks: WorksWheelItem[] = [
   },
   {
     title: "Brew Haven Coffee",
-    image: "/home_page/our_projects/brew_haven_coffee.png",
+    image: "/case_studies/brew_haven_web/brew_haven_about_web_01_updated.png",
     href: "/case-study/brew-haven",
   },
   {
     title: "Driven Fleet Operations & Admin Console",
-    image: "/home_page/our_projects/driven_fleet_operations_admin.png",
+    image: "/case_studies/driven_soft/driven_showcase_soft_01.png",
     href: "/case-study/delivery-dashboard",
   },
   {
     title: "CRM Sales System",
-    image: "/home_page/our_projects/crm_sales_system.png",
+    image: "/about_page/software_dev/Dark Tablet CRM Dashboard Mockup.png",
     href: "/case-study/crm",
   },
   {
     title: "Eduka College Platform",
-    image: "/home_page/our_projects/eduka_college_platform.png",
+    image: "/case_studies/eduka_college_web/eduka_college_hero_web_01.png",
     href: "/case-study/eduka-college",
   },
   {
     title: "K.B. Exports Global",
-    image: "/home_page/our_projects/kb_exports_global.png",
+    image: "/about_page/web_dev/Engineering Textile Solutions Laptop Mockup-1.png",
     href: "/case-study/kb-exports",
   },
   {
     title: "Driven Mobility App",
-    image: "/home_page/our_projects/driven_mobility_app.png",
+    image: "/case_studies/driven_app/driven_showcase_app_02.png",
     href: "/case-study/rider-app",
   },
   {
     title: "Solar Solutions Portal",
-    image: "/home_page/our_projects/solar_solutions_portal.png",
+    image: "/case_studies/solar_solutions_web/solar_solutions_showcase_web_03.png",
     href: "/case-study/solar-solutions",
   },
 ];

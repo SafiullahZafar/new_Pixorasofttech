@@ -26,7 +26,7 @@ const GALLERY_IMAGES: ImageItem[] = [
     alt: "Cloud Infrastructure & Edge APIs",
   },
   {
-    src: "/home_page/who_we_are/whoweare6.webp",
+    src: "/home_page/who_we_are/whoweare1.webp",
     alt: "Product Strategy & Agile Sprints",
   },
   {

@@ -7,7 +7,7 @@ const logos = [
   { src: "/home_page/client_logos/clientlogos1.png", alt: "Client brand" },
   { src: "/home_page/client_logos/clientlogos2.png", alt: "Billora POS" },
   { src: "/home_page/client_logos/clientlogos3.png", alt: "Byte and Brew" },
-  { src: "/home_page/client_logos/clientlogos4.png", alt: "Client brand" },
+  { src: "/case_studies/salon_soft/salon_showcase_soft_13.png", alt: "Client brand" },
   { src: "/home_page/client_logos/clientlogos5.png", alt: "Eduka" },
   { src: "/home_page/client_logos/clientlogos6.png", alt: "Glass Haven" },
   { src: "/home_page/client_logos/clientlogos7.png", alt: "Nexora HRMS" },

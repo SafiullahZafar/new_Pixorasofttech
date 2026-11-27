@@ -35,7 +35,7 @@ export const servicesData: ServiceItem[] = [
     eyebrow: "Cross-Platform iOS & Android Apps Built for Scale",
     description:
       "Intuitive, native-feel mobile applications crafted with React Native and Flutter, with offline support, secure sign-in, and polished interactions.",
-    imageUrl: "/home_page/our_expertise/ourexpertise2.png?v=2",
+    imageUrl: "/service/app_dev/work_serv/mobile_app_work_service_1.png?v=2",
     tags: ["iOS & Android", "React Native", "Offline First", "Store Launch"],
   },
   {
@@ -60,6 +60,16 @@ export const servicesData: ServiceItem[] = [
     tags: ["User Research", "Wireframes", "Design Systems", "Interactive Prototypes"],
   },
   */
+ {
+   id: 6,
+   slug: "saas-development",
+   title: "SaaS Development",
+   eyebrow: "Scalable SaaS Products Built Around Your Users",
+   description:
+     "We design and build SaaS platforms with clear customer workflows, secure workspaces, and room to grow.",
+   imageUrl: "/about_page/saas_cus/nexora-crm-laptop-showcase.png",
+   tags: ["SaaS Products", "Customer Workspaces", "Subscriptions", "Product Growth"],
+ },
   {
     id: 4,
     slug: "ui-ux-design",
@@ -67,7 +77,7 @@ export const servicesData: ServiceItem[] = [
     eyebrow: "Human-Centered Digital Interfaces That Drive Action",
     description:
       "Research-backed interface design and comprehensive design systems that turn complex software into clear, intuitive experiences.",
-    imageUrl: "/home_page/our_expertise/ourexpertise4.png?v=2",
+    imageUrl: "/about_page/ui_ux/Sleek UI_UX Design Workspace.png?v=2",
     tags: ["User Research", "Wireframes", "Design Systems", "Interactive Prototypes"],
   },
   {
@@ -79,16 +89,6 @@ export const servicesData: ServiceItem[] = [
       "Secure cloud infrastructure, reliable APIs, automated deployments, and practical AI integrations that help your products connect, scale, and run smoothly.",
     imageUrl: "/home_page/our_expertise/ourexpertise5.png?v=2",
     tags: ["AWS & Azure", "CI/CD Pipelines", "Auto Scaling", "Zero Downtime"],
-  },
-  {
-    id: 6,
-    slug: "saas-development",
-    title: "SaaS Development",
-    eyebrow: "Scalable SaaS Products Built Around Your Users",
-    description:
-      "We design and build SaaS platforms with clear customer workflows, secure workspaces, and room to grow.",
-    imageUrl: "/about_page/saas_cus/nexora-crm-laptop-showcase.png",
-    tags: ["SaaS Products", "Customer Workspaces", "Subscriptions", "Product Growth"],
   },
 ];
 

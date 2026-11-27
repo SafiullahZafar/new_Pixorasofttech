@@ -4,19 +4,19 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 const GALLERY_IMAGES = [
-  { src: "/service/web_dev/about_serv/web_development_about_service_1.png", alt: "Web development image 1" },
+  { src: "/about_page/web_dev/byte_and_brew_tablet_mockup_1400x1050.png", alt: "Web development image 1" },
   { src: "/service/web_dev/about_serv/web_development_about_service_2.png", alt: "Web development image 2" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_3.png", alt: "Web development image 3" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_4.png", alt: "Web development image 4" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_5.png", alt: "Web development image 5" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_6.png", alt: "Web development image 6" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_7.png", alt: "Web development image 7" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_8.png", alt: "Web development image 8" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_9.png", alt: "Web development image 9" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_10.png", alt: "Web development image 10" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_11.png", alt: "Web development image 11" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_12.png", alt: "Web development image 12" },
-  { src: "/service/web_dev/about_serv/web_development_about_service_13.png", alt: "Web development image 13" },
+  { src: "/case_studies/eduka_college_web/eduka_college_showcase_web_01.png", alt: "Web development image 3" },
+  { src: "/case_studies/eduka_college_web/eduka_college_hero_web_01.png", alt: "Web development image 4" },
+  { src: "/case_studies/glass_haven_web/glass_haven_about_web_02.png", alt: "Web development image 5" },
+  { src: "/case_studies/kb_exports_web/kb_exports_about_web_02.png", alt: "Web development image 6" },
+  { src: "/case_studies/kb_exports_web/kb_exports_work_web_02.png", alt: "Web development image 7" },
+  { src: "/case_studies/travel_hotel_web/travel_hotel_hero_web_01.png", alt: "Web development image 8" },
+  { src: "/about_page/web_dev/Nomad Travel Website Tablet Mockup.png", alt: "Web development image 9" },
+  { src: "/about_page/web_dev/SolarSolutions Tablet on Velvet Chair.png", alt: "Web development image 10" },
+  { src: "/case_studies/state_college_web/state_college_work_web_02.png", alt: "Web development image 11" },
+  { src: "/case_studies/state_college_web/state_college_work_web_01_upda.png", alt: "Web development image 12" },
+  { src: "/about_page/web_dev/Zostel Website Laptop Mockup.png", alt: "Web development image 13" },
 ];
 
 const IMAGE_COLUMNS = Array.from({ length: 6 }, (_, columnIndex) =>

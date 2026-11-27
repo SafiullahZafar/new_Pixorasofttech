@@ -17,8 +17,8 @@ interface WorkProject {
 }
 
 const WORKS_DATA: WorkProject[] = [
-  { id: "1", title: "Crimper Salon System", year: "2026", tags: ["Backend & Database Design", "POS Software"], image: "/service/custom_softw/work/custom_software_work_service_1.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
-  { id: "2", title: "Driven Fleet & Logistics", year: "2026", tags: ["Web Apps & Architecture", "Fleet Telemetry"], image: "/service/custom_softw/work/custom_software_work_service_2.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
+  { id: "1", title: "Crimper Salon System", year: "2026", tags: ["Backend & Database Design", "POS Software"], image: "/case_studies/crm_soft/crm_about_soft_01.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
+  { id: "2", title: "Driven Fleet & Logistics", year: "2026", tags: ["Web Apps & Architecture", "Fleet Telemetry"], image: "/case_studies/hrms_soft/hrms_hero_soft_01.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
   { id: "3", title: "CloudKhata Business ERP", year: "2026", tags: ["Fullstack", "SaaS Platform"], image: "/service/custom_softw/work/custom_software_work_service_3.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
   { id: "4", title: "Textile Inventory Distribution", year: "2026", tags: ["Enterprise Supply Chain", "FBR Integrated"], image: "/service/custom_softw/work/custom_software_work_service_4.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
 ];

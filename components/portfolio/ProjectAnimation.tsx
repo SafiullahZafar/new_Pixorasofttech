@@ -169,20 +169,20 @@ ContainerAnimated.displayName = "ContainerAnimated";
 
 const galleryColumns = [
   [
-    { src: "/project/selected_wo/driven_mobility_ride_booking_app.webp", title: "Driven Mobility App" },
-    { src: "/project/selected_wo/veloura_customer_management_app.png", title: "Veloura Salon App" },
-    // { src: "/project/selected_wo/kb_exports_solar_mobile_websites.png", title: "K.B. Exports & Solar Solutions" },
-    { src: "/project/selected_wo/eduka_college_mobile_website.png", title: "Eduka College" },
+    { src: "/case_studies/driven_app/driven_work_app_02.webp", title: "Driven Mobility App" },
+    { src: "/case_studies/salon_soft/salon_about_soft_01_updated.png", title: "Veloura Salon App" },
+    // { src: "/case_studies/kb_exports_web/kb_exports_work_web_02.png", title: "K.B. Exports & Solar Solutions" },
+    { src: "/case_studies/eduka_college_web/eduka_college_about_web_02.png", title: "Eduka College" },
   ],
   [
-    { src: "/project/selected_wo/driven_fleet_operations_dashboard.png", title: "Driven Fleet Operations & Admin Console" },
-    { src: "/project/selected_wo/zostel_booking_website_laptop.png", title: "Zostel Travel & Hostels" },
-    { src: "/project/selected_wo/crm_sales_activity_tablet.png", title: "CRM Sales System" },
+    { src: "/about_page/saas_cus/Driven Dashboard Tablet Mockup.png", title: "Driven Fleet Operations & Admin Console" },
+    { src: "/case_studies/zostel_web/zostel_hero_web_01_updated.png", title: "Zostel Travel & Hostels" },
+    { src: "/about_page/software_dev/Nexora CRM Tablet Activity Dashboard.png", title: "CRM Sales System" },
   ],
   [
-    { src: "/project/selected_wo/textile_erp_fabric_costing_tablet.png", title: "Textile ERP & Production System" },
-    { src: "/project/selected_wo/kb_exports_website_laptop.png", title: "K.B. Exports" },
-    { src: "/project/selected_wo/rms_pos_dashboard_laptop.png", title: "RMS — Store & Inventory Manager" },
+    { src: "/about_page/software_dev/Futuristic Textile ERP Dashboard Mockup.png", title: "Textile ERP & Production System" },
+    { src: "/about_page/web_dev/Engineering Textile Solutions Laptop Mockup-1.png", title: "K.B. Exports" },
+    { src: "/home_page/our_projects/rms_store_inventory_manager.png", title: "RMS — Store & Inventory Manager" },
   ],
 ];
 

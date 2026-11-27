@@ -52,7 +52,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/brew_haven_web/brew_haven_showcase_web_02_updated.png"
+                src="/about_page/web_dev/byte_and_brew_tablet_mockup_1400x1050.png"
                 alt="Brew Haven Roastery Atmosphere"
                 className="w-full h-full object-cover object-center block"
               />

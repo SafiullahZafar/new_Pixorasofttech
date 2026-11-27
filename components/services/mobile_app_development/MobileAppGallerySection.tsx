@@ -4,15 +4,15 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 const GALLERY_IMAGES = [
-  { src: "/service/app_dev/about_serv/mobile_app_about_service_1.png", alt: "Mobile app development image 1" },
-  { src: "/service/app_dev/about_serv/mobile_app_about_service_2.png", alt: "Mobile app development image 2" },
+  { src: "/service/app_dev/work_serv/mobile_app_work_service_1.png", alt: "Mobile app development image 1" },
+  { src: "/case_studies/salon_app/salon_showcase_app_19.png", alt: "Mobile app development image 2" },
   { src: "/service/app_dev/about_serv/mobile_app_about_service_3.png", alt: "Mobile app development image 3" },
   { src: "/service/app_dev/about_serv/mobile_app_about_service_4.png", alt: "Mobile app development image 4" },
   { src: "/service/app_dev/about_serv/mobile_app_about_service_5.png", alt: "Mobile app development image 5" },
-  { src: "/service/app_dev/about_serv/mobile_app_about_service_6.png", alt: "Mobile app development image 6" },
+  { src: "/case_studies/salon_app/salon_showcase_app_29.png", alt: "Mobile app development image 6" },
   { src: "/service/app_dev/about_serv/mobile_app_about_service_7.png", alt: "Mobile app development image 7" },
-  { src: "/service/app_dev/about_serv/mobile_app_about_service_8.webp", alt: "Mobile app development image 8" },
-  { src: "/service/app_dev/about_serv/mobile_app_about_service_9.png", alt: "Mobile app development image 9" },
+  { src: "/case_studies/driven_app/driven_about_app_02.webp", alt: "Mobile app development image 8" },
+  { src: "/case_studies/driven_app/driven_hero_app_01.png", alt: "Mobile app development image 9" },
   { src: "/service/app_dev/about_serv/mobile_app_about_service_10.png", alt: "Mobile app development image 10" },
 ];
 

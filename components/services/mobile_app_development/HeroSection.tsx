@@ -121,7 +121,7 @@ export default function HeroSection() {
             className="absolute inset-0 w-full h-full"
           >
             <Image
-              src="/service/app_dev/hero_sec/mobile_app_hero_service_1.png"
+              src="/case_studies/driven_app/driven_showcase_app_02.png"
               alt="Mobile app interface displayed on a phone"
               fill
               sizes="100vw"
