@@ -6,7 +6,7 @@ export default function ShowcaseSection() {
         <div className="w-full max-w-[3000px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 2xl:gap-8 items-stretch w-full">
             {/* Left Big Card (col-span-7) */}
-            <div className="lg:col-span-7 2xl:col-span-7 h-[350px] sm:h-[480px] md:h-[620px] 2xl:h-[760px] overflow-hidden border border-zinc-200/60 w-full">
+            <div className="lg:col-span-7 2xl:col-span-7 h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px] overflow-hidden border border-zinc-200/60 w-full">
               <img
                 src="/about_page/software_dev/messenger_updtaed.png"
                 alt="Messenger social publishing software showcase"
