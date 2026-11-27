@@ -15,7 +15,7 @@ const GALLERY_IMAGES = [
   { src: "/about_page/web_dev/Nomad Travel Website Tablet Mockup.png", alt: "Web development image 9" },
   { src: "/about_page/web_dev/SolarSolutions Tablet on Velvet Chair.png", alt: "Web development image 10" },
   { src: "/case_studies/state_college_web/state_college_work_web_02.png", alt: "Web development image 11" },
-  { src: "/case_studies/state_college_web/state_college_work_web_01_upda.png", alt: "Web development image 12" },
+  { src: "/case_studies/state_college_web/state_college_work_web_01_updated.png", alt: "Web development image 12" },
   { src: "/about_page/web_dev/Zostel Website Laptop Mockup.png", alt: "Web development image 13" },
 ];
 

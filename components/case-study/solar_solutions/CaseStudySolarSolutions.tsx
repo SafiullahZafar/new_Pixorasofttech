@@ -28,7 +28,7 @@ export default function CaseStudySolarSolutions({ project }: CaseStudySolarSolut
   const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1508873696983-2df57046475a?auto=format&fit=crop&w=1200&q=85";
   const liveUrl = project?.liveUrl || "";
 
-  const aboutDescription = project?.overview || "Solar Solutions empowers homeowners and businesses to transition to renewable solar energy. PixoraSofttech developed an educational, trust-building web application designed to simplify solar adoption and capture qualified customer leads.";
+  const aboutDescription = project?.overview || "Solar Solutions empowers homeowners and businesses to transition to renewable solar energy. PixoraSoftTech developed an educational, trust-building web application designed to simplify solar adoption and capture qualified customer leads.";
   const challengeText = project?.challenge || "";
   const solutionText = project?.solution || "";
   const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";

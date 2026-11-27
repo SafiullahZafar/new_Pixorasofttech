@@ -37,7 +37,7 @@ export default function BrandingSection() {
       category: "Color System",
       title: "Content Status",
       subtitle: "Clear Signals for Publishing Teams",
-      displayElement: "24/7",
+      displayElement: "OK",
       displayClassName: "font-mono font-bold tracking-tight text-4xl pt-1",
       colors: ["#16A34A", "#F59E0B", "#DC2626", "#2563EB", "#F3F4F6"],
       colorNames: ["Scheduled", "In review", "Needs attention", "Published", "Surface"],

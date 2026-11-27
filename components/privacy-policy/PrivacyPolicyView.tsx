@@ -320,9 +320,9 @@ export default function PrivacyPolicyView() {
 
               <div className="border border-slate-200 rounded-xl divide-y divide-slate-100 mb-6">
                 <ContactRow label="Website"           value="https://pixorasofttech.com"    href="https://pixorasofttech.com"              />
-                <ContactRow label="Privacy Email"     value="privacy@pixorasofttech.com"    href="mailto:privacy@pixorasofttech.com"    isEmail />
-                <ContactRow label="Support Email"     value="support@pixorasofttech.com"    href="mailto:support@pixorasofttech.com"    isEmail />
-                <ContactRow label="Developer"         value="developer@pixorasofttech.com"  href="mailto:developer@pixorasofttech.com"  isEmail />
+                <ContactRow label="Privacy Email"     value="pixorasofttech@gmail.com"    href="mailto:pixorasofttech@gmail.com"    isEmail />
+                <ContactRow label="Support Email"     value="pixorasofttech@gmail.com"    href="mailto:pixorasofttech@gmail.com"    isEmail />
+                <ContactRow label="Developer"         value="pixorasofttech@gmail.com"  href="mailto:pixorasofttech@gmail.com"  isEmail />
                 <ContactRow label="LinkedIn"          value="linkedin.com/company/115831290" href="https://www.linkedin.com/company/115831290/" />
               </div>
 
@@ -672,7 +672,7 @@ export default function PrivacyPolicyView() {
                 ].map((it, i) => <BulletItem key={i} dotColor="text-sky-500">{it}</BulletItem>)}
               </ul>
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm">
-                <p className="text-slate-700 mb-1.5">Send requests to: <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-[#0A2540] hover:underline">privacy@pixorasofttech.com</a></p>
+                <p className="text-slate-700 mb-1.5">Send requests to: <a href="mailto:pixorasofttech@gmail.com" className="font-semibold text-[#0A2540] hover:underline">pixorasofttech@gmail.com</a></p>
                 <p className="text-xs text-slate-500">We may request reasonable information to verify identity. We aim to respond within 30 days, subject to permitted extensions and applicable law.</p>
               </div>
             </section>
@@ -693,7 +693,7 @@ export default function PrivacyPolicyView() {
                 We will not unlawfully discriminate against an individual for exercising an applicable privacy right.
               </p>
               <p className="text-sm text-slate-600">
-                Requests: <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-[#0A2540] hover:underline">privacy@pixorasofttech.com</a>
+                Requests: <a href="mailto:pixorasofttech@gmail.com" className="font-semibold text-[#0A2540] hover:underline">pixorasofttech@gmail.com</a>
               </p>
             </section>
 
@@ -707,7 +707,7 @@ export default function PrivacyPolicyView() {
                 LinkedIn &rarr; Settings &amp; Privacy &rarr; Data privacy &rarr; Other applications &rarr; Permitted services
               </div>
               <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                Users may also email <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-[#0A2540] hover:underline">privacy@pixorasofttech.com</a> or <a href="mailto:developer@pixorasofttech.com" className="font-semibold text-[#0A2540] hover:underline">developer@pixorasofttech.com</a> to request disconnection.
+                Users may also email <a href="mailto:pixorasofttech@gmail.com" className="font-semibold text-[#0A2540] hover:underline">pixorasofttech@gmail.com</a> or <a href="mailto:pixorasofttech@gmail.com" className="font-semibold text-[#0A2540] hover:underline">pixorasofttech@gmail.com</a> to request disconnection.
               </p>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Revocation prevents new authorized API requests using the revoked token. It does not automatically remove records that must temporarily be retained for legal, security or dispute-resolution purposes.
@@ -720,7 +720,7 @@ export default function PrivacyPolicyView() {
               <p className="text-sm text-slate-700 mb-4 font-semibold">To request deletion:</p>
               <div className="space-y-2 mb-6">
                 {[
-                  'Email privacy@pixorasofttech.com',
+                  'Email pixorasofttech@gmail.com',
                   'Use the subject line: "Data Deletion Request"',
                   'Identify the connected account or organization',
                   'Describe the information or integration to be removed',
@@ -732,7 +732,7 @@ export default function PrivacyPolicyView() {
                 ))}
               </div>
               <a
-                href="mailto:privacy@pixorasofttech.com?subject=Data%20Deletion%20Request"
+                href="mailto:pixorasofttech@gmail.com?subject=Data%20Deletion%20Request"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold transition-colors shadow-sm"
               >
                 <Send className="w-4 h-4" />
@@ -764,7 +764,7 @@ export default function PrivacyPolicyView() {
                 Our Services are intended for businesses and authorized users aged <span className="font-semibold text-slate-900">18 or older</span>.
               </p>
               <p className="text-sm text-slate-700 leading-relaxed">
-                We do not knowingly collect personal information from children. If such information is identified, contact <a href="mailto:privacy@pixorasofttech.com" className="font-semibold text-[#0A2540] hover:underline">privacy@pixorasofttech.com</a> so it can be reviewed and deleted.
+                We do not knowingly collect personal information from children. If such information is identified, contact <a href="mailto:pixorasofttech@gmail.com" className="font-semibold text-[#0A2540] hover:underline">pixorasofttech@gmail.com</a> so it can be reviewed and deleted.
               </p>
             </section>
 
@@ -823,22 +823,22 @@ export default function PrivacyPolicyView() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
                   <div>
                     <p className="text-white/70 text-xs font-semibold mb-1">Privacy</p>
-                    <a href="mailto:privacy@pixorasofttech.com" className="text-white hover:underline break-all">privacy@pixorasofttech.com</a>
+                    <a href="mailto:pixorasofttech@gmail.com" className="text-white hover:underline break-all">pixorasofttech@gmail.com</a>
                   </div>
                   <div>
                     <p className="text-white/70 text-xs font-semibold mb-1">Support</p>
-                    <a href="mailto:support@pixorasofttech.com" className="text-white hover:underline break-all">support@pixorasofttech.com</a>
+                    <a href="mailto:pixorasofttech@gmail.com" className="text-white hover:underline break-all">pixorasofttech@gmail.com</a>
                   </div>
                   <div>
                     <p className="text-white/70 text-xs font-semibold mb-1">Developer</p>
-                    <a href="mailto:developer@pixorasofttech.com" className="text-white hover:underline break-all">developer@pixorasofttech.com</a>
+                    <a href="mailto:pixorasofttech@gmail.com" className="text-white hover:underline break-all">pixorasofttech@gmail.com</a>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="mailto:privacy@pixorasofttech.com"
+                  href="mailto:pixorasofttech@gmail.com"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#0A2540] text-sm font-semibold hover:bg-[#0A2540]/5 transition-colors"
                 >
                   <Mail className="w-4 h-4" />

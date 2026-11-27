@@ -28,7 +28,7 @@ export default function CaseStudyGoodySupplies({ project }: CaseStudyGoodySuppli
   const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=85";
   const liveUrl = project?.liveUrl || "";
 
-  const aboutDescription = project?.overview || "Goody Supplies provides premium culinary services for corporate events and weddings. PixoraSofttech created an appetizing digital storefront showcasing artisanal menus, dietary customization options, and instant event budgeting.";
+  const aboutDescription = project?.overview || "Goody Supplies provides premium culinary services for corporate events and weddings. PixoraSoftTech created an appetizing digital storefront showcasing artisanal menus, dietary customization options, and instant event budgeting.";
   const challengeText = project?.challenge || "";
   const solutionText = project?.solution || "";
   const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";

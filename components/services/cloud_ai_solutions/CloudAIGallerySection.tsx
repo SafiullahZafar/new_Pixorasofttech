@@ -4,12 +4,12 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 const GALLERY_IMAGES = [
-  { src: "/home_page/our_expertise/ourexpertise5.png", alt: "Cloud and AI image 1" },
-  { src: "/service/cloude_ai/about_serv/cloud_ai_about_service_2.png", alt: "Cloud and AI image 2" },
-  { src: "/about_page/cloude_ai/Futuristic Cloud and AI Solutions Dashboard.png", alt: "Cloud and AI image 3" },
-  { src: "/about_page/cloude_ai/Futuristic Cloud Network Interface.png", alt: "Cloud and AI image 4" },
-  { src: "/about_page/cloude_ai/Neon Cloud Network Over City.png", alt: "Cloud and AI image 5" },
-  { src: "/about_page/cloude_ai/Touching the Cloud Network.png", alt: "Cloud and AI image 6" },
+  { src: "/home_page/our_expertise/ourexpertise5.png", alt: "A person connects a cloud service to messaging, video, storage, and other digital tools." },
+  { src: "/service/cloud_ai/about_serv/cloud_ai_about_service_2.png", alt: "Cloud and AI infrastructure diagram showing computing, data, security, and scalable services." },
+  { src: "/about_page/cloud_ai/Futuristic Cloud Network Interface.png", alt: "Cloud network illustration linking servers with security, data, and connected devices." },
+  { src: "/about_page/cloud_ai/Futuristic Cloud Network Interface.png", alt: "Cloud network illustration linking servers with security, data, and connected devices." },
+  { src: "/about_page/cloud_ai/Neon Cloud Network Over City.png", alt: "Blue cloud network graphic above a nighttime city skyline." },
+  { src: "/about_page/cloud_ai/Touching the Cloud Network.png", alt: "A person interacts with a cloud network connected to communication and storage tools." },
 ];
 
 const IMAGE_COLUMNS = Array.from({ length: 6 }, (_, columnIndex) =>

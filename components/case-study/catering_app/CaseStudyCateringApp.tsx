@@ -28,7 +28,7 @@ export default function CaseStudyCateringApp({ project }: CaseStudyCateringAppPr
   const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=85";
   const liveUrl = project?.liveUrl || "";
 
-  const aboutDescription = project?.overview || "Catering & Event Food App is a full-featured mobile marketplace built for Pakistan's catering industry. PixoraSofttech developed a React Native app offering event-specific catering package discovery, detailed menu views with gallery and reviews, guest count configuration, and a guided 4-step custom quote flow — all with PKR live pricing.";
+  const aboutDescription = project?.overview || "Catering & Event Food App is a full-featured mobile marketplace built for Pakistan's catering industry. PixoraSoftTech developed a React Native app offering event-specific catering package discovery, detailed menu views with gallery and reviews, guest count configuration, and a guided 4-step custom quote flow — all with PKR live pricing.";
   const challengeText = project?.challenge || "";
   const solutionText = project?.solution || "";
   const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";

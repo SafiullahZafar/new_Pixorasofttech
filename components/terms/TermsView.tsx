@@ -340,9 +340,9 @@ export default function TermsView() {
               </div>
               <div className="border border-slate-200 rounded-xl divide-y divide-slate-100">
                 <ContactRow label="Website"   value="https://pixorasofttech.com"   href="https://pixorasofttech.com" />
-                <ContactRow label="General"   value="contact@pixorasofttech.com"   href="mailto:contact@pixorasofttech.com"   isEmail />
-                <ContactRow label="Support"   value="support@pixorasofttech.com"   href="mailto:support@pixorasofttech.com"   isEmail />
-                <ContactRow label="Developer" value="developer@pixorasofttech.com" href="mailto:developer@pixorasofttech.com" isEmail />
+                <ContactRow label="General"   value="pixorasofttech@gmail.com"   href="mailto:pixorasofttech@gmail.com"   isEmail />
+                <ContactRow label="Support"   value="pixorasofttech@gmail.com"   href="mailto:pixorasofttech@gmail.com"   isEmail />
+                <ContactRow label="Developer" value="pixorasofttech@gmail.com" href="mailto:pixorasofttech@gmail.com" isEmail />
                 <ContactRow label="LinkedIn"  value="linkedin.com/company/115831290" href="https://www.linkedin.com/company/115831290/" />
               </div>
             </section>
@@ -818,22 +818,22 @@ export default function TermsView() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
                   <div>
                     <p className="text-white/70 text-xs font-semibold mb-1">Support</p>
-                    <a href="mailto:support@pixorasofttech.com" className="text-white hover:underline break-all">support@pixorasofttech.com</a>
+                    <a href="mailto:pixorasofttech@gmail.com" className="text-white hover:underline break-all">pixorasofttech@gmail.com</a>
                   </div>
                   <div>
                     <p className="text-white/70 text-xs font-semibold mb-1">General</p>
-                    <a href="mailto:contact@pixorasofttech.com" className="text-white hover:underline break-all">contact@pixorasofttech.com</a>
+                    <a href="mailto:pixorasofttech@gmail.com" className="text-white hover:underline break-all">pixorasofttech@gmail.com</a>
                   </div>
                   <div>
                     <p className="text-white/70 text-xs font-semibold mb-1">Developer</p>
-                    <a href="mailto:developer@pixorasofttech.com" className="text-white hover:underline break-all">developer@pixorasofttech.com</a>
+                    <a href="mailto:pixorasofttech@gmail.com" className="text-white hover:underline break-all">pixorasofttech@gmail.com</a>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="mailto:support@pixorasofttech.com"
+                  href="mailto:pixorasofttech@gmail.com"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#0A2540] text-sm font-semibold hover:bg-[#0A2540]/5 transition-colors"
                 >
                   <Mail className="w-4 h-4" />

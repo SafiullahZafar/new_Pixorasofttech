@@ -70,8 +70,8 @@ const services = [
     slug: "cyber-security",
     icon: ShieldCheck,
     title: "Cyber Security",
-    desc: "Proactive security audits, penetration testing and compliance for peace of mind.",
-    tags: ["Vulnerability scans", "Pen testing", "SOC 2 readiness", "Monitoring"],
+    desc: "Application security reviews that help identify vulnerabilities and prioritize practical improvements.",
+    tags: ["Vulnerability reviews", "OWASP checks", "Secure code reviews", "Remediation guidance"],
   },
   // Row 2 — Creative & E-Commerce
   {

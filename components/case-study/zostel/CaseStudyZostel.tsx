@@ -28,7 +28,7 @@ export default function CaseStudyZostel({ project }: CaseStudyZostelProps) {
   const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85";
   const liveUrl = project?.liveUrl || "";
 
-  const aboutDescription = project?.overview || "Zostel is a prominent hostel chain for backpackers and millennial travelers. PixoraSofttech built a high-energy travel web app that promotes community events while driving direct commission-free hostel bookings.";
+  const aboutDescription = project?.overview || "Zostel is a prominent hostel chain for backpackers and millennial travelers. PixoraSoftTech built a high-energy travel web app that promotes community events while driving direct commission-free hostel bookings.";
   const challengeText = project?.challenge || "";
   const solutionText = project?.solution || "";
   const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";

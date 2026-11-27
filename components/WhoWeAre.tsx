@@ -298,7 +298,7 @@ export default function WhoWeAre() {
                   </div>
                 </div>
 
-                {/* BACK FACE: Grayish web background (#F4F4F7) with black text, checkmark list, and SLA badge */}
+                {/* BACK FACE: Grayish web background (#F4F4F7) with black text and deliverables */}
                 <div
                   className="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-b from-[#FAFAFC] via-[#F4F4F7] to-[#EEEEF2] text-black border-2 border-zinc-300 p-5 sm:p-6 flex flex-col justify-between text-left shadow-lg [transform:rotateY(180deg)] overflow-hidden"
                   style={{

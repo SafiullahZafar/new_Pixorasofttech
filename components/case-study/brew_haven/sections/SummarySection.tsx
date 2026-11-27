@@ -72,7 +72,7 @@ export default function SummarySection({ liveUrl }: Pick<BrewHavenSectionProps, 
             {/* <p className="text-base sm:text-xl md:text-2xl 2xl:text-3xl text-zinc-800 leading-relaxed font-normal max-w-2xl 2xl:max-w-3xl"> */}
                         <p className="text-base sm:text-lg 2xl:text-xl text-zinc-800 font-normal leading-relaxed max-w-xl">
 
-              PixoraSofttech took our physical roastery experience and captured it flawlessly online. Our online bean subscriptions doubled within two months, and the custom roast selector has received immense praise from our regular customers.
+              PixoraSoftTech took our physical roastery experience and captured it flawlessly online. Our online bean subscriptions doubled within two months, and the custom roast selector has received immense praise from our regular customers.
             </p>
 
             {liveUrl && (

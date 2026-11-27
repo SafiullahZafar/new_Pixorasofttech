@@ -37,7 +37,7 @@ export default function BrandingSection() {
       category: "Color System",
       title: "Production Status",
       subtitle: "Clear Signals Across the Mill",
-      displayElement: "24/7",
+      displayElement: "OK",
       displayClassName: "font-mono font-bold tracking-tight text-4xl pt-1",
       colors: ["#16A34A", "#F59E0B", "#DC2626", "#0F766E", "#F3F4F6"],
       colorNames: ["Running", "Attention", "Delayed", "Information", "Surface"],

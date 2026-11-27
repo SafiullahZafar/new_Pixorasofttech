@@ -28,7 +28,7 @@ export default function CaseStudyStateCollege({ project }: CaseStudyStateCollege
   const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85";
   const liveUrl = project?.liveUrl || "";
 
-  const aboutDescription = project?.overview || "State College serves over 15,000 enrolled students and faculty. PixoraSofttech re-engineered the institution’s core web infrastructure to deliver fast, mobile-friendly access to academic resources, research publications, and administrative forms.";
+  const aboutDescription = project?.overview || "State College serves over 15,000 enrolled students and faculty. PixoraSoftTech re-engineered the institution’s core web infrastructure to deliver fast, mobile-friendly access to academic resources, research publications, and administrative forms.";
   const challengeText = project?.challenge || "";
   const solutionText = project?.solution || "";
   const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";

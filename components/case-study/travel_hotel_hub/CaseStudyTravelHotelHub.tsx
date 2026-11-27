@@ -28,7 +28,7 @@ export default function CaseStudyTravelHotelHub({ project }: CaseStudyTravelHote
   const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85";
   const liveUrl = project?.liveUrl || "";
 
-  const aboutDescription = project?.overview || "Travel Hotel Hub pairs wanderlust content with seamless hotel booking. PixoraSofttech designed a visual travel destination platform engineered to captivate visitors and streamline trip planning from inspiration to reservation.";
+  const aboutDescription = project?.overview || "Travel Hotel Hub pairs wanderlust content with seamless hotel booking. PixoraSoftTech designed a visual travel destination platform engineered to captivate visitors and streamline trip planning from inspiration to reservation.";
   const challengeText = project?.challenge || "";
   const solutionText = project?.solution || "";
   const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";

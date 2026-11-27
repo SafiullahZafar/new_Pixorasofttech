@@ -25,7 +25,7 @@ export default function ShowcaseSection() {
               </div>
               <div className="flex-1 h-1/2 overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
                 <img
-                  src="/case_studies/crm_soft/crm_work_soft_02_update.png"
+                  src="/case_studies/crm_soft/crm_work_soft_02_updated.png"
                   alt="CRM customer activity and analytics dashboard"
                   className="w-full h-full object-cover object-center block"
                 />

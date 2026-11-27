@@ -28,7 +28,7 @@ export default function CaseStudyGlassHaven({ project }: CaseStudyGlassHavenProp
   const mobileHeroImage = project?.img || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85";
   const liveUrl = project?.liveUrl || "";
 
-  const aboutDescription = project?.overview || "Glass Haven represents ultra-luxury architectural residences. PixoraSofttech designed a high-end web destination engineered to evoke luxury, exclusivity, and sophistication for high-net-worth property buyers.";
+  const aboutDescription = project?.overview || "Glass Haven represents ultra-luxury architectural residences. PixoraSoftTech designed a high-end web destination engineered to evoke luxury, exclusivity, and sophistication for high-net-worth property buyers.";
   const challengeText = project?.challenge || "";
   const solutionText = project?.solution || "";
   const resultsText = project?.keyFeatures.slice(0, 3).join(". ") || "";

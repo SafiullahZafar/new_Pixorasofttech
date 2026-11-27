@@ -7,7 +7,7 @@ export default function ShowcaseSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 2xl:gap-8 items-stretch w-full">
           <div className="lg:col-span-7 2xl:col-span-7 h-[360px] sm:h-[480px] md:h-[620px] 2xl:h-[760px] overflow-hidden bg-zinc-100 border border-zinc-200/60 w-full rounded-2xl shadow-md">
             <img
-              src="/case_studies/eduka_college_web/eduka_college_work_web_01_updatd.png"
+              src="/case_studies/eduka_college_web/eduka_college_work_web_01_updated.png"
               alt="Eduka College Portal Showcase"
               className="w-full h-full object-cover object-top"
             />

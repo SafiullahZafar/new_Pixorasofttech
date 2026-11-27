@@ -261,12 +261,12 @@ export default function ContactSection() {
                 <input
                   type="hidden"
                   name="from_name"
-                  value="PixoraSofttech Contact Page"
+                  value="PixoraSoftTech Contact Page"
                 />
                 <input
                   type="hidden"
                   name="subject"
-                  value="New Contact Form Submission - PixoraSofttech"
+                  value="New Contact Form Submission - PixoraSoftTech"
                 />
 
                 <p className="text-sm font-medium text-white/70 2xl:text-base">

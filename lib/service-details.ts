@@ -22,7 +22,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Software & Systems",
     eyebrow: "High-Performance Next.js Websites Engineered to Convert",
     intro: "We design and build fast, responsive, SEO-optimized web applications that communicate your brand authority, capture leads, and turn visitors into long-term clients.",
-    overview: "In today's digital landscape, a website is your primary business storefront. PixoraSofttech delivers custom Next.js and React web applications built with clean architecture, performance best practices, semantic SEO foundations, and conversion-focused user flows.",
+    overview: "In today's digital landscape, a website is your primary business storefront. PixoraSoftTech delivers custom Next.js and React web applications built with clean architecture, performance best practices, semantic SEO foundations, and conversion-focused user flows.",
     problem: "Many businesses rely on slow, outdated website templates that look generic, fail mobile responsiveness standards, load in 5+ seconds, and suffer high visitor bounce rates without driving inquiries or sales.",
     solution: "We combine modern frontend frameworks (Next.js, React, Tailwind CSS), optimized asset delivery, structured metadata, and custom UI components into a high-converting web platform tailored specifically to your audience.",
     deliverables: [
@@ -58,7 +58,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Software & Systems",
     eyebrow: "Cross-Platform iOS & Android Apps Built for Scale",
     intro: "We build intuitive, high-performance iOS and Android mobile applications that connect users directly to your products, services, and live data.",
-    overview: "From ride-hailing and e-commerce apps to fitness trackers and field tools, PixoraSofttech crafts native-feel mobile applications using React Native and Flutter, with attention to offline resilience, secure authentication, and clear interactions.",
+    overview: "From ride-hailing and e-commerce apps to fitness trackers and field tools, PixoraSoftTech crafts native-feel mobile applications using React Native and Flutter, with attention to offline resilience, secure authentication, and clear interactions.",
     problem: "Mobile app initiatives frequently fail when user interfaces are clunky, battery drain is excessive, backend API sync is unreliable, or launch timelines are delayed by building separate native codebases.",
     solution: "We leverage modern cross-platform mobile frameworks with single-codebase efficiency, optimized native bridges, offline caching, push notifications, and biometrically secured payment flows.",
     deliverables: [
@@ -95,7 +95,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Software & Systems",
     eyebrow: "Enterprise Portals, Dashboards & Business Automation",
     intro: "We architect custom SaaS products, admin dashboards, internal operations software, and automated backend platforms built around your precise business workflows.",
-    overview: "Generic off-the-shelf software often forces your organization to compromise its operational processes. PixoraSofttech builds tailor-made enterprise web software that consolidates workflows, automates manual data entry, and gives management real-time visibility.",
+    overview: "Generic off-the-shelf software often forces your organization to compromise its operational processes. PixoraSoftTech builds tailor-made enterprise web software that consolidates workflows, automates manual data entry, and gives management real-time visibility.",
     problem: "Teams lose countless hours copying data across disconnected spreadsheets, WhatsApp messages, and legacy software that lacks custom permissions, reporting tools, and system integrations.",
     solution: "We conduct deep operational process mapping, then design modular software with role-based access control, relational database management, automated trigger workflows, and intuitive dashboard analytics.",
     deliverables: [
@@ -172,7 +172,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Software & Systems",
     eyebrow: "Research-Backed Interfaces Designed for High Engagement",
     intro: "We transform complex digital product requirements into beautiful, intuitive, and accessible user experiences that delight users and drive conversion.",
-    overview: "Great digital products succeed because of thoughtful user experience design. PixoraSofttech combines user research, wireframing, high-fidelity UI design, dynamic prototyping, and scalable design systems to create digital products that feel natural to use.",
+    overview: "Great digital products succeed because of thoughtful user experience design. PixoraSoftTech combines user research, wireframing, high-fidelity UI design, dynamic prototyping, and scalable design systems to create digital products that feel natural to use.",
     problem: "Confusing navigation, cluttered screens, and inconsistent design components frustrate users, causing high app drop-offs, abandoned carts, and expensive post-launch code re-writes.",
     solution: "We validate ideas visually before writing code. Our UI/UX design process maps user journeys, creates interactive Figma prototypes, enforces accessibility standards, and delivers developer-ready design tokens.",
     deliverables: [
@@ -209,7 +209,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Software & Systems",
     eyebrow: "Secure Cloud Systems, APIs & Practical AI Integrations",
     intro: "We design secure cloud infrastructure, connect applications through reliable APIs, automate deployments, and add practical AI features that help your products scale.",
-    overview: "Modern web and mobile applications require robust backend infrastructure. PixoraSofttech provides end-to-end cloud engineering—including serverless functions, container orchestration, database clustering, CDN caching, and automated backup management.",
+    overview: "Modern web and mobile applications require robust backend infrastructure. PixoraSoftTech provides end-to-end cloud engineering—including serverless functions, container orchestration, database clustering, CDN caching, and automated backup management.",
     problem: "Disconnected systems, manual deployments, limited monitoring, rising cloud costs, and unclear AI use cases can make products harder to operate and scale.",
     solution: "We assess your systems, design a fit-for-purpose cloud architecture, connect services through secure APIs, automate delivery, and implement AI features around real product needs.",
     deliverables: [
@@ -245,17 +245,17 @@ export const serviceDetails: ServiceDetail[] = [
     slug: "cyber-security",
     title: "Cyber Security",
     category: "Software & Systems",
-    eyebrow: "Proactive Vulnerability Audits, Penetration Testing & Data Hardening",
-    intro: "We audit, secure, and monitor your web platforms, mobile apps, and APIs against cyber threats, data breaches, and OWASP Top 10 vulnerabilities.",
-    overview: "Data breaches and security flaws can destroy customer trust overnight. PixoraSofttech delivers practical cyber security services—ranging from vulnerability assessments and penetration testing to secure code reviews and compliance readiness.",
+    eyebrow: "Application Security Reviews & Vulnerability Assessments",
+    intro: "We review web platforms, mobile apps, and APIs for common security weaknesses and provide clear findings for remediation.",
+    overview: "We help teams identify application security weaknesses through vulnerability reviews and secure code reviews, then provide practical guidance for prioritizing remediation.",
     problem: "Security vulnerabilities often hide undetected in application source code, unpatched server dependencies, and insecure API endpoints until exploited by malicious actors.",
-    solution: "We perform automated and manual security testing, identify attack vectors, patch software vulnerabilities, enforce HTTPS/TLS encryption, and establish real-time security monitoring.",
+    solution: "We review application code and configurations, document security findings, and provide prioritized remediation guidance.",
     deliverables: [
-      "Comprehensive vulnerability assessment & penetration test report",
-      "OWASP Top 10 security audit for web & mobile applications",
-      "Prioritized remediation roadmap with code-level fix guides",
-      "API authentication & data encryption review",
-      "SSL/TLS certificate management & security headers enforcement",
+      "Application vulnerability review with documented findings",
+      "OWASP Top 10 review for web and mobile applications",
+      "Prioritized remediation guidance",
+      "API authentication and data protection review",
+      "TLS and security-header configuration review",
       "Real-time threat monitoring & incident response protocols"
     ],
     process: [
@@ -270,10 +270,10 @@ export const serviceDetails: ServiceDetail[] = [
       "Protection of sensitive customer personal data & payment info",
       "Compliance readiness for international data privacy standards"
     ],
-    technologies: ["OWASP", "Burp Suite", "Nmap", "Penetration Testing", "SSL/TLS", "Security Audits"],
+    technologies: ["OWASP", "Application Security", "Vulnerability Review", "Secure Code Review"],
     faqs: [
-      { question: "Will security testing disrupt our live application?", answer: "No, we perform penetration testing safely in staging environments or during scheduled low-traffic maintenance windows." },
-      { question: "Do you provide a full security report after testing?", answer: "Yes, we deliver a detailed report outlining identified vulnerabilities, risk scores, and step-by-step remediation instructions." }
+      { question: "Will an application review disrupt production?", answer: "We agree on scope and timing before starting, and can focus on non-production environments when available." },
+      { question: "What do I receive after a review?", answer: "We provide documented findings prioritized by severity with practical remediation guidance." }
     ]
   },
 
@@ -284,7 +284,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Creative & E-Commerce",
     eyebrow: "Memorable Visual Identities That Command Trust",
     intro: "We craft cohesive brand identities—from logo marks and color palettes to typography systems and brand guidelines—that differentiate your business and build lasting consumer trust.",
-    overview: "A strong brand identity communicates quality before a single word is read. PixoraSofttech designs strategic brand visual systems tailored for modern digital platforms, product packaging, and corporate media.",
+    overview: "A strong brand identity communicates quality before a single word is read. PixoraSoftTech designs strategic brand visual systems tailored for modern digital platforms, product packaging, and corporate media.",
     problem: "Inconsistent brand visuals, outdated logos, and generic color schemes confuse customers, weaken market positioning, and fail to differentiate your business from competitors.",
     solution: "We develop complete visual brand identities rooted in market research, crafting distinctive logo marks, harmonious color palettes, typography rules, and clear usage guidelines.",
     deliverables: [
@@ -319,7 +319,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Creative & E-Commerce",
     eyebrow: "High-Converting Amazon Image Stacks That Drive Sales",
     intro: "We create conversion-driven Amazon main images, infographic callouts, lifestyle composites, and feature displays that maximize click-through and purchase conversion rates.",
-    overview: "On Amazon, your product gallery images are your primary sales pitch. PixoraSofttech designs high-impact Amazon image stacks that communicate key product benefits instantly, overcome buyer objections, and outperform competitor listings.",
+    overview: "On Amazon, your product gallery images are your primary sales pitch. PixoraSoftTech designs high-impact Amazon image stacks that communicate key product benefits instantly, overcome buyer objections, and outperform competitor listings.",
     problem: "Amazon sellers lose thousands in sales due to low-quality product photos, illegible feature text, non-compliant main images, and galleries that fail to explain product advantages.",
     solution: "We build 7-image Amazon listing stacks engineered for mobile shoppers: compliant pure-white hero images, visual benefit callouts, dimension diagrams, and emotional lifestyle composites.",
     deliverables: [
@@ -354,7 +354,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Creative & E-Commerce",
     eyebrow: "Premium Amazon A+ & EBC Layouts That Boost Conversions",
     intro: "We design custom Amazon A+ Content (Enhanced Brand Content) modules and Premium A+ layouts that tell your brand story and cross-sell product lines.",
-    overview: "Amazon A+ Content allows brand registered sellers to transform product descriptions into rich visual landing pages. PixoraSofttech designs custom graphic modules, brand story sections, and product comparison charts.",
+    overview: "Amazon A+ Content allows brand registered sellers to transform product descriptions into rich visual landing pages. PixoraSoftTech designs custom graphic modules, brand story sections, and product comparison charts.",
     problem: "Plain text product descriptions fail to engage buyers, missing out on Amazon's 3-10% conversion rate lift potential offered by professional A+ Content.",
     solution: "We design custom, full-width A+ graphic modules incorporating brand history, key feature deep-dives, comparison matrices, and cross-catalog links.",
     deliverables: [
@@ -388,7 +388,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Creative & E-Commerce",
     eyebrow: "Data-Rich Visual Callouts That Highlight Core Product Value",
     intro: "We turn complex product specifications, materials, and instructions into clean, eye-catching infographics that communicate value in seconds.",
-    overview: "Visual information is processed 60,000 times faster than text. PixoraSofttech designs crisp, professional product infographics for e-commerce stores, product manuals, pitch decks, and digital advertising campaigns.",
+    overview: "Visual information is processed 60,000 times faster than text. PixoraSoftTech designs crisp, professional product infographics for e-commerce stores, product manuals, pitch decks, and digital advertising campaigns.",
     problem: "Customers rarely read long walls of technical product description text, leading to misunderstandings about product specs, sizing, or proper usage.",
     solution: "We distill product specifications into bold visual diagrams, clear icon callouts, ingredient breakdowns, and step-by-step instructional graphics.",
     deliverables: [
@@ -422,7 +422,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Creative & E-Commerce",
     eyebrow: "Emotional & Relatable Product Visuals That Connect",
     intro: "We create realistic, high-quality lifestyle image composites that show your product in authentic environments, building emotional connection with buyers.",
-    overview: "Shoppers want to visualize how a product fits into their daily lives. PixoraSofttech crafts photorealistic lifestyle imagery by blending product photography with curated environment stock, custom lighting, and realistic shadows.",
+    overview: "Shoppers want to visualize how a product fits into their daily lives. PixoraSoftTech crafts photorealistic lifestyle imagery by blending product photography with curated environment stock, custom lighting, and realistic shadows.",
     problem: "Plain white background product photos lack emotional context, making it difficult for consumers to imagine using the product in real-world settings.",
     solution: "We build high-end lifestyle composites featuring realistic room settings, outdoor environments, and human interaction cues with seamless photo manipulation.",
     deliverables: [
@@ -455,7 +455,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Creative & E-Commerce",
     eyebrow: "Scroll-Stopping Social Posts, Ads & Content Templates",
     intro: "We design high-converting social media ad creatives, story sets, carousel posts, and reusable templates for Instagram, Facebook, LinkedIn, and TikTok.",
-    overview: "To stand out in crowded social feeds, brands need thumb-stopping visual content. PixoraSofttech produces strategic social media graphics and ad creative suites designed to boost click-throughs, engagement, and follower growth.",
+    overview: "To stand out in crowded social feeds, brands need thumb-stopping visual content. PixoraSoftTech produces strategic social media graphics and ad creative suites designed to boost click-throughs, engagement, and follower growth.",
     problem: "Inconsistent post templates, low-quality ad graphics, and generic Canva templates diminish brand authority and result in high cost-per-click (CPC) on paid ad campaigns.",
     solution: "We craft custom social design kits tailored to your brand identity—including performance ad banners, multi-slide educational carousels, and modular social templates.",
     deliverables: [
@@ -489,7 +489,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Creative & E-Commerce",
     eyebrow: "Distinctive, Timeless Logos Crafted for Long-Term Brand Equity",
     intro: "We design iconic, versatile logos that embody your company vision, look sharp on any scale, and stand out in your industry.",
-    overview: "Your logo is the visual cornerstone of your business identity. PixoraSofttech creates custom, vector-crafted logo designs that are memorable, scalable, and adaptable across web screens, mobile apps, apparel, and signage.",
+    overview: "Your logo is the visual cornerstone of your business identity. PixoraSoftTech creates custom, vector-crafted logo designs that are memorable, scalable, and adaptable across web screens, mobile apps, apparel, and signage.",
     problem: "Generic logo generator templates look cheap, lack brand meaning, fail at small sizes, and create trademark ownership liabilities.",
     solution: "We follow a rigorous graphic design process—researching brand symbolism, hand-sketching concepts, digitizing precise geometric vector paths, and testing versatility across light and dark backgrounds.",
     deliverables: [
@@ -523,7 +523,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Creative & E-Commerce",
     eyebrow: "Shelf-Ready Packaging & Box Dieline Design That Sells",
     intro: "We design stunning retail packaging, product boxes, pouch labels, and bottle stickers with precise dieline accuracy ready for commercial printing.",
-    overview: "Unboxing is a powerful brand moment. PixoraSofttech crafts eye-catching product packaging designs that attract shoppers on retail shelves and delight online buyers upon arrival.",
+    overview: "Unboxing is a powerful brand moment. PixoraSoftTech crafts eye-catching product packaging designs that attract shoppers on retail shelves and delight online buyers upon arrival.",
     problem: "Poor packaging design with incorrect print dielines leads to misaligned prints, wasted print production budgets, and low shelf appeal.",
     solution: "We work directly with your supplier dieline files, applying sharp typography, compliant product text, finishing effects (foil, spot UV), and print-ready CMYK press files.",
     deliverables: [
@@ -557,7 +557,7 @@ export const serviceDetails: ServiceDetail[] = [
     category: "Creative & E-Commerce",
     eyebrow: "Versatile Digital & Print Graphic Design for Corporate Needs",
     intro: "We create high-impact marketing collateral—including pitch decks, sales brochures, event banners, flyers, and digital media—tailored to your brand style.",
-    overview: "From sales decks that close enterprise deals to marketing brochures for trade shows, PixoraSofttech provides comprehensive graphic design services for print and digital channels.",
+    overview: "From sales decks that close enterprise deals to marketing brochures for trade shows, PixoraSoftTech provides comprehensive graphic design services for print and digital channels.",
     problem: "Poorly formatted slide decks and amateur marketing flyers damage business credibility during key sales pitches and marketing campaigns.",
     solution: "We translate your message into polished visual collateral with custom graphics, clean typography, consistent color branding, and high-res layout structuring.",
     deliverables: [

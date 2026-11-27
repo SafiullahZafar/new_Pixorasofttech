@@ -133,7 +133,7 @@ export default function ServiceDetail({ service }: { service: ServiceDetailType 
                   <ShieldCheck className="w-6 h-6 text-blue-600" />
                 </div>
                 <p className="text-xs font-bold tracking-widest text-blue-600 uppercase mb-2">Our Methodology</p>
-                <h3 className="text-xl font-extrabold text-slate-900 mb-3">How PixoraSofttech Solves It</h3>
+                <h3 className="text-xl font-extrabold text-slate-900 mb-3">How PixoraSoftTech Solves It</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{service.solution}</p>
               </div>
               <div className="mt-6 pt-5 border-t border-slate-100 text-xs font-semibold text-blue-600 flex items-center gap-2">

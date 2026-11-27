@@ -131,7 +131,7 @@ export const defaultFlowSteps: Step[] = [
   {
     title: "Zero-Downtime Launch & Scale",
     description:
-      "Seamless cloud release with automated CI/CD pipelines, full documentation handoff, and ongoing 24/7 reliability support.",
+      "Seamless cloud release with automated CI/CD pipelines and a clear documentation handoff.",
     colorTheme: "blue",
   },
 ];

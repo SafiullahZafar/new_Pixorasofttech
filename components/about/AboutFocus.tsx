@@ -54,7 +54,7 @@ const focusItems = [
       "/about_page/saas_cus/PeopleFlow Job Openings Phone Mockup.png",
       "/case_studies/rms_soft/rms_hero_soft_01.png",
       "/about_page/mobile_app/Floating Companies Directory Tablet.png",
-      "/about_page/saas_cus/ChatGPT Image Sep 15, 2026, 01_30_25 AM (4) - Copy.png",
+      "/about_page/saas_cus/social-media-publishing-dashboard.png",
       "/about_page/saas_cus/ChatGPT Image Sep 12, 2026, 11_13_58 AM (2).png",
     ],
     href: "/services/saas-development",
@@ -75,7 +75,7 @@ const focusItems = [
       "/service/app_dev/work_serv/mobile_app_work_service_1.png",
       "/about_page/mobile_app/ChatGPT Image Sep 13, 2026, 07_52_57 AM (4).png",
       "/case_studies/salon_app/salon_showcase_app_29.png",
-      "/about_page/cloude_ai/Glasshaven House Plan Mockup.png",
+      "/about_page/cloud_ai/Glasshaven House Plan Mockup.png",
     ],
     href: "/services/mobile-app-development",
     description:
@@ -83,14 +83,14 @@ const focusItems = [
   },
   {
     title: "Cloud Solutions",
-    image: "/about_page/cloude_ai/Futuristic Cloud Network Interface.png",
+    image: "/about_page/cloud_ai/Futuristic Cloud Network Interface.png",
     gridImages: [
-      "/about_page/cloude_ai/Futuristic Cloud Network Interface.png",
-      "/about_page/cloude_ai/Futuristic Cloud and AI Solutions Dashboard.png",
+      "/about_page/cloud_ai/Futuristic Cloud Network Interface.png",
+      "/service/cloud_ai/about_serv/cloud_ai_about_service_2.png",
       "/home_page/our_expertise/ourexpertise5.png",
-      "/about_page/cloude_ai/Neon Cloud Network Over City.png",
-      "/about_page/cloude_ai/Touching the Cloud Network.png",
-      "/about_page/cloude_ai/Glasshaven House Plan Mockup.png",
+      "/about_page/cloud_ai/Neon Cloud Network Over City.png",
+      "/about_page/cloud_ai/Touching the Cloud Network.png",
+      "/about_page/cloud_ai/Glasshaven House Plan Mockup.png",
     ],
     href: "/services/cloud-solutions",
     description:

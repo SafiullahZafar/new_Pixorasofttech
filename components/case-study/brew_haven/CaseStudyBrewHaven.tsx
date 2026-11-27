@@ -36,7 +36,7 @@ export default function CaseStudyBrewHaven({ project }: CaseStudyBrewHavenProps)
   const liveUrl = project?.liveUrl || "https://brew-haven-beta.vercel.app/";
 
   const aboutDescription =
-    "Brew Haven is an artisanal coffee roastery crafting ethically sourced single-origin beans and seasonal gourmet blends. PixoraSofttech redesigned its digital storefront to transition from a conventional shop into an editorial, sensory brand journey for coffee connoisseurs and retail subscribers.";
+    "Brew Haven is an artisanal coffee roastery crafting ethically sourced single-origin beans and seasonal gourmet blends. PixoraSoftTech redesigned its digital storefront to transition from a conventional shop into an editorial, sensory brand journey for coffee connoisseurs and retail subscribers.";
 
   const challengeText =
     "Brew Haven suffered from low digital engagement and a high abandonment rate during online checkout. Their previous website failed to reflect their premium craft identity and lacked real-time order customisation options for retail bean buyers.";

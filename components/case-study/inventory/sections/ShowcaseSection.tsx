@@ -25,7 +25,7 @@ export default function ShowcaseSection() {
               </div>
               <div className="flex-1 h-1/2 overflow-hidden border border-zinc-200/60 w-full">
                 <img
-                  src="/case_studies/rms_soft/rms_work_soft_02_upda.png"
+                  src="/case_studies/rms_soft/rms_work_soft_02_updated.png"
                   alt="RMS purchase order and stock management interface"
                   className="w-full h-full object-cover object-center block"
                 />

@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 
 const logos = [
-  { src: "/home_page/client_logos/clientlogos1.png", alt: "Client brand" },
+  { src: "/home_page/client_logos/clientlogos1.png", alt: "Abstract orange and charcoal client logo mark." },
   { src: "/home_page/client_logos/clientlogos2.png", alt: "Billora POS" },
   { src: "/home_page/client_logos/clientlogos3.png", alt: "Byte and Brew" },
-  { src: "/case_studies/salon_soft/salon_showcase_soft_13.png", alt: "Client brand" },
+  { src: "/case_studies/salon_soft/salon_showcase_soft_13.png", alt: "Veloura salon booking app logo." },
   { src: "/home_page/client_logos/clientlogos5.png", alt: "Eduka" },
   { src: "/home_page/client_logos/clientlogos6.png", alt: "Glass Haven" },
   { src: "/home_page/client_logos/clientlogos7.png", alt: "Nexora HRMS" },
@@ -15,13 +15,12 @@ const logos = [
   { src: "/home_page/client_logos/clientlogos9.png", alt: "PixoraSoftTech" },
   { src: "/home_page/client_logos/clientlogos10.png", alt: "Growth Gauge" },
   { src: "/home_page/client_logos/clientlogos11.png", alt: "Pumpora Petroleum" },
-  { src: "/home_page/client_logos/clientlogos12.png", alt: "Zostell Travel" },
+  { src: "/home_page/client_logos/clientlogos12.png", alt: "Orange travel logo mark for Zostel." },
   { src: "/home_page/client_logos/clientlogos13.png", alt: "Invenza" },
   { src: "/home_page/client_logos/clientlogos14.png", alt: "Solar Solutions" },
   { src: "/home_page/client_logos/clientlogos15.png", alt: "Threadix" },
   { src: "/home_page/client_logos/clientlogos16.png", alt: "Travel Hub" },
-  { src: "/home_page/client_logos/clientlogos17.png", alt: "Zostell Travel" },
-  { src: "/home_page/client_logos/clientlogos18.png", alt: "Client brand" },
+  { src: "/home_page/client_logos/clientlogos18.png", alt: "Orange geometric client logo mark." },
 ];
 
 const orbitCount = 3;

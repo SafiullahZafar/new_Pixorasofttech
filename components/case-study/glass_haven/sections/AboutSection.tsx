@@ -94,7 +94,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/about_page/cloude_ai/Glasshaven House Plan Mockup.png"
+                src="/about_page/cloud_ai/Glasshaven House Plan Mockup.png"
                 alt="Glass Haven Luxury Real Estate Environment"
                 className="w-full h-full object-cover object-center block"
               />

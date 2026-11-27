@@ -30,12 +30,12 @@ export default function CaseStudyDeliveryDashboard({ project }: CaseStudyDeliver
   const [cardHovered, setCardHovered] = useState(false);
 
   const title = "Delivery Flow System";
-  const heroImage = project?.heroImg || "/driven_adminPanal.png";
+  const heroImage = project?.heroImg || "/driven_admin_panel.png";
   const heroDemoImage = "/case_studies/driven_soft/driven_showcase_soft_01.png";
   const liveUrl = project?.liveUrl || "";
 
   const aboutDescription =
-    "Driven Mobility needed one place to coordinate live rides, drivers, support, safety, and payouts. PixoraSofttech created an operations console that gives teams a clear view of fleet activity and the tools to act quickly.";
+    "Driven Mobility needed one place to coordinate live rides, drivers, support, safety, and payouts. PixoraSoftTech created an operations console that gives teams a clear view of fleet activity and the tools to act quickly.";
 
   const challengeText =
     project?.challenge || "Fleet managers needed a centralized way to monitor live driver sessions, coordinate dispatch, resolve support cases, and manage payouts without switching between disconnected tools.";

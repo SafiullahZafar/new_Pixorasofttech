@@ -99,7 +99,7 @@ export default function AboutSection({
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, amount: 0, margin: "0px 0px -50px 0px" }}
                 transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                src="/case_studies/hrms_soft/hrms_about_soft_02_updat.png"
+                src="/case_studies/hrms_soft/hrms_about_soft_02_updated.png"
                 alt="HRMS workforce management dashboard"
                 className="w-full h-full object-cover object-center block"
               />
