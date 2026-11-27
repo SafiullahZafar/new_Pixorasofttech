@@ -194,7 +194,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-3xl bg-[#0A2540] p-6 text-white sm:p-8 lg:col-span-6 lg:p-10 2xl:col-span-6 2xl:p-14"
+            className="rounded-3xl bg-[#0A2540]/85 p-6 text-white sm:p-8 lg:col-span-6 lg:p-10 2xl:col-span-6 2xl:p-14"
           >
             <div className="min-w-0">
 
