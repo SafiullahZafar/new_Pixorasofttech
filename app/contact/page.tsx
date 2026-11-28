@@ -5,6 +5,7 @@ import BackgroundAnimation from "@/components/BackgroundAnimation";
 import ContactSection from "@/components/contact/ContactSection";
 import ContactCTA from "@/components/contact/ContactCTA";
 import { Toaster } from "react-hot-toast";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Contact | Start a Project",
@@ -23,6 +24,10 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <Script
+        src="https://web3forms.com/client/script.js"
+        strategy="afterInteractive"
+      />
       <BackgroundAnimation />
       <Toaster
         position="top-right"

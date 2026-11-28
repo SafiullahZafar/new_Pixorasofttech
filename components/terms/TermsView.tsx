@@ -233,7 +233,7 @@ export default function TermsView() {
             <div className="flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-4 py-2">
               <RefreshCw className="w-4 h-4 text-slate-400" />
               <span className="text-sm text-slate-600">
-                Last Updated: <span className="font-semibold text-slate-900">8 September 2026</span>
+                Last Updated: <span className="font-semibold text-slate-900">28 November 2026</span>
               </span>
             </div>
           </div>
@@ -340,9 +340,11 @@ export default function TermsView() {
               </div>
               <div className="border border-slate-200 rounded-xl divide-y divide-slate-100">
                 <ContactRow label="Website"   value="https://pixorasofttech.com"   href="https://pixorasofttech.com" />
-                <ContactRow label="General"   value="pixorasofttech@gmail.com"   href="mailto:pixorasofttech@gmail.com"   isEmail />
-                <ContactRow label="Support"   value="pixorasofttech@gmail.com"   href="mailto:pixorasofttech@gmail.com"   isEmail />
-                <ContactRow label="Developer" value="pixorasofttech@gmail.com" href="mailto:pixorasofttech@gmail.com" isEmail />
+                <ContactRow label="General" value="contact@pixorasofttech.com" href="mailto:contact@pixorasofttech.com" isEmail />
+                <ContactRow label="Support" value="support@pixorasofttech.com" href="mailto:support@pixorasofttech.com" isEmail />
+                <ContactRow label="Privacy" value="privacy@pixorasofttech.com" href="mailto:privacy@pixorasofttech.com" isEmail />
+                <ContactRow label="Admin" value="admin@pixorasofttech.com" href="mailto:admin@pixorasofttech.com" isEmail />
+                <ContactRow label="Gmail" value="pixorasofttech@gmail.com" href="mailto:pixorasofttech@gmail.com" isEmail />
                 <ContactRow label="LinkedIn"  value="linkedin.com/company/115831290" href="https://www.linkedin.com/company/115831290/" />
               </div>
             </section>
@@ -815,17 +817,25 @@ export default function TermsView() {
               <div className="bg-white/10 border border-white/20 p-5 rounded-xl mb-6">
                 <p className="text-sm font-semibold text-white mb-0.5">PIXORASOFTTECH (SMC-PRIVATE) LIMITED</p>
                 <p className="text-sm text-white/80 mb-4">Khurrianwala, Balail Town, Faisalabad, Jaranwala, Punjab, Pakistan</p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
                   <div>
                     <p className="text-white/70 text-xs font-semibold mb-1">Support</p>
-                    <a href="mailto:pixorasofttech@gmail.com" className="text-white hover:underline break-all">pixorasofttech@gmail.com</a>
+                    <a href="mailto:support@pixorasofttech.com" className="text-white hover:underline break-all">support@pixorasofttech.com</a>
                   </div>
                   <div>
                     <p className="text-white/70 text-xs font-semibold mb-1">General</p>
-                    <a href="mailto:pixorasofttech@gmail.com" className="text-white hover:underline break-all">pixorasofttech@gmail.com</a>
+                    <a href="mailto:contact@pixorasofttech.com" className="text-white hover:underline break-all">contact@pixorasofttech.com</a>
                   </div>
                   <div>
-                    <p className="text-white/70 text-xs font-semibold mb-1">Developer</p>
+                    <p className="text-white/70 text-xs font-semibold mb-1">Privacy</p>
+                    <a href="mailto:privacy@pixorasofttech.com" className="text-white hover:underline break-all">privacy@pixorasofttech.com</a>
+                  </div>
+                  <div>
+                    <p className="text-white/70 text-xs font-semibold mb-1">Admin</p>
+                    <a href="mailto:admin@pixorasofttech.com" className="text-white hover:underline break-all">admin@pixorasofttech.com</a>
+                  </div>
+                  <div>
+                    <p className="text-white/70 text-xs font-semibold mb-1">Gmail</p>
                     <a href="mailto:pixorasofttech@gmail.com" className="text-white hover:underline break-all">pixorasofttech@gmail.com</a>
                   </div>
                 </div>
@@ -833,7 +843,7 @@ export default function TermsView() {
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="mailto:pixorasofttech@gmail.com"
+                  href="mailto:support@pixorasofttech.com"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#0A2540] text-sm font-semibold hover:bg-[#0A2540]/5 transition-colors"
                 >
                   <Mail className="w-4 h-4" />

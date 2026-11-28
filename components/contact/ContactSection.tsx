@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   MessageCircle,
   ArrowUpRight,
@@ -65,9 +66,19 @@ const SOCIAL_LINKS = [
   },
 ];
 
+type HCaptchaWindow = Window & {
+  hcaptcha?: {
+    reset: () => void;
+  };
+};
+
 export default function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
+  const [submissionMessage, setSubmissionMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -105,9 +116,24 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmissionMessage(null);
+
+    const form = e.currentTarget;
+    const captchaResponse = form.querySelector<HTMLTextAreaElement>(
+      'textarea[name="h-captcha-response"]'
+    )?.value;
+
+    if (!captchaResponse) {
+      const message = "Please complete the spam-protection check before sending.";
+      setSubmissionMessage({ type: "error", text: message });
+      toast.error(message);
+      return;
+    }
+
     setLoading(true);
 
-    const fd = new FormData(e.currentTarget);
+    const fd = new FormData(form);
+    fd.set("h-captcha-response", captchaResponse);
     fd.set(
       "project_type",
       formData.projectType.length > 0
@@ -123,6 +149,10 @@ export default function ContactSection() {
       const json = await res.json();
 
       if (json.success) {
+        setSubmissionMessage({
+          type: "success",
+          text: "Message sent! We’ll be in touch within 24 hours.",
+        });
         toast.success("Message sent! We'll be in touch within 24 hours.", {
           duration: 5000,
           style: {
@@ -136,7 +166,13 @@ export default function ContactSection() {
         });
         setFormData({ name: "", email: "", message: "", projectType: [] });
         formRef.current?.reset();
+        (window as HCaptchaWindow).hcaptcha?.reset();
       } else {
+        setSubmissionMessage({
+          type: "error",
+          text: "Failed to send. Please try again.",
+        });
+        (window as HCaptchaWindow).hcaptcha?.reset();
         toast.error("Failed to send. Please try again.", {
           duration: 5000,
           style: {
@@ -149,6 +185,11 @@ export default function ContactSection() {
         });
       }
     } catch {
+      setSubmissionMessage({
+        type: "error",
+        text: "Network error. Please check your connection.",
+      });
+      (window as HCaptchaWindow).hcaptcha?.reset();
       toast.error("Network error. Please check your connection.", {
         duration: 5000,
         style: {
@@ -211,6 +252,12 @@ export default function ContactSection() {
                   >
                     pixorasofttech@gmail.com
                   </a>
+                  <a
+                    href="mailto:contact@pixorasofttech.com"
+                    className="text-sm sm:text-base 2xl:text-lg font-semibold text-white hover:underline"
+                  >
+                    contact@pixorasofttech.com
+                  </a>
                   <span className="text-zinc-300 hidden sm:inline">•</span>
                   <a
                     href="tel:+923094307701"
@@ -268,6 +315,7 @@ export default function ContactSection() {
                   name="subject"
                   value="New Contact Form Submission - PixoraSoftTech"
                 />
+                <input type="hidden" name="replyto" value={formData.email} />
 
                 <p className="text-sm font-medium text-white/70 2xl:text-base">
                   Leave us a brief message
@@ -286,6 +334,7 @@ export default function ContactSection() {
                       name="name"
                       type="text"
                       required
+                      autoComplete="name"
                       placeholder="Your name"
                       value={formData.name}
                       onChange={handleChange}
@@ -305,11 +354,69 @@ export default function ContactSection() {
                       name="email"
                       type="email"
                       required
+                      autoComplete="email"
                       placeholder="you@company.com"
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full rounded-lg border border-white/25 bg-white px-4 py-3 text-sm text-zinc-950 placeholder:text-zinc-500 transition focus:border-white focus:outline-none focus:ring-2 focus:ring-white/30 2xl:px-5 2xl:py-4 2xl:text-base"
                     />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 2xl:gap-6">
+                  <div className="space-y-1.5">
+                    <label
+                      htmlFor="contact-phone"
+                      className="block text-xs font-semibold uppercase tracking-wider text-white/90 2xl:text-sm"
+                    >
+                      Phone (optional)
+                    </label>
+                    <input
+                      id="contact-phone"
+                      name="phone"
+                      type="tel"
+                      autoComplete="tel"
+                      placeholder="Your phone number"
+                      className="w-full rounded-lg border border-white/25 bg-white px-4 py-3 text-sm text-zinc-950 placeholder:text-zinc-500 transition focus:border-white focus:outline-none focus:ring-2 focus:ring-white/30 2xl:px-5 2xl:py-4 2xl:text-base"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label
+                      htmlFor="contact-budget"
+                      className="block text-xs font-semibold uppercase tracking-wider text-white/90 2xl:text-sm"
+                    >
+                      Budget (optional)
+                    </label>
+                    <input
+                      id="contact-budget"
+                      name="budget"
+                      type="text"
+                      placeholder="Approximate budget"
+                      className="w-full rounded-lg border border-white/25 bg-white px-4 py-3 text-sm text-zinc-950 placeholder:text-zinc-500 transition focus:border-white focus:outline-none focus:ring-2 focus:ring-white/30 2xl:px-5 2xl:py-4 2xl:text-base"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label
+                      htmlFor="contact-timeline"
+                      className="block text-xs font-semibold uppercase tracking-wider text-white/90 2xl:text-sm"
+                    >
+                      Timeline (optional)
+                    </label>
+                    <select
+                      id="contact-timeline"
+                      name="timeline"
+                      defaultValue=""
+                      className="w-full rounded-lg border border-white/25 bg-white px-4 py-3 text-sm text-zinc-950 transition focus:border-white focus:outline-none focus:ring-2 focus:ring-white/30 2xl:px-5 2xl:py-4 2xl:text-base"
+                    >
+                      <option value="">Select a timeline</option>
+                      <option value="As soon as possible">As soon as possible</option>
+                      <option value="Within 1 month">Within 1 month</option>
+                      <option value="1–3 months">1–3 months</option>
+                      <option value="3–6 months">3–6 months</option>
+                      <option value="Flexible / not sure">Flexible / not sure</option>
+                    </select>
                   </div>
                 </div>
 
@@ -369,6 +476,38 @@ export default function ContactSection() {
                     })}
                   </div>
                 </div>
+
+                <div
+                  className="h-captcha"
+                  data-captcha="true"
+                  data-theme="dark"
+                  data-size="compact"
+                  role="group"
+                  aria-label="Spam protection verification"
+                />
+
+                <p className="text-xs leading-5 text-white/75">
+                  We&apos;ll use your details to respond to your inquiry. See our{" "}
+                  <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-white">
+                    Privacy Policy
+                  </Link>
+                  .
+                </p>
+
+                {submissionMessage && (
+                  <p
+                    role={submissionMessage.type === "error" ? "alert" : "status"}
+                    aria-live={submissionMessage.type === "error" ? "assertive" : "polite"}
+                    aria-atomic="true"
+                    className={
+                      submissionMessage.type === "error"
+                        ? "text-sm font-medium text-red-200"
+                        : "text-sm font-medium text-green-200"
+                    }
+                  >
+                    {submissionMessage.text}
+                  </p>
+                )}
 
                 <button
                   type="submit"

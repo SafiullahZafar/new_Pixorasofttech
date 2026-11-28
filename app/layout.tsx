@@ -131,13 +131,13 @@ const jsonLd = {
         url: `${siteUrl}/logo.png`,
       },
       description: siteDescription,
-      email: "pixorasofttech@gmail.com",
+      email: "contact@pixorasofttech.com",
       telephone: "+92-309-4307701",
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales",
         telephone: "+92-309-4307701",
-        email: "pixorasofttech@gmail.com",
+        email: "contact@pixorasofttech.com",
         availableLanguage: ["English", "Urdu"],
       },
       address: {

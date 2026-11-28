@@ -123,6 +123,16 @@ const FOOTER_CSS = `
   caret-color: #fff;
 }
 .pft-email-input::placeholder { color: rgba(255,255,255,0.38); }
+.pft-email-label {
+  color: rgba(255,255,255,0.7);
+  font-size: clamp(11px, 0.9vw, 13px);
+  white-space: nowrap;
+}
+.pft-email-error {
+  margin: 8px 0 0;
+  color: #fca5a5;
+  font-size: 12px;
+}
 .pft-submit-btn {
   width: 40px;
   height: 40px;
@@ -450,12 +460,18 @@ const FOOTER_CSS = `
 ───────────────────────────────────────────────────────────── */
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
-      window.location.href = `/contact?email=${encodeURIComponent(email)}`;
+    const normalizedEmail = email.trim();
+    if (!normalizedEmail) {
+      setEmailError("Enter your email address.");
+      return;
     }
+
+    setEmailError("");
+    window.location.href = `/contact?email=${encodeURIComponent(normalizedEmail)}`;
   };
 
   const scrollToTop = () => {
@@ -475,13 +491,25 @@ export default function Footer() {
             <span>Let&rsquo;s start.</span>
           </h2>
           <form className="pft-email-form" onSubmit={handleSubmit}>
+            <label htmlFor="footer-email" className="pft-email-label">
+              Email
+            </label>
             <input
+              id="footer-email"
               className="pft-email-input"
               type="email"
+              name="email"
+              required
+              autoComplete="email"
               placeholder="Enter your email..."
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              aria-label="Email address"
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setEmailError("");
+              }}
+              onInvalid={() => setEmailError("Enter a valid email address.")}
+              aria-invalid={Boolean(emailError)}
+              aria-describedby={emailError ? "footer-email-error" : undefined}
             />
             <button
               type="submit"
@@ -493,6 +521,11 @@ export default function Footer() {
               </svg>
             </button>
           </form>
+          {emailError && (
+            <p id="footer-email-error" className="pft-email-error" role="alert">
+              {emailError}
+            </p>
+          )}
         </div>
 
         {/* Explore */}
