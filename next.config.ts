@@ -126,11 +126,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/supplier-wholesale-app",
-        destination: "/case-study/supplier-wholesale-app",
-        permanent: true,
-      },
-      {
         source: "/travel-hotel-hub",
         destination: "/case-study/travel-hotel-hub",
         permanent: true,

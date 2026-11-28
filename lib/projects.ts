@@ -408,38 +408,6 @@ export const projects: Project[] = [
     ],
     results: []
   },
-  {
-    id: "supplier-wholesale-app",
-    caseStudySlug: "supplier-wholesale-app",
-    title: "Supplier Wholesale Mobile App",
-    category: "Mobile Apps",
-    tagline: "B2B Wholesale Food Ordering App for Restaurants, Cafes & Commercial Kitchens",
-    desc: "A smart wholesale food supply mobile application enabling restaurants, cafes, and commercial kitchens to order vegetables, dairy, meat, bakery, and pantry items with bulk pricing, weekly recurring orders, and scheduled delivery.",
-    overview: "Supplier Wholesale Mobile App is a B2B food supply platform built for food businesses. PixoraSoftTech developed this Flutter application to digitize the wholesale ordering process for restaurants and commercial kitchens — replacing phone calls with structured weekly order templates, bulk tier pricing, product category browsing, and delivery scheduling.",
-    tags: ["Flutter", "B2B Wholesale", "Food Supply", "Weekly Orders", "Bulk Pricing", "Restaurant App"],
-    client: "Supplier Wholesale — B2B Food Platform",
-    industry: "Wholesale Food Distribution & Restaurant Supply",
-    timeline: "Completed & Live",
-    deliverables: [
-      "Flutter Cross-Platform iOS & Android App",
-      "Product Category Browsing (Vegetables, Dairy, Meat, Beverages, Bakery, Pantry)",
-      "Weekly Recurring Order Templates & Quick Re-order Engine",
-      "Bulk Tier Pricing Display with Delivery Schedule Selector"
-    ],
-    img: "/suppliers.png",
-    heroImg: "/suppliers.png",
-    status: "processing",
-    challenge: "Restaurant managers and commercial kitchen staff spent hours placing daily supply orders via phone or WhatsApp, leading to wrong quantities, missed deliveries, and no bulk pricing transparency.",
-    solution: "We engineered a Flutter mobile app featuring product category grids (Vegetables, Dairy, Meat, Bakery, Pantry, Beverages), weekly order templates, bulk price-per-kg display, delivery schedule selection, and a one-tap Place Order flow — trusted by 5,000+ food businesses.",
-    keyFeatures: [
-      "Category Grid: Vegetables, Dairy, Meat, Beverages, Bakery & Pantry Browsing",
-      "Weekly Kitchen Essentials Templates & Recurring Quick Re-order System",
-      "Bulk Pricing Per KG with In-Stock Status & Quantity Box Selection",
-      "Delivery Schedule Selector with Invoices & Order History Tracking"
-    ],
-    results: []
-  },
-
   // ── SOFTWARE ──
   {
     id: "hrms",

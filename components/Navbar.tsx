@@ -79,7 +79,6 @@ const caseStudiesCol2: CaseStudyNavItem[] = [
   { title: "Messenger Software", href: "/case-study/messenger" },
   { title: "Salon Appointment POS", href: "/case-study/salon" },
   { title: "Textile ERP System", href: "/case-study/textile-erp" },
-  { title: "Supplier Wholesale App", href: "/case-study/supplier-wholesale-app", isNew: true },
 ];
 
 const caseStudiesCol3: CaseStudyNavItem[] = [
