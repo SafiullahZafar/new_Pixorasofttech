@@ -335,7 +335,7 @@ export default function TeamHero() {
                     Automated Pipelines
                   </span>
                   <span className="rounded border border-white/15 bg-white/10 px-2 py-0.5 text-[10px] 2xl:text-xs font-medium text-zinc-200">
-                    Zero-Downtime Rollouts
+                    Planned Releases &amp; Rollback
                   </span>
                 </div>
               </div>

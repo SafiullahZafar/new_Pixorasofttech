@@ -247,12 +247,6 @@ export default function ContactSection() {
               <div className="mt-5 2xl:mt-7">
                 <div className="mt-1.5 flex flex-wrap items-center gap-x-5 gap-y-1">
                   <a
-                    href="mailto:pixorasofttech@gmail.com"
-                    className="text-sm sm:text-base 2xl:text-lg font-semibold text-white hover:underline"
-                  >
-                    pixorasofttech@gmail.com
-                  </a>
-                  <a
                     href="mailto:contact@pixorasofttech.com"
                     className="text-sm sm:text-base 2xl:text-lg font-semibold text-white hover:underline"
                   >

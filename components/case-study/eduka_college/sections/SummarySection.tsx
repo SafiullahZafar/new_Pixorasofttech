@@ -9,8 +9,8 @@ export default function SummarySection({
 }: Pick<EdukaCollegeSectionProps, "liveUrl" | "project">) {
   if (!project) return null;
 
-  const duration = project.timeline.match(/\d+/)?.[0] ?? project.timeline;
-  const durationUnit = project.timeline.toLowerCase().includes("week") ? "weeks" : "";
+  const duration = project.timeline?.match(/\d+/)?.[0] ?? project.timeline ?? "";
+  const durationUnit = project.timeline?.toLowerCase().includes("week") ? "weeks" : "";
   const summaryCopy =
     project.overview || project.overview;
 
@@ -32,20 +32,22 @@ export default function SummarySection({
               </p>
             </div>
 
-            <div className="grid grid-cols-2 items-start gap-8 sm:gap-12">
-              <div>
-                <span className="text-xs font-normal text-zinc-400 sm:text-sm">
-                  Duration
-                </span>
-                <div className="mt-1.5 flex items-baseline">
-                  <span className="text-5xl font-bold leading-none tracking-tight text-zinc-950 sm:text-6xl 2xl:text-7xl">
-                    {duration}
+            <div className={`grid ${project.timeline ? "grid-cols-2" : "grid-cols-1"} items-start gap-8 sm:gap-12`}>
+              {project.timeline && (
+                <div>
+                  <span className="text-xs font-normal text-zinc-400 sm:text-sm">
+                    Duration
                   </span>
-                  <span className="ml-2 pb-0.5 text-xs font-normal text-zinc-400 sm:text-sm">
-                    {durationUnit}
-                  </span>
+                  <div className="mt-1.5 flex items-baseline">
+                    <span className="text-5xl font-bold leading-none tracking-tight text-zinc-950 sm:text-6xl 2xl:text-7xl">
+                      {duration}
+                    </span>
+                    <span className="ml-2 pb-0.5 text-xs font-normal text-zinc-400 sm:text-sm">
+                      {durationUnit}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div>
                 <span className="text-xs font-normal text-zinc-400 sm:text-sm">

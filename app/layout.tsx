@@ -128,7 +128,9 @@ const jsonLd = {
       },
       address: {
         "@type": "PostalAddress",
+        streetAddress: "Khurrianwala, Balail Town, Jaranwala",
         addressLocality: "Faisalabad",
+        addressRegion: "Punjab",
         addressCountry: "PK",
       },
       sameAs: [
@@ -136,8 +138,6 @@ const jsonLd = {
         "https://www.linkedin.com/company/pixorasofttech",
         "https://www.instagram.com/pixorasofttech",
       ],
-      foundingDate: "2024",
-      areaServed: "Worldwide",
     },
     {
       "@type": "WebSite",

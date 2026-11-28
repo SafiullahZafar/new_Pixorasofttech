@@ -9,7 +9,7 @@ export type Project = {
   tags: string[];
   client: string;
   industry: string;
-  timeline: string;
+  timeline?: string;
   deliverables: string[];
   img: string;
   heroImg: string;
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     desc: "An authoritative B2B corporate export platform highlighting textile manufacturing capabilities, international certifications, and bulk buyer RFQ portals.",
     overview: "K.B. Exports is a global textile manufacturer supplying high-volume fabrics and garments to North American and European markets. PixoraSoftTech developed an end-to-end digital export hub showcasing yarn quality, factory capacity, ISO certifications, and direct inquiry management.",
     tags: ["React", "Textile Manufacturing", "B2B Trade Portal", "Next.js"],
-    client: "K.B. Exports Textile Group",
+    client: "Concept project",
     industry: "Textile & Garment Manufacturing",
     timeline: "5 weeks",
     deliverables: [
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     desc: "A unified academic institute platform featuring dynamic course directories, faculty portals, scholarship pathways, and digital student admission workflows.",
     overview: "Eduka College required a complete digital transformation to streamline prospective student inquiries, present 40+ degree programs, and provide current students with instant access to academic announcements and campus portals.",
     tags: ["Next.js", "Education", "CMS", "Student Portal"],
-    client: "Eduka College",
+    client: "Concept project",
     industry: "Higher Education",
     timeline: "6 weeks",
     deliverables: [
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     desc: "An exclusive digital real estate experience featuring high-definition property galleries, architectural floorplans, and private viewing booking.",
     overview: "Glass Haven represents ultra-luxury architectural residences. PixoraSoftTech designed a high-end web destination engineered to evoke luxury, exclusivity, and sophistication for high-net-worth property buyers.",
     tags: ["Next.js", "Luxury Real Estate", "Framer Motion", "3D Views"],
-    client: "Glass Haven Luxury Real Estate",
+    client: "Concept project",
     industry: "Luxury Real Estate & Development",
     timeline: "5 weeks",
     deliverables: [
@@ -162,7 +162,7 @@ export const projects: Project[] = [
     desc: "A high-converting renewable energy website equipped with an interactive solar ROI calculator, installation process guides, and instant quote generation.",
     overview: "Solar Solutions empowers homeowners and businesses to transition to renewable solar energy. PixoraSoftTech developed an educational, trust-building web application designed to simplify solar adoption and capture qualified customer leads.",
     tags: ["React", "Clean Energy", "Lead Generation", "Calculator API"],
-    client: "Solar Solutions Energy",
+    client: "Concept project",
     industry: "Renewable Energy & Solar Installation",
     timeline: "4 weeks",
     deliverables: [
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     desc: "A scalable, accessible public university platform featuring academic program search, financial aid portals, news publication, and campus services.",
     overview: "State College serves over 15,000 enrolled students and faculty. PixoraSoftTech re-engineered the institution’s core web infrastructure to deliver fast, mobile-friendly access to academic resources, research publications, and administrative forms.",
     tags: ["Next.js", "University", "Academic", "WCAG 2.1"],
-    client: "State College Higher Ed",
+    client: "Concept project",
     industry: "Higher Education & Research",
     timeline: "6 weeks",
     deliverables: [
@@ -226,7 +226,7 @@ export const projects: Project[] = [
     desc: "A dynamic travel booking platform showcasing hostel locations, community experiences, live room availability, and direct booking engines.",
     overview: "Zostel is a prominent hostel chain for backpackers and millennial travelers. PixoraSoftTech built a high-energy travel web app that promotes community events while driving direct commission-free hostel bookings.",
     tags: ["Next.js", "Travel", "Booking Engine", "Maps"],
-    client: "Zostel Hospitality",
+    client: "Concept project",
     industry: "Travel & Youth Hospitality",
     timeline: "6 weeks",
     deliverables: [
@@ -258,7 +258,7 @@ export const projects: Project[] = [
     desc: "An inspiration-led travel discovery platform connecting travelers with curated resort packages, boutique hotels, and excursion bookings.",
     overview: "Travel Hotel Hub pairs wanderlust content with seamless hotel booking. PixoraSoftTech designed a visual travel destination platform engineered to captivate visitors and streamline trip planning from inspiration to reservation.",
     tags: ["React", "Boutique Hotels", "Travel Packages", "Multi-Currency"],
-    client: "Travel Hotel Hub Group",
+    client: "Concept project",
     industry: "Travel & Hospitality",
     timeline: "5 weeks",
     deliverables: [
@@ -290,7 +290,7 @@ export const projects: Project[] = [
     desc: "A modern catering showcase platform enabling corporate clients and event planners to customize menus and request direct quotes.",
     overview: "Goody Supplies provides premium culinary services for corporate events and weddings. PixoraSoftTech created an appetizing digital storefront showcasing artisanal menus, dietary customization options, and instant event budgeting.",
     tags: ["React", "Catering Service", "Event Packages", "Quote Generator"],
-    client: "Goody Catering & Supplies",
+    client: "Concept project",
     industry: "Catering & Event Hospitality",
     timeline: "4 weeks",
     deliverables: [
@@ -324,9 +324,8 @@ export const projects: Project[] = [
     desc: "A sleek, dark-themed ride booking and urban mobility mobile application featuring real-time GPS vehicle tracking, driver matching, dynamic fare estimation, and digital payments.",
     overview: "Driven Mobility is an on-demand mobility platform engineered to redefine urban transit with rapid driver matching, real-time map telemetry, transparent fare pricing, and fleet logistics coordination. PixoraSoftTech built the cross-platform mobile experience using React Native, WebSockets, and mapping APIs.",
     tags: ["React Native", "Maps Telemetry", "WebSockets", "Stripe API", "Driver Matching"],
-    client: "Driven Mobility Network",
+    client: "Concept project",
     industry: "Mobility, Fleet & Transportation",
-    timeline: "Completed & Beta Testing",
     deliverables: [
       "Cross-Platform Mobile Applications (iOS & Android)",
       "Real-Time Vehicle GPS Telemetry & Dispatch Engine",
@@ -355,9 +354,8 @@ export const projects: Project[] = [
     desc: "A mobile salon experience for discovering beauty services, choosing a stylist, booking appointments, and keeping track of upcoming visits.",
     overview: "Veloura makes salon visits easier to plan. Clients can explore services, compare stylist availability, book a suitable time, and keep appointment details together in a clear mobile experience.",
     tags: ["Mobile App", "Salon Booking", "Beauty Services", "Stylist Discovery", "Appointment Management"],
-    client: "Veloura",
+    client: "Concept project",
     industry: "Beauty, Wellness & Salon Services",
-    timeline: "Mobile App Case Study",
     deliverables: [
       "Mobile salon discovery and service browsing",
       "Stylist profiles and availability",
@@ -389,7 +387,6 @@ export const projects: Project[] = [
     tags: ["Laravel", "Human Resources", "Employee Records", "Attendance", "Shift Scheduling", "Leave Management"],
     client: "Concept project",
     industry: "Human Resources & Workforce Operations",
-    timeline: "",
     deliverables: [
       "Employee profile and staff record management",
       "Attendance check-in and check-out tracking",
@@ -419,9 +416,8 @@ export const projects: Project[] = [
     desc: "A unified workspace for planning, reviewing, scheduling, and tracking social media content across connected platforms.",
     overview: "Messenger Software brings content creation, review queues, publishing schedules, automation controls, and platform activity into one coordinated workspace for social media teams.",
     tags: ["Social Media", "Content Publishing", "Automation", "Approval Workflows"],
-    client: "PixoraSoftTech",
+    client: "Own product",
     industry: "Social Media & Digital Marketing",
-    timeline: "Custom delivery",
     deliverables: [
       "Social Content Planning Workspace",
       "Review and Approval Queue",
@@ -450,9 +446,8 @@ export const projects: Project[] = [
     desc: "An enterprise retail and store management platform offering real-time multi-location inventory tracking, purchase order receiving, stock consumption analytics, and supplier management.",
     overview: "RMS — Store & Inventory Manager gives retail networks and multi-store businesses complete control over stock flow, supplier purchase orders, and daily inventory balance. PixoraSoftTech engineered a web software system designed to prevent stockouts, automate PO receiving, and track multi-warehouse inventory valuation.",
     tags: ["Next.js", "PostgreSQL", "RMS Software", "Multi-Store Inventory", "Purchase Orders"],
-    client: "Pixora Retail & Supply Logistics",
+    client: "Concept project",
     industry: "Retail & Supply Chain Management",
-    timeline: "Completed & Deployed",
     deliverables: [
       "RMS Centralized Inventory & Store Control Hub",
       "Supplier Management & Purchase Order Engine",
@@ -486,7 +481,6 @@ export const projects: Project[] = [
     tags: ["Laravel", "React", "POS Terminal", "Salon CRM", "Staff Attendance"],
     client: "Concept project",
     industry: "Beauty, Wellness & Salon Operations",
-    timeline: "Completed & Production Ready",
     deliverables: [
       "Salon Touch POS Billing & Receipt Ticket Generator",
       "Multi-Stylist Appointment Calendar & Shift Manager",
@@ -517,9 +511,8 @@ export const projects: Project[] = [
     desc: "A high-performance sales CRM featuring customizable Kanban opportunity boards, automated email sequences, contact analytics, and revenue forecasting.",
     overview: "CRM Sales System equips sales teams with tools to close deals faster. PixoraSoftTech designed a high-velocity sales management software focusing on pipeline visibility, activity tracking, and deal conversion metrics.",
     tags: ["React", "Node.js", "MongoDB", "Kanban Board"],
-    client: "Apex Sales Solutions",
+    client: "Concept project",
     industry: "Sales Automation & CRM",
-    timeline: "In active development",
     deliverables: [
       "Sales CRM Web Application",
       "Automated Email Sequence Engine",
@@ -549,9 +542,8 @@ export const projects: Project[] = [
     desc: "An enterprise fleet operations and administration control panel powering the Driven Mobility platform — featuring live ride dispatch monitoring, driver payouts, customer support ticketing, safety alerts, and financial analytics.",
     overview: "Driven Mobility Admin Console is the central command center for managing driver fleets, rider support tickets, payment disbursements, and real-time urban mobility telemetry. PixoraSoftTech engineered this comprehensive software dashboard using React, Tailwind CSS, and WebSockets to provide operators with 360-degree control over fleet transactions, driver earnings, financial aid, and system health.",
     tags: ["React", "Node.js", "Fleet Operations", "Admin Console", "Payout Disbursements", "Driver Management"],
-    client: "Driven Mobility Network",
+    client: "Concept project",
     industry: "Urban Mobility & Fleet Operations",
-    timeline: "Completed & Production Ready",
     deliverables: [
       "Enterprise Fleet & Driver Administration Console",
       "Real-Time Ride Dispatch Monitoring & Telemetry Hub",
@@ -581,9 +573,8 @@ export const projects: Project[] = [
     desc: "A comprehensive cloud textile ERP system engineered for fabric mills and garment manufacturers featuring loom production tracking, yarn inventory, dye house batch management, and export order analytics.",
     overview: "Textile ERP & Production System streamlines the end-to-end manufacturing lifecycle for textile mills. PixoraSoftTech engineered an industrial management platform delivering real-time loom efficiency tracking, raw yarn inventory control, fabric quality inspection, and export order compliance.",
     tags: ["React", "Node.js", "Textile ERP", "Loom Analytics", "Yarn Inventory"],
-    client: "Pixora Textile Mills Group",
+    client: "Concept project",
     industry: "Textile Manufacturing & Industrial ERP",
-    timeline: "Completed & Deployed",
     deliverables: [
       "Textile ERP Core Platform",
       "Real-Time Loom Efficiency Telemetry",

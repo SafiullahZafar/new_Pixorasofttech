@@ -65,7 +65,7 @@ export default function Home() {
         {/* 8. Our Global Network */}
         <GlobalNetwork />
 
-           {/* 9. Client Reviews & Testimonials Marquee */}
+        {/* 9. Client Reviews & Testimonials Marquee */}
         <Testimonials />
 
         {/* 9. FAQ Accordion */}

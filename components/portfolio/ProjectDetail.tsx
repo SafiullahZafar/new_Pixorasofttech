@@ -158,7 +158,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
           <div className={`grid grid-cols-1 ${p.timeline ? "md:grid-cols-3" : "md:grid-cols-2"} gap-4`}>
             <div className="rounded-2xl border border-slate-200/80 bg-slate-50/70 p-5 hover:border-blue-200 hover:bg-blue-50/30 transition">
               <Building2 className="w-5 h-5 text-blue-600 mb-3" />
-              <p className="text-[11px] uppercase tracking-wider font-bold text-slate-400 mb-1">Client &amp; Industry</p>
+              <p className="text-[11px] uppercase tracking-wider font-bold text-slate-400 mb-1">Project Type &amp; Industry</p>
               <p className="font-bold text-slate-900 text-sm leading-snug">{p.client}</p>
               <p className="text-slate-500 text-xs mt-0.5">{p.industry}</p>
             </div>
@@ -223,7 +223,7 @@ export default function ProjectDetail({ project: p }: { project: Project }) {
                 <div className="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center mb-6">
                   <AlertCircle className="w-6 h-6 text-rose-500" />
                 </div>
-                <h3 className="text-slate-900 font-extrabold text-xl mb-3">The Client&apos;s Challenge</h3>
+                <h3 className="text-slate-900 font-extrabold text-xl mb-3">Project Challenge</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{p.challenge}</p>
               </div>
               <div className="mt-6 pt-5 border-t border-slate-100 text-xs font-semibold text-rose-600 flex items-center gap-2">

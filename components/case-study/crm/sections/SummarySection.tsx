@@ -30,18 +30,20 @@ export default function SummarySection({ liveUrl, project }: Pick<CRMSectionProp
             </div>
 
             {/* Bottom Row: Duration & Services Side-by-Side */}
-            <div className="grid grid-cols-2 gap-8 sm:gap-12 items-start">
+            <div className={`grid ${project.timeline ? "grid-cols-2" : "grid-cols-1"} gap-8 sm:gap-12 items-start`}>
               {/* Duration */}
-              <div>
-                <span className="text-xs sm:text-sm text-zinc-400 font-normal">
-                  Duration
-                </span>
-                <div className="flex items-baseline mt-1.5">
-                  <span className="text-base sm:text-lg 2xl:text-xl font-semibold text-zinc-950 leading-snug">
-                    {project.timeline}
+              {project.timeline && (
+                <div>
+                  <span className="text-xs sm:text-sm text-zinc-400 font-normal">
+                    Duration
                   </span>
+                  <div className="flex items-baseline mt-1.5">
+                    <span className="text-base sm:text-lg 2xl:text-xl font-semibold text-zinc-950 leading-snug">
+                      {project.timeline}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Services */}
               <div>

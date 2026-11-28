@@ -12,7 +12,6 @@ const logos = [
   { src: "/home_page/client_logos/clientlogos6.png", alt: "Glass Haven" },
   { src: "/home_page/client_logos/clientlogos7.png", alt: "Nexora HRMS" },
   { src: "/home_page/client_logos/clientlogos8.png", alt: "Eco Food" },
-  { src: "/home_page/client_logos/clientlogos9.png", alt: "PixoraSoftTech" },
   { src: "/home_page/client_logos/clientlogos10.png", alt: "Growth Gauge" },
   { src: "/home_page/client_logos/clientlogos11.png", alt: "Pumpora Petroleum" },
   { src: "/home_page/client_logos/clientlogos12.png", alt: "Orange travel logo mark for Zostel." },
@@ -46,20 +45,17 @@ export default function ClientLogoSection() {
           <div className="mb-5 flex items-center gap-2.5 sm:mb-7">
             <span className="size-2.5 rounded-full bg-[#0342DD]" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-600 sm:text-sm">
-              OUR CLIENTS
+              SELECTED PROJECTS
             </span>
           </div>
           <h2
             id="client-logos-heading"
             className="text-4xl font-normal uppercase leading-tight tracking-tight text-black sm:text-5xl lg:text-6xl"
           >
-            Clients we&apos;ve worked with
+            Selected projects
           </h2>
           <p className="mt-4 max-w-2xl text-sm font-normal leading-relaxed text-[#555555] sm:mt-8 sm:text-base">
-            The logos shown here represent just some of the clients we've had
-            the pleasure of working with. We partner with ambitious teams to
-            turn ideas into thoughtful, reliable digital products and support
-            them as their businesses grow.
+            A selection of product and brand concepts from our portfolio.
           </p>
         </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import WorldMap, { defaultGlobalConnections } from "@/components/WorldMap";
+import WorldMap from "@/components/WorldMap";
 
 export default function GlobalNetwork() {
   return (
@@ -16,27 +16,24 @@ export default function GlobalNetwork() {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#0342DD]"></span>
               <span className="text-xs font-bold tracking-widest uppercase text-black">
-                WORLDWIDE REACH
-              </span>
-              <span className="text-xs font-bold text-slate-400 ml-2">
-                • GLOBAL CLIENTS
+                FAISALABAD, PAKISTAN
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black uppercase">
-              OUR GLOBAL NETWORK
+              BASED IN FAISALABAD
             </h2>
           </div>
           <p className="max-w-md text-sm sm:text-base font-normal text-[#555555] leading-relaxed mt-4 sm:mt-8">
-            Engineering digital solutions for visionary founders and enterprises worldwide. Operating across time zones with seamless collaboration from North America to Europe, UAE, and Asia.
+            We design and build websites, mobile apps, and business software for teams and organizations.
           </p>
         </div>
 
         {/* World Map Container */}
         <div className="w-full">
           <WorldMap
-            dots={defaultGlobalConnections}
+            dots={[]}
             lineColor="#0342DD"
-            showLabels={true}
+            showLabels={false}
             animationDuration={2.5}
             loop={true}
           />
@@ -45,20 +42,20 @@ export default function GlobalNetwork() {
         {/* Global Delivery Metrics */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8 sm:mt-10">
           <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex flex-col justify-between">
-            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Global</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Cross-border Collaboration</span>
+            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Faisalabad</span>
+            <span className="text-xs text-zinc-500 font-medium mt-1">Based in Pakistan</span>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex flex-col justify-between">
-            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Flexible</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Communication Across Time Zones</span>
+            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Websites</span>
+            <span className="text-xs text-zinc-500 font-medium mt-1">Design and development</span>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex flex-col justify-between">
-            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Reliable</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Quality-Focused Delivery</span>
+            <span className="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Mobile apps</span>
+            <span className="text-xs text-zinc-500 font-medium mt-1">iOS and Android</span>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex flex-col justify-between">
-            <span className="text-2xl sm:text-3xl font-semibold text-[#0342DD] tracking-tight">Modern</span>
-            <span className="text-xs text-zinc-500 font-medium mt-1">Web & Cloud Technologies</span>
+            <span className="text-2xl sm:text-3xl font-semibold text-[#0342DD] tracking-tight">Software</span>
+            <span className="text-xs text-zinc-500 font-medium mt-1">Custom business systems</span>
           </div>
         </div>
       </div>

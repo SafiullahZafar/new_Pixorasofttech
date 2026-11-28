@@ -129,9 +129,9 @@ export const defaultFlowSteps: Step[] = [
     colorTheme: "dark",
   },
   {
-    title: "Zero-Downtime Launch & Scale",
+    title: "Release Planning & Rollback",
     description:
-      "Seamless cloud release with automated CI/CD pipelines and a clear documentation handoff.",
+      "Plan releases with rollback steps, monitoring, and a clear documentation handoff.",
     colorTheme: "blue",
   },
 ];

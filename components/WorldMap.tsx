@@ -37,41 +37,6 @@ export interface MapProps {
   loop?: boolean;
 }
 
-export const defaultGlobalConnections = [
-  {
-    start: { lat: 37.7749, lng: -122.4194, label: "San Francisco" },
-    end: { lat: 40.7128, lng: -74.006, label: "New York" },
-  },
-  {
-    start: { lat: 40.7128, lng: -74.006, label: "New York" },
-    end: { lat: 51.5074, lng: -0.1278, label: "London", offsetX: -22, offsetY: -12 },
-  },
-  {
-    start: { lat: 51.5074, lng: -0.1278, label: "London", offsetX: -22, offsetY: -12 },
-    end: { lat: 25.2048, lng: 55.2708, label: "Dubai", offsetX: -22, offsetY: -12 },
-  },
-  {
-    start: { lat: 25.2048, lng: 55.2708, label: "Dubai", offsetX: -22, offsetY: -12 },
-    end: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
-  },
-  {
-    start: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
-    end: { lat: 35.6762, lng: 139.6503, label: "Tokyo" },
-  },
-  {
-    start: { lat: 51.5074, lng: -0.1278, label: "London", offsetX: -22, offsetY: -12 },
-    end: { lat: 52.52, lng: 13.405, label: "Berlin", offsetX: 22, offsetY: 10 },
-  },
-  {
-    start: { lat: 25.2048, lng: 55.2708, label: "Dubai", offsetX: -22, offsetY: -12 },
-    end: { lat: 31.4504, lng: 73.135, label: "Faisalabad", offsetX: 22, offsetY: 10 },
-  },
-  {
-    start: { lat: 1.3521, lng: 103.8198, label: "Singapore" },
-    end: { lat: -33.8688, lng: 151.2093, label: "Sydney" },
-  },
-];
-
 /**
  * Animated connection path that draws progressively as user scrolls into the map.
  * Once connected, a luminous photon particle streams along the path continuously.
@@ -295,7 +260,7 @@ function CityNode({
 }
 
 export function WorldMap({
-  dots = defaultGlobalConnections,
+  dots = [],
   lineColor = "#0342DD",
   showLabels = true,
   labelClassName = "text-xs font-semibold",

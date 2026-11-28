@@ -30,21 +30,23 @@ export default function SummarySection({ liveUrl, project }: Pick<KBExportsSecti
             </div>
 
             {/* Bottom Row: Duration & Services Side-by-Side */}
-            <div className="grid grid-cols-2 gap-8 sm:gap-12 items-start">
+            <div className={`grid ${project.timeline ? "grid-cols-2" : "grid-cols-1"} gap-8 sm:gap-12 items-start`}>
               {/* Duration */}
-              <div>
-                <span className="text-xs sm:text-sm text-zinc-400 font-normal">
-                  Duration
-                </span>
-                <div className="flex items-baseline mt-1.5">
-                  <span className="text-5xl sm:text-6xl 2xl:text-7xl font-bold text-zinc-950 tracking-tight leading-none">
-                    {project.timeline.match(/\d+/)?.[0] ?? project.timeline}
+              {project.timeline && (
+                <div>
+                  <span className="text-xs sm:text-sm text-zinc-400 font-normal">
+                    Duration
                   </span>
-                  <span className="text-xs sm:text-sm text-zinc-400 font-normal ml-2 pb-0.5">
-                    {project.timeline.toLowerCase().includes("week") ? "weeks" : ""}
-                  </span>
+                  <div className="flex items-baseline mt-1.5">
+                    <span className="text-5xl sm:text-6xl 2xl:text-7xl font-bold text-zinc-950 tracking-tight leading-none">
+                      {project.timeline.match(/\d+/)?.[0] ?? project.timeline}
+                    </span>
+                    <span className="text-xs sm:text-sm text-zinc-400 font-normal ml-2 pb-0.5">
+                      {project.timeline.toLowerCase().includes("week") ? "weeks" : ""}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Services */}
               <div>
