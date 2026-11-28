@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "PIXORASOFTTECH — Premium Software, Web & Mobile Development";
+export const alt = "PixoraSoftTech — Premium Software, Web & Mobile Development";
 export const size = { width: 1200, height: 600 };
 export const contentType = "image/png";
 

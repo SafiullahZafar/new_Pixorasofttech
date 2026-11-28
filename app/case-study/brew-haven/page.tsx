@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyBrewHaven from "@/components/case-study/brew_haven/CaseStudyBrewHaven";
@@ -11,6 +12,7 @@ export default function BrewHavenCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="brew-haven" />
       <Navbar />
       <main>
         <CaseStudyBrewHaven project={project} />

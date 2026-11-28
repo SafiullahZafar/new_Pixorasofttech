@@ -8,6 +8,23 @@ export const metadata: Metadata = {
   description:
     "Plan a Laravel business system or Flutter mobile app with PixoraSoftTech, a software development team based in Faisalabad, Pakistan.",
   alternates: { canonical: "https://pixorasofttech.com/laravel-flutter-development-pakistan" },
+  openGraph: {
+    type: "website",
+    url: "https://pixorasofttech.com/laravel-flutter-development-pakistan",
+    title: "Laravel and Flutter Development in Pakistan | PixoraSoftTech",
+    description:
+      "Plan a Laravel business system or Flutter mobile app with PixoraSoftTech, a software development team based in Faisalabad, Pakistan.",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@pixorasofttech",
+    creator: "@pixorasofttech",
+    title: "Laravel and Flutter Development in Pakistan | PixoraSoftTech",
+    description:
+      "Plan a Laravel business system or Flutter mobile app with PixoraSoftTech, a software development team based in Faisalabad, Pakistan.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function LaravelFlutterPakistanPage() {

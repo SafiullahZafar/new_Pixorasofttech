@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyDeliveryDashboard from "@/components/case-study/delivery_dashboard/CaseStudyDeliveryDashboard";
@@ -11,6 +12,7 @@ export default function DeliveryDashboardCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="delivery-dashboard" />
       <Navbar />
       <main>
         <CaseStudyDeliveryDashboard project={project} />

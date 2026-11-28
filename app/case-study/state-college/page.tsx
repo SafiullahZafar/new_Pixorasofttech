@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyStateCollege from "@/components/case-study/state_college/CaseStudyStateCollege";
@@ -11,6 +12,7 @@ export default function StateCollegeCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="state-college" />
       <Navbar />
       <main>
         <CaseStudyStateCollege project={project} />

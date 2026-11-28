@@ -16,6 +16,16 @@ export const metadata: Metadata = {
       "Official Privacy Policy for PIXORASOFTTECH (SMC-PRIVATE) LIMITED (Pixra Softtech). Learn about data processing, security, LinkedIn API privacy, and data deletion rights.",
     url: "https://pixorasofttech.com/privacy-policy",
     type: "website",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@pixorasofttech",
+    creator: "@pixorasofttech",
+    title: "Privacy Policy | PIXORASOFTTECH (SMC-PRIVATE) LIMITED",
+    description:
+      "Official Privacy Policy for PIXORASOFTTECH (SMC-PRIVATE) LIMITED (Pixra Softtech). Learn about data processing, security, LinkedIn API privacy, and data deletion rights.",
+    images: ["/opengraph-image"],
   },
 };
 

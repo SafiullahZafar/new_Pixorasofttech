@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyShopEase from "@/components/case-study/shopease_ecommerce/CaseStudyShopEase";
@@ -11,6 +12,7 @@ export default function ShopEaseCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="shopease-ecommerce" />
       <Navbar />
       <main>
         <CaseStudyShopEase project={project} />

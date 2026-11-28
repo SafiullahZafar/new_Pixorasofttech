@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyFitPlus from "@/components/case-study/fitplus_app/CaseStudyFitPlus";
@@ -11,6 +12,7 @@ export default function FitPlusCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="fitplus-app" />
       <Navbar />
       <main>
         <CaseStudyFitPlus project={project} />

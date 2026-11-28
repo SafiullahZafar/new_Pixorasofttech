@@ -8,6 +8,23 @@ export const metadata: Metadata = {
   description:
     "PixoraSoftTech is a Faisalabad-based software team building websites, mobile apps, and custom business systems for local and international teams.",
   alternates: { canonical: "https://pixorasofttech.com/software-company-faisalabad" },
+  openGraph: {
+    type: "website",
+    url: "https://pixorasofttech.com/software-company-faisalabad",
+    title: "Software Company in Faisalabad | PixoraSoftTech",
+    description:
+      "PixoraSoftTech is a Faisalabad-based software team building websites, mobile apps, and custom business systems for local and international teams.",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@pixorasofttech",
+    creator: "@pixorasofttech",
+    title: "Software Company in Faisalabad | PixoraSoftTech",
+    description:
+      "PixoraSoftTech is a Faisalabad-based software team building websites, mobile apps, and custom business systems for local and international teams.",
+    images: ["/opengraph-image"],
+  },
 };
 
 const services = [

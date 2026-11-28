@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyMessenger from "@/components/case-study/messenger/CaseStudyMessenger";
@@ -11,6 +12,7 @@ export default function MessengerCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="messenger" />
       <Navbar />
       <main>
         <CaseStudyMessenger project={project} />

@@ -28,8 +28,12 @@ const projectIdBySlug: Record<string, string> = {
   zostel: "zostel",
 };
 
+export function getCaseStudyProject(slug: string) {
+  return projects.find((item) => item.id === projectIdBySlug[slug]);
+}
+
 export function getCaseStudyMetadata(slug: string): Metadata {
-  const project = projects.find((item) => item.id === projectIdBySlug[slug]);
+  const project = getCaseStudyProject(slug);
   if (!project) return {};
 
   const title = `${project.title} Case Study`;

@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyKBExports from "@/components/case-study/kb_exports/CaseStudyKBExports";
@@ -11,6 +12,7 @@ export default function KBExportsCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="kb-exports" />
       <Navbar />
       <main>
         <CaseStudyKBExports project={project} />

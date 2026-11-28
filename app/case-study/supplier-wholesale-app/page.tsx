@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudySupplierWholesaleApp from "@/components/case-study/supplier_wholesale_app/CaseStudySupplierWholesaleApp";
@@ -11,6 +12,7 @@ export default function SupplierWholesaleAppCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="supplier-wholesale-app" />
       <Navbar />
       <main>
         <CaseStudySupplierWholesaleApp project={project} />

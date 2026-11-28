@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudySalon from "@/components/case-study/salon/CaseStudySalon";
@@ -11,6 +12,7 @@ export default function SalonCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="salon" />
       <Navbar />
       <main>
         <CaseStudySalon project={project} />

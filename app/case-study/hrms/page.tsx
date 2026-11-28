@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyHRMS from "@/components/case-study/hrms/CaseStudyHRMS";
@@ -11,6 +12,7 @@ export default function HRMSCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="hrms" />
       <Navbar />
       <main>
         <CaseStudyHRMS project={project} />

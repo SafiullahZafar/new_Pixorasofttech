@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyInventory from "@/components/case-study/inventory/CaseStudyInventory";
@@ -11,6 +12,7 @@ export default function RMSCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="rms" />
       <Navbar />
       <main>
         <CaseStudyInventory project={project} />

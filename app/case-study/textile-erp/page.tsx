@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyTextileERP from "@/components/case-study/textile_erp/CaseStudyTextileERP";
@@ -11,6 +12,7 @@ export default function TextileERPCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="textile-erp" />
       <Navbar />
       <main>
         <CaseStudyTextileERP project={project} />

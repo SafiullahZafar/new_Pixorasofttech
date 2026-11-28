@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyRiderApp from "@/components/case-study/rider_app/CaseStudyRiderApp";
@@ -11,6 +12,7 @@ export default function RiderAppCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="rider-app" />
       <Navbar />
       <main>
         <CaseStudyRiderApp project={project} />

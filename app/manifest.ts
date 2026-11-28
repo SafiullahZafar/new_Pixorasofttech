@@ -2,14 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "PIXORASOFTTECH",
-    short_name: "PIXORA",
+    name: "PixoraSoftTech",
+    short_name: "Pixora",
     description:
       "Premium software, web & mobile development solutions by PixoraSoftTech.",
     start_url: "/",
     display: "standalone",
     background_color: "#030014",
-    theme_color: "#8b5cf6",
+    theme_color: "#0A2540",
     orientation: "portrait",
     categories: ["business", "productivity", "technology"],
     lang: "en",
@@ -20,8 +20,8 @@ export default function manifest(): MetadataRoute.Manifest {
         type: "image/png",
       },
       {
-        src: "/icon-96.png",
-        sizes: "96x96",
+        src: "/icon-512.png",
+        sizes: "512x512",
         type: "image/png",
       },
     ],

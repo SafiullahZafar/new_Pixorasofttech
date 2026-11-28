@@ -1,4 +1,5 @@
 import { getCaseStudyMetadata } from "@/lib/case-study-metadata";
+import CaseStudyStructuredData from "@/components/seo/CaseStudyStructuredData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyVeloura from "@/components/case-study/veloura_app/CaseStudyVeloura";
@@ -11,6 +12,7 @@ export default function VelouraCaseStudyPage() {
 
   return (
     <>
+      <CaseStudyStructuredData slug="veloura" />
       <Navbar />
       <main>
         <CaseStudyVeloura project={project} />

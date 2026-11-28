@@ -31,28 +31,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: siteTitle,
-    template: "%s | PIXORASOFTTECH",
+    template: "%s | PixoraSoftTech",
   },
   description: siteDescription,
-  keywords: [
-    "software development company",
-    "web development",
-    "mobile app development",
-    "custom software solutions",
-    "UI/UX design",
-    "cloud services",
-    "React development",
-    "Next.js development",
-    "PixoraSoftTech",
-    "Pakistan software company",
-    "enterprise software",
-    "full stack development",
-  ],
   authors: [{ name: "PixoraSoftTech", url: siteUrl }],
   creator: "PixoraSoftTech",
   publisher: "PixoraSoftTech",
   category: "technology",
-  applicationName: "PIXORASOFTTECH",
+  applicationName: "PixoraSoftTech",
   referrer: "origin-when-cross-origin",
   robots: {
     index: true,
@@ -70,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "PIXORASOFTTECH",
+    siteName: "PixoraSoftTech",
     title: siteTitle,
     description: siteDescription,
     images: [
@@ -78,7 +64,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "PIXORASOFTTECH - Premium Software & Web Development",
+        alt: "PixoraSoftTech - Premium Software & Web Development",
         type: "image/png",
       },
     ],
@@ -93,9 +79,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/icon.png", type: "image/png", sizes: "1024x1024" },
       { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
-      { url: "/icon-96.png", type: "image/png", sizes: "96x96" },
-      { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
     ],
     shortcut: "/icon-192.png",
     apple: "/icon-192.png",
@@ -113,7 +99,7 @@ export const viewport: Viewport = {
   maximumScale: 5,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)",  color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0A2540" },
   ],
 };
 
@@ -148,7 +134,6 @@ const jsonLd = {
       sameAs: [
         "https://twitter.com/pixorasofttech",
         "https://www.linkedin.com/company/pixorasofttech",
-        "https://github.com/pixorasofttech",
         "https://www.instagram.com/pixorasofttech",
       ],
       foundingDate: "2024",
@@ -158,7 +143,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "PIXORASOFTTECH",
+      name: "PixoraSoftTech",
       description: siteDescription,
       publisher: { "@id": `${siteUrl}/#organization` },
       inLanguage: "en-US",

@@ -18,6 +18,16 @@ export const metadata: Metadata = {
     title: "Contact PixoraSoftTech | Start a Project",
     description:
       "Contact PixoraSoftTech by email or WhatsApp to discuss a website, mobile app, or business software project.",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@pixorasofttech",
+    creator: "@pixorasofttech",
+    title: "Contact PixoraSoftTech | Start a Project",
+    description:
+      "Contact PixoraSoftTech by email or WhatsApp to discuss a website, mobile app, or business software project.",
+    images: ["/opengraph-image"],
   },
 };
 

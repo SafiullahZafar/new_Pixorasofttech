@@ -11,6 +11,9 @@ import MobileAppDevelopmentService from "@/components/services/MobileAppDevelopm
 import UIUXService from "@/components/services/UIUXService";
 import CloudAISolutionsService from "@/components/services/CloudAISolutionsService";
 import { getServiceDetail, serviceDetails } from "@/lib/service-details";
+import JsonLd from "@/components/seo/JsonLd";
+
+const siteUrl = "https://pixorasofttech.com";
 
 export function generateStaticParams() {
   return serviceDetails.map((service) => ({ slug: service.slug }));
@@ -27,12 +30,26 @@ export async function generateMetadata({
 
   const title = service.title;
   const description = service.intro;
-  const canonical = `https://pixorasofttech.com/services/${service.slug}`;
+  const canonical = `${siteUrl}/services/${service.slug}`;
   return {
     title,
     description,
     alternates: { canonical },
-    openGraph: { type: "website", url: canonical, title, description },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+      images: ["/opengraph-image"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@pixorasofttech",
+      creator: "@pixorasofttech",
+      title,
+      description,
+      images: ["/opengraph-image"],
+    },
   };
 }
 
@@ -56,8 +73,48 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               ? <CloudAISolutionsService service={service} />
               : <ServiceDetail service={service} />;
 
+  const canonical = `${siteUrl}/services/${service.slug}`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${canonical}#service`,
+        name: service.title,
+        serviceType: service.title,
+        description: service.intro,
+        url: canonical,
+        provider: { "@id": `${siteUrl}/#organization` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: `${siteUrl}/services`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: service.title,
+            item: canonical,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={structuredData} />
       <ServicePagesAnimation className="fixed inset-0 z-0 h-screen w-full pointer-events-none" />
       <Navbar />
       <div className="relative z-10">
