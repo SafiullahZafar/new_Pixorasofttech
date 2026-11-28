@@ -8,6 +8,23 @@ export const metadata: Metadata = {
   description:
     "Practical notes on planning business software, choosing a technology stack, and preparing a digital product for launch.",
   alternates: { canonical: "https://pixorasofttech.com/insights" },
+  openGraph: {
+    type: "website",
+    url: "https://pixorasofttech.com/insights",
+    title: "Product Engineering Insights | PixoraSoftTech",
+    description:
+      "Practical notes on planning business software, choosing a technology stack, and preparing a digital product for launch.",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@pixorasofttech",
+    creator: "@pixorasofttech",
+    title: "Product Engineering Insights | PixoraSoftTech",
+    description:
+      "Practical notes on planning business software, choosing a technology stack, and preparing a digital product for launch.",
+    images: ["/opengraph-image"],
+  },
 };
 
 const insights = [

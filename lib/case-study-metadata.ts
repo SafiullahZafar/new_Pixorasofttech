@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { projects } from "@/lib/projects";
+import { excludedProjectIds, projects } from "@/lib/projects";
 
 const projectIdBySlug: Record<string, string> = {
   "brew-haven": "brew-haven",
@@ -56,5 +56,8 @@ export function getCaseStudyMetadata(slug: string): Metadata {
       description,
       images: [image.url],
     },
+    ...(excludedProjectIds.has(project.id)
+      ? { robots: { index: false, follow: true } }
+      : {}),
   };
 }

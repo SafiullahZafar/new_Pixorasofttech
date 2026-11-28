@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "PIXORASOFTTECH - Premium Software & Web Development",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     creator: "@pixorasofttech",
     title: siteTitle,
     description: siteDescription,
-    images: ["/og-image.png"],
+    images: ["/opengraph-image"],
   },
   icons: {
     icon: [

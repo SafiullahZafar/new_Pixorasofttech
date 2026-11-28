@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Projects | PixoraSoftTech",
     description:
       "Explore selected web, mobile, and software projects built with PixoraSoftTech for businesses and product teams.",
-    images: ["/og-image.png"],
+    images: ["/opengraph-image"],
   },
 };
 

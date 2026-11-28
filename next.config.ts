@@ -1,4 +1,22 @@
 import type { NextConfig } from "next";
+import { projectCaseStudyRoutes } from "./lib/projects";
+
+const legacyProjectCaseStudyRedirects: Record<string, string> = {
+  "brew-heaven": "/case-study/brew-haven",
+  "delivery-dashboard": "/case-study/delivery-dashboard",
+  supplier: "/case-study/supplier",
+  salon: "/case-study/salon",
+  "textile-erp": "/case-study/textile-erp",
+  "fitplus-app": "/case-study/fitplus-app",
+  "shopease-ecommerce": "/case-study/shopease-ecommerce",
+  "catering-app": "/case-study/catering-app",
+  "supplier-wholesale-app": "/case-study/supplier-wholesale-app",
+};
+
+const projectRedirects = {
+  ...legacyProjectCaseStudyRedirects,
+  ...projectCaseStudyRoutes,
+};
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -78,6 +96,66 @@ const nextConfig: NextConfig = {
       {
         source: "/portfolio/:id",
         destination: "/projects/:id",
+        permanent: true,
+      },
+      ...Object.entries(projectRedirects).map(([id, destination]) => ({
+        source: `/projects/${id}`,
+        destination,
+        permanent: true,
+      })),
+      {
+        source: "/catering-app",
+        destination: "/case-study/catering-app",
+        permanent: true,
+      },
+      {
+        source: "/eduka-college",
+        destination: "/case-study/eduka-college",
+        permanent: true,
+      },
+      {
+        source: "/glass-haven",
+        destination: "/case-study/glass-haven",
+        permanent: true,
+      },
+      {
+        source: "/goody-supplies",
+        destination: "/case-study/goody-supplies",
+        permanent: true,
+      },
+      {
+        source: "/solar-solutions",
+        destination: "/case-study/solar-solutions",
+        permanent: true,
+      },
+      {
+        source: "/state-college",
+        destination: "/case-study/state-college",
+        permanent: true,
+      },
+      {
+        source: "/supplier-wholesale-app",
+        destination: "/case-study/supplier-wholesale-app",
+        permanent: true,
+      },
+      {
+        source: "/travel-hotel-hub",
+        destination: "/case-study/travel-hotel-hub",
+        permanent: true,
+      },
+      {
+        source: "/zostel",
+        destination: "/case-study/zostel",
+        permanent: true,
+      },
+      {
+        source: "/case-study/brew-heaven",
+        destination: "/case-study/brew-haven",
+        permanent: true,
+      },
+      {
+        source: "/case-study/inventory",
+        destination: "/case-study/rms",
         permanent: true,
       },
     ];

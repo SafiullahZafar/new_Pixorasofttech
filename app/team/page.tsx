@@ -16,6 +16,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://pixorasofttech.com/team",
   },
+  openGraph: {
+    type: "website",
+    url: "https://pixorasofttech.com/team",
+    title: "Team & Technology | PixoraSoftTech",
+    description:
+      "Meet the approach and technology behind PixoraSoftTech: strategy, product engineering, and scalable digital systems built for growth.",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@pixorasofttech",
+    creator: "@pixorasofttech",
+    title: "Team & Technology | PixoraSoftTech",
+    description:
+      "Meet the approach and technology behind PixoraSoftTech: strategy, product engineering, and scalable digital systems built for growth.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function TeamPage() {
