@@ -172,6 +172,8 @@ const caseStudyNavVariants: Variants = {
   },
 };
 
+const desktopNavMediaQuery = "(min-width: 80rem)";
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -187,6 +189,36 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileOpen]);
+
+  useEffect(() => {
+    const desktopNav = window.matchMedia(desktopNavMediaQuery);
+    const handleBreakpointChange = () => {
+      const atTop = window.scrollY < 75;
+      setIsAtTop(atTop);
+      setExpanded(atTop || !desktopNav.matches);
+      if (desktopNav.matches) setMobileOpen(false);
+    };
+
+    desktopNav.addEventListener("change", handleBreakpointChange);
+    return () => desktopNav.removeEventListener("change", handleBreakpointChange);
+  }, []);
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     const atTop = latest < 75;
     setIsAtTop(atTop);
@@ -195,7 +227,7 @@ export default function Navbar() {
       setExpanded(true);
     } else {
       if (!mobileOpen) {
-        setExpanded(false);
+        setExpanded(!window.matchMedia(desktopNavMediaQuery).matches);
       }
     }
   });
@@ -211,6 +243,7 @@ export default function Navbar() {
   const navState = isAtTop ? "top" : isExpanded ? "expanded" : "collapsed";
 
   return (
+    <>
     <header
       className={cn(
         "fixed left-0 right-0 w-full z-[60] pointer-events-none flex justify-center",
@@ -438,7 +471,7 @@ export default function Navbar() {
           </nav>
 
           {/* Action Button & Mobile toggle */}
-          <div className="flex items-center gap-2.5">
+          <div className="ml-auto flex items-center gap-2.5">
             <Link
               href="/contact"
               className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0A2540] text-white text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 shadow-md hover:shadow-lg hover:bg-[#143960] active:scale-95"
@@ -454,6 +487,8 @@ export default function Navbar() {
               }}
               className="xl:hidden p-2 text-slate-800 hover:text-black hover:bg-black/5 rounded-full transition-colors cursor-pointer"
               aria-label="Toggle Navigation"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation-drawer"
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -478,85 +513,132 @@ export default function Navbar() {
           </motion.div>
         )}
 
-        {/* Mobile Drawer Menu Attached Below Nav */}
-        <AnimatePresence>
-          {isExpanded && mobileOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.98 }}
-              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              onClick={(e) => e.stopPropagation()}
-              className="xl:hidden absolute top-full left-0 right-0 mt-3 bg-white/95 backdrop-blur-2xl border border-slate-200/90 rounded-3xl p-5 shadow-2xl overflow-y-auto max-h-[80vh]"
-            >
-              <div className="flex flex-col gap-2">
+      </motion.nav>
+    </header>
+    <AnimatePresence>
+      {mobileOpen && isExpanded && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 z-[70] xl:hidden"
+        >
+          <button
+            type="button"
+            aria-label="Close navigation"
+            onClick={() => setMobileOpen(false)}
+            className="absolute inset-0 h-full w-full bg-slate-950/30 backdrop-blur-md"
+          />
+          <motion.aside
+            id="mobile-navigation-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site navigation"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-y-0 right-0 flex h-dvh w-[88vw] max-w-sm flex-col border-l border-slate-200 bg-white shadow-2xl"
+          >
+            <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+              <Link
+                href="/"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2.5"
+              >
+                <img
+                  src="/pixora-monogram.png"
+                  alt=""
+                  width={160}
+                  height={160}
+                  className="h-8 w-auto object-contain brightness-0"
+                />
+                <span className="text-base font-bold tracking-tight text-black">
+                  Pixora<span className="font-medium text-zinc-500">SoftTech</span>
+                </span>
+              </Link>
+              <button
+                type="button"
+                onClick={() => setMobileOpen(false)}
+                aria-label="Close navigation"
+                className="rounded-full p-2 text-slate-700 transition-colors hover:bg-slate-100 hover:text-black"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-4">
+              <div className="flex flex-col gap-1">
                 <Link
                   href="/"
-                  className="px-4 py-2.5 rounded-xl text-base font-semibold text-slate-950 hover:bg-black/5"
+                  className="rounded-xl px-4 py-2.5 text-base font-semibold text-slate-950 hover:bg-black/5"
                   onClick={() => setMobileOpen(false)}
                 >
                   Home
                 </Link>
                 <Link
                   href="/about"
-                  className="px-4 py-2.5 rounded-xl text-base font-semibold text-slate-950 hover:bg-black/5"
+                  className="rounded-xl px-4 py-2.5 text-base font-semibold text-slate-950 hover:bg-black/5"
                   onClick={() => setMobileOpen(false)}
                 >
                   About
                 </Link>
 
-                {/* Mobile Services Accordion */}
                 <div>
                   <button
                     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    className="flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-base font-semibold text-slate-950 hover:bg-black/5 cursor-pointer"
+                    aria-expanded={mobileServicesOpen}
+                    className="flex w-full items-center justify-between rounded-xl px-4 py-2.5 text-base font-semibold text-slate-950 hover:bg-black/5"
                   >
                     <span>Services</span>
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""
-                        }`}
+                      className={`h-4 w-4 transition-transform duration-200 ${
+                        mobileServicesOpen ? "rotate-180" : ""
+                      }`}
                     />
                   </button>
                   {mobileServicesOpen && (
-                    <div className="pl-4 pr-2 py-1.5 flex flex-col gap-1 border-l-2 border-[#0A2540]/30 ml-3 mt-1">
-                      {serviceItems.map((s) => (
+                    <div className="ml-3 mt-1 flex flex-col gap-1 border-l-2 border-[#0A2540]/30 py-1.5 pl-4 pr-2">
+                      {serviceItems.map((service) => (
                         <Link
-                          key={s.title}
-                          href={s.href}
+                          key={service.title}
+                          href={service.href}
                           onClick={() => setMobileOpen(false)}
-                          className="py-1.5 text-sm text-slate-700 hover:text-black font-semibold"
+                          className="py-1.5 text-sm font-semibold text-slate-700 hover:text-black"
                         >
-                          {s.title}
+                          {service.title}
                         </Link>
                       ))}
                     </div>
                   )}
                 </div>
 
-                {/* Mobile Case Studies Accordion */}
                 <div>
                   <button
                     onClick={() => setMobileCaseOpen(!mobileCaseOpen)}
-                    className="flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-base font-semibold text-slate-950 hover:bg-black/5 cursor-pointer"
+                    aria-expanded={mobileCaseOpen}
+                    className="flex w-full items-center justify-between rounded-xl px-4 py-2.5 text-base font-semibold text-slate-950 hover:bg-black/5"
                   >
                     <span>Case Studies</span>
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${mobileCaseOpen ? "rotate-180" : ""
-                        }`}
+                      className={`h-4 w-4 transition-transform duration-200 ${
+                        mobileCaseOpen ? "rotate-180" : ""
+                      }`}
                     />
                   </button>
                   {mobileCaseOpen && (
-                    <div className="pl-4 pr-2 py-1.5 flex flex-col gap-1 border-l-2 border-[#0A2540]/30 ml-3 mt-1 max-h-[340px] overflow-y-auto">
-                      {[...caseStudiesCol1, ...caseStudiesCol2, ...caseStudiesCol3].map((c) => (
+                    <div className="ml-3 mt-1 flex max-h-[340px] flex-col gap-1 overflow-y-auto border-l-2 border-[#0A2540]/30 py-1.5 pl-4 pr-2">
+                      {[...caseStudiesCol1, ...caseStudiesCol2, ...caseStudiesCol3].map((caseStudy) => (
                         <Link
-                          key={c.title}
-                          href={c.href}
+                          key={caseStudy.title}
+                          href={caseStudy.href}
                           onClick={() => setMobileOpen(false)}
-                          className="py-1.5 text-sm text-slate-700 hover:text-black font-semibold flex items-center justify-between"
+                          className="flex items-center justify-between py-1.5 text-sm font-semibold text-slate-700 hover:text-black"
                         >
-                          <span>{c.title}</span>
-                          {c.isNew && (
-                            <span className="text-[9px] font-bold text-blue-600 bg-blue-50 border border-blue-200/60 px-1.5 py-0.2 rounded-full uppercase tracking-wider shrink-0">
+                          <span>{caseStudy.title}</span>
+                          {caseStudy.isNew && (
+                            <span className="shrink-0 rounded-full border border-blue-200/60 bg-blue-50 px-1.5 py-0.2 text-[9px] font-bold uppercase tracking-wider text-blue-600">
                               New
                             </span>
                           )}
@@ -568,36 +650,36 @@ export default function Navbar() {
 
                 <Link
                   href="/projects"
-                  className="px-4 py-2.5 rounded-xl text-base font-semibold text-slate-950 hover:bg-black/5"
+                  className="rounded-xl px-4 py-2.5 text-base font-semibold text-slate-950 hover:bg-black/5"
                   onClick={() => setMobileOpen(false)}
                 >
                   Projects
                 </Link>
-
                 <Link
                   href="/team"
                   onClick={() => setMobileOpen(false)}
-                  className="px-4 py-2.5 rounded-xl text-base font-semibold text-slate-950 hover:bg-black/5"
+                  className="rounded-xl px-4 py-2.5 text-base font-semibold text-slate-950 hover:bg-black/5"
                 >
                   Team & Tech
                 </Link>
 
-                <div className="pt-3 mt-1 border-t border-slate-200">
+                <div className="mt-1 border-t border-slate-200 pt-3">
                   <Link
                     href="/contact"
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#0A2540] text-white text-sm font-semibold tracking-wider uppercase shadow-md active:scale-95 transition-transform"
+                    className="flex w-full items-center justify-center gap-2 rounded-full bg-[#0A2540] py-3 text-sm font-semibold uppercase tracking-wider text-white shadow-md transition-transform active:scale-95"
                   >
                     <span>Get Started</span>
-                    <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+                    <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
                   </Link>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.nav>
-    </header>
+            </div>
+          </motion.aside>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   );
 }
 
