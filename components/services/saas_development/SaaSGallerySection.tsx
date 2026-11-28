@@ -12,7 +12,7 @@ const GALLERY_IMAGES = [
   { src: "/case_studies/textile_erp_soft/textile_erp_hero_soft_01.png", alt: "SaaS image 6" },
   { src: "/case_studies/textile_erp_soft/textile_erp_work_soft_01.webp", alt: "SaaS image 7" },
   { src: "/service/saas_dev/about_serv/saas_about_service_8.png", alt: "SaaS image 8" },
-  { src: "/about_page/saas_cus/PeopleFlow Job Openings Phone Mockup.png", alt: "SaaS image 9" },
+  { src: "/about_page/saas_cus/peopleflow-job-openings-phone-mockup.png", alt: "SaaS image 9" },
   { src: "/case_studies/state_college_web/state_college_about_web_03.png", alt: "SaaS image 10" },
   { src: "/service/saas_dev/about_serv/saas_about_service_11.png", alt: "SaaS image 11" },
   { src: "/service/saas_dev/about_serv/saas_about_service_12.png", alt: "SaaS image 12" },

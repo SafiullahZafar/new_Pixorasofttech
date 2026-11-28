@@ -1,35 +1,8 @@
 import type { Metadata } from "next";
-import { excludedProjectIds, projects } from "@/lib/projects";
-
-const projectIdBySlug: Record<string, string> = {
-  "brew-haven": "brew-haven",
-  "catering-app": "catering-app",
-  crm: "crm",
-  "delivery-dashboard": "dom",
-  "eduka-college": "eduka-college",
-  "fitplus-app": "fitplus-app",
-  "glass-haven": "glass-haven",
-  "goody-supplies": "goody-supplies",
-  hrms: "hrms",
-  inventory: "inventory",
-  rms: "inventory",
-  "kb-exports": "kb-exports",
-  messenger: "messenger",
-  "rider-app": "rider-app",
-  salon: "salon-pos",
-  "shopease-ecommerce": "shopease-ecommerce",
-  "solar-solutions": "solar-solutions",
-  "state-college": "state-college",
-  supplier: "supplier",
-  "supplier-wholesale-app": "supplier-wholesale-app",
-  "textile-erp": "lms",
-  "travel-hotel-hub": "travel-hotel-hub",
-  veloura: "veloura",
-  zostel: "zostel",
-};
+import { projects } from "@/lib/projects";
 
 export function getCaseStudyProject(slug: string) {
-  return projects.find((item) => item.id === projectIdBySlug[slug]);
+  return projects.find((project) => project.caseStudySlug === slug);
 }
 
 export function getCaseStudyMetadata(slug: string): Metadata {
@@ -60,8 +33,5 @@ export function getCaseStudyMetadata(slug: string): Metadata {
       description,
       images: [image.url],
     },
-    ...(excludedProjectIds.has(project.id)
-      ? { robots: { index: false, follow: true } }
-      : {}),
   };
 }

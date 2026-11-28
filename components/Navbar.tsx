@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent, type Variants, type Transition } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { excludedProjectIds, projects } from "@/lib/projects";
+import { projects } from "@/lib/projects";
 
 const serviceItems = [
   {
@@ -87,7 +87,7 @@ const caseStudiesCol3: CaseStudyNavItem[] = [
   { title: "Veloura Salon App", href: "/case-study/veloura" },
 ];
 
-const projectCount = projects.filter((project) => !excludedProjectIds.has(project.id)).length;
+const projectCount = projects.length;
 const caseStudyCount = caseStudiesCol1.length + caseStudiesCol2.length + caseStudiesCol3.length;
 
 // Luxury smooth easing curve (natural deceleration over 0.65s)

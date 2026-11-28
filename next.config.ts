@@ -1,22 +1,14 @@
 import type { NextConfig } from "next";
-import { projectCaseStudyRoutes } from "./lib/projects";
+import { projects } from "./lib/projects";
 
-const legacyProjectCaseStudyRedirects: Record<string, string> = {
-  "brew-heaven": "/case-study/brew-haven",
-  "delivery-dashboard": "/case-study/delivery-dashboard",
-  supplier: "/case-study/supplier",
-  salon: "/case-study/salon",
-  "textile-erp": "/case-study/textile-erp",
-  "fitplus-app": "/case-study/fitplus-app",
-  "shopease-ecommerce": "/case-study/shopease-ecommerce",
-  "catering-app": "/case-study/catering-app",
-  "supplier-wholesale-app": "/case-study/supplier-wholesale-app",
-};
-
-const projectRedirects = {
-  ...legacyProjectCaseStudyRedirects,
-  ...projectCaseStudyRoutes,
-};
+const projectRedirects = projects.reduce<Record<string, string>>((routes, project) => {
+  const destination = `/case-study/${project.caseStudySlug}`;
+  routes[project.id] = destination;
+  for (const legacyId of project.legacyIds ?? []) {
+    routes[legacyId] = destination;
+  }
+  return routes;
+}, {});
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -160,9 +152,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-
-  /* ── Dev network origins (allows LAN IP HMR WebSocket) ── */
-  allowedDevOrigins: ["192.168.1.10"],
 
   /* ── Experimental performance ── */
   experimental: {

@@ -12,11 +12,11 @@ const GALLERY_IMAGES = [
   { src: "/case_studies/kb_exports_web/kb_exports_about_web_02.png", alt: "Web development image 6" },
   { src: "/case_studies/kb_exports_web/kb_exports_work_web_02.png", alt: "Web development image 7" },
   { src: "/case_studies/travel_hotel_web/travel_hotel_hero_web_01.png", alt: "Web development image 8" },
-  { src: "/about_page/web_dev/Nomad Travel Website Tablet Mockup.png", alt: "Web development image 9" },
-  { src: "/about_page/web_dev/SolarSolutions Tablet on Velvet Chair.png", alt: "Web development image 10" },
+  { src: "/about_page/web_dev/nomad-travel-website-tablet-mockup.png", alt: "Web development image 9" },
+  { src: "/about_page/web_dev/solarsolutions-tablet-on-velvet-chair.png", alt: "Web development image 10" },
   { src: "/case_studies/state_college_web/state_college_work_web_02.png", alt: "Web development image 11" },
   { src: "/case_studies/state_college_web/state_college_work_web_01_updated.png", alt: "Web development image 12" },
-  { src: "/about_page/web_dev/Zostel Website Laptop Mockup.png", alt: "Web development image 13" },
+  { src: "/about_page/web_dev/zostel-website-laptop-mockup.png", alt: "Web development image 13" },
 ];
 
 const IMAGE_COLUMNS = Array.from({ length: 6 }, (_, columnIndex) =>

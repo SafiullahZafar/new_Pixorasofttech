@@ -6,10 +6,10 @@ import { motion, useReducedMotion } from "framer-motion";
 const GALLERY_IMAGES = [
   { src: "/home_page/our_expertise/ourexpertise5.png", alt: "A person connects a cloud service to messaging, video, storage, and other digital tools." },
   { src: "/service/cloud_ai/about_serv/cloud_ai_about_service_2.png", alt: "Cloud and AI infrastructure diagram showing computing, data, security, and scalable services." },
-  { src: "/about_page/cloud_ai/Futuristic Cloud Network Interface.png", alt: "Cloud network illustration linking servers with security, data, and connected devices." },
-  { src: "/about_page/cloud_ai/Futuristic Cloud Network Interface.png", alt: "Cloud network illustration linking servers with security, data, and connected devices." },
-  { src: "/about_page/cloud_ai/Neon Cloud Network Over City.png", alt: "Blue cloud network graphic above a nighttime city skyline." },
-  { src: "/about_page/cloud_ai/Touching the Cloud Network.png", alt: "A person interacts with a cloud network connected to communication and storage tools." },
+  { src: "/about_page/cloud_ai/futuristic-cloud-network-interface.png", alt: "Cloud network illustration linking servers with security, data, and connected devices." },
+  { src: "/about_page/cloud_ai/futuristic-cloud-network-interface.png", alt: "Cloud network illustration linking servers with security, data, and connected devices." },
+  { src: "/about_page/cloud_ai/neon-cloud-network-over-city.png", alt: "Blue cloud network graphic above a nighttime city skyline." },
+  { src: "/about_page/cloud_ai/touching-the-cloud-network.png", alt: "A person interacts with a cloud network connected to communication and storage tools." },
 ];
 
 const IMAGE_COLUMNS = Array.from({ length: 6 }, (_, columnIndex) =>

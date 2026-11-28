@@ -1,5 +1,7 @@
 export type Project = {
   id: string;
+  caseStudySlug: string;
+  legacyIds?: string[];
   title: string;
   category: "Websites" | "Mobile Apps" | "Software";
   desc: string;
@@ -20,36 +22,12 @@ export type Project = {
   results: string[];
 };
 
-export const excludedProjectIds = new Set(["supplier", "fitplus-app", "shopease-ecommerce"]);
-
-// IDs with dedicated case-study pages use one canonical URL throughout the site.
-export const projectCaseStudyRoutes: Record<string, string> = {
-  "brew-haven": "/case-study/brew-haven",
-  "kb-exports": "/case-study/kb-exports",
-  "eduka-college": "/case-study/eduka-college",
-  "glass-haven": "/case-study/glass-haven",
-  "solar-solutions": "/case-study/solar-solutions",
-  "state-college": "/case-study/state-college",
-  zostel: "/case-study/zostel",
-  "travel-hotel-hub": "/case-study/travel-hotel-hub",
-  "goody-supplies": "/case-study/goody-supplies",
-  "rider-app": "/case-study/rider-app",
-  veloura: "/case-study/veloura",
-  hrms: "/case-study/hrms",
-  messenger: "/case-study/messenger",
-  inventory: "/case-study/rms",
-  "salon-pos": "/case-study/salon",
-  crm: "/case-study/crm",
-  dom: "/case-study/delivery-dashboard",
-  lms: "/case-study/textile-erp",
-  "catering-app": "/case-study/catering-app",
-  "supplier-wholesale-app": "/case-study/supplier-wholesale-app",
-};
-
 export const projects: Project[] = [
   // ── WEBSITES ──
   {
     id: "brew-haven",
+    caseStudySlug: "brew-haven",
+    legacyIds: ["brew-heaven"],
     title: "Brew Haven",
     category: "Websites",
     tagline: "Artisanal Coffee & Gourmet Digital Brand Experience",
@@ -81,6 +59,7 @@ export const projects: Project[] = [
   },
   {
     id: "kb-exports",
+    caseStudySlug: "kb-exports",
     title: "K.B. Exports",
     category: "Websites",
     tagline: "Global B2B Textile Export & Trade Platform",
@@ -112,6 +91,7 @@ export const projects: Project[] = [
   },
   {
     id: "eduka-college",
+    caseStudySlug: "eduka-college",
     title: "Eduka College",
     category: "Websites",
     tagline: "Modern Academic Portal & Student Enrollment Hub",
@@ -143,6 +123,7 @@ export const projects: Project[] = [
   },
   {
     id: "glass-haven",
+    caseStudySlug: "glass-haven",
     title: "Glass Haven",
     category: "Websites",
     tagline: "Luxury Real Estate Showcase & Private Tour Platform",
@@ -174,6 +155,7 @@ export const projects: Project[] = [
   },
   {
     id: "solar-solutions",
+    caseStudySlug: "solar-solutions",
     title: "Solar Solutions",
     category: "Websites",
     tagline: "Clean Energy Transition & Commercial Solar Platform",
@@ -205,6 +187,7 @@ export const projects: Project[] = [
   },
   {
     id: "state-college",
+    caseStudySlug: "state-college",
     title: "State College",
     category: "Websites",
     tagline: "University Digital Campus & Resource Infrastructure",
@@ -236,6 +219,7 @@ export const projects: Project[] = [
   },
   {
     id: "zostel",
+    caseStudySlug: "zostel",
     title: "Zostel",
     category: "Websites",
     tagline: "Youth Hostel Booking & Backpacker Travel Community",
@@ -267,6 +251,7 @@ export const projects: Project[] = [
   },
   {
     id: "travel-hotel-hub",
+    caseStudySlug: "travel-hotel-hub",
     title: "Travel Hotel Hub",
     category: "Websites",
     tagline: "Curated Destination Travel & Boutique Hotel Engine",
@@ -297,38 +282,8 @@ export const projects: Project[] = [
     results: []
   },
   {
-    id: "supplier",
-    title: "Supplier Wholesale",
-    category: "Websites",
-    tagline: "B2B Wholesale Food Distribution & Ordering Portal",
-    desc: "A streamlined B2B ordering platform for commercial kitchens, restaurants, and cafes to manage weekly recurring food supplies.",
-    overview: "Supplier Wholesale delivers fresh produce and pantry goods to hundreds of food venues. PixoraSoftTech developed an enterprise-grade B2B web application focused on rapid re-ordering, bulk tier pricing, and delivery scheduling.",
-    tags: ["Next.js", "Wholesale Food", "B2B Portal", "Bulk Pricing"],
-    client: "Supplier Wholesale Foods",
-    industry: "Food Supply & B2B Distribution",
-    timeline: "5 weeks",
-    deliverables: [
-      "B2B Wholesale Ordering Web App",
-      "Commercial Client Account Portal",
-      "Bulk Inventory Sync System",
-      "Delivery Schedule Manager"
-    ],
-    img: "/portfolio/supplier.png",
-    heroImg: "/portfolio/supplier.png",
-    liveUrl: "https://supplier-by-pixorasofttech.vercel.app/",
-    status: "live",
-    challenge: "Restaurant managers spent excessive time placing orders over phone calls and messaging channels late at night, leading to stock discrepancies and manual administrative errors.",
-    solution: "We built a customized B2B web portal featuring standing weekly order templates, live inventory availability, credit account status management, and automated delivery date selection.",
-    keyFeatures: [
-      "Standing Weekly Order & Quick Re-order Templates",
-      "Tiered Bulk Quantity Pricing & Discount Calculator",
-      "Real-Time Inventory Stock Level Display",
-      "Automated Delivery Window & Logistics Routing"
-    ],
-    results: []
-  },
-  {
     id: "goody-supplies",
+    caseStudySlug: "goody-supplies",
     title: "Goody Supplies",
     category: "Websites",
     tagline: "Gourmet Catering & Corporate Event Food Service",
@@ -362,6 +317,7 @@ export const projects: Project[] = [
   // ── MOBILE APPS ──
   {
     id: "rider-app",
+    caseStudySlug: "rider-app",
     title: "Driven Mobility App",
     category: "Mobile Apps",
     tagline: "Next-Gen On-Demand Urban Mobility & Driver Fleet App",
@@ -392,6 +348,7 @@ export const projects: Project[] = [
   },
   {
     id: "veloura",
+    caseStudySlug: "veloura",
     title: "Veloura Salon App",
     category: "Mobile Apps",
     tagline: "Salon discovery, appointment booking, and client care in one app",
@@ -421,67 +378,8 @@ export const projects: Project[] = [
     results: []
   },
   {
-    id: "fitplus-app",
-    title: "FitPlus Fitness App",
-    category: "Mobile Apps",
-    tagline: "Personal Training, Progress Tracking & Everyday Wellness",
-    desc: "A fitness companion app that brings guided workouts, personalized plans, activity tracking, and progress insights into one motivating mobile experience.",
-    overview: "FitPlus helps people build consistent, sustainable fitness habits with guided workout programs, clear activity summaries, and progress tracking. PixoraSoftTech shaped a mobile experience that makes it easier to find a plan, stay on track, and see how daily effort adds up.",
-    tags: ["React Native", "Fitness", "Workout Plans", "Activity Tracking", "Wellness"],
-    client: "FitPlus Wellness",
-    industry: "Fitness & Digital Wellness",
-    timeline: "Completed & Live",
-    deliverables: [
-      "Cross-Platform Fitness Mobile App",
-      "Guided Workout Plans & Exercise Library",
-      "Activity, Goal & Progress Tracking",
-      "Personalized Fitness Dashboard"
-    ],
-    img: "/portfolio/fitpulse-app.png",
-    heroImg: "/portfolio/fitpulse-app.png",
-    status: "processing",
-    challenge: "People often lose momentum when workout plans feel generic and progress is hard to see. FitPlus needed to make it simple to choose a suitable routine, track activity, and stay motivated across busy schedules.",
-    solution: "We designed a mobile fitness companion that brings guided routines, exercise details, personal goals, and progress summaries into one clear flow. The experience helps users move from choosing a workout to recording activity and reviewing their consistency.",
-    keyFeatures: [
-      "Guided Workout Plans for Different Fitness Goals",
-      "Exercise Library with Clear Routine Details",
-      "Daily Activity, Goal & Progress Tracking",
-      "Personal Fitness Dashboard and History"
-    ],
-    results: []
-  },
-  {
-    id: "shopease-ecommerce",
-    title: "ShopEase E-Commerce App",
-    category: "Mobile Apps",
-    tagline: "A simpler way to discover, shop, and track every order",
-    desc: "A mobile commerce experience bringing product discovery, curated collections, secure checkout, and order tracking together in one storefront.",
-    overview: "ShopEase makes everyday shopping straightforward with a browsable product catalog, clear product details, a focused cart, and a reliable checkout flow. PixoraSoftTech designed the mobile commerce experience to help shoppers move naturally from discovery to delivery updates.",
-    tags: ["React Native", "Mobile Commerce", "E-Commerce", "Shopping Cart", "Order Tracking"],
-    client: "ShopEase Retail",
-    industry: "Retail & Mobile E-Commerce",
-    timeline: "Completed & Live",
-    deliverables: [
-      "Cross-Platform Mobile Shopping App",
-      "Product Catalog & Category Discovery",
-      "Shopping Cart & Secure Checkout Flow",
-      "Order History & Delivery Status Tracking"
-    ],
-    img: "/portfolio/shopease-app.png",
-    heroImg: "/portfolio/shopease-app.png",
-    status: "processing",
-    challenge: "Mobile shoppers needed a quicker way to find products and complete purchases. The shopping journey had to keep category browsing, product information, cart updates, and checkout clear on smaller screens.",
-    solution: "We created a mobile storefront with organized product discovery, detailed item views, a persistent cart, and a guided checkout flow. Order history and delivery updates help customers stay informed after placing an order.",
-    keyFeatures: [
-      "Product Catalog with Search and Category Browsing",
-      "Product Detail Pages with Image and Pricing Information",
-      "Shopping Cart with Quantity and Order Summary Controls",
-      "Secure Checkout, Order History, and Status Updates"
-    ],
-    results: []
-  },
-  {
     id: "catering-app",
+    caseStudySlug: "catering-app",
     title: "Catering & Event Food App",
     category: "Mobile Apps",
     tagline: "On-Demand Catering Discovery, Custom Menu Builder & Instant Event Quote App",
@@ -512,6 +410,7 @@ export const projects: Project[] = [
   },
   {
     id: "supplier-wholesale-app",
+    caseStudySlug: "supplier-wholesale-app",
     title: "Supplier Wholesale Mobile App",
     category: "Mobile Apps",
     tagline: "B2B Wholesale Food Ordering App for Restaurants, Cafes & Commercial Kitchens",
@@ -544,6 +443,7 @@ export const projects: Project[] = [
   // ── SOFTWARE ──
   {
     id: "hrms",
+    caseStudySlug: "hrms",
     title: "HRMS — Workforce Management System",
     category: "Software",
     tagline: "Staff records, attendance, schedules, and leave in one HR workspace",
@@ -575,6 +475,7 @@ export const projects: Project[] = [
   },
   {
     id: "messenger",
+    caseStudySlug: "messenger",
     title: "Messenger Software",
     category: "Software",
     tagline: "Social Media Publishing & Automation Platform",
@@ -605,6 +506,7 @@ export const projects: Project[] = [
   },
   {
     id: "inventory",
+    caseStudySlug: "rms",
     title: "RMS — Store & Inventory Manager",
     category: "Software",
     tagline: "Enterprise Multi-Store Inventory & Retail Management Software (RMS)",
@@ -637,6 +539,8 @@ export const projects: Project[] = [
   },
   {
     id: "salon-pos",
+    caseStudySlug: "salon",
+    legacyIds: ["salon"],
     title: "Aurelle Salon POS & Management System",
     category: "Software",
     tagline: "Integrated Salon Point-of-Sale, Appointment & Customer CRM System",
@@ -669,6 +573,7 @@ export const projects: Project[] = [
   },
   {
     id: "crm",
+    caseStudySlug: "crm",
     title: "CRM Sales System",
     category: "Software",
     tagline: "Visual Sales Pipeline & Automated Customer Growth Software",
@@ -699,6 +604,8 @@ export const projects: Project[] = [
   },
   {
     id: "dom",
+    caseStudySlug: "delivery-dashboard",
+    legacyIds: ["delivery-dashboard"],
     title: "Driven Fleet Operations & Admin Console",
     category: "Software",
     tagline: "Next-Gen Urban Mobility Operations, Driver Dispatch & Admin Management Console",
@@ -729,6 +636,8 @@ export const projects: Project[] = [
   },
   {
     id: "lms",
+    caseStudySlug: "textile-erp",
+    legacyIds: ["textile-erp"],
     title: "Textile ERP & Production System",
     category: "Software",
     tagline: "Enterprise Textile Manufacturing, Fabric ERP & Loom Management System",
@@ -759,3 +668,11 @@ export const projects: Project[] = [
     results: []
   }
 ];
+
+export const projectCaseStudyRoutes = projects.reduce<Record<string, string>>(
+  (routes, project) => {
+    routes[project.id] = `/case-study/${project.caseStudySlug}`;
+    return routes;
+  },
+  {},
+);

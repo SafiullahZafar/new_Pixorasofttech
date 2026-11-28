@@ -408,7 +408,7 @@ const featuredWorks: WorksWheelItem[] = [
   },
   {
     title: "CRM Sales System",
-    image: "/about_page/software_dev/Dark Tablet CRM Dashboard Mockup.png",
+    image: "/about_page/software_dev/dark-tablet-crm-dashboard-mockup.png",
     href: "/case-study/crm",
   },
   {
@@ -418,7 +418,7 @@ const featuredWorks: WorksWheelItem[] = [
   },
   {
     title: "K.B. Exports Global",
-    image: "/about_page/web_dev/Engineering Textile Solutions Laptop Mockup-1.png",
+    image: "/about_page/web_dev/engineering-textile-solutions-laptop-mockup-1.png",
     href: "/case-study/kb-exports",
   },
   {

@@ -77,7 +77,7 @@ export const servicesData: ServiceItem[] = [
     eyebrow: "Human-Centered Digital Interfaces That Drive Action",
     description:
       "Research-backed interface design and comprehensive design systems that turn complex software into clear, intuitive experiences.",
-    imageUrl: "/about_page/ui_ux/Sleek UI_UX Design Workspace.png?v=2",
+    imageUrl: "/about_page/ui_ux/sleek-ui-ux-design-workspace.png?v=2",
     tags: ["User Research", "Wireframes", "Design Systems", "Interactive Prototypes"],
   },
   {

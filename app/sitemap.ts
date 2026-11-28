@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { serviceDetails } from '@/lib/service-details';
-import { excludedProjectIds, projectCaseStudyRoutes, projects } from '@/lib/projects';
+import { projectCaseStudyRoutes, projects } from '@/lib/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://pixorasofttech.com';
@@ -71,7 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const caseStudyPages = projects.reduce<MetadataRoute.Sitemap>((pages, project) => {
     const route = projectCaseStudyRoutes[project.id];
-    if (excludedProjectIds.has(project.id) || !route) return pages;
+    if (!route) return pages;
 
     pages.push({
       url: `${baseUrl}${route}`,

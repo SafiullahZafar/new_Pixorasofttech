@@ -18,9 +18,9 @@ interface WorkProject {
 
 const WORKS_DATA: WorkProject[] = [
   { id: "1", title: "Travel Itinerary Experience", year: "2026", tags: ["Travel App", "Itinerary UX"], image: "/service/ui_ux/work_serv/ui_ux_work_service_1_updated.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
-  { id: "2", title: "ShopEase", year: "2026", tags: ["Mobile UX", "E-commerce UI"], image: "/about_page/ui_ux/PlanorTech Content Management Dashboard.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
+  { id: "2", title: "ShopEase", year: "2026", tags: ["Mobile UX", "E-commerce UI"], image: "/about_page/ui_ux/planortech-content-management-dashboard.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
   { id: "3", title: "UI/UX Design Workspace", year: "2026", tags: ["Product Design", "Design Systems"], image: "/service/ui_ux/work_serv/ui_ux_work_service_3_updated.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
-  { id: "4", title: "FitPulse", year: "2026", tags: ["Mobile Product", "Interaction Design"], image: "/about_page/ui_ux/Velours Salon Dashboard Showcase.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
+  { id: "4", title: "FitPulse", year: "2026", tags: ["Mobile Product", "Interaction Design"], image: "/about_page/ui_ux/velours-salon-dashboard-showcase.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
 ];
 
 export default function SelectedWorkSection() {

@@ -1,12 +1,12 @@
 import { getCaseStudyProject } from "@/lib/case-study-metadata";
-import { excludedProjectIds, projectCaseStudyRoutes } from "@/lib/projects";
+import { projectCaseStudyRoutes } from "@/lib/projects";
 import JsonLd from "./JsonLd";
 
 const siteUrl = "https://pixorasofttech.com";
 
 export default function CaseStudyStructuredData({ slug }: { slug: string }) {
   const project = getCaseStudyProject(slug);
-  if (!project || excludedProjectIds.has(project.id)) return null;
+  if (!project) return null;
 
   const route = projectCaseStudyRoutes[project.id];
   if (!route) return null;

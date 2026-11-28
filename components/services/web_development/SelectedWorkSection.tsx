@@ -18,7 +18,7 @@ interface WorkProject {
 
 const WORKS_DATA: WorkProject[] = [
   { id: "1", title: "Glass Haven", year: "2026", tags: ["Business Website", "Product Showcase"], image: "/service/web_dev/works_serv/web_development_work_service_1.png", bgColor: "bg-[#dce6e6]", href: "/projects" },
-  { id: "2", title: "Goody Supplies", year: "2026", tags: ["E-commerce", "Online Store"], image: "/about_page/web_dev/Engineering Textile Solutions Laptop Mockup-1.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
+  { id: "2", title: "Goody Supplies", year: "2026", tags: ["E-commerce", "Online Store"], image: "/about_page/web_dev/engineering-textile-solutions-laptop-mockup-1.png", bgColor: "bg-[#f4f4f6]", href: "/projects" },
   { id: "3", title: "Brew Haven", year: "2026", tags: ["Cafe Website", "Online Ordering"], image: "/case_studies/glass_haven_web/glass_haven_hero_web_01.png", bgColor: "bg-[#8ca8ee]/30", href: "/projects" },
   { id: "4", title: "Travel & Hotel Hub", year: "2026", tags: ["Booking Website", "Travel"], image: "/project/our_project/our_project_brew_haven_menu.png", bgColor: "bg-[#e8ebf4]", href: "/projects" },
 ];

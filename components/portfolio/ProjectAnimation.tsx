@@ -175,13 +175,13 @@ const galleryColumns = [
     { src: "/case_studies/eduka_college_web/eduka_college_about_web_02.png", title: "Eduka College" },
   ],
   [
-    { src: "/about_page/saas_cus/Driven Dashboard Tablet Mockup.png", title: "Driven Fleet Operations & Admin Console" },
+    { src: "/about_page/saas_cus/driven-dashboard-tablet-mockup.png", title: "Driven Fleet Operations & Admin Console" },
     { src: "/case_studies/zostel_web/zostel_hero_web_01_updated.png", title: "Zostel Travel & Hostels" },
-    { src: "/about_page/software_dev/Nexora CRM Tablet Activity Dashboard.png", title: "CRM Sales System" },
+    { src: "/about_page/software_dev/nexora-crm-tablet-activity-dashboard.png", title: "CRM Sales System" },
   ],
   [
-    { src: "/about_page/software_dev/Futuristic Textile ERP Dashboard Mockup.png", title: "Textile ERP & Production System" },
-    { src: "/about_page/web_dev/Engineering Textile Solutions Laptop Mockup-1.png", title: "K.B. Exports" },
+    { src: "/about_page/software_dev/futuristic-textile-erp-dashboard-mockup.png", title: "Textile ERP & Production System" },
+    { src: "/about_page/web_dev/engineering-textile-solutions-laptop-mockup-1.png", title: "K.B. Exports" },
     { src: "/home_page/our_projects/rms_store_inventory_manager.png", title: "RMS — Store & Inventory Manager" },
   ],
 ];

@@ -11,7 +11,7 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import Link from "next/link";
-import { excludedProjectIds, projectCaseStudyRoutes, projects, type Project } from "@/lib/projects";
+import { projectCaseStudyRoutes, projects, type Project } from "@/lib/projects";
 
 const categories = ["All", "Websites", "Mobile Apps", "Software"] as const;
 type Category = (typeof categories)[number];
@@ -25,7 +25,7 @@ const categoryColors: Record<string, string> = {
 
 const projectCardImages: Partial<Record<Project["id"], string>> = {
   "brew-haven": "/project/our_project/our_project_brew_haven_menu.png",
-  "kb-exports": "/about_page/web_dev/Engineering Textile Solutions Laptop Mockup-1.png",
+  "kb-exports": "/about_page/web_dev/engineering-textile-solutions-laptop-mockup-1.png",
   "eduka-college": "/case_studies/eduka_college_web/eduka_college_hero_web_01.png",
   "glass-haven": "/case_studies/glass_haven_web/glass_haven_about_web_02.png",
   "solar-solutions": "/case_studies/solar_solutions_web/solar_solutions_work_web_02.png",
@@ -40,18 +40,17 @@ const projectCardImages: Partial<Record<Project["id"], string>> = {
   "salon-pos": "/case_studies/salon_soft/salon_showcase_soft_03.png",
   dom: "/case_studies/driven_soft/driven_showcase_soft_01.png",
   messenger: "/case_studies/messenger_soft/messenger_showcase_soft_10.png",
-  crm: "/about_page/software_dev/Dark Tablet CRM Dashboard Mockup.png",
-  lms: "/about_page/software_dev/Futuristic Textile ERP Dashboard Mockup.png",
+  crm: "/about_page/software_dev/dark-tablet-crm-dashboard-mockup.png",
+  lms: "/about_page/software_dev/futuristic-textile-erp-dashboard-mockup.png",
 };
 
 export default function PortfolioGrid() {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
-  const visibleProjects = projects.filter((project) => !excludedProjectIds.has(project.id));
   const filteredProjects =
     activeCategory === "All"
-      ? visibleProjects
-      : visibleProjects.filter((project) => project.category === activeCategory);
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
 
   return (
     <section

@@ -5,14 +5,14 @@ import { motion, useReducedMotion } from "framer-motion";
 
 const GALLERY_IMAGES = [
   { src: "/case_studies/driven_soft/driven_showcase_soft_01.png", alt: "Custom software image 1" },
-  { src: "/about_page/saas_cus/ChatGPT Image Sep 12, 2026, 11_13_58 AM (2).png", alt: "Custom software image 2" },
+  { src: "/about_page/saas_cus/chatgpt-image-sep-12-2026-11-13-58-am-2.png", alt: "Custom software image 2" },
   { src: "/case_studies/messenger_soft/messenger_showcase_soft_10.png", alt: "Custom software image 3" },
   { src: "/case_studies/salon_soft/salon_showcase_soft_02.png", alt: "Custom software image 4" },
   { src: "/case_studies/salon_soft/salon_hero_soft_01.png", alt: "Custom software image 5" },
   { src: "/case_studies/textile_erp_soft/textile_erp_hero_soft_01.png", alt: "Custom software image 6" },
   { src: "/about_page/saas_cus/nexora-crm-laptop-showcase.png", alt: "Custom software image 7" },
   { src: "/case_studies/hrms_soft/hrms_hero_soft_01.png", alt: "Custom software image 8" },
-  { src: "/about_page/software_dev/PeopleFlow Leave Requests Dashboard.png", alt: "Custom software image 9" },
+  { src: "/about_page/software_dev/peopleflow-leave-requests-dashboard.png", alt: "Custom software image 9" },
   { src: "/case_studies/hrms_soft/hrms_work_soft_01.png", alt: "Custom software image 10" },
   { src: "/case_studies/rms_soft/rms_hero_soft_01.png", alt: "Custom software image 11" },
 ];

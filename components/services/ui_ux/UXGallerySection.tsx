@@ -4,13 +4,13 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 const GALLERY_IMAGES = [
-  { src: "/about_page/ui_ux/Car Service App UI Showcase.png", alt: "UI and UX image 1" },
+  { src: "/about_page/ui_ux/car-service-app-ui-showcase.png", alt: "UI and UX image 1" },
   { src: "/service/ui_ux/about_service/ui_ux_about_service_2.png", alt: "UI and UX image 2" },
-  { src: "/about_page/ui_ux/Itinerary Screen Travel App Concept.png", alt: "UI and UX image 3" },
-  { src: "/about_page/ui_ux/PlanorTech Content Management Dashboard.png", alt: "UI and UX image 4" },
-  { src: "/about_page/ui_ux/Sleek UI_UX Design Workspace.png", alt: "UI and UX image 5" },
-  { src: "/about_page/ui_ux/Sleek UI_UX Design Workspace.png", alt: "UI and UX image 6" },
-  { src: "/about_page/ui_ux/Velours Salon Dashboard Showcase.png", alt: "UI and UX image 7" },
+  { src: "/about_page/ui_ux/itinerary-screen-travel-app-concept.png", alt: "UI and UX image 3" },
+  { src: "/about_page/ui_ux/planortech-content-management-dashboard.png", alt: "UI and UX image 4" },
+  { src: "/about_page/ui_ux/sleek-ui-ux-design-workspace.png", alt: "UI and UX image 5" },
+  { src: "/about_page/ui_ux/sleek-ui-ux-design-workspace.png", alt: "UI and UX image 6" },
+  { src: "/about_page/ui_ux/velours-salon-dashboard-showcase.png", alt: "UI and UX image 7" },
 ];
 
 const IMAGE_COLUMNS = Array.from({ length: 6 }, (_, columnIndex) =>
