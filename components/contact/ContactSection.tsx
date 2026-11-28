@@ -208,14 +208,14 @@ export default function ContactSection() {
   return (
     <section className="relative min-h-screen w-full bg-transparent font-sans text-black">
       {/* Main Content Container (Responsive up to 3000px) */}
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[3000px] flex-col justify-center px-5 pt-28 pb-16 sm:px-8 sm:pt-32 sm:pb-20 md:px-12 lg:px-16 xl:px-20 2xl:px-28 min-[2200px]:px-36">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[3000px] flex-col justify-center px-5 pt-28 pb-16 sm:px-8 sm:pt-32 sm:pb-20 md:px-12 lg:justify-start lg:px-16 xl:px-20 2xl:px-28 min-[2200px]:px-36">
         <div className="grid grid-cols-1 items-end gap-10 lg:grid-cols-12 lg:items-center lg:gap-12 xl:gap-16 2xl:gap-24">
           {/* LEFT SIDE: Headline */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col justify-between lg:col-span-6 2xl:col-span-6 lg:pr-6 lg:translate-y-28 xl:translate-y-32 2xl:translate-y-40 min-[2400px]:translate-y-48"
+            className="flex flex-col justify-between lg:col-span-6 2xl:col-span-6 lg:sticky lg:top-32 lg:min-h-[calc(100svh-12rem)] lg:justify-end lg:self-start lg:pr-6"
           >
             <div>
               {/* Big Display Title */}
