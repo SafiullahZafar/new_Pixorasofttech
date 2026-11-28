@@ -13,6 +13,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 import { useMotionValueEvent, type MotionValue } from "framer-motion";
 import * as THREE from "three";
+import { useAllowHeavyMotion } from "./useAllowHeavyMotion";
+import InfiniteGalleryFallback from "./InfiniteGalleryFallback";
 
 export type ImageItem = string | { src: string; alt?: string };
 
@@ -552,43 +554,6 @@ function GalleryScene({
   );
 }
 
-function FallbackGallery({
-  images,
-  title,
-}: {
-  images: ImageItem[];
-  title: string;
-}) {
-  const normalizedImages = useMemo(
-    () =>
-      images.map((img, index) =>
-        typeof img === "string"
-          ? { src: img, alt: `${title} project image ${index + 1}` }
-          : { ...img, alt: img.alt || `${title} project image ${index + 1}` }
-      ),
-    [images]
-  );
-
-  return (
-    <div className="relative flex h-full min-h-[280px] flex-col items-center justify-center overflow-hidden bg-white/70 p-4 text-black">
-      <h2 className="mb-4 text-center text-3xl font-serif italic text-black/70 sm:text-5xl">
-        {title}
-      </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-96 overflow-y-auto w-full">
-        {normalizedImages.map((img, i) => (
-          <img
-            key={i}
-            src={img.src || "/placeholder.svg"}
-            alt={img.alt}
-            loading="lazy"
-            className="w-full h-36 object-cover rounded-2xl border border-zinc-200"
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function InfiniteGallery({
   images,
   className = "h-full w-full",
@@ -611,6 +576,7 @@ export default function InfiniteGallery({
   const [mounted, setMounted] = useState(false);
   const [nearViewport, setNearViewport] = useState(false);
   const [webglSupported, setWebglSupported] = useState(true);
+  const allowHeavyMotion = useAllowHeavyMotion();
 
   useEffect(() => {
     setMounted(true);
@@ -634,7 +600,7 @@ export default function InfiniteGallery({
   }, []);
 
   useEffect(() => {
-    if (!nearViewport) return;
+    if (!nearViewport || !allowHeavyMotion) return;
     try {
       const canvas = document.createElement("canvas");
       const gl =
@@ -646,12 +612,12 @@ export default function InfiniteGallery({
     } catch {
       setWebglSupported(false);
     }
-  }, [nearViewport]);
+  }, [nearViewport, allowHeavyMotion]);
 
-  if (!mounted || !nearViewport) {
+  if (!mounted || !nearViewport || !allowHeavyMotion) {
     return (
       <div ref={hostRef} className={className} style={style}>
-        <FallbackGallery images={images} title={centerTitle} />
+        <InfiniteGalleryFallback images={images} title={centerTitle} />
       </div>
     );
   }
@@ -659,7 +625,7 @@ export default function InfiniteGallery({
   if (!webglSupported) {
     return (
       <div ref={hostRef} className={className} style={style}>
-        <FallbackGallery images={images} title={centerTitle} />
+        <InfiniteGalleryFallback images={images} title={centerTitle} />
       </div>
     );
   }

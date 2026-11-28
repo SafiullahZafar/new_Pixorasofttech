@@ -1,6 +1,7 @@
 "use client";
 
 import React, { Suspense, lazy } from "react";
+import { useAllowHeavyMotion } from "./useAllowHeavyMotion";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
@@ -10,6 +11,17 @@ interface SplineSceneProps {
 }
 
 export function SplineScene({ scene, className }: SplineSceneProps) {
+  const allowHeavyMotion = useAllowHeavyMotion();
+
+  if (!allowHeavyMotion) {
+    return (
+      <div
+        className={`min-h-[300px] bg-gradient-to-br from-[#0A2540]/[0.04] via-white/50 to-[#0342DD]/[0.08] ${className ?? ""}`}
+        aria-hidden="true"
+      />
+    );
+  }
+
   return (
     <Suspense
       fallback={

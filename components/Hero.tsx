@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useAllowHeavyMotion } from "./useAllowHeavyMotion";
 
 const PREVIEW_VIDEOS = ["/videos/video-01.mp4", "/videos/video-03.mp4"];
 const FULL_HERO_VIDEO = "/videos/video-full.mp4";
@@ -9,40 +11,12 @@ const FULL_HERO_VIDEO = "/videos/video-full.mp4";
 export default function Hero() {
   const previewVideoRef = useRef<HTMLVideoElement>(null);
   const fullVideoRef = useRef<HTMLVideoElement>(null);
-  const videoFrameRef = useRef<HTMLDivElement>(null);
   const [previewIndex, setPreviewIndex] = useState(0);
   const [activeVideo, setActiveVideo] = useState<"preview" | "full">("preview");
   const [videoVisible, setVideoVisible] = useState(false);
-  const [videoSourcesReady, setVideoSourcesReady] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 767px)");
-    setIsMobile(mobileQuery.matches);
-
-    if (!mobileQuery.matches) {
-      setVideoSourcesReady(true);
-      return;
-    }
-
-    const frame = videoFrameRef.current;
-    if (!frame || !("IntersectionObserver" in window)) {
-      setVideoSourcesReady(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVideoSourcesReady(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px" },
-    );
-    observer.observe(frame);
-    return () => observer.disconnect();
-  }, []);
+  const allowHeavyMotion = useAllowHeavyMotion();
+  const videoSourcesReady = allowHeavyMotion;
+  const showVideo = allowHeavyMotion && videoVisible;
 
   const handlePreviewCanPlay = () => {
     if (activeVideo !== "preview") return;
@@ -54,7 +28,7 @@ export default function Hero() {
 
   const handleFullVideoCanPlay = () => {
     const video = fullVideoRef.current;
-    if (!video || activeVideo === "full") return;
+    if (!video) return;
 
     void video.play().then(() => {
       setActiveVideo("full");
@@ -124,17 +98,20 @@ export default function Hero() {
         </div>
 
         {/* Hero video showcase */}
-        <div ref={videoFrameRef} className="relative left-1/2 mt-10 h-[calc(100svh-5px)] max-h-[70rem] min-h-[24rem] w-[calc(100vw-10px)] -translate-x-1/2 sm:mt-16 lg:mt-20">
+        <div className="relative left-1/2 mt-10 h-[calc(100svh-5px)] max-h-[70rem] min-h-[24rem] w-[calc(100vw-10px)] -translate-x-1/2 sm:mt-16 lg:mt-20">
           <div
             className="group relative block h-full w-full overflow-hidden rounded-md"
           >
             <div className="block h-full w-full">
               <div className="absolute inset-0 overflow-hidden bg-transparent">
-                <img
+                <Image
                   src="/home_page/hero/hero1.webp"
                   alt="PixoraSoftTech Showcase"
+                  fill
+                  sizes="100vw"
+                  loading="eager"
                   fetchPriority="high"
-                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${videoVisible ? "opacity-0" : "opacity-100"}`}
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${showVideo ? "opacity-0" : "opacity-100"}`}
                 />
                 {activeVideo === "preview" && (
                   <video
@@ -143,11 +120,11 @@ export default function Hero() {
                     poster="/home_page/hero/hero1.webp"
                     muted
                     playsInline
-                    preload={isMobile ? "metadata" : "auto"}
+                    preload="metadata"
                     onLoadedMetadata={handlePreviewCanPlay}
                     onEnded={handlePreviewEnded}
                     onError={() => setVideoVisible(false)}
-                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${videoVisible ? "opacity-100" : "opacity-0"}`}
+                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${showVideo ? "opacity-100" : "opacity-0"}`}
                   />
                 )}
                 <video
@@ -156,17 +133,20 @@ export default function Hero() {
                   poster="/home_page/hero/hero1.webp"
                   muted
                   playsInline
-                  preload={isMobile ? "metadata" : "auto"}
+                  preload="metadata"
                   loop
                   onLoadedMetadata={handleFullVideoCanPlay}
                   onError={() => setVideoVisible(false)}
                   aria-label="PixoraSoftTech full showcase video"
-                  className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${activeVideo === "full" ? "opacity-100" : "opacity-0"}`}
+                  className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${showVideo && activeVideo === "full" ? "opacity-100" : "opacity-0"}`}
                 />
-                <img
+                <Image
                   src="/logos/logo_hero_video.png"
                   alt="Pixora Social Automation"
-                  className={`pointer-events-none absolute bottom-0 right-4 z-20 w-44 object-contain transition-opacity duration-300 sm:bottom-0 sm:right-6 sm:w-52 lg:w-60 ${videoVisible ? "opacity-100" : "opacity-0"}`}
+                  width={2172}
+                  height={724}
+                  sizes="(max-width: 640px) 176px, (max-width: 1024px) 208px, 240px"
+                  className={`pointer-events-none absolute bottom-0 right-4 z-20 w-44 object-contain transition-opacity duration-300 sm:bottom-0 sm:right-6 sm:w-52 lg:w-60 ${showVideo ? "opacity-100" : "opacity-0"}`}
                 />
               </div>
 

@@ -2,7 +2,8 @@
 
 import React, { useRef, useState } from "react";
 import { useScroll } from "framer-motion";
-import InfiniteGallery, { ImageItem } from "@/components/InfiniteGallery";
+import type { ImageItem } from "@/components/InfiniteGallery";
+import LazyInfiniteGallery from "@/components/LazyInfiniteGallery";
 
 const GALLERY_IMAGES: ImageItem[] = [
   {
@@ -214,7 +215,7 @@ export default function WhoWeAre() {
         className="relative w-full h-[280vh]"
       >
         <div className="sticky top-0 h-screen w-full overflow-hidden bg-transparent select-none">
-          <InfiniteGallery
+          <LazyInfiniteGallery
             images={GALLERY_IMAGES}
             className="w-full h-full"
             speed={1.0}
