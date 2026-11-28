@@ -96,11 +96,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       })),
       {
-        source: "/catering-app",
-        destination: "/case-study/catering-app",
-        permanent: true,
-      },
-      {
         source: "/eduka-college",
         destination: "/case-study/eduka-college",
         permanent: true,

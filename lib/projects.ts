@@ -377,37 +377,6 @@ export const projects: Project[] = [
     ],
     results: []
   },
-  {
-    id: "catering-app",
-    caseStudySlug: "catering-app",
-    title: "Catering & Event Food App",
-    category: "Mobile Apps",
-    tagline: "On-Demand Catering Discovery, Custom Menu Builder & Instant Event Quote App",
-    desc: "A premium catering and event food mobile app connecting clients in Lahore, Pakistan with top caterers — featuring corporate, wedding, hi-tea, and birthday package browsing, live pricing, and instant custom quote generation.",
-    overview: "Catering & Event Food App is a full-featured mobile marketplace built for Pakistan's catering industry. PixoraSoftTech developed a React Native app offering event-specific catering package discovery, detailed menu views with gallery and reviews, guest count configuration, and a guided 4-step custom quote flow — all with PKR live pricing.",
-    tags: ["React Native", "Catering Marketplace", "Event Booking", "Custom Quote Flow", "Pakistan Market"],
-    client: "Catering & Events Platform — Lahore, Pakistan",
-    industry: "Food, Catering & Event Management",
-    timeline: "Completed & Deployed",
-    deliverables: [
-      "React Native iOS & Android Mobile App",
-      "Catering Package Discovery & Category Filter (Corporate, Wedding, Hi-Tea, Birthday)",
-      "Package Detail Pages with Menu, Gallery & Verified Reviews",
-      "4-Step Custom Quote Flow (Event Details → Menu → Add-ons → Review)"
-    ],
-    img: "/suppliers_food.png",
-    heroImg: "/suppliers_food.png",
-    status: "processing",
-    challenge: "Event planners in Pakistan wasted hours calling multiple caterers to get quotes, compare menus, and confirm guest capacity — resulting in slow bookings and mismatched expectations.",
-    solution: "We built a sleek React Native app featuring location-based caterer discovery, category filters (Corporate, Wedding, Hi-Tea, Birthday), detailed package pages with Overview/Menu/Gallery/Reviews tabs, and a seamless multi-step custom quote builder that captures event type, date, guest count, location, and special requirements.",
-    keyFeatures: [
-      "Location-Based Catering Discovery with Corporate, Wedding & Birthday Category Filters",
-      "Package Detail Pages: Overview, Menu, Gallery & Customer Review Tabs",
-      "Live PKR Per-Person Pricing with Minimum Guest Count & Delivery Availability",
-      "4-Step Custom Quote Flow: Event Details → Menu Selection → Add-ons → Review & Submit"
-    ],
-    results: []
-  },
   // ── SOFTWARE ──
   {
     id: "hrms",

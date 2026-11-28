@@ -34,7 +34,6 @@ const projectCardImages: Partial<Record<Project["id"], string>> = {
   "travel-hotel-hub": "/project/our_project/our_project_travel_hotel_website.png",
   "rider-app": "/case_studies/driven_app/driven_hero_app_01.png",
   veloura: "/project/our_project/our_project_veloura_salon_app_showcase_updated.png",
-  "catering-app": "/case_studies/goody_supplies_web/goody_supplies_about_web_03.png",
   hrms: "/project/our_project/our_project_aurapos_dashboard_laptop_updated.png",
   inventory: "/project/our_project/our_project_aurapos_dashboard_laptop.png",
   "salon-pos": "/case_studies/salon_soft/salon_showcase_soft_03.png",
