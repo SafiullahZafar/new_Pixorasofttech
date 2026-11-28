@@ -303,7 +303,7 @@ export default function Navbar() {
           )}
         >
           {/* Desktop Nav Links */}
-          <nav className="hidden xl:flex items-center gap-1 2xl:gap-2 mx-auto">
+          <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 xl:flex 2xl:gap-2">
             <Link
               href="/"
               className={`px-4 py-2 text-[15px] font-semibold transition-colors duration-200 rounded-full hover:bg-black/5 relative ${pathname === "/"
