@@ -207,11 +207,11 @@ export const TestimonialsColumn = (props: {
           {props.testimonials.map((t, i) => renderCard(t, i, "s1"))}
         </div>
         {/* Set 2: Seamless loop */}
-        <div className="flex flex-col gap-6">
+        <div aria-hidden="true" className="flex flex-col gap-6">
           {props.testimonials.map((t, i) => renderCard(t, i, "s2"))}
         </div>
         {/* Set 3: Headroom for reverse dragging */}
-        <div className="flex flex-col gap-6">
+        <div aria-hidden="true" className="flex flex-col gap-6">
           {props.testimonials.map((t, i) => renderCard(t, i, "s3"))}
         </div>
       </motion.div>
